@@ -1,0 +1,5 @@
+package edu.mayo.qdm.patient;
+
+public enum Race {
+    AMERICANINDIAN, ASIANINDIAN, ASIAN, BLACKORAFRICANAMERICAN, NATIVEHAWAIIAN, WHITE, UNKNOWN, OTHER;
+}

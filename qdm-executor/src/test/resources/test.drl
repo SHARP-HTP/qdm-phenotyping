@@ -1,0 +1,55 @@
+
+        import edu.mayo.bmi.sharp.facts.Patient;
+        import edu.mayo.qdm.drools.DroolsResults;
+        import edu.mayo.qdm.processor.PatientProcessor;
+        import edu.mayo.qdm.model.*;
+        import static edu.mayo.qdm.drools.DroolsUtil.satisfied;
+        
+        
+        
+        global DroolsResults results
+        global PatientProcessor patientProcessor
+        /****************************************** 
+        Start Population Criteria Section
+        ******************************************/
+        
+            /******************************************   
+            Start Initial Patient Population
+            ******************************************/
+            rule "Is Initial Patient Population"
+            
+            when
+/*
+                $patient : Patient( 
+                	allTrue([
+                	atLeastOneTrue([true, false])
+                	&&
+                	allTrue([true, ( true && true )]) 
+                	&&
+                	true
+			        &&
+			        (age >=17 )
+			    	&&
+			        (age <74 )
+			        &&
+		        	patientProcessor.hasProblem($patient, '123.123.123.123', new PauseQuantity(1,2))
+		       		])
+		        )
+*/
+			    
+	 $patient : Patient(
+             eval(new PRCN(null).isSatisfied($patient))
+            
+            )
+			
+            then
+				System.out.print("Hi!!!!");
+            end
+            /******************************************   
+            End Initial Patient Population
+            ******************************************/
+            
+    
+        /******************************************   
+        End Population Criteria Section
+        ******************************************/
