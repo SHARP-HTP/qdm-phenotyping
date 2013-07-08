@@ -1,4 +1,4 @@
-package edu.mayo.qdm.application.cli;
+package edu.mayo.qdm.cli;
 
 import edu.mayo.qdm.drools.parser.Qdm2Drools;
 import org.apache.commons.io.FileUtils;
