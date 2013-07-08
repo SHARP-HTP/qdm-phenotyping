@@ -1,10 +1,7 @@
 package edu.mayo.qdm.drools;
 
 import edu.mayo.qdm.Results;
-import edu.mayo.qdm.patient.Concept;
-import edu.mayo.qdm.patient.Encounter;
-import edu.mayo.qdm.patient.Gender;
-import edu.mayo.qdm.patient.Patient;
+import edu.mayo.qdm.patient.*;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -59,25 +56,64 @@ public class DroolsExecutorTestIT {
      * 127 is fairly simple
      */
     @Test
-         public void TestExecute127() throws IOException{
+    public void TestExecute127IPP() throws IOException{
         InputStream xmlStream = new ClassPathResource("qdmxml/CMS127v1.xml").getInputStream();
 
         List<Patient> patientList = new ArrayList<Patient>();
 
+        //good
         Patient p1 = new Patient("1");
-        p1.setAge(65);
+        p1.setAge(70);
+        p1.addEncounter(new Encounter("1", new Concept("G0439", "HCPCS", null), new Date()));
 
+        //invalid encounter - out
         Patient p2 = new Patient("2");
         p2.setAge(99);
+        p2.addEncounter(new Encounter("1", new Concept("__INVALID__", "SNOMEDCT", null), new Date()));
 
+        //not old enough - out
         Patient p3 = new Patient("3");
         p3.setAge(64);
+        p3.addEncounter(new Encounter("1", new Concept("G0439", "HCPCS", null), new Date()));
 
         patientList.addAll(Arrays.asList(p1,p2,p3));
 
         Results results = this.executor.execute(patientList, IOUtils.toString(xmlStream));
 
-        assertEquals(2,results.get("IPP").size());
+        assertEquals(1,results.get("IPP").size());
+    }
+
+    @Test
+    public void TestExecute127NUMER() throws IOException{
+        InputStream xmlStream = new ClassPathResource("qdmxml/CMS127v1.xml").getInputStream();
+
+        List<Patient> patientList = new ArrayList<Patient>();
+
+        //good
+        Patient p1 = new Patient("1");
+        p1.setAge(70);
+        p1.addMedication(new Medication(new Concept("33", "CVX", null), new Date(), new Date()));
+
+        //good
+        Patient p2 = new Patient("2");
+        p2.setAge(70);
+        p2.addProcedure(new Procedure(new Concept("394678003", "SNOMEDCT", null), new Date(), new Date()));
+
+        //invalid med -- out
+        Patient p3 = new Patient("3");
+        p3.setAge(70);
+        p3.addMedication(new Medication(new Concept("__INVALID__", "CVX", null), new Date(), new Date()));
+
+        //invalid procedure -- out
+        Patient p4 = new Patient("4");
+        p4.setAge(70);
+        p4.addProcedure(new Procedure(new Concept("__INVALID__", "SNOMEDCT", null), new Date(), new Date()));
+
+        patientList.addAll(Arrays.asList(p1,p2,p3,p4));
+
+        Results results = this.executor.execute(patientList, IOUtils.toString(xmlStream));
+
+        assertEquals(2,results.get("NUMER").size());
     }
 
     @Test

@@ -23,7 +23,7 @@ public class Qdm2DroolsTestIT {
     public void testCreateRules127() throws IOException {
         String rule = qdm2Drools.qdm2drools(
             IOUtils.toString(
-                new ClassPathResource("qdmxml/CMS135v1.xml").getInputStream()));
+                new ClassPathResource("qdmxml/CMS127v1.xml").getInputStream()));
 
         assertNotNull(rule);
 

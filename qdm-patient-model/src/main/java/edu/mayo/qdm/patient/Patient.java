@@ -164,6 +164,10 @@ public class Patient {
         getMedications().add(m);
     }
 
+    public Set<Medication> findMedications(List<Concept> concepts) {
+        return this.find(this.medications, concepts);
+    }
+
     public Set<Problem> getProblems() {
         return problems;
     }
@@ -184,6 +188,10 @@ public class Patient {
             throw new IllegalArgumentException();
         }
         getProcedures().add(procedure);
+    }
+
+    public Set<Procedure> findProcedures(List<Concept> concepts) {
+        return this.find(this.procedures, concepts);
     }
 
     public Set<Exception> getExceptions() {

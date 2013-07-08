@@ -10,8 +10,6 @@ import java.util.Date;
 public class Procedure extends CodedEntry {
     private static Logger logger = Logger.getLogger(Procedure.class);
 
-    private String procedureCode;
-    private String codingSystem;
     private Date startingDate;
     private Date endDate;
 
