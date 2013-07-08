@@ -47,6 +47,7 @@ public class Patient {
     private Set<Procedure> procedures = new HashSet<Procedure>();
     private Set<Exception> patExceptions = new HashSet<Exception>();
     private Set<Eligibility> eligibilities = new HashSet<Eligibility>();
+    private Set<RiskCategoryAssessment> riskCategoryAssessments = new HashSet<RiskCategoryAssessment>();
     private Set<Symptom> symptoms = new HashSet<Symptom>();
     private Date birthdate;
     private Integer age;
@@ -192,6 +193,21 @@ public class Patient {
 
     public Set<Procedure> findProcedures(List<Concept> concepts) {
         return this.find(this.procedures, concepts);
+    }
+
+    public Set<RiskCategoryAssessment> findRiskCategoryAssessments(List<Concept> concepts) {
+        return this.find(this.riskCategoryAssessments, concepts);
+    }
+
+    public Set<RiskCategoryAssessment> getRiskCategoryAssessments() {
+        return this.riskCategoryAssessments;
+    }
+
+    public void addRiskCategoryAssessment(RiskCategoryAssessment riskCategoryAssessment) {
+        if (riskCategoryAssessment == null) {
+            throw new IllegalArgumentException();
+        }
+        getRiskCategoryAssessments().add(riskCategoryAssessment);
     }
 
     public Set<Exception> getExceptions() {

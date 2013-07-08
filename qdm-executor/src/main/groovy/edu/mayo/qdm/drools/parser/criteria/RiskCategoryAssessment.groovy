@@ -1,4 +1,7 @@
 package edu.mayo.qdm.drools.parser.criteria
+
+import org.apache.commons.lang.StringUtils
+
 /**
  */
 class RiskCategoryAssessment implements Criteria {
@@ -17,11 +20,9 @@ class RiskCategoryAssessment implements Criteria {
             def codingSchemeVersion = it.codingSchemeVersion
             concepts.add("""new Concept("$code","$codingScheme","$codingSchemeVersion")""")
         }
-        /*
+
         """
-        \$p.findMedications([${StringUtils.join(concepts,',')}]).size() > 0
+        \$p.findRiskCategoryAssessments([${StringUtils.join(concepts,',')}]).size() > 0
         """
-        */
-        "false"
     }
 }
