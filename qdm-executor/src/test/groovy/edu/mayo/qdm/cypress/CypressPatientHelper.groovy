@@ -48,7 +48,12 @@ class CypressPatientHelper {
             def code = medication.codes.iterator().next()
             patient.addMedication(
                 new Medication(new Concept(code.value[0], code.key, null), toDate(medication.start_time), toDate(medication.end_time)))
+        }
 
+        json.conditions.each { condition ->
+            def code = condition.codes.iterator().next()
+            patient.addDiagnosis(
+                new Diagnosis(new Concept(code.value[0], code.key, null), toDate(condition.start_time), toDate(condition.end_time)))
         }
 
         patient

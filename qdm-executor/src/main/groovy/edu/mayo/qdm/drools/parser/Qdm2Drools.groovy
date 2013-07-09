@@ -74,6 +74,8 @@ class Qdm2Drools {
 
         log.isDebugEnabled() ? log.debug(rule):
 
+        System.out.println(rule)
+
         rule
     }
 
