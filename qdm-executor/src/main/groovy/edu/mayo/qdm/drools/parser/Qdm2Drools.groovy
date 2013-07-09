@@ -1,6 +1,6 @@
 package edu.mayo.qdm.drools.parser
-
 import edu.mayo.qdm.drools.DroolsResults
+import edu.mayo.qdm.drools.DroolsUtil
 import edu.mayo.qdm.drools.PreconditionResult
 import edu.mayo.qdm.drools.parser.criteria.CriteriaFactory
 import edu.mayo.qdm.patient.Concept
@@ -74,8 +74,6 @@ class Qdm2Drools {
 
         log.isDebugEnabled() ? log.debug(rule):
 
-        System.out.println(rule)
-
         rule
     }
 
@@ -85,12 +83,14 @@ class Qdm2Drools {
         import ${DroolsResults.name};
         import ${Patient.name};
         import ${Concept.name};
+        import ${DroolsUtil.name};
         /*
             Title: ${qdm.title}
             Description: ${qdm.description}
         */
 
         global DroolsResults results
+        global DroolsUtil droolsUtil
         """
     }
 
@@ -110,7 +110,7 @@ class Qdm2Drools {
             ${switch(name){
                 case "DENOM": return """PreconditionResult(id == "IPP", patient == \$p)"""
                 case "NUMER": return """PreconditionResult(id == "DENOM", patient == \$p)"""
-                default: return ""
+                default: ""
             }}
         """)
 
@@ -240,6 +240,5 @@ class Qdm2Drools {
             case "atLeastOneTrue": return "or"
         }
     }
-
 
 }

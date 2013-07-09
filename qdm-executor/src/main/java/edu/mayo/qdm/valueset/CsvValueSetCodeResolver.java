@@ -24,6 +24,7 @@
 package edu.mayo.qdm.valueset;
 
 import edu.mayo.qdm.patient.Concept;
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
@@ -33,10 +34,7 @@ import org.supercsv.io.ICsvMapReader;
 import org.supercsv.prefs.CsvPreference;
 
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * The Class CsvValueSetCodeResolver.
@@ -80,6 +78,35 @@ public class CsvValueSetCodeResolver implements ValueSetCodeResolver, Initializi
         }
 
         return valueSetMap;
+    }
+
+    @Override
+    public boolean isCodeInSet(String valueSetOid, Concept concept) {
+        Set<Concept> valueSetConcepts = this.valueSetMap.get(new ValueSetKey(valueSetOid));
+        if(CollectionUtils.isEmpty(valueSetConcepts)){
+            return false;
+        }
+
+        Map<String,List<Concept>> initialMatchingConcepts = new HashMap<String,List<Concept>>();
+        for(Concept valueSetConcept : valueSetConcepts){
+            String code = valueSetConcept.getCode();
+            if(! initialMatchingConcepts.containsKey(code)){
+                initialMatchingConcepts.put(code, new ArrayList<Concept>());
+            }
+            initialMatchingConcepts.get(valueSetConcept.getCode()).add(concept);
+        }
+
+        List<Concept> matches = initialMatchingConcepts.get(concept.getCode());
+
+        if(CollectionUtils.isNotEmpty(matches)){
+            for(Concept match : matches){
+                if(concept.matches(match)){
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     private static class ValueSetKey {

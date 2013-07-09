@@ -18,26 +18,8 @@ public class CodedEntry {
         this.concept = concept;
     }
 
-    protected boolean matches(Concept concept){
-        if(! concept.getCode().equals(this.concept.getCode())){
-            return false;
-        }
-
-        if(concept.getCodingScheme() != null
-            && this.concept.getCodingScheme() != null){
-            if(! concept.getCodingScheme().equals(this.concept.getCodingScheme())){
-                return false;
-            }
-        }
-
-        if(concept.getCodingSchemeVersion() != null
-                && this.concept.getCodingSchemeVersion() != null){
-            if(! concept.getCodingSchemeVersion().equals(this.concept.getCodingSchemeVersion())){
-                return false;
-            }
-        }
-
-        return true;
+    public boolean matches(Concept concept){
+        return this.getConcept().matches(concept);
     }
 
     public Concept getConcept() {

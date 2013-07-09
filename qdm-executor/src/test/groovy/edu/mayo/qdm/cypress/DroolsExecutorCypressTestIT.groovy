@@ -43,4 +43,22 @@ public class DroolsExecutorCypressTestIT {
         cypressHelper.checkResults(measureId, results)
     }
 
+    /*
+     * 165 -- NQF 18, High Blood Pressure
+     */
+    @Test
+    public void TestExecute165() throws IOException{
+        def xmlStream = new ClassPathResource("qdmxml/CMS165v1.xml").getInputStream()
+
+        def xmlString = IOUtils.toString(xmlStream)
+
+        def patientList = cypressHelper.getPatients()
+
+        def results = this.executor.execute(patientList, xmlString)
+
+        def measureId = "0018"//new XmlParser().parseText(xmlString).subjectOf.measureAttribute.value.find { it.@root == "2.16.840.1.113883.3.560.1" }.@extension
+
+        cypressHelper.checkResults(measureId, results)
+    }
+
 }

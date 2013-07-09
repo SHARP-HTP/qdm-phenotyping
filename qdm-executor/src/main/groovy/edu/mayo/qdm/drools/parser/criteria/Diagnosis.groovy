@@ -1,7 +1,7 @@
 package edu.mayo.qdm.drools.parser.criteria
 /**
  */
-class Encounter implements Criteria {
+class Diagnosis implements Criteria {
 
     def json
     def valueSetCodeResolver
@@ -11,7 +11,7 @@ class Encounter implements Criteria {
         def valueSetOid = json.code_list_id
 
         """
-        droolsUtil.findMatches("$valueSetOid", \$p.getEncounters()).size() > 0
+        droolsUtil.findMatches("$valueSetOid", \$p.getDiagnoses()).size() > 0
         """
     }
 }

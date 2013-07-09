@@ -1,11 +1,9 @@
 package edu.mayo.qdm.cypress
-
 import edu.mayo.qdm.Results
 import edu.mayo.qdm.patient.*
 import groovy.json.JsonSlurper
 import org.springframework.core.io.ClassPathResource
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver
-
 /**
  */
 class CypressPatientHelper {
@@ -61,13 +59,17 @@ class CypressPatientHelper {
             slurper.parse(new InputStreamReader(
                 new ClassPathResource("/cypress/results/by_measure.json").getInputStream()))
 
-        def resultJson = resultsJson.find { it.nqf_id = measureId}
+        def resultJson = resultsJson.find { it.nqf_id == measureId}
 
+        println """NQF ID: $measureId"""
         resultJson.population_ids.each {
-            println "Criteria($it.key) - Expected: ${resultJson[it.key]}, Actual: ${results.get(it.key).size()}, Found Patients: ${results.get(it.key).collect {it.sourcePid}}"
-        }
+            def expected = resultJson[it.key]
+            def actual = results.get(it.key).size()
 
-        results.get
+            println "Criteria($it.key) - Expected: $expected, Actual: $actual, Found Patients: ${results.get(it.key).collect {it.sourcePid}}"
+
+            //assertEquals expected, actual, 0
+        }
     }
 
     def toDate(time){

@@ -43,7 +43,7 @@ public class Patient {
     private Set<Lab> labs = new HashSet<Lab>();
     private Set<Encounter> encounters = new HashSet<Encounter>();
     private Set<Medication> medications = new HashSet<Medication>();
-    private Set<Problem> problems = new HashSet<Problem>();
+    private Set<Diagnosis> diagnoses = new HashSet<Diagnosis>();
     private Set<Procedure> procedures = new HashSet<Procedure>();
     private Set<Exception> patExceptions = new HashSet<Exception>();
     private Set<Eligibility> eligibilities = new HashSet<Eligibility>();
@@ -150,10 +150,6 @@ public class Patient {
         this.encounters = encounters;
     }
 
-    public Set<Encounter> findEncounters(List<Concept> concepts) {
-        return this.find(this.encounters, concepts);
-    }
-
     public Set<Medication> getMedications() {
         return this.medications;
     }
@@ -165,19 +161,15 @@ public class Patient {
         getMedications().add(m);
     }
 
-    public Set<Medication> findMedications(List<Concept> concepts) {
-        return this.find(this.medications, concepts);
+    public Set<Diagnosis> getDiagnoses() {
+        return diagnoses;
     }
 
-    public Set<Problem> getProblems() {
-        return problems;
-    }
-
-    public void addProblem(Problem p) {
-        if (p == null) {
+    public void addDiagnosis(Diagnosis d) {
+        if (d == null) {
             throw new IllegalArgumentException();
         }
-        getProblems().add(p);
+        getDiagnoses().add(d);
     }
 
     public Set<Procedure> getProcedures() {
@@ -189,14 +181,6 @@ public class Patient {
             throw new IllegalArgumentException();
         }
         getProcedures().add(procedure);
-    }
-
-    public Set<Procedure> findProcedures(List<Concept> concepts) {
-        return this.find(this.procedures, concepts);
-    }
-
-    public Set<RiskCategoryAssessment> findRiskCategoryAssessments(List<Concept> concepts) {
-        return this.find(this.riskCategoryAssessments, concepts);
     }
 
     public Set<RiskCategoryAssessment> getRiskCategoryAssessments() {
@@ -296,34 +280,6 @@ public class Patient {
         } catch (IOException e) {
             throw new RuntimeException("Cannot load Patient JSON.", e);
         }
-    }
-
-    private <T extends CodedEntry> Set<T> find(Iterable<T> codedEntries, Iterable<Concept> concepts){
-        Map<String,T> initialMatchingEntries = new HashMap<String,T>();
-        for(T codedEntry : codedEntries){
-            initialMatchingEntries.put(codedEntry.getConcept().getCode(), codedEntry);
-        }
-
-        Map<String,Concept> initialMatchingConcepts = new HashMap<String,Concept>();
-        for(Concept concept : concepts){
-            initialMatchingConcepts.put(concept.getCode(), concept);
-        }
-
-        initialMatchingEntries.keySet().retainAll(initialMatchingConcepts.keySet());
-        initialMatchingConcepts.keySet().retainAll(initialMatchingEntries.keySet());
-
-        Set<T> returnSet = new HashSet<T>();
-
-        for(T codedEntry : initialMatchingEntries.values()){
-            for(Concept concept : initialMatchingConcepts.values()){
-                if(codedEntry.matches(concept)){
-                    returnSet.add(codedEntry);
-                    break;
-                }
-            }
-        }
-
-        return returnSet;
     }
 
     @Override

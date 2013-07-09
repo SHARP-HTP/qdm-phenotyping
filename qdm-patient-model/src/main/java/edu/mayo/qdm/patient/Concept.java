@@ -19,6 +19,28 @@ public class Concept {
         this.codingSchemeVersion = codingSchemeVersion;
     }
 
+    public boolean matches(Concept concept){
+        if(! concept.getCode().equals(this.getCode())){
+            return false;
+        }
+
+        if(concept.getCodingScheme() != null
+                && this.getCodingScheme() != null){
+            if(! concept.getCodingScheme().equals(this.getCodingScheme())){
+                return false;
+            }
+        }
+
+        if(concept.getCodingSchemeVersion() != null
+                && this.getCodingSchemeVersion() != null){
+            if(! concept.getCodingSchemeVersion().equals(this.getCodingSchemeVersion())){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public String getCode() {
         return code;
     }

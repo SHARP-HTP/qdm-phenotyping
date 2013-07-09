@@ -24,19 +24,35 @@
 package edu.mayo.qdm.drools;
 
 
+import edu.mayo.qdm.patient.CodedEntry;
+import edu.mayo.qdm.valueset.ValueSetCodeResolver;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 /**
  * The Class DroolsUtil.
  *
  * @author <a href="mailto:kevin.peterson@mayo.edu">Kevin Peterson</a>
  */
+@Component
 public final class DroolsUtil {
-	
-	/**
-	 * Instantiates a new drools util.
-	 */
-	private DroolsUtil(){
-		super();
-	}
 
+    @Resource
+    private ValueSetCodeResolver valueSetCodeResolver;
+
+    public <T extends CodedEntry> Collection<T>  findMatches(String valueSetOid, Iterable<T> codedEntries){
+        List<T> returnList = new ArrayList<T>();
+        for(T entry : codedEntries){
+            if(this.valueSetCodeResolver.isCodeInSet(valueSetOid, entry.getConcept())){
+                returnList.add(entry);
+            }
+        }
+
+        return returnList;
+    }
 
 }

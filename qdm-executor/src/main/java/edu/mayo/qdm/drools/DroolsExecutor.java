@@ -57,6 +57,9 @@ public class DroolsExecutor implements Executor {
     @Resource
 	private Qdm2Drools qdm2Drools;
 
+    @Resource
+    private DroolsUtil droolsUtil;
+
 	/* (non-Javadoc)
 	 * @see edu.mayo.qdm.Executor#execute(java.lang.Iterable, java.io.InputStream)
 	 */
@@ -70,6 +73,7 @@ public class DroolsExecutor implements Executor {
 
 		DroolsResults results = new DroolsResults();
 		ksession.setGlobal("results", results);
+        ksession.setGlobal("droolsUtil", this.droolsUtil);
 		
 		for(Patient patient : patients){
 			ksession.insert(patient);
