@@ -74,6 +74,8 @@ class Qdm2Drools {
 
         log.isDebugEnabled() ? log.debug(rule):
 
+        System.out.println(rule)
+
         rule
     }
 
@@ -105,6 +107,11 @@ class Qdm2Drools {
         when
             \$p : Patient( )
             not ( PreconditionResult(id == "$name", patient == \$p) )
+            ${switch(name){
+                case "DENOM": return """PreconditionResult(id == "IPP", patient == \$p)"""
+                case "NUMER": return """PreconditionResult(id == "DENOM", patient == \$p)"""
+                default: return ""
+            }}
         """)
 
         def nestedPreconditions = []

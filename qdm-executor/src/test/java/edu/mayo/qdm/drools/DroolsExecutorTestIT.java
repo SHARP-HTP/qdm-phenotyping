@@ -64,17 +64,17 @@ public class DroolsExecutorTestIT {
         //good
         Patient p1 = new Patient("1");
         p1.setAge(70);
-        p1.addEncounter(new Encounter("1", new Concept("G0439", "HCPCS", null), new Date()));
+        p1.addEncounter(new Encounter("1", new Concept("G0439", "HCPCS", null), new Date(), new Date()));
 
         //invalid encounter - out
         Patient p2 = new Patient("2");
         p2.setAge(99);
-        p2.addEncounter(new Encounter("1", new Concept("__INVALID__", "SNOMEDCT", null), new Date()));
+        p2.addEncounter(new Encounter("1", new Concept("__INVALID__", "SNOMEDCT", null), new Date(), new Date()));
 
         //not old enough - out
         Patient p3 = new Patient("3");
         p3.setAge(64);
-        p3.addEncounter(new Encounter("1", new Concept("G0439", "HCPCS", null), new Date()));
+        p3.addEncounter(new Encounter("1", new Concept("G0439", "HCPCS", null), new Date(), new Date()));
 
         patientList.addAll(Arrays.asList(p1,p2,p3));
 
@@ -126,25 +126,25 @@ public class DroolsExecutorTestIT {
         Patient p1 = new Patient("1");
         p1.setSex(Gender.FEMALE);
         p1.setAge(30);
-        p1.addEncounter(new Encounter("1", new Concept("__INVALID__", "SNOMEDCT", null), new Date()));
+        p1.addEncounter(new Encounter("1", new Concept("__INVALID__", "SNOMEDCT", null), new Date(), new Date()));
 
         //wrong gender -- out
         Patient p2 = new Patient("2");
         p2.setSex(Gender.MALE);
         p2.setAge(30);
-        p2.addEncounter(new Encounter("1", new Concept("439708006", "SNOMEDCT", null), new Date()));
+        p2.addEncounter(new Encounter("1", new Concept("439708006", "SNOMEDCT", null), new Date(), new Date()));
 
         //good
         Patient p3 = new Patient("3");
         p3.setSex(Gender.FEMALE);
         p3.setAge(30);
-        p3.addEncounter(new Encounter("1",new Concept("439708006","SNOMEDCT", null),new Date()));
+        p3.addEncounter(new Encounter("1",new Concept("439708006","SNOMEDCT", null),new Date(), new Date()));
 
         //good
         Patient p4 = new Patient("3");
         p4.setSex(Gender.FEMALE);
         p4.setAge(31);
-        p4.addEncounter(new Encounter("1",new Concept("185465003","SNOMEDCT", null),new Date()));
+        p4.addEncounter(new Encounter("1",new Concept("185465003","SNOMEDCT", null),new Date(), new Date()));
 
         patientList.addAll(Arrays.asList(p1,p2,p3,p4));
 

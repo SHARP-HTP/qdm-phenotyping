@@ -1,6 +1,5 @@
 package edu.mayo.qdm.patient;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import java.util.Date;
@@ -18,7 +17,8 @@ public class Encounter extends CodedEntry {
     private static Logger logger = Logger.getLogger(Encounter.class);
 
     private String encounterId;
-    private Date visitDate;
+    private Date startDate;
+    private Date endDate;
 
     /*
      * For JSON only
@@ -27,16 +27,11 @@ public class Encounter extends CodedEntry {
         super(null);
     }
 
-    public Encounter(String encounterId, Concept concept, Date visitDate) {
+    public Encounter(String encounterId, Concept concept, Date startDate, Date endDate) {
         super(concept);
-
-        if (StringUtils.isEmpty(encounterId) || visitDate == null) {
-            logger.debug("Constructor arguments cannot be null or empty.");
-            throw new IllegalArgumentException("Encounter.ctor() - Constructor arguments cannot be null or empty.");
-        }
-
         this.encounterId = encounterId;
-        this.visitDate = visitDate;
+        this.startDate = startDate;
+        this.endDate = endDate;
     }
 
     public void setEncounterId(String encounterId) {
@@ -47,20 +42,24 @@ public class Encounter extends CodedEntry {
         return this.encounterId;
     }
 
-    public void setVisistDate(Date visitDate) {
-        this.visitDate = visitDate;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public Date getVisitDate() {
-        return this.visitDate;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    public void setVisitDate(Date visitDate) {
-        this.visitDate = visitDate;
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
     public String toString() {
-        String displayStr = " code System: " + this.getConcept().getCodingScheme() + " encounter code: " + this.getEncounterId() + " visit date: " + this.getVisitDate();
+        String displayStr = " code System: " + this.getConcept().getCodingScheme() + " encounter code: " + this.getEncounterId();
 
         return displayStr;
     }

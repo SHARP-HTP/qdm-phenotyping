@@ -34,7 +34,7 @@ public class PatientJsonTest {
     public void TestToJsonWithEncounter() {
 
         Patient p = new Patient("123");
-        Encounter e = new Encounter("1", new Concept("asdf", "asdf", "asd"), new Date());
+        Encounter e = new Encounter("1", new Concept("asdf", "asdf", "asd"), new Date(), new Date());
         p.addEncounter(e);
 
         String json = p.toJson();

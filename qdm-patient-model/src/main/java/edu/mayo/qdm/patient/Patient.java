@@ -328,8 +328,18 @@ public class Patient {
 
     @Override
     public boolean equals(Object o) {
-        return ((Patient) o).getSourcePid().equals(this.getSourcePid());
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Patient patient = (Patient) o;
+
+        if (sourcePid != null ? !sourcePid.equals(patient.sourcePid) : patient.sourcePid != null) return false;
+
+        return true;
     }
 
-
+    @Override
+    public int hashCode() {
+        return sourcePid != null ? sourcePid.hashCode() : 0;
+    }
 }
