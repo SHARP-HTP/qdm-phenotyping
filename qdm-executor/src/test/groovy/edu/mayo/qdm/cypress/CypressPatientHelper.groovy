@@ -40,8 +40,22 @@ class CypressPatientHelper {
 
         json.procedures.each { procedure ->
             def code = procedure.codes.iterator().next()
-            patient.addProcedure(
-                new Procedure(new Concept(code.value[0], code.key, null), toDate(procedure.start_time), toDate(procedure.end_time)))
+            def oid = procedure.oid
+
+            if(oid == "2.16.840.1.113883.3.560.1.18"){
+                def value = procedure.values?.iterator().next()
+                def scalar = value.scalar
+
+                def val = scalar != null ? new Value(Float.parseFloat(scalar), null) : null;
+
+                patient.addPhysicalExamFinding(
+                    new PhysicalExamFinding(
+                        new Concept(code.value[0], code.key, null),
+                            toDate(procedure.start_time), val))
+            } else {
+                patient.addProcedure(
+                    new Procedure(new Concept(code.value[0], code.key, null), toDate(procedure.start_time), toDate(procedure.end_time)))
+            }
         }
 
         json.medications.each { medication ->

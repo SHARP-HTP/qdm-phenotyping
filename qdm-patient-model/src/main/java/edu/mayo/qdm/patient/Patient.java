@@ -27,7 +27,10 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author Herman and Darin IHC adapted by Dingcheng Li
@@ -49,6 +52,7 @@ public class Patient {
     private Set<Eligibility> eligibilities = new HashSet<Eligibility>();
     private Set<RiskCategoryAssessment> riskCategoryAssessments = new HashSet<RiskCategoryAssessment>();
     private Set<Symptom> symptoms = new HashSet<Symptom>();
+    private Set<PhysicalExamFinding> physicalExamFindings = new HashSet<PhysicalExamFinding>();
     private Date birthdate;
     private Integer age;
     private Boolean consent;
@@ -170,6 +174,17 @@ public class Patient {
             throw new IllegalArgumentException();
         }
         getDiagnoses().add(d);
+    }
+
+    public Set<PhysicalExamFinding> getPhysicalExamFindings() {
+        return physicalExamFindings;
+    }
+
+    public void addPhysicalExamFinding(PhysicalExamFinding physicalExamFinding) {
+        if (physicalExamFinding == null) {
+            throw new IllegalArgumentException();
+        }
+        getPhysicalExamFindings().add(physicalExamFinding);
     }
 
     public Set<Procedure> getProcedures() {

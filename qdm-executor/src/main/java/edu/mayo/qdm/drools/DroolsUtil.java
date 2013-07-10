@@ -24,7 +24,9 @@
 package edu.mayo.qdm.drools;
 
 
+import edu.mayo.qdm.drools.parser.criteria.Interval;
 import edu.mayo.qdm.patient.CodedEntry;
+import edu.mayo.qdm.patient.PhysicalExamFinding;
 import edu.mayo.qdm.valueset.ValueSetCodeResolver;
 import org.springframework.stereotype.Component;
 
@@ -49,6 +51,19 @@ public final class DroolsUtil {
         for(T entry : codedEntries){
             if(this.valueSetCodeResolver.isCodeInSet(valueSetOid, entry.getConcept())){
                 returnList.add(entry);
+            }
+        }
+
+        return returnList;
+    }
+
+    public Collection<PhysicalExamFinding>
+        findMatches(String valueSetOid, Iterable<PhysicalExamFinding> codedEntries, Interval interval){
+        List<PhysicalExamFinding> returnList = new ArrayList<PhysicalExamFinding>();
+        for(PhysicalExamFinding finding : this.findMatches(valueSetOid, codedEntries)){
+
+            if(interval.satisfied(finding.getValue())){
+                returnList.add(finding);
             }
         }
 

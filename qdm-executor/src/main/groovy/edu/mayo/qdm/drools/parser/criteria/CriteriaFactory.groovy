@@ -28,7 +28,7 @@ class CriteriaFactory {
                 "diagnosis_inactive": { json -> new Diagnosis(json:json, valueSetCodeResolver:valueSetCodeResolver) },
                 "diagnosis_resolved": { json -> new Diagnosis(json:json, valueSetCodeResolver:valueSetCodeResolver) },
                 "laboratory_test": { json -> [toDrools:{"//TODO"}] },
-                "physical_exam": { json -> [toDrools:{"//TODO"}] },
+                "physical_exam": { json -> new PhysicalExamFinding(json:json, valueSetCodeResolver:valueSetCodeResolver) },
                 "diagnostic_study_result": { json -> [toDrools:{"//TODO"}] },
                 "diagnostic_study_performed": { json -> [toDrools:{"//TODO"}] },
                 "medication_dispensed": { json -> new Medication(json:json, valueSetCodeResolver:valueSetCodeResolver) },

@@ -3,6 +3,8 @@ import edu.mayo.qdm.drools.DroolsResults
 import edu.mayo.qdm.drools.DroolsUtil
 import edu.mayo.qdm.drools.PreconditionResult
 import edu.mayo.qdm.drools.parser.criteria.CriteriaFactory
+import edu.mayo.qdm.drools.parser.criteria.Interval
+import edu.mayo.qdm.drools.parser.criteria.MeasurementValue
 import edu.mayo.qdm.patient.Concept
 import edu.mayo.qdm.patient.Patient
 import groovy.util.logging.Log4j
@@ -85,6 +87,8 @@ class Qdm2Drools {
         import ${DroolsResults.name};
         import ${Patient.name};
         import ${Concept.name};
+        import ${Interval.name};
+        import ${MeasurementValue.name};
         import ${DroolsUtil.name};
         /*
             Title: ${qdm.title}
