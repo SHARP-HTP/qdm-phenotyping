@@ -26,14 +26,14 @@ package edu.mayo.qdm;
 import edu.mayo.qdm.patient.Patient;
 
 /**
- * The Interface Executor.
+ * The main entry point for the QDM Executor.
  *
  * @author <a href="mailto:kevin.peterson@mayo.edu">Kevin Peterson</a>
  */
 public interface Executor {
 
 	/**
-	 * Execute.
+	 * Execute a given set of patients in a single session.
 	 *
 	 * @param patients the patients
 	 * @return the results

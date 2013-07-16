@@ -3,6 +3,9 @@ package edu.mayo.qdm;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
+ * A singleton {@link Executor} factory.
+ *
+ * @author <a href="mailto:kevin.peterson@mayo.edu">Kevin Peterson</a>
  */
 public class ExecutorFactory {
 

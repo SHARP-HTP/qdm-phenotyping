@@ -39,6 +39,12 @@ class Qdm2Drools {
         this.qdm2jsonServiceUrl = qdm2jsonServiceUrl
     }
 
+    /**
+     * Generate a JSON representation of a QDM/HQMF XML file.
+     *
+     * @param qdmXml the QDM/HQMF XML file as a String.
+     * @return the JSON representation
+     */
     private def getJsonFromQdmFile(qdmXml) {
         def qdmXmlFile = new InputStreamBody(IOUtils.toInputStream(qdmXml), "qdm.xml")
 
@@ -82,6 +88,9 @@ class Qdm2Drools {
         rule
     }
 
+    /**
+     * Prints header/metadata info for the Drools rule.
+     */
     private def printRuleHeader(qdm){
         """
         import ${PreconditionResult.name};
@@ -103,6 +112,9 @@ class Qdm2Drools {
         """
     }
 
+    /**
+     * Print the start of a Population Criteria section (IPP, DENOM, etc).
+     */
     private def printPopulationCriteria(populationCriteria, sb, usedDataCriteria){
 
         def name = populationCriteria.key
@@ -249,6 +261,12 @@ class Qdm2Drools {
         """
     }
 
+    /**
+     * JSON conjunction to AND/OR
+     *
+     * @param 'allTrue' or 'atLeastOneTrue'
+     * @return 'and' or 'or'
+     */
     private def conjunctionToBoolean(conjunction){
         if (conjunction == null) return "and"
         switch (conjunction){

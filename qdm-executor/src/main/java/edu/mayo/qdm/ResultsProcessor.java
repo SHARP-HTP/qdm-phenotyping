@@ -24,9 +24,7 @@
 package edu.mayo.qdm;
 
 /**
- * The Interface ResultsProcessor.
- *
- * @author <a href="mailto:kevin.peterson@mayo.edu">Kevin Peterson</a>
+ * A Processor for the end result of the execution.
  */
 public interface ResultsProcessor {
 

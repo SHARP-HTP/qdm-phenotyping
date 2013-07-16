@@ -3,7 +3,9 @@ import edu.mayo.qdm.drools.DroolsDateFormat
 import groovy.util.logging.Log4j
 import org.apache.commons.lang.BooleanUtils
 import org.joda.time.DateTime
+
 /**
+ * Processes QDM/HQMF Temporal relationships such as SAS, EBE, etc.
  */
 @Log4j
 class TemporalProcessor {
@@ -131,6 +133,7 @@ class TemporalProcessor {
             return sb.toString()
         }
 
+        //TODO: Need to be able to handle non Measurement Period temporal references.
         log.warn("Non-measurement period: " + temporalReference.toString())
 
         "/* TODO Non-measurement peroid */"

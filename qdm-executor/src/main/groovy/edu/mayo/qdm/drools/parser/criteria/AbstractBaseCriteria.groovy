@@ -3,6 +3,7 @@ package edu.mayo.qdm.drools.parser.criteria
 import edu.mayo.qdm.drools.parser.TemporalProcessor
 
 /**
+ * An abstract base class for a Patient {@link Criteria}.
  */
 abstract class AbstractBaseCriteria implements Criteria {
     def temporalProcessor = new TemporalProcessor()
