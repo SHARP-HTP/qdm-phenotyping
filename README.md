@@ -1,4 +1,4 @@
-# _Project_
+# _qdm-phenotyping_
 
 QDM Phenotyping is a tool suite to automate the transformation of QDM/HQMF XML into Drools Rules, and execute them against a Hadoop data source.
 
@@ -19,4 +19,4 @@ From the ```qdm-phenotyping``` directory, run ```mvn clean test```
 2. Send a pull request
 
 ## License
-MIT: http://rem.mit-license.org
+MIT: http://mit-license.org
