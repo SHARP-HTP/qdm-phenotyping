@@ -19,4 +19,4 @@ From the ```qdm-phenotyping``` directory, run ```mvn clean test```
 2. Send a pull request
 
 ## License
-MIT: http://mit-license.org
+MIT: http://mfmer.mit-license.org
