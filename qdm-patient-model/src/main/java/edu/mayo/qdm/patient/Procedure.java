@@ -10,7 +10,7 @@ import java.util.Date;
 public class Procedure extends CodedEntry {
     private static Logger logger = Logger.getLogger(Procedure.class);
 
-    private Date startingDate;
+    private Date startDate;
     private Date endDate;
 
     /*
@@ -24,22 +24,22 @@ public class Procedure extends CodedEntry {
         this(concept, null);
     }
 
-    public Procedure(Concept concept, Date startingDate) {
-        this(concept, startingDate, null);
+    public Procedure(Concept concept, Date startDate) {
+        this(concept, startDate, null);
     }
 
-    public Procedure(Concept concept, Date startingDate, Date endDate) {
+    public Procedure(Concept concept, Date startDate, Date endDate) {
         super(concept);
-        this.startingDate = startingDate;
+        this.startDate = startDate;
         this.endDate = endDate;
     }
 
-    public void setStartingDate(Date startingDate) {
-        this.startingDate = startingDate;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public Date getStartingDate() {
-        return startingDate;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
     public void setEndDate(Date endDate) {
@@ -52,7 +52,7 @@ public class Procedure extends CodedEntry {
 
     public String toString() {
         String displayStr = " code System: " + this.getConcept().getCodingScheme() + " lab code: "
-                + this.getConcept().getCode() + " starting date: " + this.getStartingDate() + " end date: " + this.getEndDate();
+                + this.getConcept().getCode() + " starting date: " + this.getStartDate() + " end date: " + this.getEndDate();
         return displayStr;
     }
 }

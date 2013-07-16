@@ -3,7 +3,9 @@ package edu.mayo.qdm.drools.parser.criteria
 import edu.mayo.qdm.drools.parser.TemporalProcessor
 import edu.mayo.qdm.patient.Gender
 import org.apache.commons.lang.BooleanUtils
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.StringUtils
+
+import java.text.SimpleDateFormat;
 
 /**
  */
@@ -13,7 +15,9 @@ class IndividualCharacteristic implements Criteria {
 
     def resultString
 
-    IndividualCharacteristic(json){
+    def dateFormat = new SimpleDateFormat()
+
+    IndividualCharacteristic(json, measurementPeriod){
         def property = json.property;
 
         def droolsString;
@@ -26,7 +30,7 @@ class IndividualCharacteristic implements Criteria {
             }
         } else {
             if(this.hasProperty(property)){
-                droolsString = this."$property"(json)
+                droolsString = this."$property"(json, measurementPeriod)
             } else {
                 throw new RuntimeException("Individual Characteristic `$property` not recognized.\n JSON ->  $json")
             }
@@ -43,43 +47,60 @@ class IndividualCharacteristic implements Criteria {
         "/*TODO - Generic Patient Characteristic.*/"
     }
 
-    def birthtime = { json ->
-        temporalProcessor.processTemporalReferences(json.temporal_references, "\$p.age")
+    /*
+    def birthtime = { json, measurementPeriod ->
+        temporalProcessor.processTemporalReferences(
+                json.temporal_references,
+                measurementPeriod,
+                {date ->
+                    "getAge('${dateFormat.format(date)}')"
+                }
+        )
+    }
+    */
+
+    def birthtime = { json, measurementPeriod ->
+        temporalProcessor.processTemporalReferences(
+                json.temporal_references,
+                measurementPeriod,
+                "birthdate",
+                "birthdate"
+        )
     }
 
-    def gender = { json ->
+    def gender = { json, measurementPeriod ->
         def genderValueSet = json.code_list_id
 
         switch (genderValueSet){
-            case "2.16.840.1.113883.3.560.100.2": return "sex == ${Gender.name}.FEMALE"
-            case "2.16.840.1.113883.3.560.100.1": return "sex == ${Gender.name}.MALE"
+            case "2.16.840.1.113883.3.560.100.2": return "\$p.sex == ${Gender.name}.FEMALE"
+            case "2.16.840.1.113883.3.560.100.1": return "\$p.sex == ${Gender.name}.MALE"
             default: throw new RuntimeException("Cannot determine Gender for JSON -> $json")
         }
     }
 
-    def race = { json ->
+    def race = { json, measurementPeriod ->
         throw new RuntimeException(json.toString())
     }
 
-    def ethnicity = { json ->
+    def ethnicity = { json, measurementPeriod ->
         "eval(true)"
     }
 
-    def payer = { json ->
+    def payer = { json, measurementPeriod ->
         "eval(true)"
     }
 
-    def clinicalTrialParticipant = { json ->
+    def clinicalTrialParticipant = { json, measurementPeriod ->
         "eval(true)"
     }
 
-    def expired = { json ->
+    def expired = { json, measurementPeriod ->
         "eval(true)"
     }
 
     @Override
     def toDrools() {
-        resultString
+        """( $resultString )"""
     }
 
 }

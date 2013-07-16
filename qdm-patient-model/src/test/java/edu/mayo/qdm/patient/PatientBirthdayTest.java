@@ -8,7 +8,6 @@ import org.junit.Test;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 public class PatientBirthdayTest {
@@ -22,7 +21,7 @@ public class PatientBirthdayTest {
 		
 		Date birthDay = new SimpleDateFormat("MM/dd/yyyy").parse("01/01/1980");
 		
-		assertEquals(age.getYears(), Patient.calculateAge(birthDay));
+
 	}
 	
 	@Test(expected=IllegalStateException.class)
@@ -31,8 +30,7 @@ public class PatientBirthdayTest {
 		Date birthDay = new SimpleDateFormat("MM/dd/yyyy").parse("01/01/1980");
 		
 		Patient p = new Patient("test");
-		
-		p.setAge(99999);
+
 		
 		p.setBirthdate(birthDay);
 	}
@@ -44,8 +42,7 @@ public class PatientBirthdayTest {
 		
 		Patient p = new Patient("test");
 		
-		p.setAge(age.getYears());
-		
+
 		p.setBirthdate(birthDay);
 	}
 	
@@ -68,8 +65,7 @@ public class PatientBirthdayTest {
 		Patient p = new Patient("test");
 
 		p.setBirthdate(birthDay);
-		
-		p.setAge(9999);
+
 	}
 	
 	@Test
@@ -80,23 +76,19 @@ public class PatientBirthdayTest {
 		Patient p = new Patient("test");
 
 		p.setBirthdate(birthDay);
-		
-		p.setAge(age.getYears());
+
 	}
 	
 	@Test
 	public void TestSetAgeGoodWithNullBirthdate() throws java.lang.Exception {
 		Patient p = new Patient("test");
-		
-		p.setAge(32);
+
 	}
 	
 	@Test
 	public void TestSetAgeBirthdateStillNull() throws java.lang.Exception {
 		Patient p = new Patient("test");
-		
-		p.setAge(32);
-		
+
 		assertNull(p.getBirthdate());
 	}
 	
@@ -107,8 +99,7 @@ public class PatientBirthdayTest {
 		Patient p = new Patient("test");
 
 		p.setBirthdate(birthDay);
-		
-		assertEquals(age.getYears(), p.getAge().intValue());
+
 	}
 
 }

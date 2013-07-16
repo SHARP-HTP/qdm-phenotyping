@@ -24,6 +24,7 @@
 package edu.mayo.qdm.drools;
 
 import edu.mayo.qdm.Executor;
+import edu.mayo.qdm.MeasurementPeriod;
 import edu.mayo.qdm.QdmProcessor;
 import edu.mayo.qdm.Results;
 import edu.mayo.qdm.drools.parser.Qdm2Drools;
@@ -63,8 +64,8 @@ public class DroolsExecutor implements Executor {
 	/* (non-Javadoc)
 	 * @see edu.mayo.qdm.Executor#execute(java.lang.Iterable, java.io.InputStream)
 	 */
-	public DroolsResults execute(Iterable<Patient> patients, String qdmXml) {
-        return this.doExecute(patients, this.createKnowledgeBase(qdmXml));
+	public DroolsResults execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod) {
+        return this.doExecute(patients, this.createKnowledgeBase(qdmXml, measurementPeriod));
     }
 
     public DroolsResults doExecute(Iterable<Patient> patients, KnowledgeBase knowledgeBase) {
@@ -74,7 +75,7 @@ public class DroolsExecutor implements Executor {
 		DroolsResults results = new DroolsResults();
 		ksession.setGlobal("results", results);
         ksession.setGlobal("droolsUtil", this.droolsUtil);
-		
+
 		for(Patient patient : patients){
 			ksession.insert(patient);
 		}
@@ -87,10 +88,11 @@ public class DroolsExecutor implements Executor {
 	}
 
     @Override
-    public QdmProcessor getQdmProcessor(String qdmXml) {
-        final KnowledgeBase knowledgeBase = this.createKnowledgeBase(qdmXml);
+    public QdmProcessor getQdmProcessor(String qdmXml, MeasurementPeriod measurementPeriod) {
+        final KnowledgeBase knowledgeBase = this.createKnowledgeBase(qdmXml, measurementPeriod);
 
         return new QdmProcessor() {
+
             @Override
             public Results execute(Iterable<Patient> patients) {
                 return doExecute(patients, knowledgeBase);
@@ -98,14 +100,14 @@ public class DroolsExecutor implements Executor {
         };
     }
 
-    protected synchronized KnowledgeBase createKnowledgeBase(String qdmXml){
+    protected synchronized KnowledgeBase createKnowledgeBase(String qdmXml, MeasurementPeriod measurementPeriod){
         final KnowledgeBuilder kbuilder =
                 KnowledgeBuilderFactory.newKnowledgeBuilder();
 
         // this will parse and compile in one step
         try {
             kbuilder.add(ResourceFactory.newByteArrayResource(
-                    this.getDroolsRules(qdmXml)),
+                    this.getDroolsRules(qdmXml, measurementPeriod)),
                     ResourceType.DRL);
         } catch (IOException e) {
             throw new IllegalStateException("Problem reading XSLT file.");
@@ -135,8 +137,8 @@ public class DroolsExecutor implements Executor {
 	 * @return the drools rules
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
-	protected byte[] getDroolsRules(String qdmXml) throws IOException {
-        return this.qdm2Drools.qdm2drools(qdmXml).getBytes();
+	protected byte[] getDroolsRules(String qdmXml, MeasurementPeriod measurementPeriod) throws IOException {
+        return this.qdm2Drools.qdm2drools(qdmXml, measurementPeriod).getBytes();
 	}
 
 

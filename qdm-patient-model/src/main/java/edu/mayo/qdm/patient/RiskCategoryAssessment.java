@@ -10,7 +10,8 @@ import java.util.Date;
 public class RiskCategoryAssessment extends CodedEntry {
     private static Logger logger = Logger.getLogger(RiskCategoryAssessment.class);
 
-    private Date date;
+    private Date startDate;
+    private Date endDate;
 
     /*
      * For JSON only
@@ -25,20 +26,29 @@ public class RiskCategoryAssessment extends CodedEntry {
 
     public RiskCategoryAssessment(Concept concept, Date date) {
         super(concept);
-        this.date = date;
+        this.startDate = date;
+        this.endDate = date;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
     public String toString() {
         String displayStr = " code System: " + this.getConcept().getCodingScheme() + " code: "
-                + this.getConcept().getCode() + " date: " + this.getDate();
+                + this.getConcept().getCode() + " date: " + this.getStartDate();
         return displayStr;
     }
 }

@@ -12,7 +12,7 @@ public class Medication extends CodedEntry {
 
     private double value;
     private String units;
-    private Date startingDate;
+    private Date startDate;
     private Date endDate;
 
     /*
@@ -22,9 +22,9 @@ public class Medication extends CodedEntry {
         super(null);
     }
 
-    public Medication(Concept concept, Date startingDate, Date endDate) {
+    public Medication(Concept concept, Date startDate, Date endDate) {
         super(concept);
-        this.startingDate = startingDate;
+        this.startDate = startDate;
         this.endDate = endDate;
     }
 
@@ -44,12 +44,12 @@ public class Medication extends CodedEntry {
         this.units = units;
     }
 
-    public void setStartingDate(Date startingDate) {
-        this.startingDate = startingDate;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public Date getStartingDate() {
-        return startingDate;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
     public void setEndDate(Date endDate) {
@@ -63,7 +63,7 @@ public class Medication extends CodedEntry {
     public String toString() {
         String displayStr = " code System: " + this.getConcept().getCodingScheme() + " med code: "
                 + this.getConcept().getCode() + " units: " + this.getUnits() + " value: " + this.getValue()
-                + " starting date: " + this.getStartingDate() + " end date: " + this.getEndDate();
+                + " starting date: " + this.getStartDate() + " end date: " + this.getEndDate();
         return displayStr;
     }
 }

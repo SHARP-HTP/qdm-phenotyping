@@ -27,7 +27,7 @@ class CypressPatientHelper {
         def gender
         switch (json.gender){
             case "M": gender = Gender.MALE; break
-            case "F": gender = Gender.MALE; break
+            case "F": gender = Gender.FEMALE; break
             defaut: gender = Gender.UNKNOWN
         }
         patient.setSex(gender)
@@ -44,14 +44,14 @@ class CypressPatientHelper {
 
             if(oid == "2.16.840.1.113883.3.560.1.18"){
                 def value = procedure.values?.iterator().next()
-                def scalar = value.scalar
 
-                def val = scalar != null ? new Value(Float.parseFloat(scalar), null) : null;
+                def val = value.scalar != null ? new Value(value.scalar, value.unit) : null;
 
                 patient.addPhysicalExamFinding(
                     new PhysicalExamFinding(
                         new Concept(code.value[0], code.key, null),
-                            toDate(procedure.start_time), val))
+                            val,
+                            toDate(procedure.start_time)))
             } else {
                 patient.addProcedure(
                     new Procedure(new Concept(code.value[0], code.key, null), toDate(procedure.start_time), toDate(procedure.end_time)))
@@ -70,10 +70,25 @@ class CypressPatientHelper {
                 new Diagnosis(new Concept(code.value[0], code.key, null), toDate(condition.start_time), toDate(condition.end_time)))
         }
 
+
+        json.vital_signs.each { vital_sign ->
+            def code = vital_sign.codes.iterator().next()
+            def value = vital_sign.values?.iterator()?.next()
+
+            def val = value != null ? new Value(value.scalar, value.unit) : null;
+
+            patient.addLab(
+                    new Lab(
+                        new Concept(code.value[0], code.key, null),
+                        val,
+                        toDate(vital_sign.start_time),
+                        toDate(vital_sign.end_time)))
+        }
+
         patient
     }
 
-    def checkResults(measureId, Results results){
+    def checkResults(measureId, Results results, callback){
         def resultsJson =
             slurper.parse(new InputStreamReader(
                 new ClassPathResource("/cypress/results/by_measure.json").getInputStream()))
@@ -85,9 +100,9 @@ class CypressPatientHelper {
             def expected = resultJson[it.key]
             def actual = results.get(it.key).size()
 
-            println "Criteria($it.key) - Expected: $expected, Actual: $actual, Found Patients: ${results.get(it.key).collect {it.sourcePid}}"
+            def message = "Criteria($it.key) - Expected: $expected, Actual: $actual, Found Patients: ${results.get(it.key).collect {it.sourcePid}}"
 
-            //assertEquals expected, actual, 0
+            callback(it, expected, actual, message)
         }
     }
 

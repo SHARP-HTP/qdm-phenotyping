@@ -4,19 +4,19 @@ package edu.mayo.qdm.patient;
  */
 public class Value {
 
-    private float value;
+    private String value;
     private String unit;
 
-    public Value(float value, String unit) {
+    public Value(String value, String unit) {
         this.value = value;
         this.unit = unit;
     }
 
-    public float getValue() {
+    public String getValue() {
         return value;
     }
 
-    public void setValue(float value) {
+    public void setValue(String value) {
         this.value = value;
     }
 

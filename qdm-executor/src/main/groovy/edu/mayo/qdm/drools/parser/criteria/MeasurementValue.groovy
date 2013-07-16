@@ -1,14 +1,15 @@
 package edu.mayo.qdm.drools.parser.criteria
+
+import edu.mayo.qdm.patient.Value
+
 /**
  */
-class MeasurementValue {
-    float value
-    String unit
+class MeasurementValue extends Value {
+
     boolean inclusive
 
-    public MeasurementValue(float value, String unit, boolean inclusive) {
-        this.value = value
-        this.unit = unit
+    public MeasurementValue(String value, String unit, boolean inclusive) {
+        super(value, unit)
         this.inclusive = inclusive
     }
 

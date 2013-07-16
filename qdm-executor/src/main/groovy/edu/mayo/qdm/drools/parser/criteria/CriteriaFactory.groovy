@@ -16,45 +16,45 @@ class CriteriaFactory {
 
     def criteriaFactoryMap =
         [
-                "individual_characteristic": { json -> new IndividualCharacteristic(json) },
-                "allergy":  { json -> [toDrools:{"//TODO"}] },
-                "communication":  { json -> [toDrools:{"//TODO"}] },
-                "procedure_performed":  { json -> new Procedure(json:json, valueSetCodeResolver:valueSetCodeResolver) },
-                "procedure_result":  { json -> [toDrools:{"//TODO"}] },
-                "procedure_intolerance":  { json -> [toDrools:{"//TODO"}] },
-                "risk_category_assessment":  { json -> new RiskCategoryAssessment(json:json, valueSetCodeResolver:valueSetCodeResolver) },
-                "encounter": { json -> new Encounter(json:json, valueSetCodeResolver:valueSetCodeResolver) },
-                "diagnosis_active": { json -> new Diagnosis(json:json, valueSetCodeResolver:valueSetCodeResolver) },
-                "diagnosis_inactive": { json -> new Diagnosis(json:json, valueSetCodeResolver:valueSetCodeResolver) },
-                "diagnosis_resolved": { json -> new Diagnosis(json:json, valueSetCodeResolver:valueSetCodeResolver) },
-                "laboratory_test": { json -> [toDrools:{"//TODO"}] },
-                "physical_exam": { json -> new PhysicalExamFinding(json:json, valueSetCodeResolver:valueSetCodeResolver) },
-                "diagnostic_study_result": { json -> [toDrools:{"//TODO"}] },
-                "diagnostic_study_performed": { json -> [toDrools:{"//TODO"}] },
-                "medication_dispensed": { json -> new Medication(json:json, valueSetCodeResolver:valueSetCodeResolver) },
-                "medication_active": { json -> new Medication(json:json, valueSetCodeResolver:valueSetCodeResolver) },
-                "medication_administered": { json -> new Medication(json:json, valueSetCodeResolver:valueSetCodeResolver) },
-                "device_applied": { json -> [toDrools:{"//TODO"}] },
-                "medication_order": { json -> [toDrools:{"//TODO"}] }
+                "individual_characteristic": { json, measurementPeriod -> new IndividualCharacteristic(json, measurementPeriod) },
+                "allergy":  { json, measurementPeriod -> [toDrools:{throw new UnsupportedOperationException()}] },
+                "communication":  { json, measurementPeriod -> [toDrools:{throw new UnsupportedOperationException()}] },
+                "procedure_performed":  { json, measurementPeriod -> new Procedure(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "procedure_result":  { json, measurementPeriod -> [toDrools:{throw new UnsupportedOperationException()}] },
+                "procedure_intolerance":  { json, measurementPeriod -> [toDrools:{throw new UnsupportedOperationException()}] },
+                "risk_category_assessment":  { json, measurementPeriod -> new RiskCategoryAssessment(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "encounter": { json, measurementPeriod -> new Encounter(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "diagnosis_active": { json, measurementPeriod -> new Diagnosis(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "diagnosis_inactive": { json, measurementPeriod -> new Diagnosis(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "diagnosis_resolved": { json, measurementPeriod -> new Diagnosis(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "laboratory_test": { json, measurementPeriod -> new Lab(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "physical_exam": { json, measurementPeriod -> new PhysicalExamFinding(json:json, valueSetCodeResolver:valueSetCodeResolver) },
+                "diagnostic_study_result": { json, measurementPeriod -> [toDrools:{throw new UnsupportedOperationException()}] },
+                "diagnostic_study_performed": { json, measurementPeriod -> [toDrools:{throw new UnsupportedOperationException()}] },
+                "medication_dispensed": { json, measurementPeriod -> new Medication(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "medication_active": { json, measurementPeriod -> new Medication(json:json, valueSetCodeResolver:valueSetCodeResolver) },
+                "medication_administered": { json, measurementPeriod -> new Medication(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "device_applied": { json, measurementPeriod -> [toDrools:{throw new UnsupportedOperationException()}] },
+                "medication_order": { json, measurementPeriod -> [toDrools:{throw new UnsupportedOperationException()}] }
         ]
 
-    def getCriteria(json) {
+    def getCriteria(json, measurementPeriod) {
         if(BooleanUtils.toBoolean(json.negation)){
-            [toDrools:{"not( ${this.doGetCriteria(json).toDrools()} )"}]
+            [toDrools:{"not( ${this.doGetCriteria(json, measurementPeriod).toDrools()} )"}]
         } else {
-            this.doGetCriteria(json)
+            this.doGetCriteria(json, measurementPeriod)
         }
     }
 
-    private def doGetCriteria(json) {
+    private def doGetCriteria(json, measurementPeriod) {
         def qdsType = json.qds_data_type
 
         if(json.type.equals("derived")){
-            [ toDrools:{ p -> "/*TODO: Derived (Grouping)*/"} ]
+            [ toDrools:{ p -> throw new UnsupportedOperationException()} ]
         } else {
             def criteriaFn = this.criteriaFactoryMap.get(qdsType)
             if (criteriaFn != null) {
-                criteriaFn(json)
+                criteriaFn(json, measurementPeriod)
             } else {
                 throw new RuntimeException("Critieria type: `$qdsType` not recognized. JSON -> $json")
             }

@@ -27,6 +27,8 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
@@ -54,7 +56,6 @@ public class Patient {
     private Set<Symptom> symptoms = new HashSet<Symptom>();
     private Set<PhysicalExamFinding> physicalExamFindings = new HashSet<PhysicalExamFinding>();
     private Date birthdate;
-    private Integer age;
     private Boolean consent;
     private Gender sex;
     private String sourcePid;
@@ -82,34 +83,11 @@ public class Patient {
     }
 
     public void setBirthdate(Date birthdate) {
-        int calculatedAge = calculateAge(birthdate);
-        if (this.age == null) {
-            this.age = calculatedAge;
-        } else {
-            if (this.age != calculatedAge) {
-                throw new IllegalStateException("Previously specified age and input birthdate do not match.");
-            }
-        }
         this.birthdate = birthdate;
     }
 
     public Date getBirthdate() {
         return this.birthdate;
-    }
-
-    //it seems that the following is redundant. But I want to handle cases there only age information is given
-    public void setAge(int age) {
-        if (this.birthdate != null) {
-            int calculatedAge = calculateAge(this.birthdate);
-            if (age != calculatedAge) {
-                throw new IllegalStateException("Previously specified birthdate and input age do not match.");
-            }
-        }
-        this.age = age;
-    }
-
-    public Integer getAge() {
-        return this.age;
     }
 
     public Boolean getConsent() {
@@ -266,15 +244,29 @@ public class Patient {
         this.getEligibilities().add(e);
     }
 
-    protected static int calculateAge(Date birthday) {
+    public int getAge(String effectiveDate) {
+        SimpleDateFormat df = new SimpleDateFormat();
+        try {
+            Date date = df.parse(effectiveDate);
+
+            int age = calculateAge(this.getBirthdate(), date);
+
+            return age;
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    protected static int calculateAge(Date birthday, Date effectiveDate) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(birthday);
 
-        return getAge(calendar);
+        return getAge(calendar, effectiveDate);
     }
 
-    private static int getAge(Calendar born) {
+    private static int getAge(Calendar born, Date effectiveDate) {
         Calendar age = Calendar.getInstance();
+        age.setTime(effectiveDate);
         age.add(Calendar.YEAR, -born.get(Calendar.YEAR));
         age.add(Calendar.MONTH, -born.get(Calendar.MONTH));
         age.add(Calendar.DATE, -born.get(Calendar.DATE));

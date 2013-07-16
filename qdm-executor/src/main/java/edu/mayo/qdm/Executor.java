@@ -38,7 +38,7 @@ public interface Executor {
 	 * @param patients the patients
 	 * @return the results
 	 */
-	public Results execute(Iterable<Patient> patients, String qdmXml);
+	public Results execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod);
 
 
     /**
@@ -47,6 +47,6 @@ public interface Executor {
      * @param qdmXml the QDM XML
      * @return the QdmProcessor
      */
-    public QdmProcessor getQdmProcessor(String qdmXml);
+    public QdmProcessor getQdmProcessor(String qdmXml, MeasurementPeriod measurementPeriod);
 
 }

@@ -46,6 +46,15 @@ public final class DroolsUtil {
     @Resource
     private ValueSetCodeResolver valueSetCodeResolver;
 
+    public DroolsUtil(){
+        super();
+    }
+
+    public DroolsUtil(ValueSetCodeResolver valueSetCodeResolver){
+        super();
+        this.valueSetCodeResolver = valueSetCodeResolver;
+    }
+
     public <T extends CodedEntry> Collection<T>  findMatches(String valueSetOid, Iterable<T> codedEntries){
         List<T> returnList = new ArrayList<T>();
         for(T entry : codedEntries){

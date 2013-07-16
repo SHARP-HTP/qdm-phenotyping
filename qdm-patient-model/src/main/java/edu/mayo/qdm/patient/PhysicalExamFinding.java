@@ -21,10 +21,10 @@ public class PhysicalExamFinding extends CodedEntry {
     }
 
     public PhysicalExamFinding(Concept concept, Value value) {
-        this(concept, null, value);
+        this(concept, value, null);
     }
 
-    public PhysicalExamFinding(Concept concept, Date date, Value value) {
+    public PhysicalExamFinding(Concept concept, Value value, Date date) {
         super(concept);
         this.date = date;
         this.value = value;

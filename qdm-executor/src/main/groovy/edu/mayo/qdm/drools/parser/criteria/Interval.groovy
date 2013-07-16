@@ -32,4 +32,20 @@ class Interval {
 
         satisfied
     }
+
+    MeasurementValue getLowValue() {
+        return lowValue
+    }
+
+    void setLowValue(MeasurementValue lowValue) {
+        this.lowValue = lowValue
+    }
+
+    MeasurementValue getHighValue() {
+        return highValue
+    }
+
+    void setHighValue(MeasurementValue highValue) {
+        this.highValue = highValue
+    }
 }

@@ -1,17 +1,10 @@
 package edu.mayo.qdm.drools.parser.criteria
 /**
  */
-class Medication implements Criteria {
-
-    def json
-    def valueSetCodeResolver
+class Medication extends AbstractBaseCriteria {
 
     @Override
-    def toDrools() {
-        def valueSetOid = json.code_list_id
-
-        """
-        droolsUtil.findMatches("$valueSetOid", \$p.getMedications()).size() > 0
-        """
+    def getName() {
+        "Medication"
     }
 }

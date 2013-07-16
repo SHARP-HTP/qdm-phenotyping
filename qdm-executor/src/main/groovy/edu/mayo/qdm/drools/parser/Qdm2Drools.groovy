@@ -1,4 +1,6 @@
 package edu.mayo.qdm.drools.parser
+
+import edu.mayo.qdm.MeasurementPeriod
 import edu.mayo.qdm.drools.DroolsResults
 import edu.mayo.qdm.drools.DroolsUtil
 import edu.mayo.qdm.drools.PreconditionResult
@@ -51,7 +53,7 @@ class Qdm2Drools {
         resp
     }
 
-    def String qdm2drools(String qdmXml) {
+    def String qdm2drools(String qdmXml, MeasurementPeriod measurementPeriod) {
         def json = getJsonFromQdmFile(qdmXml)
 
         def sb = new StringBuilder()
@@ -68,7 +70,7 @@ class Qdm2Drools {
 
         json.data_criteria.each {
             if(usedDataCriteria.contains(it.key)){
-                sb.append( printDataCriteria( it ) )
+                sb.append( printDataCriteria( it, measurementPeriod ) )
             }
         }
 
@@ -90,6 +92,7 @@ class Qdm2Drools {
         import ${Interval.name};
         import ${MeasurementValue.name};
         import ${DroolsUtil.name};
+        import ${MeasurementPeriod.name};
         /*
             Title: ${qdm.title}
             Description: ${qdm.description}
@@ -97,6 +100,7 @@ class Qdm2Drools {
 
         global DroolsResults results
         global DroolsUtil droolsUtil
+        global MeasurementPeriod measurementPeriod
         """
     }
 
@@ -116,6 +120,11 @@ class Qdm2Drools {
             ${switch(name){
                 case "DENOM": return """PreconditionResult(id == "IPP", patient == \$p)"""
                 case "NUMER": return """PreconditionResult(id == "DENOM", patient == \$p)"""
+                case "DENEX": return """
+                                        PreconditionResult(id == "DENOM", patient == \$p)
+                                         and
+                                        not(PreconditionResult(id == "NUMER", patient == \$p))
+                                     """
                 default: ""
             }}
         """)
@@ -220,7 +229,7 @@ class Qdm2Drools {
             """
     }
 
-    private def printDataCriteria(dataCriteria){
+    private def printDataCriteria(dataCriteria, measurementPeriod){
         def name = dataCriteria.key
         """
         /* Rule */
@@ -230,9 +239,8 @@ class Qdm2Drools {
             salience -1
 
         when
-            \$p : Patient(
-            ${criteriaFactory.getCriteria(dataCriteria.value).toDrools()}
-            )
+            \$p : Patient ${criteriaFactory.getCriteria(dataCriteria.value, measurementPeriod).toDrools()}
+
         then
             insert(new PreconditionResult("${name}", \$p))
         end
