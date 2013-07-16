@@ -1,9 +1,11 @@
 package edu.mayo.qdm.drools.parser
 import edu.mayo.qdm.drools.DroolsDateFormat
+import groovy.util.logging.Log4j
 import org.apache.commons.lang.BooleanUtils
 import org.joda.time.DateTime
 /**
  */
+@Log4j
 class TemporalProcessor {
 
     def processTemporalReferences(temporalReferences, measurementPeriod, startProperty="startDate", endProperty="endDate"){
@@ -42,8 +44,16 @@ class TemporalProcessor {
         return this.temporalReference(temporalReference, endProperty, measurementPeriod, EndOrStart.START, BeforeOrAfter.BEFORE)
     }
 
+    def EAS = {temporalReference, startProperty, endProperty, measurementPeriod ->
+        return this.temporalReference(temporalReference, endProperty, measurementPeriod, EndOrStart.START, BeforeOrAfter.AFTER)
+    }
+
     def SAS = {temporalReference, startProperty, endProperty, measurementPeriod ->
         return this.temporalReference(temporalReference, startProperty, measurementPeriod, EndOrStart.START, BeforeOrAfter.AFTER)
+    }
+
+    def SAE = {temporalReference, startProperty, endProperty, measurementPeriod ->
+        return this.temporalReference(temporalReference, startProperty, measurementPeriod, EndOrStart.END, BeforeOrAfter.AFTER)
     }
 
     def SBS = {temporalReference, startProperty, endProperty, measurementPeriod ->
@@ -121,7 +131,9 @@ class TemporalProcessor {
             return sb.toString()
         }
 
-        throw new UnsupportedOperationException("Non-measurement period: " + temporalReference.toString())
+        log.warn("Non-measurement period: " + temporalReference.toString())
+
+        "/* TODO Non-measurement peroid */"
     }
 
 }
