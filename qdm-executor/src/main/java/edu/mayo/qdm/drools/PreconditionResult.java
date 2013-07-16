@@ -1,16 +1,25 @@
 package edu.mayo.qdm.drools;
 
+import edu.mayo.qdm.patient.Event;
 import edu.mayo.qdm.patient.Patient;
+
+import java.util.Set;
 
 public class PreconditionResult {
 
 	private String id;
 	private Patient patient;
+    private Set<Event> temporalEvents;
 
-	public PreconditionResult(String id, Patient patient) {
+    public PreconditionResult(String id, Patient patient) {
+        this(id, patient, null);
+    }
+
+	public PreconditionResult(String id, Patient patient, Event temporalEvents) {
 		super();
 		this.id = id;
 		this.patient = patient;
+        //this.temporalEvents = temporalEvents;
 	}
 
     public String getId() {

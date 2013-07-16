@@ -12,26 +12,22 @@ import java.util.Date;
  *         see that they also add some icd9 code to it for confirm that the encounter is what we want though according to QDM, it seems
  *         that this is not really necessary.
  */
-public class Encounter extends CodedEntry {
+public class Encounter extends Event {
 
     private static Logger logger = Logger.getLogger(Encounter.class);
 
     private String encounterId;
-    private Date startDate;
-    private Date endDate;
 
     /*
      * For JSON only
      */
     private Encounter() {
-        super(null);
+        super(null,null,null);
     }
 
     public Encounter(String encounterId, Concept concept, Date startDate, Date endDate) {
-        super(concept);
+        super(concept, startDate, endDate);
         this.encounterId = encounterId;
-        this.startDate = startDate;
-        this.endDate = endDate;
     }
 
     public void setEncounterId(String encounterId) {
@@ -40,22 +36,6 @@ public class Encounter extends CodedEntry {
 
     public String getEncounterId() {
         return this.encounterId;
-    }
-
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
     }
 
     public String toString() {

@@ -1,4 +1,6 @@
 package edu.mayo.qdm.drools.parser
+
+import edu.mayo.qdm.MeasurementPeriod
 import org.junit.Test
 import static org.junit.Assert.*
 
@@ -26,9 +28,9 @@ class TemporalProcessorTest {
                     ]
                 ]
 
-        def ivl = proc.processTemporalReference(temporalReferences, "age")
+        def ivl = proc.processTemporalReference(temporalReferences, MeasurementPeriod.getCalendarYear(new Date()), "birthdate", "birthdate")
 
-        assertEquals "age >= 65".trim(), ivl.trim()
+        assertEquals "birthdate <= '01-Jan-1948'".trim(), ivl.trim()
 
     }
 
@@ -59,9 +61,11 @@ class TemporalProcessorTest {
                     ]
             ]
 
-        def ivl = proc.processTemporalReference(temporalReferences, "age")
+        def ivl = proc.processTemporalReference(temporalReferences, MeasurementPeriod.getCalendarYear(new Date()), "birthdate", "birthdate")
 
-        assertEquals "age >= 65 age < 18".trim(), ivl.trim()
+
+        assertTrue ivl.contains("birthdate > '01-Jan-1995'")
+        assertTrue ivl.contains("birthdate <= '01-Jan-1948'")
 
     }
 }

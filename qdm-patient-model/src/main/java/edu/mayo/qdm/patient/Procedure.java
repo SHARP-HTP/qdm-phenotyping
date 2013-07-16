@@ -7,17 +7,13 @@ import java.util.Date;
 /**
  * @author Herman and Darin IHC
  */
-public class Procedure extends CodedEntry {
+public class Procedure extends Event {
     private static Logger logger = Logger.getLogger(Procedure.class);
-
-    private Date startDate;
-    private Date endDate;
-
-    /*
+  /*
      * For JSON only
      */
     private Procedure() {
-        super(null);
+        this(null);
     }
 
     public Procedure(Concept concept) {
@@ -29,25 +25,7 @@ public class Procedure extends CodedEntry {
     }
 
     public Procedure(Concept concept, Date startDate, Date endDate) {
-        super(concept);
-        this.startDate = startDate;
-        this.endDate = endDate;
-    }
-
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
+        super(concept, startDate, endDate);
     }
 
     public String toString() {

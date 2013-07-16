@@ -1,5 +1,6 @@
 package edu.mayo.qdm.cli;
 
+import edu.mayo.qdm.MeasurementPeriod;
 import edu.mayo.qdm.drools.parser.Qdm2Drools;
 import org.apache.commons.io.FileUtils;
 import org.kohsuke.args4j.Option;
@@ -7,16 +8,18 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 
 /**
+ * Command line utility for producing Drools Rules from QDM XML.
  */
 public class GenerateDroolsRulesLauncher extends AbstractBaseCliLauncher {
 
-    @Option(name="-xml",usage="QDM XML input file")
+    @Option(name="-f",usage="QDM XML input file")
     private File xml;
 
-    @Option(name="-o",usage="Drools file output")
-    private File out = new File(".");
+    @Option(name="-d",usage="Effective measurement date")
+    private Date date = new Date();
 
     public static void main(String[] args) throws IOException {
         new GenerateDroolsRulesLauncher().doMain(args);
@@ -32,12 +35,8 @@ public class GenerateDroolsRulesLauncher extends AbstractBaseCliLauncher {
         Qdm2Drools qdm2Drools = context.getBean(Qdm2Drools.class);
 
         String drools =
-            qdm2Drools.qdm2drools(FileUtils.readFileToString(this.xml));
+            qdm2Drools.qdm2drools(FileUtils.readFileToString(this.xml), MeasurementPeriod.getCalendarYear(this.date));
 
-        out.getParentFile().mkdirs();
-
-        out.createNewFile();
-
-        FileUtils.write(this.out, drools);
+        System.out.println(drools);
     }
 }

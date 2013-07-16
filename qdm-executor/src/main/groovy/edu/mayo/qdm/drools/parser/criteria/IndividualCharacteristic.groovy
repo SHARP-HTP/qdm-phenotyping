@@ -103,4 +103,9 @@ class IndividualCharacteristic implements Criteria {
         """( $resultString )"""
     }
 
+    @Override
+    def hasEventList(){
+        false
+    }
+
 }

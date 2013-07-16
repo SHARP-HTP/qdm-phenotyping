@@ -62,7 +62,7 @@ public class DroolsExecutorCypressTestIT {
         cypressHelper.checkResults(measureId, results,
                 {population, expected, actual, message ->
                     println message
-                    //assertEquals expected, actual, 0
+                    assertEquals expected, actual, 0
                 })
     }
 

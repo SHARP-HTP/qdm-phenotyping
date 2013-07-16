@@ -4,7 +4,7 @@ import edu.mayo.qdm.drools.parser.TemporalProcessor
 
 /**
  */
-abstract class AbstractBaseCriteria {
+abstract class AbstractBaseCriteria implements Criteria {
     def temporalProcessor = new TemporalProcessor()
 
     def json
@@ -21,7 +21,7 @@ abstract class AbstractBaseCriteria {
         def references = temporalProcessor.processTemporalReferences(json.temporal_references, measurementPeriod)
 
         """( )
-        edu.mayo.qdm.patient.$name($references) from droolsUtil.findMatches("$valueSetOid", \$p.get${pluralName}())
+        \$events : edu.mayo.qdm.patient.$name($references) from droolsUtil.findMatches("$valueSetOid", \$p.get${pluralName}())
 
         """
     }
@@ -30,5 +30,10 @@ abstract class AbstractBaseCriteria {
 
     def getPluralName(){
         getName() + "s"
+    }
+
+    @Override
+    def hasEventList(){
+        true
     }
 }

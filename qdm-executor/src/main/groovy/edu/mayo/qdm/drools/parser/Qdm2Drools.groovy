@@ -17,6 +17,7 @@ import org.apache.http.entity.mime.MultipartEntity
 import org.apache.http.entity.mime.content.InputStreamBody
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
+
 /*
  * The main JSON -> Drools converter.
  */
@@ -77,8 +78,6 @@ class Qdm2Drools {
         def rule = sb.toString()
 
         log.isDebugEnabled() ? log.debug(rule):
-
-        System.out.println(rule)
 
         rule
     }
@@ -231,6 +230,9 @@ class Qdm2Drools {
 
     private def printDataCriteria(dataCriteria, measurementPeriod){
         def name = dataCriteria.key
+        def criteria = criteriaFactory.getCriteria(dataCriteria.value, measurementPeriod)
+        def hasEventList = criteria.hasEventList()
+
         """
         /* Rule */
         rule "${name}"
@@ -242,7 +244,7 @@ class Qdm2Drools {
             \$p : Patient ${criteriaFactory.getCriteria(dataCriteria.value, measurementPeriod).toDrools()}
 
         then
-            insert(new PreconditionResult("${name}", \$p))
+            insert(new PreconditionResult("${name}", \$p ${hasEventList ? ", \$events" : ""}))
         end
         """
     }

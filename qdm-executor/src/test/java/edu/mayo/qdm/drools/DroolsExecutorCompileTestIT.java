@@ -3,6 +3,7 @@ package edu.mayo.qdm.drools;
 import edu.mayo.qdm.MeasurementPeriod;
 import edu.mayo.qdm.patient.Patient;
 import org.apache.commons.io.IOUtils;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -11,6 +12,7 @@ import java.util.Date;
 
 import static org.junit.Assert.fail;
 
+@Ignore
 public class DroolsExecutorCompileTestIT extends AbstractAllMeasuresTestIT {
 
     public DroolsExecutorCompileTestIT(XmlStream xml) {

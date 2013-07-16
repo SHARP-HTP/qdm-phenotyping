@@ -23,6 +23,7 @@
  */
 package edu.mayo.qdm.patient;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 
@@ -37,6 +38,7 @@ import java.util.Set;
 /**
  * @author Herman and Darin IHC adapted by Dingcheng Li
  */
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class Patient {
 
     private static final ObjectMapper JSON_MAPPER = new ObjectMapper();
