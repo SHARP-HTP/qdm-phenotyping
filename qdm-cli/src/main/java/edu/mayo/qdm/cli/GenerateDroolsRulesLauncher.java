@@ -15,10 +15,10 @@ import java.util.Date;
  */
 public class GenerateDroolsRulesLauncher extends AbstractBaseCliLauncher {
 
-    @Option(name="-f",usage="QDM XML input file")
+    @Option(name="-f", required=true, usage="QDM XML input file")
     private File xml;
 
-    @Option(name="-d",usage="Effective measurement date")
+    @Option(name="-d", handler=DroolsDateOptionHandler.class, usage="Effective measurement date")
     private Date date = new Date();
 
     public static void main(String[] args) throws IOException {
