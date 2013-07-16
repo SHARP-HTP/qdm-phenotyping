@@ -18,7 +18,6 @@ public abstract class AbstractBaseCliLauncher {
         // here 80 is also the default
         parser.setUsageWidth(80);
 
-        parser.
         if(this.help){
             parser.printUsage(System.out);
             return;
