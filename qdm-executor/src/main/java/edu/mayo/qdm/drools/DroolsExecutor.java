@@ -59,8 +59,8 @@ public class DroolsExecutor implements Executor {
     private DroolsUtil droolsUtil;
 
     @Override
-    public DroolsResults execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod) {
-        final DroolsResults results = new DroolsResults();
+    public Results execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod) {
+        final Results results = new Results();
 
         this.execute(patients, qdmXml, measurementPeriod, new ResultCallback() {
 
@@ -110,7 +110,7 @@ public class DroolsExecutor implements Executor {
 
             @Override
             public Results execute(Iterable<Patient> patients) {
-                final DroolsResults results = new DroolsResults();
+                final Results results = new Results();
 
                 execute(patients, new ResultCallback() {
 

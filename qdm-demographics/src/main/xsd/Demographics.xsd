@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="Demographics">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="DemographicType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DemographicType">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="type"/>
+                <xs:element maxOccurs="unbounded" ref="DemographicCategory"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="type" type="xs:string"/>
+    <xs:element name="DemographicCategory">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="name"/>
+                <xs:element maxOccurs="unbounded" ref="DemographicStat"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="name" type="xs:string"/>
+    <xs:element name="DemographicStat">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="label"/>
+                <xs:element ref="value"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="label" type="xs:string"/>
+    <xs:element name="value" type="xs:integer"/>
+</xs:schema>
