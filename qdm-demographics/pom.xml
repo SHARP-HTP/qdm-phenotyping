@@ -14,6 +14,11 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.codehaus.gmaven</groupId>
+                <artifactId>gmaven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxb2-maven-plugin</artifactId>
                 <version>1.4</version>
@@ -38,6 +43,14 @@
             <groupId>edu.mayo</groupId>
             <artifactId>qdm-patient-model</artifactId>
             <version>${project.parent.version}</version>
+        </dependency>
+
+        <!-- Groovy dependencies -->
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>${groovyVersion}</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>

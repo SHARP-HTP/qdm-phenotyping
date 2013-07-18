@@ -28,8 +28,6 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
@@ -246,17 +244,10 @@ public class Patient {
         this.getEligibilities().add(e);
     }
 
-    public int getAge(String effectiveDate) {
-        SimpleDateFormat df = new SimpleDateFormat();
-        try {
-            Date date = df.parse(effectiveDate);
+    public int getAge(Date effectiveDate) {
+        int age = calculateAge(this.getBirthdate(), effectiveDate);
 
-            int age = calculateAge(this.getBirthdate(), date);
-
-            return age;
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        }
+        return age;
     }
 
     protected static int calculateAge(Date birthday, Date effectiveDate) {
