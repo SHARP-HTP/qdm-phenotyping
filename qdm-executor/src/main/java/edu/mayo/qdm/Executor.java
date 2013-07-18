@@ -38,8 +38,9 @@ public interface Executor {
 	 * @param patients the patients
 	 * @return the results
 	 */
-	public Results execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod);
+	public void execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod, ResultCallback callback);
 
+    public Results execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod);
 
     /**
      * Create a QdmProcessor for the given QDM XML.

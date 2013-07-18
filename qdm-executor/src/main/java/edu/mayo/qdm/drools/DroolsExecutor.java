@@ -23,10 +23,7 @@
  */
 package edu.mayo.qdm.drools;
 
-import edu.mayo.qdm.Executor;
-import edu.mayo.qdm.MeasurementPeriod;
-import edu.mayo.qdm.QdmProcessor;
-import edu.mayo.qdm.Results;
+import edu.mayo.qdm.*;
 import edu.mayo.qdm.drools.parser.Qdm2Drools;
 import edu.mayo.qdm.patient.Patient;
 import org.apache.commons.logging.Log;
@@ -61,19 +58,34 @@ public class DroolsExecutor implements Executor {
     @Resource
     private DroolsUtil droolsUtil;
 
-	/* (non-Javadoc)
-	 * @see edu.mayo.qdm.Executor#execute(java.lang.Iterable, java.io.InputStream)
-	 */
-	public DroolsResults execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod) {
-        return this.doExecute(patients, this.createKnowledgeBase(qdmXml, measurementPeriod));
+    @Override
+    public DroolsResults execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod) {
+        final DroolsResults results = new DroolsResults();
+
+        this.execute(patients, qdmXml, measurementPeriod, new ResultCallback() {
+
+            @Override
+            public void hit(String population, Patient patient) {
+                results.add(population, patient);
+            }
+        });
+
+        return results;
     }
 
-    public DroolsResults doExecute(Iterable<Patient> patients, KnowledgeBase knowledgeBase) {
+    /* (non-Javadoc)
+         * @see edu.mayo.qdm.Executor#execute(java.lang.Iterable, java.io.InputStream)
+         */
+    @Override
+	public void execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod, ResultCallback callback) {
+        this.doExecute(patients, this.createKnowledgeBase(qdmXml, measurementPeriod), callback);
+    }
+
+    public void doExecute(Iterable<Patient> patients, KnowledgeBase knowledgeBase, ResultCallback callback) {
 		final StatefulKnowledgeSession ksession = knowledgeBase
 				.newStatefulKnowledgeSession();
 
-		DroolsResults results = new DroolsResults();
-		ksession.setGlobal("results", results);
+		ksession.setGlobal("resultCallback", callback);
         ksession.setGlobal("droolsUtil", this.droolsUtil);
 
 		for(Patient patient : patients){
@@ -83,8 +95,6 @@ public class DroolsExecutor implements Executor {
 		ksession.fireAllRules();
 
 		ksession.dispose();   
-
-		return results;	
 	}
 
     @Override
@@ -94,8 +104,23 @@ public class DroolsExecutor implements Executor {
         return new QdmProcessor() {
 
             @Override
+            public void execute(Iterable<Patient> patients, ResultCallback callback) {
+                doExecute(patients, knowledgeBase, callback);
+            }
+
+            @Override
             public Results execute(Iterable<Patient> patients) {
-                return doExecute(patients, knowledgeBase);
+                final DroolsResults results = new DroolsResults();
+
+                execute(patients, new ResultCallback() {
+
+                    @Override
+                    public void hit(String population, Patient patient) {
+                        results.add(population, patient);
+                    }
+                });
+
+                return results;
             }
         };
     }

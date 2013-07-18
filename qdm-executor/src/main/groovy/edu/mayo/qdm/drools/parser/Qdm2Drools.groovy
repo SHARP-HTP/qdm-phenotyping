@@ -1,7 +1,6 @@
 package edu.mayo.qdm.drools.parser
-
 import edu.mayo.qdm.MeasurementPeriod
-import edu.mayo.qdm.drools.DroolsResults
+import edu.mayo.qdm.ResultCallback
 import edu.mayo.qdm.drools.DroolsUtil
 import edu.mayo.qdm.drools.PreconditionResult
 import edu.mayo.qdm.drools.parser.criteria.CriteriaFactory
@@ -17,7 +16,6 @@ import org.apache.http.entity.mime.MultipartEntity
 import org.apache.http.entity.mime.content.InputStreamBody
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
-
 /*
  * The main JSON -> Drools converter.
  */
@@ -94,7 +92,7 @@ class Qdm2Drools {
     private def printRuleHeader(qdm){
         """
         import ${PreconditionResult.name};
-        import ${DroolsResults.name};
+        import ${ResultCallback.name};
         import ${Patient.name};
         import ${Concept.name};
         import ${Interval.name};
@@ -106,7 +104,7 @@ class Qdm2Drools {
             Description: ${qdm.description}
         */
 
-        global DroolsResults results
+        global ResultCallback resultCallback
         global DroolsUtil droolsUtil
         global MeasurementPeriod measurementPeriod
         """
@@ -168,7 +166,7 @@ class Qdm2Drools {
         sb.append("""
         then
             insert(new PreconditionResult("$name", \$p))
-            results.add("$name", \$p);
+            resultCallback.hit("$name", \$p);
         end
         """)
 
@@ -256,7 +254,7 @@ class Qdm2Drools {
             \$p : Patient ${criteriaFactory.getCriteria(dataCriteria.value, measurementPeriod).toDrools()}
 
         then
-            insert(new PreconditionResult("${name}", \$p ${hasEventList ? ", \$events" : ""}))
+            insert(new PreconditionResult("${name}", \$p))
         end
         """
     }

@@ -49,12 +49,26 @@ public class Results {
         }
     }
 
+    public Set<String> getPopulationCriterias() {
+        return this.resultMap.keySet();
+    }
+
     public Set<Patient> get(String populationCriteria) {
         Set<Patient> set = this.resultMap.get(populationCriteria);
         if(set == null){
             return new HashSet<Patient>();
         } else {
             return set;
+        }
+    }
+
+    public void addAll(String populationCriteria, Set<Patient> patients) {
+        synchronized (this.resultMap){
+            if(! this.resultMap.containsKey(populationCriteria)){
+                this.resultMap.put(populationCriteria, new HashSet<Patient>());
+            }
+
+            this.resultMap.get(populationCriteria).addAll(patients);
         }
     }
 }
