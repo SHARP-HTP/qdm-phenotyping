@@ -9,12 +9,83 @@
     <artifactId>qdm-phenotyping</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
+    <properties>
+        <spring.version>3.1.0.RELEASE</spring.version>
+        <gmavenVersion>1.4</gmavenVersion>
+        <gmavenProviderSelection>2.0</gmavenProviderSelection>
+        <groovyVersion>2.1.3</groovyVersion>
+        <java.version>1.6</java.version>
+    </properties>
+
     <modules>
         <module>qdm-patient-model</module>
         <module>qdm-executor</module>
         <module>qdm-hadoop-mapreduce</module>
         <module>qdm-hadoop-client</module>
         <module>qdm-cli</module>
+        <module>qdm-webapp</module>
     </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.codehaus.gmaven</groupId>
+                    <artifactId>gmaven-plugin</artifactId>
+                    <version>${gmavenVersion}</version>
+                    <configuration>
+                        <providerSelection>${gmavenProviderSelection}</providerSelection>
+                        <sourceEncoding>UTF-8</sourceEncoding>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>generateStubs</goal>
+                                <goal>compile</goal>
+                                <goal>generateTestStubs</goal>
+                                <goal>testCompile</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.codehaus.groovy</groupId>
+                            <artifactId>groovy-all</artifactId>
+                            <version>${groovyVersion}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+            </plugins>
+
+        </pluginManagement>
+    </build>
+
+    <repositories>
+
+        <repository>
+            <id>edu.informatics.maven.snapshot</id>
+            <name>Informatics Maven Snapshot Repository</name>
+            <url>http://informatics.mayo.edu/maven/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>edu.informatics.maven.releases</id>
+            <name>Informatics Maven Release Repository</name>
+            <url>http://informatics.mayo.edu/maven/content/repositories/releases</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+    </repositories>
 
 </project>
