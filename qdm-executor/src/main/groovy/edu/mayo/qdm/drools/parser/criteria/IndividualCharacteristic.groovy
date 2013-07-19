@@ -47,18 +47,6 @@ class IndividualCharacteristic implements Criteria {
         "/*TODO - Generic Patient Characteristic.*/"
     }
 
-    /*
-    def birthtime = { json, measurementPeriod ->
-        temporalProcessor.processTemporalReferences(
-                json.temporal_references,
-                measurementPeriod,
-                {date ->
-                    "getAge('${dateFormat.format(date)}')"
-                }
-        )
-    }
-    */
-
     def birthtime = { json, measurementPeriod ->
         temporalProcessor.processTemporalReferences(
                 json.temporal_references,

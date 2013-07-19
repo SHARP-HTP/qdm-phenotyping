@@ -34,6 +34,16 @@ class TemporalProcessor {
         """
     }
 
+    def SDU = {temporalReference, startProperty, endProperty, measurementPeriod ->
+        def startAfterStart = SAS(temporalReference, startProperty, endProperty, measurementPeriod)
+        def startBeforeEnd = SBE(temporalReference, startProperty, endProperty, measurementPeriod)
+
+        """
+        $startAfterStart,
+        $startBeforeEnd
+        """
+    }
+
     def EAE = {temporalReference, startProperty, endProperty, measurementPeriod ->
         return this.temporalReference(temporalReference, endProperty, measurementPeriod, EndOrStart.END, BeforeOrAfter.AFTER)
     }
@@ -96,23 +106,25 @@ class TemporalProcessor {
                     case BeforeOrAfter.BEFORE:
                         highOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '>=' : '>'}
                         lowOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '<=' : '<'}
-                        minusOrPlusFn = "minusYears"
+                        minusOrPlusFn = "minus"
                         break
                     case BeforeOrAfter.AFTER:
                         lowOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '>=' : '>'}
                         highOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '<=' : '<'}
-                        minusOrPlusFn = "plusYears"
+                        minusOrPlusFn = "plus"
                         break
                 }
 
                 if(range.high){
+                    def unit = getUnit(range.high.unit)
                     sb.append """
-                        ${property} ${highOp(range.high)} '${time."$minusOrPlusFn"(Integer.parseInt(range.high.value)).toString(DroolsDateFormat.PATTERN)}'
+                        ${property} ${highOp(range.high)} '${time."$minusOrPlusFn$unit"(Integer.parseInt(range.high.value)).toString(DroolsDateFormat.PATTERN)}'
                         """
                 }
                 if(range.low){
+                    def unit = getUnit(range.low.unit)
                     sb.append """
-                        ${property} ${lowOp(range.low)} '${time."$minusOrPlusFn"(Integer.parseInt(range.low.value)).toString(DroolsDateFormat.PATTERN)}'
+                        ${property} ${lowOp(range.low)} '${time."$minusOrPlusFn$unit"(Integer.parseInt(range.low.value)).toString(DroolsDateFormat.PATTERN)}'
                         """
                 }
             } else {
@@ -136,7 +148,15 @@ class TemporalProcessor {
         //TODO: Need to be able to handle non Measurement Period temporal references.
         log.warn("Non-measurement period: " + temporalReference.toString())
 
-        "/* TODO Non-measurement peroid */"
+        "/* TODO Non-measurement peroid */ true "
+    }
+
+    def getUnit(unit){
+        switch (unit){
+            case "a" : return "Years"
+            case "mo" : return "Months"
+            default: throw new UnsupportedOperationException("Unit: $unit is not recognized.")
+        }
     }
 
 }

@@ -15,11 +15,11 @@ public class PreconditionResult {
         this(id, patient, null);
     }
 
-	public PreconditionResult(String id, Patient patient, Event temporalEvents) {
+	public PreconditionResult(String id, Patient patient, Set<Event> temporalEvents) {
 		super();
 		this.id = id;
 		this.patient = patient;
-        //this.temporalEvents = temporalEvents;
+        this.temporalEvents = temporalEvents;
 	}
 
     public String getId() {

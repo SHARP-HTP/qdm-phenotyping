@@ -63,6 +63,8 @@ public class TestQdmRules {
 		
 		Patient p1 = new Patient("1");
         p1.addLab(new Lab(null,null,new Date(),new Date()));
+        p1.addLab(new Lab(null,null,new Date(),new Date()));
+
 		p1.setBirthdate(new DateTime(1980,1,1,0,0).toDate());
         Patient p2 = new Patient("2");
         p2.setBirthdate(new DateTime(2000, 10, 10, 10, 10).toDate());

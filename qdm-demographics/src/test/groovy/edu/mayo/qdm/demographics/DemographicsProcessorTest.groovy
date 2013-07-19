@@ -17,6 +17,6 @@ class DemographicsProcessorTest {
         def stat = demos.demographicType[0].demographicCategory[0].each {
             assertEquals 1, it.demographicStat.size()
         }
-        
+
     }
 }

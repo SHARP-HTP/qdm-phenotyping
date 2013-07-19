@@ -32,8 +32,4 @@ public class Lab extends Event {
         this.value = value;
     }
 
-    public String toString() {
-        String displayStr = " code System: " + this.getConcept().getCodingScheme() + " lab code: " + this.getConcept().getCode();
-        return displayStr;
-    }
 }

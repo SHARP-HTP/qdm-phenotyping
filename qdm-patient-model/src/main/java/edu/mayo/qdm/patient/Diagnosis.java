@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * @author Herman and Darin IHC
  */
-public class Diagnosis extends CodedEntry {
+public class Diagnosis extends Event {
     private static Logger logger = Logger.getLogger(Diagnosis.class);
 
     private Date startingDate;
@@ -17,7 +17,7 @@ public class Diagnosis extends CodedEntry {
      * For JSON only
      */
     private Diagnosis() {
-        super(null);
+        super(null,null,null);
     }
 
     public Diagnosis(Concept concept) {
@@ -29,30 +29,7 @@ public class Diagnosis extends CodedEntry {
     }
 
     public Diagnosis(Concept concept, Date startingDate, Date endDate) {
-        super(concept);
-        this.startingDate = startingDate;
-        this.endDate = endDate;
+        super(concept, startingDate, endDate);
     }
 
-    public void setStartingDate(Date startingDate) {
-        this.startingDate = startingDate;
-    }
-
-    public Date getStartingDate() {
-        return startingDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public String toString() {
-        String displayStr = " code System: " + this.getConcept().getCodingScheme() + " lab code: "
-                + this.getConcept().getCode() + " starting date: " + this.getStartingDate() + " end date: " + this.getEndDate();
-        return displayStr;
-    }
 }

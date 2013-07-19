@@ -1,6 +1,7 @@
 package edu.mayo.qdm.drools.parser.criteria
 
 import edu.mayo.qdm.drools.parser.TemporalProcessor
+import org.springframework.util.Assert
 
 /**
  * An abstract base class for a Patient {@link Criteria}.
@@ -14,6 +15,8 @@ abstract class AbstractBaseCriteria implements Criteria {
 
     @Override
     def toDrools() {
+        Assert.notNull(measurementPeriod, json.toString())
+
         def name = getName()
         def pluralName = getPluralName()
 
@@ -22,8 +25,7 @@ abstract class AbstractBaseCriteria implements Criteria {
         def references = temporalProcessor.processTemporalReferences(json.temporal_references, measurementPeriod)
 
         """( )
-        \$events : edu.mayo.qdm.patient.$name($references) from droolsUtil.findMatches("$valueSetOid", \$p.get${pluralName}())
-
+        \$events : Set( size > 0 ) from collect( edu.mayo.qdm.patient.$name($references) from droolsUtil.findMatches("$valueSetOid", \$p.get${pluralName}()))
         """
     }
 

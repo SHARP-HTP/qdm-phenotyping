@@ -18,9 +18,9 @@ rule "Precondition #1"
       dialect "mvel"
   when
       $p : Patient()
-      $l : edu.mayo.qdm.patient.Lab(startDate > "12-JUN-2011") from droolsUtil.findMatches("asdf", $p.getLabs())
+      $l : List(size > 0)  from collect( edu.mayo.qdm.patient.Lab( startDate > "01-Jan-1980" ) from $p.getLabs() )
   then
-      System.out.println($l.startDate);
+      System.out.println($l);
       insert(new PreconditionResult("Precondition #1", $p))
 
 end
@@ -28,7 +28,7 @@ end
 rule "Precondition #2"
       dialect "mvel"
   when
-      $p : Patient(  )
+      $p : Patient ()
   then
 	  insert(new PreconditionResult("Precondition #2", $p))
 end

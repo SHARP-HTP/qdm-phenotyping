@@ -83,6 +83,8 @@ class Qdm2Drools {
 
         log.isDebugEnabled() ? log.debug(rule):
 
+        System.out.print(rule)
+
         rule
     }
 
@@ -91,6 +93,7 @@ class Qdm2Drools {
      */
     private def printRuleHeader(qdm){
         """
+        import ${Set.name};
         import ${PreconditionResult.name};
         import ${ResultCallback.name};
         import ${Patient.name};
@@ -254,7 +257,7 @@ class Qdm2Drools {
             \$p : Patient ${criteriaFactory.getCriteria(dataCriteria.value, measurementPeriod).toDrools()}
 
         then
-            insert(new PreconditionResult("${name}", \$p))
+            insert(new PreconditionResult("${name}", \$p ${hasEventList ? ",\$events" : ""}))
         end
         """
     }

@@ -7,17 +7,16 @@ import java.util.Date;
 /**
  * @author Herman and Darin IHC
  */
-public class PhysicalExamFinding extends CodedEntry {
+public class PhysicalExamFinding extends Event {
     private static Logger logger = Logger.getLogger(PhysicalExamFinding.class);
 
-    private Date date;
     private Value value;
 
     /*
      * For JSON only
      */
     private PhysicalExamFinding() {
-        super(null);
+        super(null,null,null);
     }
 
     public PhysicalExamFinding(Concept concept, Value value) {
@@ -25,8 +24,11 @@ public class PhysicalExamFinding extends CodedEntry {
     }
 
     public PhysicalExamFinding(Concept concept, Value value, Date date) {
-        super(concept);
-        this.date = date;
+        this(concept, value, date, date);
+    }
+
+    public PhysicalExamFinding(Concept concept, Value value, Date startDate, Date endDate) {
+        super(concept, startDate, endDate);
         this.value = value;
     }
 
@@ -38,17 +40,4 @@ public class PhysicalExamFinding extends CodedEntry {
         this.value = value;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public String toString() {
-        String displayStr = " code System: " + this.getConcept().getCodingScheme() + " code: "
-                + this.getConcept().getCode() + " date: " + this.getDate();
-        return displayStr;
-    }
 }
