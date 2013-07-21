@@ -1,10 +1,10 @@
 package test;
 
-import edu.mayo.qdm.drools.DroolsUtil;
+import edu.mayo.qdm.executor.drools.DroolsUtil;
 import edu.mayo.qdm.patient.Concept;
 import edu.mayo.qdm.patient.Lab;
 import edu.mayo.qdm.patient.Patient;
-import edu.mayo.qdm.valueset.ValueSetCodeResolver;
+import edu.mayo.qdm.executor.valueset.ValueSetCodeResolver;
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
 import org.drools.builder.KnowledgeBuilder;

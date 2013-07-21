@@ -1,5 +1,5 @@
 package edu.mayo.qdm.cypress
-import edu.mayo.qdm.Results
+import edu.mayo.qdm.executor.Results
 import edu.mayo.qdm.patient.*
 import groovy.json.JsonSlurper
 import org.springframework.core.io.ClassPathResource

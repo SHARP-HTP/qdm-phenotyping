@@ -1,6 +1,6 @@
 package edu.mayo.qdm.cypress
 
-import edu.mayo.qdm.drools.AbstractAllMeasuresTestIT
+import edu.mayo.qdm.executor.drools.AbstractAllMeasuresTestIT
 
 /**
  */

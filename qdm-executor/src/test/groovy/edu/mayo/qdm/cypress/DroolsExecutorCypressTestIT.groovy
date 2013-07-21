@@ -1,7 +1,7 @@
 package edu.mayo.qdm.cypress
 
-import edu.mayo.qdm.MeasurementPeriod
-import edu.mayo.qdm.drools.DroolsExecutor
+import edu.mayo.qdm.executor.MeasurementPeriod
+import edu.mayo.qdm.executor.drools.DroolsExecutor
 import org.apache.commons.io.IOUtils
 import org.joda.time.DateTime
 import org.junit.Test

@@ -1,25 +1,39 @@
 package edu.mayo.qdm.webapp.rest.controller;
 
-import edu.mayo.qdm.MeasurementPeriod;
-import edu.mayo.qdm.drools.DroolsDateFormat;
-import edu.mayo.qdm.drools.parser.Qdm2Drools;
+import edu.mayo.qdm.executor.MeasurementPeriod;
+import edu.mayo.qdm.executor.drools.DroolsDateFormat;
+import edu.mayo.qdm.executor.drools.parser.Qdm2Drools;
+import edu.mayo.qdm.webapp.client.RestClient;
+import groovyx.net.http.ContentType;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class DroolsController implements InitializingBean {
 
     private Qdm2Drools qdm2Drools;
 
+    private RestClient restClient = new RestClient();
+
     private DroolsDateFormat droolsDateFormat = new DroolsDateFormat();
+
+    private static final String NLM_REST_URL = "https://vsac.nlm.nih.gov/vsac/pc/measure/cmsids";
+    private static final String USHIK_REST_URL = "https://ushik.ahrq.gov/rest/meaningfulUse/retrieveHQMFXML";
 
     @Override
     public void afterPropertiesSet() throws Exception {
@@ -31,29 +45,12 @@ public class DroolsController implements InitializingBean {
         this.qdm2Drools = context.getBean(Qdm2Drools.class);
     }
 
-    @RequestMapping(value = "/qdm/{qdmId}/drools", method= RequestMethod.GET)
-    @ResponseBody
-    public String toDrools(
-        HttpServletRequest request, @PathVariable String qdmId) throws Exception {
-
-        //TODO
-        return null;
-    }
-
-    @RequestMapping(value = "/qdm/drools", method= RequestMethod.POST)
-    @ResponseBody
-    public String toDroolsFromFile(
-            HttpServletRequest request,
-            @RequestParam String effectiveDate) throws Exception {
-
-        if(! (request instanceof MultipartHttpServletRequest)){
-            throw new IllegalStateException("ServletRequest expected to be of type MultipartHttpServletRequest");
-        }
-
-        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
-        MultipartFile multipartFile = multipartRequest.getFile("qdm");
-
-        String xml = IOUtils.toString(multipartFile.getInputStream());
+    @RequestMapping(value = "/qdm/{measureId}/drools", method = RequestMethod.GET)
+    public ResponseEntity<?> toDrools(
+        HttpServletResponse response,
+        @PathVariable String measureId,
+        @RequestParam String effectiveDate) throws Exception {
+        response.setContentType("text/plain");
 
         Date date;
         if(effectiveDate == null){
@@ -62,7 +59,46 @@ public class DroolsController implements InitializingBean {
             date = this.droolsDateFormat.parse(effectiveDate);
         }
 
-        return this.qdm2Drools.qdm2drools(xml, MeasurementPeriod.getCalendarYear(date));
+        Map<String,String> params = new HashMap<String,String>();
+        params.put("format", "hqmf");
+        params.put("MeasureId", measureId);
+
+        String qdmXml = (String) this.restClient.GET(USHIK_REST_URL, ContentType.TEXT, params);
+
+        return this.doGetDrools(qdmXml, date);
+    }
+
+    @RequestMapping(value = "/qdm/drools", method= RequestMethod.POST)
+    public ResponseEntity<?> toDroolsFromFile(
+            HttpServletRequest request,
+            @RequestParam String effectiveDate) throws Exception {
+
+        if(! (request instanceof MultipartHttpServletRequest)){
+            throw new IllegalStateException("ServletRequest expected to be of type MultipartHttpServletRequest");
+        }
+
+        Date date;
+        if(effectiveDate == null){
+            date = new Date();
+        } else {
+            date = this.droolsDateFormat.parse(effectiveDate);
+        }
+
+        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+        MultipartFile multipartFile = multipartRequest.getFile("qdm");
+
+        String qdmXml = IOUtils.toString(multipartFile.getInputStream());
+
+        return this.doGetDrools(qdmXml, date);
+    }
+
+    protected ResponseEntity<String> doGetDrools(String qdmXml, Date date){
+        String drools = this.qdm2Drools.qdm2drools(qdmXml, MeasurementPeriod.getCalendarYear(date));
+
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.setContentType(MediaType.TEXT_PLAIN);
+
+        return new ResponseEntity<String>(drools, responseHeaders, HttpStatus.OK);
     }
 
 }
