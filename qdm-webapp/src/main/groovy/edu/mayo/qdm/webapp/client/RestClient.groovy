@@ -5,20 +5,15 @@ import static groovyx.net.http.ContentType.*
 
 class RestClient {
 
-    def GET(url, contentType=JSON, params=null){
+    def GET(url, accept="application/json", contentType=JSON, parse=true, params=null){
         def http = new HTTPBuilder(url)
 
-        http.request(Method.GET, contentType ) {
+        def response = http.request(Method.GET, contentType ) {
             uri.query = params
-            headers.Accept = 'application/xml'
-        }.text
-    }
+            headers.Accept = accept
+        }
 
-    def static main(args){
-        def c = new RestClient()
-
-        def params = [format:"hqmf", MeasureId:"124"]
-        print c.GET("https://ushik.ahrq.gov/rest/meaningfulUse/retrieveHQMFXML", params)
+        parse ? response : response.text
     }
 
 }

@@ -17,7 +17,7 @@
 	<context:annotation-config />
 	
 	<security:http>
-	    <security:intercept-url pattern="/**/*" access="ROLE_ADMINISTRATOR" />
+	    <security:intercept-url pattern="/execution*" access="ROLE_ADMINISTRATOR" />
 		<security:http-basic />
 	</security:http>
 	
