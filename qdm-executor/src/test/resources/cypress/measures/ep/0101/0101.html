@@ -1,0 +1,556 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:n1="urn:hl7-org:v3">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Falls: Screening for Future Fall Risk</title><style type="text/css">
+body {
+	color: rgb(26, 26, 26);
+	background-color: rgb(255,255,255);
+	font-family: Verdana, Tahoma, sans-serif;
+	font-size: 11px;
+}
+
+a {
+	color: rgb(0, 0, 255);
+	background-color: rgb(255,255,255);
+}
+
+h1 {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+div {
+	width: 80%;
+}
+
+table {
+	line-height: 10pt;
+	width: 80%;
+}
+
+tr {
+	background-color: rgb(224,224,224);
+}
+
+td {
+	padding: 0.1cm 0.2cm;
+	vertical-align: top;
+}
+
+.h1center {
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+	width: 80%;
+}
+
+.header_table{
+	border: 1pt inset rgb(0,0,0);
+}
+
+.narr_table {
+	width: 100%;
+}
+
+.narr_tr {
+	background-color: rgb(225,225,225);
+}
+pre {
+ overflow: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+ white-space: pre-wrap; /* css-3 */
+ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+ white-space: -pre-wrap; /* Opera 4-6 */
+ white-space: -o-pre-wrap; /* Opera 7 */
+ word-wrap: break-word; /* Internet Explorer 5.5+ */
+ font-family: Verdana, Tahoma, sans-serif;
+ font-size: 11px;
+ text-align:left;
+ margin: 0px 0px 0px 0px;
+ padding:0px 0px 0px 0px;
+}
+.narr_th {
+	background-color: rgb(201,201,201);
+}
+
+.td_label{
+	font-weight: bold;
+	color: white;
+}
+	</style></head>
+   <body>
+      <table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Title</span></td>
+               <td width="80%" colspan="3">Falls: Screening for Future Fall Risk</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Identifier<br>(Measure Authoring Tool)</span></td>
+               <td width="30%">139</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Version number</span></td>
+               <td width="30%">1</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">NQF Number</span></td>
+               <td width="30%">0101</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">GUID</span></td>
+               <td> bc5b4a57-b964-4399-9d40-667c896f31ea</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measurement Period</span></td>
+               <td width="80%" colspan="3">January 1, 20xx  through December 31, 20xx </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Steward</span></td>
+               <td width="80%" colspan="3">National Committee for Quality Assurance</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Developer</span></td>
+               <td width="80%" colspan="3">American Medical Association-convened Physician Consortium for Performance Improvement(R) (AMA-PCPI)</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Developer</span></td>
+               <td width="80%" colspan="3">National Committee for Quality Assurance</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Endorsed By</span></td>
+               <td width="80%" colspan="3">National Quality Forum</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Description</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Percentage of patients 65 years of age and older who were screened for future fall risk during the measurement period.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Copyright</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Copyright 2012 American Medical Association and National Committee for Quality Assurance. All Rights Reserved.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Disclaimer</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Physician Performance Measures (Measures) and related data specifications have been developed by the American Medical Association (AMA) - convened Physician Consortium for Performance Improvement(R) (the PCPI [TM]) and the National Committee for Quality Assurance (NCQA).  These Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The Measures, while copyrighted, can be reproduced and distributed, without modification, for noncommercial purposes, e.g., use by health care providers in connection with their practices. Commercial use is defined as the sale, license, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial uses of the Measures require a license agreement between the user and the AMA, (on behalf of the PCPI) or NCQA. Neither the AMA, NCQA, PCPI nor its members shall be responsible for any use of the Measures. 
+
+THE MEASURES AND SPECIFICATIONS ARE PROVIDED &#8220;AS IS&#8221; WITHOUT WARRANTY OF ANY KIND. 
+
+Limited proprietary coding is contained in the Measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. The AMA, NCQA, the PCPI and its members disclaim all liability for use or accuracy of any Current Procedural Terminology (CPT[R]) or other coding contained in the specifications. 
+
+CPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC (R) copyright 2004-2011 Regenstrief Institute, Inc. 
+This material contains SNOMED Clinical Terms (R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation.  ICD-10 Copyright 2011 World Health Organization. All Rights Reserved.
+
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Scoring</span></td>
+               <td width="80%" colspan="3">Proportion</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Type</span></td>
+               <td width="80%" colspan="3">Process</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Stratification</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Risk Adjustment</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rate Aggregation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rationale</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>As the leading cause of both fatal and nonfatal injuries for older adults, falls are one of the most common and significant health issues facing people aged 65 years or older (Schneider, Shubert and Harmon 2010). Moreover, the rate of falls increases with age (Dykes et al. 2010). Older adults are five times more likely to be hospitalized for fall-related injuries than any other cause-related injury. It is estimated that one in every three adults over 65 will fall each year (Centers for Disease Control and Prevention 2012). In those over age 80, the rate of falls increases to fifty percent (Doherty et al. 2009). Falls are also associated with substantial cost and resource use, approaching $30,000 per fall hospitalization (Woolcott et al. 2011). Identifying at-risk patients is the most important part of management, as applying preventive measures in this vulnerable population can have a profound effect on public health (al-Aama 2011). Family physicians have a pivotal role in screening older patients for risk of falls, and applying preventive strategies for patients at risk (al-Aama 2011).
+
+The risk of falling is slightly greater in the inpatient setting (Clyburn and Heydemann 2011). A recent study found that specialized inpatient fall prevention initiatives were associated with a significant reduction in fall and fall-related injury rates (Weinberg et al. 2011). The results of this study show the importance of persistent quality improvement interventions with respect to falls. The authors stated that enhanced safety awareness and accountability were both instrumental in the success of the program (Weinberg et al. 2011). Another recent study calculated the number needed to treat (NNT) to prevent one fall as 32 for a single intervention compared with seven for a multidisciplinary intervention (Hanley, Silke and Murphy 2010). With such a low NNT, this measure has the opportunity to have high impact.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Clinical Recommendation Statement</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>The American Geriatrics Society (AGS) along with the British Geriatrics Society (BGS) published clinical practice guidelines for the prevention of falls in older persons (Panel of Prevention of Falls in Older Persons 2011). In addition, the Assessing Care of Vulnerable Elders (ACOVE) indicators for fall assessment and management are in use (RAND 2008).
+
+AGS/BGS Clinical Practice Guideline: Prevention of Falls in Older Persons (Panel on Prevention of Falls in Older Persons 2011)
+
+Rating: A Recommendation
+&#8226; The multifactorial fall risk assessment should be followed by direct interventions tailored to the identified risk factors, coupled with an appropriate exercise program.
+
+Rating: A Recommendation
+&#8226; A strategy to reduce the risk of falls should include multifactorial assessment of known fall risk factors and management of the risk factors identified.
+
+Rating: A Recommendation
+&#8226; The health professional or team conducting the fall risk assessment should directly implement the interventions or should assure that the interventions are carried out by other qualified healthcare professionals. 
+
+Rationale: 
+The goal of screening for falls and identifying fall risk is to prevent or reduce fall risk. A structured and standardized screening process can improve provider adherence to guideline recommendations. The AGS/BGS recommendations for fall risk assessment are based on epidemiological studies demonstrating an association between certain risk factors and falls and from experimental studies in which assessment followed by intervention demonstrated benefit. Assuming that the interventions are carried out, multifactorial falls risk assessment and management programs could be one of the most effective interventions for reducing both the risk for falling and the monthly rate of falling (Chang 2004).
+
+Individuals who have experienced two or more falls in the last year or who have gait or balance issues have an increased likelihood of falling, therefore would benefit from multifactorial falls risk assessment. Although evidence is lacking, AGS believes there is also a potential benefit for individuals who have reported only a single fall in the last year and who do not have gait and balance issues. 
+
+Several individual studies have shown that a multifactorial risk assessment that was not tied to intervention was not effective in reducing falls. Multifactorial falls risk assessment and management programs may be the most effective intervention for reducing both the risk for falling and the monthly rate of falling, assuming that those interventions are properly carried out (Chang 2004). Recent trials of multifactorial risk assessment followed by referral without assurance of completion of the intervention have not been proven effective.
+
+ACOVE (RAND 2008).
+Quality Indicators
+&#8226; Inquiring about Falls. ALL vulnerable elders should have documentation that they were asked at least annually about the occurrence of recent falls.
+&#8226; Detecting Balance and Gait Disturbances. ALL vulnerable elders should have documentation that they were asked about or examined for the presence of balance or gait disturbances at least once.
+&#8226; Basic Fall Evaluation. IF a vulnerable elder reported two or more falls in the past year, or a single fall with injury requiring treatment, THEN there should be documentation that a basic fall evaluation was performed that resulted in specific diagnostic and therapeutic recommendations.
+&#8226; Gait-Mobility and Balance Evaluation. IF a vulnerable elder reports or is found to have new or worsening difficulty with ambulation, balance, or mobility, THEN there should be documentation that a basic gait, mobility, and balance evaluation was performed within 6 months that resulted in specific diagnostic and therapeutic recommendations. 
+&#8226; Exercise and Assistive-Device Prescription for Balance problems. IF a vulnerable elder demonstrates decreased balance or proprioception, or increased postural sway, THEN an appropriate exercise program should be offered and an evaluation for an assistive device performed.
+&#8226; Exercise Prescription for Gait Problems and Weakness. IF a vulnerable elder is found to have problems with gait, strength (for example, 4 out of 5 on manual muscle testing, or the need to use his or her arms to rise from a chair), or endurance (for example, dyspnea on mild exertion), THEN an exercise program should be offered (Rubenstein 2001).
+
+Rationale: There are a number of clinical approaches in addressing the serious and complex concerns involving fall risk and mobility problems in older adults. The ACOVE quality indicators can be categorized into three categories: 1) detection of the problem(s); 2) diagnosis or evaluation of the problem(s); and 3) treatment while focusing on how to prevent reoccurrence. These indicators are based on literature review and expert panel consideration (Rubenstein 2001). 
+
+Falls and mobility problems oftentimes result from multiple, diverse and overlapping causes. Falls and gait or balance disorders represent an underlying pathologic condition that could response well to treatment but could have life threatening consequences if unrecognized. These six quality indicators were judged sufficiently valid for use as measures of the quality of fall management for the vulnerable population and could potentially serve as a basis for comparison for care provided by different health care delivery systems and the change in care for the older population over time (Rubenstein 2001).</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Improvement Notation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>A higher score indicates better quality.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>al-Aama, T. 2011. &#8220;Falls in the Elderly: Spectrum and Prevention.&#8221; Can Fam Physician 57(7):771-6.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Centers for Disease Control and Prevention. 2012. &#8220;Falls Among Older Adults: An Overview.&#8221; (February 29) http://www.cdc.gov/HomeandRecreationalSafety/Falls/adultfalls.html</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Clyburn, T.A. and J.A. Heydemann. 2011. &#8220;Fall Prevention in the Elderly: Analysis and Comprehensive Review of Methods Used in the Hospital and the Home.&#8221; J Am Acad Orthop Surg 19(7):402-9.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Doherty, M., and J. Crossen-Sills. 2009. &#8220;Fall Risk: Keep your patients in balance.&#8221; The Nurse Practitioner: The American Journal of Primary Health Care 34(12):46-51.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Dykes, P.C., D.L. Carroll DL, A. Hurley A, S. Lipsitz S, A. Benoit A, F. Chang F, S. Meltzer S, R. Tsurikova R, L. Zuyov L, B. Middleton B. 2010. Fall Prevention in Acute Care Hospitals: A Randomized Trial.&#8221; JAMA . 2010;304(17):1912-1918.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Hanley, A., C. Silke, and J. Murphy. 2010. &#8220;Community-based Health Efforts for the Prevention of Falls in the Elderly.&#8221; Clin Inverv Aging 6:19-25.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Schneider, E.C., T.E. Shubert, andK.J. Harmon. 2010. &#8220;Addressing the Escalating Public Health Issue of Falls Among Older Adults.&#8221; NC  Med J 71(6):547-52.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Weinberg, J., D. Proske, A. Szerszen, K Lefkovic, C. Cline, S. El-Sayegh, M. Jarrett, K.F. Weiserbs. 2011. &#8220;An Inpatient Fall Prevention Initiative in a Tertiary Care Hospital.&#8221; Jt Comm J Qual Patient Saf 37(7):317-25.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Woolcott, J.C., K.M. Khan, S. Mitrovic, A.H. Anis, C.A. Marra. 2011. &#8220;The Cost of Fall Related Presentations to the ED: A Prospective, In-Person, Patient-Tracking Analysis of Health Resource Utilization.&#8221; Osteporos Int [Epub ahead of print].</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Chang, J.T., S.C. Morton, L.Z. Rubenstein, W.A. Mojica, M. Maglione, M.J. Suttorp, E.A. Roth, P.G. Shekelle. 2004. &#8220;Interventions for the prevention of falls in older adults: systematic review and meta-analysis of randomized clinical trials.&#8221; BMJ  328:680-3.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>RAND. 2008. The Quality of Health Care Received by Older Adults. Santa Monica: RAND Corporation. http://www.rand.org/content/dam/rand/pubs/research_briefs/2005/RB9051.pdf</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Rubenstein, L.Z., C.M. Powers, C.H. MacLean. 2001. &#8220;Quality Indicators for the Management and Prevention of Falls and Mobility Problems in Vulnerable Elders.&#8221; Ann Intern Med 135:686-693.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Panel on Prevention of Falls in Older Persons, American Geriatrics Society and British Geriatrics Society. 2011. &#8220;Summary of the Updated American Geriatrics Society/British
+Geriatrics Society Clinical Practice Guideline for Prevention
+of Falls in Older Persons.&#8221; J Am Geriatr Soc 59(1):148-157.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Definition</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Future fall risk: Patients are considered at risk for future falls if they have had 2 or more falls in the past year or any fall with injury in the past year.
+
+Fall: A sudden, unintentional change in position causing an individual to land at a lower level, on an object, the floor, or the ground, other than as a consequence of sudden onset of paralysis, epileptic seizure, or overwhelming external force.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Guidance</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Transmission Format</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>TBD</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Initial Patient Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients aged 65 years and older with a visit during the measurement period</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Equals Initial Patient Population</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients who were screened for future fall risk at least once within the measurement period</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exceptions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Documentation of medical reason(s) for not screening for fall risk (e.g., patient is not ambulatory)</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Observations</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Supplemental Data Elements</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</pre></div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="toc">Table of Contents</a></h2>
+      <ul>
+         <li><a href="#d2479467e626">Population criteria</a></li>
+         <li><a href="#d2479467e1268">Data criteria (QDM Data Elements)</a></li>
+         <li><a href="#d2479467e1702">Reporting Stratification</a></li>
+         <li><a href="#d2479467e1723">Supplemental Data Elements</a></li>
+      </ul>
+      <hr align="left" color="teal" size="2" width="80%">
+      <h3><a name="d2479467e626" href="#toc">Population criteria</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               <b>Initial Patient Population =</b>
+               
+               <ul>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 65 year(s) starts before start of "Measurement Period"</li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Encounter, Performed: Face-to-Face Interaction"</li>
+                        <li>OR: "Encounter, Performed: Office Visit"</li>
+                        <li>OR: "Encounter, Performed: Preventive Care Services-Individual Counseling"</li>
+                        <li>OR: "Encounter, Performed: Nursing Facility Visit"</li>
+                        <li>OR: "Encounter, Performed: Care Services in Long-Term Residential Facility"</li>
+                        <li>OR: "Encounter, Performed: Home Healthcare Services"</li>
+                        <li>OR: "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up"</li>
+                        <li>OR: "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up"</li>
+                        <li>OR: "Encounter, Performed: Annual Wellness Visit"</li>
+                        <li> during "Measurement Period"</li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator =</b>
+               
+               <ul>
+                  <li>AND: "Initial Patient Population"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exclusions =</b>
+               
+               <ul>
+                  <li>None</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Numerator =</b>
+               
+               <ul>
+                  <li>AND: "Risk Category Assessment: Falls Screening" during "Measurement Period"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exceptions =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Risk Category Assessment: Patient not ambulatory" starts before or during "Measurement Period"</li>
+                        <li>OR: "Risk Category Assessment not done: Medical Reason" for "Falls Screening Grouping Value Set" during "Measurement Period"</li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d2479467e1268" href="#toc">Data criteria (QDM Data Elements)</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Encounter, Performed: Annual Wellness Visit" using "Annual Wellness Visit Grouping Value Set (2.16.840.1.113883.3.526.3.1240)"
+            </li>
+            <li>
+               "Encounter, Performed: Care Services in Long-Term Residential Facility" using "Care Services in Long-Term Residential Facility Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1014)"
+            </li>
+            <li>
+               "Encounter, Performed: Face-to-Face Interaction" using "Face-to-Face Interaction Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1048)"
+            </li>
+            <li>
+               "Encounter, Performed: Home Healthcare Services" using "Home Healthcare Services Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1016)"
+            </li>
+            <li>
+               "Encounter, Performed: Nursing Facility Visit" using "Nursing Facility Visit Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1012)"
+            </li>
+            <li>
+               "Encounter, Performed: Office Visit" using "Office Visit Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1001)"
+            </li>
+            <li>
+               "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up" using "Preventive Care Services - Established Office Visit, 18 and Up Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1025)"
+            </li>
+            <li>
+               "Encounter, Performed: Preventive Care Services-Individual Counseling" using "Preventive Care Services-Individual Counseling Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1026)"
+            </li>
+            <li>
+               "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up" using "Preventive Care Services-Initial Office Visit, 18 and Up Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1023)"
+            </li>
+            <li>
+               "Patient Characteristic Birthdate: birth date" using "birth date LOINC Value Set (2.16.840.1.113883.3.560.100.4)"
+            </li>
+            <li>
+               "Risk Category Assessment: Falls Screening" using "Falls Screening Grouping Value Set (2.16.840.1.113883.3.464.1003.118.12.1028)"
+            </li>
+            <li>
+               "Risk Category Assessment: Patient not ambulatory" using "Patient not ambulatory Grouping Value Set (2.16.840.1.113883.3.464.1003.118.12.1009)"
+            </li>
+            <li>
+               "Risk Category Assessment not done: Medical Reason" using "Medical Reason Grouping Value Set (2.16.840.1.113883.3.526.3.1007)"
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d2479467e1702" href="#toc">Reporting Stratification</a></h3>
+      <div>
+         
+         <ul>
+            <li>None</li>
+         </ul>
+         
+      </div>
+      <h3><a name="d2479467e1723" href="#toc">Supplemental Data Elements</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Patient Characteristic Ethnicity: Ethnicity" using "Ethnicity CDC Value Set (2.16.840.1.114222.4.11.837)"
+            </li>
+            <li>
+               "Patient Characteristic Payer: Payer" using "Payer Source of Payment Typology Value Set (2.16.840.1.114222.4.11.3591)"
+            </li>
+            <li>
+               "Patient Characteristic Race: Race" using "Race CDC Value Set (2.16.840.1.114222.4.11.836)"
+            </li>
+            <li>
+               "Patient Characteristic Sex: ONC Administrative Sex" using "ONC Administrative Sex Administrative Sex Value Set (2.16.840.1.113762.1.4.1)"
+            </li>
+         </ul>
+         
+      </div><br><hr align="left" color="teal" size="2" width="80%"><br><table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Set</span></td>
+               <td colspan="3" width="80%">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto;word-wrap:break-word">None</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,926 @@
+{
+  "id": "0068",
+  "hqmf_id": "8A4D92B2-397A-48D2-0139-C626C0935307",
+  "hqmf_set_id": "0713EA8F-0E5B-4099-8C7C-DD677280398F",
+  "hqmf_version_number": 1,
+  "title": "Ischemic Vascular Disease (IVD): Use of Aspirin or Another Antithrombotic",
+  "description": "Percentage of patients 18 years of age and older who were discharged alive for acute myocardial infarction (AMI), coronary artery bypass graft (CABG) or percutaneous coronary interventions (PCI) in the 12 months prior to the measurement period, or who had an active diagnosis of ischemic vascular disease (IVD) during the measurement period, and who had documentation of use of aspirin or another antithrombotic during the measurement period.",
+  "cms_id": "CMS164v1",
+  "population_criteria": {
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "64C6BC55-2451-4FB4-8C28-A58F32864BB6",
+      "preconditions": [
+        {
+          "id": 9,
+          "preconditions": [
+            {
+              "id": 6,
+              "reference": "OccurrenceAAspirinAndOtherAntiThrombotics1_precondition_6"
+            },
+            {
+              "id": 8,
+              "preconditions": [
+                {
+                  "id": 4,
+                  "reference": "OccurrenceAAspirinAndOtherAntiThrombotics1_precondition_4"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue",
+              "negation": true
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "98FB28F1-97B1-46AD-98E5-92E474332245"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "D0CE47D2-C850-4967-A4DE-87A3D5621CE9",
+      "preconditions": [
+        {
+          "id": 48,
+          "preconditions": [
+            {
+              "id": 10,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_10"
+            },
+            {
+              "id": 32,
+              "preconditions": [
+                {
+                  "id": 17,
+                  "preconditions": [
+                    {
+                      "id": 14,
+                      "reference": "OccurrenceAIschemicVascularDisease2_precondition_14"
+                    },
+                    {
+                      "id": 16,
+                      "preconditions": [
+                        {
+                          "id": 12,
+                          "reference": "OccurrenceAIschemicVascularDisease2_precondition_12"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 24,
+                  "preconditions": [
+                    {
+                      "id": 21,
+                      "reference": "OccurrenceAAcuteMyocardialInfarction3_precondition_21"
+                    },
+                    {
+                      "id": 23,
+                      "preconditions": [
+                        {
+                          "id": 19,
+                          "reference": "OccurrenceAAcuteMyocardialInfarction3_precondition_19"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 30,
+                  "preconditions": [
+                    {
+                      "id": 26,
+                      "reference": "ProcedurePerformedPercutaneousCoronaryInterventions_precondition_26"
+                    },
+                    {
+                      "id": 28,
+                      "reference": "ProcedurePerformedCoronaryArteryBypassGraft_precondition_28"
+                    }
+                  ],
+                  "conjunction_code": "atLeastOneTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            },
+            {
+              "id": 46,
+              "preconditions": [
+                {
+                  "id": 34,
+                  "reference": "EncounterPerformedOfficeVisit_precondition_34"
+                },
+                {
+                  "id": 36,
+                  "reference": "EncounterPerformedFaceToFaceInteraction_precondition_36"
+                },
+                {
+                  "id": 38,
+                  "reference": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_38"
+                },
+                {
+                  "id": 40,
+                  "reference": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_40"
+                },
+                {
+                  "id": 42,
+                  "reference": "EncounterPerformedHomeHealthcareServices_precondition_42"
+                },
+                {
+                  "id": 44,
+                  "reference": "EncounterPerformedAnnualWellnessVisit_precondition_44"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "DiagnosisActiveIschemicVascularDisease": {
+      "title": "Ischemic Vascular Disease",
+      "description": "Diagnosis, Active: Ischemic Vascular Disease",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveIschemicVascularDisease"
+    },
+    "DiagnosisActiveAcuteMyocardialInfarction": {
+      "title": "Acute Myocardial Infarction",
+      "description": "Diagnosis, Active: Acute Myocardial Infarction",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAcuteMyocardialInfarction"
+    },
+    "MedicationActiveAspirinAndOtherAntiThrombotics": {
+      "title": "Aspirin and Other Anti-thrombotics",
+      "description": "Medication, Active: Aspirin and Other Anti-thrombotics",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1211",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationActiveAspirinAndOtherAntiThrombotics"
+    },
+    "OccurrenceAAspirinAndOtherAntiThrombotics1_precondition_6": {
+      "title": "Aspirin and Other Anti-thrombotics",
+      "description": "Medication, Active: Aspirin and Other Anti-thrombotics",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1211",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_ASPIRIN_AND_OTHER_ANTI_THROMBOTICS",
+      "source_data_criteria": "OccurrenceAAspirinAndOtherAntiThrombotics1",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAAspirinAndOtherAntiThrombotics1_precondition_4": {
+      "title": "Aspirin and Other Anti-thrombotics",
+      "description": "Medication, Active: Aspirin and Other Anti-thrombotics",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1211",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_ASPIRIN_AND_OTHER_ANTI_THROMBOTICS",
+      "source_data_criteria": "OccurrenceAAspirinAndOtherAntiThrombotics1",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_10": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "18",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAIschemicVascularDisease2_precondition_14": {
+      "title": "Ischemic Vascular Disease",
+      "description": "Diagnosis, Active: Ischemic Vascular Disease",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_ISCHEMIC_VASCULAR_DISEASE",
+      "source_data_criteria": "OccurrenceAIschemicVascularDisease2",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAIschemicVascularDisease2_precondition_12": {
+      "title": "Ischemic Vascular Disease",
+      "description": "Diagnosis, Active: Ischemic Vascular Disease",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_ISCHEMIC_VASCULAR_DISEASE",
+      "source_data_criteria": "OccurrenceAIschemicVascularDisease2",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAAcuteMyocardialInfarction3_precondition_21": {
+      "title": "Acute Myocardial Infarction",
+      "description": "Diagnosis, Active: Acute Myocardial Infarction",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_ACUTE_MYOCARDIAL_INFARCTION",
+      "source_data_criteria": "OccurrenceAAcuteMyocardialInfarction3",
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "12",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAAcuteMyocardialInfarction3_precondition_19": {
+      "title": "Acute Myocardial Infarction",
+      "description": "Diagnosis, Active: Acute Myocardial Infarction",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_ACUTE_MYOCARDIAL_INFARCTION",
+      "source_data_criteria": "OccurrenceAAcuteMyocardialInfarction3",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "ProcedurePerformedPercutaneousCoronaryInterventions_precondition_26": {
+      "title": "Percutaneous Coronary Interventions",
+      "description": "Procedure, Performed: Percutaneous Coronary Interventions",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1010",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedPercutaneousCoronaryInterventions",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "12",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "ProcedurePerformedCoronaryArteryBypassGraft_precondition_28": {
+      "title": "Coronary Artery Bypass Graft",
+      "description": "Procedure, Performed: Coronary Artery Bypass Graft",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1002",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedCoronaryArteryBypassGraft",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "12",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedOfficeVisit_precondition_34": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedFaceToFaceInteraction_precondition_36": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_38": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_40": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedHomeHealthcareServices_precondition_42": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHomeHealthcareServices",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedAnnualWellnessVisit_precondition_44": {
+      "title": "Annual Wellness Visit",
+      "description": "Encounter, Performed: Annual Wellness Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1240",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedAnnualWellnessVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "DiagnosisActiveIschemicVascularDisease": {
+      "title": "Ischemic Vascular Disease",
+      "description": "Diagnosis, Active: Ischemic Vascular Disease",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveIschemicVascularDisease"
+    },
+    "ProcedurePerformedPercutaneousCoronaryInterventions": {
+      "title": "Percutaneous Coronary Interventions",
+      "description": "Procedure, Performed: Percutaneous Coronary Interventions",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1010",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedPercutaneousCoronaryInterventions"
+    },
+    "DiagnosisActiveAcuteMyocardialInfarction": {
+      "title": "Acute Myocardial Infarction",
+      "description": "Diagnosis, Active: Acute Myocardial Infarction",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAcuteMyocardialInfarction"
+    },
+    "ProcedurePerformedCoronaryArteryBypassGraft": {
+      "title": "Coronary Artery Bypass Graft",
+      "description": "Procedure, Performed: Coronary Artery Bypass Graft",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1002",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedCoronaryArteryBypassGraft"
+    },
+    "MedicationActiveAspirinAndOtherAntiThrombotics": {
+      "title": "Aspirin and Other Anti-thrombotics",
+      "description": "Medication, Active: Aspirin and Other Anti-thrombotics",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1211",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationActiveAspirinAndOtherAntiThrombotics"
+    },
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp"
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp"
+    },
+    "EncounterPerformedAnnualWellnessVisit": {
+      "title": "Annual Wellness Visit",
+      "description": "Encounter, Performed: Annual Wellness Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1240",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedAnnualWellnessVisit"
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "EncounterPerformedHomeHealthcareServices": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHomeHealthcareServices"
+    },
+    "OccurrenceAAspirinAndOtherAntiThrombotics1": {
+      "title": "Aspirin and Other Anti-thrombotics",
+      "description": "Medication, Active: Aspirin and Other Anti-thrombotics",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1211",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_ASPIRIN_AND_OTHER_ANTI_THROMBOTICS",
+      "source_data_criteria": "OccurrenceAAspirinAndOtherAntiThrombotics1"
+    },
+    "OccurrenceAIschemicVascularDisease2": {
+      "title": "Ischemic Vascular Disease",
+      "description": "Diagnosis, Active: Ischemic Vascular Disease",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_ISCHEMIC_VASCULAR_DISEASE",
+      "source_data_criteria": "OccurrenceAIschemicVascularDisease2"
+    },
+    "OccurrenceAAcuteMyocardialInfarction3": {
+      "title": "Acute Myocardial Infarction",
+      "description": "Diagnosis, Active: Acute Myocardial Infarction",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_ACUTE_MYOCARDIAL_INFARCTION",
+      "source_data_criteria": "OccurrenceAAcuteMyocardialInfarction3"
+    }
+  },
+  "attributes": [
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "Physician Performance Measure (Measures) and related data specifications were developed by the National Committee for Quality Assurance (NCQA). \r\n\r\nThe Measures are copyrighted but can be reproduced and distributed, without modification, for noncommercial purposes (e.g., use by healthcare providers in connection with their practices). Commercial use is defined as the sale, licensing, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial use of the Measures requires a license agreement between the user and NCQA. NCQA is not responsible for any use of the Measures. \r\n\r\nCopyright 2012 National Committee for Quality Assurance. All Rights Reserved. \r\n\r\nLimited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets. NCQA disclaims all liability for use or accuracy of any CPT or other codes contained in the specifications.\r\n\r\nCPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC(R) copyright 2004-2011 Regenstrief Institute, Inc. \r\nThis material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 copyright 2011 World Health Organization. All Rights Reserved.\r\n\r\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "Coronary heart disease (CHD) is a major cause of death in the United States – in 2004, it was an underlying or contributing cause of death for 451,300 people (1 of every 5 deaths). Acute myocardial infarction (AMI) was as an underlying or contributing cause of death for 156,000 people (American Heart Association 2008). In addition, nearly 16 million people (or 7.3 percent of the American population) had CHD in 2005 (American Heart Association 2008). The cost of cardiovascular diseases and stroke in the United States for 2008 was estimated at $448.5 billion (American Heart Association 2008). This figure includes health expenditures (direct costs such as the cost of physicians and healthcare practitioners, hospital and nursing home services, medications, home health care and other medical durables) and lost productivity resulting from morbidity and mortality (indirect costs). AMI accounts for 18 percent of hospital discharges and 28 percent of deaths due to heart disease (National Heart, Lung, and Blood Institute  2000). Research has shown that costs associated with cardiovascular disease for hospitals are easily $156 billion (American Heart Association 2008).\r\n\r\n\r\nAspirin treatments reduce MI in men (127 events per 100,000 person-years) and women (17 events per 100,000 person-years) (Grieving et al. 2008). While studies have shown warfarin to be more effective, aspirin is a safer, more convenient, and less expensive form of therapy (Patrono et al. 2004). Aspirin therapy has been shown to directly reduce the odds of cardiovascular events among men by 14 percent and among women by 12 percent  (Berger et al. 2006). Aspirin use has been shown to reduce the number of strokes by 20 percent, MI by 30 percent, and other vascular events by 30 percent (Weisman and Graham 2002).",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "U.S. Preventive Services Task Force  (2009): \r\nThe USPSTF strongly recommends that clinicians discuss aspirin chemoprevention with adults who are at increased risk (5-year risk of greater than or equal to 3 percent) for coronary heart disease (CHD). Discussions with patients should address both the potential benefits and harms of aspirin therapy. ('A' recommendation) The USPSTF recommends the use of aspirin for men age 45 to 79 years when the potential benefit due to a reduction in myocardial infarctions outweighs the potential harm due to an increase in gastrointestinal hemorrhage ('A' recommendation). The USPSTF recommends the use of aspirin for women age 55 to 79 years when the potential benefit of a reduction in ischemic stroke outweighs the potential harm of an increase in gastrointestinal hemorrhage. ('A' recommendation)\r\n\r\nAmerican Diabetes Association (2008): \r\nUse aspirin therapy (75-162 mg/day) as a secondary prevention strategy in those with diabetes with a history of CVD. (Level A). Use aspirin therapy (75-162 mg/day) as a primary prevention strategy in those with type 1 or 2 diabetes at increased cardiovascular risk, including those who are 40 years of age or who have additional risk factors (family history of CVD, hypertension, smoking, dyslipidemia, or albuminuria). (Level of Evidence: Level A)\r\n\r\n\r\nAmerican Heart Association/American Stroke Association  (2006): The use of aspirin is recommended for cardiovascular (including but not specific to stroke) prophylaxis among persons whose risk is sufficiently high for the benefits to outweigh the risks associated with treatment (a 10-year risk of cardiovascular events of 6 to 10 percent). (Class I: Level A)\r\n\r\nAmerican College of Clinical Pharmacy (2004): \r\nFor long-term treatment after PCI, the guideline developers recommend aspirin, 75 to 162 mg/day. (Grade 1A) For long-term treatment after PCI in patients who receive antithrombotic agents such as clopidogrel or warfarin, the guideline developers recommend lower-dose aspirin, 75 to 100 mg/day. (Grade 1C+) For patients with ischemic stroke who are not receiving thrombolysis, the guideline developers recommend early aspirin therapy, 160 to 325 mg/day. (Grade 1A)",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "Higher score indicates better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "0068",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "These performance Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.\r\n\r\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND.",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "164",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "American Heart Association. 2008. “Heart Disease and Stroke Statistics — 2008 Update.” http://www.americanheart.org/downloadable/heart/1200082005246HS_Stats%202008.final.pdf",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "None",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "Only patients who were discharged alive for acute myocardial infarction (AMI), coronary artery bypass graft (CABG) or percutaneous coronary interventions (PCI) should be included in the measure.",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "Patients 18 years of age and older with a visit during the measurement period, and an active diagnosis of ischemic vascular disease (IVD) or who were discharged alive for acute myocardial infarction (AMI), coronary artery bypass graft (CABG) or percutaneous coronary interventions (PCI) in the 12 months prior to the measurement period",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals Initial Patient Population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Patients who have documentation of use of aspirin or another antithrombotic during the measurement period",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "None",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not Applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "IPP": "IPP",
+      "DENOM": "DENOM",
+      "NUMER": "NUMER"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

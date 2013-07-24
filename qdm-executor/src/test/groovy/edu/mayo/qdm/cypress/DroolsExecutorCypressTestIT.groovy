@@ -36,16 +36,39 @@ public class DroolsExecutorCypressTestIT {
     }
 
     /*
-     * 165 -- NQF 18, High Blood Pressure
+     * 165 -- NQF 0018, High Blood Pressure
      */
     @Test
     public void TestExecute165() throws IOException{
-        doExecute("CMS165v1")
+        doExecute("0018")
+    }
+
+    /*
+     * 124 -- NQF 0032, High Blood Pressure
+     */
+    @Test
+    public void TestExecute124() throws IOException{
+        doExecute("0032")
     }
 
     @Test
-    public void TestExecute124() throws IOException{
-        doExecute("CMS124v1")
+    public void TestExecute0002() throws IOException{
+        doExecute("0002")
+    }
+
+    @Test
+    public void TestExecute0004() throws IOException{
+        doExecute("0004")
+    }
+
+    @Test
+    public void TestExecute0024() throws IOException{
+        doExecute("0024")
+    }
+
+    @Test
+    public void TestExecute0031() throws IOException{
+        doExecute("0031")
     }
 
     @Test
@@ -63,16 +86,19 @@ public class DroolsExecutorCypressTestIT {
         doExecute("CMS125v1")
     }
 
-    void doExecute(xmlFile) throws IOException{
-        def xmlStream = new ClassPathResource("qdmxml/${xmlFile}.xml").getInputStream()
+    @Test
+    public void TestExecuteHIVRNAControl() throws IOException{
+        doExecute("HIVRNAControl")
+    }
+
+    void doExecute(measureId) throws IOException{
+        def xmlStream = new ClassPathResource("cypress/measures/ep/${measureId}/hqmf1.xml").getInputStream()
 
         def xmlString = IOUtils.toString(xmlStream, "UTF-8")
 
         def patientList = cypressHelper.getPatients()
 
         def results = this.executor.execute(patientList, xmlString, MeasurementPeriod.getCalendarYear(new DateTime(2012,1,1,1,1).toDate()))
-
-        def measureId = new XmlParser().parseText(xmlString).subjectOf.measureAttribute.value.find { it.@root == "2.16.840.1.113883.3.560.1" }.@extension
 
         cypressHelper.checkResults(measureId, results,
                 {population, expected, actual, message ->

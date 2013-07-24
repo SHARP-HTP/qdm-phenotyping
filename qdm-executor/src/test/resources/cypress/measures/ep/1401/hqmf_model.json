@@ -1,0 +1,588 @@
+{
+  "id": "1401",
+  "hqmf_id": "8A4D92B2-3927-D7AE-0139-366C49F93102",
+  "hqmf_set_id": "8E6C8479-99FD-4949-B0AD-24FA60FE4201",
+  "hqmf_version_number": 1,
+  "title": "Maternal Depression Screening",
+  "description": "The percentage of children who turned 6 months of age during the measurement year, who had a face-to-face visit between the clinician and the child during child’s first 6 months, and who had  a maternal depression screening for the mother at least once between 0 and 6 months of life.",
+  "cms_id": "CMS82v1",
+  "population_criteria": {
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "17EA1444-5062-4E62-8858-FBA12A8DABAA",
+      "preconditions": [
+        {
+          "id": 7,
+          "preconditions": [
+            {
+              "id": 5,
+              "preconditions": [
+                {
+                  "id": 1,
+                  "reference": "InterventionPerformedMaternalPostPartumDepressionCare_precondition_1"
+                },
+                {
+                  "id": 3,
+                  "reference": "InterventionPerformedMaternalPostPartumDepressionScreening_precondition_3"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "6905D8D6-B834-4F08-9FBB-D4AA12205E0B"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "AD5AFD50-7F1A-40ED-A217-350FEEE17C97",
+      "preconditions": [
+        {
+          "id": 22,
+          "preconditions": [
+            {
+              "id": 12,
+              "preconditions": [
+                {
+                  "id": 8,
+                  "reference": "PatientCharacteristicBirthdateBirthDate_precondition_8"
+                },
+                {
+                  "id": 10,
+                  "reference": "PatientCharacteristicBirthdateBirthDate_precondition_10"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            },
+            {
+              "id": 20,
+              "preconditions": [
+                {
+                  "id": 14,
+                  "reference": "EncounterPerformedOfficeVisit_precondition_14"
+                },
+                {
+                  "id": 16,
+                  "reference": "EncounterPerformedFaceToFaceInteraction_precondition_16"
+                },
+                {
+                  "id": 18,
+                  "reference": "EncounterPerformedBhMedicalOrPsychiatricConsultation_precondition_18"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "InterventionPerformedMaternalPostPartumDepressionCare_precondition_1": {
+      "title": "Maternal Post Partum Depression Care",
+      "description": "Intervention, Performed: Maternal Post Partum Depression Care",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1013",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionPerformedMaternalPostPartumDepressionCare",
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "PatientCharacteristicBirthdateBirthDate",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "6",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "InterventionPerformedMaternalPostPartumDepressionScreening_precondition_3": {
+      "title": "Maternal Post Partum Depression Screening",
+      "description": "Intervention, Performed: Maternal Post Partum Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1014",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionPerformedMaternalPostPartumDepressionScreening",
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "PatientCharacteristicBirthdateBirthDate",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "6",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_8": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "6",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_10": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "6",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedOfficeVisit_precondition_14": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit",
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "PatientCharacteristicBirthdateBirthDate",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "6",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedFaceToFaceInteraction_precondition_16": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction",
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "PatientCharacteristicBirthdateBirthDate",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "6",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedBhMedicalOrPsychiatricConsultation_precondition_18": {
+      "title": "BH Medical or psychiatric consultation",
+      "description": "Encounter, Performed: BH Medical or psychiatric consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.1257.1.1652",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedBhMedicalOrPsychiatricConsultation",
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "PatientCharacteristicBirthdateBirthDate",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "6",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "EncounterPerformedBhMedicalOrPsychiatricConsultation": {
+      "title": "BH Medical or psychiatric consultation",
+      "description": "Encounter, Performed: BH Medical or psychiatric consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.1257.1.1652",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedBhMedicalOrPsychiatricConsultation"
+    },
+    "InterventionPerformedMaternalPostPartumDepressionCare": {
+      "title": "Maternal Post Partum Depression Care",
+      "description": "Intervention, Performed: Maternal Post Partum Depression Care",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1013",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionPerformedMaternalPostPartumDepressionCare"
+    },
+    "InterventionPerformedMaternalPostPartumDepressionScreening": {
+      "title": "Maternal Post Partum Depression Screening",
+      "description": "Intervention, Performed: Maternal Post Partum Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1014",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionPerformedMaternalPostPartumDepressionScreening"
+    }
+  },
+  "attributes": [
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "Physician Performance Measure (Measures) and related data specifications were developed by the National Committee for Quality Assurance (NCQA). \r\n\r\nThe Measures are copyrighted but can be reproduced and distributed, without modification, for noncommercial purposes (e.g., use by healthcare providers in connection with their practices). Commercial use is defined as the sale, licensing, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial use of the Measures requires a license agreement between the user and NCQA. NCQA is not responsible for any use of the Measures. \r\n\r\n(c) 2012 National Committee for Quality Assurance. All Rights Reserved. \r\n\r\nLimited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets.  NCQA disclaims all liability for use or accuracy of any CPT or other codes contained in the specifications.\r\n\r\nCPT(R) is a trademark of the American Medical Association. Current Procedural Terminology. (CPT) is copyright 2012 American Medical Association. All rights reserved. No fee schedules, basic units, relative values, or related listings are included in CPT. The AMA assumes no liability for the data contained herein. Applicable FARS/DFARS restrictions apply to government use.\r\n\r\nLOINC(R) is a registered trademark of the Regenstrief Institute.\r\n\r\nThis material contains SNOMED Clinical Terms(R) (SNOMED CT(c)) copyright 2004-–2010 International Health Terminology Standards Development Organization. All rights reserved.",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "Maternal depression, also known as post-partum depression, is one of the most common perinatal complications; however, the disorder often remains unrecognized, undiagnosed, and untreated (VanLandeghem, 2006). Studies suggest  that over 10 percent of mothers experience depression six weeks after giving birth, whether it is minor or major. Three to 25 percent of women experience major depression during the year following childbirth (Gaynes BN, 2005; Kessler RC, 1994)). The incidence of depression may be higher in women who already have young children (VanLandeghem, 2006;  Gaynes BN, 2005). Maternal depression can greatly affect mothers, their baby, and their family’s well-being. It can have lasting effects on a mother’s self-esteem and confidence as a mother (Epperson, 1999). \r\n\r\nScreening is important, as mothers with post-partum depression who are not treated can have symptoms that carry over into the second year post-partum. Mothers that have had post-partum depression are also more likely to have a recurrence with subsequent children. (Epperson, C Neill,  1999). There are effective treatments available, but less than half of post-partum depression cases are ever diagnosed (Gibson, 2010). Less than 50 percent of mothers with an infant child are currently being screened for post-partum depression (Gjerdingen, Crow, McGovern, Miner, Center, 2009). This measure encourages clinicians to screen new mothers for depression.",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "U.S. Preventive Services Task Force (2002)\r\nThe USPSTF recommends screening for depression in clinical practices that have systems in place to assure accurate diagnosis, effective treatment, and follow up for the general adult population*\r\nGrade: B Recommendation\r\n*NOTE: This recommendation applies to all adults.\r\n\r\nBright Futures (2008)\r\nHealth care professionals should screen mothers on the following topics:\r\n\r\nMothers of one week old infants:   \r\nDiscuss health and depression, family stress, uninvited advice, parent role.  \r\nDifferentiate between short-term \"baby blues\" and postpartum depression, and counsel and refer as appropriate:\r\nIt may be helpful to advise women that the \"postpartum blues\" are a different entity from depression. The \"blues,\" with characteristic tearfulness, anxiety and low mood, are relatively common but are transient, peaking at 3–5 days after birth and resolving by 10–14 days.\r\n\r\nMothers of one month old infants:\r\nDiscuss maternal health (postpartum, checkup, depression, substance abuse)\r\n\r\nMothers of two month old children:\r\nDiscuss maternal health (maternal postpartum, checkup and resumption of activities, depression)\r\nGrade: Expert Consensus\r\n\r\nReferences\r\nU.S. Preventive Services Task Force. Screening for Depression, May 2002. \r\n\r\nHagan, JF, Shaw JS, Duncan PM, eds. 2008. Bright Futures: Guidelines for Health Supervision of Infants, Children, and Adolescents, Third Edition. Elk Grove, IL: American Academy of Pediatrics",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "Higher score indicates better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "1401",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "These performance Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.\r\n\r\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "82",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "VanLandeghem K.  National Academy for State Health Policy.  Financing Strategies for Medicaid Reimbursement of Maternal Depression Screening by Pediatric Providers.  April 2006.",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "None",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "The endorsed measure relies on notes from the patient's and mother's charts. The eMeasure specifies only patient's record, looking for the newly allocated SNOMED codes that allow providers to record the screening and treatment of the mother.",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "Children with a visit who turned 6 months of age in the measurement period.",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals Initial Patient Population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "None",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Children with documentation of maternal screening or treatment for postpartum depression for the mother.",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "None",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not Applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "IPP": "IPP",
+      "DENOM": "DENOM",
+      "NUMER": "NUMER"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

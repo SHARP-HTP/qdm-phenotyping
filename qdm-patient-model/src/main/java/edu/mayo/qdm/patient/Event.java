@@ -9,6 +9,10 @@ public class Event extends CodedEntry {
     private Date startDate;
     private Date endDate;
 
+    public Event(Concept concept, Date date){
+        this(concept, date, date);
+    }
+
     public Event(Concept concept, Date startDate, Date endDate){
         super(concept);
         this.startDate = startDate;

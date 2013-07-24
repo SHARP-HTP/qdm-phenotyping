@@ -1,0 +1,622 @@
+{
+  "id": "ChildDentalDecay",
+  "hqmf_id": "8A4D92B2-370B-19FA-0137-282DDBCF35DC",
+  "hqmf_set_id": "61947125-4376-4A7B-AB7A-AC2BE9BD9138",
+  "hqmf_version_number": 1,
+  "title": "Children Who Have Dental Decay or Cavities",
+  "description": "Percentage of children, age 0-20 years, who have had tooth decay or cavities during the measurement period.",
+  "cms_id": "CMS75v1",
+  "population_criteria": {
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "5486B836-8B5D-4A89-A172-30648A4519F2",
+      "preconditions": [
+        {
+          "id": 3,
+          "preconditions": [
+            {
+              "id": 1,
+              "reference": "DiagnosisActiveDentalCaries_precondition_1"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "E70AAB60-ABC0-4383-901C-6218BB46DFAB"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "B3E07238-2B9B-4894-AE82-8426393BAFC3",
+      "preconditions": [
+        {
+          "id": 24,
+          "preconditions": [
+            {
+              "id": 4,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_4"
+            },
+            {
+              "id": 6,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_6"
+            },
+            {
+              "id": 22,
+              "preconditions": [
+                {
+                  "id": 8,
+                  "reference": "EncounterPerformedFaceToFaceInteraction_precondition_8"
+                },
+                {
+                  "id": 10,
+                  "reference": "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17_precondition_10"
+                },
+                {
+                  "id": 12,
+                  "reference": "EncounterPerformedPreventiveCareInitialOfficeVisit0To17_precondition_12"
+                },
+                {
+                  "id": 14,
+                  "reference": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_14"
+                },
+                {
+                  "id": 16,
+                  "reference": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_16"
+                },
+                {
+                  "id": 18,
+                  "reference": "EncounterPerformedOfficeVisit_precondition_18"
+                },
+                {
+                  "id": 20,
+                  "reference": "EncounterPerformedClinicalOralEvaluation_precondition_20"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "DiagnosisActiveDentalCaries_precondition_1": {
+      "title": "Dental Caries",
+      "description": "Diagnosis, Active: Dental Caries",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.125.12.1004",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveDentalCaries",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_4": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "0",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_6": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "20",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedFaceToFaceInteraction_precondition_8": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17_precondition_10": {
+      "title": "Preventive Care - Established Office Visit, 0 to 17",
+      "description": "Encounter, Performed: Preventive Care - Established Office Visit, 0 to 17",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1024",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareInitialOfficeVisit0To17_precondition_12": {
+      "title": "Preventive Care- Initial Office Visit, 0 to 17",
+      "description": "Encounter, Performed: Preventive Care- Initial Office Visit, 0 to 17",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1022",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareInitialOfficeVisit0To17",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_14": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_16": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedOfficeVisit_precondition_18": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedClinicalOralEvaluation_precondition_20": {
+      "title": "Clinical Oral Evaluation",
+      "description": "Encounter, Performed: Clinical Oral Evaluation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.125.12.1003",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedClinicalOralEvaluation",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "DiagnosisActiveDentalCaries": {
+      "title": "Dental Caries",
+      "description": "Diagnosis, Active: Dental Caries",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.125.12.1004",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveDentalCaries"
+    },
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedPreventiveCareInitialOfficeVisit0To17": {
+      "title": "Preventive Care- Initial Office Visit, 0 to 17",
+      "description": "Encounter, Performed: Preventive Care- Initial Office Visit, 0 to 17",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1022",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareInitialOfficeVisit0To17"
+    },
+    "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17": {
+      "title": "Preventive Care - Established Office Visit, 0 to 17",
+      "description": "Encounter, Performed: Preventive Care - Established Office Visit, 0 to 17",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1024",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17"
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp"
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp"
+    },
+    "EncounterPerformedClinicalOralEvaluation": {
+      "title": "Clinical Oral Evaluation",
+      "description": "Encounter, Performed: Clinical Oral Evaluation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.125.12.1003",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedClinicalOralEvaluation"
+    }
+  },
+  "attributes": [
+    {
+      "id": "FINALIZED_DATE_TIME",
+      "code": "OTH",
+      "value": "201209191205-0500",
+      "name": "Finalized Date/Time"
+    },
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "TBD",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "Dental cavities have been identified as the most common chronic disease for children. Nationally, 19.4% of children have dental decay or cavities.",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "Children who have dental decay or cavities are less likely to be in very good or excellent overall health than children without decay or cavities. Children with decay are also more likely to have other oral health problems such as toothaches, broken teeth, and bleeding gums.",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "A lower score indicates better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "TBD",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "75",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "Milgrom P, Zero DT, Tanzer JM. An examination of the advances in science and technology of prevention of tooth decay in young children since the Surgeon General's Report on Oral Health. Acad Pediatr. 2009;9(6):404-409.",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "None",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "None",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "Children, age 0-20 years, with a visit during the measurement period.",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals initial patient population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "None",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Children who had cavities or decayed teeth.",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "None",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "IPP": "IPP",
+      "DENOM": "DENOM",
+      "NUMER": "NUMER"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

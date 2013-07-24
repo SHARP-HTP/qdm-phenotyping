@@ -1,0 +1,2221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<QualityMeasureDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <id root="2.16.840.1.113883.3.100.1" extension="8A4D92B2-39CA-AF4B-0139-CAF11E27054E" />
+  <code code="57024-2" codeSystem="2.16.840.1.113883.6.1"/>
+  <title value="Anti-depressant Medication Management"/>
+  <text value="Percentage of patients 18 years of age and older who were diagnosed with major depression and treated with antidepressant medication, and who remained on antidepressant medication treatment. Two rates are reported. 
+a. Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks). 
+b. Percentage of patients who remained on an antidepressant medication for at least 180 days (6 months)."/>
+  <statusCode code="completed" />
+  <setId root="2.16.840.1.113883.3.100.1" extension="8924F2B3-EC06-4650-B634-D70A53DEE577" />
+  <versionNumber value="1"/>
+  <author typeCode="AUT" contextControlCode="OP">
+    <responsibleParty classCode="ASSIGNED" />
+  </author>
+  <custodian typeCode="CST">
+    <responsibleParty classCode="ASSIGNED" />
+  </custodian>
+  <controlVariable>
+    <measurePeriod>
+      <code code="MSRTP" codeSystem="2.16.840.1.113883.3.560">
+        <displayName value="Measurement period"/>
+      </code>
+      <value>
+        <low value="201201010000" />
+        <high value="201212312359" />
+      </value>
+    </measurePeriod>
+  </controlVariable>
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="COPYRIGHT"/>
+			<code code="COPY">
+				<displayName value="Copyright"/>
+			</code>
+			<value xsi:type="ED" value="Physician Performance Measure (Measures) and related data specifications were developed by the National Committee for Quality Assurance (NCQA). 
+
+The Measures are copyrighted but can be reproduced and distributed, without modification, for noncommercial purposes (e.g., use by healthcare providers in connection with their practices). Commercial use is defined as the sale, licensing, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial use of the Measures requires a license agreement between the user and NCQA. NCQA is not responsible for any use of the Measures. 
+
+Copyright 2012 National Committee for Quality Assurance. All Rights Reserved. 
+
+Limited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets. NCQA disclaims all liability for use or accuracy of any CPT or other codes contained in the specifications.
+
+CPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC(R) copyright 2004-2011 Regenstrief Institute, Inc. 
+This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 copyright 2011 World Health Organization. All Rights Reserved.
+
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM]."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_SCORING"/>
+			<code code="MSRSCORE">
+				<displayName value="Measure Scoring"/>
+			</code>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_TYPE"/>
+			<code code="MSRTYPE">
+				<displayName value="Measure Type"/>
+			</code>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="STRATIFICATION"/>
+			<code code="STRAT">
+				<displayName value="Stratification"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="RISK_ADJUSTMENT"/>
+			<code code="MSRADJ">
+				<displayName value="Risk Adjustment"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="RATE_AGGREGATION"/>
+			<code code="MSRAGG">
+				<displayName value="Rate Aggregation"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="RATIONALE"/>
+			<code code="RAT">
+				<displayName value="Rationale"/>
+			</code>
+			<value xsi:type="ED" value="Depression affects nearly 15 million adults in the U.S. (National Alliance on Mental Illness 2009) and is estimated to affect nearly a quarter of adults in their lifetime (Burcusa and Iacono 2007). Symptoms of depression include appetite and sleep disturbances, anxiety, irritability and decreased concentration (Charbonneau et al. 2005). The American Psychiatric Association recommends use of antidepressant medication and behavioral therapies, such as psychotherapy, to treat depression (American Psychiatric Association 2010).
+
+For the past 50 years, antidepressant medication has proven to be effective especially for patients with more severe symptoms (Fournier et al. 2010). Among patients who initiate antidepressant treatment, one in three discontinues treatment within one month, before the effect of medication can be assessed, and nearly one in two discontinues treatment within three months (Simon 2002).
+
+Due to increased risky behaviors for chronic disease (e.g., physical inactivity, smoking, excessive drinking and insufficient sleep), evidence has shown that depressive disorders are strongly related to the occurrence of many chronic diseases including diabetes, cancer, cardiovascular disease and asthma (Centers for Disease Control and Prevention 2011).
+
+Aligning depression quality improvement with methods used in managing other chronic illnesses has been an important step in depression care. Depression management systems have demonstrated improved short- and long-term outcomes of depression severity and persistence, employment retention, functional status and patient satisfaction (Katon et al. 2002; Rost et al. 2001)."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="CLINICAL_RECOMMENDATION_STATEMENT"/>
+			<code code="CRS">
+				<displayName value="Clinical Recommendation Statement"/>
+			</code>
+			<value xsi:type="ED" value="American Psychiatric Association (APA 2010): 
+Successful treatment of patients with major depressive disorder is promoted by a thorough assessment of the patient and close adherence to treatment plans. Treatment consists of an acute phase, during which remission is induced; a continuation phase, during which remission is preserved; and a maintenance phase, during which the susceptible patient is protected against the recurrence of a subsequent major depressive episode.
+
+Acute Phase: An antidepressant medication is recommended as an initial treatment choice for patients with mild to moderate major depressive disorder [I: Recommended with substantial clinical confidence] and definitely should be provided for those with severe major depressive disorder unless electroconvulsive therapy (ECT) is planned [I: Recommended with substantial clinical confidence]. For most patients, a selective serotonin reuptake inhibitor (SSRI), serotonin norepinephrine reuptake inhibitor (SNRI), mirtazapine, or bupropion is optimal [I: Recommended with substantial clinical confidence]. In general, the use of nonselective monoamine oxidase inhibitors (MAOIs) (e.g., phenelzine, tranylcypromine, isocarboxazid) should be restricted to patients who do not respond to other treatments [I: Recommended with substantial clinical confidence], given the necessity for dietary restrictions with these medications and the potential for deleterious drug-drug interactions. 
+
+During the acute phase of treatment, patients should be carefully and systematically monitored on a regular basis to assess their response to pharmacotherapy, identify the emergence of side effects (e.g., gastrointestinal symptoms, sedation, insomnia, activation, changes in weight, and cardiovascular, neurological, anticholinergic, or sexual side effects), and assess patient safety [I: Recommended with substantial clinical confidence]. If antidepressant side effects do occur, an initial strategy is to lower the dose of the antidepressant or to change to an antidepressant that is not associated with that side effect [I: Recommended with substantial clinical confidence].
+
+Continuation Phase: During the continuation phase of treatment, the patient should be carefully monitored for signs of possible relapse [I: Recommended with substantial clinical confidence]. Systematic assessment of symptoms, side effects, adherence, and functional status is essential [I: Recommended with substantial clinical confidence], and may be facilitated through the use of clinician- and/or patient-administered rating scales [II: Recommended with moderate clinical confidence]. To reduce the risk of relapse, patients who have been treated successfully with antidepressant medications in the acute phase should continue treatment with these agents for 4–9 months [I: Recommended with substantial clinical confidence]. In general, the dose used in the acute phase should be used in the continuation phase [II: Recommended with moderate clinical confidence]. To prevent a relapse of depression in the continuation phase, depression-focused psychotherapy is recommended [I: Recommended with substantial clinical confidence], with the best evidence available for cognitive-behavioral therapy.
+
+Maintenance Phase: During the maintenance phase, an antidepressant medication that produced symptom remission during the acute phase and maintained remission during the continuation phase should be continued at a full therapeutic dose [II: Recommended with moderate clinical confidence]."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="IMPROVEMENT_NOTATION"/>
+			<code code="IDUR">
+				<displayName value="Improvement Notation"/>
+			</code>
+			<value xsi:type="ED" value="Higher score indicates better quality."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="NQF_ID_NUMBER"/>
+			<code code="OTH">
+				<displayName value="NQF ID Number"/>
+			</code>
+			<value xsi:type="ED" value="0105"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DISCLAIMER"/>
+			<code code="DISC">
+				<displayName value="Disclaimer"/>
+			</code>
+			<value xsi:type="ED" value="These performance Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.
+
+THE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="EMEASURE_IDENTIFIER"/>
+			<code code="OTH">
+				<displayName value="eMeasure Identifier"/>
+			</code>
+			<value xsi:type="ED" value="128"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="REFERENCE"/>
+			<code code="REF">
+				<displayName value="Reference"/>
+			</code>
+			<value xsi:type="ED" value="Centers for Disease Control and Prevention (CDC). 2011. “Mental Health: Mental Health Basics.” http://www.cdc.gov/mentalhealth/basics.htm (July 27, 2011)"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DEFINITION"/>
+			<code code="DEF">
+				<displayName value="Definition"/>
+			</code>
+			<value xsi:type="ED" value="Index Episode Start Date (IESD): The earliest diagnosis of major depression during the period beginning 180 days prior to the measurement period through 180 days after the start of the measurement period.
+Index Prescription Start Date (IPSD): The earliest prescription dispensing event for an antidepressant medication during the period of 30 days prior to the IESD through 14 days after the IESD."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="GUIDANCE"/>
+			<code code="GUIDE">
+				<displayName value="Guidance"/>
+			</code>
+			<value xsi:type="ED" value="To identify new treatment episodes for major depression, there must be a 90-day negative medication history (a period during which the patient was not taking antidepressant medication) prior to the first dispensing event associated with the Index Episode Start Date (Index Prescription Start Date).
+
+CUMULATIVE MEDICATION DURATION is the total number of days of a medication for an individual. Days of medication can be derived from number of doses per day divided by the frequency. The cumulative duration can be calculated as the sum of the number of medication dispensed days x number of medication refills over a set period of time, excluding any gaps during which a medication was not dispensed. For example, if a medication was prescribed for 30 days with 3 refills, then a gap of 3 month, then prescribed again for 60 days with 2 refills, the cumulative medication duration for would be (30 x 3) + (60 x 2) = 210 days over the 10 month period."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="TRANSMISSION_FORMAT"/>
+			<code code="OTH">
+				<displayName value="Transmission Format"/>
+			</code>
+			<value xsi:type="ED" value="TBD"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="INITIAL_PATIENT_POPULATION"/>
+			<code code="IPP">
+				<displayName value="Initial Patient Population"/>
+			</code>
+			<value xsi:type="ED" value="Patients 18 years of age and older with a diagnosis of major depression in the 180 days (6 months) prior to the measurement period or the first 180 days (6 months) of the measurement period, who were treated with antidepressant medication, and with a visit during the measurement period"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DENOMINATOR"/>
+			<code code="DENOM">
+				<displayName value="Denominator"/>
+			</code>
+			<value xsi:type="ED" value="Equals Initial Patient Population"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DENOMINATOR_EXCLUSIONS"/>
+			<code code="OTH">
+				<displayName value="Denominator Exclusions"/>
+			</code>
+			<value xsi:type="ED" value="Patients who were actively on an antidepressant medication in the 90 days prior to the Index Prescription Start Date"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="NUMERATOR"/>
+			<code code="NUMER">
+				<displayName value="Numerator"/>
+			</code>
+			<value xsi:type="ED" value="Numerator 1: Patients who have received antidepressant medication for at least 84 days (12 weeks) of continuous treatment during the 114-day period following the Index Prescription Start Date
+
+Numerator 2: Patients who have received antidepressant medications for at least 180 days (6 months) of continuous treatment during the 231-day period following the Index Prescription Start Date"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="NUMERATOR_EXCLUSIONS"/>
+			<code code="OTH">
+				<displayName value="Numerator Exclusions"/>
+			</code>
+			<value xsi:type="ED" value="Not Applicable"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DENOMINATOR_EXCEPTIONS"/>
+			<code code="DENEXCEP">
+				<displayName value="Denominator Exceptions"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_POPULATION"/>
+			<code code="MSRPOPL">
+				<displayName value="Measure Population"/>
+			</code>
+			<value xsi:type="ED" value="Not Applicable"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_OBSERVATIONS"/>
+			<code code="OTH">
+				<displayName value="Measure Observations"/>
+			</code>
+			<value xsi:type="ED" value="Not Applicable"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="SUPPLEMENTAL_DATA_ELEMENTS"/>
+			<code code="OTH">
+				<displayName value="Supplemental Data Elements"/>
+			</code>
+			<value xsi:type="ED" value="For every patient evaluated by this measure also identify payer, race, ethnicity and sex."/>
+		</measureAttribute>
+	</subjectOf>
+
+  <component>
+    <dataCriteriaSection>
+      <code code="57025-9" codeSystem="2.16.840.1.113883.6.1"/>
+      <title value="Data Criteria Section"/>
+      <text>This section describes the data criteria.</text>
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveMajorDepression"/>
+          </id>
+                    <text value="Diagnosis, Active: Major Depression"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.105.12.1007">
+            <displayName value="Major Depression"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveMajorDepression"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <supplyCriteria moodCode="EVN" classCode="SPLY">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.8" identifierName="medication, dispensed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="MedicationDispensedAntidepressantMedication"/>
+          </id>
+                    <text value="Medication, Dispensed: Antidepressant Medication"/>
+          <statusCode code="dispensed"/>
+          
+          
+          <participation typeCode="PRD">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.464.1003.196.12.1213">
+            <displayName value="Antidepressant Medication"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <supplyReference moodCode="EVN" classCode="SPLY">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </supplyReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="MedicationDispensedAntidepressantMedication"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </supplyCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAMajorDepression1"/>
+          </id>
+                    <text value="Diagnosis, Active: Major Depression"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.105.12.1007">
+            <displayName value="Major Depression"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_MAJOR_DEPRESSION" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAMajorDepression1"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <supplyCriteria moodCode="EVN" classCode="SPLY">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.8" identifierName="medication, dispensed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAntidepressantMedication2"/>
+          </id>
+                    <text value="Medication, Dispensed: Antidepressant Medication"/>
+          <statusCode code="dispensed"/>
+          
+          
+          <participation typeCode="PRD">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.464.1003.196.12.1213">
+            <displayName value="Antidepressant Medication"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <supplyReference moodCode="EVN" classCode="SPLY">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </supplyReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="MEDICATION_DISPENSED_ANTIDEPRESSANT_MEDICATION" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAntidepressantMedication2"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </supplyCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <substanceAdministrationCriteria moodCode="EVN" classCode="SBADM">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.13" identifierName="medication, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="MedicationActiveAntidepressantMedication_precondition_3"/>
+          </id>
+                    <text value="Medication, Active: Antidepressant Medication"/>
+          <statusCode code="active"/>
+          
+          
+          <participation typeCode="CSM">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.464.1003.196.12.1213">
+            <displayName value="Antidepressant Medication"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </substanceAdministrationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="90" unit="d"/>
+  </pauseQuantity>
+
+                        <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAntidepressantMedication2"/>
+            </substanceAdministrationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="MedicationActiveAntidepressantMedication"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </substanceAdministrationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <substanceAdministrationCriteria moodCode="EVN" classCode="SBADM">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.13" identifierName="medication, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="MedicationActiveAntidepressantMedication_precondition_6"/>
+          </id>
+                    <text value="Medication, Active: Antidepressant Medication"/>
+          <statusCode code="active"/>
+          
+          
+          <participation typeCode="CSM">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.464.1003.196.12.1213">
+            <displayName value="Antidepressant Medication"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </substanceAdministrationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="EAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="114" unit="d"/>
+  </pauseQuantity>
+
+                        <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAntidepressantMedication2"/>
+            </substanceAdministrationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <observationCriteria classCode="OBS" moodCode="EVN">
+              <code code="363819003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT">
+                <displayName value="Cumulative Medication Duration"/> 
+              </code>
+                <value xsi:type="IVL_PQ">
+      <low  value="84" unit="d"/>
+      </value>
+
+            </observationCriteria>
+          </outboundRelationship>
+          <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="MedicationActiveAntidepressantMedication"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </substanceAdministrationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <substanceAdministrationCriteria moodCode="EVN" classCode="SBADM">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.13" identifierName="medication, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="MedicationActiveAntidepressantMedication_precondition_9"/>
+          </id>
+                    <text value="Medication, Active: Antidepressant Medication"/>
+          <statusCode code="active"/>
+          
+          
+          <participation typeCode="CSM">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.464.1003.196.12.1213">
+            <displayName value="Antidepressant Medication"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </substanceAdministrationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="EAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="231" unit="d"/>
+  </pauseQuantity>
+
+                        <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAntidepressantMedication2"/>
+            </substanceAdministrationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <observationCriteria classCode="OBS" moodCode="EVN">
+              <code code="363819003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT">
+                <displayName value="Cumulative Medication Duration"/> 
+              </code>
+                <value xsi:type="IVL_PQ">
+      <low  value="180" unit="d"/>
+      </value>
+
+            </observationCriteria>
+          </outboundRelationship>
+          <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="MedicationActiveAntidepressantMedication"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </substanceAdministrationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAMajorDepression1_precondition_12"/>
+          </id>
+                    <text value="Diagnosis, Active: Major Depression"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.105.12.1007">
+            <displayName value="Major Depression"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="180" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_MAJOR_DEPRESSION" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAMajorDepression1"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAMajorDepression1_precondition_14"/>
+          </id>
+                    <text value="Diagnosis, Active: Major Depression"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.105.12.1007">
+            <displayName value="Major Depression"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="180" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_MAJOR_DEPRESSION" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAMajorDepression1"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+          
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="GROUP_FIRST_52"/>
+          </id>
+          
+                    <text value=""/>
+          
+          
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="derived"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="GROUP_FIRST_52"/>
+            </observationReference>
+          </outboundRelationship>
+                    <excerpt typeCode="XCRPT">
+            <subsetCode code="UNION"/>
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAMajorDepression1_precondition_12"/>
+            </observationReference>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAMajorDepression1_precondition_14"/>
+            </observationReference>
+
+          </excerpt>
+                    <excerpt typeCode="XCRPT">
+            <subsetCode code="FIRST"/>
+            <observationCriteria moodCode="EVN" classCode="OBS">
+            </observationCriteria>
+          </excerpt>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <supplyCriteria moodCode="EVN" classCode="SPLY">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.8" identifierName="medication, dispensed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAntidepressantMedication2_precondition_19"/>
+          </id>
+                    <text value="Medication, Dispensed: Antidepressant Medication"/>
+          <statusCode code="dispensed"/>
+          
+          
+          <participation typeCode="PRD">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.464.1003.196.12.1213">
+            <displayName value="Antidepressant Medication"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <supplyReference moodCode="EVN" classCode="SPLY">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </supplyReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="14" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAMajorDepression1"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="MEDICATION_DISPENSED_ANTIDEPRESSANT_MEDICATION" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAntidepressantMedication2"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </supplyCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <supplyCriteria moodCode="EVN" classCode="SPLY">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.8" identifierName="medication, dispensed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAntidepressantMedication2_precondition_21"/>
+          </id>
+                    <text value="Medication, Dispensed: Antidepressant Medication"/>
+          <statusCode code="dispensed"/>
+          
+          
+          <participation typeCode="PRD">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.464.1003.196.12.1213">
+            <displayName value="Antidepressant Medication"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <supplyReference moodCode="EVN" classCode="SPLY">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </supplyReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="30" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAMajorDepression1"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="MEDICATION_DISPENSED_ANTIDEPRESSANT_MEDICATION" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAntidepressantMedication2"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </supplyCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+          
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="GROUP_FIRST_54"/>
+          </id>
+          
+                    <text value=""/>
+          
+          
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="derived"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="GROUP_FIRST_54"/>
+            </observationReference>
+          </outboundRelationship>
+                    <excerpt typeCode="XCRPT">
+            <subsetCode code="UNION"/>
+                        <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAntidepressantMedication2_precondition_19"/>
+            </substanceAdministrationReference>
+
+                        <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAntidepressantMedication2_precondition_21"/>
+            </substanceAdministrationReference>
+
+          </excerpt>
+                    <excerpt typeCode="XCRPT">
+            <subsetCode code="FIRST"/>
+            <observationCriteria moodCode="EVN" classCode="OBS">
+            </observationCriteria>
+          </excerpt>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.25" identifierName="patient characteristic, birthdate template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_26"/>
+          </id>
+                    <code codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1"
+            code="21112-8">
+            <displayName value="birth date"/>
+          </code>
+
+                    <text value="Patient Characteristic Birthdate: birth date"/>
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="patient_characteristic_birthdate"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+      <low  value="18" unit="a"/>
+      </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate"/>
+            </observationReference>
+          </outboundRelationship>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit_precondition_28"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1001">
+            <displayName value="Office Visit"/>
+          </code>
+
+                    <text value="Encounter, Performed: Office Visit"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction_precondition_30"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1048">
+            <displayName value="Face-to-Face Interaction"/>
+          </code>
+
+                    <text value="Encounter, Performed: Face-to-Face Interaction"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_32"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1025">
+            <displayName value="Preventive Care Services - Established Office Visit, 18 and Up"/>
+          </code>
+
+                    <text value="Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_34"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1023">
+            <displayName value="Preventive Care Services-Initial Office Visit, 18 and Up"/>
+          </code>
+
+                    <text value="Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedHomeHealthcareServices_precondition_36"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1016">
+            <displayName value="Home Healthcare Services"/>
+          </code>
+
+                    <text value="Encounter, Performed: Home Healthcare Services"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedHomeHealthcareServices"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedAnnualWellnessVisit_precondition_38"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1240">
+            <displayName value="Annual Wellness Visit"/>
+          </code>
+
+                    <text value="Encounter, Performed: Annual Wellness Visit"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedAnnualWellnessVisit"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitDiagnosticOrEvaluativeInterview_precondition_40"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1013">
+            <displayName value="Psych Visit - Diagnostic or Evaluative Interview"/>
+          </code>
+
+                    <text value="Encounter, Performed: Psych Visit - Diagnostic or Evaluative Interview"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitDiagnosticOrEvaluativeInterview"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitIndividualOutpatientInteractivePsychotherapy_precondition_42"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1015">
+            <displayName value="Psych Visit - Individual Outpatient Interactive Psychotherapy"/>
+          </code>
+
+                    <text value="Encounter, Performed: Psych Visit - Individual Outpatient Interactive Psychotherapy"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitIndividualOutpatientInteractivePsychotherapy"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy_precondition_44"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1014">
+            <displayName value="Psych Visit - Individual Outpatient Psychotherapy"/>
+          </code>
+
+                    <text value="Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitMedicationManagement_precondition_46"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1019">
+            <displayName value="Psych Visit - Medication Management"/>
+          </code>
+
+                    <text value="Encounter, Performed: Psych Visit - Medication Management"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitMedicationManagement"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.25" identifierName="patient characteristic, birthdate template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate"/>
+          </id>
+                    <code codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1"
+            code="21112-8">
+            <displayName value="birth date"/>
+          </code>
+
+                    <text value="Patient Characteristic Birthdate: birth date"/>
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="patient_characteristic_birthdate"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate"/>
+            </observationReference>
+          </outboundRelationship>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <substanceAdministrationCriteria moodCode="EVN" classCode="SBADM">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.13" identifierName="medication, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="MedicationActiveAntidepressantMedication"/>
+          </id>
+                    <text value="Medication, Active: Antidepressant Medication"/>
+          <statusCode code="active"/>
+          
+          
+          <participation typeCode="CSM">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.464.1003.196.12.1213">
+            <displayName value="Antidepressant Medication"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </substanceAdministrationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="MedicationActiveAntidepressantMedication"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </substanceAdministrationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1001">
+            <displayName value="Office Visit"/>
+          </code>
+
+                    <text value="Encounter, Performed: Office Visit"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1025">
+            <displayName value="Preventive Care Services - Established Office Visit, 18 and Up"/>
+          </code>
+
+                    <text value="Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1023">
+            <displayName value="Preventive Care Services-Initial Office Visit, 18 and Up"/>
+          </code>
+
+                    <text value="Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedAnnualWellnessVisit"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1240">
+            <displayName value="Annual Wellness Visit"/>
+          </code>
+
+                    <text value="Encounter, Performed: Annual Wellness Visit"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedAnnualWellnessVisit"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1048">
+            <displayName value="Face-to-Face Interaction"/>
+          </code>
+
+                    <text value="Encounter, Performed: Face-to-Face Interaction"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedHomeHealthcareServices"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1016">
+            <displayName value="Home Healthcare Services"/>
+          </code>
+
+                    <text value="Encounter, Performed: Home Healthcare Services"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedHomeHealthcareServices"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitDiagnosticOrEvaluativeInterview"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1013">
+            <displayName value="Psych Visit - Diagnostic or Evaluative Interview"/>
+          </code>
+
+                    <text value="Encounter, Performed: Psych Visit - Diagnostic or Evaluative Interview"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitDiagnosticOrEvaluativeInterview"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitIndividualOutpatientInteractivePsychotherapy"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1015">
+            <displayName value="Psych Visit - Individual Outpatient Interactive Psychotherapy"/>
+          </code>
+
+                    <text value="Encounter, Performed: Psych Visit - Individual Outpatient Interactive Psychotherapy"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitIndividualOutpatientInteractivePsychotherapy"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1014">
+            <displayName value="Psych Visit - Individual Outpatient Psychotherapy"/>
+          </code>
+
+                    <text value="Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitMedicationManagement"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1019">
+            <displayName value="Psych Visit - Medication Management"/>
+          </code>
+
+                    <text value="Encounter, Performed: Psych Visit - Medication Management"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitMedicationManagement"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveMajorDepression"/>
+          </id>
+                    <text value="Diagnosis, Active: Major Depression"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.105.12.1007">
+            <displayName value="Major Depression"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveMajorDepression"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <supplyCriteria moodCode="EVN" classCode="SPLY">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.8" identifierName="medication, dispensed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="MedicationDispensedAntidepressantMedication"/>
+          </id>
+                    <text value="Medication, Dispensed: Antidepressant Medication"/>
+          <statusCode code="dispensed"/>
+          
+          
+          <participation typeCode="PRD">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.464.1003.196.12.1213">
+            <displayName value="Antidepressant Medication"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <supplyReference moodCode="EVN" classCode="SPLY">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </supplyReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="MedicationDispensedAntidepressantMedication"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </supplyCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAMajorDepression1"/>
+          </id>
+                    <text value="Diagnosis, Active: Major Depression"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.105.12.1007">
+            <displayName value="Major Depression"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_MAJOR_DEPRESSION" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAMajorDepression1"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <supplyCriteria moodCode="EVN" classCode="SPLY">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.8" identifierName="medication, dispensed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAntidepressantMedication2"/>
+          </id>
+                    <text value="Medication, Dispensed: Antidepressant Medication"/>
+          <statusCode code="dispensed"/>
+          
+          
+          <participation typeCode="PRD">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.464.1003.196.12.1213">
+            <displayName value="Antidepressant Medication"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <supplyReference moodCode="EVN" classCode="SPLY">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </supplyReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="MEDICATION_DISPENSED_ANTIDEPRESSANT_MEDICATION" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAntidepressantMedication2"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </supplyCriteria>
+      </entry>
+
+    </dataCriteriaSection>
+  </component>
+  <component>
+    <populationCriteriaSection>
+      <id root="2.16.840.1.113883.3.100.1" extension="Population1"/>
+      <code code="57026-7" codeSystem="2.16.840.1.113883.6.1"/>
+      <title value="84 days"/>
+      <text>This section describes the Initial Patient Population,
+        Numerator, Denominator, Denominator Exceptions, and Measure
+        Populations</text>
+            <component typeCode="COMP">
+        <numeratorCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="68F31733-A3E6-47DD-862C-B941FA56E5BE"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="NUMER">
+            <displayName value="Numerator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+      <id root="2.16.840.1.113883.3.100.1" extension="MedicationActiveAntidepressantMedication_precondition_6"/>
+    </substanceAdministrationReference>
+</precondition>
+  </allTrue>
+</precondition>
+        </numeratorCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <denominatorCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="EB3797F5-0F4E-49A2-8F7E-F06ED1DEC955"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="DENOM">
+            <displayName value="Denominator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN" nullFlavor="NA">
+            <allTrue>
+              <id/>
+            </allTrue>
+          </precondition>
+        </denominatorCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <patientPopulationCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="7CED17BD-A1A8-4491-917B-52C1F4F88AC4"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="IPP">
+            <displayName value="Initial Patient Population"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="GROUP_FIRST_52"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="GROUP_FIRST_54"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_26"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit_precondition_28"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction_precondition_30"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_32"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_34"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedHomeHealthcareServices_precondition_36"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedAnnualWellnessVisit_precondition_38"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitDiagnosticOrEvaluativeInterview_precondition_40"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitIndividualOutpatientInteractivePsychotherapy_precondition_42"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy_precondition_44"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitMedicationManagement_precondition_46"/>
+    </encounterReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+        </patientPopulationCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <denominatorExclusionCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="0DBE6CE8-44D0-4C46-A557-B0943C3536C7"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="DENEX">
+            <displayName value="Denominator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+      <id root="2.16.840.1.113883.3.100.1" extension="MedicationActiveAntidepressantMedication_precondition_3"/>
+    </substanceAdministrationReference>
+</precondition>
+  </allTrue>
+</precondition>
+        </denominatorExclusionCriteria>
+      </component>
+
+      
+      
+    </populationCriteriaSection>
+  </component>
+  <component>
+    <populationCriteriaSection>
+      <id root="2.16.840.1.113883.3.100.1" extension="Population2"/>
+      <code code="57026-7" codeSystem="2.16.840.1.113883.6.1"/>
+      <title value="180 days"/>
+      <text>This section describes the Initial Patient Population,
+        Numerator, Denominator, Denominator Exceptions, and Measure
+        Populations</text>
+            <component typeCode="COMP">
+        <numeratorCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="36E0210E-15C6-4644-B1C6-E80F698AF357"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="NUMER">
+            <displayName value="Numerator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+      <id root="2.16.840.1.113883.3.100.1" extension="MedicationActiveAntidepressantMedication_precondition_9"/>
+    </substanceAdministrationReference>
+</precondition>
+  </allTrue>
+</precondition>
+        </numeratorCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <denominatorCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="EB3797F5-0F4E-49A2-8F7E-F06ED1DEC955"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="DENOM">
+            <displayName value="Denominator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN" nullFlavor="NA">
+            <allTrue>
+              <id/>
+            </allTrue>
+          </precondition>
+        </denominatorCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <patientPopulationCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="7CED17BD-A1A8-4491-917B-52C1F4F88AC4"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="IPP">
+            <displayName value="Initial Patient Population"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="GROUP_FIRST_52"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="GROUP_FIRST_54"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_26"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit_precondition_28"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction_precondition_30"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_32"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_34"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedHomeHealthcareServices_precondition_36"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedAnnualWellnessVisit_precondition_38"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitDiagnosticOrEvaluativeInterview_precondition_40"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitIndividualOutpatientInteractivePsychotherapy_precondition_42"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy_precondition_44"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPsychVisitMedicationManagement_precondition_46"/>
+    </encounterReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+        </patientPopulationCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <denominatorExclusionCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="0DBE6CE8-44D0-4C46-A557-B0943C3536C7"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="DENEX">
+            <displayName value="Denominator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+      <id root="2.16.840.1.113883.3.100.1" extension="MedicationActiveAntidepressantMedication_precondition_3"/>
+    </substanceAdministrationReference>
+</precondition>
+  </allTrue>
+</precondition>
+        </denominatorExclusionCriteria>
+      </component>
+
+      
+      
+    </populationCriteriaSection>
+  </component>
+</QualityMeasureDocument>

@@ -1,0 +1,850 @@
+{
+  "id": "0034",
+  "hqmf_id": "8A4D92B2-35FB-4AA7-0136-403AD4504573",
+  "hqmf_set_id": "AA2A4BBC-864F-45EE-B17A-7EBCC62E6AAC",
+  "hqmf_version_number": 1,
+  "title": "Colorectal Cancer Screening",
+  "description": "Percentage of adults 50-75 years of age who had appropriate screening for colorectal cancer.",
+  "cms_id": "CMS130v1",
+  "population_criteria": {
+    "DENEX": {
+      "conjunction?": true,
+      "type": "DENEX",
+      "title": "Denominator",
+      "hqmf_id": "24AD578A-9880-40BF-A400-1E6B96320E29",
+      "preconditions": [
+        {
+          "id": 11,
+          "preconditions": [
+            {
+              "id": 9,
+              "preconditions": [
+                {
+                  "id": 1,
+                  "reference": "DiagnosisResolvedMalignantNeoplasmOfColon_precondition_1"
+                },
+                {
+                  "id": 3,
+                  "reference": "DiagnosisActiveMalignantNeoplasmOfColon_precondition_3"
+                },
+                {
+                  "id": 5,
+                  "reference": "DiagnosisInactiveMalignantNeoplasmOfColon_precondition_5"
+                },
+                {
+                  "id": 7,
+                  "reference": "ProcedurePerformedTotalColectomy_precondition_7"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "4E245EF3-049D-4FBB-BF54-16FFE8DE5DAF",
+      "preconditions": [
+        {
+          "id": 20,
+          "preconditions": [
+            {
+              "id": 18,
+              "preconditions": [
+                {
+                  "id": 12,
+                  "reference": "ProcedurePerformedColonoscopy_precondition_12"
+                },
+                {
+                  "id": 14,
+                  "reference": "LaboratoryTestResultFecalOccultBloodTestFobt_precondition_14"
+                },
+                {
+                  "id": 16,
+                  "reference": "ProcedurePerformedFlexibleSigmoidoscopy_precondition_16"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "3043DE09-63D4-4B79-9583-CC331EF04211"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "73149355-016D-4A0E-B7F6-BA2AEA23564D",
+      "preconditions": [
+        {
+          "id": 39,
+          "preconditions": [
+            {
+              "id": 21,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_21"
+            },
+            {
+              "id": 23,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_23"
+            },
+            {
+              "id": 37,
+              "preconditions": [
+                {
+                  "id": 25,
+                  "reference": "EncounterPerformedOfficeVisit_precondition_25"
+                },
+                {
+                  "id": 27,
+                  "reference": "EncounterPerformedFaceToFaceInteraction_precondition_27"
+                },
+                {
+                  "id": 29,
+                  "reference": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_29"
+                },
+                {
+                  "id": 31,
+                  "reference": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_31"
+                },
+                {
+                  "id": 33,
+                  "reference": "EncounterPerformedHomeHealthcareServices_precondition_33"
+                },
+                {
+                  "id": 35,
+                  "reference": "EncounterPerformedAnnualWellnessVisit_precondition_35"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "DiagnosisResolvedMalignantNeoplasmOfColon_precondition_1": {
+      "title": "Malignant Neoplasm of Colon",
+      "description": "Diagnosis, Resolved: Malignant Neoplasm of Colon",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_resolved",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "resolved",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DiagnosisResolvedMalignantNeoplasmOfColon",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "DiagnosisActiveMalignantNeoplasmOfColon_precondition_3": {
+      "title": "Malignant Neoplasm of Colon",
+      "description": "Diagnosis, Active: Malignant Neoplasm of Colon",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveMalignantNeoplasmOfColon",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "DiagnosisInactiveMalignantNeoplasmOfColon_precondition_5": {
+      "title": "Malignant Neoplasm of Colon",
+      "description": "Diagnosis, Inactive: Malignant Neoplasm of Colon",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_inactive",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "inactive",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DiagnosisInactiveMalignantNeoplasmOfColon",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "ProcedurePerformedTotalColectomy_precondition_7": {
+      "title": "Total Colectomy",
+      "description": "Procedure, Performed: Total Colectomy",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.198.12.1019",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedTotalColectomy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "ProcedurePerformedColonoscopy_precondition_12": {
+      "title": "Colonoscopy",
+      "description": "Procedure, Performed: Colonoscopy",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1020",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedColonoscopy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "9",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "LaboratoryTestResultFecalOccultBloodTestFobt_precondition_14": {
+      "title": "Fecal Occult Blood Test (FOBT)",
+      "description": "Laboratory Test, Result: Fecal Occult Blood Test (FOBT)",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.198.12.1011",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultFecalOccultBloodTestFobt",
+      "value": {
+        "type": "ANYNonNull"
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "ProcedurePerformedFlexibleSigmoidoscopy_precondition_16": {
+      "title": "Flexible Sigmoidoscopy",
+      "description": "Procedure, Performed: Flexible Sigmoidoscopy",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.198.12.1010",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedFlexibleSigmoidoscopy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_21": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "51",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_23": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "75",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedOfficeVisit_precondition_25": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedFaceToFaceInteraction_precondition_27": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_29": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_31": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedHomeHealthcareServices_precondition_33": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHomeHealthcareServices",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedAnnualWellnessVisit_precondition_35": {
+      "title": "Annual Wellness Visit",
+      "description": "Encounter, Performed: Annual Wellness Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1240",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedAnnualWellnessVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "DiagnosisResolvedMalignantNeoplasmOfColon": {
+      "title": "Malignant Neoplasm of Colon",
+      "description": "Diagnosis, Resolved: Malignant Neoplasm of Colon",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_resolved",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "resolved",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DiagnosisResolvedMalignantNeoplasmOfColon"
+    },
+    "ProcedurePerformedTotalColectomy": {
+      "title": "Total Colectomy",
+      "description": "Procedure, Performed: Total Colectomy",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.198.12.1019",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedTotalColectomy"
+    },
+    "ProcedurePerformedColonoscopy": {
+      "title": "Colonoscopy",
+      "description": "Procedure, Performed: Colonoscopy",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1020",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedColonoscopy"
+    },
+    "ProcedurePerformedFlexibleSigmoidoscopy": {
+      "title": "Flexible Sigmoidoscopy",
+      "description": "Procedure, Performed: Flexible Sigmoidoscopy",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.198.12.1010",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedFlexibleSigmoidoscopy"
+    },
+    "LaboratoryTestResultFecalOccultBloodTestFobt": {
+      "title": "Fecal Occult Blood Test (FOBT)",
+      "description": "Laboratory Test, Result: Fecal Occult Blood Test (FOBT)",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.198.12.1011",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultFecalOccultBloodTestFobt"
+    },
+    "DiagnosisActiveMalignantNeoplasmOfColon": {
+      "title": "Malignant Neoplasm of Colon",
+      "description": "Diagnosis, Active: Malignant Neoplasm of Colon",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveMalignantNeoplasmOfColon"
+    },
+    "DiagnosisInactiveMalignantNeoplasmOfColon": {
+      "title": "Malignant Neoplasm of Colon",
+      "description": "Diagnosis, Inactive: Malignant Neoplasm of Colon",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_inactive",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "inactive",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DiagnosisInactiveMalignantNeoplasmOfColon"
+    },
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "EncounterPerformedHomeHealthcareServices": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHomeHealthcareServices"
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp"
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp"
+    },
+    "EncounterPerformedAnnualWellnessVisit": {
+      "title": "Annual Wellness Visit",
+      "description": "Encounter, Performed: Annual Wellness Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1240",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedAnnualWellnessVisit"
+    }
+  },
+  "attributes": [
+    {
+      "id": "FINALIZED_DATE_TIME",
+      "code": "OTH",
+      "value": "201208221531-0500",
+      "name": "Finalized Date/Time"
+    },
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "Physician Performance Measure (Measures) and related data specifications were developed by the National Committee for Quality Assurance (NCQA). \n\nThe Measures are copyrighted but can be reproduced and distributed, without modification, for noncommercial purposes (e.g., use by healthcare providers in connection with their practices). Commercial use is defined as the sale, licensing, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial use of the Measures requires a license agreement between the user and NCQA. NCQA is not responsible for any use of the Measures. \n\nCopyright 2012 National Committee for Quality Assurance. All Rights Reserved. \n\nLimited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets.  NCQA disclaims all liability for use or accuracy of any CPT or other codes contained in the specifications.\n\nCPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC(R) copyright 2004-2011 Regenstrief Institute, Inc. \nThis material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 Copyright 2011 World Health Organization. All Rights Reserved.\n\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "An estimated 142,570 men and women were diagnosed with colon cancer in 2010. In the same year, 51,370 were estimated to have died from the disease, making colorectal cancer the third leading cause of cancer death in the United States (American Cancer Society 2010). \n\nScreening for colorectal cancer is extremely important as there are no signs or symptoms of the cancer in the early stages. If the disease is caught in its earliest stages, it has a five-year survival rate of 91%; however, the disease is often not caught this early. While screening is extremely effective in detecting colorectal cancer, it remains underutilized (American Cancer Society 2010). \n\nFecal occult blood tests, colonoscopy, and flexible sigmoidoscopy are shown to be effective screening methods (United States Preventive Services Task Force, 2008). Colorectal screening of individuals with no symptoms can identify polyps whose removal can prevent more than 90% of colorectal cancers (Rozen 2004). \n\nStudies have shown that the cost-effectiveness of colorectal cancer screening is $40,000 per life year gained, which is similar to the cost-effectiveness of mammography for breast cancer screening (Hawk and Levin 2005).",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "The United States Preventive Services Task Force (2008): \n\n[1]The USPSTF recommends screening for colorectal cancer using fecal occult blood testing, sigmoidoscopy, or colonoscopy in adults, beginning at age 50 years and continuing until age 75 years (A recommendation). \n[2]The USPSTF concludes that the evidence is insufficient to assess the benefits and harms of computed tomographic (CT) colonography and fecal DNA testing as screening modalities for colorectal cancer (I statement). \n\nThe American Cancer Society, The American College of Radiology, and the U.S. Multi-Society Task Force on Colorectal Cancer (Levin et al. 2008): \n\nTests that Detect Adenomatous Polyps and Cancer\n[1]Colonoscopy (every 10 yrs) \n[2]Flexible sigmoidoscopy (every 5 yrs) \n[3]fecal occult blood tests (fecal occult blood test (FOBT)) \n[4]Double contrast barium enema (DCBE) (every 5 yrs)\n[5]Computed tomographic colonography (CTC) (every 5 years) \n\nTests that Primarily Detect Cancer: \n[1] guaiac fecal occult blood test (gFOBT) with high sensitivity for cancer (annually) \n[2] fecal immunochemical test (FIT) with high sensitivity for cancer (annually) \n[3] stool DNA (sDNA) with high sensitivity for cancer (interval uncertain) \n\nModalities not approved: \n[1] Single digital rectal examination fecal occult blood test (FOBT) has a poor sensitivity for CRC and should not be performed as a primary screening method \n[2] Studies evaluating virtual colonoscopy and fecal DNA testing for CRC screening have yielded conflicting results and therefore cannot be recommended",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "Higher score indicates better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "0034",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "These performance Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.\n\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND.",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "130",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "Rozen, P. 2004. Cancer of the gastrointestinal tract: early detection or early prevention? Eur J Cancer Prev 13(1):71-5.",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "None",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "None",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "Patients 51-75 years of age with a visit during the measurement period",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals Initial Patient Population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Patients with a diagnosis or past history of total colectomy or colorectal cancer",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Patients with one or more screenings for colorectal cancer. Appropriate screenings are defined by any one of the following criteria below: \n- Fecal occult blood test (FOBT) during the measurement period \n- Flexible sigmoidoscopy during the measurement period or the four years prior to the measurement period \n- Colonoscopy during the measurement period or the nine years prior to the measurement period",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "None",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not Applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "IPP": "IPP",
+      "DENOM": "DENOM",
+      "NUMER": "NUMER",
+      "DENEX": "DENEX"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

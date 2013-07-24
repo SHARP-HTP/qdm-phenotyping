@@ -1,0 +1,1437 @@
+{
+  "id": "FSACHF",
+  "hqmf_id": "8A4D92B2-3B79-4CE2-013B-904950F61CB7",
+  "hqmf_set_id": "BB9B8EF7-0354-40E0-BEC7-D6891B7DF519",
+  "hqmf_version_number": 2,
+  "title": "Functional Status Assessment for Complex Chronic Conditions",
+  "description": "Percentage of patients aged 65 years and older with heart failure who completed initial and follow-up patient-reported functional status assessments",
+  "cms_id": "CMS90v2",
+  "population_criteria": {
+    "DENEX": {
+      "conjunction?": true,
+      "type": "DENEX",
+      "title": "Denominator",
+      "hqmf_id": "60DC1B8E-95D5-487D-B8CB-F4C0D127EF75",
+      "preconditions": [
+        {
+          "id": 21,
+          "preconditions": [
+            {
+              "id": 19,
+              "preconditions": [
+                {
+                  "id": 10,
+                  "preconditions": [
+                    {
+                      "id": 7,
+                      "reference": "DiagnosisActiveSevereDementia_precondition_7"
+                    },
+                    {
+                      "id": 9,
+                      "preconditions": [
+                        {
+                          "id": 5,
+                          "reference": "DiagnosisActiveSevereDementia_precondition_5"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 17,
+                  "preconditions": [
+                    {
+                      "id": 14,
+                      "reference": "DiagnosisActiveAllCancer_precondition_14"
+                    },
+                    {
+                      "id": 16,
+                      "preconditions": [
+                        {
+                          "id": 12,
+                          "reference": "DiagnosisActiveAllCancer_precondition_12"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "B1F9DF65-674B-4465-8C19-F1523A00FE5D",
+      "preconditions": [
+        {
+          "id": 48,
+          "preconditions": [
+            {
+              "id": 46,
+              "preconditions": [
+                {
+                  "id": 26,
+                  "preconditions": [
+                    {
+                      "id": 22,
+                      "reference": "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure_precondition_22"
+                    },
+                    {
+                      "id": 24,
+                      "reference": "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure_precondition_24"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 32,
+                  "preconditions": [
+                    {
+                      "id": 28,
+                      "reference": "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure_precondition_28"
+                    },
+                    {
+                      "id": 30,
+                      "reference": "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure_precondition_30"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 38,
+                  "preconditions": [
+                    {
+                      "id": 34,
+                      "reference": "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure_precondition_34"
+                    },
+                    {
+                      "id": 36,
+                      "reference": "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure_precondition_36"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 44,
+                  "preconditions": [
+                    {
+                      "id": 40,
+                      "reference": "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure_precondition_40"
+                    },
+                    {
+                      "id": 42,
+                      "reference": "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure_precondition_42"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "CBA54C54-C6D5-4E28-9A06-2289AA3E9E52"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "86977734-D6D0-4526-B4F7-F60D504655CF",
+      "preconditions": [
+        {
+          "id": 97,
+          "preconditions": [
+            {
+              "id": 54,
+              "reference": "GROUP_FIRST_99",
+              "conjunction_code": "allTrue"
+            },
+            {
+              "id": 58,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_58"
+            },
+            {
+              "id": 60,
+              "reference": "DiagnosisActiveHeartFailure_precondition_60"
+            },
+            {
+              "id": 94,
+              "preconditions": [
+                {
+                  "id": 68,
+                  "preconditions": [
+                    {
+                      "id": 63,
+                      "reference": "OccurrenceBOfficeVisit2_precondition_62",
+                      "conjunction_code": "allTrue"
+                    },
+                    {
+                      "id": 66,
+                      "reference": "OccurrenceBOfficeVisit2_precondition_65",
+                      "conjunction_code": "allTrue"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 76,
+                  "preconditions": [
+                    {
+                      "id": 71,
+                      "reference": "OccurrenceBFaceToFaceInteraction4_precondition_70",
+                      "conjunction_code": "allTrue"
+                    },
+                    {
+                      "id": 74,
+                      "reference": "OccurrenceBFaceToFaceInteraction4_precondition_73",
+                      "conjunction_code": "allTrue"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 84,
+                  "preconditions": [
+                    {
+                      "id": 79,
+                      "reference": "OccurrenceBOfficeVisit2_precondition_78",
+                      "conjunction_code": "allTrue"
+                    },
+                    {
+                      "id": 82,
+                      "reference": "OccurrenceBOfficeVisit2_precondition_81",
+                      "conjunction_code": "allTrue"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 92,
+                  "preconditions": [
+                    {
+                      "id": 87,
+                      "reference": "OccurrenceBFaceToFaceInteraction4_precondition_86",
+                      "conjunction_code": "allTrue"
+                    },
+                    {
+                      "id": 90,
+                      "reference": "OccurrenceBFaceToFaceInteraction4_precondition_89",
+                      "conjunction_code": "allTrue"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            },
+            {
+              "id": 96,
+              "preconditions": [
+                {
+                  "id": 56,
+                  "reference": "DiagnosisActiveHeartFailure_precondition_56"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue",
+              "negation": true
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "OccurrenceAOfficeVisit1": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit1"
+    },
+    "OccurrenceBOfficeVisit2": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceBOfficeVisit2"
+    },
+    "OccurrenceAFaceToFaceInteraction3": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction3"
+    },
+    "OccurrenceBFaceToFaceInteraction4": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceBFaceToFaceInteraction4"
+    },
+    "DiagnosisActiveSevereDementia_precondition_7": {
+      "title": "Severe Dementia",
+      "description": "Diagnosis, Active: Severe Dementia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1025",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveSevereDementia",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "DiagnosisActiveSevereDementia_precondition_5": {
+      "title": "Severe Dementia",
+      "description": "Diagnosis, Active: Severe Dementia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1025",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveSevereDementia",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "DiagnosisActiveAllCancer_precondition_14": {
+      "title": "All Cancer",
+      "description": "Diagnosis, Active: All Cancer",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1011",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAllCancer",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "DiagnosisActiveAllCancer_precondition_12": {
+      "title": "All Cancer",
+      "description": "Diagnosis, Active: All Cancer",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1011",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAllCancer",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure_precondition_22": {
+      "title": "Functional Status Assessment for Heart Failure",
+      "description": "Functional Status, Result: Functional Status Assessment for Heart Failure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.118.12.1031",
+      "type": "functional_statuses",
+      "definition": "functional_status_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure",
+      "temporal_references": [
+        {
+          "type": "EBE",
+          "reference": "OccurrenceAOfficeVisit1",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "wk",
+              "value": "2",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure_precondition_24": {
+      "title": "Functional Status Assessment for Heart Failure",
+      "description": "Functional Status, Result: Functional Status Assessment for Heart Failure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.118.12.1031",
+      "type": "functional_statuses",
+      "definition": "functional_status_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure",
+      "temporal_references": [
+        {
+          "type": "EBE",
+          "reference": "OccurrenceBOfficeVisit2",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "wk",
+              "value": "2",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure_precondition_28": {
+      "title": "Functional Status Assessment for Heart Failure",
+      "description": "Functional Status, Result: Functional Status Assessment for Heart Failure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.118.12.1031",
+      "type": "functional_statuses",
+      "definition": "functional_status_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure",
+      "temporal_references": [
+        {
+          "type": "EBE",
+          "reference": "OccurrenceAFaceToFaceInteraction3",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "wk",
+              "value": "2",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure_precondition_30": {
+      "title": "Functional Status Assessment for Heart Failure",
+      "description": "Functional Status, Result: Functional Status Assessment for Heart Failure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.118.12.1031",
+      "type": "functional_statuses",
+      "definition": "functional_status_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure",
+      "temporal_references": [
+        {
+          "type": "EBE",
+          "reference": "OccurrenceBFaceToFaceInteraction4",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "wk",
+              "value": "2",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure_precondition_34": {
+      "title": "Functional Status Assessment for Heart Failure",
+      "description": "Functional Status, Result: Functional Status Assessment for Heart Failure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.118.12.1031",
+      "type": "functional_statuses",
+      "definition": "functional_status_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure",
+      "temporal_references": [
+        {
+          "type": "EBE",
+          "reference": "OccurrenceAFaceToFaceInteraction3",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "wk",
+              "value": "2",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure_precondition_36": {
+      "title": "Functional Status Assessment for Heart Failure",
+      "description": "Functional Status, Result: Functional Status Assessment for Heart Failure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.118.12.1031",
+      "type": "functional_statuses",
+      "definition": "functional_status_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure",
+      "temporal_references": [
+        {
+          "type": "EBE",
+          "reference": "OccurrenceBOfficeVisit2",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "wk",
+              "value": "2",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure_precondition_40": {
+      "title": "Functional Status Assessment for Heart Failure",
+      "description": "Functional Status, Result: Functional Status Assessment for Heart Failure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.118.12.1031",
+      "type": "functional_statuses",
+      "definition": "functional_status_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure",
+      "temporal_references": [
+        {
+          "type": "EBE",
+          "reference": "OccurrenceAOfficeVisit1",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "wk",
+              "value": "2",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure_precondition_42": {
+      "title": "Functional Status Assessment for Heart Failure",
+      "description": "Functional Status, Result: Functional Status Assessment for Heart Failure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.118.12.1031",
+      "type": "functional_statuses",
+      "definition": "functional_status_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure",
+      "temporal_references": [
+        {
+          "type": "EBE",
+          "reference": "OccurrenceBFaceToFaceInteraction4",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "wk",
+              "value": "2",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit1_precondition_49": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit1",
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "185",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAFaceToFaceInteraction3_precondition_51": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction3",
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "185",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "GROUP_FIRST_99": {
+      "title": "GROUP_FIRST_99",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "OccurrenceAOfficeVisit1_precondition_49",
+        "OccurrenceAFaceToFaceInteraction3_precondition_51"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_FIRST_99",
+      "subset_operators": [
+        {
+          "type": "FIRST"
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_58": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "65",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "DiagnosisActiveHeartFailure_precondition_60": {
+      "title": "Heart Failure",
+      "description": "Diagnosis, Active: Heart Failure",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.376",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveHeartFailure",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceBOfficeVisit2_precondition_62": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceBOfficeVisit2",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceAOfficeVisit1",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "30",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ],
+      "subset_operators": [
+        {
+          "type": "RECENT"
+        }
+      ]
+    },
+    "OccurrenceBOfficeVisit2_precondition_65": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceBOfficeVisit2",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceAOfficeVisit1",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "180",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ],
+      "subset_operators": [
+        {
+          "type": "RECENT"
+        }
+      ]
+    },
+    "OccurrenceBFaceToFaceInteraction4_precondition_70": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceBFaceToFaceInteraction4",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceAOfficeVisit1",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "30",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ],
+      "subset_operators": [
+        {
+          "type": "RECENT"
+        }
+      ]
+    },
+    "OccurrenceBFaceToFaceInteraction4_precondition_73": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceBFaceToFaceInteraction4",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceAOfficeVisit1",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "180",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ],
+      "subset_operators": [
+        {
+          "type": "RECENT"
+        }
+      ]
+    },
+    "OccurrenceBOfficeVisit2_precondition_78": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceBOfficeVisit2",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceAFaceToFaceInteraction3",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "30",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ],
+      "subset_operators": [
+        {
+          "type": "RECENT"
+        }
+      ]
+    },
+    "OccurrenceBOfficeVisit2_precondition_81": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceBOfficeVisit2",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceAFaceToFaceInteraction3",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "180",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ],
+      "subset_operators": [
+        {
+          "type": "RECENT"
+        }
+      ]
+    },
+    "OccurrenceBFaceToFaceInteraction4_precondition_86": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceBFaceToFaceInteraction4",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceAFaceToFaceInteraction3",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "30",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ],
+      "subset_operators": [
+        {
+          "type": "RECENT"
+        }
+      ]
+    },
+    "OccurrenceBFaceToFaceInteraction4_precondition_89": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceBFaceToFaceInteraction4",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceAFaceToFaceInteraction3",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "180",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ],
+      "subset_operators": [
+        {
+          "type": "RECENT"
+        }
+      ]
+    },
+    "DiagnosisActiveHeartFailure_precondition_56": {
+      "title": "Heart Failure",
+      "description": "Diagnosis, Active: Heart Failure",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.376",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveHeartFailure",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "DiagnosisActiveHeartFailure": {
+      "title": "Heart Failure",
+      "description": "Diagnosis, Active: Heart Failure",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.376",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveHeartFailure"
+    },
+    "DiagnosisActiveSevereDementia": {
+      "title": "Severe Dementia",
+      "description": "Diagnosis, Active: Severe Dementia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1025",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveSevereDementia"
+    },
+    "DiagnosisActiveAllCancer": {
+      "title": "All Cancer",
+      "description": "Diagnosis, Active: All Cancer",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1011",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAllCancer"
+    },
+    "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure": {
+      "title": "Functional Status Assessment for Heart Failure",
+      "description": "Functional Status, Result: Functional Status Assessment for Heart Failure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.118.12.1031",
+      "type": "functional_statuses",
+      "definition": "functional_status_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "FunctionalStatusResultFunctionalStatusAssessmentForHeartFailure"
+    },
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "OccurrenceAOfficeVisit1": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit1"
+    },
+    "OccurrenceBOfficeVisit2": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceBOfficeVisit2"
+    },
+    "OccurrenceAFaceToFaceInteraction3": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction3"
+    },
+    "OccurrenceBFaceToFaceInteraction4": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceBFaceToFaceInteraction4"
+    }
+  },
+  "attributes": [
+    {
+      "id": "FINALIZED_DATE_TIME",
+      "code": "OTH",
+      "value": "201212121243-0600",
+      "name": "Finalized Date/Time"
+    },
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "TBD",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "Measuring functional status for patients with complex chronic illness permits longitudinal assessment - from the patient’s perspective - of the effectiveness of symptom management, as well as health-related quality of life (Flynn 2009, Rothrock 2010).",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "Clinicians should ask patients to report on functional status during at least two points in time while undergoing treatment and working with the clinical team to coordinate care. (Selim 2006)",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "A higher score indicates better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "NA",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "TBD",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "90",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "Selim AJ, Berlowitz D, Kazis LE, Rogers W, Wright SM, Qian SX, Rohendler JA, Spiro A, Miller D, Selim BJ, Fincke BG.  Comparison of Health Outcomes for Male Seniors in the Veterans Health Administration and Medicare Advantage Plans.  Health Services Research 2010; 45(2): 376-396.",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "None",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "Initial encounter: The first encounter during the first 185 days of the measurement year. \n\nFollow-up encounter: The last encounter that is at least 30 days but no more than 180 after the initial encounter.\n\nA Functional Status Assessment (FSA) is based on administration of a validated instrument to eligible patients that asks patients to answer questions related to various domains including: pain, physical function, emotional well-being, health-related quality of life, symptom acuity.\n\nThe use of patient-reported outcomes data in eMeasures - such as this measure of functional status - demonstrates the need for the Quality Reporting Data Architecture (QRDA) to support a data attribute that indicates that the patient provided the information.",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "Adults aged 65 years and older who had two outpatient encounters during the measurement year and an active diagnosis of heart failure.",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals Initial Patient Population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Patients with severe cognitive impairment or patients with an active diagnosis of cancer",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Patients with patient reported functional status assessment results (e.g., VR-12; VR-36; MLHF-Q; KCCQ; PROMIS-10 Global Health, PROMIS-29) present in the EHR at least two weeks before or during the initial encounter and the follow-up encounter during the measurement year.",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "None",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not Applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "IPP": "IPP",
+      "DENOM": "DENOM",
+      "NUMER": "NUMER",
+      "DENEX": "DENEX"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

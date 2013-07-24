@@ -1,0 +1,2979 @@
+<?xml version="1.0" encoding="utf-8"?>
+<QualityMeasureDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <id root="2.16.840.1.113883.3.100.1" extension="8A4D92B2-397A-48D2-0139-7E243C8B15B6" />
+  <code code="57024-2" codeSystem="2.16.840.1.113883.6.1"/>
+  <title value="Diabetes: Urine Protein Screening"/>
+  <text value="The percentage of patients 18-75 years of age with diabetes who had a nephropathy screening test or evidence of nephropathy during the measurement period."/>
+  <statusCode code="completed" />
+  <setId root="2.16.840.1.113883.3.100.1" extension="7B2A9277-43DA-4D99-9BEE-6AC271A07747" />
+  <versionNumber value="1"/>
+  <author typeCode="AUT" contextControlCode="OP">
+    <responsibleParty classCode="ASSIGNED" />
+  </author>
+  <custodian typeCode="CST">
+    <responsibleParty classCode="ASSIGNED" />
+  </custodian>
+  <controlVariable>
+    <measurePeriod>
+      <code code="MSRTP" codeSystem="2.16.840.1.113883.3.560">
+        <displayName value="Measurement period"/>
+      </code>
+      <value>
+        <low value="201201010000" />
+        <high value="201212312359" />
+      </value>
+    </measurePeriod>
+  </controlVariable>
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="COPYRIGHT"/>
+			<code code="COPY">
+				<displayName value="Copyright"/>
+			</code>
+			<value xsi:type="ED" value="Physician Performance Measure (Measures) and related data specifications were developed by the National Committee for Quality Assurance (NCQA). 
+
+The Measures are copyrighted but can be reproduced and distributed, without modification, for noncommercial purposes (e.g., use by healthcare providers in connection with their practices). Commercial use is defined as the sale, licensing, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial use of the Measures requires a license agreement between the user and NCQA. NCQA is not responsible for any use of the Measures. 
+
+Copyright 2012 National Committee for Quality Assurance. All Rights Reserved. 
+
+Limited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets. NCQA disclaims all liability for use or accuracy of any CPT or other codes contained in the specifications.
+
+CPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC(R) copyright 2004-2011 Regenstrief Institute, Inc. 
+This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 copyright 2011 World Health Organization. All Rights Reserved.
+
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM]."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_SCORING"/>
+			<code code="MSRSCORE">
+				<displayName value="Measure Scoring"/>
+			</code>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_TYPE"/>
+			<code code="MSRTYPE">
+				<displayName value="Measure Type"/>
+			</code>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="STRATIFICATION"/>
+			<code code="STRAT">
+				<displayName value="Stratification"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="RISK_ADJUSTMENT"/>
+			<code code="MSRADJ">
+				<displayName value="Risk Adjustment"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="RATE_AGGREGATION"/>
+			<code code="MSRAGG">
+				<displayName value="Rate Aggregation"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="RATIONALE"/>
+			<code code="RAT">
+				<displayName value="Rationale"/>
+			</code>
+			<value xsi:type="ED" value="Diabetes mellitus (diabetes) is a group of diseases characterized by high blood glucose levels caused by the body's inability to correctly produce or utilize the hormone insulin (National Institute of Diabetes and Digestive and Kidney Diseases 2011). It is recognized as a leading cause of death and disability in the U.S. and is highly underreported as a cause of death (National Institute of Diabetes and Digestive and Kidney Diseases 2011). Diabetes may cause life-threatening, life-ending or life-altering complications, including end-stage kidney disease. Diabetes is the primary cause of kidney failure, accounting for 44 percent of newly diagnosed cases in 2005 (National Institute of Diabetes and Digestive and Kidney Diseases 2011). Clinical guidelines recommend regular testing to evaluate urine albumin excretions and serum creatinine and the estimated glomerular filtration rate derived from serum creatinine, in addition to comparing measurements when screening for chronic kidney disease (American Diabetes Association 2009; American Association of Clinical Endocrinologists 2007)."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="CLINICAL_RECOMMENDATION_STATEMENT"/>
+			<code code="CRS">
+				<displayName value="Clinical Recommendation Statement"/>
+			</code>
+			<value xsi:type="ED" value="American Diabetes Association (2009):
+- Perform an annual test to assess urine albumin excretion in type 1 diabetic patients with diabetes duration of >=5 years and in all type 2 diabetic patients, starting at diagnosis. (Level of Evidence E)
+- Measure serum creatinine at least annually in all adults with diabetes regardless of the degree of urine albumin excretion. The serum creatinine should be used to estimate GFR and stage the level of chronic kidney disease (CKD), if present. (Level of Evidence E)
+- In the treatment of the nonpregnant patient with micro- or macroalbuminuria, either ACE inhibitors or ARBs should be used. (Level of Evidence A)
+
+American Association of Clinical Endocrinologists (2007): Screen all patients with diabetes mellitus for chronic kidney disease annually; screening should begin 5 years after diagnosis in patients with Type 1 diabetes mellitus (T1DM) and at the time of diagnosis in patients with Type 2 diabetes mellitus (T2DM). Testing includes:
+- Measurement of albumin-to-creatinine ratio in a spot urine specimen and measurement of the estimated glomerular filtration rate derived from serum creatinine
+- The following are diagnostic criteria for chronic kidney disease:
+. Estimated glomerular filtration rate <60 mL/min/1.73 m2 or albumin-to-creatinine ratio >=30 mg albumin/g creatinine
+. Microalbuminuria >=30 mg albumin/g creatinine
+. Macroalbuminuria >=300 mg albumin/g creatinine (Grade A)
+. Prescribe an angiotensin-converting enzyme inhibitor or an angiotensin receptor blocker in the antihypertensive regimen in the absence of contraindications. (Grade A)
+
+California Healthcare Foundation/American Geriatrics Society (2003): A test for the presence of microalbumin should be performed at diagnosis in patients with type 2 diabetes mellitus. After the initial screening and in the absence of previously demonstrated macro- or microalbuminuria, a test for the presence of microalbumin should be performed annually. (Level III, Grade A)"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="IMPROVEMENT_NOTATION"/>
+			<code code="IDUR">
+				<displayName value="Improvement Notation"/>
+			</code>
+			<value xsi:type="ED" value="Higher score indicates better quality"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="NQF_ID_NUMBER"/>
+			<code code="OTH">
+				<displayName value="NQF ID Number"/>
+			</code>
+			<value xsi:type="ED" value="0062"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DISCLAIMER"/>
+			<code code="DISC">
+				<displayName value="Disclaimer"/>
+			</code>
+			<value xsi:type="ED" value="These performance Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.
+
+THE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="EMEASURE_IDENTIFIER"/>
+			<code code="OTH">
+				<displayName value="eMeasure Identifier"/>
+			</code>
+			<value xsi:type="ED" value="134"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="REFERENCE"/>
+			<code code="REF">
+				<displayName value="Reference"/>
+			</code>
+			<value xsi:type="ED" value="National Institute of Diabetes and Digestive and Kidney Diseases. 2011. "Causes of Diabetes." (September) 
+http://diabetes.niddk.nih.gov/dm/pubs/causes/index.aspx"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DEFINITION"/>
+			<code code="DEF">
+				<displayName value="Definition"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="GUIDANCE"/>
+			<code code="GUIDE">
+				<displayName value="Guidance"/>
+			</code>
+			<value xsi:type="ED" value="Only patients with a diagnosis of Type 1 or Type 2 diabetes should be included in the denominator of this measure; patients with a diagnosis of secondary diabetes due to another condition should not be included."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="TRANSMISSION_FORMAT"/>
+			<code code="OTH">
+				<displayName value="Transmission Format"/>
+			</code>
+			<value xsi:type="ED" value="TBD"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="INITIAL_PATIENT_POPULATION"/>
+			<code code="IPP">
+				<displayName value="Initial Patient Population"/>
+			</code>
+			<value xsi:type="ED" value="Patients 18-75 years of age with diabetes with a visit during the measurement period"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DENOMINATOR"/>
+			<code code="DENOM">
+				<displayName value="Denominator"/>
+			</code>
+			<value xsi:type="ED" value="Equals Initial Patient Population"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DENOMINATOR_EXCLUSIONS"/>
+			<code code="OTH">
+				<displayName value="Denominator Exclusions"/>
+			</code>
+			<value xsi:type="ED" value="Patients with a diagnosis of gestational diabetes during the measurement period"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="NUMERATOR"/>
+			<code code="NUMER">
+				<displayName value="Numerator"/>
+			</code>
+			<value xsi:type="ED" value="Patients with a screening for nephropathy or evidence of nephropathy during the measurement period"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="NUMERATOR_EXCLUSIONS"/>
+			<code code="OTH">
+				<displayName value="Numerator Exclusions"/>
+			</code>
+			<value xsi:type="ED" value="Not Applicable"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DENOMINATOR_EXCEPTIONS"/>
+			<code code="DENEXCEP">
+				<displayName value="Denominator Exceptions"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_POPULATION"/>
+			<code code="MSRPOPL">
+				<displayName value="Measure Population"/>
+			</code>
+			<value xsi:type="ED" value="Not Applicable"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_OBSERVATIONS"/>
+			<code code="OTH">
+				<displayName value="Measure Observations"/>
+			</code>
+			<value xsi:type="ED" value="Not Applicable"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="SUPPLEMENTAL_DATA_ELEMENTS"/>
+			<code code="OTH">
+				<displayName value="Supplemental Data Elements"/>
+			</code>
+			<value xsi:type="ED" value="For every patient evaluated by this measure also identify payer, race, ethnicity and sex."/>
+		</measureAttribute>
+	</subjectOf>
+
+  <component>
+    <dataCriteriaSection>
+      <code code="57025-9" codeSystem="2.16.840.1.113883.6.1"/>
+      <title value="Data Criteria Section"/>
+      <text>This section describes the data criteria.</text>
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveGestationalDiabetes"/>
+          </id>
+                    <text value="Diagnosis, Active: Gestational Diabetes"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.103.12.1010">
+            <displayName value="Gestational Diabetes"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveGestationalDiabetes"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveHypertensiveChronicKidneyDisease"/>
+          </id>
+                    <text value="Diagnosis, Active: Hypertensive Chronic Kidney Disease"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1017">
+            <displayName value="Hypertensive Chronic Kidney Disease"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveHypertensiveChronicKidneyDisease"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveGlomerulonephritisAndNephroticSyndrome"/>
+          </id>
+                    <text value="Diagnosis, Active: Glomerulonephritis and Nephrotic Syndrome"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1018">
+            <displayName value="Glomerulonephritis and Nephrotic Syndrome"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveGlomerulonephritisAndNephroticSyndrome"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDiabeticNephropathy"/>
+          </id>
+                    <text value="Diagnosis, Active: Diabetic Nephropathy"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1004">
+            <displayName value="Diabetic Nephropathy"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDiabeticNephropathy"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <substanceAdministrationCriteria moodCode="EVN" classCode="SBADM">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.13" identifierName="medication, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="MedicationActiveAceInhibitorOrArb"/>
+          </id>
+                    <text value="Medication, Active: ACE inhibitor or ARB"/>
+          <statusCode code="active"/>
+          
+          
+          <participation typeCode="CSM">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.526.3.1139">
+            <displayName value="ACE inhibitor or ARB"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </substanceAdministrationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="MedicationActiveAceInhibitorOrArb"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </substanceAdministrationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveProteinuria"/>
+          </id>
+                    <text value="Diagnosis, Active: Proteinuria"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1003">
+            <displayName value="Proteinuria"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveProteinuria"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAGestationalDiabetes1_precondition_9"/>
+          </id>
+                    <text value="Diagnosis, Active: Gestational Diabetes"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.103.12.1010">
+            <displayName value="Gestational Diabetes"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBE">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_GESTATIONAL_DIABETES" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAGestationalDiabetes1"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAGestationalDiabetes1_precondition_7"/>
+          </id>
+                    <text value="Diagnosis, Active: Gestational Diabetes"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.103.12.1010">
+            <displayName value="Gestational Diabetes"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="EBS">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_GESTATIONAL_DIABETES" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAGestationalDiabetes1"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <substanceAdministrationCriteria moodCode="EVN" classCode="SBADM">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.13" identifierName="medication, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAceInhibitorOrArb2_precondition_15"/>
+          </id>
+                    <text value="Medication, Active: ACE inhibitor or ARB"/>
+          <statusCode code="active"/>
+          
+          
+          <participation typeCode="CSM">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.526.3.1139">
+            <displayName value="ACE inhibitor or ARB"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </substanceAdministrationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBE">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="MEDICATION_ACTIVE_ACE_INHIBITOR_OR_ARB" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAceInhibitorOrArb2"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </substanceAdministrationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <substanceAdministrationCriteria moodCode="EVN" classCode="SBADM">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.13" identifierName="medication, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAceInhibitorOrArb2_precondition_13"/>
+          </id>
+                    <text value="Medication, Active: ACE inhibitor or ARB"/>
+          <statusCode code="active"/>
+          
+          
+          <participation typeCode="CSM">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.526.3.1139">
+            <displayName value="ACE inhibitor or ARB"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </substanceAdministrationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="EBS">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="MEDICATION_ACTIVE_ACE_INHIBITOR_OR_ARB" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAceInhibitorOrArb2"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </substanceAdministrationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAHypertensiveChronicKidneyDisease3_precondition_22"/>
+          </id>
+                    <text value="Diagnosis, Active: Hypertensive Chronic Kidney Disease"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1017">
+            <displayName value="Hypertensive Chronic Kidney Disease"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBE">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_HYPERTENSIVE_CHRONIC_KIDNEY_DISEASE" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAHypertensiveChronicKidneyDisease3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAHypertensiveChronicKidneyDisease3_precondition_20"/>
+          </id>
+                    <text value="Diagnosis, Active: Hypertensive Chronic Kidney Disease"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1017">
+            <displayName value="Hypertensive Chronic Kidney Disease"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="EBS">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_HYPERTENSIVE_CHRONIC_KIDNEY_DISEASE" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAHypertensiveChronicKidneyDisease3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAGlomerulonephritisAndNephroticSyndrome4_precondition_29"/>
+          </id>
+                    <text value="Diagnosis, Active: Glomerulonephritis and Nephrotic Syndrome"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1018">
+            <displayName value="Glomerulonephritis and Nephrotic Syndrome"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBE">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_GLOMERULONEPHRITIS_AND_NEPHROTIC_SYNDROME" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAGlomerulonephritisAndNephroticSyndrome4"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAGlomerulonephritisAndNephroticSyndrome4_precondition_27"/>
+          </id>
+                    <text value="Diagnosis, Active: Glomerulonephritis and Nephrotic Syndrome"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1018">
+            <displayName value="Glomerulonephritis and Nephrotic Syndrome"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="EBS">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_GLOMERULONEPHRITIS_AND_NEPHROTIC_SYNDROME" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAGlomerulonephritisAndNephroticSyndrome4"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceADiabeticNephropathy5_precondition_36"/>
+          </id>
+                    <text value="Diagnosis, Active: Diabetic Nephropathy"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1004">
+            <displayName value="Diabetic Nephropathy"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBE">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_DIABETIC_NEPHROPATHY" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADiabeticNephropathy5"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceADiabeticNephropathy5_precondition_34"/>
+          </id>
+                    <text value="Diagnosis, Active: Diabetic Nephropathy"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1004">
+            <displayName value="Diabetic Nephropathy"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="EBS">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_DIABETIC_NEPHROPATHY" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADiabeticNephropathy5"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAProteinuria6_precondition_43"/>
+          </id>
+                    <text value="Diagnosis, Active: Proteinuria"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1003">
+            <displayName value="Proteinuria"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBE">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_PROTEINURIA" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAProteinuria6"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAProteinuria6_precondition_41"/>
+          </id>
+                    <text value="Diagnosis, Active: Proteinuria"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1003">
+            <displayName value="Proteinuria"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="EBS">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_PROTEINURIA" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAProteinuria6"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedKidneyTransplant_precondition_48"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1012">
+            <displayName value="Kidney Transplant"/>
+          </code>
+
+                    <text value="Procedure, Performed: Kidney Transplant"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedKidneyTransplant"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedVascularAccessForDialysis_precondition_50"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1011">
+            <displayName value="Vascular Access for Dialysis"/>
+          </code>
+
+                    <text value="Procedure, Performed: Vascular Access for Dialysis"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedVascularAccessForDialysis"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedDialysisServices_precondition_52"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1013">
+            <displayName value="Dialysis Services"/>
+          </code>
+
+                    <text value="Procedure, Performed: Dialysis Services"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedDialysisServices"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedOtherServicesRelatedToDialysis_precondition_54"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1015">
+            <displayName value="Other Services Related to Dialysis"/>
+          </code>
+
+                    <text value="Intervention, Performed: Other Services Related to Dialysis"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedOtherServicesRelatedToDialysis"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedDialysisEducation_precondition_56"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1016">
+            <displayName value="Dialysis Education"/>
+          </code>
+
+                    <text value="Intervention, Performed: Dialysis Education"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedDialysisEducation"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedEsrdMonthlyOutpatientServices_precondition_58"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1014">
+            <displayName value="ESRD Monthly Outpatient Services"/>
+          </code>
+
+                    <text value="Encounter, Performed: ESRD Monthly Outpatient Services"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedEsrdMonthlyOutpatientServices"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.12" identifierName="laboratory test, result template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestResultMicroalbuminTest_precondition_60"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1005">
+            <displayName value="Microalbumin Test"/>
+          </code>
+
+                    <text value="Laboratory Test, Result: Microalbumin Test"/>
+          
+          
+          
+            <value xsi:type="ANY" nullFlavor="NI"/>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="laboratory_test"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestResultMicroalbuminTest"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.12" identifierName="laboratory test, result template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestResultMacroalbuminTest_precondition_62"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1019">
+            <displayName value="Macroalbumin Test"/>
+          </code>
+
+                    <text value="Laboratory Test, Result: Macroalbumin Test"/>
+          
+          
+          
+            <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.121.12.1016">
+     <displayName value="Positive Finding"/>
+  </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="laboratory_test"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestResultMacroalbuminTest"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDiabetes_precondition_69"/>
+          </id>
+                    <text value="Diagnosis, Active: Diabetes"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.103.12.1001">
+            <displayName value="Diabetes"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBE">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDiabetes"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.25" identifierName="patient characteristic, birthdate template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_71"/>
+          </id>
+                    <code codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1"
+            code="21112-8">
+            <displayName value="birth date"/>
+          </code>
+
+                    <text value="Patient Characteristic Birthdate: birth date"/>
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="patient_characteristic_birthdate"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+      <low  value="18" unit="a"/>
+      </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate"/>
+            </observationReference>
+          </outboundRelationship>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.25" identifierName="patient characteristic, birthdate template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_73"/>
+          </id>
+                    <code codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1"
+            code="21112-8">
+            <displayName value="birth date"/>
+          </code>
+
+                    <text value="Patient Characteristic Birthdate: birth date"/>
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="patient_characteristic_birthdate"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="75" unit="a"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate"/>
+            </observationReference>
+          </outboundRelationship>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit_precondition_75"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1001">
+            <displayName value="Office Visit"/>
+          </code>
+
+                    <text value="Encounter, Performed: Office Visit"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction_precondition_77"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1048">
+            <displayName value="Face-to-Face Interaction"/>
+          </code>
+
+                    <text value="Encounter, Performed: Face-to-Face Interaction"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_79"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1025">
+            <displayName value="Preventive Care Services - Established Office Visit, 18 and Up"/>
+          </code>
+
+                    <text value="Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_81"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1023">
+            <displayName value="Preventive Care Services-Initial Office Visit, 18 and Up"/>
+          </code>
+
+                    <text value="Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedHomeHealthcareServices_precondition_83"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1016">
+            <displayName value="Home Healthcare Services"/>
+          </code>
+
+                    <text value="Encounter, Performed: Home Healthcare Services"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedHomeHealthcareServices"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedAnnualWellnessVisit_precondition_85"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1240">
+            <displayName value="Annual Wellness Visit"/>
+          </code>
+
+                    <text value="Encounter, Performed: Annual Wellness Visit"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedAnnualWellnessVisit"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDiabetes"/>
+          </id>
+                    <text value="Diagnosis, Active: Diabetes"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.103.12.1001">
+            <displayName value="Diabetes"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDiabetes"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.25" identifierName="patient characteristic, birthdate template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate"/>
+          </id>
+                    <code codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1"
+            code="21112-8">
+            <displayName value="birth date"/>
+          </code>
+
+                    <text value="Patient Characteristic Birthdate: birth date"/>
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="patient_characteristic_birthdate"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate"/>
+            </observationReference>
+          </outboundRelationship>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveGestationalDiabetes"/>
+          </id>
+                    <text value="Diagnosis, Active: Gestational Diabetes"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.103.12.1010">
+            <displayName value="Gestational Diabetes"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveGestationalDiabetes"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedKidneyTransplant"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1012">
+            <displayName value="Kidney Transplant"/>
+          </code>
+
+                    <text value="Procedure, Performed: Kidney Transplant"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedKidneyTransplant"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedVascularAccessForDialysis"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1011">
+            <displayName value="Vascular Access for Dialysis"/>
+          </code>
+
+                    <text value="Procedure, Performed: Vascular Access for Dialysis"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedVascularAccessForDialysis"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedDialysisServices"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1013">
+            <displayName value="Dialysis Services"/>
+          </code>
+
+                    <text value="Procedure, Performed: Dialysis Services"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedDialysisServices"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedOtherServicesRelatedToDialysis"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1015">
+            <displayName value="Other Services Related to Dialysis"/>
+          </code>
+
+                    <text value="Intervention, Performed: Other Services Related to Dialysis"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedOtherServicesRelatedToDialysis"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedDialysisEducation"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1016">
+            <displayName value="Dialysis Education"/>
+          </code>
+
+                    <text value="Intervention, Performed: Dialysis Education"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedDialysisEducation"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedEsrdMonthlyOutpatientServices"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1014">
+            <displayName value="ESRD Monthly Outpatient Services"/>
+          </code>
+
+                    <text value="Encounter, Performed: ESRD Monthly Outpatient Services"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedEsrdMonthlyOutpatientServices"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveHypertensiveChronicKidneyDisease"/>
+          </id>
+                    <text value="Diagnosis, Active: Hypertensive Chronic Kidney Disease"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1017">
+            <displayName value="Hypertensive Chronic Kidney Disease"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveHypertensiveChronicKidneyDisease"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveGlomerulonephritisAndNephroticSyndrome"/>
+          </id>
+                    <text value="Diagnosis, Active: Glomerulonephritis and Nephrotic Syndrome"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1018">
+            <displayName value="Glomerulonephritis and Nephrotic Syndrome"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveGlomerulonephritisAndNephroticSyndrome"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDiabeticNephropathy"/>
+          </id>
+                    <text value="Diagnosis, Active: Diabetic Nephropathy"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1004">
+            <displayName value="Diabetic Nephropathy"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDiabeticNephropathy"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.12" identifierName="laboratory test, result template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestResultMacroalbuminTest"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1019">
+            <displayName value="Macroalbumin Test"/>
+          </code>
+
+                    <text value="Laboratory Test, Result: Macroalbumin Test"/>
+          
+          
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="laboratory_test"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestResultMacroalbuminTest"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1001">
+            <displayName value="Office Visit"/>
+          </code>
+
+                    <text value="Encounter, Performed: Office Visit"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1048">
+            <displayName value="Face-to-Face Interaction"/>
+          </code>
+
+                    <text value="Encounter, Performed: Face-to-Face Interaction"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <substanceAdministrationCriteria moodCode="EVN" classCode="SBADM">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.13" identifierName="medication, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="MedicationActiveAceInhibitorOrArb"/>
+          </id>
+                    <text value="Medication, Active: ACE inhibitor or ARB"/>
+          <statusCode code="active"/>
+          
+          
+          <participation typeCode="CSM">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.526.3.1139">
+            <displayName value="ACE inhibitor or ARB"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </substanceAdministrationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="MedicationActiveAceInhibitorOrArb"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </substanceAdministrationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveProteinuria"/>
+          </id>
+                    <text value="Diagnosis, Active: Proteinuria"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1003">
+            <displayName value="Proteinuria"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveProteinuria"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.12" identifierName="laboratory test, result template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestResultMicroalbuminTest"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1005">
+            <displayName value="Microalbumin Test"/>
+          </code>
+
+                    <text value="Laboratory Test, Result: Microalbumin Test"/>
+          
+          
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="laboratory_test"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestResultMicroalbuminTest"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1025">
+            <displayName value="Preventive Care Services - Established Office Visit, 18 and Up"/>
+          </code>
+
+                    <text value="Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1023">
+            <displayName value="Preventive Care Services-Initial Office Visit, 18 and Up"/>
+          </code>
+
+                    <text value="Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedAnnualWellnessVisit"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1240">
+            <displayName value="Annual Wellness Visit"/>
+          </code>
+
+                    <text value="Encounter, Performed: Annual Wellness Visit"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedAnnualWellnessVisit"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedHomeHealthcareServices"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1016">
+            <displayName value="Home Healthcare Services"/>
+          </code>
+
+                    <text value="Encounter, Performed: Home Healthcare Services"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedHomeHealthcareServices"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAGestationalDiabetes1"/>
+          </id>
+                    <text value="Diagnosis, Active: Gestational Diabetes"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.103.12.1010">
+            <displayName value="Gestational Diabetes"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_GESTATIONAL_DIABETES" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAGestationalDiabetes1"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <substanceAdministrationCriteria moodCode="EVN" classCode="SBADM">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.13" identifierName="medication, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAceInhibitorOrArb2"/>
+          </id>
+                    <text value="Medication, Active: ACE inhibitor or ARB"/>
+          <statusCode code="active"/>
+          
+          
+          <participation typeCode="CSM">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.526.3.1139">
+            <displayName value="ACE inhibitor or ARB"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </substanceAdministrationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="MEDICATION_ACTIVE_ACE_INHIBITOR_OR_ARB" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAceInhibitorOrArb2"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </substanceAdministrationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAHypertensiveChronicKidneyDisease3"/>
+          </id>
+                    <text value="Diagnosis, Active: Hypertensive Chronic Kidney Disease"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1017">
+            <displayName value="Hypertensive Chronic Kidney Disease"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_HYPERTENSIVE_CHRONIC_KIDNEY_DISEASE" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAHypertensiveChronicKidneyDisease3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAGlomerulonephritisAndNephroticSyndrome4"/>
+          </id>
+                    <text value="Diagnosis, Active: Glomerulonephritis and Nephrotic Syndrome"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1018">
+            <displayName value="Glomerulonephritis and Nephrotic Syndrome"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_GLOMERULONEPHRITIS_AND_NEPHROTIC_SYNDROME" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAGlomerulonephritisAndNephroticSyndrome4"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceADiabeticNephropathy5"/>
+          </id>
+                    <text value="Diagnosis, Active: Diabetic Nephropathy"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.109.12.1004">
+            <displayName value="Diabetic Nephropathy"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_DIABETIC_NEPHROPATHY" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADiabeticNephropathy5"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAProteinuria6"/>
+          </id>
+                    <text value="Diagnosis, Active: Proteinuria"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1003">
+            <displayName value="Proteinuria"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_PROTEINURIA" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAProteinuria6"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+    </dataCriteriaSection>
+  </component>
+  <component>
+    <populationCriteriaSection>
+      <id root="2.16.840.1.113883.3.100.1" extension="Population0"/>
+      <code code="57026-7" codeSystem="2.16.840.1.113883.6.1"/>
+      <title value=""/>
+      <text>This section describes the Initial Patient Population,
+        Numerator, Denominator, Denominator Exceptions, and Measure
+        Populations</text>
+            <component typeCode="COMP">
+        <patientPopulationCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="35F16D0D-63F0-4B1D-B2C2-86FF7FEB0192"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="IPP">
+            <displayName value="Initial Patient Population"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDiabetes_precondition_69"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_71"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_73"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit_precondition_75"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction_precondition_77"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_79"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_81"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedHomeHealthcareServices_precondition_83"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedAnnualWellnessVisit_precondition_85"/>
+    </encounterReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+        </patientPopulationCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <denominatorCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="484F868E-1563-42FF-92E1-B78BDBD861E9"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="DENOM">
+            <displayName value="Denominator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN" nullFlavor="NA">
+            <allTrue>
+              <id/>
+            </allTrue>
+          </precondition>
+        </denominatorCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <numeratorCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="DBC16C88-1F60-4AD1-8043-B4CAD3D38436"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="NUMER">
+            <displayName value="Numerator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAceInhibitorOrArb2_precondition_15"/>
+    </substanceAdministrationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allFalse>
+    <id/>
+    <precondition typeCode="PRCN">
+    <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAceInhibitorOrArb2_precondition_13"/>
+    </substanceAdministrationReference>
+</precondition>
+  </allFalse>
+</precondition>
+  </allTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAHypertensiveChronicKidneyDisease3_precondition_22"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allFalse>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAHypertensiveChronicKidneyDisease3_precondition_20"/>
+    </observationReference>
+</precondition>
+  </allFalse>
+</precondition>
+  </allTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAGlomerulonephritisAndNephroticSyndrome4_precondition_29"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allFalse>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAGlomerulonephritisAndNephroticSyndrome4_precondition_27"/>
+    </observationReference>
+</precondition>
+  </allFalse>
+</precondition>
+  </allTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADiabeticNephropathy5_precondition_36"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allFalse>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADiabeticNephropathy5_precondition_34"/>
+    </observationReference>
+</precondition>
+  </allFalse>
+</precondition>
+  </allTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAProteinuria6_precondition_43"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allFalse>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAProteinuria6_precondition_41"/>
+    </observationReference>
+</precondition>
+  </allFalse>
+</precondition>
+  </allTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <procedureReference moodCode="EVN" classCode="PROC">
+      <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedKidneyTransplant_precondition_48"/>
+    </procedureReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <procedureReference moodCode="EVN" classCode="PROC">
+      <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedVascularAccessForDialysis_precondition_50"/>
+    </procedureReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <procedureReference moodCode="EVN" classCode="PROC">
+      <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedDialysisServices_precondition_52"/>
+    </procedureReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedOtherServicesRelatedToDialysis_precondition_54"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedDialysisEducation_precondition_56"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedEsrdMonthlyOutpatientServices_precondition_58"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestResultMicroalbuminTest_precondition_60"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestResultMacroalbuminTest_precondition_62"/>
+    </observationReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+        </numeratorCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <denominatorExclusionCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="94741BD6-B048-489A-ADC3-39729D991FED"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="DENEX">
+            <displayName value="Denominator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAGestationalDiabetes1_precondition_9"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allFalse>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAGestationalDiabetes1_precondition_7"/>
+    </observationReference>
+</precondition>
+  </allFalse>
+</precondition>
+  </allTrue>
+</precondition>
+        </denominatorExclusionCriteria>
+      </component>
+
+    </populationCriteriaSection>
+  </component>
+</QualityMeasureDocument>

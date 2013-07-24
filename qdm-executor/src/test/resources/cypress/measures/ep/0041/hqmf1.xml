@@ -1,0 +1,2185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xslt/eMeasure.xsl"?>
+<QualityMeasureDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3">
+         
+      <!--
+         **************************************************************   
+         Measure Header Section
+         **************************************************************
+      --><typeId root="2.16.840.1.113883.1.3" extension="POQM_HD000001"/>
+   <id root="8a4d92b2-3946-cdae-0139-78797547731a"/>
+   <code code="57024-2" codeSystem="2.16.840.1.113883.6.1" displayName="Health Quality Measure Document"/>
+   <title>Preventive Care and Screening: Influenza Immunization</title>
+   <text>Percentage of patients aged 6 months and older seen for a visit between October 1 and March 31 who received an influenza immunization OR who reported previous receipt of an influenza immunization</text>
+   <statusCode code="Complete"/>
+   <setId root="a244aa29-7d11-4616-888a-86e376bfcc6f"/>
+   <versionNumber value="1"/>
+   <author typeCode="AUT">
+      <assignedPerson classCode="ASSIGNED">
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id root="2.16.840.1.113883.3.526"/>
+            <name>American Medical Association-convened Physician Consortium for Performance Improvement(R) (AMA-PCPI)</name>
+            <contactParty classCode="CON" nullFlavor="UNK"/>
+         </representedOrganization>
+      </assignedPerson>
+   </author>
+   <custodian>
+      <assignedPerson classCode="ASSIGNED">
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id root="2.16.840.1.113883.3.526"/>
+            <name>American Medical Association-convened Physician Consortium for Performance Improvement(R) (AMA-PCPI)</name>
+            <contactParty classCode="CON" nullFlavor="UNK"/>
+         </representedOrganization>
+      </assignedPerson>
+   </custodian>
+   <verifier typeCode="VRF">
+      <assignedPerson classCode="ASSIGNED">
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <name>National Quality Forum</name>
+            <contactParty classCode="CON" nullFlavor="UNK"/>
+         </representedOrganization>
+      </assignedPerson>
+   </verifier>
+   <subjectOf>
+      <measureAttribute>
+         <code code="COPY" codeSystem="2.16.840.1.113883.5.4" displayName="Copyright"/>
+         <value xsi:type="ED" mediaType="text/plain">Copyright 2012 American Medical Association.  All Rights Reserved.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRSCORE" codeSystem="2.16.840.1.113883.5.4" displayName="Measure Scoring"/>
+         <value xsi:type="CD" code="PROPOR" codeSystem="2.16.840.1.113883.1.11.20367" displayName="Proportion"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRTYPE" codeSystem="2.16.840.1.113883.5.4" displayName="Measure Type"/>
+         <value xsi:type="CD" code="PROCESS" codeSystem="2.16.840.1.113883.1.11.20368" displayName="Process"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="STRAT" codeSystem="2.16.840.1.113883.5.4" displayName="Stratification"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRADJ" codeSystem="2.16.840.1.113883.5.4" displayName="Risk Adjustment"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRAGG" codeSystem="2.16.840.1.113883.5.4" displayName="Rate Aggregation"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="RAT" codeSystem="2.16.840.1.113883.5.4" displayName="Rationale"/>
+         <value xsi:type="ED" mediaType="text/plain">Annual influenza vaccination is the most effective method for preventing influenza virus infection and its complications. Influenza vaccine is recommended for all persons aged &gt;=6 months who do not have contraindications to vaccination.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="CRS" codeSystem="2.16.840.1.113883.3.560" displayName="Clinical Recommendation Statement"/>
+         <value xsi:type="ED" mediaType="text/plain">Routine annual influenza vaccination is recommended for all persons aged &gt;=6 months (CDC/ACIP 2011)</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="IDUR" codeSystem="2.16.840.1.113883.3.560" displayName="Improvement Notation"/>
+         <value xsi:type="ED" mediaType="text/plain">Higher score indicates better quality</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>NQF ID Number</originalText>
+         </code>
+         <value xsi:type="II" root="2.16.840.1.113883.3.560.1" extension="0041"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DISC" codeSystem="2.16.840.1.113883.5.4" displayName="Disclaimer">
+            <originalText>Disclaimer</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Physician Performance Measures (Measures) and related data specifications have been developed by the American Medical Association (AMA) - convened Physician Consortium for Performance Improvement(R) (the PCPI[TM]). These Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The Measures, while copyrighted, can be reproduced and distributed, without modification, for noncommercial purposes, e.g., use by health care providers in connection with their practices. Commercial use is defined as the sale, license, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial uses of the Measures require a license agreement between the user and the AMA, (on behalf of the PCPI). Neither the AMA, PCPI nor its members shall be responsible for any use of the Measures. &#xD;
+&#xD;
+THE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND. &#xD;
+&#xD;
+Limited proprietary coding is contained in the Measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. The AMA, the PCPI and its members disclaim all liability for use or accuracy of any Current Procedural Terminology (CPT[R]) or other coding contained in the specifications. &#xD;
+&#xD;
+CPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC(R) copyright 2004-2011 Regenstrief Institute, Inc.  This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 copyright 2011 World Health Organization. All Rights Reserved.&#xD;
+&#xD;
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>eMeasure Identifier</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">147</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <templateId root="2.16.840.1.113883.3.560.1.74"/>
+         <id root="b2c84dbb-8406-41b0-ab21-cf7c63b98b0d"/>
+         <code code="MSRTP" displayName="Measurement period" codeSystem="2.16.840.1.113883.3.560"/>
+         <value xsi:type="IVL_TS">
+            <low value="00000101"/>
+            <high value="00001231"/>
+         </value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <localVariableName>measureStartDate</localVariableName>
+      <measureAttribute>
+         <templateId root="2.16.840.1.113883.3.560.1.75"/>
+         <id root="e1a9ee1e-7235-406e-b9d0-1d6bcb0538e0"/>
+         <code code="MSRSD" displayName="Measurement start date" codeSystem="2.16.840.1.113883.3.560"/>
+         <value xsi:type="TS" value="00000101"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <localVariableName>measureEndDate</localVariableName>
+      <measureAttribute>
+         <templateId root="2.16.840.1.113883.3.560.1.75"/>
+         <id root="d438673d-0bb8-458d-bfe2-813de2d9a00f"/>
+         <code code="MSRED" displayName="Measurement end date" codeSystem="2.16.840.1.113883.3.560"/>
+         <value xsi:type="TS" value="00001231"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">Centers for Disease Control and Prevention (CDC). Prevention and control of influenza with vaccines. Recommendations of the Advisory Committee on Immunization Practices (ACIP), 2011. MMWR 2011;60(33);1128-1132. Available at http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6033a3.htm Accessed August 2011.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DEF" codeSystem="2.16.840.1.113883.3.560" displayName="Definition"/>
+         <value xsi:type="ED" mediaType="text/plain">Previous Receipt – May include: receipt of influenza immunization from another provider OR from same provider prior to the visit to which the measure is applied (typically, prior vaccination would include influenza vaccine given since August 1st).</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="GUIDE" codeSystem="2.16.840.1.113883.5.4" displayName="Guidance"/>
+         <value xsi:type="ED" mediaType="text/plain">The timeframe for the visit during the "Encounter, Performed: Encounter-Influenza" or “Procedure, Performed: Peritoneal Dialysis” or “Procedure, Performed: Hemodialysis” in the Population Criteria-Denominator, refers to the influenza season defined by the measure: October through March (October 1 for the year prior to the start of the reporting period through March 31 during the reporting period).  The “Encounter-Influenza” Grouping OID detailed in the data criteria section below is comprised of several individual OIDs of different encounter types.  The individual OIDs are included in the value set and should be reviewed to determine that an applicable visit occurred during the timeframe for "Encounter, Performed: Encounter-Influenza” as specified in the denominator.  &#xD;
+To enable reporting of this measure at the close of the reporting period, this measure will only assess the influenza season that ends in March of the reporting period. The subsequent influenza season (ending March of the following year) will be measured and reported in the following year.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Transmission Format</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">TBD</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="IPP" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Initial Patient Population</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">All patients aged 6 months and older</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DENOM" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Denominator</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Equals Initial Patient Population and seen for a visit between October 1 and March 31</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Denominator Exclusions</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="NUMER" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Numerator</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Patients who received an influenza immunization OR who reported previous receipt of an influenza immunization</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Numerator Exclusions</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Not Applicable</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DENEXCEP" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Denominator Exceptions</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Documentation of medical reason(s) for not receiving influenza immunization (eg, patient allergy, other medical reasons)&#xD;
+&#xD;
+Documentation of patient reason(s) for not receiving influenza immunization (eg, patient declined, other patient reasons)&#xD;
+&#xD;
+Documentation of system reason(s) for not receiving influenza immunization (eg, vaccine not available, other system reasons)</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRPOPL" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Measure Population</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Not Applicable</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Measure Observations</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Not Applicable</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Supplemental Data Elements</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</value>
+      </measureAttribute>
+   </subjectOf>
+   <componentOf>
+      <qualityMeasureSet classCode="ACT">
+         <id root="38cb8412-1233-443a-9039-1e6b07dbbfbf"/>
+         <title>None</title>
+      </qualityMeasureSet>
+   </componentOf>
+         
+      <!--
+         **************************************************************   
+         Population Criteria Section
+         **************************************************************
+      --><component typeCode="COMP">
+      <section>
+         <code code="57026-7" codeSystem="2.16.840.1.113883.6.1" displayName="Population criteria"/>
+         <title>Population criteria</title>
+         <text>
+            <list>
+               <item>
+                  <content styleCode="Bold">Initial Patient Population =</content>
+                  <list>
+                     <item>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 6 month(s) starts before start of "Measurement Period"</item>
+                     <item>AND: <list>
+                           <item>OR: Count &gt;= 2  of:<list>
+                                 <item>OR: "Encounter, Performed: Office Visit"</item>
+                                 <item>OR: "Encounter, Performed: Outpatient Consultation"</item>
+                                 <item>OR: "Encounter, Performed: Care Services in Long-Term Residential Facility"</item>
+                                 <item>OR: "Encounter, Performed: Home Healthcare Services"</item>
+                                 <item>OR: "Encounter, Performed: Patient Provider Interaction"</item>
+                              </list>
+                           </item>
+                           <item>OR: Count &gt;= 1  of:<list>
+                                 <item>OR: "Encounter, Performed: Preventive Care- Initial Office Visit, 0 to 17"</item>
+                                 <item>OR: "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up"</item>
+                                 <item>OR: "Encounter, Performed: Preventive Care Services - Other"</item>
+                                 <item>OR: "Encounter, Performed: Discharge Services - Nursing Facility"</item>
+                                 <item>OR: "Encounter, Performed: Nursing Facility Visit"</item>
+                                 <item>OR: "Encounter, Performed: Annual Wellness Visit"</item>
+                                 <item>OR: "Procedure, Performed: Peritoneal Dialysis"</item>
+                                 <item>OR: "Procedure, Performed: Hemodialysis"</item>
+                                 <item>OR: "Encounter, Performed: Preventive Care - Established Office Visit, 0 to 17"</item>
+                                 <item>OR: "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up"</item>
+                                 <item>OR: "Encounter, Performed: Preventive Care Services-Individual Counseling"</item>
+                                 <item>OR: "Encounter, Performed: Preventive Care Services - Group Counseling"</item>
+                              </list>
+                           </item>
+                           <item> during "Measurement Period"</item>
+                        </list>
+                     </item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Denominator =</content>
+                  <list>
+                     <item>AND: "Initial Patient Population"</item>
+                     <item>AND: <list>
+                           <item>OR: <list>
+                                 <item>OR: "Occurrence A of Encounter, Performed: Encounter-Influenza"</item>
+                                 <item>OR: "Occurrence A of Procedure, Performed: Hemodialysis"</item>
+                                 <item>OR: "Occurrence A of Procedure, Performed: Peritoneal Dialysis"</item>
+                                 <item>  &lt;= 92 day(s) starts before start of "Measurement Period"</item>
+                              </list>
+                           </item>
+                           <item>OR: <list>
+                                 <item>OR: "Occurrence A of Encounter, Performed: Encounter-Influenza"</item>
+                                 <item>OR: "Occurrence A of Procedure, Performed: Hemodialysis"</item>
+                                 <item>OR: "Occurrence A of Procedure, Performed: Peritoneal Dialysis"</item>
+                                 <item>  &lt;= 91 day(s) starts after start of "Measurement Period"</item>
+                              </list>
+                           </item>
+                        </list>
+                     </item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Denominator Exclusions =</content>
+                  <list>
+                     <item>None</item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Numerator =</content>
+                  <list>
+                     <item>AND: <list>
+                           <item>OR: "Procedure, Performed: Influenza Vaccination"</item>
+                           <item>OR: "Medication, Administered: Influenza Vaccine"</item>
+                           <item>OR: "Communication: From Patient to Provider: Previous Receipt of Influenza Vaccine"</item>
+                           <item> during <list>
+                                 <item>OR: "Occurrence A of Encounter, Performed: Encounter-Influenza"</item>
+                                 <item>OR: "Occurrence A of Procedure, Performed: Hemodialysis"</item>
+                                 <item>OR: "Occurrence A of Procedure, Performed: Peritoneal Dialysis"</item>
+                              </list>
+                           </item>
+                        </list>
+                     </item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Denominator Exceptions =</content>
+                  <list>
+                     <item>AND: <list>
+                           <item>OR: <list>
+                                 <item>OR: "Communication: From Patient to Provider: Influenza Vaccination Declined"</item>
+                                 <item>OR: <list>
+                                       <item>OR: "Procedure, Performed not done: Medical Reason" for "Influenza Vaccination Grouping Value Set"</item>
+                                       <item>OR: "Procedure, Performed not done: Patient Reason" for "Influenza Vaccination Grouping Value Set"</item>
+                                       <item>OR: "Procedure, Performed not done: System Reason" for "Influenza Vaccination Grouping Value Set"</item>
+                                    </list>
+                                 </item>
+                                 <item>OR: <list>
+                                       <item>OR: "Medication, Administered not done: Medical Reason" for "Influenza Vaccine Grouping Value Set"</item>
+                                       <item>OR: "Medication, Administered not done: Patient Reason" for "Influenza Vaccine Grouping Value Set"</item>
+                                       <item>OR: "Medication, Administered not done: System Reason" for "Influenza Vaccine Grouping Value Set"</item>
+                                    </list>
+                                 </item>
+                                 <item> during <list>
+                                       <item>OR: "Occurrence A of Encounter, Performed: Encounter-Influenza"</item>
+                                       <item>OR: "Occurrence A of Procedure, Performed: Hemodialysis"</item>
+                                       <item>OR: "Occurrence A of Procedure, Performed: Peritoneal Dialysis"</item>
+                                    </list>
+                                 </item>
+                              </list>
+                           </item>
+                           <item>OR: <list>
+                                 <item>OR: "Diagnosis, Active: Allergy to eggs"</item>
+                                 <item>OR: "Procedure, Intolerance: Influenza Vaccination"</item>
+                                 <item>OR: "Medication, Intolerance: Influenza Vaccine"</item>
+                                 <item>OR: "Medication, Allergy: Influenza Vaccine"</item>
+                                 <item>OR: "Diagnosis, Active: Allergy to Influenza Vaccine"</item>
+                                 <item>OR: "Diagnosis, Active: Intolerance to Influenza Vaccine"</item>
+                                 <item> starts before or during <list>
+                                       <item>OR: "Occurrence A of Encounter, Performed: Encounter-Influenza"</item>
+                                       <item>OR: "Occurrence A of Procedure, Performed: Hemodialysis"</item>
+                                       <item>OR: "Occurrence A of Procedure, Performed: Peritoneal Dialysis"</item>
+                                    </list>
+                                 </item>
+                              </list>
+                           </item>
+                        </list>
+                     </item>
+                  </list>
+               </item>
+            </list>
+         </text><!--
+            **************************************************************   
+            Population Criteria Section: exceptions 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="6DEB5872-3188-4228-AE48-F8F3A19414A1"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="DENEXCEP" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Denominator Exception"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Communication: From Patient to Provider pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.30"/>
+                                 <id root="c2b6666f-ea0e-497e-af6f-b2d66bb4e049"/>
+                                 <code code="COMMGR_X" displayName="Communication Manager" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.526.3.1255" displayName="Influenza Vaccination Declined Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Communication: From Patient to Provider: Influenza Vaccination Declined</title>
+                                       <participant typeCode="AUT">
+                                          <patientParticipant classCode="PAT"/>
+                                       </participant>
+                                       <participant typeCode="IRCP">
+                                          <signatureCode code="S"/>
+                                          <roleParticipant classCode="ASSIGNED">
+                                             <code code="158965000" codeSystem="2.16.840.1.113883.6.96" displayName="Medical Practitioner"/>
+                                          </roleParticipant>
+                                       </participant>
+                                    </act>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true"><!-- Procedure, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.106"/>
+                                       <id root="003f738d-1bab-4d27-acf6-e8d8829299ee"/>
+                                       <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.526.3.402" displayName="Influenza Vaccination Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Procedure, Performed not done: Medical Reason</title>
+                                             <sourceOf typeCode="RSON">
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                                   <value xsi:type="CD" code="2.16.840.1.113883.3.526.3.1007" displayName="Medical Reason Grouping Value Set"/>
+                                                </observation>
+                                             </sourceOf>
+                                          </procedure>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true"><!-- Procedure, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.106"/>
+                                       <id root="003f738d-1bab-4d27-acf6-e8d8829299ee"/>
+                                       <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.526.3.402" displayName="Influenza Vaccination Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Procedure, Performed not done: Patient Reason</title>
+                                             <sourceOf typeCode="RSON">
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                                   <value xsi:type="CD" code="2.16.840.1.113883.3.526.3.1008" displayName="Patient Reason Grouping Value Set"/>
+                                                </observation>
+                                             </sourceOf>
+                                          </procedure>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true"><!-- Procedure, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.106"/>
+                                       <id root="003f738d-1bab-4d27-acf6-e8d8829299ee"/>
+                                       <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.526.3.402" displayName="Influenza Vaccination Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Procedure, Performed not done: System Reason</title>
+                                             <sourceOf typeCode="RSON">
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                                   <value xsi:type="CD" code="2.16.840.1.113883.3.526.3.1009" displayName="System Reason Grouping Value Set"/>
+                                                </observation>
+                                             </sourceOf>
+                                          </procedure>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true"><!-- Medication, Administered pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.114"/>
+                                       <id root="b70bdc5a-0538-48d6-8815-3f838a290bed"/>
+                                       <code code="18610-6" displayName="Medication administered" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <substanceAdministration classCode="SBADM" moodCode="EVN" isCriterionInd="true">
+                                             <title>Medication, Administered not done: Medical Reason</title>
+                                             <participant typeCode="CSM">
+                                                <roleParticipant classCode="MANU">
+                                                   <playingMaterial classCode="MMAT" determinerCode="KIND">
+                                                      <code code="2.16.840.1.113883.3.526.3.1254" displayName="Influenza Vaccine Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                                   </playingMaterial>
+                                                </roleParticipant>
+                                             </participant>
+                                             <sourceOf typeCode="RSON">
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                                   <value xsi:type="CD" code="2.16.840.1.113883.3.526.3.1007" displayName="Medical Reason Grouping Value Set"/>
+                                                </observation>
+                                             </sourceOf>
+                                          </substanceAdministration>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true"><!-- Medication, Administered pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.114"/>
+                                       <id root="b70bdc5a-0538-48d6-8815-3f838a290bed"/>
+                                       <code code="18610-6" displayName="Medication administered" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <substanceAdministration classCode="SBADM" moodCode="EVN" isCriterionInd="true">
+                                             <title>Medication, Administered not done: Patient Reason</title>
+                                             <participant typeCode="CSM">
+                                                <roleParticipant classCode="MANU">
+                                                   <playingMaterial classCode="MMAT" determinerCode="KIND">
+                                                      <code code="2.16.840.1.113883.3.526.3.1254" displayName="Influenza Vaccine Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                                   </playingMaterial>
+                                                </roleParticipant>
+                                             </participant>
+                                             <sourceOf typeCode="RSON">
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                                   <value xsi:type="CD" code="2.16.840.1.113883.3.526.3.1008" displayName="Patient Reason Grouping Value Set"/>
+                                                </observation>
+                                             </sourceOf>
+                                          </substanceAdministration>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true"><!-- Medication, Administered pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.114"/>
+                                       <id root="b70bdc5a-0538-48d6-8815-3f838a290bed"/>
+                                       <code code="18610-6" displayName="Medication administered" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <substanceAdministration classCode="SBADM" moodCode="EVN" isCriterionInd="true">
+                                             <title>Medication, Administered not done: System Reason</title>
+                                             <participant typeCode="CSM">
+                                                <roleParticipant classCode="MANU">
+                                                   <playingMaterial classCode="MMAT" determinerCode="KIND">
+                                                      <code code="2.16.840.1.113883.3.526.3.1254" displayName="Influenza Vaccine Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                                   </playingMaterial>
+                                                </roleParticipant>
+                                             </participant>
+                                             <sourceOf typeCode="RSON">
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                                   <value xsi:type="CD" code="2.16.840.1.113883.3.526.3.1009" displayName="System Reason Grouping Value Set"/>
+                                                </observation>
+                                             </sourceOf>
+                                          </substanceAdministration>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="DURING">
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                       <id root="387e8746-11f7-49f9-9371-7e14983e0308"/>
+                                       <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                       <sourceOf typeCode="COMP">
+                                          <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.526.3.1252" displayName="Encounter-Influenza Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Occurrence A of Encounter, Performed: Encounter-Influenza</title>
+                                             <statusCode code="completed"/>
+                                          </encounter>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                                       <id root="ab8afb04-1774-4be5-b7d0-09e63540e13b"/>
+                                       <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.526.3.1083" displayName="Hemodialysis Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Occurrence A of Procedure, Performed: Hemodialysis</title>
+                                          </procedure>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                                       <id root="bbe22ea3-77f6-46d5-9426-ec9c22b8c457"/>
+                                       <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.526.3.1084" displayName="Peritoneal Dialysis Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Occurrence A of Procedure, Performed: Peritoneal Dialysis</title>
+                                          </procedure>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                                 <id root="4947117c-d577-44be-8970-12028a4ec437"/>
+                                 <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                       <title>Diagnosis, Active: Allergy to eggs</title>
+                                       <value xsi:type="CD" code="2.16.840.1.113883.3.526.3.1253" displayName="Allergy to eggs Grouping Value Set"/>
+                                       <sourceOf typeCode="REFR">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                             <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                                          </observation>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Intolerance pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.61"/>
+                                 <id root="f837cdb7-2013-46ed-a2c2-d3b423cb6f8f"/>
+                                 <code code="48765-2" displayName="Allergies, adverse reactions, alerts" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="INTOL-X" codeSystem="2.16.840.1.113883.3.560" displayName="Intolerance"/>
+                                       <title>Procedure, Intolerance: Influenza Vaccination</title>
+                                       <sourceOf typeCode="CAUS" inversionInd="true">
+                                          <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.526.3.402" displayName="Influenza Vaccination Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                          </procedure>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Medication, Intolerance pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.15"/>
+                                 <id root="59709205-ba62-43c4-bf36-66dbe9fd93af"/>
+                                 <code code="48765-2" displayName="Allergies, adverse reactions, alerts" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="59037007" codeSystem="2.16.840.1.113883.6.96" displayName="Drug intolerance"/>
+                                       <title>Medication, Intolerance: Influenza Vaccine</title>
+                                       <participant typeCode="CSM">
+                                          <roleParticipant classCode="MANU">
+                                             <playingMaterial classCode="MMAT" determinerCode="KIND">
+                                                <code code="2.16.840.1.113883.3.526.3.1254" displayName="Influenza Vaccine Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             </playingMaterial>
+                                          </roleParticipant>
+                                       </participant>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Medication, Allergy pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.1"/>
+                                 <id root="405205db-5fe0-4eaa-8b6d-7ed0443cdd36"/>
+                                 <code code="48765-2" displayName="Allergies, adverse reactions, alerts" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="416098002" codeSystem="2.16.840.1.113883.6.96" displayName="Drug allergy"/>
+                                       <title>Medication, Allergy: Influenza Vaccine</title>
+                                       <participant typeCode="CSM">
+                                          <roleParticipant classCode="MANU">
+                                             <playingMaterial classCode="MMAT" determinerCode="KIND">
+                                                <code code="2.16.840.1.113883.3.526.3.1254" displayName="Influenza Vaccine Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             </playingMaterial>
+                                          </roleParticipant>
+                                       </participant>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                                 <id root="e200ed5c-d9ac-43a9-8b0c-de554c860347"/>
+                                 <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                       <title>Diagnosis, Active: Allergy to Influenza Vaccine</title>
+                                       <value xsi:type="CD" code="2.16.840.1.113883.3.526.3.1256" displayName="Allergy to Influenza Vaccine Grouping Value Set"/>
+                                       <sourceOf typeCode="REFR">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                             <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                                          </observation>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                                 <id root="8c3b4d39-0787-4738-b0bb-4bf2efbd5b68"/>
+                                 <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                       <title>Diagnosis, Active: Intolerance to Influenza Vaccine</title>
+                                       <value xsi:type="CD" code="2.16.840.1.113883.3.526.3.1257" displayName="Intolerance to Influenza Vaccine Grouping Value Set"/>
+                                       <sourceOf typeCode="REFR">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                             <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                                          </observation>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="EAS" inversionInd="true">
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                       <id root="387e8746-11f7-49f9-9371-7e14983e0308"/>
+                                       <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                       <sourceOf typeCode="COMP">
+                                          <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.526.3.1252" displayName="Encounter-Influenza Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Occurrence A of Encounter, Performed: Encounter-Influenza</title>
+                                             <statusCode code="completed"/>
+                                          </encounter>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                                       <id root="ab8afb04-1774-4be5-b7d0-09e63540e13b"/>
+                                       <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.526.3.1083" displayName="Hemodialysis Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Occurrence A of Procedure, Performed: Hemodialysis</title>
+                                          </procedure>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                                       <id root="bbe22ea3-77f6-46d5-9426-ec9c22b8c457"/>
+                                       <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.526.3.1084" displayName="Peritoneal Dialysis Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Occurrence A of Procedure, Performed: Peritoneal Dialysis</title>
+                                          </procedure>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry><!--
+            **************************************************************   
+            Population Criteria Section: numerator 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="9417D2B3-1DF7-4B45-9FBD-537D14553421"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="NUMER" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Numerator"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                           <id root="003f738d-1bab-4d27-acf6-e8d8829299ee"/>
+                           <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.526.3.402" displayName="Influenza Vaccination Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Procedure, Performed: Influenza Vaccination</title>
+                              </procedure>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Medication, Administered pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.14"/>
+                           <id root="b70bdc5a-0538-48d6-8815-3f838a290bed"/>
+                           <code code="18610-6" displayName="Medication administered" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <substanceAdministration classCode="SBADM" moodCode="EVN" isCriterionInd="true">
+                                 <title>Medication, Administered: Influenza Vaccine</title>
+                                 <participant typeCode="CSM">
+                                    <roleParticipant classCode="MANU">
+                                       <playingMaterial classCode="MMAT" determinerCode="KIND">
+                                          <code code="2.16.840.1.113883.3.526.3.1254" displayName="Influenza Vaccine Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       </playingMaterial>
+                                    </roleParticipant>
+                                 </participant>
+                              </substanceAdministration>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Communication: From Patient to Provider pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.30"/>
+                           <id root="88f61556-3a32-484c-a424-5c784777ac4e"/>
+                           <code code="COMMGR_X" displayName="Communication Manager" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.526.3.1185" displayName="Previous Receipt of Influenza Vaccine Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Communication: From Patient to Provider: Previous Receipt of Influenza Vaccine</title>
+                                 <participant typeCode="AUT">
+                                    <patientParticipant classCode="PAT"/>
+                                 </participant>
+                                 <participant typeCode="IRCP">
+                                    <signatureCode code="S"/>
+                                    <roleParticipant classCode="ASSIGNED">
+                                       <code code="158965000" codeSystem="2.16.840.1.113883.6.96" displayName="Medical Practitioner"/>
+                                    </roleParticipant>
+                                 </participant>
+                              </act>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="DURING">
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                 <id root="387e8746-11f7-49f9-9371-7e14983e0308"/>
+                                 <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                 <sourceOf typeCode="COMP">
+                                    <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.526.3.1252" displayName="Encounter-Influenza Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Occurrence A of Encounter, Performed: Encounter-Influenza</title>
+                                       <statusCode code="completed"/>
+                                    </encounter>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                                 <id root="ab8afb04-1774-4be5-b7d0-09e63540e13b"/>
+                                 <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.526.3.1083" displayName="Hemodialysis Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Occurrence A of Procedure, Performed: Hemodialysis</title>
+                                    </procedure>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                                 <id root="bbe22ea3-77f6-46d5-9426-ec9c22b8c457"/>
+                                 <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.526.3.1084" displayName="Peritoneal Dialysis Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Occurrence A of Procedure, Performed: Peritoneal Dialysis</title>
+                                    </procedure>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry><!--
+            **************************************************************   
+            Population Criteria Section: denominator 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="B082C06E-5D39-4561-8B3C-524D9D249F1B"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="DENOM" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Denominator"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="88B677A2-1CDF-43EE-9078-A4651253CBB7"/>
+                     <title>Initial Patient Population</title>
+                  </observation>
+               </sourceOf>
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                 <id root="387e8746-11f7-49f9-9371-7e14983e0308"/>
+                                 <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                 <sourceOf typeCode="COMP">
+                                    <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.526.3.1252" displayName="Encounter-Influenza Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Occurrence A of Encounter, Performed: Encounter-Influenza</title>
+                                       <statusCode code="completed"/>
+                                    </encounter>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                                 <id root="ab8afb04-1774-4be5-b7d0-09e63540e13b"/>
+                                 <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.526.3.1083" displayName="Hemodialysis Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Occurrence A of Procedure, Performed: Hemodialysis</title>
+                                    </procedure>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                                 <id root="bbe22ea3-77f6-46d5-9426-ec9c22b8c457"/>
+                                 <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.526.3.1084" displayName="Peritoneal Dialysis Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Occurrence A of Procedure, Performed: Peritoneal Dialysis</title>
+                                    </procedure>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="SBS">
+                              <pauseQuantity xsi:type="URG_PQ">
+                                 <high value="92" unit="d" inclusive="true"/>
+                              </pauseQuantity>
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <id root="b2c84dbb-8406-41b0-ab21-cf7c63b98b0d"/>
+                                 <title>Measurement Period</title>
+                              </observation>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                 <id root="387e8746-11f7-49f9-9371-7e14983e0308"/>
+                                 <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                 <sourceOf typeCode="COMP">
+                                    <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.526.3.1252" displayName="Encounter-Influenza Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Occurrence A of Encounter, Performed: Encounter-Influenza</title>
+                                       <statusCode code="completed"/>
+                                    </encounter>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                                 <id root="ab8afb04-1774-4be5-b7d0-09e63540e13b"/>
+                                 <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.526.3.1083" displayName="Hemodialysis Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Occurrence A of Procedure, Performed: Hemodialysis</title>
+                                    </procedure>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                                 <id root="bbe22ea3-77f6-46d5-9426-ec9c22b8c457"/>
+                                 <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.526.3.1084" displayName="Peritoneal Dialysis Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Occurrence A of Procedure, Performed: Peritoneal Dialysis</title>
+                                    </procedure>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="SAS">
+                              <pauseQuantity xsi:type="URG_PQ">
+                                 <high value="91" unit="d" inclusive="true"/>
+                              </pauseQuantity>
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <id root="b2c84dbb-8406-41b0-ab21-cf7c63b98b0d"/>
+                                 <title>Measurement Period</title>
+                              </observation>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry><!--
+            **************************************************************   
+            Population Criteria Section: population 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="88B677A2-1CDF-43EE-9078-A4651253CBB7"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="IPP" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Initial Patient Population"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Birthdate pattern -->
+                     <templateId root="2.16.840.1.113883.3.560.1.400"/>
+                     <id root="345332e3-cb63-46e3-aaa4-7940e338731d"/>
+                     <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+                     <sourceOf typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="21112-8" codeSystem="2.16.840.1.113883.6.1" displayName="Birth date"/>
+                           <title>Patient Characteristic Birthdate: birth date</title>
+                           <value xsi:type="CD" code="2.16.840.1.113883.3.560.100.4" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="birth date LOINC Value Set"/>
+                           <sourceOf typeCode="SBS">
+                              <pauseQuantity xsi:type="IVL_PQ">
+                                 <low value="6" unit="mo" inclusive="true"/>
+                              </pauseQuantity>
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <id root="b2c84dbb-8406-41b0-ab21-cf7c63b98b0d"/>
+                                 <title>Measurement Period</title>
+                              </observation>
+                           </sourceOf>
+                        </observation>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <observation classCode="OBS" moodCode="DEF">
+                           <templateId root="2.16.840.1.113883.3.560.1.10017"/>
+                           <id root="6bdb6ab0-7ffb-4af1-966b-0d741a50cf48"/>
+                           <code>
+                              <originalText>Count &gt;= 2 </originalText>
+                           </code>
+                           <derivationExpr>COUNT(var1 )</derivationExpr>
+                           <value xsi:type="IVL_PQ">
+                              <low value="2" inclusive="true"/>
+                           </value>
+                           <sourceOf typeCode="DRIV">
+                              <localVariableName>var1</localVariableName>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                       <id root="29bc591d-3db6-455c-b42c-b333166cb190"/>
+                                       <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                       <sourceOf typeCode="COMP">
+                                          <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.464.1003.101.12.1001" displayName="Office Visit Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Encounter, Performed: Office Visit</title>
+                                             <statusCode code="completed"/>
+                                          </encounter>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                       <id root="a2289c3d-699e-45a1-9a84-59e5e34ccdf1"/>
+                                       <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                       <sourceOf typeCode="COMP">
+                                          <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.464.1003.101.12.1008" displayName="Outpatient Consultation Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Encounter, Performed: Outpatient Consultation</title>
+                                             <statusCode code="completed"/>
+                                          </encounter>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                       <id root="93b580e4-7961-4bb2-b572-d06d8369a466"/>
+                                       <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                       <sourceOf typeCode="COMP">
+                                          <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.464.1003.101.12.1014" displayName="Care Services in Long-Term Residential Facility Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Encounter, Performed: Care Services in Long-Term Residential Facility</title>
+                                             <statusCode code="completed"/>
+                                          </encounter>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                       <id root="f3848f70-b3e5-4a46-b274-4ade2f3144e0"/>
+                                       <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                       <sourceOf typeCode="COMP">
+                                          <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.464.1003.101.12.1016" displayName="Home Healthcare Services Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Encounter, Performed: Home Healthcare Services</title>
+                                             <statusCode code="completed"/>
+                                          </encounter>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                       <id root="89785ee1-ee6e-4c6e-b54e-4ebaf1f37246"/>
+                                       <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                       <sourceOf typeCode="COMP">
+                                          <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.526.3.1012" displayName="Patient Provider Interaction Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Encounter, Performed: Patient Provider Interaction</title>
+                                             <statusCode code="completed"/>
+                                          </encounter>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </observation>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <observation classCode="OBS" moodCode="DEF">
+                           <templateId root="2.16.840.1.113883.3.560.1.10017"/>
+                           <id root="438eb489-0f66-49fd-a430-e76cb7467699"/>
+                           <code>
+                              <originalText>Count &gt;= 1 </originalText>
+                           </code>
+                           <derivationExpr>COUNT(var1 )</derivationExpr>
+                           <value xsi:type="IVL_PQ">
+                              <low value="1" inclusive="true"/>
+                           </value>
+                           <sourceOf typeCode="DRIV">
+                              <localVariableName>var1</localVariableName>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                       <id root="7663e132-db11-4dfd-84bf-6b5b2b979b6d"/>
+                                       <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                       <sourceOf typeCode="COMP">
+                                          <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.464.1003.101.12.1022" displayName="Preventive Care- Initial Office Visit, 0 to 17 Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Encounter, Performed: Preventive Care- Initial Office Visit, 0 to 17</title>
+                                             <statusCode code="completed"/>
+                                          </encounter>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                       <id root="5d9cfa0c-01be-4141-9a28-77be9a24f06a"/>
+                                       <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                       <sourceOf typeCode="COMP">
+                                          <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.464.1003.101.12.1023" displayName="Preventive Care Services-Initial Office Visit, 18 and Up Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up</title>
+                                             <statusCode code="completed"/>
+                                          </encounter>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                       <id root="02e3b7c0-0153-49b9-aaed-0daff7de23d8"/>
+                                       <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                       <sourceOf typeCode="COMP">
+                                          <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.464.1003.101.12.1030" displayName="Preventive Care Services - Other Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Encounter, Performed: Preventive Care Services - Other</title>
+                                             <statusCode code="completed"/>
+                                          </encounter>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                       <id root="3a20351a-6d99-488b-a968-086178b51e5e"/>
+                                       <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                       <sourceOf typeCode="COMP">
+                                          <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.464.1003.101.12.1013" displayName="Discharge Services - Nursing Facility Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Encounter, Performed: Discharge Services - Nursing Facility</title>
+                                             <statusCode code="completed"/>
+                                          </encounter>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                       <id root="9db237cf-c908-4768-a579-a197c7eb5412"/>
+                                       <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                       <sourceOf typeCode="COMP">
+                                          <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.464.1003.101.12.1012" displayName="Nursing Facility Visit Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Encounter, Performed: Nursing Facility Visit</title>
+                                             <statusCode code="completed"/>
+                                          </encounter>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                       <id root="fc82a68c-4870-428b-ac5c-49e38ae4fcd9"/>
+                                       <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                       <sourceOf typeCode="COMP">
+                                          <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.526.3.1240" displayName="Annual Wellness Visit Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Encounter, Performed: Annual Wellness Visit</title>
+                                             <statusCode code="completed"/>
+                                          </encounter>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                                       <id root="2ff6bf38-db48-41b6-86b9-e5d5797319fb"/>
+                                       <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.526.3.1084" displayName="Peritoneal Dialysis Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Procedure, Performed: Peritoneal Dialysis</title>
+                                          </procedure>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                                       <id root="5ce6b494-8dbd-461f-b72b-cd59a0aadadc"/>
+                                       <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.526.3.1083" displayName="Hemodialysis Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Procedure, Performed: Hemodialysis</title>
+                                          </procedure>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                       <id root="16f8ae77-9cf0-43f1-9927-c841ff3a736d"/>
+                                       <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                       <sourceOf typeCode="COMP">
+                                          <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.464.1003.101.12.1024" displayName="Preventive Care - Established Office Visit, 0 to 17 Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Encounter, Performed: Preventive Care - Established Office Visit, 0 to 17</title>
+                                             <statusCode code="completed"/>
+                                          </encounter>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                       <id root="cbb4a02b-6579-49dc-bc12-3cafa28f0121"/>
+                                       <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                       <sourceOf typeCode="COMP">
+                                          <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.464.1003.101.12.1025" displayName="Preventive Care Services - Established Office Visit, 18 and Up Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up</title>
+                                             <statusCode code="completed"/>
+                                          </encounter>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                       <id root="0aa8618a-f61d-4165-a488-aa7498d1dc32"/>
+                                       <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                       <sourceOf typeCode="COMP">
+                                          <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.464.1003.101.12.1026" displayName="Preventive Care Services-Individual Counseling Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Encounter, Performed: Preventive Care Services-Individual Counseling</title>
+                                             <statusCode code="completed"/>
+                                          </encounter>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="OR"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                       <id root="92f29cca-3ad0-4ba4-ab71-c2e313065c4a"/>
+                                       <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                       <sourceOf typeCode="COMP">
+                                          <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.464.1003.101.12.1027" displayName="Preventive Care Services - Group Counseling Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Encounter, Performed: Preventive Care Services - Group Counseling</title>
+                                             <statusCode code="completed"/>
+                                          </encounter>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </observation>
+                     </sourceOf>
+                     <sourceOf typeCode="DURING">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <id root="b2c84dbb-8406-41b0-ab21-cf7c63b98b0d"/>
+                           <title>Measurement Period</title>
+                        </observation>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry>
+      </section>
+   </component>
+         
+      <!--
+         ******************************************   
+         Data Criteria Section
+         ******************************************
+      --><component typeCode="COMP">
+      <section>
+         <code code="57025-9" codeSystem="2.16.840.1.113883.6.1" displayName="Data criteria (QDM Data Elements)"/>
+         <title>Data criteria (QDM Data Elements)</title>
+         <text>
+            <list>
+               <item>
+                  <content>"Communication: From Patient to Provider: Influenza Vaccination Declined"</content> using "Influenza Vaccination Declined Grouping Value Set (2.16.840.1.113883.3.526.3.1255)"</item>
+               <item>
+                  <content>"Communication: From Patient to Provider: Previous Receipt of Influenza Vaccine"</content> using "Previous Receipt of Influenza Vaccine Grouping Value Set (2.16.840.1.113883.3.526.3.1185)"</item>
+               <item>
+                  <content>"Diagnosis, Active: Allergy to eggs"</content> using "Allergy to eggs Grouping Value Set (2.16.840.1.113883.3.526.3.1253)"</item>
+               <item>
+                  <content>"Diagnosis, Active: Allergy to Influenza Vaccine"</content> using "Allergy to Influenza Vaccine Grouping Value Set (2.16.840.1.113883.3.526.3.1256)"</item>
+               <item>
+                  <content>"Diagnosis, Active: Intolerance to Influenza Vaccine"</content> using "Intolerance to Influenza Vaccine Grouping Value Set (2.16.840.1.113883.3.526.3.1257)"</item>
+               <item>
+                  <content>"Encounter, Performed: Annual Wellness Visit"</content> using "Annual Wellness Visit Grouping Value Set (2.16.840.1.113883.3.526.3.1240)"</item>
+               <item>
+                  <content>"Encounter, Performed: Care Services in Long-Term Residential Facility"</content> using "Care Services in Long-Term Residential Facility Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1014)"</item>
+               <item>
+                  <content>"Encounter, Performed: Discharge Services - Nursing Facility"</content> using "Discharge Services - Nursing Facility Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1013)"</item>
+               <item>
+                  <content>"Encounter, Performed: Encounter-Influenza"</content> using "Encounter-Influenza Grouping Value Set (2.16.840.1.113883.3.526.3.1252)"</item>
+               <item>
+                  <content>"Encounter, Performed: Home Healthcare Services"</content> using "Home Healthcare Services Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1016)"</item>
+               <item>
+                  <content>"Encounter, Performed: Nursing Facility Visit"</content> using "Nursing Facility Visit Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1012)"</item>
+               <item>
+                  <content>"Encounter, Performed: Office Visit"</content> using "Office Visit Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1001)"</item>
+               <item>
+                  <content>"Encounter, Performed: Outpatient Consultation"</content> using "Outpatient Consultation Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1008)"</item>
+               <item>
+                  <content>"Encounter, Performed: Patient Provider Interaction"</content> using "Patient Provider Interaction Grouping Value Set (2.16.840.1.113883.3.526.3.1012)"</item>
+               <item>
+                  <content>"Encounter, Performed: Preventive Care - Established Office Visit, 0 to 17"</content> using "Preventive Care - Established Office Visit, 0 to 17 Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1024)"</item>
+               <item>
+                  <content>"Encounter, Performed: Preventive Care- Initial Office Visit, 0 to 17"</content> using "Preventive Care- Initial Office Visit, 0 to 17 Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1022)"</item>
+               <item>
+                  <content>"Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up"</content> using "Preventive Care Services - Established Office Visit, 18 and Up Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1025)"</item>
+               <item>
+                  <content>"Encounter, Performed: Preventive Care Services - Group Counseling"</content> using "Preventive Care Services - Group Counseling Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1027)"</item>
+               <item>
+                  <content>"Encounter, Performed: Preventive Care Services-Individual Counseling"</content> using "Preventive Care Services-Individual Counseling Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1026)"</item>
+               <item>
+                  <content>"Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up"</content> using "Preventive Care Services-Initial Office Visit, 18 and Up Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1023)"</item>
+               <item>
+                  <content>"Encounter, Performed: Preventive Care Services - Other"</content> using "Preventive Care Services - Other Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1030)"</item>
+               <item>
+                  <content>"Medication, Administered: Influenza Vaccine"</content> using "Influenza Vaccine Grouping Value Set (2.16.840.1.113883.3.526.3.1254)"</item>
+               <item>
+                  <content>"Medication, Administered not done: Medical Reason"</content> using "Medical Reason Grouping Value Set (2.16.840.1.113883.3.526.3.1007)"</item>
+               <item>
+                  <content>"Medication, Administered not done: Patient Reason"</content> using "Patient Reason Grouping Value Set (2.16.840.1.113883.3.526.3.1008)"</item>
+               <item>
+                  <content>"Medication, Administered not done: System Reason"</content> using "System Reason Grouping Value Set (2.16.840.1.113883.3.526.3.1009)"</item>
+               <item>
+                  <content>"Medication, Allergy: Influenza Vaccine"</content> using "Influenza Vaccine Grouping Value Set (2.16.840.1.113883.3.526.3.1254)"</item>
+               <item>
+                  <content>"Medication, Intolerance: Influenza Vaccine"</content> using "Influenza Vaccine Grouping Value Set (2.16.840.1.113883.3.526.3.1254)"</item>
+               <item>
+                  <content>"Patient Characteristic Birthdate: birth date"</content> using "birth date LOINC Value Set (2.16.840.1.113883.3.560.100.4)"</item>
+               <item>
+                  <content>"Procedure, Intolerance: Influenza Vaccination"</content> using "Influenza Vaccination Grouping Value Set (2.16.840.1.113883.3.526.3.402)"</item>
+               <item>
+                  <content>"Procedure, Performed: Hemodialysis"</content> using "Hemodialysis Grouping Value Set (2.16.840.1.113883.3.526.3.1083)"</item>
+               <item>
+                  <content>"Procedure, Performed: Influenza Vaccination"</content> using "Influenza Vaccination Grouping Value Set (2.16.840.1.113883.3.526.3.402)"</item>
+               <item>
+                  <content>"Procedure, Performed: Peritoneal Dialysis"</content> using "Peritoneal Dialysis Grouping Value Set (2.16.840.1.113883.3.526.3.1084)"</item>
+               <item>
+                  <content>"Procedure, Performed not done: Medical Reason"</content> using "Medical Reason Grouping Value Set (2.16.840.1.113883.3.526.3.1007)"</item>
+               <item>
+                  <content>"Procedure, Performed not done: Patient Reason"</content> using "Patient Reason Grouping Value Set (2.16.840.1.113883.3.526.3.1008)"</item>
+               <item>
+                  <content>"Procedure, Performed not done: System Reason"</content> using "System Reason Grouping Value Set (2.16.840.1.113883.3.526.3.1009)"</item>
+            </list>
+         </text>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Birthdate pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.400"/>
+               <id root="345332e3-cb63-46e3-aaa4-7940e338731d"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="21112-8" codeSystem="2.16.840.1.113883.6.1" displayName="Birth date"/>
+                     <title>Patient Characteristic Birthdate: birth date</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.560.100.4" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="birth date LOINC Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="89785ee1-ee6e-4c6e-b54e-4ebaf1f37246"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.526.3.1012" displayName="Patient Provider Interaction Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Patient Provider Interaction</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="29bc591d-3db6-455c-b42c-b333166cb190"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1001" displayName="Office Visit Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Office Visit</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="92f29cca-3ad0-4ba4-ab71-c2e313065c4a"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1027" displayName="Preventive Care Services - Group Counseling Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Preventive Care Services - Group Counseling</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="02e3b7c0-0153-49b9-aaed-0daff7de23d8"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1030" displayName="Preventive Care Services - Other Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Preventive Care Services - Other</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="5d9cfa0c-01be-4141-9a28-77be9a24f06a"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1023" displayName="Preventive Care Services-Initial Office Visit, 18 and Up Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="cbb4a02b-6579-49dc-bc12-3cafa28f0121"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1025" displayName="Preventive Care Services - Established Office Visit, 18 and Up Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="0aa8618a-f61d-4165-a488-aa7498d1dc32"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1026" displayName="Preventive Care Services-Individual Counseling Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Preventive Care Services-Individual Counseling</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="a2289c3d-699e-45a1-9a84-59e5e34ccdf1"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1008" displayName="Outpatient Consultation Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Outpatient Consultation</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="93b580e4-7961-4bb2-b572-d06d8369a466"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1014" displayName="Care Services in Long-Term Residential Facility Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Care Services in Long-Term Residential Facility</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="f3848f70-b3e5-4a46-b274-4ade2f3144e0"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1016" displayName="Home Healthcare Services Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Home Healthcare Services</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="16f8ae77-9cf0-43f1-9927-c841ff3a736d"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1024" displayName="Preventive Care - Established Office Visit, 0 to 17 Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Preventive Care - Established Office Visit, 0 to 17</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="7663e132-db11-4dfd-84bf-6b5b2b979b6d"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1022" displayName="Preventive Care- Initial Office Visit, 0 to 17 Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Preventive Care- Initial Office Visit, 0 to 17</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="3a20351a-6d99-488b-a968-086178b51e5e"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1013" displayName="Discharge Services - Nursing Facility Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Discharge Services - Nursing Facility</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="9db237cf-c908-4768-a579-a197c7eb5412"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1012" displayName="Nursing Facility Visit Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Nursing Facility Visit</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.6"/>
+               <id root="003f738d-1bab-4d27-acf6-e8d8829299ee"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.526.3.402" displayName="Influenza Vaccination Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Procedure, Performed: Influenza Vaccination</title>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Medication, Administered pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.14"/>
+               <id root="b70bdc5a-0538-48d6-8815-3f838a290bed"/>
+               <code code="18610-6" displayName="Medication administered" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <substanceAdministration classCode="SBADM" moodCode="EVN" isCriterionInd="true">
+                     <title>Medication, Administered: Influenza Vaccine</title>
+                     <participant typeCode="CSM">
+                        <roleParticipant classCode="MANU">
+                           <playingMaterial classCode="MMAT" determinerCode="KIND">
+                              <code code="2.16.840.1.113883.3.526.3.1254" displayName="Influenza Vaccine Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                           </playingMaterial>
+                        </roleParticipant>
+                     </participant>
+                  </substanceAdministration>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Communication: From Patient to Provider pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.30"/>
+               <id root="88f61556-3a32-484c-a424-5c784777ac4e"/>
+               <code code="COMMGR_X" displayName="Communication Manager" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.526.3.1185" displayName="Previous Receipt of Influenza Vaccine Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Communication: From Patient to Provider: Previous Receipt of Influenza Vaccine</title>
+                     <participant typeCode="AUT">
+                        <patientParticipant classCode="PAT"/>
+                     </participant>
+                     <participant typeCode="IRCP">
+                        <signatureCode code="S"/>
+                        <roleParticipant classCode="ASSIGNED">
+                           <code code="158965000" codeSystem="2.16.840.1.113883.6.96" displayName="Medical Practitioner"/>
+                        </roleParticipant>
+                     </participant>
+                  </act>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Communication: From Patient to Provider pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.30"/>
+               <id root="c2b6666f-ea0e-497e-af6f-b2d66bb4e049"/>
+               <code code="COMMGR_X" displayName="Communication Manager" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.526.3.1255" displayName="Influenza Vaccination Declined Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Communication: From Patient to Provider: Influenza Vaccination Declined</title>
+                     <participant typeCode="AUT">
+                        <patientParticipant classCode="PAT"/>
+                     </participant>
+                     <participant typeCode="IRCP">
+                        <signatureCode code="S"/>
+                        <roleParticipant classCode="ASSIGNED">
+                           <code code="158965000" codeSystem="2.16.840.1.113883.6.96" displayName="Medical Practitioner"/>
+                        </roleParticipant>
+                     </participant>
+                  </act>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.2"/>
+               <id root="4947117c-d577-44be-8970-12028a4ec437"/>
+               <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                     <title>Diagnosis, Active: Allergy to eggs</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.526.3.1253" displayName="Allergy to eggs Grouping Value Set"/>
+                     <sourceOf typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                           <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                        </observation>
+                     </sourceOf>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Intolerance pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.61"/>
+               <id root="f837cdb7-2013-46ed-a2c2-d3b423cb6f8f"/>
+               <code code="48765-2" displayName="Allergies, adverse reactions, alerts" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="INTOL-X" codeSystem="2.16.840.1.113883.3.560" displayName="Intolerance"/>
+                     <title>Procedure, Intolerance: Influenza Vaccination</title>
+                     <sourceOf typeCode="CAUS" inversionInd="true">
+                        <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                           <code code="2.16.840.1.113883.3.526.3.402" displayName="Influenza Vaccination Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                        </procedure>
+                     </sourceOf>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Medication, Allergy pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.1"/>
+               <id root="405205db-5fe0-4eaa-8b6d-7ed0443cdd36"/>
+               <code code="48765-2" displayName="Allergies, adverse reactions, alerts" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="416098002" codeSystem="2.16.840.1.113883.6.96" displayName="Drug allergy"/>
+                     <title>Medication, Allergy: Influenza Vaccine</title>
+                     <participant typeCode="CSM">
+                        <roleParticipant classCode="MANU">
+                           <playingMaterial classCode="MMAT" determinerCode="KIND">
+                              <code code="2.16.840.1.113883.3.526.3.1254" displayName="Influenza Vaccine Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                           </playingMaterial>
+                        </roleParticipant>
+                     </participant>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Medication, Intolerance pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.15"/>
+               <id root="59709205-ba62-43c4-bf36-66dbe9fd93af"/>
+               <code code="48765-2" displayName="Allergies, adverse reactions, alerts" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="59037007" codeSystem="2.16.840.1.113883.6.96" displayName="Drug intolerance"/>
+                     <title>Medication, Intolerance: Influenza Vaccine</title>
+                     <participant typeCode="CSM">
+                        <roleParticipant classCode="MANU">
+                           <playingMaterial classCode="MMAT" determinerCode="KIND">
+                              <code code="2.16.840.1.113883.3.526.3.1254" displayName="Influenza Vaccine Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                           </playingMaterial>
+                        </roleParticipant>
+                     </participant>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.2"/>
+               <id root="e200ed5c-d9ac-43a9-8b0c-de554c860347"/>
+               <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                     <title>Diagnosis, Active: Allergy to Influenza Vaccine</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.526.3.1256" displayName="Allergy to Influenza Vaccine Grouping Value Set"/>
+                     <sourceOf typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                           <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                        </observation>
+                     </sourceOf>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.2"/>
+               <id root="8c3b4d39-0787-4738-b0bb-4bf2efbd5b68"/>
+               <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                     <title>Diagnosis, Active: Intolerance to Influenza Vaccine</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.526.3.1257" displayName="Intolerance to Influenza Vaccine Grouping Value Set"/>
+                     <sourceOf typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                           <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                        </observation>
+                     </sourceOf>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="fc82a68c-4870-428b-ac5c-49e38ae4fcd9"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.526.3.1240" displayName="Annual Wellness Visit Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Annual Wellness Visit</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.6"/>
+               <id root="2ff6bf38-db48-41b6-86b9-e5d5797319fb"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.526.3.1084" displayName="Peritoneal Dialysis Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Procedure, Performed: Peritoneal Dialysis</title>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.6"/>
+               <id root="5ce6b494-8dbd-461f-b72b-cd59a0aadadc"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.526.3.1083" displayName="Hemodialysis Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Procedure, Performed: Hemodialysis</title>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="c43da90e-df4a-4c89-9588-f72ab9c06252"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.526.3.1252" displayName="Encounter-Influenza Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Encounter-Influenza</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed not done pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.106"/>
+               <id root="1a91a043-f451-4351-8612-52a686d06c40"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.526.3.1007" displayName="Medical Reason Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Procedure, Performed not done: Medical Reason</title>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed not done pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.106"/>
+               <id root="48a9e8bf-148a-4a33-8649-d9805938ce87"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.526.3.1008" displayName="Patient Reason Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Procedure, Performed not done: Patient Reason</title>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed not done pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.106"/>
+               <id root="8602e97c-92df-4b64-9445-c89f7d654378"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.526.3.1009" displayName="System Reason Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Procedure, Performed not done: System Reason</title>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Medication, Administered not done pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.114"/>
+               <id root="f3f072b8-d028-4634-8488-37b1ce84fc75"/>
+               <code code="18610-6" displayName="Medication administered" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <substanceAdministration classCode="SBADM" moodCode="EVN" isCriterionInd="true">
+                     <title>Medication, Administered not done: Medical Reason</title>
+                     <participant typeCode="CSM">
+                        <roleParticipant classCode="MANU">
+                           <playingMaterial classCode="MMAT" determinerCode="KIND">
+                              <code code="2.16.840.1.113883.3.526.3.1007" displayName="Medical Reason Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                           </playingMaterial>
+                        </roleParticipant>
+                     </participant>
+                  </substanceAdministration>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Medication, Administered not done pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.114"/>
+               <id root="72cf16ca-4bee-408b-8a0f-0043500bc08a"/>
+               <code code="18610-6" displayName="Medication administered" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <substanceAdministration classCode="SBADM" moodCode="EVN" isCriterionInd="true">
+                     <title>Medication, Administered not done: Patient Reason</title>
+                     <participant typeCode="CSM">
+                        <roleParticipant classCode="MANU">
+                           <playingMaterial classCode="MMAT" determinerCode="KIND">
+                              <code code="2.16.840.1.113883.3.526.3.1008" displayName="Patient Reason Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                           </playingMaterial>
+                        </roleParticipant>
+                     </participant>
+                  </substanceAdministration>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Medication, Administered not done pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.114"/>
+               <id root="cbf7d898-8168-4121-8399-2fa1724f38fe"/>
+               <code code="18610-6" displayName="Medication administered" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <substanceAdministration classCode="SBADM" moodCode="EVN" isCriterionInd="true">
+                     <title>Medication, Administered not done: System Reason</title>
+                     <participant typeCode="CSM">
+                        <roleParticipant classCode="MANU">
+                           <playingMaterial classCode="MMAT" determinerCode="KIND">
+                              <code code="2.16.840.1.113883.3.526.3.1009" displayName="System Reason Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                           </playingMaterial>
+                        </roleParticipant>
+                     </participant>
+                  </substanceAdministration>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="COMP">
+            <observation classCode="OBS" moodCode="DEF">
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="387e8746-11f7-49f9-9371-7e14983e0308"/>
+               <sourceOf typeCode="DRIV">
+                  <localVariableName>Encounter-Influenza</localVariableName>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="c43da90e-df4a-4c89-9588-f72ab9c06252"/>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry>
+         <entry typeCode="COMP">
+            <observation classCode="OBS" moodCode="DEF">
+               <templateId root="2.16.840.1.113883.3.560.1.6"/>
+               <id root="ab8afb04-1774-4be5-b7d0-09e63540e13b"/>
+               <sourceOf typeCode="DRIV">
+                  <localVariableName>Hemodialysis</localVariableName>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="5ce6b494-8dbd-461f-b72b-cd59a0aadadc"/>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry>
+         <entry typeCode="COMP">
+            <observation classCode="OBS" moodCode="DEF">
+               <templateId root="2.16.840.1.113883.3.560.1.6"/>
+               <id root="bbe22ea3-77f6-46d5-9426-ec9c22b8c457"/>
+               <sourceOf typeCode="DRIV">
+                  <localVariableName>Peritoneal Dialysis</localVariableName>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="2ff6bf38-db48-41b6-86b9-e5d5797319fb"/>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry>
+      </section>
+   </component>
+            
+         <!--
+            **************************************************************   
+            Stratification Section
+            **************************************************************
+         --><component typeCode="COMP">
+      <section>
+         <code code="69669-0" codeSystem="2.16.840.1.113883.6.1" displayName="Population stratification description"/>
+         <title>Reporting Stratification</title>
+         <text>
+            <list>
+               <item>None</item>
+            </list>
+         </text>
+      </section>
+   </component>
+         
+      <!--
+         ******************************************   
+         Supplemental Data Elements Section
+         ******************************************
+      --><component typeCode="COMP">
+      <section>
+         <code code="69670-8" codeSystem="2.16.840.1.113883.6.1" displayName="Supplemental Data Elements"/>
+         <title>Supplemental Data Elements</title>
+         <text>
+            <list>
+               <item>
+                  <content>"Patient Characteristic Ethnicity: Ethnicity"</content> using "Ethnicity CDC Value Set (2.16.840.1.114222.4.11.837)"</item>
+               <item>
+                  <content>"Patient Characteristic Payer: Payer"</content> using "Payer Source of Payment Typology Value Set (2.16.840.1.114222.4.11.3591)"</item>
+               <item>
+                  <content>"Patient Characteristic Race: Race"</content> using "Race CDC Value Set (2.16.840.1.114222.4.11.836)"</item>
+               <item>
+                  <content>"Patient Characteristic Sex: ONC Administrative Sex"</content> using "ONC Administrative Sex Administrative Sex Value Set (2.16.840.1.113762.1.4.1)"</item>
+            </list>
+         </text>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Sex pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.402"/>
+               <id root="0bad8c9c-803f-4ea8-89c1-95aee4c5a679"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="263495000" codeSystem="2.16.840.1.113883.6.96" displayName="Sex"/>
+                     <title>Patient Characteristic Sex: ONC Administrative Sex</title>
+                     <value xsi:type="CD" code="2.16.840.1.113762.1.4.1" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="ONC Administrative Sex Administrative Sex Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Race pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.406"/>
+               <id root="8da4c644-dad6-4e0a-a419-747195eb66cc"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="32624-9" codeSystem="2.16.840.1.113883.6.1" displayName="Race"/>
+                     <title>Patient Characteristic Race: Race</title>
+                     <value xsi:type="CD" code="2.16.840.1.114222.4.11.836" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="Race CDC Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Ethnicity pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.403"/>
+               <id root="792a15ca-2d80-4fe0-90f6-aec0815463a8"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="54133-4" codeSystem="2.16.840.1.113883.6.1" displayName="Ethnicity"/>
+                     <title>Patient Characteristic Ethnicity: Ethnicity</title>
+                     <value xsi:type="CD" code="2.16.840.1.114222.4.11.837" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="Ethnicity CDC Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Payer pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.405"/>
+               <id root="6214a846-8107-4fb9-88b5-57e6bdbe630e"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" displayName="Payer"/>
+                     <title>Patient Characteristic Payer: Payer</title>
+                     <value xsi:type="CD" code="2.16.840.1.114222.4.11.3591" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="Payer Source of Payment Typology Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+      </section>
+   </component>
+</QualityMeasureDocument>

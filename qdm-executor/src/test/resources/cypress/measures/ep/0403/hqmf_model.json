@@ -1,0 +1,430 @@
+{
+  "id": "0403",
+  "hqmf_id": "8A4D92B2-3A00-2A25-013A-407C78A12C20",
+  "hqmf_set_id": "F70B2984-AF4A-4072-AE0D-CEC677A7FF8F",
+  "hqmf_version_number": 1,
+  "title": "HIV/AIDS: Medical Visit",
+  "description": "Percentage of patients, regardless of age, with a diagnosis of HIV/AIDS with at least two medical visits during the measurement year with a minimum of 90 days between each visit",
+  "cms_id": "CMS62v1",
+  "population_criteria": {
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "BA9450A5-4BDE-4BE8-BF39-5AEB7B7E305C",
+      "preconditions": [
+        {
+          "id": 9,
+          "preconditions": [
+            {
+              "id": 3,
+              "reference": "OccurrenceAHivVisit1_precondition_3"
+            },
+            {
+              "id": 5,
+              "reference": "OccurrenceBHivVisit2_precondition_5"
+            },
+            {
+              "id": 7,
+              "reference": "OccurrenceBHivVisit2_precondition_7"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "CDADFB6B-2313-4C02-83B8-8AB64C3A1550"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "E4DE2F11-72D8-4B9F-B716-6C761CB48EC9",
+      "preconditions": [
+        {
+          "id": 14,
+          "preconditions": [
+            {
+              "id": 10,
+              "reference": "EncounterPerformedHivVisit_precondition_10"
+            },
+            {
+              "id": 12,
+              "reference": "DiagnosisActiveHiv_precondition_12"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "OccurrenceAHivVisit1": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HIV_VISIT",
+      "source_data_criteria": "OccurrenceAHivVisit1"
+    },
+    "OccurrenceAHivVisit1_precondition_3": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HIV_VISIT",
+      "source_data_criteria": "OccurrenceAHivVisit1",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceBHivVisit2_precondition_5": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HIV_VISIT",
+      "source_data_criteria": "OccurrenceBHivVisit2",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceBHivVisit2_precondition_7": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HIV_VISIT",
+      "source_data_criteria": "OccurrenceBHivVisit2",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceAHivVisit1",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "90",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedHivVisit_precondition_10": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHivVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "DiagnosisActiveHiv_precondition_12": {
+      "title": "HIV",
+      "description": "Diagnosis, Active: HIV",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.120.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveHiv",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "DiagnosisActiveHiv": {
+      "title": "HIV",
+      "description": "Diagnosis, Active: HIV",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.120.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveHiv"
+    },
+    "EncounterPerformedHivVisit": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHivVisit"
+    },
+    "OccurrenceAHivVisit1": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HIV_VISIT",
+      "source_data_criteria": "OccurrenceAHivVisit1"
+    },
+    "OccurrenceBHivVisit2": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HIV_VISIT",
+      "source_data_criteria": "OccurrenceBHivVisit2"
+    }
+  },
+  "attributes": [
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "(c) 2012 American Medical Association and National Committee for Quality Assurance. All Rights Reserved",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "In general, patients with early-stage disease are seen at 3-month intervals to undergo routine medical evaluation and monitoring of CD4 cell count, viral load, and CBC. During the initial evaluation more frequent visits are common because there is so much information to transmit. Visits should also be more frequent when therapy is introduced and when the CD4 cell count is <200/mm3 because complications are more likely. (Bartlett, 2004)",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "Clinicians should schedule routine monitoring visits at least every 4 months for all HIV-infected patients who are clinically stable. (NYSDOH, 2004)",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "A higher score indicates better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "0403",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "Physician Performance Measures (Measures) and related data specifications have been developed by the American Medical Association (AMA) - convened Physician Consortium for Performance Improvement(R) (the PCPI [TM]) and the National Committee for Quality Assurance (NCQA).  These Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The Measures, while copyrighted, can be reproduced and distributed, without modification, for noncommercial purposes, e.g., use by health care providers in connection with their practices. Commercial use is defined as the sale, license, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial uses of the Measures require a license agreement between the user and the AMA, (on behalf of the PCPI) or NCQA. Neither the AMA, NCQA, PCPI nor its members shall be responsible for any use of the Measures. \r\n\r\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND. \r\n\r\nLimited proprietary coding is contained in the Measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. The AMA, NCQA, the PCPI and its members disclaim all liability for use or accuracy of any Current Procedural Terminology (CPT[R]) or other coding contained in the specifications. \r\n\r\nCPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC (R) copyright 2004-2011 Regenstrief Institute, Inc. \r\nThis material contains SNOMED Clinical Terms (R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation.  ICD-10 Copyright 2011 World Health Organization. All Rights Reserved.\r\n\r\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "62",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "New York State Department of Health. Primary care approach to the HIV-infected patient. New York (NY): New York State Department of Health; 2004. 18 p. http://www.hivguidelines.org/Content.aspx?pageID=257 [Accessed August 24, 2007]",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "None",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "A medical visit is any visit with a health care professional who provides routine primary care for the patient with HIV/AIDS (may be but is not limited to a primary care clinician, ob/gyn, pediatrician, infectious disease specialist).",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "All patients, regardless of age, with a diagnosis of HIV/AIDS seen within a 12 month period",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals initial patient population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "None",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Patients with at least two medical visits during the measurement year with a minimum of 90 days between each visit",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "None",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not Applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity, and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "IPP": "IPP",
+      "DENOM": "DENOM",
+      "NUMER": "NUMER"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

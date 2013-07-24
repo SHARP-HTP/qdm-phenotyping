@@ -1,0 +1,3671 @@
+<?xml version="1.0" encoding="utf-8"?>
+<QualityMeasureDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <id root="2.16.840.1.113883.3.100.1" extension="8A4D92B2-3AE8-F461-013A-F4E544D7003E" />
+  <code code="57024-2" codeSystem="2.16.840.1.113883.6.1"/>
+  <title value="Preventive Care and Screening: Screening for Clinical Depression and Follow-Up Plan"/>
+  <text value="Percentage of patients aged 12 years and older screened for clinical depression on the date of the encounter using an age appropriate standardized depression screening tool AND if positive, a follow-up plan is documented on the date of the positive screen."/>
+  <statusCode code="completed" />
+  <setId root="2.16.840.1.113883.3.100.1" extension="9A031E24-3D9B-11E1-8634-00237D5BF174" />
+  <versionNumber value="2"/>
+  <author typeCode="AUT" contextControlCode="OP">
+    <responsibleParty classCode="ASSIGNED" />
+  </author>
+  <custodian typeCode="CST">
+    <responsibleParty classCode="ASSIGNED" />
+  </custodian>
+  <controlVariable>
+    <measurePeriod>
+      <code code="MSRTP" codeSystem="2.16.840.1.113883.3.560">
+        <displayName value="Measurement period"/>
+      </code>
+      <value>
+        <low value="201201010000" />
+        <high value="201212312359" />
+      </value>
+    </measurePeriod>
+  </controlVariable>
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="COPYRIGHT"/>
+			<code code="COPY">
+				<displayName value="Copyright"/>
+			</code>
+			<value xsi:type="ED" value="Limited proprietary coding is contained in the measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. Quality Insights of Pennsylvania disclaims all liability for use or accuracy of any Current Procedural Terminology (CPT [R]) or other coding contained in the specifications.
+
+CPT (R) contained in the Measure specifications is copyright 2007-2011 American Medical Association. 
+
+LOINC (R) copyright 2004-2011 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms (R) (SNOMED CT [R]) copyright 2004-2011 International Health Terminology Standards Development Organization. All Rights Reserved.
+
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM]."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_SCORING"/>
+			<code code="MSRSCORE">
+				<displayName value="Measure Scoring"/>
+			</code>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_TYPE"/>
+			<code code="MSRTYPE">
+				<displayName value="Measure Type"/>
+			</code>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="STRATIFICATION"/>
+			<code code="STRAT">
+				<displayName value="Stratification"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="RISK_ADJUSTMENT"/>
+			<code code="MSRADJ">
+				<displayName value="Risk Adjustment"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="RATE_AGGREGATION"/>
+			<code code="MSRAGG">
+				<displayName value="Rate Aggregation"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="RATIONALE"/>
+			<code code="RAT">
+				<displayName value="Rationale"/>
+			</code>
+			<value xsi:type="ED" value="The World Health Organization, as seen in Pratt & Brody (2008), found that major depression was the leading cause of disability worldwide. Depression causes suffering, decreases quality of life, and causes impairment in social and occupational functioning. It is associated with increased health care costs as well as with higher rates of many chronic medical conditions. Studies have shown that a higher number of depression symptoms are associated with poor health and impaired functioning, whether or not the criteria for a diagnosis of major depression are met. Persons 40-59 years of age had higher rates of depression than any other age group. Persons 12-17, 18-39 and 60 years of age and older had similar rates of depression. Depression was more common in females than in males. Non-Hispanic black persons had higher rates of depression than non-Hispanic white persons. In the 18-39 and 40-59 age groups, those with income below the federal poverty level had higher rates of depression than those with higher income. Among persons 12-17 and 60 years of age and older, rates of depression did not vary significantly by poverty status. Overall, approximately 80% of persons with depression reported some level of difficulty in functioning because of their depressive symptoms. In addition 35% of males and 22% of females with depression reported that their depressive symptoms make it very or extremely difficult for them to work, get things done at home, or get along with other people. More than one-half of all persons with mild depressive symptoms also reported some difficulty in daily functioning attributable to their symptoms. 
+
+The negative outcomes associated with early onset depression, make it crucial to identify and treat depression in its early stages. As reported in Borner et al. (2010), a study conducted by the World Health Organization (WHO) reported that in North America, primary care and family physicians are likely to provide the first line of treatment for depressive disorders. Others consistently report a 10% prevalence rate of depression in primary care patients. But studies have shown that primary care physicians fail to recognize up to 50% of depressed patients, purportedly because of time constraints and a lack of brief, sensitive, easy-to administer psychiatric screening instruments. Coyle et al. (2003), suggested that the picture is more grim for adolescents, and that more than 70% of children and adolescents suffering from serious mood disorders go unrecognized or inadequately treated. In 2000, Healthy People 2010 recommended routine screening for mental health problems as a part of primary care for both children and adults.   
+  
+Major depressive disorder (MDD) is a debilitating condition that has been increasingly recognized among youth, particularly adolescents. The prevalence of current or recent depression among children is 3% and among adolescents is 6%. The lifetime prevalence of MDD among adolescents may be as high as 20%. Adolescent-onset MDD is associated with an increased risk of death by suicide, suicide attempts, and recurrence of major depression by young adulthood. MDD is also associated with early pregnancy, decreased school performance, and impaired work, social, and family functioning during young adulthood (Williams et al., 2009). Every fifth adolescent may have a history of depression by age 18. The increase in the onset of depression occurs around puberty. According to Zalsman et al. (2006), as reported in Borner et al. (2010), depression ranks among the most commonly reported mental health problems in adolescent girls. 
+
+The economic burden of depression is substantial for individuals as well as society. Costs to an individual may include suffering, possible side effects from treatment, fees for mental health and medical visits and medications, time away from work and lost wages, transportation, and reduced quality of personal relationships. Costs to society may include loss of life, reduced productivity (because of both diminished capacity while at work and absenteeism from work), and increased costs of mental health and medical care. In 2000, the United States spent an estimated $83.1 billion in direct and indirect costs of depression (USPSTF, 2009)."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="CLINICAL_RECOMMENDATION_STATEMENT"/>
+			<code code="CRS">
+				<displayName value="Clinical Recommendation Statement"/>
+			</code>
+			<value xsi:type="ED" value="Adolescent Recommendation (12-18 years) 
+The USPSTF recommends screening of adolescents (12-18 years of age) for major depressive disorder (MDD) when systems are in place to ensure accurate diagnosis, psychotherapy (cognitive-behavioral or interpersonal), and follow-up (2009).
+
+Level II Child Preventive Services should be assessed and offered to each patient; as such services have been shown to be effective. Such Level II services include: Screening adolescents ages 12-18 for major depressive disorder when systems are in place for accurate diagnosis, treatment, and follow-up (ICSI, 2010).
+
+Adult Recommendation (18 years and older) 
+The USPSTF recommends screening adults for depression when staff-assisted depression care supports are in place to assure accurate diagnosis, effective treatment, and follow-up (2009). 
+
+Routine depression screening should be performed for adult patients (including older adults) but only if the practice has staff-assisted "systems in place to ensure that positive results are followed by accurate diagnosis, effective treatment, and careful follow-up" (ICSI, 2010)."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="IMPROVEMENT_NOTATION"/>
+			<code code="IDUR">
+				<displayName value="Improvement Notation"/>
+			</code>
+			<value xsi:type="ED" value="Higher score indicates better quality."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="NQF_ID_NUMBER"/>
+			<code code="OTH">
+				<displayName value="NQF ID Number"/>
+			</code>
+			<value xsi:type="ED" value="0418"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DISCLAIMER"/>
+			<code code="DISC">
+				<displayName value="Disclaimer"/>
+			</code>
+			<value xsi:type="ED" value="These performance measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.
+
+THE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="EMEASURE_IDENTIFIER"/>
+			<code code="OTH">
+				<displayName value="eMeasure Identifier"/>
+			</code>
+			<value xsi:type="ED" value="2"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="REFERENCE"/>
+			<code code="REF">
+				<displayName value="Reference"/>
+			</code>
+			<value xsi:type="ED" value="INSTITUTE FOR CLINICAL SYSTEMS IMPROVEMENT (ICSI) (2010). Preventive Services for Children and Adolescents. Retrieved from  http://www.icsi.org/preventive_services_ for_children __guideline_/ preventive_services_for_children_and_adolescents_2531.html"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DEFINITION"/>
+			<code code="DEF">
+				<displayName value="Definition"/>
+			</code>
+			<value xsi:type="ED" value="Screening: 
+Completion of a clinical or diagnostic tool used to identify people at risk of developing or having a certain disease or condition, even in the absence of symptoms.  
+
+Standardized Depression Screening Tool – A normalized and validated depression screening tool developed  for the patient population in which it is being utilized
+
+Examples of depression screening tools include but are not limited to: 
+•  Adolescent Screening Tools (12-17 years) 
+Patient Health Questionnaire for Adolescents (PHQ-A), Beck Depression Inventory-Primary Care Version (BDI-PC), Mood Feeling Questionnaire, Center for Epidemiologic Studies Depression Scale (CES-D) and PRIME MD-PHQ2 
+•  Adult Screening Tools (18 years and older) 
+Patient Health Questionnaire (PHQ9), Beck Depression Inventory (BDI or BDI-II), Center for Epidemiologic Studies Depression Scale (CES-D), Depression Scale (DEPS), Duke Anxiety-Depression Scale (DADS), Geriatric Depression Scale (SDS), Cornell Scale Screening and PRIME MD-PHQ2 
+
+Follow-Up Plan: 
+Proposed outline of treatment to be conducted as a result of positive clinical depression screening. Follow-up for a positive depression screening must include one (1) or more of the following: additional evaluation, suicide risk assessment, referral to a practitioner who is qualified to diagnose and treat depression, pharmacological interventions, other interventions or follow-up for the diagnosis or treatment of depression."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="GUIDANCE"/>
+			<code code="GUIDE">
+				<displayName value="Guidance"/>
+			</code>
+			<value xsi:type="ED" value="A clinical depression screen is complete on the date of the encounter using an age appropriate standardized depression screening tool AND if positive, a follow-up plan is documented on the date of the positive screen. The documented follow up plan must be related to positive depression screening, example: “Patient referred for psychiatric evaluation due to positive depression screening.”
+
+Standardized Depression Screening Tools should be normalized and validated for the age appropriate patient population in which they are used."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="TRANSMISSION_FORMAT"/>
+			<code code="OTH">
+				<displayName value="Transmission Format"/>
+			</code>
+			<value xsi:type="ED" value="TBD"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="INITIAL_PATIENT_POPULATION"/>
+			<code code="IPP">
+				<displayName value="Initial Patient Population"/>
+			</code>
+			<value xsi:type="ED" value="All patients aged 12 years and older before the beginning of the measurement period with at least one eligible encounter during the measurement period."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DENOMINATOR"/>
+			<code code="DENOM">
+				<displayName value="Denominator"/>
+			</code>
+			<value xsi:type="ED" value="Equals Initial Patient Population"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DENOMINATOR_EXCLUSIONS"/>
+			<code code="OTH">
+				<displayName value="Denominator Exclusions"/>
+			</code>
+			<value xsi:type="ED" value="Patients with an active diagnosis for Depression or Bipolar Disorder"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="NUMERATOR"/>
+			<code code="NUMER">
+				<displayName value="Numerator"/>
+			</code>
+			<value xsi:type="ED" value="Patients screened for clinical depression on the date of the encounter  using an age appropriate standardized tool AND if positive, a follow-up plan is documented on the date of the positive screen"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="NUMERATOR_EXCLUSIONS"/>
+			<code code="OTH">
+				<displayName value="Numerator Exclusions"/>
+			</code>
+			<value xsi:type="ED" value="Not Applicable"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DENOMINATOR_EXCEPTIONS"/>
+			<code code="DENEXCEP">
+				<displayName value="Denominator Exceptions"/>
+			</code>
+			<value xsi:type="ED" value="Patient Reason(s)
+Patient refuses to participate 
+
+OR
+
+Medical Reason(s)	
+Patient is in an urgent or emergent situation where time is of the essence and to delay treatment would jeopardize the patient’s health status 
+
+OR
+
+Situations where the patient’s functional capacity or motivation to improve may impact the accuracy of results of standardized depression assessment tools.  For example: certain court appointed cases or cases of delirium"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_POPULATION"/>
+			<code code="MSRPOPL">
+				<displayName value="Measure Population"/>
+			</code>
+			<value xsi:type="ED" value="Not Applicable"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_OBSERVATIONS"/>
+			<code code="OTH">
+				<displayName value="Measure Observations"/>
+			</code>
+			<value xsi:type="ED" value="Not Applicable"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="SUPPLEMENTAL_DATA_ELEMENTS"/>
+			<code code="OTH">
+				<displayName value="Supplemental Data Elements"/>
+			</code>
+			<value xsi:type="ED" value="For every patient evaluated by this measure also identify payer, race, ethnicity and sex."/>
+		</measureAttribute>
+	</subjectOf>
+
+  <component>
+    <dataCriteriaSection>
+      <code code="57025-9" codeSystem="2.16.840.1.113883.6.1"/>
+      <title value="Data Criteria Section"/>
+      <text>This section describes the data criteria.</text>
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveBipolarDiagnosis"/>
+          </id>
+                    <text value="Diagnosis, Active: Bipolar Diagnosis"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.600.450">
+            <displayName value="Bipolar Diagnosis"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveBipolarDiagnosis"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedDepressionScreeningDenominatorEncounterCodesNew"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1916">
+            <displayName value="Depression Screening Denominator Encounter Codes New"/>
+          </code>
+
+                    <text value="Encounter, Performed: Depression Screening Denominator Encounter Codes New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedDepressionScreeningDenominatorEncounterCodesNew"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.146" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedNotDoneMedicalReasonContraindicated"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.792">
+            <displayName value="Medical reason contraindicated"/>
+          </code>
+
+                    <text value="Intervention, Performed not done: Medical reason contraindicated"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedNotDoneMedicalReasonContraindicated"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.146" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedNotDoneMedicalReasonContraindicated1"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.792">
+            <displayName value="Medical reason contraindicated"/>
+          </code>
+
+                    <text value="Intervention, Performed not done: Medical reason contraindicated"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedNotDoneMedicalReasonContraindicated1"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.146" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedNotDonePatientReasonRefused"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.791">
+            <displayName value="Patient Reason refused"/>
+          </code>
+
+                    <text value="Intervention, Performed not done: Patient Reason refused"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedNotDonePatientReasonRefused"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.146" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedNotDonePatientReasonRefused2"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.791">
+            <displayName value="Patient Reason refused"/>
+          </code>
+
+                    <text value="Intervention, Performed not done: Patient Reason refused"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedNotDonePatientReasonRefused2"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionScreeningDenominatorEncounterCodesNew3"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1916">
+            <displayName value="Depression Screening Denominator Encounter Codes New"/>
+          </code>
+
+                    <text value="Encounter, Performed: Depression Screening Denominator Encounter Codes New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_DEPRESSION_SCREENING_DENOMINATOR_ENCOUNTER_CODES_NEW" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionScreeningDenominatorEncounterCodesNew3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.426">
+            <displayName value="Adolescent Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Performed: Adolescent Depression Screening"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="INTERVENTION_PERFORMED_ADOLESCENT_DEPRESSION_SCREENING" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.431">
+            <displayName value="Adult Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Performed: Adult Depression Screening"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="INTERVENTION_PERFORMED_ADULT_DEPRESSION_SCREENING" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.146" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdolescentDepressionScreening_precondition_8"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.426">
+            <displayName value="Adolescent Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Performed: Adolescent Depression Screening"/>
+          <statusCode code="performed"/>
+          
+                    <reasonCode>
+            <item valueSet="2.16.840.1.113883.3.600.792"/>
+          </reasonCode>
+
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdolescentDepressionScreening"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.146" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdultDepressionScreening_precondition_10"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.431">
+            <displayName value="Adult Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Performed: Adult Depression Screening"/>
+          <statusCode code="performed"/>
+          
+                    <reasonCode>
+            <item valueSet="2.16.840.1.113883.3.600.792"/>
+          </reasonCode>
+
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdultDepressionScreening"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.146" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdolescentDepressionScreening_precondition_12"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.426">
+            <displayName value="Adolescent Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Performed: Adolescent Depression Screening"/>
+          <statusCode code="performed"/>
+          
+                    <reasonCode>
+            <item valueSet="2.16.840.1.113883.3.600.791"/>
+          </reasonCode>
+
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdolescentDepressionScreening"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.146" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdultDepressionScreening_precondition_14"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.431">
+            <displayName value="Adult Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Performed: Adult Depression Screening"/>
+          <statusCode code="performed"/>
+          
+                    <reasonCode>
+            <item valueSet="2.16.840.1.113883.3.600.791"/>
+          </reasonCode>
+
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdultDepressionScreening"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionScreeningDenominatorEncounterCodesNew3_precondition_31"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1916">
+            <displayName value="Depression Screening Denominator Encounter Codes New"/>
+          </code>
+
+                    <text value="Encounter, Performed: Depression Screening Denominator Encounter Codes New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_DEPRESSION_SCREENING_DENOMINATOR_ENCOUNTER_CODES_NEW" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionScreeningDenominatorEncounterCodesNew3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionDiagnosis7_precondition_26"/>
+          </id>
+                    <text value="Diagnosis, Active: Depression diagnosis"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.600.145">
+            <displayName value="Depression diagnosis"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionScreeningDenominatorEncounterCodesNew3_precondition_31"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_DEPRESSION_DIAGNOSIS" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionDiagnosis7"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceABipolarDiagnosis6_precondition_28"/>
+          </id>
+                    <text value="Diagnosis, Active: Bipolar Diagnosis"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.600.450">
+            <displayName value="Bipolar Diagnosis"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionScreeningDenominatorEncounterCodesNew3_precondition_31"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_BIPOLAR_DIAGNOSIS" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABipolarDiagnosis6"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionScreeningDenominatorEncounterCodesNew3_precondition_24"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1916">
+            <displayName value="Depression Screening Denominator Encounter Codes New"/>
+          </code>
+
+                    <text value="Encounter, Performed: Depression Screening Denominator Encounter Codes New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_DEPRESSION_SCREENING_DENOMINATOR_ENCOUNTER_CODES_NEW" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionScreeningDenominatorEncounterCodesNew3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionDiagnosis7_precondition_19"/>
+          </id>
+                    <text value="Diagnosis, Active: Depression diagnosis"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.600.145">
+            <displayName value="Depression diagnosis"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="EBS">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionScreeningDenominatorEncounterCodesNew3_precondition_24"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_DEPRESSION_DIAGNOSIS" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionDiagnosis7"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceABipolarDiagnosis6_precondition_21"/>
+          </id>
+                    <text value="Diagnosis, Active: Bipolar Diagnosis"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.600.450">
+            <displayName value="Bipolar Diagnosis"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="EBS">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionScreeningDenominatorEncounterCodesNew3_precondition_24"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_BIPOLAR_DIAGNOSIS" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABipolarDiagnosis6"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.25" identifierName="patient characteristic, birthdate template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_35"/>
+          </id>
+                    <code codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1"
+            code="21112-8">
+            <displayName value="birth date"/>
+          </code>
+
+                    <text value="Patient Characteristic Birthdate: birth date"/>
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="patient_characteristic_birthdate"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="18" unit="a"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate"/>
+            </observationReference>
+          </outboundRelationship>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4_precondition_37"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.426">
+            <displayName value="Adolescent Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Performed: Adolescent Depression Screening"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="INTERVENTION_PERFORMED_ADOLESCENT_DEPRESSION_SCREENING" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4_precondition_44"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.426">
+            <displayName value="Adolescent Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Performed: Adolescent Depression Screening"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="INTERVENTION_PERFORMED_ADOLESCENT_DEPRESSION_SCREENING" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDepressionDiagnosis_precondition_39"/>
+          </id>
+                    <text value="Diagnosis, Active: Depression diagnosis"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.600.145">
+            <displayName value="Depression diagnosis"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4_precondition_44"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDepressionDiagnosis"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.47" identifierName="intervention, result template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionResultPositiveDepressionScreening_precondition_41"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.793">
+            <displayName value="Positive Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Result: Positive Depression Screening"/>
+          
+          
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention_result"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4_precondition_44"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionResultPositiveDepressionScreening"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4_precondition_57"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.426">
+            <displayName value="Adolescent Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Performed: Adolescent Depression Screening"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="INTERVENTION_PERFORMED_ADOLESCENT_DEPRESSION_SCREENING" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdditionalEvaluationForDepressionAdolescent_precondition_46"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1542">
+            <displayName value="Additional evaluation for depression - adolescent"/>
+          </code>
+
+                    <text value="Intervention, Performed: Additional evaluation for depression - adolescent"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4_precondition_57"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdditionalEvaluationForDepressionAdolescent"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralForDepressionAdolescent_precondition_48"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.537">
+            <displayName value="Referral for Depression Adolescent"/>
+          </code>
+
+                    <text value="Intervention, Order: Referral for Depression Adolescent"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4_precondition_57"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralForDepressionAdolescent"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <supplyCriteria moodCode="EVN" classCode="SPLY">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.17" identifierName="medication, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="MedicationOrderDepressionMedicationsAdolescent_precondition_50"/>
+          </id>
+                    <text value="Medication, Order: Depression medications - adolescent"/>
+          <statusCode code="ordered"/>
+          
+          
+          <participation typeCode="PRD">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.600.469">
+            <displayName value="Depression medications - adolescent"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <supplyReference moodCode="EVN" classCode="SPLY">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </supplyReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4_precondition_57"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="MedicationOrderDepressionMedicationsAdolescent"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </supplyCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedFollowUpForDepressionAdolescent_precondition_52"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.467">
+            <displayName value="Follow-up for depression - adolescent"/>
+          </code>
+
+                    <text value="Intervention, Performed: Follow-up for depression - adolescent"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4_precondition_57"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedFollowUpForDepressionAdolescent"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedSuicideRiskAssessment_precondition_54"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.559">
+            <displayName value="Suicide Risk Assessment"/>
+          </code>
+
+                    <text value="Procedure, Performed: Suicide Risk Assessment"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4_precondition_57"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedSuicideRiskAssessment"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.25" identifierName="patient characteristic, birthdate template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_63"/>
+          </id>
+                    <code codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1"
+            code="21112-8">
+            <displayName value="birth date"/>
+          </code>
+
+                    <text value="Patient Characteristic Birthdate: birth date"/>
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="patient_characteristic_birthdate"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="18" unit="a"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate"/>
+            </observationReference>
+          </outboundRelationship>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4_precondition_65"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.426">
+            <displayName value="Adolescent Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Performed: Adolescent Depression Screening"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="INTERVENTION_PERFORMED_ADOLESCENT_DEPRESSION_SCREENING" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.47" identifierName="intervention, result template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionResultNegativeDepressionScreening_precondition_67"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.794">
+            <displayName value="Negative Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Result: Negative Depression Screening"/>
+          
+          
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention_result"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionScreeningDenominatorEncounterCodesNew3"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionResultNegativeDepressionScreening"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDepressionDiagnosis_precondition_61"/>
+          </id>
+                    <text value="Diagnosis, Active: Depression diagnosis"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.600.145">
+            <displayName value="Depression diagnosis"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDepressionDiagnosis"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.25" identifierName="patient characteristic, birthdate template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_74"/>
+          </id>
+                    <code codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1"
+            code="21112-8">
+            <displayName value="birth date"/>
+          </code>
+
+                    <text value="Patient Characteristic Birthdate: birth date"/>
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="patient_characteristic_birthdate"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+      <low  value="18" unit="a"/>
+      </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate"/>
+            </observationReference>
+          </outboundRelationship>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5_precondition_76"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.431">
+            <displayName value="Adult Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Performed: Adult Depression Screening"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="INTERVENTION_PERFORMED_ADULT_DEPRESSION_SCREENING" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5_precondition_83"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.431">
+            <displayName value="Adult Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Performed: Adult Depression Screening"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="INTERVENTION_PERFORMED_ADULT_DEPRESSION_SCREENING" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDepressionDiagnosis_precondition_78"/>
+          </id>
+                    <text value="Diagnosis, Active: Depression diagnosis"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.600.145">
+            <displayName value="Depression diagnosis"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5_precondition_83"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDepressionDiagnosis"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.47" identifierName="intervention, result template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionResultPositiveDepressionScreening_precondition_80"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.793">
+            <displayName value="Positive Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Result: Positive Depression Screening"/>
+          
+          
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention_result"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5_precondition_83"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionResultPositiveDepressionScreening"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5_precondition_96"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.431">
+            <displayName value="Adult Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Performed: Adult Depression Screening"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="INTERVENTION_PERFORMED_ADULT_DEPRESSION_SCREENING" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdditionalEvaluationForDepressionAdult_precondition_85"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1545">
+            <displayName value="Additional evaluation for depression - adult"/>
+          </code>
+
+                    <text value="Intervention, Performed: Additional evaluation for depression - adult"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5_precondition_96"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdditionalEvaluationForDepressionAdult"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralForDepressionAdult_precondition_87"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.538">
+            <displayName value="Referral for Depression Adult"/>
+          </code>
+
+                    <text value="Intervention, Order: Referral for Depression Adult"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5_precondition_96"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralForDepressionAdult"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <supplyCriteria moodCode="EVN" classCode="SPLY">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.17" identifierName="medication, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="MedicationOrderDepressionMedicationsAdult_precondition_89"/>
+          </id>
+                    <text value="Medication, Order: Depression medications - adult"/>
+          <statusCode code="ordered"/>
+          
+          
+          <participation typeCode="PRD">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.600.470">
+            <displayName value="Depression medications - adult"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <supplyReference moodCode="EVN" classCode="SPLY">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </supplyReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5_precondition_96"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="MedicationOrderDepressionMedicationsAdult"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </supplyCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedFollowUpForDepressionAdult_precondition_91"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.468">
+            <displayName value="Follow-up for depression - adult"/>
+          </code>
+
+                    <text value="Intervention, Performed: Follow-up for depression - adult"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5_precondition_96"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedFollowUpForDepressionAdult"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedSuicideRiskAssessment_precondition_93"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.559">
+            <displayName value="Suicide Risk Assessment"/>
+          </code>
+
+                    <text value="Procedure, Performed: Suicide Risk Assessment"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5_precondition_96"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedSuicideRiskAssessment"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.25" identifierName="patient characteristic, birthdate template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_102"/>
+          </id>
+                    <code codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1"
+            code="21112-8">
+            <displayName value="birth date"/>
+          </code>
+
+                    <text value="Patient Characteristic Birthdate: birth date"/>
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="patient_characteristic_birthdate"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+      <low  value="18" unit="a"/>
+      </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate"/>
+            </observationReference>
+          </outboundRelationship>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5_precondition_104"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.431">
+            <displayName value="Adult Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Performed: Adult Depression Screening"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="INTERVENTION_PERFORMED_ADULT_DEPRESSION_SCREENING" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.47" identifierName="intervention, result template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionResultNegativeDepressionScreening_precondition_106"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.794">
+            <displayName value="Negative Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Result: Negative Depression Screening"/>
+          
+          
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention_result"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionResultNegativeDepressionScreening"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDepressionDiagnosis_precondition_100"/>
+          </id>
+                    <text value="Diagnosis, Active: Depression diagnosis"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.600.145">
+            <displayName value="Depression diagnosis"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDepressionDiagnosis"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.25" identifierName="patient characteristic, birthdate template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_116"/>
+          </id>
+                    <code codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1"
+            code="21112-8">
+            <displayName value="birth date"/>
+          </code>
+
+                    <text value="Patient Characteristic Birthdate: birth date"/>
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="patient_characteristic_birthdate"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+      <low  value="12" unit="a"/>
+      </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate"/>
+            </observationReference>
+          </outboundRelationship>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionScreeningDenominatorEncounterCodesNew3_precondition_118"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1916">
+            <displayName value="Depression Screening Denominator Encounter Codes New"/>
+          </code>
+
+                    <text value="Encounter, Performed: Depression Screening Denominator Encounter Codes New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_DEPRESSION_SCREENING_DENOMINATOR_ENCOUNTER_CODES_NEW" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionScreeningDenominatorEncounterCodesNew3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDepressionDiagnosis"/>
+          </id>
+                    <text value="Diagnosis, Active: Depression diagnosis"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.600.145">
+            <displayName value="Depression diagnosis"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDepressionDiagnosis"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdolescentDepressionScreening"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.426">
+            <displayName value="Adolescent Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Performed: Adolescent Depression Screening"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdolescentDepressionScreening"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdultDepressionScreening"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.431">
+            <displayName value="Adult Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Performed: Adult Depression Screening"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdultDepressionScreening"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveBipolarDiagnosis"/>
+          </id>
+                    <text value="Diagnosis, Active: Bipolar Diagnosis"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.600.450">
+            <displayName value="Bipolar Diagnosis"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveBipolarDiagnosis"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <supplyCriteria moodCode="EVN" classCode="SPLY">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.17" identifierName="medication, order template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="MedicationOrderDepressionMedicationsAdolescent"/>
+          </id>
+                    <text value="Medication, Order: Depression medications - adolescent"/>
+          <statusCode code="ordered"/>
+          
+          
+          <participation typeCode="PRD">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.600.469">
+            <displayName value="Depression medications - adolescent"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <supplyReference moodCode="EVN" classCode="SPLY">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </supplyReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="MedicationOrderDepressionMedicationsAdolescent"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </supplyCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <supplyCriteria moodCode="EVN" classCode="SPLY">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.17" identifierName="medication, order template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="MedicationOrderDepressionMedicationsAdult"/>
+          </id>
+                    <text value="Medication, Order: Depression medications - adult"/>
+          <statusCode code="ordered"/>
+          
+          
+          <participation typeCode="PRD">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.600.470">
+            <displayName value="Depression medications - adult"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <supplyReference moodCode="EVN" classCode="SPLY">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </supplyReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="MedicationOrderDepressionMedicationsAdult"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </supplyCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedFollowUpForDepressionAdolescent"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.467">
+            <displayName value="Follow-up for depression - adolescent"/>
+          </code>
+
+                    <text value="Intervention, Performed: Follow-up for depression - adolescent"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedFollowUpForDepressionAdolescent"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedFollowUpForDepressionAdult"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.468">
+            <displayName value="Follow-up for depression - adult"/>
+          </code>
+
+                    <text value="Intervention, Performed: Follow-up for depression - adult"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedFollowUpForDepressionAdult"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralForDepressionAdolescent"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.537">
+            <displayName value="Referral for Depression Adolescent"/>
+          </code>
+
+                    <text value="Intervention, Order: Referral for Depression Adolescent"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralForDepressionAdolescent"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralForDepressionAdult"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.538">
+            <displayName value="Referral for Depression Adult"/>
+          </code>
+
+                    <text value="Intervention, Order: Referral for Depression Adult"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralForDepressionAdult"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.47" identifierName="intervention, result template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionResultNegativeDepressionScreening"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.794">
+            <displayName value="Negative Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Result: Negative Depression Screening"/>
+          
+          
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention_result"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionResultNegativeDepressionScreening"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.47" identifierName="intervention, result template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionResultPositiveDepressionScreening"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.793">
+            <displayName value="Positive Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Result: Positive Depression Screening"/>
+          
+          
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention_result"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionResultPositiveDepressionScreening"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedDepressionScreeningDenominatorEncounterCodesNew"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1916">
+            <displayName value="Depression Screening Denominator Encounter Codes New"/>
+          </code>
+
+                    <text value="Encounter, Performed: Depression Screening Denominator Encounter Codes New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedDepressionScreeningDenominatorEncounterCodesNew"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdditionalEvaluationForDepressionAdolescent"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1542">
+            <displayName value="Additional evaluation for depression - adolescent"/>
+          </code>
+
+                    <text value="Intervention, Performed: Additional evaluation for depression - adolescent"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdditionalEvaluationForDepressionAdolescent"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdditionalEvaluationForDepressionAdult"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1545">
+            <displayName value="Additional evaluation for depression - adult"/>
+          </code>
+
+                    <text value="Intervention, Performed: Additional evaluation for depression - adult"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdditionalEvaluationForDepressionAdult"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedSuicideRiskAssessment"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.559">
+            <displayName value="Suicide Risk Assessment"/>
+          </code>
+
+                    <text value="Procedure, Performed: Suicide Risk Assessment"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedSuicideRiskAssessment"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.25" identifierName="patient characteristic, birthdate template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate"/>
+          </id>
+                    <code codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1"
+            code="21112-8">
+            <displayName value="birth date"/>
+          </code>
+
+                    <text value="Patient Characteristic Birthdate: birth date"/>
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="patient_characteristic_birthdate"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate"/>
+            </observationReference>
+          </outboundRelationship>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.146" identifierName="intervention, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedNotDoneMedicalReasonContraindicated"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.792">
+            <displayName value="Medical reason contraindicated"/>
+          </code>
+
+                    <text value="Intervention, Performed not done: Medical reason contraindicated"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedNotDoneMedicalReasonContraindicated"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.146" identifierName="intervention, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedNotDoneMedicalReasonContraindicated1"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.792">
+            <displayName value="Medical reason contraindicated"/>
+          </code>
+
+                    <text value="Intervention, Performed not done: Medical reason contraindicated"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedNotDoneMedicalReasonContraindicated1"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.146" identifierName="intervention, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedNotDonePatientReasonRefused"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.791">
+            <displayName value="Patient Reason refused"/>
+          </code>
+
+                    <text value="Intervention, Performed not done: Patient Reason refused"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedNotDonePatientReasonRefused"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.146" identifierName="intervention, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedNotDonePatientReasonRefused2"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.791">
+            <displayName value="Patient Reason refused"/>
+          </code>
+
+                    <text value="Intervention, Performed not done: Patient Reason refused"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedNotDonePatientReasonRefused2"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionScreeningDenominatorEncounterCodesNew3"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1916">
+            <displayName value="Depression Screening Denominator Encounter Codes New"/>
+          </code>
+
+                    <text value="Encounter, Performed: Depression Screening Denominator Encounter Codes New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_DEPRESSION_SCREENING_DENOMINATOR_ENCOUNTER_CODES_NEW" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionScreeningDenominatorEncounterCodesNew3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.426">
+            <displayName value="Adolescent Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Performed: Adolescent Depression Screening"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="INTERVENTION_PERFORMED_ADOLESCENT_DEPRESSION_SCREENING" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.46" identifierName="intervention, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.431">
+            <displayName value="Adult Depression Screening"/>
+          </code>
+
+                    <text value="Intervention, Performed: Adult Depression Screening"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="INTERVENTION_PERFORMED_ADULT_DEPRESSION_SCREENING" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceABipolarDiagnosis6"/>
+          </id>
+                    <text value="Diagnosis, Active: Bipolar Diagnosis"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.600.450">
+            <displayName value="Bipolar Diagnosis"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_BIPOLAR_DIAGNOSIS" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABipolarDiagnosis6"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionDiagnosis7"/>
+          </id>
+                    <text value="Diagnosis, Active: Depression diagnosis"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.600.145">
+            <displayName value="Depression diagnosis"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="DIAGNOSIS_ACTIVE_DEPRESSION_DIAGNOSIS" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionDiagnosis7"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+    </dataCriteriaSection>
+  </component>
+  <component>
+    <populationCriteriaSection>
+      <id root="2.16.840.1.113883.3.100.1" extension="Population0"/>
+      <code code="57026-7" codeSystem="2.16.840.1.113883.6.1"/>
+      <title value=""/>
+      <text>This section describes the Initial Patient Population,
+        Numerator, Denominator, Denominator Exceptions, and Measure
+        Populations</text>
+            <component typeCode="COMP">
+        <patientPopulationCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="8F0C4421-8FD5-4CF9-B559-FAE930EB13B1"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="IPP">
+            <displayName value="Initial Patient Population"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_116"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionScreeningDenominatorEncounterCodesNew3_precondition_118"/>
+    </encounterReference>
+</precondition>
+  </allTrue>
+</precondition>
+        </patientPopulationCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <denominatorCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="AD6CD556-EE4C-4EC1-8AD1-31E48032BE12"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="DENOM">
+            <displayName value="Denominator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN" nullFlavor="NA">
+            <allTrue>
+              <id/>
+            </allTrue>
+          </precondition>
+        </denominatorCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <numeratorCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="279AF66D-02AD-4B1A-BADE-C6FC0FE88AA6"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="NUMER">
+            <displayName value="Numerator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_35"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4_precondition_37"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDepressionDiagnosis_precondition_39"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionResultPositiveDepressionScreening_precondition_41"/>
+    </observationReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdditionalEvaluationForDepressionAdolescent_precondition_46"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralForDepressionAdolescent_precondition_48"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+      <id root="2.16.840.1.113883.3.100.1" extension="MedicationOrderDepressionMedicationsAdolescent_precondition_50"/>
+    </substanceAdministrationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedFollowUpForDepressionAdolescent_precondition_52"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <procedureReference moodCode="EVN" classCode="PROC">
+      <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedSuicideRiskAssessment_precondition_54"/>
+    </procedureReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_63"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdolescentDepressionScreening4_precondition_65"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionResultNegativeDepressionScreening_precondition_67"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allFalse>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDepressionDiagnosis_precondition_61"/>
+    </observationReference>
+</precondition>
+  </allFalse>
+</precondition>
+  </allTrue>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_74"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5_precondition_76"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDepressionDiagnosis_precondition_78"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionResultPositiveDepressionScreening_precondition_80"/>
+    </observationReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdditionalEvaluationForDepressionAdult_precondition_85"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralForDepressionAdult_precondition_87"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+      <id root="2.16.840.1.113883.3.100.1" extension="MedicationOrderDepressionMedicationsAdult_precondition_89"/>
+    </substanceAdministrationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedFollowUpForDepressionAdult_precondition_91"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <procedureReference moodCode="EVN" classCode="PROC">
+      <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedSuicideRiskAssessment_precondition_93"/>
+    </procedureReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_102"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAAdultDepressionScreening5_precondition_104"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionResultNegativeDepressionScreening_precondition_106"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allFalse>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDepressionDiagnosis_precondition_100"/>
+    </observationReference>
+</precondition>
+  </allFalse>
+</precondition>
+  </allTrue>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+        </numeratorCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <denominatorExceptionCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="0CDF2A7E-97A7-4B45-8719-A7416C71FDC3"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="DENEXCEP">
+            <displayName value="Denominator Exception"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdolescentDepressionScreening_precondition_8"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdultDepressionScreening_precondition_10"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdolescentDepressionScreening_precondition_12"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionPerformedAdultDepressionScreening_precondition_14"/>
+    </observationReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+        </denominatorExceptionCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <denominatorExclusionCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="90B18275-DBB3-4773-9D63-F8A8BBE6B2CA"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="DENEX">
+            <displayName value="Denominator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionDiagnosis7_precondition_26"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABipolarDiagnosis6_precondition_28"/>
+    </observationReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allFalse>
+    <id/>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceADepressionDiagnosis7_precondition_19"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABipolarDiagnosis6_precondition_21"/>
+    </observationReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allFalse>
+</precondition>
+  </allTrue>
+</precondition>
+        </denominatorExclusionCriteria>
+      </component>
+
+    </populationCriteriaSection>
+  </component>
+</QualityMeasureDocument>

@@ -1,0 +1,1314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<QualityMeasureDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <id root="2.16.840.1.113883.3.100.1" extension="8A4D92B2-397A-48D2-0139-B0CADCB63221" />
+  <code code="57024-2" codeSystem="2.16.840.1.113883.6.1"/>
+  <title value="Breast Cancer Screening"/>
+  <text value="Percentage of women 40–69 years of age who had a mammogram to screen for breast cancer."/>
+  <statusCode code="completed" />
+  <setId root="2.16.840.1.113883.3.100.1" extension="19783C1B-4FD1-46C1-8A96-A2F192B97EE0" />
+  <versionNumber value="1"/>
+  <author typeCode="AUT" contextControlCode="OP">
+    <responsibleParty classCode="ASSIGNED" />
+  </author>
+  <custodian typeCode="CST">
+    <responsibleParty classCode="ASSIGNED" />
+  </custodian>
+  <controlVariable>
+    <measurePeriod>
+      <code code="MSRTP" codeSystem="2.16.840.1.113883.3.560">
+        <displayName value="Measurement period"/>
+      </code>
+      <value>
+        <low value="201201010000" />
+        <high value="201212312359" />
+      </value>
+    </measurePeriod>
+  </controlVariable>
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="COPYRIGHT"/>
+			<code code="COPY">
+				<displayName value="Copyright"/>
+			</code>
+			<value xsi:type="ED" value="Physician Performance Measure (Measures) and related data specifications were developed by the National Committee for Quality Assurance (NCQA). 
+
+The Measures are copyrighted but can be reproduced and distributed, without modification, for noncommercial purposes (e.g., use by healthcare providers in connection with their practices). Commercial use is defined as the sale, licensing, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial use of the Measures requires a license agreement between the user and NCQA. NCQA is not responsible for any use of the Measures. 
+
+Copyright 2012 National Committee for Quality Assurance. All Rights Reserved. 
+
+Limited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets. NCQA disclaims all liability for use or accuracy of any CPT or other codes contained in the specifications.
+
+CPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC(R) copyright 2004-2011 Regenstrief Institute, Inc. 
+This material contains SNOMED Clinical Terms (R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 Copyright 2011 World Health Organization. All Rights Reserved.
+
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM]."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_SCORING"/>
+			<code code="MSRSCORE">
+				<displayName value="Measure Scoring"/>
+			</code>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_TYPE"/>
+			<code code="MSRTYPE">
+				<displayName value="Measure Type"/>
+			</code>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="STRATIFICATION"/>
+			<code code="STRAT">
+				<displayName value="Stratification"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="RISK_ADJUSTMENT"/>
+			<code code="MSRADJ">
+				<displayName value="Risk Adjustment"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="RATE_AGGREGATION"/>
+			<code code="MSRAGG">
+				<displayName value="Rate Aggregation"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="RATIONALE"/>
+			<code code="RAT">
+				<displayName value="Rationale"/>
+			</code>
+			<value xsi:type="ED" value="Breast cancer is the second most commonly diagnosed cancer among women (after skin cancer). After lung cancer, it causes more deaths in women than any other kind of cancer—there were nearly 40,000 estimated deaths from breast cancer in 2010. Deaths from breast cancer have decreased over the years, in part due to early detection using mammography. On average, mammography will detect about 80-90 percent of breast cancers in women without symptoms (American Cancer Society 2011). Based on evidence, screening mammography in women aged 40 to 70 years decreases breast cancer mortality with higher benefit in older women (National Cancer Institute 2010). There is a demonstrated reduction in breast cancer mortality due to mammogram screening (National Business Group on Health 2011)."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="CLINICAL_RECOMMENDATION_STATEMENT"/>
+			<code code="CRS">
+				<displayName value="Clinical Recommendation Statement"/>
+			</code>
+			<value xsi:type="ED" value="U.S. Preventive Services Task Force (2009)
+Grade: B recommendation. The USPSTF recommends biennial screening mammography for women aged 50 to 74 years.
+Grade: C recommendation. The decision to start regular, biennial screening mammography before the age of 50 years should be an individual one and take patient context into account, including the patient’s values regarding specific benefits and harms.
+Grade: I Statement. The USPSTF concludes that the current evidence is insufficient to assess the additional benefits and harms of screening mammography in women 75 years or older.
+Grade: D recommendation. The USPSTF recommends against teaching breast self-examination (BSE).
+Grade: I Statement. The USPSTF concludes that the current evidence is insufficient to assess the additional benefits and harms of clinical breast examination (CBE) beyond screening mammography in women 40 years or older.
+Grade: I Statement. The USPSTF concludes that the current evidence is insufficient to assess the additional benefits and harms of either digital mammography or magnetic resonance imaging (MRI) instead of film mammography as screening modalities for breast cancer."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="IMPROVEMENT_NOTATION"/>
+			<code code="IDUR">
+				<displayName value="Improvement Notation"/>
+			</code>
+			<value xsi:type="ED" value="Higher score equals better quality."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="NQF_ID_NUMBER"/>
+			<code code="OTH">
+				<displayName value="NQF ID Number"/>
+			</code>
+			<value xsi:type="ED" value="0031"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DISCLAIMER"/>
+			<code code="DISC">
+				<displayName value="Disclaimer"/>
+			</code>
+			<value xsi:type="ED" value="These performance Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.
+
+THE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="EMEASURE_IDENTIFIER"/>
+			<code code="OTH">
+				<displayName value="eMeasure Identifier"/>
+			</code>
+			<value xsi:type="ED" value="125"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="REFERENCE"/>
+			<code code="REF">
+				<displayName value="Reference"/>
+			</code>
+			<value xsi:type="ED" value="U.S. Preventive Services Task Force (USPSTF). 2009. 1) “Screening for breast cancer: U.S. Preventive Services Task Force recommendation statement.” 2) “December 2009 addendum.” Ann Intern Med 151(10):716-726."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DEFINITION"/>
+			<code code="DEF">
+				<displayName value="Definition"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="GUIDANCE"/>
+			<code code="GUIDE">
+				<displayName value="Guidance"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="TRANSMISSION_FORMAT"/>
+			<code code="OTH">
+				<displayName value="Transmission Format"/>
+			</code>
+			<value xsi:type="ED" value="TBD"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="INITIAL_PATIENT_POPULATION"/>
+			<code code="IPP">
+				<displayName value="Initial Patient Population"/>
+			</code>
+			<value xsi:type="ED" value="Women 42–69 years of age with a visit during the measurement period"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DENOMINATOR"/>
+			<code code="DENOM">
+				<displayName value="Denominator"/>
+			</code>
+			<value xsi:type="ED" value="Equals Initial Patient Population"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DENOMINATOR_EXCLUSIONS"/>
+			<code code="OTH">
+				<displayName value="Denominator Exclusions"/>
+			</code>
+			<value xsi:type="ED" value="Women who had a bilateral mastectomy or for whom there is evidence of two unilateral mastectomies"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="NUMERATOR"/>
+			<code code="NUMER">
+				<displayName value="Numerator"/>
+			</code>
+			<value xsi:type="ED" value="Women with one or more mammograms during the measurement period or the year prior to the measurement period"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="NUMERATOR_EXCLUSIONS"/>
+			<code code="OTH">
+				<displayName value="Numerator Exclusions"/>
+			</code>
+			<value xsi:type="ED" value="Not Applicable"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DENOMINATOR_EXCEPTIONS"/>
+			<code code="DENEXCEP">
+				<displayName value="Denominator Exceptions"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_POPULATION"/>
+			<code code="MSRPOPL">
+				<displayName value="Measure Population"/>
+			</code>
+			<value xsi:type="ED" value="Not Applicable"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_OBSERVATIONS"/>
+			<code code="OTH">
+				<displayName value="Measure Observations"/>
+			</code>
+			<value xsi:type="ED" value="Not Applicable"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="SUPPLEMENTAL_DATA_ELEMENTS"/>
+			<code code="OTH">
+				<displayName value="Supplemental Data Elements"/>
+			</code>
+			<value xsi:type="ED" value="For every patient evaluated by this measure also identify payer, race, ethnicity and sex."/>
+		</measureAttribute>
+	</subjectOf>
+
+  <component>
+    <dataCriteriaSection>
+      <code code="57025-9" codeSystem="2.16.840.1.113883.6.1"/>
+      <title value="Data Criteria Section"/>
+      <text>This section describes the data criteria.</text>
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedBilateralMastectomy_precondition_1"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.198.12.1005">
+            <displayName value="Bilateral Mastectomy"/>
+          </code>
+
+                    <text value="Procedure, Performed: Bilateral Mastectomy"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="EBE">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedBilateralMastectomy"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedUnilateralMastectomy_precondition_3"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.198.12.1020">
+            <displayName value="Unilateral Mastectomy"/>
+          </code>
+
+                    <text value="Procedure, Performed: Unilateral Mastectomy"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="EBE">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedUnilateralMastectomy"/>
+            </observationReference>
+          </outboundRelationship>
+          
+                    <excerpt typeCode="XCRPT">
+            <subsetCode code="COUNT"/>
+            <procedureCriteria moodCode="EVN" classCode="PROC">
+                <repeatNumber xsi:type="IVL_PQ">
+      <low  value="2"/>
+      <high  value="2"/>
+  </repeatNumber>
+
+            </procedureCriteria>
+          </excerpt>
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.11" identifierName="diagnostic study, result template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosticStudyResultMammogram_precondition_9"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.108.12.1018">
+            <displayName value="Mammogram"/>
+          </code>
+
+                    <text value="Diagnostic Study, Result: Mammogram"/>
+          
+          
+          
+            <value xsi:type="ANY" nullFlavor="NI"/>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnostic_study_result"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="EBE">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="12" unit="mo"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosticStudyResultMammogram"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.25" identifierName="patient characteristic, birthdate template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_12"/>
+          </id>
+                    <code codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1"
+            code="21112-8">
+            <displayName value="birth date"/>
+          </code>
+
+                    <text value="Patient Characteristic Birthdate: birth date"/>
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="patient_characteristic_birthdate"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+      <low  value="42" unit="a"/>
+      </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate"/>
+            </observationReference>
+          </outboundRelationship>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.25" identifierName="patient characteristic, birthdate template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_14"/>
+          </id>
+                    <code codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1"
+            code="21112-8">
+            <displayName value="birth date"/>
+          </code>
+
+                    <text value="Patient Characteristic Birthdate: birth date"/>
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="patient_characteristic_birthdate"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="69" unit="a"/>
+  </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate"/>
+            </observationReference>
+          </outboundRelationship>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.402" identifierName="patient characteristic, gender template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicSexFemale_precondition_16"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.560.100.2">
+            <displayName value="Female"/>
+          </code>
+
+                    <text value="Patient Characteristic Sex: Female"/>
+          
+            <value xsi:type="CD" codeSystem="Administrative Sex" code="F">
+     <displayName value=""/>
+  </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="patient_characteristic_gender"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicSexFemale"/>
+            </observationReference>
+          </outboundRelationship>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit_precondition_18"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1001">
+            <displayName value="Office Visit"/>
+          </code>
+
+                    <text value="Encounter, Performed: Office Visit"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction_precondition_20"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1048">
+            <displayName value="Face-to-Face Interaction"/>
+          </code>
+
+                    <text value="Encounter, Performed: Face-to-Face Interaction"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_22"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1025">
+            <displayName value="Preventive Care Services - Established Office Visit, 18 and Up"/>
+          </code>
+
+                    <text value="Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_24"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1023">
+            <displayName value="Preventive Care Services-Initial Office Visit, 18 and Up"/>
+          </code>
+
+                    <text value="Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedHomeHealthcareServices_precondition_26"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1016">
+            <displayName value="Home Healthcare Services"/>
+          </code>
+
+                    <text value="Encounter, Performed: Home Healthcare Services"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedHomeHealthcareServices"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedAnnualWellnessVisit_precondition_28"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1240">
+            <displayName value="Annual Wellness Visit"/>
+          </code>
+
+                    <text value="Encounter, Performed: Annual Wellness Visit"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedAnnualWellnessVisit"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.25" identifierName="patient characteristic, birthdate template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate"/>
+          </id>
+                    <code codeSystemName="LOINC" codeSystem="2.16.840.1.113883.6.1"
+            code="21112-8">
+            <displayName value="birth date"/>
+          </code>
+
+                    <text value="Patient Characteristic Birthdate: birth date"/>
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="patient_characteristic_birthdate"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate"/>
+            </observationReference>
+          </outboundRelationship>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.402" identifierName="patient characteristic, gender template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicSexFemale"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.560.100.2">
+            <displayName value="Female"/>
+          </code>
+
+                    <text value="Patient Characteristic Sex: Female"/>
+          
+            <value xsi:type="CD" codeSystem="Administrative Sex" code="F">
+     <displayName value=""/>
+  </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="patient_characteristic_gender"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicSexFemale"/>
+            </observationReference>
+          </outboundRelationship>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedBilateralMastectomy"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.198.12.1005">
+            <displayName value="Bilateral Mastectomy"/>
+          </code>
+
+                    <text value="Procedure, Performed: Bilateral Mastectomy"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedBilateralMastectomy"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedUnilateralMastectomy"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.198.12.1020">
+            <displayName value="Unilateral Mastectomy"/>
+          </code>
+
+                    <text value="Procedure, Performed: Unilateral Mastectomy"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedUnilateralMastectomy"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1001">
+            <displayName value="Office Visit"/>
+          </code>
+
+                    <text value="Encounter, Performed: Office Visit"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1048">
+            <displayName value="Face-to-Face Interaction"/>
+          </code>
+
+                    <text value="Encounter, Performed: Face-to-Face Interaction"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1025">
+            <displayName value="Preventive Care Services - Established Office Visit, 18 and Up"/>
+          </code>
+
+                    <text value="Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1023">
+            <displayName value="Preventive Care Services-Initial Office Visit, 18 and Up"/>
+          </code>
+
+                    <text value="Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedHomeHealthcareServices"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1016">
+            <displayName value="Home Healthcare Services"/>
+          </code>
+
+                    <text value="Encounter, Performed: Home Healthcare Services"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedHomeHealthcareServices"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedAnnualWellnessVisit"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1240">
+            <displayName value="Annual Wellness Visit"/>
+          </code>
+
+                    <text value="Encounter, Performed: Annual Wellness Visit"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedAnnualWellnessVisit"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.11" identifierName="diagnostic study, result template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosticStudyResultMammogram"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.108.12.1018">
+            <displayName value="Mammogram"/>
+          </code>
+
+                    <text value="Diagnostic Study, Result: Mammogram"/>
+          
+          
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnostic_study_result"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosticStudyResultMammogram"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+    </dataCriteriaSection>
+  </component>
+  <component>
+    <populationCriteriaSection>
+      <id root="2.16.840.1.113883.3.100.1" extension="Population0"/>
+      <code code="57026-7" codeSystem="2.16.840.1.113883.6.1"/>
+      <title value=""/>
+      <text>This section describes the Initial Patient Population,
+        Numerator, Denominator, Denominator Exceptions, and Measure
+        Populations</text>
+            <component typeCode="COMP">
+        <patientPopulationCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="E3C4AE51-029F-4833-912F-27596F265CC6"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="IPP">
+            <displayName value="Initial Patient Population"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_12"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthdateBirthDate_precondition_14"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicSexFemale_precondition_16"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit_precondition_18"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction_precondition_20"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_22"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_24"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedHomeHealthcareServices_precondition_26"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedAnnualWellnessVisit_precondition_28"/>
+    </encounterReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+        </patientPopulationCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <denominatorCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="C39EAE89-8CF5-4A94-8188-80A13DAFB602"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="DENOM">
+            <displayName value="Denominator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN" nullFlavor="NA">
+            <allTrue>
+              <id/>
+            </allTrue>
+          </precondition>
+        </denominatorCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <numeratorCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="16C9D544-F595-40B2-B4B7-4176C81C0A25"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="NUMER">
+            <displayName value="Numerator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="DiagnosticStudyResultMammogram_precondition_9"/>
+    </observationReference>
+</precondition>
+  </allTrue>
+</precondition>
+        </numeratorCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <denominatorExclusionCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="31EDE5A9-A48E-41A6-9955-EDCE594EFBDD"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="DENEX">
+            <displayName value="Denominator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <procedureReference moodCode="EVN" classCode="PROC">
+      <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedBilateralMastectomy_precondition_1"/>
+    </procedureReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <procedureReference moodCode="EVN" classCode="PROC">
+      <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedUnilateralMastectomy_precondition_3"/>
+    </procedureReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+        </denominatorExclusionCriteria>
+      </component>
+
+    </populationCriteriaSection>
+  </component>
+</QualityMeasureDocument>

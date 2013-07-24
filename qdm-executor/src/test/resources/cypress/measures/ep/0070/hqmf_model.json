@@ -1,0 +1,5225 @@
+{
+  "id": "0070",
+  "hqmf_id": "8A4D92B2-3946-CDAE-0139-78E0235B7B8B",
+  "hqmf_set_id": "80744AE2-DE81-4B16-A71D-69522EB865C5",
+  "hqmf_version_number": 1,
+  "title": "Coronary Artery Disease (CAD): Beta-Blocker Therapy—Prior Myocardial Infarction (MI) or Left Ventricular Systolic Dysfunction (LVEF <40%)",
+  "description": "Percentage of patients aged 18 years and older with a diagnosis of coronary artery disease seen within a 12 month period who also have a prior MI or a current or prior LVEF <40% who were prescribed beta-blocker therapy",
+  "cms_id": "CMS145v1",
+  "population_criteria": {
+    "DENEXCEP": {
+      "conjunction?": true,
+      "type": "DENEXCEP",
+      "title": "Denominator Exception",
+      "hqmf_id": "94BB1838-08B4-49D6-B7F1-D9CAC856E428",
+      "preconditions": [
+        {
+          "id": 109,
+          "preconditions": [
+            {
+              "id": 107,
+              "preconditions": [
+                {
+                  "id": 55,
+                  "preconditions": [
+                    {
+                      "id": 15,
+                      "reference": "OccurrenceBHeartRate13_precondition_14",
+                      "conjunction_code": "allTrue"
+                    },
+                    {
+                      "id": 53,
+                      "preconditions": [
+                        {
+                          "id": 21,
+                          "preconditions": [
+                            {
+                              "id": 17,
+                              "reference": "OccurrenceAHeartRate11_precondition_17"
+                            },
+                            {
+                              "id": 19,
+                              "reference": "OccurrenceBHeartRate13_precondition_19"
+                            }
+                          ],
+                          "conjunction_code": "allTrue"
+                        },
+                        {
+                          "id": 27,
+                          "preconditions": [
+                            {
+                              "id": 23,
+                              "reference": "OccurrenceAHeartRate11_precondition_23"
+                            },
+                            {
+                              "id": 25,
+                              "reference": "OccurrenceBHeartRate13_precondition_25"
+                            }
+                          ],
+                          "conjunction_code": "allTrue"
+                        },
+                        {
+                          "id": 33,
+                          "preconditions": [
+                            {
+                              "id": 29,
+                              "reference": "OccurrenceAHeartRate11_precondition_29"
+                            },
+                            {
+                              "id": 31,
+                              "reference": "OccurrenceBHeartRate13_precondition_31"
+                            }
+                          ],
+                          "conjunction_code": "allTrue"
+                        },
+                        {
+                          "id": 39,
+                          "preconditions": [
+                            {
+                              "id": 35,
+                              "reference": "OccurrenceAHeartRate11_precondition_35"
+                            },
+                            {
+                              "id": 37,
+                              "reference": "OccurrenceBHeartRate13_precondition_37"
+                            }
+                          ],
+                          "conjunction_code": "allTrue"
+                        },
+                        {
+                          "id": 45,
+                          "preconditions": [
+                            {
+                              "id": 41,
+                              "reference": "OccurrenceAHeartRate11_precondition_41"
+                            },
+                            {
+                              "id": 43,
+                              "reference": "OccurrenceBHeartRate13_precondition_43"
+                            }
+                          ],
+                          "conjunction_code": "allTrue"
+                        },
+                        {
+                          "id": 51,
+                          "preconditions": [
+                            {
+                              "id": 47,
+                              "reference": "OccurrenceAHeartRate11_precondition_47"
+                            },
+                            {
+                              "id": 49,
+                              "reference": "OccurrenceBHeartRate13_precondition_49"
+                            }
+                          ],
+                          "conjunction_code": "allTrue"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 63,
+                  "preconditions": [
+                    {
+                      "id": 57,
+                      "reference": "MedicationOrderBetaBlockerTherapyForLvsd_precondition_57"
+                    },
+                    {
+                      "id": 59,
+                      "reference": "MedicationOrderBetaBlockerTherapyForLvsd_precondition_59"
+                    },
+                    {
+                      "id": 61,
+                      "reference": "MedicationOrderBetaBlockerTherapyForLvsd_precondition_61"
+                    }
+                  ],
+                  "conjunction_code": "atLeastOneTrue"
+                },
+                {
+                  "id": 92,
+                  "preconditions": [
+                    {
+                      "id": 65,
+                      "reference": "DiagnosisActiveArrhythmia_precondition_65"
+                    },
+                    {
+                      "id": 67,
+                      "reference": "DiagnosisActiveHypotension_precondition_67"
+                    },
+                    {
+                      "id": 69,
+                      "reference": "DiagnosisActiveAsthma_precondition_69"
+                    },
+                    {
+                      "id": 71,
+                      "reference": "MedicationAllergyBetaBlockerTherapy_precondition_71"
+                    },
+                    {
+                      "id": 73,
+                      "reference": "DiagnosisActiveAllergyToBetaBlockerTherapy_precondition_73"
+                    },
+                    {
+                      "id": 75,
+                      "reference": "MedicationIntoleranceBetaBlockerTherapy_precondition_75"
+                    },
+                    {
+                      "id": 77,
+                      "reference": "DiagnosisActiveIntoleranceToBetaBlockerTherapy_precondition_77"
+                    },
+                    {
+                      "id": 79,
+                      "reference": "DiagnosisActiveBradycardia_precondition_79"
+                    },
+                    {
+                      "id": 90,
+                      "preconditions": [
+                        {
+                          "id": 87,
+                          "reference": "DiagnosisActiveAtrioventricularBlock_precondition_87"
+                        },
+                        {
+                          "id": 89,
+                          "preconditions": [
+                            {
+                              "id": 85,
+                              "preconditions": [
+                                {
+                                  "id": 81,
+                                  "reference": "DiagnosisActiveCardiacPacerInSitu_precondition_81"
+                                },
+                                {
+                                  "id": 83,
+                                  "reference": "DeviceAppliedCardiacPacer_precondition_83"
+                                }
+                              ],
+                              "conjunction_code": "atLeastOneTrue"
+                            }
+                          ],
+                          "conjunction_code": "atLeastOneTrue",
+                          "negation": true
+                        }
+                      ],
+                      "conjunction_code": "allTrue"
+                    }
+                  ],
+                  "conjunction_code": "atLeastOneTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENEXCEP_1": {
+      "conjunction?": true,
+      "type": "DENEXCEP",
+      "title": "Denominator Exception",
+      "hqmf_id": "ECE6C383-FAFA-4EF7-99EC-F44FC2B896E7",
+      "preconditions": [
+        {
+          "id": 205,
+          "preconditions": [
+            {
+              "id": 203,
+              "preconditions": [
+                {
+                  "id": 151,
+                  "preconditions": [
+                    {
+                      "id": 111,
+                      "reference": "OccurrenceBHeartRate13_precondition_110",
+                      "conjunction_code": "allTrue"
+                    },
+                    {
+                      "id": 149,
+                      "preconditions": [
+                        {
+                          "id": 117,
+                          "preconditions": [
+                            {
+                              "id": 113,
+                              "reference": "OccurrenceAHeartRate11_precondition_113"
+                            },
+                            {
+                              "id": 115,
+                              "reference": "OccurrenceBHeartRate13_precondition_115"
+                            }
+                          ],
+                          "conjunction_code": "allTrue"
+                        },
+                        {
+                          "id": 123,
+                          "preconditions": [
+                            {
+                              "id": 119,
+                              "reference": "OccurrenceAHeartRate11_precondition_119"
+                            },
+                            {
+                              "id": 121,
+                              "reference": "OccurrenceBHeartRate13_precondition_121"
+                            }
+                          ],
+                          "conjunction_code": "allTrue"
+                        },
+                        {
+                          "id": 129,
+                          "preconditions": [
+                            {
+                              "id": 125,
+                              "reference": "OccurrenceAHeartRate11_precondition_125"
+                            },
+                            {
+                              "id": 127,
+                              "reference": "OccurrenceBHeartRate13_precondition_127"
+                            }
+                          ],
+                          "conjunction_code": "allTrue"
+                        },
+                        {
+                          "id": 135,
+                          "preconditions": [
+                            {
+                              "id": 131,
+                              "reference": "OccurrenceAHeartRate11_precondition_131"
+                            },
+                            {
+                              "id": 133,
+                              "reference": "OccurrenceBHeartRate13_precondition_133"
+                            }
+                          ],
+                          "conjunction_code": "allTrue"
+                        },
+                        {
+                          "id": 141,
+                          "preconditions": [
+                            {
+                              "id": 137,
+                              "reference": "OccurrenceAHeartRate11_precondition_137"
+                            },
+                            {
+                              "id": 139,
+                              "reference": "OccurrenceBHeartRate13_precondition_139"
+                            }
+                          ],
+                          "conjunction_code": "allTrue"
+                        },
+                        {
+                          "id": 147,
+                          "preconditions": [
+                            {
+                              "id": 143,
+                              "reference": "OccurrenceAHeartRate11_precondition_143"
+                            },
+                            {
+                              "id": 145,
+                              "reference": "OccurrenceBHeartRate13_precondition_145"
+                            }
+                          ],
+                          "conjunction_code": "allTrue"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 159,
+                  "preconditions": [
+                    {
+                      "id": 153,
+                      "reference": "MedicationOrderBetaBlockerTherapy_precondition_153"
+                    },
+                    {
+                      "id": 155,
+                      "reference": "MedicationOrderBetaBlockerTherapy_precondition_155"
+                    },
+                    {
+                      "id": 157,
+                      "reference": "MedicationOrderBetaBlockerTherapy_precondition_157"
+                    }
+                  ],
+                  "conjunction_code": "atLeastOneTrue"
+                },
+                {
+                  "id": 188,
+                  "preconditions": [
+                    {
+                      "id": 161,
+                      "reference": "DiagnosisActiveArrhythmia_precondition_161"
+                    },
+                    {
+                      "id": 163,
+                      "reference": "DiagnosisActiveHypotension_precondition_163"
+                    },
+                    {
+                      "id": 165,
+                      "reference": "DiagnosisActiveAsthma_precondition_165"
+                    },
+                    {
+                      "id": 167,
+                      "reference": "MedicationAllergyBetaBlockerTherapy_precondition_167"
+                    },
+                    {
+                      "id": 169,
+                      "reference": "DiagnosisActiveAllergyToBetaBlockerTherapy_precondition_169"
+                    },
+                    {
+                      "id": 171,
+                      "reference": "MedicationIntoleranceBetaBlockerTherapy_precondition_171"
+                    },
+                    {
+                      "id": 173,
+                      "reference": "DiagnosisActiveIntoleranceToBetaBlockerTherapy_precondition_173"
+                    },
+                    {
+                      "id": 175,
+                      "reference": "DiagnosisActiveBradycardia_precondition_175"
+                    },
+                    {
+                      "id": 186,
+                      "preconditions": [
+                        {
+                          "id": 183,
+                          "reference": "DiagnosisActiveAtrioventricularBlock_precondition_183"
+                        },
+                        {
+                          "id": 185,
+                          "preconditions": [
+                            {
+                              "id": 181,
+                              "preconditions": [
+                                {
+                                  "id": 177,
+                                  "reference": "DiagnosisActiveCardiacPacerInSitu_precondition_177"
+                                },
+                                {
+                                  "id": 179,
+                                  "reference": "DeviceAppliedCardiacPacer_precondition_179"
+                                }
+                              ],
+                              "conjunction_code": "atLeastOneTrue"
+                            }
+                          ],
+                          "conjunction_code": "atLeastOneTrue",
+                          "negation": true
+                        }
+                      ],
+                      "conjunction_code": "allTrue"
+                    }
+                  ],
+                  "conjunction_code": "atLeastOneTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "917EFB3B-0D68-4069-836A-A1CE954F8D2D",
+      "preconditions": [
+        {
+          "id": 265,
+          "preconditions": [
+            {
+              "id": 263,
+              "preconditions": [
+                {
+                  "id": 219,
+                  "reference": "MedicationOrderBetaBlockerTherapyForLvsd_precondition_219"
+                },
+                {
+                  "id": 226,
+                  "preconditions": [
+                    {
+                      "id": 223,
+                      "reference": "OccurrenceABetaBlockerTherapyForLvsd10_precondition_223"
+                    },
+                    {
+                      "id": 225,
+                      "preconditions": [
+                        {
+                          "id": 221,
+                          "reference": "OccurrenceABetaBlockerTherapyForLvsd10_precondition_221"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 233,
+                  "preconditions": [
+                    {
+                      "id": 230,
+                      "reference": "OccurrenceABetaBlockerTherapyForLvsd10_precondition_230"
+                    },
+                    {
+                      "id": 232,
+                      "preconditions": [
+                        {
+                          "id": 228,
+                          "reference": "OccurrenceABetaBlockerTherapyForLvsd10_precondition_228"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 240,
+                  "preconditions": [
+                    {
+                      "id": 237,
+                      "reference": "OccurrenceABetaBlockerTherapyForLvsd10_precondition_237"
+                    },
+                    {
+                      "id": 239,
+                      "preconditions": [
+                        {
+                          "id": 235,
+                          "reference": "OccurrenceABetaBlockerTherapyForLvsd10_precondition_235"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 247,
+                  "preconditions": [
+                    {
+                      "id": 244,
+                      "reference": "OccurrenceABetaBlockerTherapyForLvsd10_precondition_244"
+                    },
+                    {
+                      "id": 246,
+                      "preconditions": [
+                        {
+                          "id": 242,
+                          "reference": "OccurrenceABetaBlockerTherapyForLvsd10_precondition_242"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 254,
+                  "preconditions": [
+                    {
+                      "id": 251,
+                      "reference": "OccurrenceABetaBlockerTherapyForLvsd10_precondition_251"
+                    },
+                    {
+                      "id": 253,
+                      "preconditions": [
+                        {
+                          "id": 249,
+                          "reference": "OccurrenceABetaBlockerTherapyForLvsd10_precondition_249"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 261,
+                  "preconditions": [
+                    {
+                      "id": 258,
+                      "reference": "OccurrenceABetaBlockerTherapyForLvsd10_precondition_258"
+                    },
+                    {
+                      "id": 260,
+                      "preconditions": [
+                        {
+                          "id": 256,
+                          "reference": "OccurrenceABetaBlockerTherapyForLvsd10_precondition_256"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER_1": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "D6C9D0A9-44EA-42FB-A6F4-97E3DD27E4B8",
+      "preconditions": [
+        {
+          "id": 325,
+          "preconditions": [
+            {
+              "id": 323,
+              "preconditions": [
+                {
+                  "id": 279,
+                  "reference": "MedicationOrderBetaBlockerTherapy_precondition_279"
+                },
+                {
+                  "id": 286,
+                  "preconditions": [
+                    {
+                      "id": 283,
+                      "reference": "OccurrenceABetaBlockerTherapy9_precondition_283"
+                    },
+                    {
+                      "id": 285,
+                      "preconditions": [
+                        {
+                          "id": 281,
+                          "reference": "OccurrenceABetaBlockerTherapy9_precondition_281"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 293,
+                  "preconditions": [
+                    {
+                      "id": 290,
+                      "reference": "OccurrenceABetaBlockerTherapy9_precondition_290"
+                    },
+                    {
+                      "id": 292,
+                      "preconditions": [
+                        {
+                          "id": 288,
+                          "reference": "OccurrenceABetaBlockerTherapy9_precondition_288"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 300,
+                  "preconditions": [
+                    {
+                      "id": 297,
+                      "reference": "OccurrenceABetaBlockerTherapy9_precondition_297"
+                    },
+                    {
+                      "id": 299,
+                      "preconditions": [
+                        {
+                          "id": 295,
+                          "reference": "OccurrenceABetaBlockerTherapy9_precondition_295"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 307,
+                  "preconditions": [
+                    {
+                      "id": 304,
+                      "reference": "OccurrenceABetaBlockerTherapy9_precondition_304"
+                    },
+                    {
+                      "id": 306,
+                      "preconditions": [
+                        {
+                          "id": 302,
+                          "reference": "OccurrenceABetaBlockerTherapy9_precondition_302"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 314,
+                  "preconditions": [
+                    {
+                      "id": 311,
+                      "reference": "OccurrenceABetaBlockerTherapy9_precondition_311"
+                    },
+                    {
+                      "id": 313,
+                      "preconditions": [
+                        {
+                          "id": 309,
+                          "reference": "OccurrenceABetaBlockerTherapy9_precondition_309"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 321,
+                  "preconditions": [
+                    {
+                      "id": 318,
+                      "reference": "OccurrenceABetaBlockerTherapy9_precondition_318"
+                    },
+                    {
+                      "id": 320,
+                      "preconditions": [
+                        {
+                          "id": 316,
+                          "reference": "OccurrenceABetaBlockerTherapy9_precondition_316"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "1A61FA75-0982-4F3A-84EC-6EB30F29C84A",
+      "preconditions": [
+        {
+          "id": 347,
+          "preconditions": [
+            {
+              "id": 332,
+              "preconditions": [
+                {
+                  "id": 326,
+                  "reference": "DiagnosticStudyResultEjectionFraction_precondition_326"
+                },
+                {
+                  "id": 328,
+                  "reference": "DiagnosisActiveModerateOrSevereLvsd_precondition_328"
+                },
+                {
+                  "id": 330,
+                  "reference": "DiagnosisActiveLeftVentricularSystolicDysfunction_precondition_330"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM_1": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "0FAA2D18-2481-44CC-AD30-04AD910E152A",
+      "preconditions": [
+        {
+          "id": 363,
+          "preconditions": [
+            {
+              "id": 361,
+              "reference": "DiagnosisResolvedMyocardialInfarction_precondition_361"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "A12D3B65-9EF4-43F5-ACF7-679B127D9690",
+      "preconditions": [
+        {
+          "id": 400,
+          "preconditions": [
+            {
+              "id": 364,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_364"
+            },
+            {
+              "id": 379,
+              "reference": "GROUP_COUNT_451",
+              "conjunction_code": "allTrue"
+            },
+            {
+              "id": 385,
+              "preconditions": [
+                {
+                  "id": 381,
+                  "reference": "DiagnosisActiveCoronaryArteryDiseaseNoMi_precondition_381"
+                },
+                {
+                  "id": 383,
+                  "reference": "ProcedurePerformedCardiacSurgery_precondition_383"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "IPP_1": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "D748CF9E-33A5-41BA-950C-18F404CEABB7",
+      "preconditions": [
+        {
+          "id": 437,
+          "preconditions": [
+            {
+              "id": 401,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_401"
+            },
+            {
+              "id": 416,
+              "reference": "GROUP_COUNT_455",
+              "conjunction_code": "allTrue"
+            },
+            {
+              "id": 422,
+              "preconditions": [
+                {
+                  "id": 418,
+                  "reference": "DiagnosisActiveCoronaryArteryDiseaseNoMi_precondition_418"
+                },
+                {
+                  "id": 420,
+                  "reference": "ProcedurePerformedCardiacSurgery_precondition_420"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "MedicationActiveBetaBlockerTherapy": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Active: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationActiveBetaBlockerTherapy"
+    },
+    "PhysicalExamFindingHeartRate": {
+      "title": "Heart Rate",
+      "description": "Physical Exam, Finding: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PhysicalExamFindingHeartRate"
+    },
+    "MedicationActiveBetaBlockerTherapyForLvsd": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Active: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationActiveBetaBlockerTherapyForLvsd"
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "MedicationOrderNotDoneMedicalReason": {
+      "title": "Medical Reason",
+      "description": "Medication, Order not done: Medical Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDoneMedicalReason"
+    },
+    "MedicationOrderNotDonePatientReason": {
+      "title": "Patient Reason",
+      "description": "Medication, Order not done: Patient Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1008",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDonePatientReason"
+    },
+    "MedicationOrderNotDoneSystemReason": {
+      "title": "System Reason",
+      "description": "Medication, Order not done: System Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1009",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDoneSystemReason"
+    },
+    "MedicationOrderNotDoneMedicalReason1": {
+      "title": "Medical Reason",
+      "description": "Medication, Order not done: Medical Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDoneMedicalReason1"
+    },
+    "MedicationOrderNotDonePatientReason2": {
+      "title": "Patient Reason",
+      "description": "Medication, Order not done: Patient Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1008",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDonePatientReason2"
+    },
+    "MedicationOrderNotDoneSystemReason3": {
+      "title": "System Reason",
+      "description": "Medication, Order not done: System Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1009",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDoneSystemReason3"
+    },
+    "OccurrenceAOfficeVisit4": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit4"
+    },
+    "OccurrenceAOutpatientConsultation5": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation5"
+    },
+    "OccurrenceANursingFacilityVisit6": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_NURSING_FACILITY_VISIT",
+      "source_data_criteria": "OccurrenceANursingFacilityVisit6"
+    },
+    "OccurrenceACareServicesInLongTermResidentialFacility7": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_CARE_SERVICES_IN_LONG_TERM_RESIDENTIAL_FACILITY",
+      "source_data_criteria": "OccurrenceACareServicesInLongTermResidentialFacility7"
+    },
+    "OccurrenceAHomeHealthcareServices8": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HOME_HEALTHCARE_SERVICES",
+      "source_data_criteria": "OccurrenceAHomeHealthcareServices8"
+    },
+    "OccurrenceAHeartRate11": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceAHeartRate11"
+    },
+    "OccurrenceAFaceToFaceInteraction12": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction12"
+    },
+    "OccurrenceBHeartRate13_precondition_14": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceBHeartRate13",
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "OccurrenceAHeartRate11"
+        }
+      ],
+      "subset_operators": [
+        {
+          "type": "RECENT"
+        }
+      ]
+    },
+    "OccurrenceAHeartRate11_precondition_17": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceAHeartRate11",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceAOfficeVisit4"
+        }
+      ]
+    },
+    "OccurrenceBHeartRate13_precondition_19": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceBHeartRate13",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceAOfficeVisit4"
+        }
+      ]
+    },
+    "OccurrenceAHeartRate11_precondition_23": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceAHeartRate11",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceACareServicesInLongTermResidentialFacility7"
+        }
+      ]
+    },
+    "OccurrenceBHeartRate13_precondition_25": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceBHeartRate13",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceACareServicesInLongTermResidentialFacility7"
+        }
+      ]
+    },
+    "OccurrenceAHeartRate11_precondition_29": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceAHeartRate11",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceAFaceToFaceInteraction12"
+        }
+      ]
+    },
+    "OccurrenceBHeartRate13_precondition_31": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceBHeartRate13",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceAFaceToFaceInteraction12"
+        }
+      ]
+    },
+    "OccurrenceAHeartRate11_precondition_35": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceAHeartRate11",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceAHomeHealthcareServices8"
+        }
+      ]
+    },
+    "OccurrenceBHeartRate13_precondition_37": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceBHeartRate13",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceAHomeHealthcareServices8"
+        }
+      ]
+    },
+    "OccurrenceAHeartRate11_precondition_41": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceAHeartRate11",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceANursingFacilityVisit6"
+        }
+      ]
+    },
+    "OccurrenceBHeartRate13_precondition_43": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceBHeartRate13",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceANursingFacilityVisit6"
+        }
+      ]
+    },
+    "OccurrenceAHeartRate11_precondition_47": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceAHeartRate11",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceAOutpatientConsultation5"
+        }
+      ]
+    },
+    "OccurrenceBHeartRate13_precondition_49": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceBHeartRate13",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceAOutpatientConsultation5"
+        }
+      ]
+    },
+    "MedicationOrderBetaBlockerTherapyForLvsd_precondition_57": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Order: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "negation_code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "source_data_criteria": "MedicationOrderBetaBlockerTherapyForLvsd",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "MedicationOrderBetaBlockerTherapyForLvsd_precondition_59": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Order: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "negation_code_list_id": "2.16.840.1.113883.3.526.3.1008",
+      "source_data_criteria": "MedicationOrderBetaBlockerTherapyForLvsd",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "MedicationOrderBetaBlockerTherapyForLvsd_precondition_61": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Order: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "negation_code_list_id": "2.16.840.1.113883.3.526.3.1009",
+      "source_data_criteria": "MedicationOrderBetaBlockerTherapyForLvsd",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit4_precondition_93": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit4"
+    },
+    "OccurrenceAOutpatientConsultation5_precondition_95": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation5"
+    },
+    "OccurrenceANursingFacilityVisit6_precondition_97": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_NURSING_FACILITY_VISIT",
+      "source_data_criteria": "OccurrenceANursingFacilityVisit6"
+    },
+    "OccurrenceACareServicesInLongTermResidentialFacility7_precondition_99": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_CARE_SERVICES_IN_LONG_TERM_RESIDENTIAL_FACILITY",
+      "source_data_criteria": "OccurrenceACareServicesInLongTermResidentialFacility7"
+    },
+    "OccurrenceAHomeHealthcareServices8_precondition_101": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HOME_HEALTHCARE_SERVICES",
+      "source_data_criteria": "OccurrenceAHomeHealthcareServices8"
+    },
+    "OccurrenceAFaceToFaceInteraction12_precondition_103": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction12"
+    },
+    "DiagnosisActiveArrhythmia_precondition_65": {
+      "title": "Arrhythmia",
+      "description": "Diagnosis, Active: Arrhythmia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.366",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveArrhythmia",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_439"
+        }
+      ]
+    },
+    "GROUP_SBE_CHILDREN_439": {
+      "title": "GROUP_SBE_CHILDREN_439",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "OccurrenceAOfficeVisit4_precondition_93",
+        "OccurrenceAOutpatientConsultation5_precondition_95",
+        "OccurrenceANursingFacilityVisit6_precondition_97",
+        "OccurrenceACareServicesInLongTermResidentialFacility7_precondition_99",
+        "OccurrenceAHomeHealthcareServices8_precondition_101",
+        "OccurrenceAFaceToFaceInteraction12_precondition_103"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_SBE_CHILDREN_439"
+    },
+    "DiagnosisActiveHypotension_precondition_67": {
+      "title": "Hypotension",
+      "description": "Diagnosis, Active: Hypotension",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.370",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveHypotension",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_439"
+        }
+      ]
+    },
+    "DiagnosisActiveAsthma_precondition_69": {
+      "title": "Asthma",
+      "description": "Diagnosis, Active: Asthma",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.362",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAsthma",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_439"
+        }
+      ]
+    },
+    "MedicationAllergyBetaBlockerTherapy_precondition_71": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Allergy: Beta Blocker Therapy",
+      "standard_category": "allergy",
+      "qds_data_type": "allergy",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication_allergy",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationAllergyBetaBlockerTherapy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_439"
+        }
+      ]
+    },
+    "DiagnosisActiveAllergyToBetaBlockerTherapy_precondition_73": {
+      "title": "Allergy to Beta Blocker Therapy",
+      "description": "Diagnosis, Active: Allergy to Beta Blocker Therapy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1177",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAllergyToBetaBlockerTherapy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_439"
+        }
+      ]
+    },
+    "MedicationIntoleranceBetaBlockerTherapy_precondition_75": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Intolerance: Beta Blocker Therapy",
+      "standard_category": "allergy",
+      "qds_data_type": "allergy",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication_intolerance",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationIntoleranceBetaBlockerTherapy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_439"
+        }
+      ]
+    },
+    "DiagnosisActiveIntoleranceToBetaBlockerTherapy_precondition_77": {
+      "title": "Intolerance to Beta Blocker Therapy",
+      "description": "Diagnosis, Active: Intolerance to Beta Blocker Therapy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1178",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveIntoleranceToBetaBlockerTherapy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_439"
+        }
+      ]
+    },
+    "DiagnosisActiveBradycardia_precondition_79": {
+      "title": "Bradycardia",
+      "description": "Diagnosis, Active: Bradycardia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.412",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveBradycardia",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_439"
+        }
+      ]
+    },
+    "DiagnosisActiveAtrioventricularBlock_precondition_87": {
+      "title": "Atrioventricular Block",
+      "description": "Diagnosis, Active: Atrioventricular Block",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.367",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAtrioventricularBlock",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_439"
+        }
+      ]
+    },
+    "DiagnosisActiveCardiacPacerInSitu_precondition_81": {
+      "title": "Cardiac Pacer in Situ",
+      "description": "Diagnosis, Active: Cardiac Pacer in Situ",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.368",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveCardiacPacerInSitu",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_439"
+        }
+      ]
+    },
+    "DeviceAppliedCardiacPacer_precondition_83": {
+      "title": "Cardiac Pacer",
+      "description": "Device, Applied: Cardiac Pacer",
+      "standard_category": "device",
+      "qds_data_type": "device_applied",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1193",
+      "type": "devices",
+      "definition": "device",
+      "status": "applied",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DeviceAppliedCardiacPacer",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_439"
+        }
+      ]
+    },
+    "OccurrenceBHeartRate13_precondition_110": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceBHeartRate13",
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "OccurrenceAHeartRate11"
+        }
+      ],
+      "subset_operators": [
+        {
+          "type": "RECENT"
+        }
+      ]
+    },
+    "OccurrenceAHeartRate11_precondition_113": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceAHeartRate11",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceAOfficeVisit4"
+        }
+      ]
+    },
+    "OccurrenceBHeartRate13_precondition_115": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceBHeartRate13",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceAOfficeVisit4"
+        }
+      ]
+    },
+    "OccurrenceAHeartRate11_precondition_119": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceAHeartRate11",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceACareServicesInLongTermResidentialFacility7"
+        }
+      ]
+    },
+    "OccurrenceBHeartRate13_precondition_121": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceBHeartRate13",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceACareServicesInLongTermResidentialFacility7"
+        }
+      ]
+    },
+    "OccurrenceAHeartRate11_precondition_125": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceAHeartRate11",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceAFaceToFaceInteraction12"
+        }
+      ]
+    },
+    "OccurrenceBHeartRate13_precondition_127": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceBHeartRate13",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceAFaceToFaceInteraction12"
+        }
+      ]
+    },
+    "OccurrenceAHeartRate11_precondition_131": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceAHeartRate11",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceAHomeHealthcareServices8"
+        }
+      ]
+    },
+    "OccurrenceBHeartRate13_precondition_133": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceBHeartRate13",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceAHomeHealthcareServices8"
+        }
+      ]
+    },
+    "OccurrenceAHeartRate11_precondition_137": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceAHeartRate11",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceANursingFacilityVisit6"
+        }
+      ]
+    },
+    "OccurrenceBHeartRate13_precondition_139": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceBHeartRate13",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceANursingFacilityVisit6"
+        }
+      ]
+    },
+    "OccurrenceAHeartRate11_precondition_143": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceAHeartRate11",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceAOutpatientConsultation5"
+        }
+      ]
+    },
+    "OccurrenceBHeartRate13_precondition_145": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceBHeartRate13",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "{H.B}/min",
+          "value": "50",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceAOutpatientConsultation5"
+        }
+      ]
+    },
+    "MedicationOrderBetaBlockerTherapy_precondition_153": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Order: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "negation_code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "source_data_criteria": "MedicationOrderBetaBlockerTherapy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "MedicationOrderBetaBlockerTherapy_precondition_155": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Order: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "negation_code_list_id": "2.16.840.1.113883.3.526.3.1008",
+      "source_data_criteria": "MedicationOrderBetaBlockerTherapy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "MedicationOrderBetaBlockerTherapy_precondition_157": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Order: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "negation_code_list_id": "2.16.840.1.113883.3.526.3.1009",
+      "source_data_criteria": "MedicationOrderBetaBlockerTherapy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit4_precondition_189": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit4"
+    },
+    "OccurrenceAOutpatientConsultation5_precondition_191": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation5"
+    },
+    "OccurrenceANursingFacilityVisit6_precondition_193": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_NURSING_FACILITY_VISIT",
+      "source_data_criteria": "OccurrenceANursingFacilityVisit6"
+    },
+    "OccurrenceACareServicesInLongTermResidentialFacility7_precondition_195": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_CARE_SERVICES_IN_LONG_TERM_RESIDENTIAL_FACILITY",
+      "source_data_criteria": "OccurrenceACareServicesInLongTermResidentialFacility7"
+    },
+    "OccurrenceAHomeHealthcareServices8_precondition_197": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HOME_HEALTHCARE_SERVICES",
+      "source_data_criteria": "OccurrenceAHomeHealthcareServices8"
+    },
+    "OccurrenceAFaceToFaceInteraction12_precondition_199": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction12"
+    },
+    "DiagnosisActiveArrhythmia_precondition_161": {
+      "title": "Arrhythmia",
+      "description": "Diagnosis, Active: Arrhythmia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.366",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveArrhythmia",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_441"
+        }
+      ]
+    },
+    "GROUP_SBE_CHILDREN_441": {
+      "title": "GROUP_SBE_CHILDREN_441",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "OccurrenceAOfficeVisit4_precondition_189",
+        "OccurrenceAOutpatientConsultation5_precondition_191",
+        "OccurrenceANursingFacilityVisit6_precondition_193",
+        "OccurrenceACareServicesInLongTermResidentialFacility7_precondition_195",
+        "OccurrenceAHomeHealthcareServices8_precondition_197",
+        "OccurrenceAFaceToFaceInteraction12_precondition_199"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_SBE_CHILDREN_441"
+    },
+    "DiagnosisActiveHypotension_precondition_163": {
+      "title": "Hypotension",
+      "description": "Diagnosis, Active: Hypotension",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.370",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveHypotension",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_441"
+        }
+      ]
+    },
+    "DiagnosisActiveAsthma_precondition_165": {
+      "title": "Asthma",
+      "description": "Diagnosis, Active: Asthma",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.362",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAsthma",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_441"
+        }
+      ]
+    },
+    "MedicationAllergyBetaBlockerTherapy_precondition_167": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Allergy: Beta Blocker Therapy",
+      "standard_category": "allergy",
+      "qds_data_type": "allergy",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication_allergy",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationAllergyBetaBlockerTherapy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_441"
+        }
+      ]
+    },
+    "DiagnosisActiveAllergyToBetaBlockerTherapy_precondition_169": {
+      "title": "Allergy to Beta Blocker Therapy",
+      "description": "Diagnosis, Active: Allergy to Beta Blocker Therapy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1177",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAllergyToBetaBlockerTherapy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_441"
+        }
+      ]
+    },
+    "MedicationIntoleranceBetaBlockerTherapy_precondition_171": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Intolerance: Beta Blocker Therapy",
+      "standard_category": "allergy",
+      "qds_data_type": "allergy",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication_intolerance",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationIntoleranceBetaBlockerTherapy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_441"
+        }
+      ]
+    },
+    "DiagnosisActiveIntoleranceToBetaBlockerTherapy_precondition_173": {
+      "title": "Intolerance to Beta Blocker Therapy",
+      "description": "Diagnosis, Active: Intolerance to Beta Blocker Therapy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1178",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveIntoleranceToBetaBlockerTherapy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_441"
+        }
+      ]
+    },
+    "DiagnosisActiveBradycardia_precondition_175": {
+      "title": "Bradycardia",
+      "description": "Diagnosis, Active: Bradycardia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.412",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveBradycardia",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_441"
+        }
+      ]
+    },
+    "DiagnosisActiveAtrioventricularBlock_precondition_183": {
+      "title": "Atrioventricular Block",
+      "description": "Diagnosis, Active: Atrioventricular Block",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.367",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAtrioventricularBlock",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_441"
+        }
+      ]
+    },
+    "DiagnosisActiveCardiacPacerInSitu_precondition_177": {
+      "title": "Cardiac Pacer in Situ",
+      "description": "Diagnosis, Active: Cardiac Pacer in Situ",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.368",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveCardiacPacerInSitu",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_441"
+        }
+      ]
+    },
+    "DeviceAppliedCardiacPacer_precondition_179": {
+      "title": "Cardiac Pacer",
+      "description": "Device, Applied: Cardiac Pacer",
+      "standard_category": "device",
+      "qds_data_type": "device_applied",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1193",
+      "type": "devices",
+      "definition": "device",
+      "status": "applied",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DeviceAppliedCardiacPacer",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_441"
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit4_precondition_206": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit4"
+    },
+    "OccurrenceAOutpatientConsultation5_precondition_208": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation5"
+    },
+    "OccurrenceANursingFacilityVisit6_precondition_210": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_NURSING_FACILITY_VISIT",
+      "source_data_criteria": "OccurrenceANursingFacilityVisit6"
+    },
+    "OccurrenceACareServicesInLongTermResidentialFacility7_precondition_212": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_CARE_SERVICES_IN_LONG_TERM_RESIDENTIAL_FACILITY",
+      "source_data_criteria": "OccurrenceACareServicesInLongTermResidentialFacility7"
+    },
+    "OccurrenceAHomeHealthcareServices8_precondition_214": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HOME_HEALTHCARE_SERVICES",
+      "source_data_criteria": "OccurrenceAHomeHealthcareServices8"
+    },
+    "OccurrenceAFaceToFaceInteraction12_precondition_216": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction12"
+    },
+    "MedicationOrderBetaBlockerTherapyForLvsd_precondition_219": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Order: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderBetaBlockerTherapyForLvsd",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "GROUP_DURING_CHILDREN_443"
+        }
+      ]
+    },
+    "GROUP_DURING_CHILDREN_443": {
+      "title": "GROUP_DURING_CHILDREN_443",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "OccurrenceAOfficeVisit4_precondition_206",
+        "OccurrenceAOutpatientConsultation5_precondition_208",
+        "OccurrenceANursingFacilityVisit6_precondition_210",
+        "OccurrenceACareServicesInLongTermResidentialFacility7_precondition_212",
+        "OccurrenceAHomeHealthcareServices8_precondition_214",
+        "OccurrenceAFaceToFaceInteraction12_precondition_216"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_DURING_CHILDREN_443"
+    },
+    "OccurrenceABetaBlockerTherapyForLvsd10_precondition_223": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Active: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY_FOR_LVSD",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapyForLvsd10",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceACareServicesInLongTermResidentialFacility7"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapyForLvsd10_precondition_221": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Active: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY_FOR_LVSD",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapyForLvsd10",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceACareServicesInLongTermResidentialFacility7"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapyForLvsd10_precondition_230": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Active: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY_FOR_LVSD",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapyForLvsd10",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAHomeHealthcareServices8"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapyForLvsd10_precondition_228": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Active: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY_FOR_LVSD",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapyForLvsd10",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAHomeHealthcareServices8"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapyForLvsd10_precondition_237": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Active: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY_FOR_LVSD",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapyForLvsd10",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceANursingFacilityVisit6"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapyForLvsd10_precondition_235": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Active: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY_FOR_LVSD",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapyForLvsd10",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceANursingFacilityVisit6"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapyForLvsd10_precondition_244": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Active: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY_FOR_LVSD",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapyForLvsd10",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAOutpatientConsultation5"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapyForLvsd10_precondition_242": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Active: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY_FOR_LVSD",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapyForLvsd10",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAOutpatientConsultation5"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapyForLvsd10_precondition_251": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Active: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY_FOR_LVSD",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapyForLvsd10",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAOfficeVisit4"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapyForLvsd10_precondition_249": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Active: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY_FOR_LVSD",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapyForLvsd10",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAOfficeVisit4"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapyForLvsd10_precondition_258": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Active: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY_FOR_LVSD",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapyForLvsd10",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAFaceToFaceInteraction12"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapyForLvsd10_precondition_256": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Active: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY_FOR_LVSD",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapyForLvsd10",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAFaceToFaceInteraction12"
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit4_precondition_266": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit4"
+    },
+    "OccurrenceAOutpatientConsultation5_precondition_268": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation5"
+    },
+    "OccurrenceANursingFacilityVisit6_precondition_270": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_NURSING_FACILITY_VISIT",
+      "source_data_criteria": "OccurrenceANursingFacilityVisit6"
+    },
+    "OccurrenceACareServicesInLongTermResidentialFacility7_precondition_272": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_CARE_SERVICES_IN_LONG_TERM_RESIDENTIAL_FACILITY",
+      "source_data_criteria": "OccurrenceACareServicesInLongTermResidentialFacility7"
+    },
+    "OccurrenceAHomeHealthcareServices8_precondition_274": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HOME_HEALTHCARE_SERVICES",
+      "source_data_criteria": "OccurrenceAHomeHealthcareServices8"
+    },
+    "OccurrenceAFaceToFaceInteraction12_precondition_276": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction12"
+    },
+    "MedicationOrderBetaBlockerTherapy_precondition_279": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Order: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderBetaBlockerTherapy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "GROUP_DURING_CHILDREN_445"
+        }
+      ]
+    },
+    "GROUP_DURING_CHILDREN_445": {
+      "title": "GROUP_DURING_CHILDREN_445",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "OccurrenceAOfficeVisit4_precondition_266",
+        "OccurrenceAOutpatientConsultation5_precondition_268",
+        "OccurrenceANursingFacilityVisit6_precondition_270",
+        "OccurrenceACareServicesInLongTermResidentialFacility7_precondition_272",
+        "OccurrenceAHomeHealthcareServices8_precondition_274",
+        "OccurrenceAFaceToFaceInteraction12_precondition_276"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_DURING_CHILDREN_445"
+    },
+    "OccurrenceABetaBlockerTherapy9_precondition_283": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Active: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapy9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceACareServicesInLongTermResidentialFacility7"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapy9_precondition_281": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Active: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapy9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceACareServicesInLongTermResidentialFacility7"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapy9_precondition_290": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Active: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapy9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAHomeHealthcareServices8"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapy9_precondition_288": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Active: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapy9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAHomeHealthcareServices8"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapy9_precondition_297": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Active: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapy9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceANursingFacilityVisit6"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapy9_precondition_295": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Active: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapy9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceANursingFacilityVisit6"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapy9_precondition_304": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Active: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapy9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAOutpatientConsultation5"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapy9_precondition_302": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Active: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapy9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAOutpatientConsultation5"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapy9_precondition_311": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Active: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapy9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAOfficeVisit4"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapy9_precondition_309": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Active: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapy9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAOfficeVisit4"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapy9_precondition_318": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Active: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapy9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAFaceToFaceInteraction12"
+        }
+      ]
+    },
+    "OccurrenceABetaBlockerTherapy9_precondition_316": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Active: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapy9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAFaceToFaceInteraction12"
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit4_precondition_333": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit4"
+    },
+    "OccurrenceAOutpatientConsultation5_precondition_335": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation5"
+    },
+    "OccurrenceANursingFacilityVisit6_precondition_337": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_NURSING_FACILITY_VISIT",
+      "source_data_criteria": "OccurrenceANursingFacilityVisit6"
+    },
+    "OccurrenceACareServicesInLongTermResidentialFacility7_precondition_339": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_CARE_SERVICES_IN_LONG_TERM_RESIDENTIAL_FACILITY",
+      "source_data_criteria": "OccurrenceACareServicesInLongTermResidentialFacility7"
+    },
+    "OccurrenceAHomeHealthcareServices8_precondition_341": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HOME_HEALTHCARE_SERVICES",
+      "source_data_criteria": "OccurrenceAHomeHealthcareServices8"
+    },
+    "OccurrenceAFaceToFaceInteraction12_precondition_343": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction12"
+    },
+    "DiagnosticStudyResultEjectionFraction_precondition_326": {
+      "title": "Ejection Fraction",
+      "description": "Diagnostic Study, Result: Ejection Fraction",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_result",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1134",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosticStudyResultEjectionFraction",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "%",
+          "value": "40",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_447"
+        }
+      ]
+    },
+    "GROUP_SBE_CHILDREN_447": {
+      "title": "GROUP_SBE_CHILDREN_447",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "OccurrenceAOfficeVisit4_precondition_333",
+        "OccurrenceAOutpatientConsultation5_precondition_335",
+        "OccurrenceANursingFacilityVisit6_precondition_337",
+        "OccurrenceACareServicesInLongTermResidentialFacility7_precondition_339",
+        "OccurrenceAHomeHealthcareServices8_precondition_341",
+        "OccurrenceAFaceToFaceInteraction12_precondition_343"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_SBE_CHILDREN_447"
+    },
+    "DiagnosisActiveModerateOrSevereLvsd_precondition_328": {
+      "title": "Moderate or Severe LVSD",
+      "description": "Diagnosis, Active: Moderate or Severe LVSD",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1090",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveModerateOrSevereLvsd",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_447"
+        }
+      ]
+    },
+    "DiagnosisActiveLeftVentricularSystolicDysfunction_precondition_330": {
+      "title": "Left ventricular systolic dysfunction",
+      "description": "Diagnosis, Active: Left ventricular systolic dysfunction",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1091",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveLeftVentricularSystolicDysfunction",
+      "field_values": {
+        "SEVERITY": {
+          "type": "CD",
+          "code_list_id": "2.16.840.1.113883.3.526.3.1092",
+          "title": "moderate or severe"
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_447"
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit4_precondition_348": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit4"
+    },
+    "OccurrenceAOutpatientConsultation5_precondition_350": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation5"
+    },
+    "OccurrenceANursingFacilityVisit6_precondition_352": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_NURSING_FACILITY_VISIT",
+      "source_data_criteria": "OccurrenceANursingFacilityVisit6"
+    },
+    "OccurrenceACareServicesInLongTermResidentialFacility7_precondition_354": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_CARE_SERVICES_IN_LONG_TERM_RESIDENTIAL_FACILITY",
+      "source_data_criteria": "OccurrenceACareServicesInLongTermResidentialFacility7"
+    },
+    "OccurrenceAHomeHealthcareServices8_precondition_356": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HOME_HEALTHCARE_SERVICES",
+      "source_data_criteria": "OccurrenceAHomeHealthcareServices8"
+    },
+    "OccurrenceAFaceToFaceInteraction12_precondition_358": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction12"
+    },
+    "DiagnosisResolvedMyocardialInfarction_precondition_361": {
+      "title": "Myocardial Infarction",
+      "description": "Diagnosis, Resolved: Myocardial Infarction",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_resolved",
+      "code_list_id": "2.16.840.1.113883.3.526.3.403",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "resolved",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DiagnosisResolvedMyocardialInfarction",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_449"
+        }
+      ]
+    },
+    "GROUP_SBE_CHILDREN_449": {
+      "title": "GROUP_SBE_CHILDREN_449",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "OccurrenceAOfficeVisit4_precondition_348",
+        "OccurrenceAOutpatientConsultation5_precondition_350",
+        "OccurrenceANursingFacilityVisit6_precondition_352",
+        "OccurrenceACareServicesInLongTermResidentialFacility7_precondition_354",
+        "OccurrenceAHomeHealthcareServices8_precondition_356",
+        "OccurrenceAFaceToFaceInteraction12_precondition_358"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_SBE_CHILDREN_449"
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_364": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "18",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedOfficeVisit_precondition_366": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedOutpatientConsultation_precondition_368": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOutpatientConsultation",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedNursingFacilityVisit_precondition_370": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedNursingFacilityVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedCareServicesInLongTermResidentialFacility_precondition_372": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedCareServicesInLongTermResidentialFacility",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedHomeHealthcareServices_precondition_374": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHomeHealthcareServices",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPatientProviderInteraction_precondition_376": {
+      "title": "Patient Provider Interaction",
+      "description": "Encounter, Performed: Patient Provider Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPatientProviderInteraction",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "GROUP_COUNT_451": {
+      "title": "GROUP_COUNT_451",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "EncounterPerformedOfficeVisit_precondition_366",
+        "EncounterPerformedOutpatientConsultation_precondition_368",
+        "EncounterPerformedNursingFacilityVisit_precondition_370",
+        "EncounterPerformedCareServicesInLongTermResidentialFacility_precondition_372",
+        "EncounterPerformedHomeHealthcareServices_precondition_374",
+        "EncounterPerformedPatientProviderInteraction_precondition_376"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_COUNT_451",
+      "subset_operators": [
+        {
+          "type": "COUNT",
+          "value": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "value": "2",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit4_precondition_386": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit4",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAOutpatientConsultation5_precondition_388": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation5",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceANursingFacilityVisit6_precondition_390": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_NURSING_FACILITY_VISIT",
+      "source_data_criteria": "OccurrenceANursingFacilityVisit6",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceACareServicesInLongTermResidentialFacility7_precondition_392": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_CARE_SERVICES_IN_LONG_TERM_RESIDENTIAL_FACILITY",
+      "source_data_criteria": "OccurrenceACareServicesInLongTermResidentialFacility7",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAHomeHealthcareServices8_precondition_394": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HOME_HEALTHCARE_SERVICES",
+      "source_data_criteria": "OccurrenceAHomeHealthcareServices8",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAFaceToFaceInteraction12_precondition_396": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction12",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "DiagnosisActiveCoronaryArteryDiseaseNoMi_precondition_381": {
+      "title": "Coronary Artery Disease No MI",
+      "description": "Diagnosis, Active: Coronary Artery Disease No MI",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.369",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveCoronaryArteryDiseaseNoMi",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_453"
+        }
+      ]
+    },
+    "GROUP_SBE_CHILDREN_453": {
+      "title": "GROUP_SBE_CHILDREN_453",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "OccurrenceAOfficeVisit4_precondition_386",
+        "OccurrenceAOutpatientConsultation5_precondition_388",
+        "OccurrenceANursingFacilityVisit6_precondition_390",
+        "OccurrenceACareServicesInLongTermResidentialFacility7_precondition_392",
+        "OccurrenceAHomeHealthcareServices8_precondition_394",
+        "OccurrenceAFaceToFaceInteraction12_precondition_396"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_SBE_CHILDREN_453"
+    },
+    "ProcedurePerformedCardiacSurgery_precondition_383": {
+      "title": "Cardiac Surgery",
+      "description": "Procedure, Performed: Cardiac Surgery",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.371",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedCardiacSurgery",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_453"
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_401": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "18",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedOfficeVisit_precondition_403": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedOutpatientConsultation_precondition_405": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOutpatientConsultation",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedNursingFacilityVisit_precondition_407": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedNursingFacilityVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedCareServicesInLongTermResidentialFacility_precondition_409": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedCareServicesInLongTermResidentialFacility",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedHomeHealthcareServices_precondition_411": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHomeHealthcareServices",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPatientProviderInteraction_precondition_413": {
+      "title": "Patient Provider Interaction",
+      "description": "Encounter, Performed: Patient Provider Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPatientProviderInteraction",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "GROUP_COUNT_455": {
+      "title": "GROUP_COUNT_455",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "EncounterPerformedOfficeVisit_precondition_403",
+        "EncounterPerformedOutpatientConsultation_precondition_405",
+        "EncounterPerformedNursingFacilityVisit_precondition_407",
+        "EncounterPerformedCareServicesInLongTermResidentialFacility_precondition_409",
+        "EncounterPerformedHomeHealthcareServices_precondition_411",
+        "EncounterPerformedPatientProviderInteraction_precondition_413"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_COUNT_455",
+      "subset_operators": [
+        {
+          "type": "COUNT",
+          "value": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "value": "2",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit4_precondition_423": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit4",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAOutpatientConsultation5_precondition_425": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation5",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceANursingFacilityVisit6_precondition_427": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_NURSING_FACILITY_VISIT",
+      "source_data_criteria": "OccurrenceANursingFacilityVisit6",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceACareServicesInLongTermResidentialFacility7_precondition_429": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_CARE_SERVICES_IN_LONG_TERM_RESIDENTIAL_FACILITY",
+      "source_data_criteria": "OccurrenceACareServicesInLongTermResidentialFacility7",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAHomeHealthcareServices8_precondition_431": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HOME_HEALTHCARE_SERVICES",
+      "source_data_criteria": "OccurrenceAHomeHealthcareServices8",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAFaceToFaceInteraction12_precondition_433": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction12",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "DiagnosisActiveCoronaryArteryDiseaseNoMi_precondition_418": {
+      "title": "Coronary Artery Disease No MI",
+      "description": "Diagnosis, Active: Coronary Artery Disease No MI",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.369",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveCoronaryArteryDiseaseNoMi",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_457"
+        }
+      ]
+    },
+    "GROUP_SBE_CHILDREN_457": {
+      "title": "GROUP_SBE_CHILDREN_457",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "OccurrenceAOfficeVisit4_precondition_423",
+        "OccurrenceAOutpatientConsultation5_precondition_425",
+        "OccurrenceANursingFacilityVisit6_precondition_427",
+        "OccurrenceACareServicesInLongTermResidentialFacility7_precondition_429",
+        "OccurrenceAHomeHealthcareServices8_precondition_431",
+        "OccurrenceAFaceToFaceInteraction12_precondition_433"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_SBE_CHILDREN_457"
+    },
+    "ProcedurePerformedCardiacSurgery_precondition_420": {
+      "title": "Cardiac Surgery",
+      "description": "Procedure, Performed: Cardiac Surgery",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.371",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedCardiacSurgery",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_457"
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "ProcedurePerformedCardiacSurgery": {
+      "title": "Cardiac Surgery",
+      "description": "Procedure, Performed: Cardiac Surgery",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.371",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedCardiacSurgery"
+    },
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedOutpatientConsultation": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOutpatientConsultation"
+    },
+    "EncounterPerformedNursingFacilityVisit": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedNursingFacilityVisit"
+    },
+    "EncounterPerformedCareServicesInLongTermResidentialFacility": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedCareServicesInLongTermResidentialFacility"
+    },
+    "EncounterPerformedHomeHealthcareServices": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHomeHealthcareServices"
+    },
+    "EncounterPerformedPatientProviderInteraction": {
+      "title": "Patient Provider Interaction",
+      "description": "Encounter, Performed: Patient Provider Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPatientProviderInteraction"
+    },
+    "DiagnosticStudyResultEjectionFraction": {
+      "title": "Ejection Fraction",
+      "description": "Diagnostic Study, Result: Ejection Fraction",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_result",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1134",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosticStudyResultEjectionFraction"
+    },
+    "DiagnosisActiveModerateOrSevereLvsd": {
+      "title": "Moderate or Severe LVSD",
+      "description": "Diagnosis, Active: Moderate or Severe LVSD",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1090",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveModerateOrSevereLvsd"
+    },
+    "DiagnosisActiveLeftVentricularSystolicDysfunction": {
+      "title": "Left ventricular systolic dysfunction",
+      "description": "Diagnosis, Active: Left ventricular systolic dysfunction",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1091",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveLeftVentricularSystolicDysfunction"
+    },
+    "DiagnosisResolvedMyocardialInfarction": {
+      "title": "Myocardial Infarction",
+      "description": "Diagnosis, Resolved: Myocardial Infarction",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_resolved",
+      "code_list_id": "2.16.840.1.113883.3.526.3.403",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "resolved",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DiagnosisResolvedMyocardialInfarction"
+    },
+    "MedicationOrderBetaBlockerTherapy": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Order: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderBetaBlockerTherapy"
+    },
+    "MedicationOrderBetaBlockerTherapyForLvsd": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Order: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderBetaBlockerTherapyForLvsd"
+    },
+    "MedicationActiveBetaBlockerTherapy": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Active: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationActiveBetaBlockerTherapy"
+    },
+    "DiagnosisActiveHypotension": {
+      "title": "Hypotension",
+      "description": "Diagnosis, Active: Hypotension",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.370",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveHypotension"
+    },
+    "DiagnosisActiveAtrioventricularBlock": {
+      "title": "Atrioventricular Block",
+      "description": "Diagnosis, Active: Atrioventricular Block",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.367",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAtrioventricularBlock"
+    },
+    "DiagnosisActiveCardiacPacerInSitu": {
+      "title": "Cardiac Pacer in Situ",
+      "description": "Diagnosis, Active: Cardiac Pacer in Situ",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.368",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveCardiacPacerInSitu"
+    },
+    "DeviceAppliedCardiacPacer": {
+      "title": "Cardiac Pacer",
+      "description": "Device, Applied: Cardiac Pacer",
+      "standard_category": "device",
+      "qds_data_type": "device_applied",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1193",
+      "type": "devices",
+      "definition": "device",
+      "status": "applied",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DeviceAppliedCardiacPacer"
+    },
+    "DiagnosisActiveArrhythmia": {
+      "title": "Arrhythmia",
+      "description": "Diagnosis, Active: Arrhythmia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.366",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveArrhythmia"
+    },
+    "DiagnosisActiveAsthma": {
+      "title": "Asthma",
+      "description": "Diagnosis, Active: Asthma",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.362",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAsthma"
+    },
+    "MedicationAllergyBetaBlockerTherapy": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Allergy: Beta Blocker Therapy",
+      "standard_category": "allergy",
+      "qds_data_type": "allergy",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication_allergy",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationAllergyBetaBlockerTherapy"
+    },
+    "MedicationIntoleranceBetaBlockerTherapy": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Intolerance: Beta Blocker Therapy",
+      "standard_category": "allergy",
+      "qds_data_type": "allergy",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication_intolerance",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationIntoleranceBetaBlockerTherapy"
+    },
+    "DiagnosisActiveAllergyToBetaBlockerTherapy": {
+      "title": "Allergy to Beta Blocker Therapy",
+      "description": "Diagnosis, Active: Allergy to Beta Blocker Therapy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1177",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAllergyToBetaBlockerTherapy"
+    },
+    "DiagnosisActiveIntoleranceToBetaBlockerTherapy": {
+      "title": "Intolerance to Beta Blocker Therapy",
+      "description": "Diagnosis, Active: Intolerance to Beta Blocker Therapy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1178",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveIntoleranceToBetaBlockerTherapy"
+    },
+    "DiagnosisActiveBradycardia": {
+      "title": "Bradycardia",
+      "description": "Diagnosis, Active: Bradycardia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.412",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveBradycardia"
+    },
+    "PhysicalExamFindingHeartRate": {
+      "title": "Heart Rate",
+      "description": "Physical Exam, Finding: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PhysicalExamFindingHeartRate"
+    },
+    "MedicationActiveBetaBlockerTherapyForLvsd": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Active: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationActiveBetaBlockerTherapyForLvsd"
+    },
+    "DiagnosisActiveCoronaryArteryDiseaseNoMi": {
+      "title": "Coronary Artery Disease No MI",
+      "description": "Diagnosis, Active: Coronary Artery Disease No MI",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.369",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveCoronaryArteryDiseaseNoMi"
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "MedicationOrderNotDoneMedicalReason": {
+      "title": "Medical Reason",
+      "description": "Medication, Order not done: Medical Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDoneMedicalReason"
+    },
+    "MedicationOrderNotDonePatientReason": {
+      "title": "Patient Reason",
+      "description": "Medication, Order not done: Patient Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1008",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDonePatientReason"
+    },
+    "MedicationOrderNotDoneSystemReason": {
+      "title": "System Reason",
+      "description": "Medication, Order not done: System Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1009",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDoneSystemReason"
+    },
+    "MedicationOrderNotDoneMedicalReason1": {
+      "title": "Medical Reason",
+      "description": "Medication, Order not done: Medical Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDoneMedicalReason1"
+    },
+    "MedicationOrderNotDonePatientReason2": {
+      "title": "Patient Reason",
+      "description": "Medication, Order not done: Patient Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1008",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDonePatientReason2"
+    },
+    "MedicationOrderNotDoneSystemReason3": {
+      "title": "System Reason",
+      "description": "Medication, Order not done: System Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1009",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDoneSystemReason3"
+    },
+    "OccurrenceAOfficeVisit4": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit4"
+    },
+    "OccurrenceAOutpatientConsultation5": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation5"
+    },
+    "OccurrenceANursingFacilityVisit6": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_NURSING_FACILITY_VISIT",
+      "source_data_criteria": "OccurrenceANursingFacilityVisit6"
+    },
+    "OccurrenceACareServicesInLongTermResidentialFacility7": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_CARE_SERVICES_IN_LONG_TERM_RESIDENTIAL_FACILITY",
+      "source_data_criteria": "OccurrenceACareServicesInLongTermResidentialFacility7"
+    },
+    "OccurrenceAHomeHealthcareServices8": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HOME_HEALTHCARE_SERVICES",
+      "source_data_criteria": "OccurrenceAHomeHealthcareServices8"
+    },
+    "OccurrenceABetaBlockerTherapy9": {
+      "title": "Beta Blocker Therapy",
+      "description": "Medication, Active: Beta Blocker Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1174",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapy9"
+    },
+    "OccurrenceABetaBlockerTherapyForLvsd10": {
+      "title": "Beta Blocker Therapy for LVSD",
+      "description": "Medication, Active: Beta Blocker Therapy for LVSD",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1184",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_BETA_BLOCKER_THERAPY_FOR_LVSD",
+      "source_data_criteria": "OccurrenceABetaBlockerTherapyForLvsd10"
+    },
+    "OccurrenceAHeartRate11": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceAHeartRate11"
+    },
+    "OccurrenceAFaceToFaceInteraction12": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction12"
+    },
+    "OccurrenceBHeartRate13": {
+      "title": "Heart Rate",
+      "description": "Physical Exam: Heart Rate",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1176",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "PHYSICAL_EXAM_HEART_RATE",
+      "source_data_criteria": "OccurrenceBHeartRate13"
+    }
+  },
+  "attributes": [
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "Copyright 2012 American College of Cardiology, American Heart Association and American Medical Association. All Rights Reserved.",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "Denominator 1: Patients with a prior (resolved) myocardial infarction\r\nDenominator 2: Patients with left ventricular systolic dysfunction (LVEF <40%)",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "Nonadherence to cardioprotective medications is prevalent among outpatients with coronary artery disease and can be associated with a broad range of adverse outcomes, including all-cause and cardiovascular mortality, cardiovascular hospitalizations, and the need for revascularization procedures.\r\n\r\nA patient with a diagnosis of coronary artery disease seen within a 12 month period and LVEF <40% should be taking either bisoprolol, carvedilol, or sustained release metoprolol succinate. While all beta-blockers appear to be of equal efficacy in patients with chronic stable coronary artery disease, these three medications have specifically shown to reduce mortality in patients with reduced LVEF.",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "It is beneficial to start and continue beta-blocker therapy indefinitely in all patients who have had MI, acute coronary syndrome, or left ventricular dysfunction with or without heart failure symptoms, unless contraindicated (Class I Recommendation, Level A Evidence). (ACC/AHA, 2007)\r\nBeta-blockers (using 1 of the 3 proven to reduce mortality, i.e., bisoprolol, carvedilol, and sustained release metoprolol succinate) are recommended for all stable patients with current or prior symptoms of HF and reduced LVEF, unless contraindicated. (Class I, Level of Evidence: A) (ACC/AHA, 2009)",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "Higher score indicates better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "0070",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "Physician Performance Measures (Measures) and related data specifications have been developed by the American Medical Association (AMA) - convened Physician Consortium for Performance Improvement(R) (the PCPI[TM]), American College of Cardiology (ACC) and American Heart Association (AHA). These Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The Measures, while copyrighted, can be reproduced and distributed, without modification, for noncommercial purposes, e.g., use by health care providers in connection with their practices. Commercial use is defined as the sale, license, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial uses of the Measures require a license agreement between the user and the AMA, (on behalf of the PCPI), ACC or AHA. Neither the AMA, ACC, AHA, PCPI nor its members shall be responsible for any use of the Measures. \r\n\r\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND. \r\n\r\nLimited proprietary coding is contained in the Measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. The AMA, ACC, AHA, the PCPI and its members disclaim all liability for use or accuracy of any Current Procedural Terminology (CPT[R]) or other coding contained in the specifications. \r\n\r\nCPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC(R) copyright 2004-2011 Regenstrief Institute, Inc. \r\n\r\nThis material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 copyright 2011 World Health Organization. All Rights Reserved.\r\n\r\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM]",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "145",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "Hunt SA, Abraham WT, Chin MH, et al. 2009 Focused update incorporated\r\ninto the ACC/AHA 2005 guidelines for the diagnosis and management\r\nof heart failure in adults: a report of the American College of\r\nCardiology Foundation/American Heart Association Task Force on\r\nPractice Guidelines [published correction appears in Circulation. 2010;\r\n121:e258]. Circulation. 2009;119:e391– 479",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "Prescribed may include prescription given to the patient for beta-blocker therapy at one or more visits in the measurement period OR patient already taking beta-blocker therapy as documented in current medication list",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "Beta-blocker therapy:\r\n- For patients with prior MI, no recommendations or evidence cited in current chronic stable angina guidelines for preferential use of specific agents\r\n- For patients with prior LVEF <40%, beta-blocker therapy should include bisoprolol, carvedilol, or sustained release metoprolol succinate",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "All patients aged 18 years and older with a diagnosis of coronary artery disease seen within a 12 month period",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals Initial Patient Population who also have prior MI or a current or prior LVEF <40%",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "None",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Patients who were prescribed beta-blocker therapy",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "Documentation of medical reason(s) for not prescribing beta-blocker therapy (e.g., allergy, intolerance, other medical reasons)\r\nDocumentation of patient reason(s) for not prescribing beta-blocker therapy (e.g., patient declined, other patient reasons)\r\nDocumentation of system reason(s) for not prescribing beta-blocker therapy (e.g., other reasons attributable to the health care system)",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not Applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "NUMER": "NUMER",
+      "DENOM": "DENOM",
+      "IPP": "IPP",
+      "DENEXCEP": "DENEXCEP",
+      "title": "LVSD",
+      "id": "Population1"
+    },
+    {
+      "IPP": "IPP_1",
+      "DENOM": "DENOM_1",
+      "NUMER": "NUMER_1",
+      "DENEXCEP": "DENEXCEP_1",
+      "title": "prior MI",
+      "id": "Population2"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

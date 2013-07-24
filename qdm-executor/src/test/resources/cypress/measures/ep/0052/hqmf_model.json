@@ -1,0 +1,1008 @@
+{
+  "id": "0052",
+  "hqmf_id": "8A4D92B2-39CA-AF4B-0139-D49A6C2A1DD7",
+  "hqmf_set_id": "B6016B47-B65D-4BE0-866F-1D397886CA89",
+  "hqmf_version_number": 2,
+  "title": "Use of Imaging Studies for Low Back Pain",
+  "description": "Percentage of patients 18-50 years of age with a diagnosis of low back pain who did not have an imaging study (plain X-ray, MRI, CT scan) within 28 days of the diagnosis.",
+  "cms_id": "CMS166v2",
+  "population_criteria": {
+    "DENEX": {
+      "conjunction?": true,
+      "type": "DENEX",
+      "title": "Denominator",
+      "hqmf_id": "FB466533-16CF-4EA7-B0DA-6248AA7419CC",
+      "preconditions": [
+        {
+          "id": 22,
+          "preconditions": [
+            {
+              "id": 20,
+              "preconditions": [
+                {
+                  "id": 2,
+                  "reference": "DiagnosisActiveLowBackPain_precondition_2"
+                },
+                {
+                  "id": 10,
+                  "preconditions": [
+                    {
+                      "id": 4,
+                      "reference": "DiagnosisActiveAllCancer_precondition_4"
+                    },
+                    {
+                      "id": 6,
+                      "reference": "DiagnosisInactiveAllCancer_precondition_6"
+                    },
+                    {
+                      "id": 8,
+                      "reference": "DiagnosisResolvedAllCancer_precondition_8"
+                    }
+                  ],
+                  "conjunction_code": "atLeastOneTrue"
+                },
+                {
+                  "id": 18,
+                  "preconditions": [
+                    {
+                      "id": 12,
+                      "reference": "DiagnosisActiveTrauma_precondition_12"
+                    },
+                    {
+                      "id": 14,
+                      "reference": "DiagnosisActiveIvDrugAbuse_precondition_14"
+                    },
+                    {
+                      "id": 16,
+                      "reference": "DiagnosisActiveNeurologicImpairment_precondition_16"
+                    }
+                  ],
+                  "conjunction_code": "atLeastOneTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "4D9729C0-1E98-4514-9B41-31751237FA17",
+      "preconditions": [
+        {
+          "id": 32,
+          "preconditions": [
+            {
+              "id": 29,
+              "preconditions": [
+                {
+                  "id": 23,
+                  "reference": "DiagnosticStudyPerformedXRayOfLowerSpine_precondition_23"
+                },
+                {
+                  "id": 25,
+                  "reference": "DiagnosticStudyPerformedMriOfLowerSpine_precondition_25"
+                },
+                {
+                  "id": 27,
+                  "reference": "DiagnosticStudyPerformedCtScanOfLowerSpine_precondition_27"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "atLeastOneTrue",
+          "negation": true
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "0D3BB774-897F-4E93-9EDE-29A9BC018043"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "C8D8831E-A459-48D2-B299-6B6C297601B2",
+      "preconditions": [
+        {
+          "id": 48,
+          "preconditions": [
+            {
+              "id": 34,
+              "reference": "OccurrenceALowBackPain1_precondition_33",
+              "conjunction_code": "allTrue"
+            },
+            {
+              "id": 36,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_36"
+            },
+            {
+              "id": 38,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_38"
+            },
+            {
+              "id": 46,
+              "preconditions": [
+                {
+                  "id": 41,
+                  "reference": "OccurrenceALowBackPain1_precondition_41"
+                },
+                {
+                  "id": 44,
+                  "reference": "OccurrenceALowBackPain1_precondition_44"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "OccurrenceALowBackPain1": {
+      "title": "Low Back Pain",
+      "description": "Diagnosis, Active: Low Back Pain",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_LOW_BACK_PAIN",
+      "source_data_criteria": "OccurrenceALowBackPain1"
+    },
+    "DiagnosisActiveLowBackPain_precondition_2": {
+      "title": "Low Back Pain",
+      "description": "Diagnosis, Active: Low Back Pain",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveLowBackPain",
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "OccurrenceALowBackPain1",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "180",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "DiagnosisActiveAllCancer_precondition_4": {
+      "title": "All Cancer",
+      "description": "Diagnosis, Active: All Cancer",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1011",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAllCancer",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "DiagnosisInactiveAllCancer_precondition_6": {
+      "title": "All Cancer",
+      "description": "Diagnosis, Inactive: All Cancer",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_inactive",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1011",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "inactive",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DiagnosisInactiveAllCancer",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "DiagnosisResolvedAllCancer_precondition_8": {
+      "title": "All Cancer",
+      "description": "Diagnosis, Resolved: All Cancer",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_resolved",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1011",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "resolved",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DiagnosisResolvedAllCancer",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "DiagnosisActiveTrauma_precondition_12": {
+      "title": "Trauma",
+      "description": "Diagnosis, Active: Trauma",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1036",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveTrauma",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "365",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "DiagnosisActiveIvDrugAbuse_precondition_14": {
+      "title": "IV Drug Abuse",
+      "description": "Diagnosis, Active: IV Drug Abuse",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.106.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveIvDrugAbuse",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "365",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "DiagnosisActiveNeurologicImpairment_precondition_16": {
+      "title": "Neurologic impairment",
+      "description": "Diagnosis, Active: Neurologic impairment",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.114.12.1012",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveNeurologicImpairment",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "365",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceALowBackPain1_precondition_30": {
+      "title": "Low Back Pain",
+      "description": "Diagnosis, Active: Low Back Pain",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_LOW_BACK_PAIN",
+      "source_data_criteria": "OccurrenceALowBackPain1"
+    },
+    "DiagnosticStudyPerformedXRayOfLowerSpine_precondition_23": {
+      "title": "X-Ray of Lower Spine",
+      "description": "Diagnostic Study, Performed: X-Ray of Lower Spine",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1033",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosticStudyPerformedXRayOfLowerSpine",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceALowBackPain1_precondition_30",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "28",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "DiagnosticStudyPerformedMriOfLowerSpine_precondition_25": {
+      "title": "MRI of Lower Spine",
+      "description": "Diagnostic Study, Performed: MRI of Lower Spine",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1034",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosticStudyPerformedMriOfLowerSpine",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceALowBackPain1_precondition_30",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "28",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "DiagnosticStudyPerformedCtScanOfLowerSpine_precondition_27": {
+      "title": "CT Scan of Lower Spine",
+      "description": "Diagnostic Study, Performed: CT Scan of Lower Spine",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1035",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosticStudyPerformedCtScanOfLowerSpine",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceALowBackPain1_precondition_30",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "28",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceALowBackPain1_precondition_33": {
+      "title": "Low Back Pain",
+      "description": "Diagnosis, Active: Low Back Pain",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_LOW_BACK_PAIN",
+      "source_data_criteria": "OccurrenceALowBackPain1",
+      "temporal_references": [
+        {
+          "type": "SDU",
+          "reference": "MeasurePeriod"
+        }
+      ],
+      "subset_operators": [
+        {
+          "type": "FIRST"
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_36": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "18",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_38": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "50",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedOfficeVisit_precondition_40": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "337",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceALowBackPain1_precondition_41": {
+      "title": "Low Back Pain",
+      "description": "Diagnosis, Active: Low Back Pain",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_LOW_BACK_PAIN",
+      "source_data_criteria": "OccurrenceALowBackPain1",
+      "temporal_references": [
+        {
+          "type": "SDU",
+          "reference": "EncounterPerformedOfficeVisit_precondition_40"
+        }
+      ]
+    },
+    "EncounterPerformedEmergencyDepartmentVisit_precondition_43": {
+      "title": "Emergency Department Visit",
+      "description": "Encounter, Performed: Emergency Department Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1010",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedEmergencyDepartmentVisit",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "337",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceALowBackPain1_precondition_44": {
+      "title": "Low Back Pain",
+      "description": "Diagnosis, Active: Low Back Pain",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_LOW_BACK_PAIN",
+      "source_data_criteria": "OccurrenceALowBackPain1",
+      "temporal_references": [
+        {
+          "type": "SDU",
+          "reference": "EncounterPerformedEmergencyDepartmentVisit_precondition_43"
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "DiagnosisActiveLowBackPain": {
+      "title": "Low Back Pain",
+      "description": "Diagnosis, Active: Low Back Pain",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveLowBackPain"
+    },
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedEmergencyDepartmentVisit": {
+      "title": "Emergency Department Visit",
+      "description": "Encounter, Performed: Emergency Department Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1010",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedEmergencyDepartmentVisit"
+    },
+    "DiagnosticStudyPerformedCtScanOfLowerSpine": {
+      "title": "CT Scan of Lower Spine",
+      "description": "Diagnostic Study, Performed: CT Scan of Lower Spine",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1035",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosticStudyPerformedCtScanOfLowerSpine"
+    },
+    "DiagnosticStudyPerformedMriOfLowerSpine": {
+      "title": "MRI of Lower Spine",
+      "description": "Diagnostic Study, Performed: MRI of Lower Spine",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1034",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosticStudyPerformedMriOfLowerSpine"
+    },
+    "DiagnosticStudyPerformedXRayOfLowerSpine": {
+      "title": "X-Ray of Lower Spine",
+      "description": "Diagnostic Study, Performed: X-Ray of Lower Spine",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1033",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosticStudyPerformedXRayOfLowerSpine"
+    },
+    "DiagnosisActiveAllCancer": {
+      "title": "All Cancer",
+      "description": "Diagnosis, Active: All Cancer",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1011",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAllCancer"
+    },
+    "DiagnosisInactiveAllCancer": {
+      "title": "All Cancer",
+      "description": "Diagnosis, Inactive: All Cancer",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_inactive",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1011",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "inactive",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DiagnosisInactiveAllCancer"
+    },
+    "DiagnosisResolvedAllCancer": {
+      "title": "All Cancer",
+      "description": "Diagnosis, Resolved: All Cancer",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_resolved",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1011",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "resolved",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DiagnosisResolvedAllCancer"
+    },
+    "DiagnosisActiveTrauma": {
+      "title": "Trauma",
+      "description": "Diagnosis, Active: Trauma",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1036",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveTrauma"
+    },
+    "DiagnosisActiveIvDrugAbuse": {
+      "title": "IV Drug Abuse",
+      "description": "Diagnosis, Active: IV Drug Abuse",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.106.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveIvDrugAbuse"
+    },
+    "DiagnosisActiveNeurologicImpairment": {
+      "title": "Neurologic impairment",
+      "description": "Diagnosis, Active: Neurologic impairment",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.114.12.1012",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveNeurologicImpairment"
+    },
+    "OccurrenceALowBackPain1": {
+      "title": "Low Back Pain",
+      "description": "Diagnosis, Active: Low Back Pain",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_LOW_BACK_PAIN",
+      "source_data_criteria": "OccurrenceALowBackPain1"
+    }
+  },
+  "attributes": [
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "Physician Performance Measure (Measures) and related data specifications were developed by the National Committee for Quality Assurance (NCQA). \r\n\r\nThe Measures are copyrighted but can be reproduced and distributed, without modification, for noncommercial purposes (e.g., use by healthcare providers in connection with their practices). Commercial use is defined as the sale, licensing, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial use of the Measures requires a license agreement between the user and NCQA. NCQA is not responsible for any use of the Measures. \r\n\r\nCopyright 2012 National Committee for Quality Assurance. All Rights Reserved. \r\n\r\nLimited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets. NCQA disclaims all liability for use or accuracy of any CPT or other codes contained in the specifications.\r\n\r\nCPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC(R) copyright 2004-2011 Regenstrief Institute, Inc. \r\nThis material contains SNOMED Clinical Terms (R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 Copyright 2011 World Health Organization. All Rights Reserved.\r\n\r\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "Low back pain is a pervasive problem that affects two thirds of adults at some time in their lives. It ranks among the top ten reasons for patient visits to internists and is the most common and expensive reason for work disability in the U.S.  Low back pain is second only to upper respiratory problems as a symptom-related reason for visits to a physician (Jarvik and Deyo 2000; U.S. Preventive Services Task Force 2004). \r\n\r\nBack pain is among the most common musculoskeletal conditions, afflicting approximately 31 million Americans, and is the number one cause of activity limitation in young adults (Rizzo, Abbott, and Berger 1998). Low back pain is responsible for direct health care expenditures of more than $20 billion annually, and as much as $50 billion per year when indirect costs are included (Patel 2000). This accounts for over 4.7 million missed work days per year (Dagenais, Caro, and Haldeman 2008).",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "American College of Physicians and the American Pain Society (Chou et al. 2007)\r\n \r\nClinicians should not routinely obtain imaging or other diagnostic tests in patients with nonspecific low back pain (strong recommendation, moderate-quality evidence). \r\n\r\nInstitute for Clinical Systems Improvement (2008)\r\n\r\n• Back pain assessment should include a subjective pain rating, functional status, patient history including notation of presence or absence of \"red flags\" (Cauda Equina syndrome or other conditions) and psychosocial indicators, assessment of prior treatment and response, employment status, and clinician's objective assessment.\r\n• Reduce unnecessary imaging unless “red flag” indicators exist.\r\n• A conservative approach should be first-line treatment. Emphasize patient education and conservative home self-care, which includes limited bed rest, early ambulation, postural advice, resumption of light-duty activities, use of ice and heat, anti-inflammatory and analgesic over-the-counter medications, and early return to work or activities.\r\n• Patients with acute low back pain should be advised to stay active and continue ordinary daily activity within the limits permitted by the pain. For chronic back pain, there is evidence that exercise therapy is effective.\r\n• Consult or refer to surgical spine specialist (neurosurgeon, orthopedic surgeon, or other) or non-surgical spine specialist (physical therapist, chiropractic provider, osteopathic or allopathic physician, or other) if conservative treatment fails.\r\n\r\nU.S. Preventive Services Task Force (USPSTF) (2004)\r\nThe USPSTF concludes that the evidence is insufficient to recommend for or against the routine use of interventions to prevent low back pain in adults in primary care settings. (I recommendation)",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "Higher score indicates better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "0052",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "These performance Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.\r\n\r\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND.",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "166",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "Patel, A.T., and A.A. Ogle. 2000. “Diagnosis and management of acute low back pain.” Am Fam Phys 61(6):1779-1786.  http://www.aafp.org/afp/20000315/1779.html",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "This measure applies to the first episode of low back pain during the measurement period.",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "The outpatient or emergency department visit in the Initial Patient Population needs to occur during the first 337 days of the measurement period (337 days allows 28 days for the numerator event). This visit must be the first visit for low back pain during the measurement period.",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "Patients 18-50 years of age with a diagnosis of low back pain during an outpatient or emergency department visit",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals Initial Patient Population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Exclude patients with a diagnosis of cancer any time in their history or patients with a diagnosis of recent trauma, IV drug abuse, or neurologic impairment during the 12-month period prior to the outpatient or emergency department visit.\r\n\r\nExclude patients with a diagnosis of low back pain within the 180 days prior to the outpatient or emergency department visit.",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Patients without an imaging study conducted on the date of the outpatient or emergency department visit or in the 28 days following the outpatient or emergency department visit",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "None",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not Applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "IPP": "IPP",
+      "DENOM": "DENOM",
+      "NUMER": "NUMER",
+      "DENEX": "DENEX"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

@@ -11,5 +11,6 @@ class Diagnosis extends AbstractBaseCriteria {
     def getPluralName(){
         "Diagnoses"
     }
+
 }
 

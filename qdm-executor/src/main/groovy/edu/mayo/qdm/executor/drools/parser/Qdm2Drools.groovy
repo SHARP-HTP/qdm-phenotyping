@@ -79,6 +79,8 @@ class Qdm2Drools {
             }
         }
 
+        sb.append( printRuleFunctions(json) )
+
         def rule = sb.toString()
 
         log.isDebugEnabled() ? log.debug(rule):
@@ -91,9 +93,25 @@ class Qdm2Drools {
     /**
      * Prints header/metadata info for the Drools rule.
      */
+    private def printRuleFunctions(qdm){
+        """
+        function Long toDays(Date date) {
+            if(date == null){
+                return null;
+            } else {
+                return new Long(java.util.concurrent.TimeUnit.MILLISECONDS.toDays(date.getTime()));
+            }
+        }
+        """
+    }
+
+    /**
+     * Prints header/metadata info for the Drools rule.
+     */
     private def printRuleHeader(qdm){
         """
         import ${Set.name};
+        import ${Date.name};
         import ${PreconditionResult.name};
         import ${ResultCallback.name};
         import ${Patient.name};
@@ -103,8 +121,11 @@ class Qdm2Drools {
         import ${DroolsUtil.name};
         import ${MeasurementPeriod.name};
         /*
+            ID: ${qdm.id}
             Title: ${qdm.title}
             Description: ${qdm.description}
+            HQMF Version: ${qdm.hqmf_version_number}
+            CMS ID: ${qdm.cms_id}
         */
 
         global ResultCallback resultCallback

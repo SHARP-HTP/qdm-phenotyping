@@ -1,0 +1,566 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:n1="urn:hl7-org:v3">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Dementia: Cognitive Assessment</title><style type="text/css">
+body {
+	color: rgb(26, 26, 26);
+	background-color: rgb(255,255,255);
+	font-family: Verdana, Tahoma, sans-serif;
+	font-size: 11px;
+}
+
+a {
+	color: rgb(0, 0, 255);
+	background-color: rgb(255,255,255);
+}
+
+h1 {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+div {
+	width: 80%;
+}
+
+table {
+	line-height: 10pt;
+	width: 80%;
+}
+
+tr {
+	background-color: rgb(224,224,224);
+}
+
+td {
+	padding: 0.1cm 0.2cm;
+	vertical-align: top;
+}
+
+.h1center {
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+	width: 80%;
+}
+
+.header_table{
+	border: 1pt inset rgb(0,0,0);
+}
+
+.narr_table {
+	width: 100%;
+}
+
+.narr_tr {
+	background-color: rgb(225,225,225);
+}
+pre {
+ overflow: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+ white-space: pre-wrap; /* css-3 */
+ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+ white-space: -pre-wrap; /* Opera 4-6 */
+ white-space: -o-pre-wrap; /* Opera 7 */
+ word-wrap: break-word; /* Internet Explorer 5.5+ */
+ font-family: Verdana, Tahoma, sans-serif;
+ font-size: 11px;
+ text-align:left;
+ margin: 0px 0px 0px 0px;
+ padding:0px 0px 0px 0px;
+}
+.narr_th {
+	background-color: rgb(201,201,201);
+}
+
+.td_label{
+	font-weight: bold;
+	color: white;
+}
+	</style></head>
+   <body>
+      <table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Title</span></td>
+               <td width="80%" colspan="3">Dementia: Cognitive Assessment</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Identifier<br>(Measure Authoring Tool)</span></td>
+               <td width="30%">149</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Version number</span></td>
+               <td width="30%">1</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">NQF Number</span></td>
+               <td width="30%">Not Applicable</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">GUID</span></td>
+               <td> 7c443b9b-1ad1-4467-b527-defc445701ff</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measurement Period</span></td>
+               <td width="80%" colspan="3">January 1, 20xx  through December 31, 20xx </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Steward</span></td>
+               <td width="80%" colspan="3">American Medical Association-convened Physician Consortium for Performance Improvement(R) (AMA-PCPI)</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Developer</span></td>
+               <td width="80%" colspan="3">American Medical Association-convened Physician Consortium for Performance Improvement(R) (AMA-PCPI)</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Endorsed By</span></td>
+               <td width="80%" colspan="3">None</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Description</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Percentage of patients, regardless of age, with a diagnosis of dementia for whom an assessment of cognition is performed and the results reviewed at least once within a 12 month period.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Copyright</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Copyright 2012 American Medical Association. All Rights Reserved.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Disclaimer</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Physician Performance Measures (Measures) and related data specifications have been developed by the American Medical Association (AMA) - convened Physician Consortium for Performance Improvement(R) (the PCPI [TM]).  These Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The Measures, while copyrighted, can be reproduced and distributed, without modification, for noncommercial purposes, e.g., use by health care providers in connection with their practices. Commercial use is defined as the sale, license, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial uses of the Measures require a license agreement between the user and the AMA, (on behalf of the PCPI). Neither the AMA, PCPI nor its members shall be responsible for any use of the Measures. 
+
+THE MEASURES AND SPECIFICATIONS ARE PROVIDED &#8220;AS IS&#8221; WITHOUT WARRANTY OF ANY KIND. 
+
+Limited proprietary coding is contained in the Measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. The AMA, the PCPI and its members disclaim all liability for use or accuracy of any Current Procedural Terminology (CPT[R]) or other coding contained in the specifications. 
+
+CPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC (R) copyright 2004-2011 Regenstrief Institute, Inc.  This material contains SNOMED Clinical Terms (R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation.  ICD-10 Copyright 2011 World Health Organization. All Rights Reserved.
+
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Scoring</span></td>
+               <td width="80%" colspan="3">Proportion</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Type</span></td>
+               <td width="80%" colspan="3">Process</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Stratification</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Risk Adjustment</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rate Aggregation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rationale</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Dementia is often characterized by the gradual onset and continuing cognitive decline in one or more domains including memory, executive function, language, judgment, and spatial abilities. Cognitive deterioration represents a major source of morbidity and mortality and poses a significant burden on affected individuals and their caregivers. Although cognitive deterioration follows a different course depending on the type of dementia, significant rates of decline have been reported. For example, one study found that the annual rate of decline for Alzheimer&#8217;s disease patients was more than four times that of older adults with no cognitive impairment. Nevertheless, measurable cognitive abilities remain throughout the course of dementia. Initial and ongoing assessments of cognition are fundamental to the proper management of patients with dementia. These assessments serve as the basis for identifying treatment goals, developing a treatment plan, monitoring the effects of treatment, and modifying treatment as appropriate.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Clinical Recommendation Statement</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Ongoing assessment includes periodic monitoring of the development and evolution of cognitive and noncognitive psychiatric symptoms and their response to intervention (Category I). Both cognitive and noncognitive neuropsychiatric and behavioral symptoms of dementia tend to evolve over time, so regular monitoring allows detection of new symptoms and adaptation of treatment strategies to current needs&#8230;Cognitive symptoms that almost always require assessment include impairments in memory, executive function, language, judgment, and spatial abilities. It is often helpful to track cognitive status with a structured simple examination. (APA, 2007)
+
+Conduct and document an assessment and monitor changes in cognitive status using a reliable and valid instrument. Cognitive status should be reassessed periodically to identify sudden changes, as well as to monitor the potential beneficial or harmful effects of environmental changes, specific medications, or other interventions. Proper assessment requires the use of a standardized, objective instrument that is relatively easy to use, reliable (with less variability between different assessors), and valid (results that would be similar to gold-standard evaluations). (California Workgroup on Guidelines for Alzheimer&#8217;s Disease Management, 2008)</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Improvement Notation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Higher score indicates better quality</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>American Psychiatric Association (APA). Practice guideline for the treatment of patients with Alzheimer's disease and other dementias. Arlington (VA): American Psychiatric Association (APA); 2007 Oct.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>California Workgroup on Guidelines for Alzheimer&#8217;s Disease Management. Guidelines for Alzheimer&#8217;s disease management. Los Angeles, CA: Alzheimer&#8217;s Disease and Related Disorders Association, Inc., Los Angeles Chapter. 2008.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Herrmann N, Gauthier S. Diagnosis and treatment of dementia: 6. Management of severe Alzheimer disease. CMAJ. December 2, 2008; 179(12): 1279 - 1287.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>National Institutes of Health (NIH). NIH State-of-the-Science Conference: Preventing Alzheimer&#8217;s Disease and Cognitive Decline. April 26&#8211;28, 2010. http://consensus.nih.gov/2010/docs/alz/alz_stmt.pdf. Accessed June 9, 2010.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Wilson RS, Aggarwal NT, Barnes LL, Mendes de Leon CF, Hebert LE, Evans DA. Cognitive decline in incident Alzheimer disease in a community population. Neurology. 2010 Mar 23;74(12):951-5.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Definition</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Cognition can be assessed by the clinician during the patient&#8217;s clinical history. 
+Cognition can also be assessed by direct examination of the patient using one of a number of instruments, including several originally developed and validated for screening purposes. This can also include, where appropriate, administration to a knowledgeable informant. Examples include, but are not limited to:
+-Blessed Orientation-Memory-Concentration Test (BOMC )
+-Montreal Cognitive Assessment (MoCA )
+-St. Louis University Mental Status Examination (SLUMS)
+-Mini-Mental State Examination (MMSE) [Note: The MMSE has not been well validated for non-Alzheimer&#8217;s dementias]
+-Short Informant Questionnaire on Cognitive Decline in the Elderly (IQCODE)
+-Ascertain Dementia 8 (AD8) Questionnaire
+-Minimum Data Set (MDS) Brief Interview of Mental Status (BIMS) [Note: Validated for use with nursing home patients only]
+-Formal neuropsychological evaluation</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Guidance</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Use of a standardized tool or instrument to assess cognition other than those listed will meet numerator performance. Standardized tools can be mapped to the concept &#8220;Intervention, Performed: Cognitive Assessment&#8221; included in the numerator logic below.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Transmission Format</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>TBD</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Initial Patient Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>All patients, regardless of age, with a diagnosis of dementia.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Equals Initial Patient Population.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients for whom an assessment of cognition is performed and the results reviewed at least once within a 12-month period</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exceptions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Documentation of medical reason(s) for not assessing cognition (e.g., patient with very advanced stage dementia, other medical reason)
+Documentation of patient reason(s) for not assessing cognition</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Observations</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Supplemental Data Elements</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</pre></div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="toc">Table of Contents</a></h2>
+      <ul>
+         <li><a href="#d2639401e508">Population criteria</a></li>
+         <li><a href="#d2639401e2379">Data criteria (QDM Data Elements)</a></li>
+         <li><a href="#d2639401e3415">Reporting Stratification</a></li>
+         <li><a href="#d2639401e3436">Supplemental Data Elements</a></li>
+      </ul>
+      <hr align="left" color="teal" size="2" width="80%">
+      <h3><a name="d2639401e508" href="#toc">Population criteria</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               <b>Initial Patient Population =</b>
+               
+               <ul>
+                  <li>AND: "Diagnosis, Active: Dementia &amp; Mental Degenerations" starts before or during 
+                     <ul>
+                        <li>OR: "Occurrence A of Encounter, Performed: Psych Visit - Diagnostic or Evaluative Interview"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Behavioral/Neuropsych Assessment"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Occupational Therapy Evaluation"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Office Visit"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Outpatient Consultation"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Nursing Facility Visit"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Care Services in Long-Term Residential Facility"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Home Healthcare Services"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Psych Visit - Individual Outpatient Interactive Psychotherapy"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Psych Visit - Individual Inpatient Psychotherapy"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Psych Visit - Individual Inpatient Interactive Psychotherapy"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Psych Visit - Medication Management"</li>
+                        <li>OR: "Occurrence A of Encounter, Performed: Face-to-Face Interaction"</li>
+                        <li> during "Measurement Period"</li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND: Count &gt;= 2  of:
+                     <ul>
+                        <li>OR: "Encounter, Performed: Psych Visit - Diagnostic or Evaluative Interview"</li>
+                        <li>OR: "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy"</li>
+                        <li>OR: "Encounter, Performed: Nursing Facility Visit"</li>
+                        <li>OR: "Encounter, Performed: Care Services in Long-Term Residential Facility"</li>
+                        <li>OR: "Encounter, Performed: Home Healthcare Services"</li>
+                        <li>OR: "Encounter, Performed: Patient Provider Interaction"</li>
+                        <li>OR: "Encounter, Performed: Psych Visit - Individual Outpatient Interactive Psychotherapy"</li>
+                        <li>OR: "Encounter, Performed: Psych Visit - Individual Inpatient Psychotherapy"</li>
+                        <li>OR: "Encounter, Performed: Psych Visit - Individual Inpatient Interactive Psychotherapy"</li>
+                        <li>OR: "Encounter, Performed: Psych Visit - Medication Management"</li>
+                        <li>OR: "Encounter, Performed: Behavioral/Neuropsych Assessment"</li>
+                        <li>OR: "Encounter, Performed: Occupational Therapy Evaluation"</li>
+                        <li>OR: "Encounter, Performed: Office Visit"</li>
+                        <li>OR: "Encounter, Performed: Outpatient Consultation"</li>
+                        <li> during "Measurement Period"</li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator =</b>
+               
+               <ul>
+                  <li>AND: "Initial Patient Population"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exclusions =</b>
+               
+               <ul>
+                  <li>None</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Numerator =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Risk Category Assessment: Standardized Tools for Assessment of Cognition (result)"</li>
+                        <li>OR: "Intervention, Performed: Cognitive Assessment"</li>
+                        <li>  &lt;= 12 month(s) starts before or during 
+                           <ul>
+                              <li>OR: "Occurrence A of Encounter, Performed: Psych Visit - Diagnostic or Evaluative Interview"</li>
+                              <li>OR: "Occurrence A of Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy"</li>
+                              <li>OR: "Occurrence A of Encounter, Performed: Behavioral/Neuropsych Assessment"</li>
+                              <li>OR: "Occurrence A of Encounter, Performed: Occupational Therapy Evaluation"</li>
+                              <li>OR: "Occurrence A of Encounter, Performed: Office Visit"</li>
+                              <li>OR: "Occurrence A of Encounter, Performed: Outpatient Consultation"</li>
+                              <li>OR: "Occurrence A of Encounter, Performed: Nursing Facility Visit"</li>
+                              <li>OR: "Occurrence A of Encounter, Performed: Care Services in Long-Term Residential Facility"</li>
+                              <li>OR: "Occurrence A of Encounter, Performed: Home Healthcare Services"</li>
+                              <li>OR: "Occurrence A of Encounter, Performed: Psych Visit - Individual Outpatient Interactive Psychotherapy"</li>
+                              <li>OR: "Occurrence A of Encounter, Performed: Psych Visit - Individual Inpatient Psychotherapy"</li>
+                              <li>OR: "Occurrence A of Encounter, Performed: Psych Visit - Individual Inpatient Interactive Psychotherapy"</li>
+                              <li>OR: "Occurrence A of Encounter, Performed: Psych Visit - Medication Management"</li>
+                              <li>OR: "Occurrence A of Encounter, Performed: Face-to-Face Interaction"</li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exceptions =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Diagnosis, Active: Severe Dementia" starts before or during "Measurement Period"</li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Risk Category Assessment not done: Medical Reason" for "Standardized Tools for Assessment of Cognition Grouping Value
+                                 Set"
+                              </li>
+                              <li>OR: "Risk Category Assessment not done: Patient Reason" for "Standardized Tools for Assessment of Cognition Grouping Value
+                                 Set"
+                              </li>
+                              <li>OR: "Intervention, Performed: Palliative Care"</li>
+                              <li> during "Measurement Period"</li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d2639401e2379" href="#toc">Data criteria (QDM Data Elements)</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Diagnosis, Active: Dementia &amp; Mental Degenerations" using "Dementia &amp; Mental Degenerations Grouping Value Set (2.16.840.1.113883.3.526.3.1005)"
+            </li>
+            <li>
+               "Diagnosis, Active: Severe Dementia" using "Severe Dementia Grouping Value Set (2.16.840.1.113883.3.526.3.1025)"
+            </li>
+            <li>
+               "Encounter, Performed: Behavioral/Neuropsych Assessment" using "Behavioral/Neuropsych Assessment Grouping Value Set (2.16.840.1.113883.3.526.3.1023)"
+            </li>
+            <li>
+               "Encounter, Performed: Care Services in Long-Term Residential Facility" using "Care Services in Long-Term Residential Facility Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1014)"
+            </li>
+            <li>
+               "Encounter, Performed: Face-to-Face Interaction" using "Face-to-Face Interaction Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1048)"
+            </li>
+            <li>
+               "Encounter, Performed: Home Healthcare Services" using "Home Healthcare Services Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1016)"
+            </li>
+            <li>
+               "Encounter, Performed: Nursing Facility Visit" using "Nursing Facility Visit Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1012)"
+            </li>
+            <li>
+               "Encounter, Performed: Occupational Therapy Evaluation" using "Occupational Therapy Evaluation Grouping Value Set (2.16.840.1.113883.3.526.3.1011)"
+            </li>
+            <li>
+               "Encounter, Performed: Office Visit" using "Office Visit Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1001)"
+            </li>
+            <li>
+               "Encounter, Performed: Outpatient Consultation" using "Outpatient Consultation Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1008)"
+            </li>
+            <li>
+               "Encounter, Performed: Patient Provider Interaction" using "Patient Provider Interaction Grouping Value Set (2.16.840.1.113883.3.526.3.1012)"
+            </li>
+            <li>
+               "Encounter, Performed: Psych Visit - Diagnostic or Evaluative Interview" using "Psych Visit - Diagnostic or Evaluative Interview Grouping Value Set (2.16.840.1.113883.3.526.3.1013)"
+            </li>
+            <li>
+               "Encounter, Performed: Psych Visit - Individual Inpatient Interactive Psychotherapy" using "Psych Visit - Individual Inpatient Interactive Psychotherapy Grouping Value Set (2.16.840.1.113883.3.526.3.1017)"
+            </li>
+            <li>
+               "Encounter, Performed: Psych Visit - Individual Inpatient Psychotherapy" using "Psych Visit - Individual Inpatient Psychotherapy Grouping Value Set (2.16.840.1.113883.3.526.3.1016)"
+            </li>
+            <li>
+               "Encounter, Performed: Psych Visit - Individual Outpatient Interactive Psychotherapy" using "Psych Visit - Individual Outpatient Interactive Psychotherapy Grouping Value Set (2.16.840.1.113883.3.526.3.1015)"
+            </li>
+            <li>
+               "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy" using "Psych Visit - Individual Outpatient Psychotherapy Grouping Value Set (2.16.840.1.113883.3.526.3.1014)"
+            </li>
+            <li>
+               "Encounter, Performed: Psych Visit - Medication Management" using "Psych Visit - Medication Management Grouping Value Set (2.16.840.1.113883.3.526.3.1019)"
+            </li>
+            <li>
+               "Intervention, Performed: Cognitive Assessment" using "Cognitive Assessment Grouping Value Set (2.16.840.1.113883.3.526.3.1332)"
+            </li>
+            <li>
+               "Intervention, Performed: Palliative Care" using "Palliative Care Grouping Value Set (2.16.840.1.113883.3.526.3.1024)"
+            </li>
+            <li>
+               "Risk Category Assessment: Standardized Tools for Assessment of Cognition" using "Standardized Tools for Assessment of Cognition Grouping Value Set (2.16.840.1.113883.3.526.3.1006)"
+            </li>
+            <li>
+               "Risk Category Assessment not done: Medical Reason" using "Medical Reason Grouping Value Set (2.16.840.1.113883.3.526.3.1007)"
+            </li>
+            <li>
+               "Risk Category Assessment not done: Patient Reason" using "Patient Reason Grouping Value Set (2.16.840.1.113883.3.526.3.1008)"
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d2639401e3415" href="#toc">Reporting Stratification</a></h3>
+      <div>
+         
+         <ul>
+            <li>None</li>
+         </ul>
+         
+      </div>
+      <h3><a name="d2639401e3436" href="#toc">Supplemental Data Elements</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Patient Characteristic Ethnicity: Ethnicity" using "Ethnicity CDC Value Set (2.16.840.1.114222.4.11.837)"
+            </li>
+            <li>
+               "Patient Characteristic Payer: Payer" using "Payer Source of Payment Typology Value Set (2.16.840.1.114222.4.11.3591)"
+            </li>
+            <li>
+               "Patient Characteristic Race: Race" using "Race CDC Value Set (2.16.840.1.114222.4.11.836)"
+            </li>
+            <li>
+               "Patient Characteristic Sex: ONC Administrative Sex" using "ONC Administrative Sex Administrative Sex Value Set (2.16.840.1.113762.1.4.1)"
+            </li>
+         </ul>
+         
+      </div><br><hr align="left" color="teal" size="2" width="80%"><br><table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Set</span></td>
+               <td colspan="3" width="80%">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto;word-wrap:break-word">None</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,1609 @@
+<?xml version="1.0" encoding="utf-8"?>
+<QualityMeasureDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <id root="2.16.840.1.113883.3.100.1" extension="8A4D92B2-3946-CDAE-0139-77EE2510640E" />
+  <code code="57024-2" codeSystem="2.16.840.1.113883.6.1"/>
+  <title value="Oncology: Medical and Radiation – Pain Intensity Quantified"/>
+  <text value="Percentage of patient visits, regardless of patient age, with a diagnosis of cancer currently receiving chemotherapy or radiation therapy in which pain intensity is quantified"/>
+  <statusCode code="completed" />
+  <setId root="2.16.840.1.113883.3.100.1" extension="9A0330D0-3D9B-11E1-8634-00237D5BF174" />
+  <versionNumber value="1"/>
+  <author typeCode="AUT" contextControlCode="OP">
+    <responsibleParty classCode="ASSIGNED" />
+  </author>
+  <custodian typeCode="CST">
+    <responsibleParty classCode="ASSIGNED" />
+  </custodian>
+  <controlVariable>
+    <measurePeriod>
+      <code code="MSRTP" codeSystem="2.16.840.1.113883.3.560">
+        <displayName value="Measurement period"/>
+      </code>
+      <value>
+        <low value="201201010000" />
+        <high value="201212312359" />
+      </value>
+    </measurePeriod>
+  </controlVariable>
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="COPYRIGHT"/>
+			<code code="COPY">
+				<displayName value="Copyright"/>
+			</code>
+			<value xsi:type="ED" value="Copyright 2012 American Medical Association. All Rights Reserved."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_SCORING"/>
+			<code code="MSRSCORE">
+				<displayName value="Measure Scoring"/>
+			</code>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_TYPE"/>
+			<code code="MSRTYPE">
+				<displayName value="Measure Type"/>
+			</code>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="STRATIFICATION"/>
+			<code code="STRAT">
+				<displayName value="Stratification"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="RISK_ADJUSTMENT"/>
+			<code code="MSRADJ">
+				<displayName value="Risk Adjustment"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="RATE_AGGREGATION"/>
+			<code code="MSRAGG">
+				<displayName value="Rate Aggregation"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="RATIONALE"/>
+			<code code="RAT">
+				<displayName value="Rationale"/>
+			</code>
+			<value xsi:type="ED" value="Inadequate cancer pain management is widely prevalent, harmful to the patient and costly."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="CLINICAL_RECOMMENDATION_STATEMENT"/>
+			<code code="CRS">
+				<displayName value="Clinical Recommendation Statement"/>
+			</code>
+			<value xsi:type="ED" value="This algorithm begins with the premise that all patients with cancer should be screened for pain during the initial evaluation, at regular intervals, and whenever new therapy is initiated. If pain is present on a screening evaluation, the pain intensity must be quantified, by the patient (whenever possible). Since pain is inherently subjective, patient’s self report to pain is the current standard of care for assessment. Intensity of pain should be quantified using a 0-10 numerical rating scale, a categorical scale, or a pictorial scale (e.g., The Faces Pain Rating Scale). The Faces Pain Rating Scale may be successful with patients who have difficulty with other scales, for example, children, the elderly, and patients with language or cultural differences or other communication barriers. (NCCN, 2011)
+
+All patients should be routinely screened for pain, and when it is present, pain intensity should be recorded in highly visible ways that facilitate regular review by health care providers. A standard for pain assessment and documentation should be established in each setting to ensure that pain is recognized, documented, and treated promptly. (APS, 2005)"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="IMPROVEMENT_NOTATION"/>
+			<code code="IDUR">
+				<displayName value="Improvement Notation"/>
+			</code>
+			<value xsi:type="ED" value="Higher score indicates better quality"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="NQF_ID_NUMBER"/>
+			<code code="OTH">
+				<displayName value="NQF ID Number"/>
+			</code>
+			<value xsi:type="ED" value="0384"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DISCLAIMER"/>
+			<code code="DISC">
+				<displayName value="Disclaimer"/>
+			</code>
+			<value xsi:type="ED" value="Physician Performance Measures (Measures) and related data specifications have been developed by the American Medical Association (AMA) - convened Physician Consortium for Performance Improvement(R) (the PCPI [TM]).  These Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The Measures, while copyrighted, can be reproduced and distributed, without modification, for noncommercial purposes, e.g., use by health care providers in connection with their practices. Commercial use is defined as the sale, license, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial uses of the Measures require a license agreement between the user and the AMA, (on behalf of the PCPI). Neither the AMA, PCPI nor its members shall be responsible for any use of the Measures. 
+
+THE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND. 
+
+Limited proprietary coding is contained in the Measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. The AMA, the PCPI and its members disclaim all liability for use or accuracy of any Current Procedural Terminology (CPT[R]) or other coding contained in the specifications. 
+
+CPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC (R) copyright 2004-2011 Regenstrief Institute, Inc.  This material contains SNOMED Clinical Terms (R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation.  ICD-10 Copyright 2011 World Health Organization. All Rights Reserved.
+
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM]."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="EMEASURE_IDENTIFIER"/>
+			<code code="OTH">
+				<displayName value="eMeasure Identifier"/>
+			</code>
+			<value xsi:type="ED" value="157"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="REFERENCE"/>
+			<code code="REF">
+				<displayName value="Reference"/>
+			</code>
+			<value xsi:type="ED" value="Gordon DB; Dahl JL, Miaskowski C, et al. American Pain Society Recommendations for Improving the Quality of Acute and Cancer Pain Management: American Pain Society Quality of Care Task Force. Arch Intern Med. 2005;165:1574-1580."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DEFINITION"/>
+			<code code="DEF">
+				<displayName value="Definition"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="GUIDANCE"/>
+			<code code="GUIDE">
+				<displayName value="Guidance"/>
+			</code>
+			<value xsi:type="ED" value="The level of analysis for this measure is every visit for patients with a diagnosis of cancer who are also receiving chemotherapy or radiation therapy during the measurement period. For patients receiving radiation therapy, pain intensity should be quantified at each radiation treatment management encounter. For patients receiving chemotherapy, pain intensity should be quantified at each face-to-face encounter with the physician while the patient is receiving treatment. For purposes of calculating this measure, eligible encounters for patients receiving chemotherapy will include those encounters where the patient has been administered chemotherapy at least 30 days prior to the encounter and also been administered chemotherapy within 30 days after the date of the encounter. For example, at every visit for patients with a diagnosis of cancer who are also receiving chemotherapy or radiation therapy, the patient should have pain intensity quantified.
+
+Pain intensity should be quantified using a standard instrument, such as a 0-10 numeric rating scale, a categorical scale, or the pictorial scale."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="TRANSMISSION_FORMAT"/>
+			<code code="OTH">
+				<displayName value="Transmission Format"/>
+			</code>
+			<value xsi:type="ED" value="TBD"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="INITIAL_PATIENT_POPULATION"/>
+			<code code="IPP">
+				<displayName value="Initial Patient Population"/>
+			</code>
+			<value xsi:type="ED" value="All patient visits, regardless of patient age, with a diagnosis of cancer currently receiving chemotherapy or radiation therapy"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DENOMINATOR"/>
+			<code code="DENOM">
+				<displayName value="Denominator"/>
+			</code>
+			<value xsi:type="ED" value="Equals Initial Patient Population"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DENOMINATOR_EXCLUSIONS"/>
+			<code code="OTH">
+				<displayName value="Denominator Exclusions"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="NUMERATOR"/>
+			<code code="NUMER">
+				<displayName value="Numerator"/>
+			</code>
+			<value xsi:type="ED" value="Patient visits in which pain intensity is quantified"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="NUMERATOR_EXCLUSIONS"/>
+			<code code="OTH">
+				<displayName value="Numerator Exclusions"/>
+			</code>
+			<value xsi:type="ED" value="Not Applicable"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DENOMINATOR_EXCEPTIONS"/>
+			<code code="DENEXCEP">
+				<displayName value="Denominator Exceptions"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_POPULATION"/>
+			<code code="MSRPOPL">
+				<displayName value="Measure Population"/>
+			</code>
+			<value xsi:type="ED" value="Not Applicable"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_OBSERVATIONS"/>
+			<code code="OTH">
+				<displayName value="Measure Observations"/>
+			</code>
+			<value xsi:type="ED" value="Not Applicable"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="SUPPLEMENTAL_DATA_ELEMENTS"/>
+			<code code="OTH">
+				<displayName value="Supplemental Data Elements"/>
+			</code>
+			<value xsi:type="ED" value="For every patient evaluated by this measure also identify payer, race, ethnicity and sex."/>
+		</measureAttribute>
+	</subjectOf>
+
+  <component>
+    <dataCriteriaSection>
+      <code code="57025-9" codeSystem="2.16.840.1.113883.6.1"/>
+      <title value="Data Criteria Section"/>
+      <text>This section describes the data criteria.</text>
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1001">
+            <displayName value="Office Visit"/>
+          </code>
+
+                    <text value="Encounter, Performed: Office Visit"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedChemotherapyAdministration"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1027">
+            <displayName value="Chemotherapy Administration"/>
+          </code>
+
+                    <text value="Procedure, Performed: Chemotherapy Administration"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedChemotherapyAdministration"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedRadiationTreatmentManagement"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1026">
+            <displayName value="Radiation Treatment Management"/>
+          </code>
+
+                    <text value="Procedure, Performed: Radiation Treatment Management"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedRadiationTreatmentManagement"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1048">
+            <displayName value="Face-to-Face Interaction"/>
+          </code>
+
+                    <text value="Encounter, Performed: Face-to-Face Interaction"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAOfficeVisit2"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1001">
+            <displayName value="Office Visit"/>
+          </code>
+
+                    <text value="Encounter, Performed: Office Visit"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_OFFICE_VISIT" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAOfficeVisit2"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAFaceToFaceInteraction5"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1048">
+            <displayName value="Face-to-Face Interaction"/>
+          </code>
+
+                    <text value="Encounter, Performed: Face-to-Face Interaction"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAFaceToFaceInteraction5"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceARadiationTreatmentManagement1_precondition_6"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1026">
+            <displayName value="Radiation Treatment Management"/>
+          </code>
+
+                    <text value="Procedure, Performed: Radiation Treatment Management"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="PROCEDURE_PERFORMED_RADIATION_TREATMENT_MANAGEMENT" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceARadiationTreatmentManagement1"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAOfficeVisit2_precondition_8"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1001">
+            <displayName value="Office Visit"/>
+          </code>
+
+                    <text value="Encounter, Performed: Office Visit"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_OFFICE_VISIT" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAOfficeVisit2"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAFaceToFaceInteraction5_precondition_10"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1048">
+            <displayName value="Face-to-Face Interaction"/>
+          </code>
+
+                    <text value="Encounter, Performed: Face-to-Face Interaction"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAFaceToFaceInteraction5"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.21" identifierName="risk category / assessment template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="RiskCategoryAssessmentStandardizedPainAssessmentTool_precondition_13"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1028">
+            <displayName value="Standardized Pain Assessment Tool"/>
+          </code>
+
+                    <text value="Risk Category Assessment: Standardized Pain Assessment Tool"/>
+          
+          
+          
+            <value xsi:type="ANY" nullFlavor="NI"/>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="risk_category_assessment"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="GROUP_DURING_CHILDREN_41"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="RiskCategoryAssessmentStandardizedPainAssessmentTool"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+          
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="GROUP_DURING_CHILDREN_41"/>
+          </id>
+          
+                    <text value=""/>
+          
+          
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="derived"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="GROUP_DURING_CHILDREN_41"/>
+            </observationReference>
+          </outboundRelationship>
+                    <excerpt typeCode="XCRPT">
+            <subsetCode code="UNION"/>
+                        <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceARadiationTreatmentManagement1_precondition_6"/>
+            </procedureReference>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAOfficeVisit2_precondition_8"/>
+            </encounterReference>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAFaceToFaceInteraction5_precondition_10"/>
+            </encounterReference>
+
+          </excerpt>
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceARadiationTreatmentManagement1_precondition_16"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1026">
+            <displayName value="Radiation Treatment Management"/>
+          </code>
+
+                    <text value="Procedure, Performed: Radiation Treatment Management"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="PROCEDURE_PERFORMED_RADIATION_TREATMENT_MANAGEMENT" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceARadiationTreatmentManagement1"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveCancer_precondition_17"/>
+          </id>
+                    <text value="Diagnosis, Active: Cancer"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1010">
+            <displayName value="Cancer"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBE">
+                        <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceARadiationTreatmentManagement1_precondition_16"/>
+            </procedureReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveCancer"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAChemotherapyAdministration3_precondition_19"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1027">
+            <displayName value="Chemotherapy Administration"/>
+          </code>
+
+                    <text value="Procedure, Performed: Chemotherapy Administration"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBE">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="30" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAOfficeVisit2"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="PROCEDURE_PERFORMED_CHEMOTHERAPY_ADMINISTRATION" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAChemotherapyAdministration3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceBChemotherapyAdministration4_precondition_21"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1027">
+            <displayName value="Chemotherapy Administration"/>
+          </code>
+
+                    <text value="Procedure, Performed: Chemotherapy Administration"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAE">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="30" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAOfficeVisit2"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="PROCEDURE_PERFORMED_CHEMOTHERAPY_ADMINISTRATION" controlInformationExtension="B"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceBChemotherapyAdministration4"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAOfficeVisit2_precondition_23"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1001">
+            <displayName value="Office Visit"/>
+          </code>
+
+                    <text value="Encounter, Performed: Office Visit"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_OFFICE_VISIT" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAOfficeVisit2"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveCancer_precondition_24"/>
+          </id>
+                    <text value="Diagnosis, Active: Cancer"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1010">
+            <displayName value="Cancer"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBE">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAOfficeVisit2_precondition_23"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveCancer"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAChemotherapyAdministration3_precondition_28"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1027">
+            <displayName value="Chemotherapy Administration"/>
+          </code>
+
+                    <text value="Procedure, Performed: Chemotherapy Administration"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBE">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="30" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAFaceToFaceInteraction5"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="PROCEDURE_PERFORMED_CHEMOTHERAPY_ADMINISTRATION" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAChemotherapyAdministration3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceBChemotherapyAdministration4_precondition_30"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1027">
+            <displayName value="Chemotherapy Administration"/>
+          </code>
+
+                    <text value="Procedure, Performed: Chemotherapy Administration"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAE">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="30" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAFaceToFaceInteraction5"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="PROCEDURE_PERFORMED_CHEMOTHERAPY_ADMINISTRATION" controlInformationExtension="B"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceBChemotherapyAdministration4"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAFaceToFaceInteraction5_precondition_32"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1048">
+            <displayName value="Face-to-Face Interaction"/>
+          </code>
+
+                    <text value="Encounter, Performed: Face-to-Face Interaction"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAFaceToFaceInteraction5"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveCancer_precondition_33"/>
+          </id>
+                    <text value="Diagnosis, Active: Cancer"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1010">
+            <displayName value="Cancer"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBE">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAFaceToFaceInteraction5_precondition_32"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveCancer"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1001">
+            <displayName value="Office Visit"/>
+          </code>
+
+                    <text value="Encounter, Performed: Office Visit"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedOfficeVisit"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedChemotherapyAdministration"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1027">
+            <displayName value="Chemotherapy Administration"/>
+          </code>
+
+                    <text value="Procedure, Performed: Chemotherapy Administration"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedChemotherapyAdministration"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedRadiationTreatmentManagement"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1026">
+            <displayName value="Radiation Treatment Management"/>
+          </code>
+
+                    <text value="Procedure, Performed: Radiation Treatment Management"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="ProcedurePerformedRadiationTreatmentManagement"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveCancer"/>
+          </id>
+                    <text value="Diagnosis, Active: Cancer"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1010">
+            <displayName value="Cancer"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveCancer"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.21" identifierName="risk category / assessment template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="RiskCategoryAssessmentStandardizedPainAssessmentTool"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1028">
+            <displayName value="Standardized Pain Assessment Tool"/>
+          </code>
+
+                    <text value="Risk Category Assessment: Standardized Pain Assessment Tool"/>
+          
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="risk_category_assessment"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="RiskCategoryAssessmentStandardizedPainAssessmentTool"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1048">
+            <displayName value="Face-to-Face Interaction"/>
+          </code>
+
+                    <text value="Encounter, Performed: Face-to-Face Interaction"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedFaceToFaceInteraction"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceARadiationTreatmentManagement1"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1026">
+            <displayName value="Radiation Treatment Management"/>
+          </code>
+
+                    <text value="Procedure, Performed: Radiation Treatment Management"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="PROCEDURE_PERFORMED_RADIATION_TREATMENT_MANAGEMENT" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceARadiationTreatmentManagement1"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAOfficeVisit2"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1001">
+            <displayName value="Office Visit"/>
+          </code>
+
+                    <text value="Encounter, Performed: Office Visit"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_OFFICE_VISIT" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAOfficeVisit2"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAChemotherapyAdministration3"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1027">
+            <displayName value="Chemotherapy Administration"/>
+          </code>
+
+                    <text value="Procedure, Performed: Chemotherapy Administration"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="PROCEDURE_PERFORMED_CHEMOTHERAPY_ADMINISTRATION" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAChemotherapyAdministration3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.6" identifierName="procedure, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceBChemotherapyAdministration4"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1027">
+            <displayName value="Chemotherapy Administration"/>
+          </code>
+
+                    <text value="Procedure, Performed: Chemotherapy Administration"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="procedure"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="PROCEDURE_PERFORMED_CHEMOTHERAPY_ADMINISTRATION" controlInformationExtension="B"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceBChemotherapyAdministration4"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceAFaceToFaceInteraction5"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.464.1003.101.12.1048">
+            <displayName value="Face-to-Face Interaction"/>
+          </code>
+
+                    <text value="Encounter, Performed: Face-to-Face Interaction"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAFaceToFaceInteraction5"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+    </dataCriteriaSection>
+  </component>
+  <component>
+    <populationCriteriaSection>
+      <id root="2.16.840.1.113883.3.100.1" extension="Population0"/>
+      <code code="57026-7" codeSystem="2.16.840.1.113883.6.1"/>
+      <title value=""/>
+      <text>This section describes the Initial Patient Population,
+        Numerator, Denominator, Denominator Exceptions, and Measure
+        Populations</text>
+            <component typeCode="COMP">
+        <patientPopulationCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="1A804521-65BD-485F-B288-3B3B7114FD7A"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="IPP">
+            <displayName value="Initial Patient Population"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveCancer_precondition_17"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <procedureReference moodCode="EVN" classCode="PROC">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAChemotherapyAdministration3_precondition_19"/>
+    </procedureReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <procedureReference moodCode="EVN" classCode="PROC">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceBChemotherapyAdministration4_precondition_21"/>
+    </procedureReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveCancer_precondition_24"/>
+    </observationReference>
+</precondition>
+  </allTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <procedureReference moodCode="EVN" classCode="PROC">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceAChemotherapyAdministration3_precondition_28"/>
+    </procedureReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <procedureReference moodCode="EVN" classCode="PROC">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceBChemotherapyAdministration4_precondition_30"/>
+    </procedureReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveCancer_precondition_33"/>
+    </observationReference>
+</precondition>
+  </allTrue>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+        </patientPopulationCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <denominatorCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="75E5164C-975A-4212-B671-E2CF7494E00E"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="DENOM">
+            <displayName value="Denominator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN" nullFlavor="NA">
+            <allTrue>
+              <id/>
+            </allTrue>
+          </precondition>
+        </denominatorCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <numeratorCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="6E8D9783-0DF0-43BF-80B4-4F3AA8A901C9"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="NUMER">
+            <displayName value="Numerator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="RiskCategoryAssessmentStandardizedPainAssessmentTool_precondition_13"/>
+    </observationReference>
+</precondition>
+  </allTrue>
+</precondition>
+        </numeratorCriteria>
+      </component>
+
+    </populationCriteriaSection>
+  </component>
+</QualityMeasureDocument>

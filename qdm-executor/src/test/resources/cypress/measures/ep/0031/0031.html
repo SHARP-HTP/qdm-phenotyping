@@ -1,0 +1,465 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:n1="urn:hl7-org:v3">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Breast Cancer Screening</title><style type="text/css">
+body {
+	color: rgb(26, 26, 26);
+	background-color: rgb(255,255,255);
+	font-family: Verdana, Tahoma, sans-serif;
+	font-size: 11px;
+}
+
+a {
+	color: rgb(0, 0, 255);
+	background-color: rgb(255,255,255);
+}
+
+h1 {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+div {
+	width: 80%;
+}
+
+table {
+	line-height: 10pt;
+	width: 80%;
+}
+
+tr {
+	background-color: rgb(224,224,224);
+}
+
+td {
+	padding: 0.1cm 0.2cm;
+	vertical-align: top;
+}
+
+.h1center {
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+	width: 80%;
+}
+
+.header_table{
+	border: 1pt inset rgb(0,0,0);
+}
+
+.narr_table {
+	width: 100%;
+}
+
+.narr_tr {
+	background-color: rgb(225,225,225);
+}
+pre {
+ overflow: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+ white-space: pre-wrap; /* css-3 */
+ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+ white-space: -pre-wrap; /* Opera 4-6 */
+ white-space: -o-pre-wrap; /* Opera 7 */
+ word-wrap: break-word; /* Internet Explorer 5.5+ */
+ font-family: Verdana, Tahoma, sans-serif;
+ font-size: 11px;
+ text-align:left;
+ margin: 0px 0px 0px 0px;
+ padding:0px 0px 0px 0px;
+}
+.narr_th {
+	background-color: rgb(201,201,201);
+}
+
+.td_label{
+	font-weight: bold;
+	color: white;
+}
+	</style></head>
+   <body>
+      <table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Title</span></td>
+               <td width="80%" colspan="3">Breast Cancer Screening</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Identifier<br>(Measure Authoring Tool)</span></td>
+               <td width="30%">125</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Version number</span></td>
+               <td width="30%">1</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">NQF Number</span></td>
+               <td width="30%">0031</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">GUID</span></td>
+               <td> 19783c1b-4fd1-46c1-8a96-a2f192b97ee0</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measurement Period</span></td>
+               <td width="80%" colspan="3">January 1, 20xx  through December 31, 20xx </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Steward</span></td>
+               <td width="80%" colspan="3">National Committee for Quality Assurance</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Developer</span></td>
+               <td width="80%" colspan="3">National Committee for Quality Assurance</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Endorsed By</span></td>
+               <td width="80%" colspan="3">National Quality Forum</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Description</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Percentage of women 40&#8211;69 years of age who had a mammogram to screen for breast cancer.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Copyright</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Physician Performance Measure (Measures) and related data specifications were developed by the National Committee for Quality Assurance (NCQA). 
+
+The Measures are copyrighted but can be reproduced and distributed, without modification, for noncommercial purposes (e.g., use by healthcare providers in connection with their practices). Commercial use is defined as the sale, licensing, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial use of the Measures requires a license agreement between the user and NCQA. NCQA is not responsible for any use of the Measures. 
+
+Copyright 2012 National Committee for Quality Assurance. All Rights Reserved. 
+
+Limited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets. NCQA disclaims all liability for use or accuracy of any CPT or other codes contained in the specifications.
+
+CPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC(R) copyright 2004-2011 Regenstrief Institute, Inc. 
+This material contains SNOMED Clinical Terms (R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 Copyright 2011 World Health Organization. All Rights Reserved.
+
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Disclaimer</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>These performance Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.
+
+THE MEASURES AND SPECIFICATIONS ARE PROVIDED &#8220;AS IS&#8221; WITHOUT WARRANTY OF ANY KIND.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Scoring</span></td>
+               <td width="80%" colspan="3">Proportion</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Type</span></td>
+               <td width="80%" colspan="3">Process</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Stratification</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Risk Adjustment</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rate Aggregation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rationale</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Breast cancer is the second most commonly diagnosed cancer among women (after skin cancer). After lung cancer, it causes more deaths in women than any other kind of cancer&#8212;there were nearly 40,000 estimated deaths from breast cancer in 2010. Deaths from breast cancer have decreased over the years, in part due to early detection using mammography. On average, mammography will detect about 80-90 percent of breast cancers in women without symptoms (American Cancer Society 2011). Based on evidence, screening mammography in women aged 40 to 70 years decreases breast cancer mortality with higher benefit in older women (National Cancer Institute 2010). There is a demonstrated reduction in breast cancer mortality due to mammogram screening (National Business Group on Health 2011).</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Clinical Recommendation Statement</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>U.S. Preventive Services Task Force (2009)
+Grade: B recommendation. The USPSTF recommends biennial screening mammography for women aged 50 to 74 years.
+Grade: C recommendation. The decision to start regular, biennial screening mammography before the age of 50 years should be an individual one and take patient context into account, including the patient&#8217;s values regarding specific benefits and harms.
+Grade: I Statement. The USPSTF concludes that the current evidence is insufficient to assess the additional benefits and harms of screening mammography in women 75 years or older.
+Grade: D recommendation. The USPSTF recommends against teaching breast self-examination (BSE).
+Grade: I Statement. The USPSTF concludes that the current evidence is insufficient to assess the additional benefits and harms of clinical breast examination (CBE) beyond screening mammography in women 40 years or older.
+Grade: I Statement. The USPSTF concludes that the current evidence is insufficient to assess the additional benefits and harms of either digital mammography or magnetic resonance imaging (MRI) instead of film mammography as screening modalities for breast cancer.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Improvement Notation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Higher score equals better quality.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>American Cancer Society. 2010. Cancer Facts &amp; Figures 2010. Atlanta: American Cancer Society.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>National Cancer Institute. 2010. &#8220;Breast Cancer Screening.&#8221; http://www.cancer.gov/cancertopics/pdq/screening/breast/healthprofessional</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>National Business Group on Health. 2011. Pathways to Managing Cancer in the Workplace. Washington: National Business Group on Health.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>U.S. Preventive Services Task Force (USPSTF). 2009. 1) &#8220;Screening for breast cancer: U.S. Preventive Services Task Force recommendation statement.&#8221; 2) &#8220;December 2009 addendum.&#8221; Ann Intern Med 151(10):716-726.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Definition</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Guidance</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Transmission Format</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>TBD</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Initial Patient Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Women 42&#8211;69 years of age with a visit during the measurement period</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Equals Initial Patient Population</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Women who had a bilateral mastectomy or for whom there is evidence of two unilateral mastectomies</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Women with one or more mammograms during the measurement period or the year prior to the measurement period</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exceptions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Observations</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Supplemental Data Elements</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</pre></div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="toc">Table of Contents</a></h2>
+      <ul>
+         <li><a href="#d2150204e497">Population criteria</a></li>
+         <li><a href="#d2150204e1143">Data criteria (QDM Data Elements)</a></li>
+         <li><a href="#d2150204e1509">Reporting Stratification</a></li>
+         <li><a href="#d2150204e1530">Supplemental Data Elements</a></li>
+      </ul>
+      <hr align="left" color="teal" size="2" width="80%">
+      <h3><a name="d2150204e497" href="#toc">Population criteria</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               <b>Initial Patient Population =</b>
+               
+               <ul>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 42 year(s) starts before start of "Measurement Period"</li>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &lt;= 69 year(s) starts before start of "Measurement Period"</li>
+                  <li>AND: "Patient Characteristic Sex: Female"</li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Encounter, Performed: Office Visit"</li>
+                        <li>OR: "Encounter, Performed: Face-to-Face Interaction"</li>
+                        <li>OR: "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up"</li>
+                        <li>OR: "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up"</li>
+                        <li>OR: "Encounter, Performed: Home Healthcare Services"</li>
+                        <li>OR: "Encounter, Performed: Annual Wellness Visit"</li>
+                        <li> during "Measurement Period"</li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator =</b>
+               
+               <ul>
+                  <li>AND: "Initial Patient Population"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exclusions =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Procedure, Performed: Bilateral Mastectomy"</li>
+                        <li>OR: Count = 2  of:"Procedure, Performed: Unilateral Mastectomy"</li>
+                        <li> ends before or during "Measurement Period"</li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Numerator =</b>
+               
+               <ul>
+                  <li>AND: "Diagnostic Study, Result: Mammogram (result)"  &lt;= 12 month(s) ends before or during "Measurement Period"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exceptions =</b>
+               
+               <ul>
+                  <li>None</li>
+               </ul>
+               
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d2150204e1143" href="#toc">Data criteria (QDM Data Elements)</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Diagnostic Study, Result: Mammogram" using "Mammogram Grouping Value Set (2.16.840.1.113883.3.464.1003.108.12.1018)"
+            </li>
+            <li>
+               "Encounter, Performed: Annual Wellness Visit" using "Annual Wellness Visit Grouping Value Set (2.16.840.1.113883.3.526.3.1240)"
+            </li>
+            <li>
+               "Encounter, Performed: Face-to-Face Interaction" using "Face-to-Face Interaction Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1048)"
+            </li>
+            <li>
+               "Encounter, Performed: Home Healthcare Services" using "Home Healthcare Services Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1016)"
+            </li>
+            <li>
+               "Encounter, Performed: Office Visit" using "Office Visit Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1001)"
+            </li>
+            <li>
+               "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up" using "Preventive Care Services - Established Office Visit, 18 and Up Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1025)"
+            </li>
+            <li>
+               "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up" using "Preventive Care Services-Initial Office Visit, 18 and Up Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1023)"
+            </li>
+            <li>
+               "Patient Characteristic Birthdate: birth date" using "birth date LOINC Value Set (2.16.840.1.113883.3.560.100.4)"
+            </li>
+            <li>
+               "Patient Characteristic Sex: Female" using "Female Administrative Sex Value Set (2.16.840.1.113883.3.560.100.2)"
+            </li>
+            <li>
+               "Procedure, Performed: Bilateral Mastectomy" using "Bilateral Mastectomy Grouping Value Set (2.16.840.1.113883.3.464.1003.198.12.1005)"
+            </li>
+            <li>
+               "Procedure, Performed: Unilateral Mastectomy" using "Unilateral Mastectomy Grouping Value Set (2.16.840.1.113883.3.464.1003.198.12.1020)"
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d2150204e1509" href="#toc">Reporting Stratification</a></h3>
+      <div>
+         
+         <ul>
+            <li>None</li>
+         </ul>
+         
+      </div>
+      <h3><a name="d2150204e1530" href="#toc">Supplemental Data Elements</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Patient Characteristic Ethnicity: Ethnicity" using "Ethnicity CDC Value Set (2.16.840.1.114222.4.11.837)"
+            </li>
+            <li>
+               "Patient Characteristic Payer: Payer" using "Payer Source of Payment Typology Value Set (2.16.840.1.114222.4.11.3591)"
+            </li>
+            <li>
+               "Patient Characteristic Race: Race" using "Race CDC Value Set (2.16.840.1.114222.4.11.836)"
+            </li>
+            <li>
+               "Patient Characteristic Sex: ONC Administrative Sex" using "ONC Administrative Sex Administrative Sex Value Set (2.16.840.1.113762.1.4.1)"
+            </li>
+         </ul>
+         
+      </div><br><hr align="left" color="teal" size="2" width="80%"><br><table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Set</span></td>
+               <td colspan="3" width="80%">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto;word-wrap:break-word">None</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

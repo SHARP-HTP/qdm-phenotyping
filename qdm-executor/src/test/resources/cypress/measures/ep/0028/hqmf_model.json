@@ -1,0 +1,1585 @@
+{
+  "id": "0028",
+  "hqmf_id": "8A4D92B2-3946-CDAE-0139-77DE6F785ED7",
+  "hqmf_set_id": "E35791DF-5B25-41BB-B260-673337BC44A8",
+  "hqmf_version_number": 1,
+  "title": "Preventive Care and Screening: Tobacco Use: Screening and Cessation Intervention",
+  "description": "Percentage of patients aged 18 years and older who were screened for tobacco use one or more times within 24 months AND who received cessation counseling intervention if identified as a tobacco user",
+  "cms_id": "CMS138v1",
+  "population_criteria": {
+    "DENEXCEP": {
+      "conjunction?": true,
+      "type": "DENEXCEP",
+      "title": "Denominator Exception",
+      "hqmf_id": "F5E7BCB0-A1B7-4FE8-AFFF-F0F12D3BBFD3",
+      "preconditions": [
+        {
+          "id": 22,
+          "preconditions": [
+            {
+              "id": 20,
+              "preconditions": [
+                {
+                  "id": 10,
+                  "preconditions": [
+                    {
+                      "id": 7,
+                      "reference": "OccurrenceALimitedLifeExpectancy4_precondition_7"
+                    },
+                    {
+                      "id": 9,
+                      "preconditions": [
+                        {
+                          "id": 5,
+                          "reference": "OccurrenceALimitedLifeExpectancy4_precondition_5"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 18,
+                  "preconditions": [
+                    {
+                      "id": 12,
+                      "reference": "InterventionPerformedTobaccoUseScreening_precondition_12"
+                    },
+                    {
+                      "id": 14,
+                      "reference": "InterventionPerformedTobaccoUseCessationCounseling_precondition_14"
+                    },
+                    {
+                      "id": 16,
+                      "reference": "MedicationOrderTobaccoUseCessationPharmacotherapy_precondition_16"
+                    }
+                  ],
+                  "conjunction_code": "atLeastOneTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "A4268F7D-181D-4CF4-89DE-C971498A26F5",
+      "preconditions": [
+        {
+          "id": 49,
+          "preconditions": [
+            {
+              "id": 47,
+              "preconditions": [
+                {
+                  "id": 28,
+                  "preconditions": [
+                    {
+                      "id": 25,
+                      "reference": "OccurrenceATobaccoNonUser2_precondition_25"
+                    },
+                    {
+                      "id": 27,
+                      "preconditions": [
+                        {
+                          "id": 23,
+                          "reference": "PatientCharacteristicTobaccoUser_precondition_23"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 45,
+                  "preconditions": [
+                    {
+                      "id": 35,
+                      "preconditions": [
+                        {
+                          "id": 32,
+                          "reference": "OccurrenceATobaccoUser3_precondition_32"
+                        },
+                        {
+                          "id": 34,
+                          "preconditions": [
+                            {
+                              "id": 30,
+                              "reference": "PatientCharacteristicTobaccoNonUser_precondition_30"
+                            }
+                          ],
+                          "conjunction_code": "atLeastOneTrue",
+                          "negation": true
+                        }
+                      ],
+                      "conjunction_code": "allTrue"
+                    },
+                    {
+                      "id": 43,
+                      "preconditions": [
+                        {
+                          "id": 37,
+                          "reference": "InterventionPerformedTobaccoUseCessationCounseling_precondition_37"
+                        },
+                        {
+                          "id": 39,
+                          "reference": "MedicationActiveTobaccoUseCessationPharmacotherapy_precondition_39"
+                        },
+                        {
+                          "id": 41,
+                          "reference": "MedicationOrderTobaccoUseCessationPharmacotherapy_precondition_41"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "9A077F22-04FF-4305-8662-ECC38829DCEA"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "81061D29-9844-4607-9226-275D93E09C1E",
+      "preconditions": [
+        {
+          "id": 94,
+          "preconditions": [
+            {
+              "id": 50,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_50"
+            },
+            {
+              "id": 92,
+              "preconditions": [
+                {
+                  "id": 73,
+                  "reference": "GROUP_COUNT_96",
+                  "conjunction_code": "atLeastOneTrue"
+                },
+                {
+                  "id": 90,
+                  "reference": "GROUP_COUNT_98",
+                  "conjunction_code": "atLeastOneTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "DiagnosisActiveLimitedLifeExpectancy": {
+      "title": "Limited Life Expectancy",
+      "description": "Diagnosis, Active: Limited Life Expectancy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1259",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveLimitedLifeExpectancy"
+    },
+    "InterventionPerformedNotDoneMedicalReason": {
+      "title": "Medical Reason",
+      "description": "Intervention, Performed not done: Medical Reason",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "source_data_criteria": "InterventionPerformedNotDoneMedicalReason"
+    },
+    "InterventionPerformedNotDoneMedicalReason1": {
+      "title": "Medical Reason",
+      "description": "Intervention, Performed not done: Medical Reason",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "source_data_criteria": "InterventionPerformedNotDoneMedicalReason1"
+    },
+    "MedicationOrderNotDoneMedicalReason": {
+      "title": "Medical Reason",
+      "description": "Medication, Order not done: Medical Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDoneMedicalReason"
+    },
+    "OccurrenceATobaccoNonUser2": {
+      "title": "Tobacco Non-User",
+      "description": "Patient Characteristic: Tobacco Non-User",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1189",
+      "type": "characteristic",
+      "definition": "patient_characteristic",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PATIENT_CHARACTERISTIC_TOBACCO_NON_USER",
+      "source_data_criteria": "OccurrenceATobaccoNonUser2"
+    },
+    "OccurrenceATobaccoUser3": {
+      "title": "Tobacco User",
+      "description": "Patient Characteristic: Tobacco User",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1170",
+      "type": "characteristic",
+      "definition": "patient_characteristic",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PATIENT_CHARACTERISTIC_TOBACCO_USER",
+      "source_data_criteria": "OccurrenceATobaccoUser3"
+    },
+    "OccurrenceALimitedLifeExpectancy4_precondition_7": {
+      "title": "Limited Life Expectancy",
+      "description": "Diagnosis, Active: Limited Life Expectancy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1259",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_LIMITED_LIFE_EXPECTANCY",
+      "source_data_criteria": "OccurrenceALimitedLifeExpectancy4",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceALimitedLifeExpectancy4_precondition_5": {
+      "title": "Limited Life Expectancy",
+      "description": "Diagnosis, Active: Limited Life Expectancy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1259",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_LIMITED_LIFE_EXPECTANCY",
+      "source_data_criteria": "OccurrenceALimitedLifeExpectancy4",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "InterventionPerformedTobaccoUseScreening_precondition_12": {
+      "title": "Tobacco Use Screening",
+      "description": "Intervention, Performed: Tobacco Use Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1278",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "negation_code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "source_data_criteria": "InterventionPerformedTobaccoUseScreening",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "InterventionPerformedTobaccoUseCessationCounseling_precondition_14": {
+      "title": "Tobacco Use Cessation Counseling",
+      "description": "Intervention, Performed: Tobacco Use Cessation Counseling",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.509",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "negation_code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "source_data_criteria": "InterventionPerformedTobaccoUseCessationCounseling",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "MedicationOrderTobaccoUseCessationPharmacotherapy_precondition_16": {
+      "title": "Tobacco Use Cessation Pharmacotherapy",
+      "description": "Medication, Order: Tobacco Use Cessation Pharmacotherapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1190",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "negation_code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "source_data_criteria": "MedicationOrderTobaccoUseCessationPharmacotherapy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceATobaccoNonUser2_precondition_25": {
+      "title": "Tobacco Non-User",
+      "description": "Patient Characteristic: Tobacco Non-User",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1189",
+      "type": "characteristic",
+      "definition": "patient_characteristic",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PATIENT_CHARACTERISTIC_TOBACCO_NON_USER",
+      "source_data_criteria": "OccurrenceATobaccoNonUser2",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "24",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicTobaccoUser_precondition_23": {
+      "title": "Tobacco User",
+      "description": "Patient Characteristic: Tobacco User",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1170",
+      "type": "characteristic",
+      "definition": "patient_characteristic",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicTobaccoUser",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceATobaccoNonUser2"
+        }
+      ]
+    },
+    "OccurrenceATobaccoUser3_precondition_32": {
+      "title": "Tobacco User",
+      "description": "Patient Characteristic: Tobacco User",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1170",
+      "type": "characteristic",
+      "definition": "patient_characteristic",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PATIENT_CHARACTERISTIC_TOBACCO_USER",
+      "source_data_criteria": "OccurrenceATobaccoUser3",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "24",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicTobaccoNonUser_precondition_30": {
+      "title": "Tobacco Non-User",
+      "description": "Patient Characteristic: Tobacco Non-User",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1189",
+      "type": "characteristic",
+      "definition": "patient_characteristic",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicTobaccoNonUser",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceATobaccoUser3"
+        }
+      ]
+    },
+    "InterventionPerformedTobaccoUseCessationCounseling_precondition_37": {
+      "title": "Tobacco Use Cessation Counseling",
+      "description": "Intervention, Performed: Tobacco Use Cessation Counseling",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.509",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionPerformedTobaccoUseCessationCounseling",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "24",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "MedicationActiveTobaccoUseCessationPharmacotherapy_precondition_39": {
+      "title": "Tobacco Use Cessation Pharmacotherapy",
+      "description": "Medication, Active: Tobacco Use Cessation Pharmacotherapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1190",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationActiveTobaccoUseCessationPharmacotherapy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "24",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "MedicationOrderTobaccoUseCessationPharmacotherapy_precondition_41": {
+      "title": "Tobacco Use Cessation Pharmacotherapy",
+      "description": "Medication, Order: Tobacco Use Cessation Pharmacotherapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1190",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderTobaccoUseCessationPharmacotherapy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "24",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_50": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "18",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedPsychVisitMedicationManagement_precondition_52": {
+      "title": "Psych Visit - Medication Management",
+      "description": "Encounter, Performed: Psych Visit - Medication Management",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1019",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychVisitMedicationManagement",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedHealthAndBehavioralAssessmentInitial_precondition_54": {
+      "title": "Health and Behavioral Assessment - Initial",
+      "description": "Encounter, Performed: Health and Behavioral Assessment - Initial",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1245",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHealthAndBehavioralAssessmentInitial",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedHealthBehavioralAssessmentIndividual_precondition_56": {
+      "title": "Health & Behavioral Assessment - Individual",
+      "description": "Encounter, Performed: Health & Behavioral Assessment - Individual",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1020",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHealthBehavioralAssessmentIndividual",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedOccupationalTherapyEvaluation_precondition_58": {
+      "title": "Occupational Therapy Evaluation",
+      "description": "Encounter, Performed: Occupational Therapy Evaluation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1011",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOccupationalTherapyEvaluation",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedOfficeVisit_precondition_60": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPsychVisitDiagnosticOrEvaluativeInterview_precondition_62": {
+      "title": "Psych Visit - Diagnostic or Evaluative Interview",
+      "description": "Encounter, Performed: Psych Visit - Diagnostic or Evaluative Interview",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1013",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychVisitDiagnosticOrEvaluativeInterview",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy_precondition_64": {
+      "title": "Psych Visit - Individual Outpatient Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPsychVisitIndividualOutpatientInteractivePsychotherapy_precondition_66": {
+      "title": "Psych Visit - Individual Outpatient Interactive Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Interactive Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1015",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychVisitIndividualOutpatientInteractivePsychotherapy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPsychoanalysis_precondition_68": {
+      "title": "Psychoanalysis",
+      "description": "Encounter, Performed: Psychoanalysis",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1141",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychoanalysis",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedOphthalmologicalServices_precondition_70": {
+      "title": "Ophthalmological Services",
+      "description": "Encounter, Performed: Ophthalmological Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1285",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOphthalmologicalServices",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "GROUP_COUNT_96": {
+      "title": "GROUP_COUNT_96",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "EncounterPerformedPsychVisitMedicationManagement_precondition_52",
+        "EncounterPerformedHealthAndBehavioralAssessmentInitial_precondition_54",
+        "EncounterPerformedHealthBehavioralAssessmentIndividual_precondition_56",
+        "EncounterPerformedOccupationalTherapyEvaluation_precondition_58",
+        "EncounterPerformedOfficeVisit_precondition_60",
+        "EncounterPerformedPsychVisitDiagnosticOrEvaluativeInterview_precondition_62",
+        "EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy_precondition_64",
+        "EncounterPerformedPsychVisitIndividualOutpatientInteractivePsychotherapy_precondition_66",
+        "EncounterPerformedPsychoanalysis_precondition_68",
+        "EncounterPerformedOphthalmologicalServices_precondition_70"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_COUNT_96",
+      "subset_operators": [
+        {
+          "type": "COUNT",
+          "value": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "value": "2",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesGroupCounseling_precondition_75": {
+      "title": "Preventive Care Services - Group Counseling",
+      "description": "Encounter, Performed: Preventive Care Services - Group Counseling",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1027",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesGroupCounseling",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesOther_precondition_77": {
+      "title": "Preventive Care Services - Other",
+      "description": "Encounter, Performed: Preventive Care Services - Other",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1030",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesOther",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_79": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_81": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesIndividualCounseling_precondition_83": {
+      "title": "Preventive Care Services-Individual Counseling",
+      "description": "Encounter, Performed: Preventive Care Services-Individual Counseling",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1026",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesIndividualCounseling",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedFaceToFaceInteraction_precondition_85": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedAnnualWellnessVisit_precondition_87": {
+      "title": "Annual Wellness Visit",
+      "description": "Encounter, Performed: Annual Wellness Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1240",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedAnnualWellnessVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "GROUP_COUNT_98": {
+      "title": "GROUP_COUNT_98",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "EncounterPerformedPreventiveCareServicesGroupCounseling_precondition_75",
+        "EncounterPerformedPreventiveCareServicesOther_precondition_77",
+        "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_79",
+        "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_81",
+        "EncounterPerformedPreventiveCareServicesIndividualCounseling_precondition_83",
+        "EncounterPerformedFaceToFaceInteraction_precondition_85",
+        "EncounterPerformedAnnualWellnessVisit_precondition_87"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_COUNT_98",
+      "subset_operators": [
+        {
+          "type": "COUNT",
+          "value": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "EncounterPerformedHealthAndBehavioralAssessmentInitial": {
+      "title": "Health and Behavioral Assessment - Initial",
+      "description": "Encounter, Performed: Health and Behavioral Assessment - Initial",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1245",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHealthAndBehavioralAssessmentInitial"
+    },
+    "EncounterPerformedHealthBehavioralAssessmentIndividual": {
+      "title": "Health & Behavioral Assessment - Individual",
+      "description": "Encounter, Performed: Health & Behavioral Assessment - Individual",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1020",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHealthBehavioralAssessmentIndividual"
+    },
+    "EncounterPerformedOccupationalTherapyEvaluation": {
+      "title": "Occupational Therapy Evaluation",
+      "description": "Encounter, Performed: Occupational Therapy Evaluation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1011",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOccupationalTherapyEvaluation"
+    },
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedPsychVisitDiagnosticOrEvaluativeInterview": {
+      "title": "Psych Visit - Diagnostic or Evaluative Interview",
+      "description": "Encounter, Performed: Psych Visit - Diagnostic or Evaluative Interview",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1013",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychVisitDiagnosticOrEvaluativeInterview"
+    },
+    "EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy": {
+      "title": "Psych Visit - Individual Outpatient Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy"
+    },
+    "EncounterPerformedPsychVisitIndividualOutpatientInteractivePsychotherapy": {
+      "title": "Psych Visit - Individual Outpatient Interactive Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Interactive Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1015",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychVisitIndividualOutpatientInteractivePsychotherapy"
+    },
+    "EncounterPerformedPsychVisitMedicationManagement": {
+      "title": "Psych Visit - Medication Management",
+      "description": "Encounter, Performed: Psych Visit - Medication Management",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1019",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychVisitMedicationManagement"
+    },
+    "EncounterPerformedPsychoanalysis": {
+      "title": "Psychoanalysis",
+      "description": "Encounter, Performed: Psychoanalysis",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1141",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychoanalysis"
+    },
+    "EncounterPerformedPreventiveCareServicesGroupCounseling": {
+      "title": "Preventive Care Services - Group Counseling",
+      "description": "Encounter, Performed: Preventive Care Services - Group Counseling",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1027",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesGroupCounseling"
+    },
+    "EncounterPerformedPreventiveCareServicesOther": {
+      "title": "Preventive Care Services - Other",
+      "description": "Encounter, Performed: Preventive Care Services - Other",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1030",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesOther"
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp"
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp"
+    },
+    "EncounterPerformedPreventiveCareServicesIndividualCounseling": {
+      "title": "Preventive Care Services-Individual Counseling",
+      "description": "Encounter, Performed: Preventive Care Services-Individual Counseling",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1026",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesIndividualCounseling"
+    },
+    "PatientCharacteristicTobaccoNonUser": {
+      "title": "Tobacco Non-User",
+      "description": "Patient Characteristic: Tobacco Non-User",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1189",
+      "type": "characteristic",
+      "definition": "patient_characteristic",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicTobaccoNonUser"
+    },
+    "PatientCharacteristicTobaccoUser": {
+      "title": "Tobacco User",
+      "description": "Patient Characteristic: Tobacco User",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1170",
+      "type": "characteristic",
+      "definition": "patient_characteristic",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicTobaccoUser"
+    },
+    "InterventionPerformedTobaccoUseCessationCounseling": {
+      "title": "Tobacco Use Cessation Counseling",
+      "description": "Intervention, Performed: Tobacco Use Cessation Counseling",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.509",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionPerformedTobaccoUseCessationCounseling"
+    },
+    "MedicationActiveTobaccoUseCessationPharmacotherapy": {
+      "title": "Tobacco Use Cessation Pharmacotherapy",
+      "description": "Medication, Active: Tobacco Use Cessation Pharmacotherapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1190",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationActiveTobaccoUseCessationPharmacotherapy"
+    },
+    "MedicationOrderTobaccoUseCessationPharmacotherapy": {
+      "title": "Tobacco Use Cessation Pharmacotherapy",
+      "description": "Medication, Order: Tobacco Use Cessation Pharmacotherapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1190",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderTobaccoUseCessationPharmacotherapy"
+    },
+    "InterventionPerformedTobaccoUseScreening": {
+      "title": "Tobacco Use Screening",
+      "description": "Intervention, Performed: Tobacco Use Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1278",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionPerformedTobaccoUseScreening"
+    },
+    "DiagnosisActiveLimitedLifeExpectancy": {
+      "title": "Limited Life Expectancy",
+      "description": "Diagnosis, Active: Limited Life Expectancy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1259",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveLimitedLifeExpectancy"
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "EncounterPerformedOphthalmologicalServices": {
+      "title": "Ophthalmological Services",
+      "description": "Encounter, Performed: Ophthalmological Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1285",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOphthalmologicalServices"
+    },
+    "EncounterPerformedAnnualWellnessVisit": {
+      "title": "Annual Wellness Visit",
+      "description": "Encounter, Performed: Annual Wellness Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1240",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedAnnualWellnessVisit"
+    },
+    "InterventionPerformedNotDoneMedicalReason": {
+      "title": "Medical Reason",
+      "description": "Intervention, Performed not done: Medical Reason",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "source_data_criteria": "InterventionPerformedNotDoneMedicalReason"
+    },
+    "InterventionPerformedNotDoneMedicalReason1": {
+      "title": "Medical Reason",
+      "description": "Intervention, Performed not done: Medical Reason",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "source_data_criteria": "InterventionPerformedNotDoneMedicalReason1"
+    },
+    "MedicationOrderNotDoneMedicalReason": {
+      "title": "Medical Reason",
+      "description": "Medication, Order not done: Medical Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDoneMedicalReason"
+    },
+    "OccurrenceATobaccoNonUser2": {
+      "title": "Tobacco Non-User",
+      "description": "Patient Characteristic: Tobacco Non-User",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1189",
+      "type": "characteristic",
+      "definition": "patient_characteristic",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PATIENT_CHARACTERISTIC_TOBACCO_NON_USER",
+      "source_data_criteria": "OccurrenceATobaccoNonUser2"
+    },
+    "OccurrenceATobaccoUser3": {
+      "title": "Tobacco User",
+      "description": "Patient Characteristic: Tobacco User",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1170",
+      "type": "characteristic",
+      "definition": "patient_characteristic",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PATIENT_CHARACTERISTIC_TOBACCO_USER",
+      "source_data_criteria": "OccurrenceATobaccoUser3"
+    },
+    "OccurrenceALimitedLifeExpectancy4": {
+      "title": "Limited Life Expectancy",
+      "description": "Diagnosis, Active: Limited Life Expectancy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1259",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_LIMITED_LIFE_EXPECTANCY",
+      "source_data_criteria": "OccurrenceALimitedLifeExpectancy4"
+    }
+  },
+  "attributes": [
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "Copyright 2012 American Medical Association. All Rights Reserved.",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "There is good evidence that tobacco screening and brief cessation intervention (including counseling and pharmacotherapy) in the primary care setting is successful in helping tobacco users quit. Tobacco users who are able to stop smoking lower their risk for heart disease, lung disease, and stroke.",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "The USPSTF strongly recommends that clinicians screen all adults for tobacco use and provide tobacco cessation interventions for those who use tobacco products. (A Recommendation) (USPSTF, 2003)\r\n\r\nDuring new patient encounters and at least annually, patients in general and mental healthcare settings should be screened for at-risk drinking, alcohol use problems and illnesses, and any tobacco use. (NQF, 2007)\r\nAll patients should be asked if they use tobacco and should have their tobacco-use status documented on a regular basis. Evidence has shown that clinic screening systems, such as expanding the vital signs to include tobacco status or the use of other reminder systems such as chart stickers or computer prompts, significantly increase rates of clinician intervention. (Strength of Evidence = A) (U.S. Department of Health & Human Services-Public Health Service, 2008)\r\n\r\nAll physicians should strongly advise every patient who smokes to quit because evidence shows that physician advice to quit smoking increases abstinence rates. (Strength of Evidence = A) (U.S. Department of Health & Human Services-Public Health Service, 2008)\r\n\r\nMinimal interventions lasting less than 3 minutes increase overall tobacco abstinence rates. Every tobacco user should be offered at least a minimal intervention whether or not he or she is referred to an intensive intervention. (Strength of Evidence = A) (U.S. Department of Health & Human Services-Public Health Service, 2008)",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "Higher score indicates better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "0028",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "Physician Performance Measures (Measures) and related data specifications have been developed by the American Medical Association (AMA) - convened Physician Consortium for Performance Improvement(R) (the PCPI[TM]). These Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The Measures, while copyrighted, can be reproduced and distributed, without modification, for noncommercial purposes, e.g., use by health care providers in connection with their practices. Commercial use is defined as the sale, license, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial uses of the Measures require a license agreement between the user and the AMA, (on behalf of the PCPI). Neither the AMA, PCPI nor its members shall be responsible for any use of the Measures. \r\n\r\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND. \r\n\r\nLimited proprietary coding is contained in the Measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. The AMA, the PCPI and its members disclaim all liability for use or accuracy of any Current Procedural Terminology (CPT[R]) or other coding contained in the specifications. \r\n\r\nCPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC(R) copyright 2004-2011 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 copyright 2011 World Health Organization. All Rights Reserved.\r\n\r\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "138",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "Fiore MC, Jaen CR, Baker TB, et al. Treating tobacco use and dependence: 2008 update. Clinical practice guideline. Rockville, MD: U.S. Department of Health and Human Services. Public Health Service. May 2008.",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "Tobacco Use – Includes any type of tobacco\r\nCessation Counseling Intervention – Includes brief counseling (3 minutes or less), and/or pharmacotherapy",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "If tobacco use status of a patient is unknown, the patient cannot be counted in the numerator and should be considered a measure failure.  Instances where tobacco use status of \"unknown\" is recorded include: 1) the patient was not screened; or 2) the patient was screened and the patient (or caregiver) was unable to provide a definitive answer.  If tobacco use status of “unknown” is recorded but the patient has an allowable medical exception, then the patient should be removed from the denominator of the measure and reported as a valid exception.",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "All patients aged 18 years and older",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals Initial Patient Population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "None",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Patients who were screened for tobacco use at least once within 24 months AND who received tobacco cessation counseling intervention if identified as a tobacco user",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "Documentation of medical reason(s) for not screening for tobacco use (eg, limited life expectancy, other medical reason)",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not Applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "IPP": "IPP",
+      "DENOM": "DENOM",
+      "NUMER": "NUMER",
+      "DENEXCEP": "DENEXCEP"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

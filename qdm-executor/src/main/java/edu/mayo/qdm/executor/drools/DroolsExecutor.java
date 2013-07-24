@@ -23,8 +23,8 @@
  */
 package edu.mayo.qdm.executor.drools;
 
-import edu.mayo.qdm.executor.drools.parser.Qdm2Drools;
 import edu.mayo.qdm.executor.*;
+import edu.mayo.qdm.executor.drools.parser.Qdm2Drools;
 import edu.mayo.qdm.patient.Patient;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

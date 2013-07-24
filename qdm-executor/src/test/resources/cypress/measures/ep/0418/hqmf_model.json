@@ -1,0 +1,2028 @@
+{
+  "id": "0418",
+  "hqmf_id": "8A4D92B2-3AE8-F461-013A-F4E544D7003E",
+  "hqmf_set_id": "9A031E24-3D9B-11E1-8634-00237D5BF174",
+  "hqmf_version_number": 2,
+  "title": "Preventive Care and Screening: Screening for Clinical Depression and Follow-Up Plan",
+  "description": "Percentage of patients aged 12 years and older screened for clinical depression on the date of the encounter using an age appropriate standardized depression screening tool AND if positive, a follow-up plan is documented on the date of the positive screen.",
+  "cms_id": "CMS2v2",
+  "population_criteria": {
+    "DENEXCEP": {
+      "conjunction?": true,
+      "type": "DENEXCEP",
+      "title": "Denominator Exception",
+      "hqmf_id": "0CDF2A7E-97A7-4B45-8719-A7416C71FDC3",
+      "preconditions": [
+        {
+          "id": 18,
+          "preconditions": [
+            {
+              "id": 16,
+              "preconditions": [
+                {
+                  "id": 8,
+                  "reference": "InterventionPerformedAdolescentDepressionScreening_precondition_8"
+                },
+                {
+                  "id": 10,
+                  "reference": "InterventionPerformedAdultDepressionScreening_precondition_10"
+                },
+                {
+                  "id": 12,
+                  "reference": "InterventionPerformedAdolescentDepressionScreening_precondition_12"
+                },
+                {
+                  "id": 14,
+                  "reference": "InterventionPerformedAdultDepressionScreening_precondition_14"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENEX": {
+      "conjunction?": true,
+      "type": "DENEX",
+      "title": "Denominator",
+      "hqmf_id": "90B18275-DBB3-4773-9D63-F8A8BBE6B2CA",
+      "preconditions": [
+        {
+          "id": 34,
+          "preconditions": [
+            {
+              "id": 30,
+              "preconditions": [
+                {
+                  "id": 26,
+                  "reference": "OccurrenceADepressionDiagnosis7_precondition_26"
+                },
+                {
+                  "id": 28,
+                  "reference": "OccurrenceABipolarDiagnosis6_precondition_28"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            },
+            {
+              "id": 33,
+              "preconditions": [
+                {
+                  "id": 23,
+                  "preconditions": [
+                    {
+                      "id": 19,
+                      "reference": "OccurrenceADepressionDiagnosis7_precondition_19"
+                    },
+                    {
+                      "id": 21,
+                      "reference": "OccurrenceABipolarDiagnosis6_precondition_21"
+                    }
+                  ],
+                  "conjunction_code": "atLeastOneTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue",
+              "negation": true
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "279AF66D-02AD-4B1A-BADE-C6FC0FE88AA6",
+      "preconditions": [
+        {
+          "id": 115,
+          "preconditions": [
+            {
+              "id": 113,
+              "preconditions": [
+                {
+                  "id": 72,
+                  "preconditions": [
+                    {
+                      "id": 59,
+                      "preconditions": [
+                        {
+                          "id": 35,
+                          "reference": "PatientCharacteristicBirthdateBirthDate_precondition_35"
+                        },
+                        {
+                          "id": 37,
+                          "reference": "OccurrenceAAdolescentDepressionScreening4_precondition_37"
+                        },
+                        {
+                          "id": 43,
+                          "preconditions": [
+                            {
+                              "id": 39,
+                              "reference": "DiagnosisActiveDepressionDiagnosis_precondition_39"
+                            },
+                            {
+                              "id": 41,
+                              "reference": "InterventionResultPositiveDepressionScreening_precondition_41"
+                            }
+                          ],
+                          "conjunction_code": "atLeastOneTrue"
+                        },
+                        {
+                          "id": 56,
+                          "preconditions": [
+                            {
+                              "id": 46,
+                              "reference": "InterventionPerformedAdditionalEvaluationForDepressionAdolescent_precondition_46"
+                            },
+                            {
+                              "id": 48,
+                              "reference": "InterventionOrderReferralForDepressionAdolescent_precondition_48"
+                            },
+                            {
+                              "id": 50,
+                              "reference": "MedicationOrderDepressionMedicationsAdolescent_precondition_50"
+                            },
+                            {
+                              "id": 52,
+                              "reference": "InterventionPerformedFollowUpForDepressionAdolescent_precondition_52"
+                            },
+                            {
+                              "id": 54,
+                              "reference": "ProcedurePerformedSuicideRiskAssessment_precondition_54"
+                            }
+                          ],
+                          "conjunction_code": "atLeastOneTrue"
+                        }
+                      ],
+                      "conjunction_code": "allTrue"
+                    },
+                    {
+                      "id": 70,
+                      "preconditions": [
+                        {
+                          "id": 63,
+                          "reference": "PatientCharacteristicBirthdateBirthDate_precondition_63"
+                        },
+                        {
+                          "id": 65,
+                          "reference": "OccurrenceAAdolescentDepressionScreening4_precondition_65"
+                        },
+                        {
+                          "id": 67,
+                          "reference": "InterventionResultNegativeDepressionScreening_precondition_67"
+                        },
+                        {
+                          "id": 69,
+                          "preconditions": [
+                            {
+                              "id": 61,
+                              "reference": "DiagnosisActiveDepressionDiagnosis_precondition_61"
+                            }
+                          ],
+                          "conjunction_code": "atLeastOneTrue",
+                          "negation": true
+                        }
+                      ],
+                      "conjunction_code": "allTrue"
+                    }
+                  ],
+                  "conjunction_code": "atLeastOneTrue"
+                },
+                {
+                  "id": 111,
+                  "preconditions": [
+                    {
+                      "id": 98,
+                      "preconditions": [
+                        {
+                          "id": 74,
+                          "reference": "PatientCharacteristicBirthdateBirthDate_precondition_74"
+                        },
+                        {
+                          "id": 76,
+                          "reference": "OccurrenceAAdultDepressionScreening5_precondition_76"
+                        },
+                        {
+                          "id": 82,
+                          "preconditions": [
+                            {
+                              "id": 78,
+                              "reference": "DiagnosisActiveDepressionDiagnosis_precondition_78"
+                            },
+                            {
+                              "id": 80,
+                              "reference": "InterventionResultPositiveDepressionScreening_precondition_80"
+                            }
+                          ],
+                          "conjunction_code": "atLeastOneTrue"
+                        },
+                        {
+                          "id": 95,
+                          "preconditions": [
+                            {
+                              "id": 85,
+                              "reference": "InterventionPerformedAdditionalEvaluationForDepressionAdult_precondition_85"
+                            },
+                            {
+                              "id": 87,
+                              "reference": "InterventionOrderReferralForDepressionAdult_precondition_87"
+                            },
+                            {
+                              "id": 89,
+                              "reference": "MedicationOrderDepressionMedicationsAdult_precondition_89"
+                            },
+                            {
+                              "id": 91,
+                              "reference": "InterventionPerformedFollowUpForDepressionAdult_precondition_91"
+                            },
+                            {
+                              "id": 93,
+                              "reference": "ProcedurePerformedSuicideRiskAssessment_precondition_93"
+                            }
+                          ],
+                          "conjunction_code": "atLeastOneTrue"
+                        }
+                      ],
+                      "conjunction_code": "allTrue"
+                    },
+                    {
+                      "id": 109,
+                      "preconditions": [
+                        {
+                          "id": 102,
+                          "reference": "PatientCharacteristicBirthdateBirthDate_precondition_102"
+                        },
+                        {
+                          "id": 104,
+                          "reference": "OccurrenceAAdultDepressionScreening5_precondition_104"
+                        },
+                        {
+                          "id": 106,
+                          "reference": "InterventionResultNegativeDepressionScreening_precondition_106"
+                        },
+                        {
+                          "id": 108,
+                          "preconditions": [
+                            {
+                              "id": 100,
+                              "reference": "DiagnosisActiveDepressionDiagnosis_precondition_100"
+                            }
+                          ],
+                          "conjunction_code": "atLeastOneTrue",
+                          "negation": true
+                        }
+                      ],
+                      "conjunction_code": "allTrue"
+                    }
+                  ],
+                  "conjunction_code": "atLeastOneTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "AD6CD556-EE4C-4EC1-8AD1-31E48032BE12"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "8F0C4421-8FD5-4CF9-B559-FAE930EB13B1",
+      "preconditions": [
+        {
+          "id": 120,
+          "preconditions": [
+            {
+              "id": 116,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_116"
+            },
+            {
+              "id": 118,
+              "reference": "OccurrenceADepressionScreeningDenominatorEncounterCodesNew3_precondition_118"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "DiagnosisActiveBipolarDiagnosis": {
+      "title": "Bipolar Diagnosis",
+      "description": "Diagnosis, Active: Bipolar Diagnosis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.600.450",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveBipolarDiagnosis"
+    },
+    "EncounterPerformedDepressionScreeningDenominatorEncounterCodesNew": {
+      "title": "Depression Screening Denominator Encounter Codes New",
+      "description": "Encounter, Performed: Depression Screening Denominator Encounter Codes New",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.600.1916",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedDepressionScreeningDenominatorEncounterCodesNew"
+    },
+    "InterventionPerformedNotDoneMedicalReasonContraindicated": {
+      "title": "Medical reason contraindicated",
+      "description": "Intervention, Performed not done: Medical reason contraindicated",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.792",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "source_data_criteria": "InterventionPerformedNotDoneMedicalReasonContraindicated"
+    },
+    "InterventionPerformedNotDoneMedicalReasonContraindicated1": {
+      "title": "Medical reason contraindicated",
+      "description": "Intervention, Performed not done: Medical reason contraindicated",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.792",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "source_data_criteria": "InterventionPerformedNotDoneMedicalReasonContraindicated1"
+    },
+    "InterventionPerformedNotDonePatientReasonRefused": {
+      "title": "Patient Reason refused",
+      "description": "Intervention, Performed not done: Patient Reason refused",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.791",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "source_data_criteria": "InterventionPerformedNotDonePatientReasonRefused"
+    },
+    "InterventionPerformedNotDonePatientReasonRefused2": {
+      "title": "Patient Reason refused",
+      "description": "Intervention, Performed not done: Patient Reason refused",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.791",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "source_data_criteria": "InterventionPerformedNotDonePatientReasonRefused2"
+    },
+    "OccurrenceADepressionScreeningDenominatorEncounterCodesNew3": {
+      "title": "Depression Screening Denominator Encounter Codes New",
+      "description": "Encounter, Performed: Depression Screening Denominator Encounter Codes New",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.600.1916",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_DEPRESSION_SCREENING_DENOMINATOR_ENCOUNTER_CODES_NEW",
+      "source_data_criteria": "OccurrenceADepressionScreeningDenominatorEncounterCodesNew3"
+    },
+    "OccurrenceAAdolescentDepressionScreening4": {
+      "title": "Adolescent Depression Screening",
+      "description": "Intervention, Performed: Adolescent Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.426",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "INTERVENTION_PERFORMED_ADOLESCENT_DEPRESSION_SCREENING",
+      "source_data_criteria": "OccurrenceAAdolescentDepressionScreening4"
+    },
+    "OccurrenceAAdultDepressionScreening5": {
+      "title": "Adult Depression Screening",
+      "description": "Intervention, Performed: Adult Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.431",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "INTERVENTION_PERFORMED_ADULT_DEPRESSION_SCREENING",
+      "source_data_criteria": "OccurrenceAAdultDepressionScreening5"
+    },
+    "InterventionPerformedAdolescentDepressionScreening_precondition_8": {
+      "title": "Adolescent Depression Screening",
+      "description": "Intervention, Performed: Adolescent Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.426",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "negation_code_list_id": "2.16.840.1.113883.3.600.792",
+      "source_data_criteria": "InterventionPerformedAdolescentDepressionScreening",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "InterventionPerformedAdultDepressionScreening_precondition_10": {
+      "title": "Adult Depression Screening",
+      "description": "Intervention, Performed: Adult Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.431",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "negation_code_list_id": "2.16.840.1.113883.3.600.792",
+      "source_data_criteria": "InterventionPerformedAdultDepressionScreening",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "InterventionPerformedAdolescentDepressionScreening_precondition_12": {
+      "title": "Adolescent Depression Screening",
+      "description": "Intervention, Performed: Adolescent Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.426",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "negation_code_list_id": "2.16.840.1.113883.3.600.791",
+      "source_data_criteria": "InterventionPerformedAdolescentDepressionScreening",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "InterventionPerformedAdultDepressionScreening_precondition_14": {
+      "title": "Adult Depression Screening",
+      "description": "Intervention, Performed: Adult Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.431",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "negation_code_list_id": "2.16.840.1.113883.3.600.791",
+      "source_data_criteria": "InterventionPerformedAdultDepressionScreening",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceADepressionScreeningDenominatorEncounterCodesNew3_precondition_31": {
+      "title": "Depression Screening Denominator Encounter Codes New",
+      "description": "Encounter, Performed: Depression Screening Denominator Encounter Codes New",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.600.1916",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_DEPRESSION_SCREENING_DENOMINATOR_ENCOUNTER_CODES_NEW",
+      "source_data_criteria": "OccurrenceADepressionScreeningDenominatorEncounterCodesNew3"
+    },
+    "OccurrenceADepressionDiagnosis7_precondition_26": {
+      "title": "Depression diagnosis",
+      "description": "Diagnosis, Active: Depression diagnosis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.600.145",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_DEPRESSION_DIAGNOSIS",
+      "source_data_criteria": "OccurrenceADepressionDiagnosis7",
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "OccurrenceADepressionScreeningDenominatorEncounterCodesNew3_precondition_31"
+        }
+      ]
+    },
+    "OccurrenceABipolarDiagnosis6_precondition_28": {
+      "title": "Bipolar Diagnosis",
+      "description": "Diagnosis, Active: Bipolar Diagnosis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.600.450",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_BIPOLAR_DIAGNOSIS",
+      "source_data_criteria": "OccurrenceABipolarDiagnosis6",
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "OccurrenceADepressionScreeningDenominatorEncounterCodesNew3_precondition_31"
+        }
+      ]
+    },
+    "OccurrenceADepressionScreeningDenominatorEncounterCodesNew3_precondition_24": {
+      "title": "Depression Screening Denominator Encounter Codes New",
+      "description": "Encounter, Performed: Depression Screening Denominator Encounter Codes New",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.600.1916",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_DEPRESSION_SCREENING_DENOMINATOR_ENCOUNTER_CODES_NEW",
+      "source_data_criteria": "OccurrenceADepressionScreeningDenominatorEncounterCodesNew3"
+    },
+    "OccurrenceADepressionDiagnosis7_precondition_19": {
+      "title": "Depression diagnosis",
+      "description": "Diagnosis, Active: Depression diagnosis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.600.145",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_DEPRESSION_DIAGNOSIS",
+      "source_data_criteria": "OccurrenceADepressionDiagnosis7",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceADepressionScreeningDenominatorEncounterCodesNew3_precondition_24"
+        }
+      ]
+    },
+    "OccurrenceABipolarDiagnosis6_precondition_21": {
+      "title": "Bipolar Diagnosis",
+      "description": "Diagnosis, Active: Bipolar Diagnosis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.600.450",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_BIPOLAR_DIAGNOSIS",
+      "source_data_criteria": "OccurrenceABipolarDiagnosis6",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceADepressionScreeningDenominatorEncounterCodesNew3_precondition_24"
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_35": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "OccurrenceAAdolescentDepressionScreening4",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "18",
+              "inclusive?": false,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAAdolescentDepressionScreening4_precondition_37": {
+      "title": "Adolescent Depression Screening",
+      "description": "Intervention, Performed: Adolescent Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.426",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "INTERVENTION_PERFORMED_ADOLESCENT_DEPRESSION_SCREENING",
+      "source_data_criteria": "OccurrenceAAdolescentDepressionScreening4",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAAdolescentDepressionScreening4_precondition_44": {
+      "title": "Adolescent Depression Screening",
+      "description": "Intervention, Performed: Adolescent Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.426",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "INTERVENTION_PERFORMED_ADOLESCENT_DEPRESSION_SCREENING",
+      "source_data_criteria": "OccurrenceAAdolescentDepressionScreening4"
+    },
+    "DiagnosisActiveDepressionDiagnosis_precondition_39": {
+      "title": "Depression diagnosis",
+      "description": "Diagnosis, Active: Depression diagnosis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.600.145",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveDepressionDiagnosis",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceAAdolescentDepressionScreening4_precondition_44",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "InterventionResultPositiveDepressionScreening_precondition_41": {
+      "title": "Positive Depression Screening",
+      "description": "Intervention, Result: Positive Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.600.793",
+      "type": "interventions",
+      "definition": "intervention_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionResultPositiveDepressionScreening",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceAAdolescentDepressionScreening4_precondition_44",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAAdolescentDepressionScreening4_precondition_57": {
+      "title": "Adolescent Depression Screening",
+      "description": "Intervention, Performed: Adolescent Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.426",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "INTERVENTION_PERFORMED_ADOLESCENT_DEPRESSION_SCREENING",
+      "source_data_criteria": "OccurrenceAAdolescentDepressionScreening4"
+    },
+    "InterventionPerformedAdditionalEvaluationForDepressionAdolescent_precondition_46": {
+      "title": "Additional evaluation for depression - adolescent",
+      "description": "Intervention, Performed: Additional evaluation for depression - adolescent",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.1542",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionPerformedAdditionalEvaluationForDepressionAdolescent",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceAAdolescentDepressionScreening4_precondition_57",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "InterventionOrderReferralForDepressionAdolescent_precondition_48": {
+      "title": "Referral for Depression Adolescent",
+      "description": "Intervention, Order: Referral for Depression Adolescent",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.537",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "InterventionOrderReferralForDepressionAdolescent",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceAAdolescentDepressionScreening4_precondition_57",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "MedicationOrderDepressionMedicationsAdolescent_precondition_50": {
+      "title": "Depression medications - adolescent",
+      "description": "Medication, Order: Depression medications - adolescent",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.600.469",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderDepressionMedicationsAdolescent",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceAAdolescentDepressionScreening4_precondition_57",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "InterventionPerformedFollowUpForDepressionAdolescent_precondition_52": {
+      "title": "Follow-up for depression - adolescent",
+      "description": "Intervention, Performed: Follow-up for depression - adolescent",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.467",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionPerformedFollowUpForDepressionAdolescent",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceAAdolescentDepressionScreening4_precondition_57",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "ProcedurePerformedSuicideRiskAssessment_precondition_54": {
+      "title": "Suicide Risk Assessment",
+      "description": "Procedure, Performed: Suicide Risk Assessment",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.559",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedSuicideRiskAssessment",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceAAdolescentDepressionScreening4_precondition_57",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_63": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "OccurrenceAAdolescentDepressionScreening4",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "18",
+              "inclusive?": false,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAAdolescentDepressionScreening4_precondition_65": {
+      "title": "Adolescent Depression Screening",
+      "description": "Intervention, Performed: Adolescent Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.426",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "INTERVENTION_PERFORMED_ADOLESCENT_DEPRESSION_SCREENING",
+      "source_data_criteria": "OccurrenceAAdolescentDepressionScreening4",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "InterventionResultNegativeDepressionScreening_precondition_67": {
+      "title": "Negative Depression Screening",
+      "description": "Intervention, Result: Negative Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.600.794",
+      "type": "interventions",
+      "definition": "intervention_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionResultNegativeDepressionScreening",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceADepressionScreeningDenominatorEncounterCodesNew3",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "DiagnosisActiveDepressionDiagnosis_precondition_61": {
+      "title": "Depression diagnosis",
+      "description": "Diagnosis, Active: Depression diagnosis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.600.145",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveDepressionDiagnosis",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceAAdolescentDepressionScreening4",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_74": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "OccurrenceAAdultDepressionScreening5",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "18",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAAdultDepressionScreening5_precondition_76": {
+      "title": "Adult Depression Screening",
+      "description": "Intervention, Performed: Adult Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.431",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "INTERVENTION_PERFORMED_ADULT_DEPRESSION_SCREENING",
+      "source_data_criteria": "OccurrenceAAdultDepressionScreening5",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAAdultDepressionScreening5_precondition_83": {
+      "title": "Adult Depression Screening",
+      "description": "Intervention, Performed: Adult Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.431",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "INTERVENTION_PERFORMED_ADULT_DEPRESSION_SCREENING",
+      "source_data_criteria": "OccurrenceAAdultDepressionScreening5"
+    },
+    "DiagnosisActiveDepressionDiagnosis_precondition_78": {
+      "title": "Depression diagnosis",
+      "description": "Diagnosis, Active: Depression diagnosis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.600.145",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveDepressionDiagnosis",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceAAdultDepressionScreening5_precondition_83",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "InterventionResultPositiveDepressionScreening_precondition_80": {
+      "title": "Positive Depression Screening",
+      "description": "Intervention, Result: Positive Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.600.793",
+      "type": "interventions",
+      "definition": "intervention_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionResultPositiveDepressionScreening",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceAAdultDepressionScreening5_precondition_83",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAAdultDepressionScreening5_precondition_96": {
+      "title": "Adult Depression Screening",
+      "description": "Intervention, Performed: Adult Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.431",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "INTERVENTION_PERFORMED_ADULT_DEPRESSION_SCREENING",
+      "source_data_criteria": "OccurrenceAAdultDepressionScreening5"
+    },
+    "InterventionPerformedAdditionalEvaluationForDepressionAdult_precondition_85": {
+      "title": "Additional evaluation for depression - adult",
+      "description": "Intervention, Performed: Additional evaluation for depression - adult",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.1545",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionPerformedAdditionalEvaluationForDepressionAdult",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceAAdultDepressionScreening5_precondition_96",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "InterventionOrderReferralForDepressionAdult_precondition_87": {
+      "title": "Referral for Depression Adult",
+      "description": "Intervention, Order: Referral for Depression Adult",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.538",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "InterventionOrderReferralForDepressionAdult",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceAAdultDepressionScreening5_precondition_96",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "MedicationOrderDepressionMedicationsAdult_precondition_89": {
+      "title": "Depression medications - adult",
+      "description": "Medication, Order: Depression medications - adult",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.600.470",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderDepressionMedicationsAdult",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceAAdultDepressionScreening5_precondition_96",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "InterventionPerformedFollowUpForDepressionAdult_precondition_91": {
+      "title": "Follow-up for depression - adult",
+      "description": "Intervention, Performed: Follow-up for depression - adult",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.468",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionPerformedFollowUpForDepressionAdult",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceAAdultDepressionScreening5_precondition_96",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "ProcedurePerformedSuicideRiskAssessment_precondition_93": {
+      "title": "Suicide Risk Assessment",
+      "description": "Procedure, Performed: Suicide Risk Assessment",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.559",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedSuicideRiskAssessment",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceAAdultDepressionScreening5_precondition_96",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_102": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "OccurrenceAAdultDepressionScreening5",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "18",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAAdultDepressionScreening5_precondition_104": {
+      "title": "Adult Depression Screening",
+      "description": "Intervention, Performed: Adult Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.431",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "INTERVENTION_PERFORMED_ADULT_DEPRESSION_SCREENING",
+      "source_data_criteria": "OccurrenceAAdultDepressionScreening5",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "InterventionResultNegativeDepressionScreening_precondition_106": {
+      "title": "Negative Depression Screening",
+      "description": "Intervention, Result: Negative Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.600.794",
+      "type": "interventions",
+      "definition": "intervention_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionResultNegativeDepressionScreening",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceAAdultDepressionScreening5",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "DiagnosisActiveDepressionDiagnosis_precondition_100": {
+      "title": "Depression diagnosis",
+      "description": "Diagnosis, Active: Depression diagnosis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.600.145",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveDepressionDiagnosis",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceAAdultDepressionScreening5",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_116": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "12",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceADepressionScreeningDenominatorEncounterCodesNew3_precondition_118": {
+      "title": "Depression Screening Denominator Encounter Codes New",
+      "description": "Encounter, Performed: Depression Screening Denominator Encounter Codes New",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.600.1916",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_DEPRESSION_SCREENING_DENOMINATOR_ENCOUNTER_CODES_NEW",
+      "source_data_criteria": "OccurrenceADepressionScreeningDenominatorEncounterCodesNew3",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "DiagnosisActiveDepressionDiagnosis": {
+      "title": "Depression diagnosis",
+      "description": "Diagnosis, Active: Depression diagnosis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.600.145",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveDepressionDiagnosis"
+    },
+    "InterventionPerformedAdolescentDepressionScreening": {
+      "title": "Adolescent Depression Screening",
+      "description": "Intervention, Performed: Adolescent Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.426",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionPerformedAdolescentDepressionScreening"
+    },
+    "InterventionPerformedAdultDepressionScreening": {
+      "title": "Adult Depression Screening",
+      "description": "Intervention, Performed: Adult Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.431",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionPerformedAdultDepressionScreening"
+    },
+    "DiagnosisActiveBipolarDiagnosis": {
+      "title": "Bipolar Diagnosis",
+      "description": "Diagnosis, Active: Bipolar Diagnosis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.600.450",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveBipolarDiagnosis"
+    },
+    "MedicationOrderDepressionMedicationsAdolescent": {
+      "title": "Depression medications - adolescent",
+      "description": "Medication, Order: Depression medications - adolescent",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.600.469",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderDepressionMedicationsAdolescent"
+    },
+    "MedicationOrderDepressionMedicationsAdult": {
+      "title": "Depression medications - adult",
+      "description": "Medication, Order: Depression medications - adult",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.600.470",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderDepressionMedicationsAdult"
+    },
+    "InterventionPerformedFollowUpForDepressionAdolescent": {
+      "title": "Follow-up for depression - adolescent",
+      "description": "Intervention, Performed: Follow-up for depression - adolescent",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.467",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionPerformedFollowUpForDepressionAdolescent"
+    },
+    "InterventionPerformedFollowUpForDepressionAdult": {
+      "title": "Follow-up for depression - adult",
+      "description": "Intervention, Performed: Follow-up for depression - adult",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.468",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionPerformedFollowUpForDepressionAdult"
+    },
+    "InterventionOrderReferralForDepressionAdolescent": {
+      "title": "Referral for Depression Adolescent",
+      "description": "Intervention, Order: Referral for Depression Adolescent",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.537",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "InterventionOrderReferralForDepressionAdolescent"
+    },
+    "InterventionOrderReferralForDepressionAdult": {
+      "title": "Referral for Depression Adult",
+      "description": "Intervention, Order: Referral for Depression Adult",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.538",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "InterventionOrderReferralForDepressionAdult"
+    },
+    "InterventionResultNegativeDepressionScreening": {
+      "title": "Negative Depression Screening",
+      "description": "Intervention, Result: Negative Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.600.794",
+      "type": "interventions",
+      "definition": "intervention_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionResultNegativeDepressionScreening"
+    },
+    "InterventionResultPositiveDepressionScreening": {
+      "title": "Positive Depression Screening",
+      "description": "Intervention, Result: Positive Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.600.793",
+      "type": "interventions",
+      "definition": "intervention_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionResultPositiveDepressionScreening"
+    },
+    "EncounterPerformedDepressionScreeningDenominatorEncounterCodesNew": {
+      "title": "Depression Screening Denominator Encounter Codes New",
+      "description": "Encounter, Performed: Depression Screening Denominator Encounter Codes New",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.600.1916",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedDepressionScreeningDenominatorEncounterCodesNew"
+    },
+    "InterventionPerformedAdditionalEvaluationForDepressionAdolescent": {
+      "title": "Additional evaluation for depression - adolescent",
+      "description": "Intervention, Performed: Additional evaluation for depression - adolescent",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.1542",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionPerformedAdditionalEvaluationForDepressionAdolescent"
+    },
+    "InterventionPerformedAdditionalEvaluationForDepressionAdult": {
+      "title": "Additional evaluation for depression - adult",
+      "description": "Intervention, Performed: Additional evaluation for depression - adult",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.1545",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionPerformedAdditionalEvaluationForDepressionAdult"
+    },
+    "ProcedurePerformedSuicideRiskAssessment": {
+      "title": "Suicide Risk Assessment",
+      "description": "Procedure, Performed: Suicide Risk Assessment",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.559",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedSuicideRiskAssessment"
+    },
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "InterventionPerformedNotDoneMedicalReasonContraindicated": {
+      "title": "Medical reason contraindicated",
+      "description": "Intervention, Performed not done: Medical reason contraindicated",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.792",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "source_data_criteria": "InterventionPerformedNotDoneMedicalReasonContraindicated"
+    },
+    "InterventionPerformedNotDoneMedicalReasonContraindicated1": {
+      "title": "Medical reason contraindicated",
+      "description": "Intervention, Performed not done: Medical reason contraindicated",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.792",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "source_data_criteria": "InterventionPerformedNotDoneMedicalReasonContraindicated1"
+    },
+    "InterventionPerformedNotDonePatientReasonRefused": {
+      "title": "Patient Reason refused",
+      "description": "Intervention, Performed not done: Patient Reason refused",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.791",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "source_data_criteria": "InterventionPerformedNotDonePatientReasonRefused"
+    },
+    "InterventionPerformedNotDonePatientReasonRefused2": {
+      "title": "Patient Reason refused",
+      "description": "Intervention, Performed not done: Patient Reason refused",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.791",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "source_data_criteria": "InterventionPerformedNotDonePatientReasonRefused2"
+    },
+    "OccurrenceADepressionScreeningDenominatorEncounterCodesNew3": {
+      "title": "Depression Screening Denominator Encounter Codes New",
+      "description": "Encounter, Performed: Depression Screening Denominator Encounter Codes New",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.600.1916",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_DEPRESSION_SCREENING_DENOMINATOR_ENCOUNTER_CODES_NEW",
+      "source_data_criteria": "OccurrenceADepressionScreeningDenominatorEncounterCodesNew3"
+    },
+    "OccurrenceAAdolescentDepressionScreening4": {
+      "title": "Adolescent Depression Screening",
+      "description": "Intervention, Performed: Adolescent Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.426",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "INTERVENTION_PERFORMED_ADOLESCENT_DEPRESSION_SCREENING",
+      "source_data_criteria": "OccurrenceAAdolescentDepressionScreening4"
+    },
+    "OccurrenceAAdultDepressionScreening5": {
+      "title": "Adult Depression Screening",
+      "description": "Intervention, Performed: Adult Depression Screening",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.600.431",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "INTERVENTION_PERFORMED_ADULT_DEPRESSION_SCREENING",
+      "source_data_criteria": "OccurrenceAAdultDepressionScreening5"
+    },
+    "OccurrenceABipolarDiagnosis6": {
+      "title": "Bipolar Diagnosis",
+      "description": "Diagnosis, Active: Bipolar Diagnosis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.600.450",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_BIPOLAR_DIAGNOSIS",
+      "source_data_criteria": "OccurrenceABipolarDiagnosis6"
+    },
+    "OccurrenceADepressionDiagnosis7": {
+      "title": "Depression diagnosis",
+      "description": "Diagnosis, Active: Depression diagnosis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.600.145",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_DEPRESSION_DIAGNOSIS",
+      "source_data_criteria": "OccurrenceADepressionDiagnosis7"
+    }
+  },
+  "attributes": [
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "Limited proprietary coding is contained in the measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. Quality Insights of Pennsylvania disclaims all liability for use or accuracy of any Current Procedural Terminology (CPT [R]) or other coding contained in the specifications.\r\n\r\nCPT (R) contained in the Measure specifications is copyright 2007-2011 American Medical Association. \r\n\r\nLOINC (R) copyright 2004-2011 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms (R) (SNOMED CT [R]) copyright 2004-2011 International Health Terminology Standards Development Organization. All Rights Reserved.\r\n\r\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "The World Health Organization, as seen in Pratt & Brody (2008), found that major depression was the leading cause of disability worldwide. Depression causes suffering, decreases quality of life, and causes impairment in social and occupational functioning. It is associated with increased health care costs as well as with higher rates of many chronic medical conditions. Studies have shown that a higher number of depression symptoms are associated with poor health and impaired functioning, whether or not the criteria for a diagnosis of major depression are met. Persons 40-59 years of age had higher rates of depression than any other age group. Persons 12-17, 18-39 and 60 years of age and older had similar rates of depression. Depression was more common in females than in males. Non-Hispanic black persons had higher rates of depression than non-Hispanic white persons. In the 18-39 and 40-59 age groups, those with income below the federal poverty level had higher rates of depression than those with higher income. Among persons 12-17 and 60 years of age and older, rates of depression did not vary significantly by poverty status. Overall, approximately 80% of persons with depression reported some level of difficulty in functioning because of their depressive symptoms. In addition 35% of males and 22% of females with depression reported that their depressive symptoms make it very or extremely difficult for them to work, get things done at home, or get along with other people. More than one-half of all persons with mild depressive symptoms also reported some difficulty in daily functioning attributable to their symptoms. \r\n\r\nThe negative outcomes associated with early onset depression, make it crucial to identify and treat depression in its early stages. As reported in Borner et al. (2010), a study conducted by the World Health Organization (WHO) reported that in North America, primary care and family physicians are likely to provide the first line of treatment for depressive disorders. Others consistently report a 10% prevalence rate of depression in primary care patients. But studies have shown that primary care physicians fail to recognize up to 50% of depressed patients, purportedly because of time constraints and a lack of brief, sensitive, easy-to administer psychiatric screening instruments. Coyle et al. (2003), suggested that the picture is more grim for adolescents, and that more than 70% of children and adolescents suffering from serious mood disorders go unrecognized or inadequately treated. In 2000, Healthy People 2010 recommended routine screening for mental health problems as a part of primary care for both children and adults.   \r\n  \r\nMajor depressive disorder (MDD) is a debilitating condition that has been increasingly recognized among youth, particularly adolescents. The prevalence of current or recent depression among children is 3% and among adolescents is 6%. The lifetime prevalence of MDD among adolescents may be as high as 20%. Adolescent-onset MDD is associated with an increased risk of death by suicide, suicide attempts, and recurrence of major depression by young adulthood. MDD is also associated with early pregnancy, decreased school performance, and impaired work, social, and family functioning during young adulthood (Williams et al., 2009). Every fifth adolescent may have a history of depression by age 18. The increase in the onset of depression occurs around puberty. According to Zalsman et al. (2006), as reported in Borner et al. (2010), depression ranks among the most commonly reported mental health problems in adolescent girls. \r\n\r\nThe economic burden of depression is substantial for individuals as well as society. Costs to an individual may include suffering, possible side effects from treatment, fees for mental health and medical visits and medications, time away from work and lost wages, transportation, and reduced quality of personal relationships. Costs to society may include loss of life, reduced productivity (because of both diminished capacity while at work and absenteeism from work), and increased costs of mental health and medical care. In 2000, the United States spent an estimated $83.1 billion in direct and indirect costs of depression (USPSTF, 2009).",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "Adolescent Recommendation (12-18 years) \r\nThe USPSTF recommends screening of adolescents (12-18 years of age) for major depressive disorder (MDD) when systems are in place to ensure accurate diagnosis, psychotherapy (cognitive-behavioral or interpersonal), and follow-up (2009).\r\n\r\nLevel II Child Preventive Services should be assessed and offered to each patient; as such services have been shown to be effective. Such Level II services include: Screening adolescents ages 12-18 for major depressive disorder when systems are in place for accurate diagnosis, treatment, and follow-up (ICSI, 2010).\r\n\r\nAdult Recommendation (18 years and older) \r\nThe USPSTF recommends screening adults for depression when staff-assisted depression care supports are in place to assure accurate diagnosis, effective treatment, and follow-up (2009). \r\n\r\nRoutine depression screening should be performed for adult patients (including older adults) but only if the practice has staff-assisted \"systems in place to ensure that positive results are followed by accurate diagnosis, effective treatment, and careful follow-up\" (ICSI, 2010).",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "Higher score indicates better quality.",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "0418",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "These performance measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.\r\n\r\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND.",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "2",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "INSTITUTE FOR CLINICAL SYSTEMS IMPROVEMENT (ICSI) (2010). Preventive Services for Children and Adolescents. Retrieved from  http://www.icsi.org/preventive_services_ for_children __guideline_/ preventive_services_for_children_and_adolescents_2531.html",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "Screening: \r\nCompletion of a clinical or diagnostic tool used to identify people at risk of developing or having a certain disease or condition, even in the absence of symptoms.  \r\n\r\nStandardized Depression Screening Tool – A normalized and validated depression screening tool developed  for the patient population in which it is being utilized\r\n\r\nExamples of depression screening tools include but are not limited to: \r\n•  Adolescent Screening Tools (12-17 years) \r\nPatient Health Questionnaire for Adolescents (PHQ-A), Beck Depression Inventory-Primary Care Version (BDI-PC), Mood Feeling Questionnaire, Center for Epidemiologic Studies Depression Scale (CES-D) and PRIME MD-PHQ2 \r\n•  Adult Screening Tools (18 years and older) \r\nPatient Health Questionnaire (PHQ9), Beck Depression Inventory (BDI or BDI-II), Center for Epidemiologic Studies Depression Scale (CES-D), Depression Scale (DEPS), Duke Anxiety-Depression Scale (DADS), Geriatric Depression Scale (SDS), Cornell Scale Screening and PRIME MD-PHQ2 \r\n\r\nFollow-Up Plan: \r\nProposed outline of treatment to be conducted as a result of positive clinical depression screening. Follow-up for a positive depression screening must include one (1) or more of the following: additional evaluation, suicide risk assessment, referral to a practitioner who is qualified to diagnose and treat depression, pharmacological interventions, other interventions or follow-up for the diagnosis or treatment of depression.",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "A clinical depression screen is complete on the date of the encounter using an age appropriate standardized depression screening tool AND if positive, a follow-up plan is documented on the date of the positive screen. The documented follow up plan must be related to positive depression screening, example: “Patient referred for psychiatric evaluation due to positive depression screening.”\r\n\r\nStandardized Depression Screening Tools should be normalized and validated for the age appropriate patient population in which they are used.",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "All patients aged 12 years and older before the beginning of the measurement period with at least one eligible encounter during the measurement period.",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals Initial Patient Population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Patients with an active diagnosis for Depression or Bipolar Disorder",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Patients screened for clinical depression on the date of the encounter  using an age appropriate standardized tool AND if positive, a follow-up plan is documented on the date of the positive screen",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "Patient Reason(s)\r\nPatient refuses to participate \r\n\r\nOR\r\n\r\nMedical Reason(s)\t\r\nPatient is in an urgent or emergent situation where time is of the essence and to delay treatment would jeopardize the patient’s health status \r\n\r\nOR\r\n\r\nSituations where the patient’s functional capacity or motivation to improve may impact the accuracy of results of standardized depression assessment tools.  For example: certain court appointed cases or cases of delirium",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not Applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "IPP": "IPP",
+      "DENOM": "DENOM",
+      "NUMER": "NUMER",
+      "DENEXCEP": "DENEXCEP",
+      "DENEX": "DENEX"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

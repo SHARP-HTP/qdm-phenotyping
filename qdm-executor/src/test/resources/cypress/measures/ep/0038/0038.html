@@ -1,0 +1,1391 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:n1="urn:hl7-org:v3">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Childhood Immunization Status</title><style type="text/css">
+body {
+	color: rgb(26, 26, 26);
+	background-color: rgb(255,255,255);
+	font-family: Verdana, Tahoma, sans-serif;
+	font-size: 11px;
+}
+
+a {
+	color: rgb(0, 0, 255);
+	background-color: rgb(255,255,255);
+}
+
+h1 {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+div {
+	width: 80%;
+}
+
+table {
+	line-height: 10pt;
+	width: 80%;
+}
+
+tr {
+	background-color: rgb(224,224,224);
+}
+
+td {
+	padding: 0.1cm 0.2cm;
+	vertical-align: top;
+}
+
+.h1center {
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+	width: 80%;
+}
+
+.header_table{
+	border: 1pt inset rgb(0,0,0);
+}
+
+.narr_table {
+	width: 100%;
+}
+
+.narr_tr {
+	background-color: rgb(225,225,225);
+}
+pre {
+ overflow: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+ white-space: pre-wrap; /* css-3 */
+ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+ white-space: -pre-wrap; /* Opera 4-6 */
+ white-space: -o-pre-wrap; /* Opera 7 */
+ word-wrap: break-word; /* Internet Explorer 5.5+ */
+ font-family: Verdana, Tahoma, sans-serif;
+ font-size: 11px;
+ text-align:left;
+ margin: 0px 0px 0px 0px;
+ padding:0px 0px 0px 0px;
+}
+.narr_th {
+	background-color: rgb(201,201,201);
+}
+
+.td_label{
+	font-weight: bold;
+	color: white;
+}
+	</style></head>
+   <body>
+      <table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Title</span></td>
+               <td width="80%" colspan="3">Childhood Immunization Status</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Identifier<br>(Measure Authoring Tool)</span></td>
+               <td width="30%">117</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Version number</span></td>
+               <td width="30%">1</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">NQF Number</span></td>
+               <td width="30%">0038</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">GUID</span></td>
+               <td> b2802b7a-3580-4be8-9458-921aea62b78c</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measurement Period</span></td>
+               <td width="80%" colspan="3">January 1, 20xx  through December 31, 20xx </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Steward</span></td>
+               <td width="80%" colspan="3">National Committee for Quality Assurance</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Developer</span></td>
+               <td width="80%" colspan="3">National Committee for Quality Assurance</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Endorsed By</span></td>
+               <td width="80%" colspan="3">National Quality Forum</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Description</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Percentage of children 2 years of age who had four diphtheria, tetanus and acellular pertussis (DTaP); three polio (IPV), one measles, mumps and rubella (MMR); three H influenza type B (HiB); three hepatitis B (Hep B); one chicken pox (VZV); four pneumococcal conjugate (PCV); one hepatitis A (Hep A); two or three rotavirus (RV); and two influenza (flu) vaccines by their second birthday.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Copyright</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Physician Performance Measure (Measures) and related data specifications were developed by the National Committee for Quality Assurance (NCQA).
+
+The Measures are copyrighted but can be reproduced and distributed, without modification, for noncommercial purposes (e.g., use by healthcare providers in connection with their practices). Commercial use is defined as the sale, licensing, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial use of the Measures requires a license agreement between the user and NCQA. NCQA is not responsible for any use of the Measures.
+
+Copyright 2012 National Committee for Quality Assurance. All Rights Reserved.
+
+Limited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets. NCQA disclaims all liability for use or accuracy of any CPT or other codes contained in the specifications.
+
+CPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC(R) copyright 2004-2011 Regenstrief Institute, Inc.
+This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 copyright 2011 World Health Organization. All Rights Reserved.
+
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Disclaimer</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>These performance Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.
+
+THE MEASURES AND SPECIFICATIONS ARE PROVIDED &#8220;AS IS&#8221; WITHOUT WARRANTY OF ANY KIND.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Scoring</span></td>
+               <td width="80%" colspan="3">Proportion</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Type</span></td>
+               <td width="80%" colspan="3">Process</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Stratification</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Risk Adjustment</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rate Aggregation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rationale</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Infants and toddlers are particularly vulnerable to infectious diseases because their immune systems have not built up the necessary defenses to fight infection (Centers for Disease Control and Prevention 2011). Most childhood vaccines are between 90 and 99 percent effective in preventing diseases (HealthyChildren 2011). Immunization is a critical aspect of preventive care for children. Lack of proper immunization leads to an increase in illness, doctor visits and hospitalizations, all of which translate into higher costs. (Tatzlandrew, Brown, and Halpern.). Vaccination of each U.S. birth cohort with the current childhood immunization schedule prevents approximately 42,000 deaths and 20 million cases of disease, and saves nearly $14 billion in direct costs and $69 billion in societal costs each year (Zhou 2011; Centers for Disease Control and Prevention 2011b). 
+
+Immunizing a child not only protects that child&#8217;s health but also the health of the community, especially for those who are not immunized or are unable to be immunized due to other health complications (Centers for Disease Control and Prevention 2009). When the majority of the community is immunized against a disease, other members of the community are also protected because herd immunity shields them. (National Institute of Allergy and Infectious Diseases 2010).</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Clinical Recommendation Statement</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Summary of Recommendations for Child/Teen Immunization (Ages birth through 18 years) (Immunization Action Coalition) based on recommendations of the Advisory Committee on Immunization Practices (ACIP, 2012)
+
+Hepatitis B (HepB)
+- Vaccinate all children age 0 through 18 years
+- Vaccinate all newborns with monovalent vaccine prior to hospital discharge. Give dose #2 at age 1-2 months and the final dose at age 6-18 months (the last dose in the infant series should not be given earlier than age 24 weeks). After the birth dose, the series may be completed using 2 doses of single-antigen vaccine or up to 3 doses of Comvax(r) (ages 2 months, 4 months 12-15 months) or Pediatrix(r) (ages 2 months, 4 months, 6 months), which may result in giving a total of 4 doses of hepatitis B vaccine.
+- If mother is HBsAg-positive: give the newborn HBIG + dose #1 within 12 hours of birth; complete series at age 6 months or, if using Comvax(r), at age 12-15 months. 
+- If mother is HBsAg status is unknown: given the newborn dose #1 within 12 hours of birth. If low birth weight (less than 2000 grams), also give HBIG within 12 hours. For infants weighing 2000 grams or more whose mother is subsequently found to be HBsAg positive, give the infant HBIG ASAP (no later than 7 days of birth) and follow HepB immunization schedule for infants born to HBsAg-positive mothers.
+
+DTaP, DT vaccinations (4 Diptheria, tetanus, acellular pertussis)
+- Give to children at ages 2 months, 4 months, 6 months, 15-18 months, 4-6 years.- May give dose #1 as early as age 6 weeks. 
+- May give #4 as early as age 12 months if 6 months have elapsed since #3. 
+- Do not give DTaP/DT to children age 7 years and older. 
+- If possible, use the same DTaP product for all doses. 
+
+Hib (Haemophilus influenzae type b)
+- ActHib(r) (PRP-T): give at age 2 months, 4 months, 6 months, 12-15 months (booster dose). 
+- PedvaxHIB(r) or Comvax(r) (containing PRP-OMP): give at age 2 months, 4 months, 12-15 months (booster dose). 
+- Dose #1 of Hib vaccine should not be given earlier than age 6 weeks. 
+- Give final dose (booster dose) no earlier than age 12 months and a minimum of 8 weeks after the previous dose. 
+- Hib vaccines are interchangeable; however, if different brands of Hib vaccines are administered for dose #1 and dose #2, a total of 3 doses is necessary to complete the primary series in infants. 
+- Any Hib vaccine may be used for the booster dose. 
+- Hib is not routinely given to children age 5 years and older. 
+- Hiberix(r) is approved ONLY for the booster dose at age 12 months through 4 years.
+
+Polio (IPV) 
+- Give to children at ages 2 months, 4 months, 6-18 months, 4-6 years.
+- May give dose #1 as early as age 6 weeks.
+- Not routinely recommended for U.S. residents age 18 years and older (except certain travelers).
+
+MMR (Measles, mumps, rubella)
+- Give dose #1 at age 12-15 months. 
+- Give MMR at age 6 through 11 months if traveling internationally; then revaccinate at age 12 months (and at least 4 weeks from previous dose). The dose given at younger than 12 months does not count toward the 2-dose series. 
+- Give dose #2 at age 4-6 years. Dose #2 may be given earlier if at least 4 weeks since dose #1. For MMRV: dose #2 may be given earlier if at least 3 months since dose #1. 
+- Give a 2nd dose to all older children and teens with history of only 1 dose. 
+
+MMRV may be used in children age 12 months through 12 years. For the first dose of MMR and varicella given at age 12-47 months, either MMR and Varicella (Var) or MMRV may be used. Unless the parent or caregiver expresses a preference for MMRV, CDC recommends that MMR and Var should be given for the first dose in this age group.
+
+Pneumococcal conjugate (PCV13)
+- Give at ages 2 months, 4 months, 6 months, 12-15 months.
+- Dose #1 may be given as early as age 6 weeks. 
+- When children are behind on PCV schedule, minimum interval for doses given to children younger than age 12 months is 4 weeks; for doses given at 12 months and older, it is 8 weeks. 
+- Give 1 dose to unvaccinated healthy children age 24-59 months. 
+- For high-risk children ages 24-71 months: give 2 doses at least 8 weeks apart if they previously received fewer than 3 doses; give 1 dose at least 8 weeks after the most recent dose if they previously received 3 doses. (High risk: those with sickle cell disease; anatomic or functional asplenia; chronic cardiac, pulmonary, or renal disease; diabetes; cerebrospinal fluid leaks; HIV infection; immunosuppression; diseases associated with immunosuppressive and/or radiation therapy; or who have or will have a cochlear implant.)
+- PCV13 is not routinely given to healthy children age 5 years and older. 
+
+Varicella (Var) (Chickenpox) 
+- Give dose #1 at age 12-15 months.
+- Give dose #2 at age 4-6 years. Dose #2 of Var or MMRV may be given earlier if at least 3 months since dose #1. 
+- Give a 2nd dose to all older children/teens with history of only 1 dose. 
+- MMRV may be used in children age 12 months through 12 years. For the first dose of MMR and varicella given at age 12-47 months, either MMR and Var or MMRV may be used. Unless the parent or caregiver expresses a preference for MMRV, CDC recommends that MMR and Var should be given for the first dose in this age group. 
+
+Hepatitis A (HepA)
+- Give 2 doses spaced 6 to 18 months apart to all children at age 1 year (12-23 months). 
+
+Rotavirus (RV) 
+- Rotarix(r) (RV1): give at age 2 months, 4 months.
+- RotaTeq(r) (RV5): give at age 2 months, 4 months, 6 months. 
+- May give dose #1 as early as age 6 weeks. 
+- Give final dose no later than age 8 months 0 days.
+
+Influenza (trivalent inactivated influenza (TIV), live attenuated influenza vaccine (LAIV)) 
+- Vaccinate all children and teens age 6 months through 18 years. 
+- LAIV may be given to healthy, non-pregnant people age 2-49 years.
+- Give 2 doses, spaced 4 weeks apart, to children age 6 months through 8 years who 1) are first-time vaccines or 2) failed to receive at least 1 dose of the 2010-2011 vaccine. 
+- For TIV, give 0.25 mL dose to children age 6-35 months and 0.5 mL dose if age 3 years and older. 
+- If LAIV and either MMR, Var, and/or yellow fever vaccine are not given on the same day, space them at least 28 days apart.
+
+Technical content reviewed by the Centers for Disease Control and Prevention, January 2012. 
+
+The measure allows a grace period by measuring compliance with these recommendations between birth and age two.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Improvement Notation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Higher score equals better quality.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Centers for Disease Control and Prevention. 2011a. &#8220;Vaccines &amp; Immunizations: Infants and Toddlers.&#8221; http://www.cdc.gov/vaccines/spec-grps/infants-toddlers.htm</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>HealthyChildren. 2011. &#8220;Safety &amp; Prevention: Why Immunize Your Child.&#8221; http://www.healthychildren.org/english/safety-prevention/immunizations/Pages/Why-Immunize-Your-Child.aspx?nfstatus=401&amp;nftoken=00000000-0000-0000-0000-000000000000&amp;nfstatusdescription=ERROR%3a+No+local+token</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Tatzlandrew, E.J., R.E. Brown, and M.T. Halpern. 1994. &#8220;A cost-benefit analysis of the measles-mumps-rubella (MMR) vaccine.&#8221; Arlington: Batelle Medical Technology Assessment and Policy Research Program.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Zhou, F. 2011. &#8220;Updated economic evaluation of the routine childhood immunization schedule in the United States.&#8221; Presented at the 45th National Immunization Conference. Washington, DC; March 28-31.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Centers for Disease Control and Prevention. 2011b. &#8220;Ten Great Public Health Achievements --- United States, 2001&#8212;2010.&#8221; MMWR 60(19):619-623.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Centers for Disease Control and Prevention. 2009. &#8220;Vaccines &amp; Immunizations: How Vaccines Prevent Disease.&#8221; http://www.cdc.gov/vaccines/vac-gen/howvpd.htm</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>National Institute of Allergy and Infectious Diseases. 2010. &#8220;Community Immunity ("Herd" Immunity).&#8221; http://www.niaid.nih.gov/topics/pages/communityimmunity.aspx</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Centers for Disease Control and Prevention. 2012. &#8220;Recommended Immunization Schedule for Persons Aged 0 Through 6 years - United States, 2012.&#8221; MMWR 61(05):1-4.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Immunization Action Coalition. 2012. &#8220;Summary of Recommendations for Child/Teen Immunization (Ages birth through 18 years).&#8221; http://www.immunize.org/catg.d/p2010.pdf</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Definition</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Guidance</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>For the MMR, hepatitis B, VZV and hepatitis A vaccines, numerator inclusion criteria include: evidence of the antigen; documented history of the illness; or, a seropositive test result for the antigen. For the DTaP, IPV, HiB, pneumococcal conjugate, rotavirus, and influenza vaccines, numerator inclusion criteria include only evidence of the antigen. Patients may be excepted from a particular antigen if they had an anaphylactic reaction to the vaccine. Patients may be excepted from the DTaP vaccine if they have encephalopathy. Patients may be excepted from the IPV vaccine if they have had an anaphylactic reaction to streptomycin, polymyxin B, or neomycin. Patients may be excepted from the MMR, VZV, or influenza vaccines if they have immunodeficiency, HIV, cancer of lymphoreticular or histiocytic tissue, multiple myeloma, leukemia, or have had an anaphlyactic reaction to neomycin. Patients may be excepted from the hepatitis B vaccine if they have had an anaphylactic reaction to common baker's yeast.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Transmission Format</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>TBD</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Initial Patient Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Children who turn 2 years of age during the measurement period and who have a visit during the measurement period</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Equals Initial Patient Population</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Children who have evidence showing they received recommended vaccines, had documented history of the illness, had a seropositive test result, or had an allergic reaction to the vaccine by their second birthday</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exceptions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Observations</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Supplemental Data Elements</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</pre></div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="toc">Table of Contents</a></h2>
+      <ul>
+         <li><a href="#d2228955e552">Population criteria</a></li>
+         <li><a href="#d2228955e10893">Data criteria (QDM Data Elements)</a></li>
+         <li><a href="#d2228955e14370">Reporting Stratification</a></li>
+         <li><a href="#d2228955e14391">Supplemental Data Elements</a></li>
+      </ul>
+      <hr align="left" color="teal" size="2" width="80%">
+      <h3><a name="d2228955e552" href="#toc">Population criteria</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               <b>Initial Patient Population =</b>
+               
+               <ul>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &lt;= 2 year(s) starts before start of "Measurement Period"</li>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 2 year(s) starts before or during "Measurement Period"</li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Encounter, Performed: Office Visit"</li>
+                        <li>OR: "Encounter, Performed: Face-to-Face Interaction"</li>
+                        <li>OR: "Encounter, Performed: Home Healthcare Services"</li>
+                        <li>OR: "Encounter, Performed: Preventive Care - Established Office Visit, 0 to 17"</li>
+                        <li>OR: "Encounter, Performed: Preventive Care- Initial Office Visit, 0 to 17"</li>
+                        <li> during "Measurement Period"</li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator =</b>
+               
+               <ul>
+                  <li>AND: "Initial Patient Population"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exclusions =</b>
+               
+               <ul>
+                  <li>None</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Numerator =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence D of Medication, Administered: DTaP Vaccine"  &gt;= 1 day(s) starts after end of ("Occurrence C of Medication,
+                                 Administered: DTaP Vaccine"  &gt;= 1 day(s) starts after end of ("Occurrence B of Medication, Administered: DTaP Vaccine"  &gt;=
+                                 1 day(s) starts after end of "Occurrence A of Medication, Administered: DTaP Vaccine"))
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Medication, Administered: DTaP Vaccine"</li>
+                                    <li>AND: "Occurrence B of Medication, Administered: DTaP Vaccine"</li>
+                                    <li>AND: "Occurrence C of Medication, Administered: DTaP Vaccine"</li>
+                                    <li>AND: "Occurrence D of Medication, Administered: DTaP Vaccine"</li>
+                                    <li>  &gt;= 42 day(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Medication, Administered: DTaP Vaccine"</li>
+                                    <li>AND: "Occurrence B of Medication, Administered: DTaP Vaccine"</li>
+                                    <li>AND: "Occurrence C of Medication, Administered: DTaP Vaccine"</li>
+                                    <li>AND: "Occurrence D of Medication, Administered: DTaP Vaccine"</li>
+                                    <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence D of Procedure, Performed: DTaP Vaccine Administered"  &gt;= 1 day(s) starts after end of ("Occurrence C of
+                                 Procedure, Performed: DTaP Vaccine Administered"  &gt;= 1 day(s) starts after end of ("Occurrence B of Procedure, Performed:
+                                 DTaP Vaccine Administered"  &gt;= 1 day(s) starts after end of "Occurrence A of Procedure, Performed: DTaP Vaccine Administered"))
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Procedure, Performed: DTaP Vaccine Administered"</li>
+                                    <li>AND: "Occurrence B of Procedure, Performed: DTaP Vaccine Administered"</li>
+                                    <li>AND: "Occurrence C of Procedure, Performed: DTaP Vaccine Administered"</li>
+                                    <li>AND: "Occurrence D of Procedure, Performed: DTaP Vaccine Administered"</li>
+                                    <li>  &gt;= 42 day(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Procedure, Performed: DTaP Vaccine Administered"</li>
+                                    <li>AND: "Occurrence B of Procedure, Performed: DTaP Vaccine Administered"</li>
+                                    <li>AND: "Occurrence C of Procedure, Performed: DTaP Vaccine Administered"</li>
+                                    <li>AND: "Occurrence D of Procedure, Performed: DTaP Vaccine Administered"</li>
+                                    <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Diagnosis, Active: Anaphylactic Reaction to DTaP Vaccine"</li>
+                              <li>OR: "Diagnosis, Active: Encephalopathy"</li>
+                              <li>OR: "Diagnosis, Resolved: Encephalopathy"</li>
+                              <li>  &lt;= 2 year(s) starts after start of "Patient Characteristic Birthdate: birth date"</li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence C of Medication, Administered: Inactivated Polio Vaccine (IPV)"  &gt;= 1 day(s) starts after end of ("Occurrence
+                                 B of Medication, Administered: Inactivated Polio Vaccine (IPV)"  &gt;= 1 day(s) starts after end of "Occurrence A of Medication,
+                                 Administered: Inactivated Polio Vaccine (IPV)")
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Medication, Administered: Inactivated Polio Vaccine (IPV)"</li>
+                                    <li>AND: "Occurrence B of Medication, Administered: Inactivated Polio Vaccine (IPV)"</li>
+                                    <li>AND: "Occurrence C of Medication, Administered: Inactivated Polio Vaccine (IPV)"</li>
+                                    <li>  &gt;= 42 day(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Medication, Administered: Inactivated Polio Vaccine (IPV)"</li>
+                                    <li>AND: "Occurrence B of Medication, Administered: Inactivated Polio Vaccine (IPV)"</li>
+                                    <li>AND: "Occurrence C of Medication, Administered: Inactivated Polio Vaccine (IPV)"</li>
+                                    <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence C of Procedure, Performed: Inactivated Polio Vaccine (IPV) Administered"  &gt;= 1 day(s) starts after end of
+                                 ("Occurrence B of Procedure, Performed: Inactivated Polio Vaccine (IPV) Administered"  &gt;= 1 day(s) starts after end of "Occurrence
+                                 A of Procedure, Performed: Inactivated Polio Vaccine (IPV) Administered")
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Procedure, Performed: Inactivated Polio Vaccine (IPV) Administered"</li>
+                                    <li>AND: "Occurrence B of Procedure, Performed: Inactivated Polio Vaccine (IPV) Administered"</li>
+                                    <li>AND: "Occurrence C of Procedure, Performed: Inactivated Polio Vaccine (IPV) Administered"</li>
+                                    <li>  &gt;= 42 day(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Procedure, Performed: Inactivated Polio Vaccine (IPV) Administered"</li>
+                                    <li>AND: "Occurrence B of Procedure, Performed: Inactivated Polio Vaccine (IPV) Administered"</li>
+                                    <li>AND: "Occurrence C of Procedure, Performed: Inactivated Polio Vaccine (IPV) Administered"</li>
+                                    <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Diagnosis, Active: Anaphylactic Reaction to Inactivated Polio Vaccine (IPV)"</li>
+                              <li>OR: "Diagnosis, Active: Anaphylactic Reaction to Streptomycin"</li>
+                              <li>OR: "Diagnosis, Active: Anaphylactic Reaction to Polymyxin"</li>
+                              <li>OR: "Diagnosis, Active: Anaphylactic Reaction to Neomycin"</li>
+                              <li>  &lt;= 2 year(s) starts after start of "Patient Characteristic Birthdate: birth date"</li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Medication, Administered: Measles, Mumps and Rubella (MMR) Vaccine"</li>
+                              <li>OR: "Procedure, Performed: Measles, Mumps and Rubella (MMR) Vaccine Administered"</li>
+                              <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Diagnosis, Active: Disorders of the Immune System"</li>
+                              <li>OR: "Diagnosis, Active: HIV"</li>
+                              <li>OR: "Diagnosis, Active: Malignant Neoplasm of Lymphatic Tissue"</li>
+                              <li>OR: "Diagnosis, Active: Anaphylactic Reaction to Neomycin"</li>
+                              <li>OR: 
+                                 <ul>
+                                    <li>AND: 
+                                       <ul>
+                                          <li>OR: "Diagnosis, Active: Measles"</li>
+                                          <li>OR: "Diagnosis, Resolved: Measles"</li>
+                                          <li>OR: "Laboratory Test, Result: Measles Antigen Test (result: 'Seropositive')"</li>
+                                       </ul>
+                                       
+                                    </li>
+                                    <li>AND: 
+                                       <ul>
+                                          <li>OR: "Diagnosis, Active: Mumps"</li>
+                                          <li>OR: "Diagnosis, Resolved: Mumps"</li>
+                                          <li>OR: "Laboratory Test, Result: Mumps Antigen Test (result: 'Seropositive')"</li>
+                                       </ul>
+                                       
+                                    </li>
+                                    <li>AND: 
+                                       <ul>
+                                          <li>OR: "Diagnosis, Active: Rubella"</li>
+                                          <li>OR: "Diagnosis, Resolved: Rubella"</li>
+                                          <li>OR: "Laboratory Test, Result: Rubella Antigen Test (result: 'Seropositive')"</li>
+                                       </ul>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>  &lt;= 2 year(s) starts after start of "Patient Characteristic Birthdate: birth date"</li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Diagnosis, Active: Anaphylactic Reaction to Hemophilus Influenza B (HiB) Vaccine"  &lt;= 2 year(s) starts after start of
+                           "Patient Characteristic Birthdate: birth date"
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence C of Medication, Administered: Hemophilus Influenze B (HiB) Vaccine"  &gt;= 1 day(s) starts after end of ("Occurrence
+                                 B of Medication, Administered: Hemophilus Influenze B (HiB) Vaccine"  &gt;= 1 day(s) starts after end of "Occurrence A of Medication,
+                                 Administered: Hemophilus Influenze B (HiB) Vaccine")
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Medication, Administered: Hemophilus Influenze B (HiB) Vaccine"</li>
+                                    <li>AND: "Occurrence B of Medication, Administered: Hemophilus Influenze B (HiB) Vaccine"</li>
+                                    <li>AND: "Occurrence C of Medication, Administered: Hemophilus Influenze B (HiB) Vaccine"</li>
+                                    <li>  &gt;= 42 day(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Medication, Administered: Hemophilus Influenze B (HiB) Vaccine"</li>
+                                    <li>AND: "Occurrence B of Medication, Administered: Hemophilus Influenze B (HiB) Vaccine"</li>
+                                    <li>AND: "Occurrence C of Medication, Administered: Hemophilus Influenze B (HiB) Vaccine"</li>
+                                    <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence C of Procedure, Performed: Hemophilus Influenze B (HiB) Vaccine Administered"  &gt;= 1 day(s) starts after end
+                                 of ("Occurrence B of Procedure, Performed: Hemophilus Influenze B (HiB) Vaccine Administered"  &gt;= 1 day(s) starts after end
+                                 of "Occurrence A of Procedure, Performed: Hemophilus Influenze B (HiB) Vaccine Administered")
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Procedure, Performed: Hemophilus Influenze B (HiB) Vaccine Administered"</li>
+                                    <li>AND: "Occurrence B of Procedure, Performed: Hemophilus Influenze B (HiB) Vaccine Administered"</li>
+                                    <li>AND: "Occurrence C of Procedure, Performed: Hemophilus Influenze B (HiB) Vaccine Administered"</li>
+                                    <li>  &gt;= 42 day(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Procedure, Performed: Hemophilus Influenze B (HiB) Vaccine Administered"</li>
+                                    <li>AND: "Occurrence B of Procedure, Performed: Hemophilus Influenze B (HiB) Vaccine Administered"</li>
+                                    <li>AND: "Occurrence C of Procedure, Performed: Hemophilus Influenze B (HiB) Vaccine Administered"</li>
+                                    <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence C of Medication, Administered: Hepatitis B Vaccine"  &gt;= 1 day(s) starts after end of ("Occurrence B of Medication,
+                                 Administered: Hepatitis B Vaccine"  &gt;= 1 day(s) starts after end of "Occurrence A of Medication, Administered: Hepatitis B
+                                 Vaccine")
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Medication, Administered: Hepatitis B Vaccine"</li>
+                                    <li>AND: "Occurrence B of Medication, Administered: Hepatitis B Vaccine"</li>
+                                    <li>AND: "Occurrence C of Medication, Administered: Hepatitis B Vaccine"</li>
+                                    <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence C of Procedure, Performed: Hepatitis B Vaccine Administered"  &gt;= 1 day(s) starts after end of ("Occurrence
+                                 B of Procedure, Performed: Hepatitis B Vaccine Administered"  &gt;= 1 day(s) starts after end of "Occurrence A of Procedure,
+                                 Performed: Hepatitis B Vaccine Administered")
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Procedure, Performed: Hepatitis B Vaccine Administered"</li>
+                                    <li>AND: "Occurrence B of Procedure, Performed: Hepatitis B Vaccine Administered"</li>
+                                    <li>AND: "Occurrence C of Procedure, Performed: Hepatitis B Vaccine Administered"</li>
+                                    <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Diagnosis, Active: Anaphylactic Reaction to Hepatitis B Vaccine"</li>
+                              <li>OR: "Diagnosis, Active: Anaphylactic Reaction to Common Baker's Yeast"</li>
+                              <li>OR: "Diagnosis, Active: Hepatitis B"</li>
+                              <li>OR: "Diagnosis, Inactive: Hepatitis B"</li>
+                              <li>OR: "Laboratory Test, Result: Hepatitis B Antigen Test (result: 'Seropositive')"</li>
+                              <li>  &lt;= 2 year(s) starts after start of "Patient Characteristic Birthdate: birth date"</li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Medication, Administered: Varicella Zoster Vaccine (VZV)"</li>
+                              <li>OR: "Procedure, Performed: Varicella Zoster Vaccine (VZV) Administered"</li>
+                              <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Diagnosis, Active: Disorders of the Immune System"</li>
+                              <li>OR: "Diagnosis, Active: HIV"</li>
+                              <li>OR: "Diagnosis, Active: Malignant Neoplasm of Lymphatic Tissue"</li>
+                              <li>OR: "Diagnosis, Active: Anaphylactic Reaction to Neomycin"</li>
+                              <li>OR: "Diagnosis, Active: Varicella Zoster"</li>
+                              <li>OR: "Diagnosis, Inactive: Varicella Zoster"</li>
+                              <li>OR: "Diagnosis, Resolved: Varicella Zoster"</li>
+                              <li>OR: "Laboratory Test, Result: Varicella Zoster Antigen Test (result: 'Seropositive')"</li>
+                              <li>  &lt;= 2 year(s) starts after start of "Patient Characteristic Birthdate: birth date"</li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Diagnosis, Active: Anaphylactic Reaction to Pneumococcal Conjugate Vaccine"  &lt;= 2 year(s) starts after start of "Patient
+                           Characteristic Birthdate: birth date"
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence D of Medication, Administered: Pneumococcal Conjugate Vaccine"  &gt;= 1 day(s) starts after end of ("Occurrence
+                                 C of Medication, Administered: Pneumococcal Conjugate Vaccine"  &gt;= 1 day(s) starts after end of ("Occurrence B of Medication,
+                                 Administered: Pneumococcal Conjugate Vaccine"  &gt;= 1 day(s) starts after end of "Occurrence A of Medication, Administered:
+                                 Pneumococcal Conjugate Vaccine"))
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Medication, Administered: Pneumococcal Conjugate Vaccine"</li>
+                                    <li>AND: "Occurrence B of Medication, Administered: Pneumococcal Conjugate Vaccine"</li>
+                                    <li>AND: "Occurrence C of Medication, Administered: Pneumococcal Conjugate Vaccine"</li>
+                                    <li>AND: "Occurrence D of Medication, Administered: Pneumococcal Conjugate Vaccine"</li>
+                                    <li>  &gt;= 42 day(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Medication, Administered: Pneumococcal Conjugate Vaccine"</li>
+                                    <li>AND: "Occurrence B of Medication, Administered: Pneumococcal Conjugate Vaccine"</li>
+                                    <li>AND: "Occurrence C of Medication, Administered: Pneumococcal Conjugate Vaccine"</li>
+                                    <li>AND: "Occurrence D of Medication, Administered: Pneumococcal Conjugate Vaccine"</li>
+                                    <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence D of Procedure, Performed: Pneumococcal Conjugate Vaccine Administered"  &gt;= 1 day(s) starts after end of
+                                 ("Occurrence C of Procedure, Performed: Pneumococcal Conjugate Vaccine Administered"  &gt;= 1 day(s) starts after end of ("Occurrence
+                                 B of Procedure, Performed: Pneumococcal Conjugate Vaccine Administered"  &gt;= 1 day(s) starts after end of "Occurrence A of
+                                 Procedure, Performed: Pneumococcal Conjugate Vaccine Administered"))
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Procedure, Performed: Pneumococcal Conjugate Vaccine Administered"</li>
+                                    <li>AND: "Occurrence B of Procedure, Performed: Pneumococcal Conjugate Vaccine Administered"</li>
+                                    <li>AND: "Occurrence C of Procedure, Performed: Pneumococcal Conjugate Vaccine Administered"</li>
+                                    <li>AND: "Occurrence D of Procedure, Performed: Pneumococcal Conjugate Vaccine Administered"</li>
+                                    <li>  &gt;= 42 day(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Procedure, Performed: Pneumococcal Conjugate Vaccine Administered"</li>
+                                    <li>AND: "Occurrence B of Procedure, Performed: Pneumococcal Conjugate Vaccine Administered"</li>
+                                    <li>AND: "Occurrence C of Procedure, Performed: Pneumococcal Conjugate Vaccine Administered"</li>
+                                    <li>AND: "Occurrence D of Procedure, Performed: Pneumococcal Conjugate Vaccine Administered"</li>
+                                    <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Occurrence A of Medication, Administered: Hepatitis A Vaccine"</li>
+                              <li>OR: "Occurrence A of Procedure, Performed: Hepatitis A Vaccine Administered"</li>
+                              <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Diagnosis, Active: Anaphylactic Reaction to Hepatitis A Vaccine"</li>
+                              <li>OR: "Diagnosis, Active: Hepatitis A"</li>
+                              <li>OR: "Diagnosis, Resolved: Hepatitis A"</li>
+                              <li>OR: "Laboratory Test, Result: Hepatitis A Antigen Test (result: 'Seropositive')"</li>
+                              <li>  &lt;= 2 year(s) starts after start of "Patient Characteristic Birthdate: birth date"</li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Diagnosis, Active: Anaphylactic Reaction to Rotavirus Vaccine"  &lt;= 2 year(s) starts after start of "Patient Characteristic
+                           Birthdate: birth date"
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence B of Medication, Administered: Rotavirus Vaccine (2 dose schedule)"  &gt;= 1 day(s) starts after end of "Occurrence
+                                 A of Medication, Administered: Rotavirus Vaccine (2 dose schedule)"
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Medication, Administered: Rotavirus Vaccine (2 dose schedule)"</li>
+                                    <li>AND: "Occurrence B of Medication, Administered: Rotavirus Vaccine (2 dose schedule)"</li>
+                                    <li>  &gt;= 42 day(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Medication, Administered: Rotavirus Vaccine (2 dose schedule)"</li>
+                                    <li>AND: "Occurrence B of Medication, Administered: Rotavirus Vaccine (2 dose schedule)"</li>
+                                    <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence B of Procedure, Performed: Rotavirus Vaccine (2 dose schedule) Administered"  &gt;= 1 day(s) starts after end
+                                 of "Occurrence A of Procedure, Performed: Rotavirus Vaccine (2 dose schedule) Administered"
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Procedure, Performed: Rotavirus Vaccine (2 dose schedule) Administered"</li>
+                                    <li>AND: "Occurrence B of Procedure, Performed: Rotavirus Vaccine (2 dose schedule) Administered"</li>
+                                    <li>  &gt;= 42 day(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Procedure, Performed: Rotavirus Vaccine (2 dose schedule) Administered"</li>
+                                    <li>AND: "Occurrence B of Procedure, Performed: Rotavirus Vaccine (2 dose schedule) Administered"</li>
+                                    <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Medication, Administered: Rotavirus Vaccine (3 dose schedule)"</li>
+                                    <li>AND: "Occurrence B of Medication, Administered: Rotavirus Vaccine (3 dose schedule)"</li>
+                                    <li>AND: "Occurrence A of Medication, Administered: Rotavirus Vaccine (2 dose schedule)"</li>
+                                    <li>  &gt;= 42 day(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Medication, Administered: Rotavirus Vaccine (3 dose schedule)"</li>
+                                    <li>AND: "Occurrence B of Medication, Administered: Rotavirus Vaccine (3 dose schedule)"</li>
+                                    <li>AND: "Occurrence A of Medication, Administered: Rotavirus Vaccine (2 dose schedule)"</li>
+                                    <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: "Occurrence A of Medication, Administered: Rotavirus Vaccine (2 dose schedule)"  &gt;= 1 day(s) starts after end of ("Occurrence
+                                       B of Medication, Administered: Rotavirus Vaccine (3 dose schedule)"  &gt;= 1 day(s) starts after end of "Occurrence A of Medication,
+                                       Administered: Rotavirus Vaccine (3 dose schedule)")
+                                    </li>
+                                    <li>OR: "Occurrence B of Medication, Administered: Rotavirus Vaccine (3 dose schedule)"  &gt;= 1 day(s) starts after end of ("Occurrence
+                                       A of Medication, Administered: Rotavirus Vaccine (2 dose schedule)"  &gt;= 1 day(s) starts after end of "Occurrence A of Medication,
+                                       Administered: Rotavirus Vaccine (3 dose schedule)")
+                                    </li>
+                                    <li>OR: "Occurrence B of Medication, Administered: Rotavirus Vaccine (3 dose schedule)"  &gt;= 1 day(s) starts after end of ("Occurrence
+                                       A of Medication, Administered: Rotavirus Vaccine (3 dose schedule)"  &gt;= 1 day(s) starts after end of "Occurrence A of Medication,
+                                       Administered: Rotavirus Vaccine (2 dose schedule)")
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered"</li>
+                                    <li>AND: "Occurrence B of Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered"</li>
+                                    <li>AND: "Occurrence A of Procedure, Performed: Rotavirus Vaccine (2 dose schedule) Administered"</li>
+                                    <li>  &gt;= 42 day(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered"</li>
+                                    <li>AND: "Occurrence B of Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered"</li>
+                                    <li>AND: "Occurrence A of Procedure, Performed: Rotavirus Vaccine (2 dose schedule) Administered"</li>
+                                    <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: "Occurrence A of Procedure, Performed: Rotavirus Vaccine (2 dose schedule) Administered"  &gt;= 1 day(s) starts after end
+                                       of ("Occurrence B of Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered"  &gt;= 1 day(s) starts after end
+                                       of "Occurrence A of Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered")
+                                    </li>
+                                    <li>OR: "Occurrence B of Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered"  &gt;= 1 day(s) starts after end
+                                       of ("Occurrence A of Procedure, Performed: Rotavirus Vaccine (2 dose schedule) Administered"  &gt;= 1 day(s) starts after end
+                                       of "Occurrence A of Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered")
+                                    </li>
+                                    <li>OR: "Occurrence B of Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered"  &gt;= 1 day(s) starts after end
+                                       of ("Occurrence A of Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered"  &gt;= 1 day(s) starts after end
+                                       of "Occurrence A of Procedure, Performed: Rotavirus Vaccine (2 dose schedule) Administered")
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence C of Medication, Administered: Rotavirus Vaccine (3 dose schedule)"  &gt;= 1 day(s) starts after end of ("Occurrence
+                                 B of Medication, Administered: Rotavirus Vaccine (3 dose schedule)"  &gt;= 1 day(s) starts after end of "Occurrence A of Medication,
+                                 Administered: Rotavirus Vaccine (3 dose schedule)")
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Medication, Administered: Rotavirus Vaccine (3 dose schedule)"</li>
+                                    <li>AND: "Occurrence B of Medication, Administered: Rotavirus Vaccine (3 dose schedule)"</li>
+                                    <li>AND: "Occurrence C of Medication, Administered: Rotavirus Vaccine (3 dose schedule)"</li>
+                                    <li>  &gt;= 42 day(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Medication, Administered: Rotavirus Vaccine (3 dose schedule)"</li>
+                                    <li>AND: "Occurrence B of Medication, Administered: Rotavirus Vaccine (3 dose schedule)"</li>
+                                    <li>AND: "Occurrence C of Medication, Administered: Rotavirus Vaccine (3 dose schedule)"</li>
+                                    <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence C of Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered"  &gt;= 1 day(s) starts after end
+                                 of ("Occurrence B of Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered"  &gt;= 1 day(s) starts after end
+                                 of "Occurrence A of Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered")
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered"</li>
+                                    <li>AND: "Occurrence B of Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered"</li>
+                                    <li>AND: "Occurrence C of Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered"</li>
+                                    <li>  &gt;= 42 day(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered"</li>
+                                    <li>AND: "Occurrence B of Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered"</li>
+                                    <li>AND: "Occurrence C of Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered"</li>
+                                    <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence B of Medication, Administered: Influenza Vaccine"  &gt;= 1 day(s) starts after end of "Occurrence A of Medication,
+                                 Administered: Influenza Vaccine"
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Medication, Administered: Influenza Vaccine"</li>
+                                    <li>AND: "Occurrence B of Medication, Administered: Influenza Vaccine"</li>
+                                    <li>  &gt;= 180 day(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Medication, Administered: Influenza Vaccine"</li>
+                                    <li>AND: "Occurrence B of Medication, Administered: Influenza Vaccine"</li>
+                                    <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence B of Procedure, Performed: Influenza Vaccine Administered"  &gt;= 1 day(s) starts after end of "Occurrence A
+                                 of Procedure, Performed: Influenza Vaccine Administered"
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Procedure, Performed: Influenza Vaccine Administered"</li>
+                                    <li>AND: "Occurrence B of Procedure, Performed: Influenza Vaccine Administered"</li>
+                                    <li>  &gt;= 180 day(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>AND: "Occurrence A of Procedure, Performed: Influenza Vaccine Administered"</li>
+                                    <li>AND: "Occurrence B of Procedure, Performed: Influenza Vaccine Administered"</li>
+                                    <li>  &lt;= 2 year(s) ends after start of "Patient Characteristic Birthdate: birth date"</li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Diagnosis, Active: Anaphylactic Reaction to Influenza Vaccine"</li>
+                              <li>OR: "Diagnosis, Active: Disorders of the Immune System"</li>
+                              <li>OR: "Diagnosis, Active: HIV"</li>
+                              <li>OR: "Diagnosis, Active: Malignant Neoplasm of Lymphatic Tissue"</li>
+                              <li>OR: "Diagnosis, Active: Anaphylactic Reaction to Neomycin"</li>
+                              <li>  &lt;= 2 year(s) starts after start of "Patient Characteristic Birthdate: birth date"</li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exceptions =</b>
+               
+               <ul>
+                  <li>None</li>
+               </ul>
+               
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d2228955e10893" href="#toc">Data criteria (QDM Data Elements)</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Diagnosis, Active: Anaphylactic Reaction to Common Baker's Yeast" using "Anaphylactic Reaction to Common Baker's Yeast Grouping Value Set (2.16.840.1.113883.3.464.1003.199.12.1032)"
+            </li>
+            <li>
+               "Diagnosis, Active: Anaphylactic Reaction to DTaP Vaccine" using "Anaphylactic Reaction to DTaP Vaccine Grouping Value Set (2.16.840.1.113883.3.464.1003.199.12.1031)"
+            </li>
+            <li>
+               "Diagnosis, Active: Anaphylactic Reaction to Hemophilus Influenza B (HiB) Vaccine" using "Anaphylactic Reaction to Hemophilus Influenza B (HiB) Vaccine Grouping Value Set (2.16.840.1.113883.3.464.1003.199.12.1030)"
+            </li>
+            <li>
+               "Diagnosis, Active: Anaphylactic Reaction to Hepatitis A Vaccine" using "Anaphylactic Reaction to Hepatitis A Vaccine Grouping Value Set (2.16.840.1.113883.3.464.1003.199.12.1026)"
+            </li>
+            <li>
+               "Diagnosis, Active: Anaphylactic Reaction to Hepatitis B Vaccine" using "Anaphylactic Reaction to Hepatitis B Vaccine Grouping Value Set (2.16.840.1.113883.3.464.1003.199.12.1029)"
+            </li>
+            <li>
+               "Diagnosis, Active: Anaphylactic Reaction to Inactivated Polio Vaccine (IPV)" using "Anaphylactic Reaction to Inactivated Polio Vaccine (IPV) Grouping Value Set (2.16.840.1.113883.3.464.1003.199.12.1023)"
+            </li>
+            <li>
+               "Diagnosis, Active: Anaphylactic Reaction to Influenza Vaccine" using "Anaphylactic Reaction to Influenza Vaccine Grouping Value Set (2.16.840.1.113883.3.464.1003.199.12.1022)"
+            </li>
+            <li>
+               "Diagnosis, Active: Anaphylactic Reaction to Neomycin" using "Anaphylactic Reaction to Neomycin Grouping Value Set (2.16.840.1.113883.3.464.1003.199.12.1024)"
+            </li>
+            <li>
+               "Diagnosis, Active: Anaphylactic Reaction to Pneumococcal Conjugate Vaccine" using "Anaphylactic Reaction to Pneumococcal Conjugate Vaccine Grouping Value Set (2.16.840.1.113883.3.464.1003.199.12.1027)"
+            </li>
+            <li>
+               "Diagnosis, Active: Anaphylactic Reaction to Polymyxin" using "Anaphylactic Reaction to Polymyxin Grouping Value Set (2.16.840.1.113883.3.464.1003.199.12.1025)"
+            </li>
+            <li>
+               "Diagnosis, Active: Anaphylactic Reaction to Rotavirus Vaccine" using "Anaphylactic Reaction to Rotavirus Vaccine Grouping Value Set (2.16.840.1.113883.3.464.1003.199.12.1021)"
+            </li>
+            <li>
+               "Diagnosis, Active: Anaphylactic Reaction to Streptomycin" using "Anaphylactic Reaction to Streptomycin Grouping Value Set (2.16.840.1.113883.3.464.1003.199.12.1028)"
+            </li>
+            <li>
+               "Diagnosis, Active: Disorders of the Immune System" using "Disorders of the Immune System Grouping Value Set (2.16.840.1.113883.3.464.1003.120.12.1001)"
+            </li>
+            <li>
+               "Diagnosis, Active: Encephalopathy" using "Encephalopathy Grouping Value Set (2.16.840.1.113883.3.464.1003.114.12.1007)"
+            </li>
+            <li>
+               "Diagnosis, Active: Hepatitis A" using "Hepatitis A Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1024)"
+            </li>
+            <li>
+               "Diagnosis, Active: Hepatitis B" using "Hepatitis B Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1025)"
+            </li>
+            <li>
+               "Diagnosis, Active: HIV" using "HIV Grouping Value Set (2.16.840.1.113883.3.464.1003.120.12.1003)"
+            </li>
+            <li>
+               "Diagnosis, Active: Malignant Neoplasm of Lymphatic Tissue" using "Malignant Neoplasm of Lymphatic Tissue Grouping Value Set (2.16.840.1.113883.3.464.1003.108.12.1021)"
+            </li>
+            <li>
+               "Diagnosis, Active: Measles" using "Measles Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1053)"
+            </li>
+            <li>
+               "Diagnosis, Active: Mumps" using "Mumps Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1032)"
+            </li>
+            <li>
+               "Diagnosis, Active: Rubella" using "Rubella Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1037)"
+            </li>
+            <li>
+               "Diagnosis, Active: Varicella Zoster" using "Varicella Zoster Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1039)"
+            </li>
+            <li>
+               "Diagnosis, Inactive: Hepatitis B" using "Hepatitis B Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1025)"
+            </li>
+            <li>
+               "Diagnosis, Inactive: Varicella Zoster" using "Varicella Zoster Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1039)"
+            </li>
+            <li>
+               "Diagnosis, Resolved: Encephalopathy" using "Encephalopathy Grouping Value Set (2.16.840.1.113883.3.464.1003.114.12.1007)"
+            </li>
+            <li>
+               "Diagnosis, Resolved: Hepatitis A" using "Hepatitis A Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1024)"
+            </li>
+            <li>
+               "Diagnosis, Resolved: Measles" using "Measles Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1053)"
+            </li>
+            <li>
+               "Diagnosis, Resolved: Mumps" using "Mumps Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1032)"
+            </li>
+            <li>
+               "Diagnosis, Resolved: Rubella" using "Rubella Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1037)"
+            </li>
+            <li>
+               "Diagnosis, Resolved: Varicella Zoster" using "Varicella Zoster Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1039)"
+            </li>
+            <li>
+               "Encounter, Performed: Face-to-Face Interaction" using "Face-to-Face Interaction Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1048)"
+            </li>
+            <li>
+               "Encounter, Performed: Home Healthcare Services" using "Home Healthcare Services Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1016)"
+            </li>
+            <li>
+               "Encounter, Performed: Office Visit" using "Office Visit Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1001)"
+            </li>
+            <li>
+               "Encounter, Performed: Preventive Care - Established Office Visit, 0 to 17" using "Preventive Care - Established Office Visit, 0 to 17 Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1024)"
+            </li>
+            <li>
+               "Encounter, Performed: Preventive Care- Initial Office Visit, 0 to 17" using "Preventive Care- Initial Office Visit, 0 to 17 Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1022)"
+            </li>
+            <li>
+               "Laboratory Test, Result: Hepatitis A Antigen Test" using "Hepatitis A Antigen Test Grouping Value Set (2.16.840.1.113883.3.464.1003.198.12.1033)"
+            </li>
+            <li>
+               "Laboratory Test, Result: Hepatitis B Antigen Test" using "Hepatitis B Antigen Test Grouping Value Set (2.16.840.1.113883.3.464.1003.198.12.1031)"
+            </li>
+            <li>
+               "Laboratory Test, Result: Measles Antigen Test" using "Measles Antigen Test Grouping Value Set (2.16.840.1.113883.3.464.1003.198.12.1029)"
+            </li>
+            <li>
+               "Laboratory Test, Result: Mumps Antigen Test" using "Mumps Antigen Test Grouping Value Set (2.16.840.1.113883.3.464.1003.198.12.1028)"
+            </li>
+            <li>
+               "Laboratory Test, Result: Rubella Antigen Test" using "Rubella Antigen Test Grouping Value Set (2.16.840.1.113883.3.464.1003.198.12.1030)"
+            </li>
+            <li>
+               "Laboratory Test, Result: Varicella Zoster Antigen Test" using "Varicella Zoster Antigen Test Grouping Value Set (2.16.840.1.113883.3.464.1003.198.12.1032)"
+            </li>
+            <li>
+               "Medication, Administered: DTaP Vaccine" using "DTaP Vaccine Grouping Value Set (2.16.840.1.113883.3.464.1003.196.12.1214)"
+            </li>
+            <li>
+               "Medication, Administered: Hemophilus Influenze B (HiB) Vaccine" using "Hemophilus Influenze B (HiB) Vaccine Grouping Value Set (2.16.840.1.113883.3.464.1003.196.12.1217)"
+            </li>
+            <li>
+               "Medication, Administered: Hepatitis A Vaccine" using "Hepatitis A Vaccine Grouping Value Set (2.16.840.1.113883.3.464.1003.196.12.1215)"
+            </li>
+            <li>
+               "Medication, Administered: Hepatitis B Vaccine" using "Hepatitis B Vaccine Grouping Value Set (2.16.840.1.113883.3.464.1003.196.12.1216)"
+            </li>
+            <li>
+               "Medication, Administered: Inactivated Polio Vaccine (IPV)" using "Inactivated Polio Vaccine (IPV) Grouping Value Set (2.16.840.1.113883.3.464.1003.196.12.1219)"
+            </li>
+            <li>
+               "Medication, Administered: Influenza Vaccine" using "Influenza Vaccine Grouping Value Set (2.16.840.1.113883.3.464.1003.196.12.1218)"
+            </li>
+            <li>
+               "Medication, Administered: Measles, Mumps and Rubella (MMR) Vaccine" using "Measles, Mumps and Rubella (MMR) Vaccine Grouping Value Set (2.16.840.1.113883.3.464.1003.196.12.1224)"
+            </li>
+            <li>
+               "Medication, Administered: Pneumococcal Conjugate Vaccine" using "Pneumococcal Conjugate Vaccine Grouping Value Set (2.16.840.1.113883.3.464.1003.196.12.1221)"
+            </li>
+            <li>
+               "Medication, Administered: Rotavirus Vaccine (2 dose schedule)" using "Rotavirus Vaccine (2 dose schedule) Grouping Value Set (2.16.840.1.113883.3.464.1003.196.12.1222)"
+            </li>
+            <li>
+               "Medication, Administered: Rotavirus Vaccine (3 dose schedule)" using "Rotavirus Vaccine (3 dose schedule) Grouping Value Set (2.16.840.1.113883.3.464.1003.196.12.1223)"
+            </li>
+            <li>
+               "Medication, Administered: Varicella Zoster Vaccine (VZV)" using "Varicella Zoster Vaccine (VZV) Grouping Value Set (2.16.840.1.113883.3.464.1003.196.12.1170)"
+            </li>
+            <li>
+               "Patient Characteristic Birthdate: birth date" using "birth date LOINC Value Set (2.16.840.1.113883.3.560.100.4)"
+            </li>
+            <li>
+               "Procedure, Performed: DTaP Vaccine Administered" using "DTaP Vaccine Administered Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1022)"
+            </li>
+            <li>
+               "Procedure, Performed: Hemophilus Influenze B (HiB) Vaccine Administered" using "Hemophilus Influenze B (HiB) Vaccine Administered Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1043)"
+            </li>
+            <li>
+               "Procedure, Performed: Hepatitis A Vaccine Administered" using "Hepatitis A Vaccine Administered Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1041)"
+            </li>
+            <li>
+               "Procedure, Performed: Hepatitis B Vaccine Administered" using "Hepatitis B Vaccine Administered Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1042)"
+            </li>
+            <li>
+               "Procedure, Performed: Inactivated Polio Vaccine (IPV) Administered" using "Inactivated Polio Vaccine (IPV) Administered Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1045)"
+            </li>
+            <li>
+               "Procedure, Performed: Influenza Vaccine Administered" using "Influenza Vaccine Administered Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1044)"
+            </li>
+            <li>
+               "Procedure, Performed: Measles, Mumps and Rubella (MMR) Vaccine Administered" using "Measles, Mumps and Rubella (MMR) Vaccine Administered Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1031)"
+            </li>
+            <li>
+               "Procedure, Performed: Pneumococcal Conjugate Vaccine Administered" using "Pneumococcal Conjugate Vaccine Administered Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1046)"
+            </li>
+            <li>
+               "Procedure, Performed: Rotavirus Vaccine (2 dose schedule) Administered" using "Rotavirus Vaccine (2 dose schedule) Administered Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1048)"
+            </li>
+            <li>
+               "Procedure, Performed: Rotavirus Vaccine (3 dose schedule) Administered" using "Rotavirus Vaccine (3 dose schedule) Administered Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1047)"
+            </li>
+            <li>
+               "Procedure, Performed: Varicella Zoster Vaccine (VZV) Administered" using "Varicella Zoster Vaccine (VZV) Administered Grouping Value Set (2.16.840.1.113883.3.464.1003.110.12.1040)"
+            </li>
+            <li>
+               Attribute: "Result: Seropositive" using "Seropositive Grouping Value Set  (2.16.840.1.113883.3.464.1003.110.12.1054)"
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d2228955e14370" href="#toc">Reporting Stratification</a></h3>
+      <div>
+         
+         <ul>
+            <li>None</li>
+         </ul>
+         
+      </div>
+      <h3><a name="d2228955e14391" href="#toc">Supplemental Data Elements</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Patient Characteristic Ethnicity: Ethnicity" using "Ethnicity CDC Value Set (2.16.840.1.114222.4.11.837)"
+            </li>
+            <li>
+               "Patient Characteristic Payer: Payer" using "Payer Source of Payment Typology Value Set (2.16.840.1.114222.4.11.3591)"
+            </li>
+            <li>
+               "Patient Characteristic Race: Race" using "Race CDC Value Set (2.16.840.1.114222.4.11.836)"
+            </li>
+            <li>
+               "Patient Characteristic Sex: ONC Administrative Sex" using "ONC Administrative Sex Administrative Sex Value Set (2.16.840.1.113762.1.4.1)"
+            </li>
+         </ul>
+         
+      </div><br><hr align="left" color="teal" size="2" width="80%"><br><table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Set</span></td>
+               <td colspan="3" width="80%">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto;word-wrap:break-word">None</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

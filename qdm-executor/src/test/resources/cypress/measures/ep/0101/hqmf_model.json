@@ -1,0 +1,756 @@
+{
+  "id": "0101",
+  "hqmf_id": "8A4D92B2-3946-CDAE-0139-5A8AF3E97BDB",
+  "hqmf_set_id": "BC5B4A57-B964-4399-9D40-667C896F31EA",
+  "hqmf_version_number": 1,
+  "title": "Falls: Screening for Future Fall Risk",
+  "description": "Percentage of patients 65 years of age and older who were screened for future fall risk during the measurement period.",
+  "cms_id": "CMS139v1",
+  "population_criteria": {
+    "DENEXCEP": {
+      "conjunction?": true,
+      "type": "DENEXCEP",
+      "title": "Denominator Exception",
+      "hqmf_id": "D5337A4D-01E0-444B-9F15-0008C9F357FB",
+      "preconditions": [
+        {
+          "id": 7,
+          "preconditions": [
+            {
+              "id": 5,
+              "preconditions": [
+                {
+                  "id": 1,
+                  "reference": "RiskCategoryAssessmentPatientNotAmbulatory_precondition_1"
+                },
+                {
+                  "id": 3,
+                  "reference": "RiskCategoryAssessmentFallsScreening_precondition_3"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "1E78A8E0-91B5-453F-B3FF-595BD03DCE34",
+      "preconditions": [
+        {
+          "id": 10,
+          "preconditions": [
+            {
+              "id": 8,
+              "reference": "RiskCategoryAssessmentFallsScreening_precondition_8"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "0B400E53-820E-48EC-990B-03FDC7B23211"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "9DD68719-55BB-4CF6-8A9E-712D56CB121E",
+      "preconditions": [
+        {
+          "id": 33,
+          "preconditions": [
+            {
+              "id": 11,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_11"
+            },
+            {
+              "id": 31,
+              "preconditions": [
+                {
+                  "id": 13,
+                  "reference": "EncounterPerformedFaceToFaceInteraction_precondition_13"
+                },
+                {
+                  "id": 15,
+                  "reference": "EncounterPerformedOfficeVisit_precondition_15"
+                },
+                {
+                  "id": 17,
+                  "reference": "EncounterPerformedPreventiveCareServicesIndividualCounseling_precondition_17"
+                },
+                {
+                  "id": 19,
+                  "reference": "EncounterPerformedNursingFacilityVisit_precondition_19"
+                },
+                {
+                  "id": 21,
+                  "reference": "EncounterPerformedCareServicesInLongTermResidentialFacility_precondition_21"
+                },
+                {
+                  "id": 23,
+                  "reference": "EncounterPerformedHomeHealthcareServices_precondition_23"
+                },
+                {
+                  "id": 25,
+                  "reference": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_25"
+                },
+                {
+                  "id": 27,
+                  "reference": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_27"
+                },
+                {
+                  "id": 29,
+                  "reference": "EncounterPerformedAnnualWellnessVisit_precondition_29"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "RiskCategoryAssessmentNotDoneMedicalReason": {
+      "title": "Medical Reason",
+      "description": "Risk Category Assessment not done: Medical Reason",
+      "standard_category": "risk_category_assessment",
+      "qds_data_type": "risk_category_assessment",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "type": "risk_category_assessments",
+      "definition": "risk_category_assessment",
+      "hard_status": false,
+      "negation": true,
+      "source_data_criteria": "RiskCategoryAssessmentNotDoneMedicalReason"
+    },
+    "RiskCategoryAssessmentPatientNotAmbulatory_precondition_1": {
+      "title": "Patient not ambulatory",
+      "description": "Risk Category Assessment: Patient not ambulatory",
+      "standard_category": "risk_category_assessment",
+      "qds_data_type": "risk_category_assessment",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.118.12.1009",
+      "type": "risk_category_assessments",
+      "definition": "risk_category_assessment",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "RiskCategoryAssessmentPatientNotAmbulatory",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "RiskCategoryAssessmentFallsScreening_precondition_3": {
+      "title": "Falls Screening",
+      "description": "Risk Category Assessment: Falls Screening",
+      "standard_category": "risk_category_assessment",
+      "qds_data_type": "risk_category_assessment",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.118.12.1028",
+      "type": "risk_category_assessments",
+      "definition": "risk_category_assessment",
+      "hard_status": false,
+      "negation": true,
+      "negation_code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "source_data_criteria": "RiskCategoryAssessmentFallsScreening",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "RiskCategoryAssessmentFallsScreening_precondition_8": {
+      "title": "Falls Screening",
+      "description": "Risk Category Assessment: Falls Screening",
+      "standard_category": "risk_category_assessment",
+      "qds_data_type": "risk_category_assessment",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.118.12.1028",
+      "type": "risk_category_assessments",
+      "definition": "risk_category_assessment",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "RiskCategoryAssessmentFallsScreening",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_11": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "65",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedFaceToFaceInteraction_precondition_13": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedOfficeVisit_precondition_15": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesIndividualCounseling_precondition_17": {
+      "title": "Preventive Care Services-Individual Counseling",
+      "description": "Encounter, Performed: Preventive Care Services-Individual Counseling",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1026",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesIndividualCounseling",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedNursingFacilityVisit_precondition_19": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedNursingFacilityVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedCareServicesInLongTermResidentialFacility_precondition_21": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedCareServicesInLongTermResidentialFacility",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedHomeHealthcareServices_precondition_23": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHomeHealthcareServices",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_25": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_27": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedAnnualWellnessVisit_precondition_29": {
+      "title": "Annual Wellness Visit",
+      "description": "Encounter, Performed: Annual Wellness Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1240",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedAnnualWellnessVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedCareServicesInLongTermResidentialFacility": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedCareServicesInLongTermResidentialFacility"
+    },
+    "EncounterPerformedHomeHealthcareServices": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHomeHealthcareServices"
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp"
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp"
+    },
+    "EncounterPerformedPreventiveCareServicesIndividualCounseling": {
+      "title": "Preventive Care Services-Individual Counseling",
+      "description": "Encounter, Performed: Preventive Care Services-Individual Counseling",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1026",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesIndividualCounseling"
+    },
+    "RiskCategoryAssessmentFallsScreening": {
+      "title": "Falls Screening",
+      "description": "Risk Category Assessment: Falls Screening",
+      "standard_category": "risk_category_assessment",
+      "qds_data_type": "risk_category_assessment",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.118.12.1028",
+      "type": "risk_category_assessments",
+      "definition": "risk_category_assessment",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "RiskCategoryAssessmentFallsScreening"
+    },
+    "EncounterPerformedNursingFacilityVisit": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedNursingFacilityVisit"
+    },
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "RiskCategoryAssessmentPatientNotAmbulatory": {
+      "title": "Patient not ambulatory",
+      "description": "Risk Category Assessment: Patient not ambulatory",
+      "standard_category": "risk_category_assessment",
+      "qds_data_type": "risk_category_assessment",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.118.12.1009",
+      "type": "risk_category_assessments",
+      "definition": "risk_category_assessment",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "RiskCategoryAssessmentPatientNotAmbulatory"
+    },
+    "EncounterPerformedAnnualWellnessVisit": {
+      "title": "Annual Wellness Visit",
+      "description": "Encounter, Performed: Annual Wellness Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1240",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedAnnualWellnessVisit"
+    },
+    "RiskCategoryAssessmentNotDoneMedicalReason": {
+      "title": "Medical Reason",
+      "description": "Risk Category Assessment not done: Medical Reason",
+      "standard_category": "risk_category_assessment",
+      "qds_data_type": "risk_category_assessment",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "type": "risk_category_assessments",
+      "definition": "risk_category_assessment",
+      "hard_status": false,
+      "negation": true,
+      "source_data_criteria": "RiskCategoryAssessmentNotDoneMedicalReason"
+    }
+  },
+  "attributes": [
+    {
+      "id": "FINALIZED_DATE_TIME",
+      "code": "OTH",
+      "value": "201208241633-0500",
+      "name": "Finalized Date/Time"
+    },
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "Copyright 2012 American Medical Association and National Committee for Quality Assurance. All Rights Reserved.",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "As the leading cause of both fatal and nonfatal injuries for older adults, falls are one of the most common and significant health issues facing people aged 65 years or older (Schneider, Shubert and Harmon 2010). Moreover, the rate of falls increases with age (Dykes et al. 2010). Older adults are five times more likely to be hospitalized for fall-related injuries than any other cause-related injury. It is estimated that one in every three adults over 65 will fall each year (Centers for Disease Control and Prevention 2012). In those over age 80, the rate of falls increases to fifty percent (Doherty et al. 2009). Falls are also associated with substantial cost and resource use, approaching $30,000 per fall hospitalization (Woolcott et al. 2011). Identifying at-risk patients is the most important part of management, as applying preventive measures in this vulnerable population can have a profound effect on public health (al-Aama 2011). Family physicians have a pivotal role in screening older patients for risk of falls, and applying preventive strategies for patients at risk (al-Aama 2011).\n\nThe risk of falling is slightly greater in the inpatient setting (Clyburn and Heydemann 2011). A recent study found that specialized inpatient fall prevention initiatives were associated with a significant reduction in fall and fall-related injury rates (Weinberg et al. 2011). The results of this study show the importance of persistent quality improvement interventions with respect to falls. The authors stated that enhanced safety awareness and accountability were both instrumental in the success of the program (Weinberg et al. 2011). Another recent study calculated the number needed to treat (NNT) to prevent one fall as 32 for a single intervention compared with seven for a multidisciplinary intervention (Hanley, Silke and Murphy 2010). With such a low NNT, this measure has the opportunity to have high impact.",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "The American Geriatrics Society (AGS) along with the British Geriatrics Society (BGS) published clinical practice guidelines for the prevention of falls in older persons (Panel of Prevention of Falls in Older Persons 2011). In addition, the Assessing Care of Vulnerable Elders (ACOVE) indicators for fall assessment and management are in use (RAND 2008).\n\nAGS/BGS Clinical Practice Guideline: Prevention of Falls in Older Persons (Panel on Prevention of Falls in Older Persons 2011)\n\nRating: A Recommendation\n• The multifactorial fall risk assessment should be followed by direct interventions tailored to the identified risk factors, coupled with an appropriate exercise program.\n\nRating: A Recommendation\n• A strategy to reduce the risk of falls should include multifactorial assessment of known fall risk factors and management of the risk factors identified.\n\nRating: A Recommendation\n• The health professional or team conducting the fall risk assessment should directly implement the interventions or should assure that the interventions are carried out by other qualified healthcare professionals. \n\nRationale: \nThe goal of screening for falls and identifying fall risk is to prevent or reduce fall risk. A structured and standardized screening process can improve provider adherence to guideline recommendations. The AGS/BGS recommendations for fall risk assessment are based on epidemiological studies demonstrating an association between certain risk factors and falls and from experimental studies in which assessment followed by intervention demonstrated benefit. Assuming that the interventions are carried out, multifactorial falls risk assessment and management programs could be one of the most effective interventions for reducing both the risk for falling and the monthly rate of falling (Chang 2004).\n\nIndividuals who have experienced two or more falls in the last year or who have gait or balance issues have an increased likelihood of falling, therefore would benefit from multifactorial falls risk assessment. Although evidence is lacking, AGS believes there is also a potential benefit for individuals who have reported only a single fall in the last year and who do not have gait and balance issues. \n\nSeveral individual studies have shown that a multifactorial risk assessment that was not tied to intervention was not effective in reducing falls. Multifactorial falls risk assessment and management programs may be the most effective intervention for reducing both the risk for falling and the monthly rate of falling, assuming that those interventions are properly carried out (Chang 2004). Recent trials of multifactorial risk assessment followed by referral without assurance of completion of the intervention have not been proven effective.\n\nACOVE (RAND 2008).\nQuality Indicators\n• Inquiring about Falls. ALL vulnerable elders should have documentation that they were asked at least annually about the occurrence of recent falls.\n• Detecting Balance and Gait Disturbances. ALL vulnerable elders should have documentation that they were asked about or examined for the presence of balance or gait disturbances at least once.\n• Basic Fall Evaluation. IF a vulnerable elder reported two or more falls in the past year, or a single fall with injury requiring treatment, THEN there should be documentation that a basic fall evaluation was performed that resulted in specific diagnostic and therapeutic recommendations.\n• Gait-Mobility and Balance Evaluation. IF a vulnerable elder reports or is found to have new or worsening difficulty with ambulation, balance, or mobility, THEN there should be documentation that a basic gait, mobility, and balance evaluation was performed within 6 months that resulted in specific diagnostic and therapeutic recommendations. \n• Exercise and Assistive-Device Prescription for Balance problems. IF a vulnerable elder demonstrates decreased balance or proprioception, or increased postural sway, THEN an appropriate exercise program should be offered and an evaluation for an assistive device performed.\n• Exercise Prescription for Gait Problems and Weakness. IF a vulnerable elder is found to have problems with gait, strength (for example, 4 out of 5 on manual muscle testing, or the need to use his or her arms to rise from a chair), or endurance (for example, dyspnea on mild exertion), THEN an exercise program should be offered (Rubenstein 2001).\n\nRationale: There are a number of clinical approaches in addressing the serious and complex concerns involving fall risk and mobility problems in older adults. The ACOVE quality indicators can be categorized into three categories: 1) detection of the problem(s); 2) diagnosis or evaluation of the problem(s); and 3) treatment while focusing on how to prevent reoccurrence. These indicators are based on literature review and expert panel consideration (Rubenstein 2001). \n\nFalls and mobility problems oftentimes result from multiple, diverse and overlapping causes. Falls and gait or balance disorders represent an underlying pathologic condition that could response well to treatment but could have life threatening consequences if unrecognized. These six quality indicators were judged sufficiently valid for use as measures of the quality of fall management for the vulnerable population and could potentially serve as a basis for comparison for care provided by different health care delivery systems and the change in care for the older population over time (Rubenstein 2001).",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "A higher score indicates better quality.",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "0101",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "Physician Performance Measures (Measures) and related data specifications have been developed by the American Medical Association (AMA) - convened Physician Consortium for Performance Improvement(R) (the PCPI [TM]) and the National Committee for Quality Assurance (NCQA).  These Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The Measures, while copyrighted, can be reproduced and distributed, without modification, for noncommercial purposes, e.g., use by health care providers in connection with their practices. Commercial use is defined as the sale, license, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial uses of the Measures require a license agreement between the user and the AMA, (on behalf of the PCPI) or NCQA. Neither the AMA, NCQA, PCPI nor its members shall be responsible for any use of the Measures. \n\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND. \n\nLimited proprietary coding is contained in the Measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. The AMA, NCQA, the PCPI and its members disclaim all liability for use or accuracy of any Current Procedural Terminology (CPT[R]) or other coding contained in the specifications. \n\nCPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC (R) copyright 2004-2011 Regenstrief Institute, Inc. \nThis material contains SNOMED Clinical Terms (R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation.  ICD-10 Copyright 2011 World Health Organization. All Rights Reserved.\n\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "139",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "Panel on Prevention of Falls in Older Persons, American Geriatrics Society and British Geriatrics Society. 2011. “Summary of the Updated American Geriatrics Society/British\nGeriatrics Society Clinical Practice Guideline for Prevention\nof Falls in Older Persons.” J Am Geriatr Soc 59(1):148-157.",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "Future fall risk: Patients are considered at risk for future falls if they have had 2 or more falls in the past year or any fall with injury in the past year.\n\nFall: A sudden, unintentional change in position causing an individual to land at a lower level, on an object, the floor, or the ground, other than as a consequence of sudden onset of paralysis, epileptic seizure, or overwhelming external force.",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "None",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "Patients aged 65 years and older with a visit during the measurement period",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals Initial Patient Population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "None",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Patients who were screened for future fall risk at least once within the measurement period",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "Documentation of medical reason(s) for not screening for fall risk (e.g., patient is not ambulatory)",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not Applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "IPP": "IPP",
+      "DENOM": "DENOM",
+      "NUMER": "NUMER",
+      "DENEXCEP": "DENEXCEP"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

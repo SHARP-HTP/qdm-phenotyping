@@ -1,0 +1,1431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xslt/eMeasure.xsl"?>
+<QualityMeasureDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3">
+         
+      <!--
+         **************************************************************   
+         Measure Header Section
+         **************************************************************
+      --><typeId root="2.16.840.1.113883.1.3" extension="POQM_HD000001"/>
+   <id root="8a4d92b2-3b79-4ce2-013b-904950f61cb7"/>
+   <code code="57024-2" codeSystem="2.16.840.1.113883.6.1" displayName="Health Quality Measure Document"/>
+   <title>Functional Status Assessment for Complex Chronic Conditions</title>
+   <text>Percentage of patients aged 65 years and older with heart failure who completed initial and follow-up patient-reported functional status assessments</text>
+   <statusCode code="InProgress"/>
+   <setId root="bb9b8ef7-0354-40e0-bec7-d6891b7df519"/>
+   <versionNumber value="2"/>
+   <author typeCode="AUT">
+      <assignedPerson classCode="ASSIGNED">
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id root="2.16.840.1.113883.3.560"/>
+            <name>National Quality Forum</name>
+            <contactParty classCode="CON" nullFlavor="UNK"/>
+         </representedOrganization>
+      </assignedPerson>
+   </author>
+   <custodian>
+      <assignedPerson classCode="ASSIGNED">
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id root="2.16.840.1.113883.3.560"/>
+            <name>National Quality Forum</name>
+            <contactParty classCode="CON" nullFlavor="UNK"/>
+         </representedOrganization>
+      </assignedPerson>
+   </custodian>
+   <verifier typeCode="VRF">
+      <assignedPerson classCode="ASSIGNED">
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <name>None</name>
+            <contactParty classCode="CON" nullFlavor="UNK"/>
+         </representedOrganization>
+      </assignedPerson>
+   </verifier>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Finalized Date/Time</originalText>
+         </code>
+         <value xsi:type="TS" value="201212121243-0600"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="COPY" codeSystem="2.16.840.1.113883.5.4" displayName="Copyright"/>
+         <value xsi:type="ED" mediaType="text/plain">TBD</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRSCORE" codeSystem="2.16.840.1.113883.5.4" displayName="Measure Scoring"/>
+         <value xsi:type="CD" code="PROPOR" codeSystem="2.16.840.1.113883.1.11.20367" displayName="Proportion"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRTYPE" codeSystem="2.16.840.1.113883.5.4" displayName="Measure Type"/>
+         <value xsi:type="CD" code="PROCESS" codeSystem="2.16.840.1.113883.1.11.20368" displayName="Process"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="STRAT" codeSystem="2.16.840.1.113883.5.4" displayName="Stratification"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRADJ" codeSystem="2.16.840.1.113883.5.4" displayName="Risk Adjustment"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRAGG" codeSystem="2.16.840.1.113883.5.4" displayName="Rate Aggregation"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="RAT" codeSystem="2.16.840.1.113883.5.4" displayName="Rationale"/>
+         <value xsi:type="ED" mediaType="text/plain">Measuring functional status for patients with complex chronic illness permits longitudinal assessment - from the patient’s perspective - of the effectiveness of symptom management, as well as health-related quality of life (Flynn 2009, Rothrock 2010).</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="CRS" codeSystem="2.16.840.1.113883.3.560" displayName="Clinical Recommendation Statement"/>
+         <value xsi:type="ED" mediaType="text/plain">Clinicians should ask patients to report on functional status during at least two points in time while undergoing treatment and working with the clinical team to coordinate care. (Selim 2006)</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="IDUR" codeSystem="2.16.840.1.113883.3.560" displayName="Improvement Notation"/>
+         <value xsi:type="ED" mediaType="text/plain">A higher score indicates better quality</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>NQF ID Number</originalText>
+         </code>
+         <value xsi:type="II" root="2.16.840.1.113883.3.560.1" extension="NA"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DISC" codeSystem="2.16.840.1.113883.5.4" displayName="Disclaimer">
+            <originalText>Disclaimer</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">TBD</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>eMeasure Identifier</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">90</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <templateId root="2.16.840.1.113883.3.560.1.74"/>
+         <id root="f4a81811-d99b-4a37-8751-23f0745750d1"/>
+         <code code="MSRTP" displayName="Measurement period" codeSystem="2.16.840.1.113883.3.560"/>
+         <value xsi:type="IVL_TS">
+            <low value="00000101"/>
+            <high value="00001231"/>
+         </value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <localVariableName>measureStartDate</localVariableName>
+      <measureAttribute>
+         <templateId root="2.16.840.1.113883.3.560.1.75"/>
+         <id root="8613f390-bbf0-4f14-8c06-ea3ef8221d32"/>
+         <code code="MSRSD" displayName="Measurement start date" codeSystem="2.16.840.1.113883.3.560"/>
+         <value xsi:type="TS" value="00000101"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <localVariableName>measureEndDate</localVariableName>
+      <measureAttribute>
+         <templateId root="2.16.840.1.113883.3.560.1.75"/>
+         <id root="74be9559-42d1-4cb0-83b4-cf8c6c9331bb"/>
+         <code code="MSRED" displayName="Measurement end date" codeSystem="2.16.840.1.113883.3.560"/>
+         <value xsi:type="TS" value="00001231"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">Flynn KE, Pina IL, Whellan DJ, Lin L, Blumenthal JA, Ellis SJ, Fine LJ, Howlett JG, Keteyian SJ, Kitzman DW, Kraus WE, Miller NH, Schulman KA, Spertus JA, O’Connor CM, Weinfurt KP.  Effects of exercise training on health status in patients with chronic heart failure: HF-ACTION randomized controlled trial.  JAMA 2009; 301:1451-1459.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">Rose M, Bjorner JB, Becker J, Fries JF, Ware JE. Evaluation of a preliminary physical function item bank supported expected advantages of the Patient-Reported Outcomes Measurement Information System (PROMIS). J Clin Epidemiol 2008; 61:17-33.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">Rothrock NE, Hays RD, Spritzer K, Yount SE, Riley W, Cella D. Relative to the general US population, chronic diseases are associated with poorer health-related quality of life as measured by the Patient-Reported Outcomes Measurement Information System (PROMIS). J Clin Epidemiol 2010; 63(11):1195-204.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">Selim AJ, Berlowitz D, Kazis LE, Rogers W, Wright SM, Qian SX, Rohendler JA, Spiro A, Miller D, Selim BJ, Fincke BG.  Comparison of Health Outcomes for Male Seniors in the Veterans Health Administration and Medicare Advantage Plans.  Health Services Research 2010; 45(2): 376-396.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DEF" codeSystem="2.16.840.1.113883.3.560" displayName="Definition"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="GUIDE" codeSystem="2.16.840.1.113883.5.4" displayName="Guidance"/>
+         <value xsi:type="ED" mediaType="text/plain">Initial encounter: The first encounter during the first 185 days of the measurement year. 
+
+Follow-up encounter: The last encounter that is at least 30 days but no more than 180 after the initial encounter.
+
+A Functional Status Assessment (FSA) is based on administration of a validated instrument to eligible patients that asks patients to answer questions related to various domains including: pain, physical function, emotional well-being, health-related quality of life, symptom acuity.
+
+The use of patient-reported outcomes data in eMeasures - such as this measure of functional status - demonstrates the need for the Quality Reporting Data Architecture (QRDA) to support a data attribute that indicates that the patient provided the information.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Transmission Format</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">TBD</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="IPP" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Initial Patient Population</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Adults aged 65 years and older who had two outpatient encounters during the measurement year and an active diagnosis of heart failure.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DENOM" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Denominator</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Equals Initial Patient Population</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Denominator Exclusions</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Patients with severe cognitive impairment or patients with an active diagnosis of cancer</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="NUMER" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Numerator</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Patients with patient reported functional status assessment results (e.g., VR-12; VR-36; MLHF-Q; KCCQ; PROMIS-10 Global Health, PROMIS-29) present in the EHR at least two weeks before or during the initial encounter and the follow-up encounter during the measurement year.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Numerator Exclusions</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Not Applicable</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DENEXCEP" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Denominator Exceptions</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRPOPL" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Measure Population</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Not Applicable</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Measure Observations</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Not Applicable</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Supplemental Data Elements</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</value>
+      </measureAttribute>
+   </subjectOf>
+   <componentOf>
+      <qualityMeasureSet classCode="ACT">
+         <id root="ce31a36f-30b1-4b8f-a9d4-c3342638ec6a"/>
+         <title>None</title>
+      </qualityMeasureSet>
+   </componentOf>
+         
+      <!--
+         **************************************************************   
+         Population Criteria Section
+         **************************************************************
+      --><component typeCode="COMP">
+      <section>
+         <code code="57026-7" codeSystem="2.16.840.1.113883.6.1" displayName="Population criteria"/>
+         <title>Population criteria</title>
+         <text>
+            <list>
+               <item>
+                  <content styleCode="Bold">Initial Patient Population =</content>
+                  <list>
+                     <item>AND:  FIRST: <list>
+                           <item>OR: "Occurrence A of Encounter, Performed: Office Visit"  &lt;= 185 day(s) ends after start of "Measurement Period"</item>
+                           <item>OR: "Occurrence A of Encounter, Performed: Face-to-Face Interaction"  &lt;= 185 day(s) ends after start of "Measurement Period"</item>
+                        </list>
+                     </item>
+                     <item>AND NOT: "Diagnosis, Active: Heart Failure" ends before start of "Measurement Period"</item>
+                     <item>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 65 year(s) starts before start of "Measurement Period"</item>
+                     <item>AND: "Diagnosis, Active: Heart Failure" starts before or during "Measurement Period"</item>
+                     <item>AND: <list>
+                           <item>OR: <list>
+                                 <item>AND: MOST RECENT:"Occurrence B of Encounter, Performed: Office Visit"  &gt;= 30 day(s) starts after end of "Occurrence A of Encounter, Performed: Office Visit"</item>
+                                 <item>AND: MOST RECENT:"Occurrence B of Encounter, Performed: Office Visit"  &lt;= 180 day(s) starts after end of "Occurrence A of Encounter, Performed: Office Visit"</item>
+                              </list>
+                           </item>
+                           <item>OR: <list>
+                                 <item>AND: MOST RECENT:"Occurrence B of Encounter, Performed: Face-to-Face Interaction"  &gt;= 30 day(s) starts after end of "Occurrence A of Encounter, Performed: Office Visit"</item>
+                                 <item>AND: MOST RECENT:"Occurrence B of Encounter, Performed: Face-to-Face Interaction"  &lt;= 180 day(s) starts after end of "Occurrence A of Encounter, Performed: Office Visit"</item>
+                              </list>
+                           </item>
+                           <item>OR: <list>
+                                 <item>AND: MOST RECENT:"Occurrence B of Encounter, Performed: Office Visit"  &gt;= 30 day(s) starts after end of "Occurrence A of Encounter, Performed: Face-to-Face Interaction"</item>
+                                 <item>AND: MOST RECENT:"Occurrence B of Encounter, Performed: Office Visit"  &lt;= 180 day(s) starts after end of "Occurrence A of Encounter, Performed: Face-to-Face Interaction"</item>
+                              </list>
+                           </item>
+                           <item>OR: <list>
+                                 <item>AND: MOST RECENT:"Occurrence B of Encounter, Performed: Face-to-Face Interaction"  &gt;= 30 day(s) starts after end of "Occurrence A of Encounter, Performed: Face-to-Face Interaction"</item>
+                                 <item>AND: MOST RECENT:"Occurrence B of Encounter, Performed: Face-to-Face Interaction"  &lt;= 180 day(s) starts after end of "Occurrence A of Encounter, Performed: Face-to-Face Interaction"</item>
+                              </list>
+                           </item>
+                        </list>
+                     </item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Denominator =</content>
+                  <list>
+                     <item>AND: "Initial Patient Population"</item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Denominator Exclusions =</content>
+                  <list>
+                     <item>AND: <list>
+                           <item>OR: <list>
+                                 <item>AND NOT: "Diagnosis, Active: Severe Dementia" ends before start of "Measurement Period"</item>
+                                 <item>AND: "Diagnosis, Active: Severe Dementia" starts before or during "Measurement Period"</item>
+                              </list>
+                           </item>
+                           <item>OR: <list>
+                                 <item>AND NOT: "Diagnosis, Active: All Cancer" ends before start of "Measurement Period"</item>
+                                 <item>AND: "Diagnosis, Active: All Cancer" starts before or during "Measurement Period"</item>
+                              </list>
+                           </item>
+                        </list>
+                     </item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Numerator =</content>
+                  <list>
+                     <item>AND: <list>
+                           <item>OR: <list>
+                                 <item>AND: "Functional Status, Result: Functional Status Assessment for Heart Failure"  &lt;= 2 week(s) ends before or during "Occurrence A of Encounter, Performed: Office Visit"</item>
+                                 <item>AND: "Functional Status, Result: Functional Status Assessment for Heart Failure"  &lt;= 2 week(s) ends before or during "Occurrence B of Encounter, Performed: Office Visit"</item>
+                              </list>
+                           </item>
+                           <item>OR: <list>
+                                 <item>AND: "Functional Status, Result: Functional Status Assessment for Heart Failure"  &lt;= 2 week(s) ends before or during "Occurrence A of Encounter, Performed: Face-to-Face Interaction"</item>
+                                 <item>AND: "Functional Status, Result: Functional Status Assessment for Heart Failure"  &lt;= 2 week(s) ends before or during "Occurrence B of Encounter, Performed: Face-to-Face Interaction"</item>
+                              </list>
+                           </item>
+                           <item>OR: <list>
+                                 <item>AND: "Functional Status, Result: Functional Status Assessment for Heart Failure"  &lt;= 2 week(s) ends before or during "Occurrence A of Encounter, Performed: Face-to-Face Interaction"</item>
+                                 <item>AND: "Functional Status, Result: Functional Status Assessment for Heart Failure"  &lt;= 2 week(s) ends before or during "Occurrence B of Encounter, Performed: Office Visit"</item>
+                              </list>
+                           </item>
+                           <item>OR: <list>
+                                 <item>AND: "Functional Status, Result: Functional Status Assessment for Heart Failure"  &lt;= 2 week(s) ends before or during "Occurrence A of Encounter, Performed: Office Visit"</item>
+                                 <item>AND: "Functional Status, Result: Functional Status Assessment for Heart Failure"  &lt;= 2 week(s) ends before or during "Occurrence B of Encounter, Performed: Face-to-Face Interaction"</item>
+                              </list>
+                           </item>
+                        </list>
+                     </item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Denominator Exceptions =</content>
+                  <list>
+                     <item>None</item>
+                  </list>
+               </item>
+            </list>
+         </text><!--
+            **************************************************************   
+            Population Criteria Section: exclusions 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true" actionNegationInd="true">
+               <id root="60DC1B8E-95D5-487D-B8CB-F4C0D127EF75"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="DENOM" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Denominator"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true"><!-- Diagnosis, Active pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                                 <id root="6e4a56c5-c311-46c4-8a8a-7d6143ab6da1"/>
+                                 <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                       <title>Diagnosis, Active: Severe Dementia</title>
+                                       <value xsi:type="CD" code="2.16.840.1.113883.3.526.3.1025" displayName="Severe Dementia Grouping Value Set"/>
+                                       <sourceOf typeCode="REFR">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                             <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                                          </observation>
+                                       </sourceOf>
+                                       <sourceOf typeCode="EBS">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="f4a81811-d99b-4a37-8751-23f0745750d1"/>
+                                             <title>Measurement Period</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                                 <id root="6e4a56c5-c311-46c4-8a8a-7d6143ab6da1"/>
+                                 <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                       <title>Diagnosis, Active: Severe Dementia</title>
+                                       <value xsi:type="CD" code="2.16.840.1.113883.3.526.3.1025" displayName="Severe Dementia Grouping Value Set"/>
+                                       <sourceOf typeCode="REFR">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                             <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                                          </observation>
+                                       </sourceOf>
+                                       <sourceOf typeCode="EAS" inversionInd="true">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="f4a81811-d99b-4a37-8751-23f0745750d1"/>
+                                             <title>Measurement Period</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true"><!-- Diagnosis, Active pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                                 <id root="2e43ba58-5c87-4f55-af7b-b6909decaf27"/>
+                                 <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                       <title>Diagnosis, Active: All Cancer</title>
+                                       <value xsi:type="CD" code="2.16.840.1.113883.3.464.1003.108.12.1011" displayName="All Cancer Grouping Value Set"/>
+                                       <sourceOf typeCode="REFR">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                             <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                                          </observation>
+                                       </sourceOf>
+                                       <sourceOf typeCode="EBS">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="f4a81811-d99b-4a37-8751-23f0745750d1"/>
+                                             <title>Measurement Period</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                                 <id root="2e43ba58-5c87-4f55-af7b-b6909decaf27"/>
+                                 <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                       <title>Diagnosis, Active: All Cancer</title>
+                                       <value xsi:type="CD" code="2.16.840.1.113883.3.464.1003.108.12.1011" displayName="All Cancer Grouping Value Set"/>
+                                       <sourceOf typeCode="REFR">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                             <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                                          </observation>
+                                       </sourceOf>
+                                       <sourceOf typeCode="EAS" inversionInd="true">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="f4a81811-d99b-4a37-8751-23f0745750d1"/>
+                                             <title>Measurement Period</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry><!--
+            **************************************************************   
+            Population Criteria Section: numerator 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="B1F9DF65-674B-4465-8C19-F1523A00FE5D"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="NUMER" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Numerator"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Functional Status, Result pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.88"/>
+                                 <id root="95f52103-c31a-42c5-a483-d5bac53bc43f"/>
+                                 <code code="47420-5" displayName="Functional status assessment" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.464.1003.118.12.1031" displayName="Functional Status Assessment for Heart Failure Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Functional Status, Result: Functional Status Assessment for Heart Failure</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="EAE" inversionInd="true">
+                                          <pauseQuantity xsi:type="IVL_PQ">
+                                             <high value="2" unit="wk" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="1a6918be-0db8-4bb2-be0b-d1cdf37a895e"/>
+                                             <title>Occurrence A of Encounter, Performed: Office Visit</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Functional Status, Result pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.88"/>
+                                 <id root="95f52103-c31a-42c5-a483-d5bac53bc43f"/>
+                                 <code code="47420-5" displayName="Functional status assessment" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.464.1003.118.12.1031" displayName="Functional Status Assessment for Heart Failure Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Functional Status, Result: Functional Status Assessment for Heart Failure</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="EAE" inversionInd="true">
+                                          <pauseQuantity xsi:type="IVL_PQ">
+                                             <high value="2" unit="wk" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="90c0ab5c-73f3-4d89-8c70-3ed4f504f585"/>
+                                             <title>Occurrence B of Encounter, Performed: Office Visit</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Functional Status, Result pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.88"/>
+                                 <id root="95f52103-c31a-42c5-a483-d5bac53bc43f"/>
+                                 <code code="47420-5" displayName="Functional status assessment" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.464.1003.118.12.1031" displayName="Functional Status Assessment for Heart Failure Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Functional Status, Result: Functional Status Assessment for Heart Failure</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="EAE" inversionInd="true">
+                                          <pauseQuantity xsi:type="IVL_PQ">
+                                             <high value="2" unit="wk" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="f2941f5b-0a8b-42ba-a4b0-63b841239722"/>
+                                             <title>Occurrence A of Encounter, Performed: Face-to-Face Interaction</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Functional Status, Result pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.88"/>
+                                 <id root="95f52103-c31a-42c5-a483-d5bac53bc43f"/>
+                                 <code code="47420-5" displayName="Functional status assessment" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.464.1003.118.12.1031" displayName="Functional Status Assessment for Heart Failure Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Functional Status, Result: Functional Status Assessment for Heart Failure</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="EAE" inversionInd="true">
+                                          <pauseQuantity xsi:type="IVL_PQ">
+                                             <high value="2" unit="wk" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="4a048cad-6a26-46e8-806b-39adcf6061b8"/>
+                                             <title>Occurrence B of Encounter, Performed: Face-to-Face Interaction</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Functional Status, Result pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.88"/>
+                                 <id root="95f52103-c31a-42c5-a483-d5bac53bc43f"/>
+                                 <code code="47420-5" displayName="Functional status assessment" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.464.1003.118.12.1031" displayName="Functional Status Assessment for Heart Failure Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Functional Status, Result: Functional Status Assessment for Heart Failure</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="EAE" inversionInd="true">
+                                          <pauseQuantity xsi:type="IVL_PQ">
+                                             <high value="2" unit="wk" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="f2941f5b-0a8b-42ba-a4b0-63b841239722"/>
+                                             <title>Occurrence A of Encounter, Performed: Face-to-Face Interaction</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Functional Status, Result pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.88"/>
+                                 <id root="95f52103-c31a-42c5-a483-d5bac53bc43f"/>
+                                 <code code="47420-5" displayName="Functional status assessment" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.464.1003.118.12.1031" displayName="Functional Status Assessment for Heart Failure Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Functional Status, Result: Functional Status Assessment for Heart Failure</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="EAE" inversionInd="true">
+                                          <pauseQuantity xsi:type="IVL_PQ">
+                                             <high value="2" unit="wk" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="90c0ab5c-73f3-4d89-8c70-3ed4f504f585"/>
+                                             <title>Occurrence B of Encounter, Performed: Office Visit</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Functional Status, Result pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.88"/>
+                                 <id root="95f52103-c31a-42c5-a483-d5bac53bc43f"/>
+                                 <code code="47420-5" displayName="Functional status assessment" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.464.1003.118.12.1031" displayName="Functional Status Assessment for Heart Failure Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Functional Status, Result: Functional Status Assessment for Heart Failure</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="EAE" inversionInd="true">
+                                          <pauseQuantity xsi:type="IVL_PQ">
+                                             <high value="2" unit="wk" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="1a6918be-0db8-4bb2-be0b-d1cdf37a895e"/>
+                                             <title>Occurrence A of Encounter, Performed: Office Visit</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Functional Status, Result pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.88"/>
+                                 <id root="95f52103-c31a-42c5-a483-d5bac53bc43f"/>
+                                 <code code="47420-5" displayName="Functional status assessment" codeSystem="2.16.840.1.113883.6.1"/>
+                                 <sourceOf typeCode="COMP">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.464.1003.118.12.1031" displayName="Functional Status Assessment for Heart Failure Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Functional Status, Result: Functional Status Assessment for Heart Failure</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="EAE" inversionInd="true">
+                                          <pauseQuantity xsi:type="IVL_PQ">
+                                             <high value="2" unit="wk" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="4a048cad-6a26-46e8-806b-39adcf6061b8"/>
+                                             <title>Occurrence B of Encounter, Performed: Face-to-Face Interaction</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </observation>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry><!--
+            **************************************************************   
+            Population Criteria Section: denominator 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="CBA54C54-C6D5-4E28-9A06-2289AA3E9E52"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="DENOM" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Denominator"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="86977734-D6D0-4526-B4F7-F60D504655CF"/>
+                     <title>Initial Patient Population</title>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry><!--
+            **************************************************************   
+            Population Criteria Section: population 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="86977734-D6D0-4526-B4F7-F60D504655CF"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="IPP" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Initial Patient Population"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <subsetCode code="FIRST"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                           <id root="1a6918be-0db8-4bb2-be0b-d1cdf37a895e"/>
+                           <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                           <sourceOf typeCode="COMP">
+                              <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.464.1003.101.12.1001" displayName="Office Visit Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Occurrence A of Encounter, Performed: Office Visit</title>
+                                 <statusCode code="completed"/>
+                                 <sourceOf typeCode="EAS">
+                                    <pauseQuantity xsi:type="IVL_PQ">
+                                       <high value="185" unit="d" inclusive="true"/>
+                                    </pauseQuantity>
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <id root="f4a81811-d99b-4a37-8751-23f0745750d1"/>
+                                       <title>Measurement Period</title>
+                                    </observation>
+                                 </sourceOf>
+                              </encounter>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                           <id root="f2941f5b-0a8b-42ba-a4b0-63b841239722"/>
+                           <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                           <sourceOf typeCode="COMP">
+                              <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.464.1003.101.12.1048" displayName="Face-to-Face Interaction Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Occurrence A of Encounter, Performed: Face-to-Face Interaction</title>
+                                 <statusCode code="completed"/>
+                                 <sourceOf typeCode="EAS">
+                                    <pauseQuantity xsi:type="IVL_PQ">
+                                       <high value="185" unit="d" inclusive="true"/>
+                                    </pauseQuantity>
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <id root="f4a81811-d99b-4a37-8751-23f0745750d1"/>
+                                       <title>Measurement Period</title>
+                                    </observation>
+                                 </sourceOf>
+                              </encounter>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true"><!-- Diagnosis, Active pattern -->
+                     <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                     <id root="bcf98c59-5dab-4eea-b31d-731b8168d267"/>
+                     <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                     <sourceOf typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                           <title>Diagnosis, Active: Heart Failure</title>
+                           <value xsi:type="CD" code="2.16.840.1.113883.3.526.3.376" displayName="Heart Failure Grouping Value Set"/>
+                           <sourceOf typeCode="REFR">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                 <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                              </observation>
+                           </sourceOf>
+                           <sourceOf typeCode="EBS">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <id root="f4a81811-d99b-4a37-8751-23f0745750d1"/>
+                                 <title>Measurement Period</title>
+                              </observation>
+                           </sourceOf>
+                        </observation>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Birthdate pattern -->
+                     <templateId root="2.16.840.1.113883.3.560.1.400"/>
+                     <id root="0e3b4054-ff86-4878-ad82-f7803952d37b"/>
+                     <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+                     <sourceOf typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="21112-8" codeSystem="2.16.840.1.113883.6.1" displayName="Birth date"/>
+                           <title>Patient Characteristic Birthdate: birth date</title>
+                           <value xsi:type="CD" code="2.16.840.1.113883.3.560.100.4" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="birth date LOINC Value Set"/>
+                           <sourceOf typeCode="SBS">
+                              <pauseQuantity xsi:type="IVL_PQ">
+                                 <low value="65" unit="a" inclusive="true"/>
+                              </pauseQuantity>
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <id root="f4a81811-d99b-4a37-8751-23f0745750d1"/>
+                                 <title>Measurement Period</title>
+                              </observation>
+                           </sourceOf>
+                        </observation>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+                     <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                     <id root="bcf98c59-5dab-4eea-b31d-731b8168d267"/>
+                     <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                     <sourceOf typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                           <title>Diagnosis, Active: Heart Failure</title>
+                           <value xsi:type="CD" code="2.16.840.1.113883.3.526.3.376" displayName="Heart Failure Grouping Value Set"/>
+                           <sourceOf typeCode="REFR">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                 <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                              </observation>
+                           </sourceOf>
+                           <sourceOf typeCode="EAS" inversionInd="true">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <id root="f4a81811-d99b-4a37-8751-23f0745750d1"/>
+                                 <title>Measurement Period</title>
+                              </observation>
+                           </sourceOf>
+                        </observation>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <subsetCode code="RECENT"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                 <id root="90c0ab5c-73f3-4d89-8c70-3ed4f504f585"/>
+                                 <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                 <sourceOf typeCode="COMP">
+                                    <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.464.1003.101.12.1001" displayName="Office Visit Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Occurrence B of Encounter, Performed: Office Visit</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="SAE">
+                                          <pauseQuantity xsi:type="IVL_PQ">
+                                             <low value="30" unit="d" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="1a6918be-0db8-4bb2-be0b-d1cdf37a895e"/>
+                                             <title>Occurrence A of Encounter, Performed: Office Visit</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </encounter>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <subsetCode code="RECENT"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                 <id root="90c0ab5c-73f3-4d89-8c70-3ed4f504f585"/>
+                                 <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                 <sourceOf typeCode="COMP">
+                                    <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.464.1003.101.12.1001" displayName="Office Visit Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Occurrence B of Encounter, Performed: Office Visit</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="SAE">
+                                          <pauseQuantity xsi:type="IVL_PQ">
+                                             <high value="180" unit="d" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="1a6918be-0db8-4bb2-be0b-d1cdf37a895e"/>
+                                             <title>Occurrence A of Encounter, Performed: Office Visit</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </encounter>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <subsetCode code="RECENT"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                 <id root="4a048cad-6a26-46e8-806b-39adcf6061b8"/>
+                                 <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                 <sourceOf typeCode="COMP">
+                                    <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.464.1003.101.12.1048" displayName="Face-to-Face Interaction Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Occurrence B of Encounter, Performed: Face-to-Face Interaction</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="SAE">
+                                          <pauseQuantity xsi:type="IVL_PQ">
+                                             <low value="30" unit="d" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="1a6918be-0db8-4bb2-be0b-d1cdf37a895e"/>
+                                             <title>Occurrence A of Encounter, Performed: Office Visit</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </encounter>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <subsetCode code="RECENT"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                 <id root="4a048cad-6a26-46e8-806b-39adcf6061b8"/>
+                                 <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                 <sourceOf typeCode="COMP">
+                                    <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.464.1003.101.12.1048" displayName="Face-to-Face Interaction Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Occurrence B of Encounter, Performed: Face-to-Face Interaction</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="SAE">
+                                          <pauseQuantity xsi:type="IVL_PQ">
+                                             <high value="180" unit="d" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="1a6918be-0db8-4bb2-be0b-d1cdf37a895e"/>
+                                             <title>Occurrence A of Encounter, Performed: Office Visit</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </encounter>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <subsetCode code="RECENT"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                 <id root="90c0ab5c-73f3-4d89-8c70-3ed4f504f585"/>
+                                 <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                 <sourceOf typeCode="COMP">
+                                    <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.464.1003.101.12.1001" displayName="Office Visit Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Occurrence B of Encounter, Performed: Office Visit</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="SAE">
+                                          <pauseQuantity xsi:type="IVL_PQ">
+                                             <low value="30" unit="d" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="f2941f5b-0a8b-42ba-a4b0-63b841239722"/>
+                                             <title>Occurrence A of Encounter, Performed: Face-to-Face Interaction</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </encounter>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <subsetCode code="RECENT"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                 <id root="90c0ab5c-73f3-4d89-8c70-3ed4f504f585"/>
+                                 <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                 <sourceOf typeCode="COMP">
+                                    <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.464.1003.101.12.1001" displayName="Office Visit Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Occurrence B of Encounter, Performed: Office Visit</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="SAE">
+                                          <pauseQuantity xsi:type="IVL_PQ">
+                                             <high value="180" unit="d" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="f2941f5b-0a8b-42ba-a4b0-63b841239722"/>
+                                             <title>Occurrence A of Encounter, Performed: Face-to-Face Interaction</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </encounter>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <subsetCode code="RECENT"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                 <id root="4a048cad-6a26-46e8-806b-39adcf6061b8"/>
+                                 <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                 <sourceOf typeCode="COMP">
+                                    <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.464.1003.101.12.1048" displayName="Face-to-Face Interaction Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Occurrence B of Encounter, Performed: Face-to-Face Interaction</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="SAE">
+                                          <pauseQuantity xsi:type="IVL_PQ">
+                                             <low value="30" unit="d" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="f2941f5b-0a8b-42ba-a4b0-63b841239722"/>
+                                             <title>Occurrence A of Encounter, Performed: Face-to-Face Interaction</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </encounter>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="AND"/>
+                              <subsetCode code="RECENT"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                                 <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                                 <id root="4a048cad-6a26-46e8-806b-39adcf6061b8"/>
+                                 <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                                 <sourceOf typeCode="COMP">
+                                    <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                       <code code="2.16.840.1.113883.3.464.1003.101.12.1048" displayName="Face-to-Face Interaction Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                       <title>Occurrence B of Encounter, Performed: Face-to-Face Interaction</title>
+                                       <statusCode code="completed"/>
+                                       <sourceOf typeCode="SAE">
+                                          <pauseQuantity xsi:type="IVL_PQ">
+                                             <high value="180" unit="d" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <id root="f2941f5b-0a8b-42ba-a4b0-63b841239722"/>
+                                             <title>Occurrence A of Encounter, Performed: Face-to-Face Interaction</title>
+                                          </observation>
+                                       </sourceOf>
+                                    </encounter>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry>
+      </section>
+   </component>
+         
+      <!--
+         ******************************************   
+         Data Criteria Section
+         ******************************************
+      --><component typeCode="COMP">
+      <section>
+         <code code="57025-9" codeSystem="2.16.840.1.113883.6.1" displayName="Data criteria (QDM Data Elements)"/>
+         <title>Data criteria (QDM Data Elements)</title>
+         <text>
+            <list>
+               <item>
+                  <content>"Diagnosis, Active: All Cancer"</content> using "All Cancer Grouping Value Set (2.16.840.1.113883.3.464.1003.108.12.1011)"</item>
+               <item>
+                  <content>"Diagnosis, Active: Heart Failure"</content> using "Heart Failure Grouping Value Set (2.16.840.1.113883.3.526.3.376)"</item>
+               <item>
+                  <content>"Diagnosis, Active: Severe Dementia"</content> using "Severe Dementia Grouping Value Set (2.16.840.1.113883.3.526.3.1025)"</item>
+               <item>
+                  <content>"Encounter, Performed: Face-to-Face Interaction"</content> using "Face-to-Face Interaction Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1048)"</item>
+               <item>
+                  <content>"Encounter, Performed: Office Visit"</content> using "Office Visit Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1001)"</item>
+               <item>
+                  <content>"Functional Status, Result: Functional Status Assessment for Heart Failure"</content> using "Functional Status Assessment for Heart Failure Grouping Value Set (2.16.840.1.113883.3.464.1003.118.12.1031)"</item>
+               <item>
+                  <content>"Patient Characteristic Birthdate: birth date"</content> using "birth date LOINC Value Set (2.16.840.1.113883.3.560.100.4)"</item>
+            </list>
+         </text>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.2"/>
+               <id root="bcf98c59-5dab-4eea-b31d-731b8168d267"/>
+               <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                     <title>Diagnosis, Active: Heart Failure</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.526.3.376" displayName="Heart Failure Grouping Value Set"/>
+                     <sourceOf typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                           <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                        </observation>
+                     </sourceOf>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.2"/>
+               <id root="6e4a56c5-c311-46c4-8a8a-7d6143ab6da1"/>
+               <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                     <title>Diagnosis, Active: Severe Dementia</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.526.3.1025" displayName="Severe Dementia Grouping Value Set"/>
+                     <sourceOf typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                           <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                        </observation>
+                     </sourceOf>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.2"/>
+               <id root="2e43ba58-5c87-4f55-af7b-b6909decaf27"/>
+               <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                     <title>Diagnosis, Active: All Cancer</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.464.1003.108.12.1011" displayName="All Cancer Grouping Value Set"/>
+                     <sourceOf typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                           <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                        </observation>
+                     </sourceOf>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Functional Status, Result pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.88"/>
+               <id root="95f52103-c31a-42c5-a483-d5bac53bc43f"/>
+               <code code="47420-5" displayName="Functional status assessment" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.118.12.1031" displayName="Functional Status Assessment for Heart Failure Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Functional Status, Result: Functional Status Assessment for Heart Failure</title>
+                     <statusCode code="completed"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Birthdate pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.400"/>
+               <id root="0e3b4054-ff86-4878-ad82-f7803952d37b"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="21112-8" codeSystem="2.16.840.1.113883.6.1" displayName="Birth date"/>
+                     <title>Patient Characteristic Birthdate: birth date</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.560.100.4" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="birth date LOINC Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="8a9f9a17-60ef-4a3b-8790-c20a4f255891"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1001" displayName="Office Visit Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Office Visit</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="dbcd81dd-c1cc-44ff-b073-c24772f453b7"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1048" displayName="Face-to-Face Interaction Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Face-to-Face Interaction</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="COMP">
+            <observation classCode="OBS" moodCode="DEF">
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="1a6918be-0db8-4bb2-be0b-d1cdf37a895e"/>
+               <sourceOf typeCode="DRIV">
+                  <localVariableName>Office Visit</localVariableName>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="8a9f9a17-60ef-4a3b-8790-c20a4f255891"/>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry>
+         <entry typeCode="COMP">
+            <observation classCode="OBS" moodCode="DEF">
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="90c0ab5c-73f3-4d89-8c70-3ed4f504f585"/>
+               <sourceOf typeCode="DRIV">
+                  <localVariableName>Office Visit</localVariableName>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="8a9f9a17-60ef-4a3b-8790-c20a4f255891"/>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry>
+         <entry typeCode="COMP">
+            <observation classCode="OBS" moodCode="DEF">
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="f2941f5b-0a8b-42ba-a4b0-63b841239722"/>
+               <sourceOf typeCode="DRIV">
+                  <localVariableName>Face-to-Face Interaction</localVariableName>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="dbcd81dd-c1cc-44ff-b073-c24772f453b7"/>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry>
+         <entry typeCode="COMP">
+            <observation classCode="OBS" moodCode="DEF">
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="4a048cad-6a26-46e8-806b-39adcf6061b8"/>
+               <sourceOf typeCode="DRIV">
+                  <localVariableName>Face-to-Face Interaction</localVariableName>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="dbcd81dd-c1cc-44ff-b073-c24772f453b7"/>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry>
+      </section>
+   </component>
+            
+         <!--
+            **************************************************************   
+            Stratification Section
+            **************************************************************
+         --><component typeCode="COMP">
+      <section>
+         <code code="69669-0" codeSystem="2.16.840.1.113883.6.1" displayName="Population stratification description"/>
+         <title>Reporting Stratification</title>
+         <text>
+            <list>
+               <item>None</item>
+            </list>
+         </text>
+      </section>
+   </component>
+         
+      <!--
+         ******************************************   
+         Supplemental Data Elements Section
+         ******************************************
+      --><component typeCode="COMP">
+      <section>
+         <code code="69670-8" codeSystem="2.16.840.1.113883.6.1" displayName="Supplemental Data Elements"/>
+         <title>Supplemental Data Elements</title>
+         <text>
+            <list>
+               <item>
+                  <content>"Patient Characteristic Ethnicity: Ethnicity"</content> using "Ethnicity CDC Value Set (2.16.840.1.114222.4.11.837)"</item>
+               <item>
+                  <content>"Patient Characteristic Payer: Payer"</content> using "Payer Source of Payment Typology Value Set (2.16.840.1.114222.4.11.3591)"</item>
+               <item>
+                  <content>"Patient Characteristic Race: Race"</content> using "Race CDC Value Set (2.16.840.1.114222.4.11.836)"</item>
+               <item>
+                  <content>"Patient Characteristic Sex: ONC Administrative Sex"</content> using "ONC Administrative Sex Administrative Sex Value Set (2.16.840.1.113762.1.4.1)"</item>
+            </list>
+         </text>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Sex pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.402"/>
+               <id root="c4e7ebbc-7bec-4b5a-bcbd-83c5cd94ca43"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="263495000" codeSystem="2.16.840.1.113883.6.96" displayName="Sex"/>
+                     <title>Patient Characteristic Sex: ONC Administrative Sex</title>
+                     <value xsi:type="CD" code="2.16.840.1.113762.1.4.1" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="ONC Administrative Sex Administrative Sex Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Race pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.406"/>
+               <id root="4927ce55-b872-4772-b032-b6add45b6e6b"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="32624-9" codeSystem="2.16.840.1.113883.6.1" displayName="Race"/>
+                     <title>Patient Characteristic Race: Race</title>
+                     <value xsi:type="CD" code="2.16.840.1.114222.4.11.836" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="Race CDC Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Ethnicity pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.403"/>
+               <id root="564b0786-d5b1-4b6b-abc5-5f8aa43c4ccd"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="54133-4" codeSystem="2.16.840.1.113883.6.1" displayName="Ethnicity"/>
+                     <title>Patient Characteristic Ethnicity: Ethnicity</title>
+                     <value xsi:type="CD" code="2.16.840.1.114222.4.11.837" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="Ethnicity CDC Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Payer pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.405"/>
+               <id root="80125079-9d1f-461e-b3f4-1666053f4929"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" displayName="Payer"/>
+                     <title>Patient Characteristic Payer: Payer</title>
+                     <value xsi:type="CD" code="2.16.840.1.114222.4.11.3591" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="Payer Source of Payment Typology Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+      </section>
+   </component>
+</QualityMeasureDocument>

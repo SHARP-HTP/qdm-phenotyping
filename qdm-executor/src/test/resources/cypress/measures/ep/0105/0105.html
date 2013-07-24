@@ -1,0 +1,547 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:n1="urn:hl7-org:v3">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Anti-depressant Medication Management</title><style type="text/css">
+body {
+	color: rgb(26, 26, 26);
+	background-color: rgb(255,255,255);
+	font-family: Verdana, Tahoma, sans-serif;
+	font-size: 11px;
+}
+
+a {
+	color: rgb(0, 0, 255);
+	background-color: rgb(255,255,255);
+}
+
+h1 {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+div {
+	width: 80%;
+}
+
+table {
+	line-height: 10pt;
+	width: 80%;
+}
+
+tr {
+	background-color: rgb(224,224,224);
+}
+
+td {
+	padding: 0.1cm 0.2cm;
+	vertical-align: top;
+}
+
+.h1center {
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+	width: 80%;
+}
+
+.header_table{
+	border: 1pt inset rgb(0,0,0);
+}
+
+.narr_table {
+	width: 100%;
+}
+
+.narr_tr {
+	background-color: rgb(225,225,225);
+}
+pre {
+ overflow: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+ white-space: pre-wrap; /* css-3 */
+ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+ white-space: -pre-wrap; /* Opera 4-6 */
+ white-space: -o-pre-wrap; /* Opera 7 */
+ word-wrap: break-word; /* Internet Explorer 5.5+ */
+ font-family: Verdana, Tahoma, sans-serif;
+ font-size: 11px;
+ text-align:left;
+ margin: 0px 0px 0px 0px;
+ padding:0px 0px 0px 0px;
+}
+.narr_th {
+	background-color: rgb(201,201,201);
+}
+
+.td_label{
+	font-weight: bold;
+	color: white;
+}
+	</style></head>
+   <body>
+      <table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Title</span></td>
+               <td width="80%" colspan="3">Anti-depressant Medication Management</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Identifier<br>(Measure Authoring Tool)</span></td>
+               <td width="30%">128</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Version number</span></td>
+               <td width="30%">1</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">NQF Number</span></td>
+               <td width="30%">0105</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">GUID</span></td>
+               <td> 8924f2b3-ec06-4650-b634-d70a53dee577</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measurement Period</span></td>
+               <td width="80%" colspan="3">January 1, 20xx  through December 31, 20xx </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Steward</span></td>
+               <td width="80%" colspan="3">National Committee for Quality Assurance</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Developer</span></td>
+               <td width="80%" colspan="3">National Committee for Quality Assurance</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Endorsed By</span></td>
+               <td width="80%" colspan="3">National Quality Forum</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Description</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Percentage of patients 18 years of age and older who were diagnosed with major depression and treated with antidepressant medication, and who remained on antidepressant medication treatment. Two rates are reported. 
+a. Percentage of patients who remained on an antidepressant medication for at least 84 days (12 weeks). 
+b. Percentage of patients who remained on an antidepressant medication for at least 180 days (6 months).</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Copyright</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Physician Performance Measure (Measures) and related data specifications were developed by the National Committee for Quality Assurance (NCQA). 
+
+The Measures are copyrighted but can be reproduced and distributed, without modification, for noncommercial purposes (e.g., use by healthcare providers in connection with their practices). Commercial use is defined as the sale, licensing, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial use of the Measures requires a license agreement between the user and NCQA. NCQA is not responsible for any use of the Measures. 
+
+Copyright 2012 National Committee for Quality Assurance. All Rights Reserved. 
+
+Limited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets. NCQA disclaims all liability for use or accuracy of any CPT or other codes contained in the specifications.
+
+CPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC(R) copyright 2004-2011 Regenstrief Institute, Inc. 
+This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 copyright 2011 World Health Organization. All Rights Reserved.
+
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Disclaimer</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>These performance Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.
+
+THE MEASURES AND SPECIFICATIONS ARE PROVIDED &#8220;AS IS&#8221; WITHOUT WARRANTY OF ANY KIND.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Scoring</span></td>
+               <td width="80%" colspan="3">Proportion</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Type</span></td>
+               <td width="80%" colspan="3">Process</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Stratification</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Risk Adjustment</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rate Aggregation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rationale</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Depression affects nearly 15 million adults in the U.S. (National Alliance on Mental Illness 2009) and is estimated to affect nearly a quarter of adults in their lifetime (Burcusa and Iacono 2007). Symptoms of depression include appetite and sleep disturbances, anxiety, irritability and decreased concentration (Charbonneau et al. 2005). The American Psychiatric Association recommends use of antidepressant medication and behavioral therapies, such as psychotherapy, to treat depression (American Psychiatric Association 2010).
+
+For the past 50 years, antidepressant medication has proven to be effective especially for patients with more severe symptoms (Fournier et al. 2010). Among patients who initiate antidepressant treatment, one in three discontinues treatment within one month, before the effect of medication can be assessed, and nearly one in two discontinues treatment within three months (Simon 2002).
+
+Due to increased risky behaviors for chronic disease (e.g., physical inactivity, smoking, excessive drinking and insufficient sleep), evidence has shown that depressive disorders are strongly related to the occurrence of many chronic diseases including diabetes, cancer, cardiovascular disease and asthma (Centers for Disease Control and Prevention 2011).
+
+Aligning depression quality improvement with methods used in managing other chronic illnesses has been an important step in depression care. Depression management systems have demonstrated improved short- and long-term outcomes of depression severity and persistence, employment retention, functional status and patient satisfaction (Katon et al. 2002; Rost et al. 2001).</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Clinical Recommendation Statement</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>American Psychiatric Association (APA 2010): 
+Successful treatment of patients with major depressive disorder is promoted by a thorough assessment of the patient and close adherence to treatment plans. Treatment consists of an acute phase, during which remission is induced; a continuation phase, during which remission is preserved; and a maintenance phase, during which the susceptible patient is protected against the recurrence of a subsequent major depressive episode.
+
+Acute Phase: An antidepressant medication is recommended as an initial treatment choice for patients with mild to moderate major depressive disorder [I: Recommended with substantial clinical confidence] and definitely should be provided for those with severe major depressive disorder unless electroconvulsive therapy (ECT) is planned [I: Recommended with substantial clinical confidence]. For most patients, a selective serotonin reuptake inhibitor (SSRI), serotonin norepinephrine reuptake inhibitor (SNRI), mirtazapine, or bupropion is optimal [I: Recommended with substantial clinical confidence]. In general, the use of nonselective monoamine oxidase inhibitors (MAOIs) (e.g., phenelzine, tranylcypromine, isocarboxazid) should be restricted to patients who do not respond to other treatments [I: Recommended with substantial clinical confidence], given the necessity for dietary restrictions with these medications and the potential for deleterious drug-drug interactions. 
+
+During the acute phase of treatment, patients should be carefully and systematically monitored on a regular basis to assess their response to pharmacotherapy, identify the emergence of side effects (e.g., gastrointestinal symptoms, sedation, insomnia, activation, changes in weight, and cardiovascular, neurological, anticholinergic, or sexual side effects), and assess patient safety [I: Recommended with substantial clinical confidence]. If antidepressant side effects do occur, an initial strategy is to lower the dose of the antidepressant or to change to an antidepressant that is not associated with that side effect [I: Recommended with substantial clinical confidence].
+
+Continuation Phase: During the continuation phase of treatment, the patient should be carefully monitored for signs of possible relapse [I: Recommended with substantial clinical confidence]. Systematic assessment of symptoms, side effects, adherence, and functional status is essential [I: Recommended with substantial clinical confidence], and may be facilitated through the use of clinician- and/or patient-administered rating scales [II: Recommended with moderate clinical confidence]. To reduce the risk of relapse, patients who have been treated successfully with antidepressant medications in the acute phase should continue treatment with these agents for 4&#8211;9 months [I: Recommended with substantial clinical confidence]. In general, the dose used in the acute phase should be used in the continuation phase [II: Recommended with moderate clinical confidence]. To prevent a relapse of depression in the continuation phase, depression-focused psychotherapy is recommended [I: Recommended with substantial clinical confidence], with the best evidence available for cognitive-behavioral therapy.
+
+Maintenance Phase: During the maintenance phase, an antidepressant medication that produced symptom remission during the acute phase and maintained remission during the continuation phase should be continued at a full therapeutic dose [II: Recommended with moderate clinical confidence].</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Improvement Notation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Higher score indicates better quality.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Charbonneau, A., W. Bruning, T. Titus-Howard, E. Ellerbeck, J. Whittle, S. Hall, J. Campbell, S. Crain, S. Munro. 2005. &#8220;The community initiative on depression: report from a multiphase work site depression intervention.&#8221; J Occup Environ Med 47(1):60-7.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Fournier, J.C., R.J. DeRubeis, S.D. Hollon, S. Dimidjian, J.D. Amsterdam, R.C. Shelton, J. Fawcett. &#8220;Antidepressant drug effects and depression severity: A patient-level meta-analysis.&#8221; JAMA 303(1): 47-53.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Katon, W., J. Russo, M. Von Korff, E. Lin, G. Simon, T. Bush, E. Ludman, E. Walker. 2002. &#8220;Long-term effects of a collaborative care intervention in persistently depressed primary care patients.&#8221; J Gen Intern Med 17(10):741-748.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Rost, K., P. Nutting, J. Smith, J. Werner, N. Duan. 2001. &#8220;Improving depression outcomes in the community primary care practice: a randomized trial of the QuEST intervention.&#8221; J Gen Intern Med 16(3):143-149.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Simon, G.E. 2002. &#8220;Evidence review: efficacy and effectiveness of antidepressant treatment in primary care.&#8221; Gen Hosp Psychiatry 24(4):213-24.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>The National Alliance on Mental Illness. 2009. &#8220;Major Depression Fact Sheet.&#8221; http://www.nami.org/Template.cfm?Section=Depression&amp;Template=/ContentManagement/ContentDisplay.cfm&amp;ContentID=88956 (October 27, 2011)</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>American Psychiatric Association. 2010. Practice guideline for the treatment of patients with major depressive disorder, third edition. Arlington: American Psychiatric Association.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Burcusa, S.L., and W.G. Iacono. 2007. &#8220;Risk for recurrence in depression.&#8221; Clin Psychol Rev 27(8): 959-85.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Centers for Disease Control and Prevention (CDC). 2011. &#8220;Mental Health: Mental Health Basics.&#8221; http://www.cdc.gov/mentalhealth/basics.htm (July 27, 2011)</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Definition</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Index Episode Start Date (IESD): The earliest diagnosis of major depression during the period beginning 180 days prior to the measurement period through 180 days after the start of the measurement period.
+Index Prescription Start Date (IPSD): The earliest prescription dispensing event for an antidepressant medication during the period of 30 days prior to the IESD through 14 days after the IESD.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Guidance</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>To identify new treatment episodes for major depression, there must be a 90-day negative medication history (a period during which the patient was not taking antidepressant medication) prior to the first dispensing event associated with the Index Episode Start Date (Index Prescription Start Date).
+
+CUMULATIVE MEDICATION DURATION is the total number of days of a medication for an individual. Days of medication can be derived from number of doses per day divided by the frequency. The cumulative duration can be calculated as the sum of the number of medication dispensed days x number of medication refills over a set period of time, excluding any gaps during which a medication was not dispensed. For example, if a medication was prescribed for 30 days with 3 refills, then a gap of 3 month, then prescribed again for 60 days with 2 refills, the cumulative medication duration for would be (30 x 3) + (60 x 2) = 210 days over the 10 month period.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Transmission Format</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>TBD</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Initial Patient Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients 18 years of age and older with a diagnosis of major depression in the 180 days (6 months) prior to the measurement period or the first 180 days (6 months) of the measurement period, who were treated with antidepressant medication, and with a visit during the measurement period</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Equals Initial Patient Population</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients who were actively on an antidepressant medication in the 90 days prior to the Index Prescription Start Date</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Numerator 1: Patients who have received antidepressant medication for at least 84 days (12 weeks) of continuous treatment during the 114-day period following the Index Prescription Start Date
+
+Numerator 2: Patients who have received antidepressant medications for at least 180 days (6 months) of continuous treatment during the 231-day period following the Index Prescription Start Date</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exceptions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Observations</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Supplemental Data Elements</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</pre></div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="toc">Table of Contents</a></h2>
+      <ul>
+         <li><a href="#d2484650e552">Population criteria</a></li>
+         <li><a href="#d2484650e1574">Data criteria (QDM Data Elements)</a></li>
+         <li><a href="#d2484650e2116">Reporting Stratification</a></li>
+         <li><a href="#d2484650e2137">Supplemental Data Elements</a></li>
+      </ul>
+      <hr align="left" color="teal" size="2" width="80%">
+      <h3><a name="d2484650e552" href="#toc">Population criteria</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               <b>Initial Patient Population =</b>
+               
+               <ul>
+                  <li>AND:  FIRST: 
+                     <ul>
+                        <li>OR: "Occurrence A of Diagnosis, Active: Major Depression"  &lt;= 180 day(s) starts after start of "Measurement Period"</li>
+                        <li>OR: "Occurrence A of Diagnosis, Active: Major Depression"  &lt;= 180 day(s) starts before start of "Measurement Period"</li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND:  FIRST: 
+                     <ul>
+                        <li>OR: "Occurrence A of Medication, Dispensed: Antidepressant Medication"  &lt;= 14 day(s) starts after start of "Occurrence A of
+                           Diagnosis, Active: Major Depression"
+                        </li>
+                        <li>OR: "Occurrence A of Medication, Dispensed: Antidepressant Medication"  &lt;= 30 day(s) starts before start of "Occurrence A
+                           of Diagnosis, Active: Major Depression"
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 18 year(s) starts before start of "Measurement Period"</li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Encounter, Performed: Office Visit"</li>
+                        <li>OR: "Encounter, Performed: Face-to-Face Interaction"</li>
+                        <li>OR: "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up"</li>
+                        <li>OR: "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up"</li>
+                        <li>OR: "Encounter, Performed: Home Healthcare Services"</li>
+                        <li>OR: "Encounter, Performed: Annual Wellness Visit"</li>
+                        <li>OR: "Encounter, Performed: Psych Visit - Diagnostic or Evaluative Interview"</li>
+                        <li>OR: "Encounter, Performed: Psych Visit - Individual Outpatient Interactive Psychotherapy"</li>
+                        <li>OR: "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy"</li>
+                        <li>OR: "Encounter, Performed: Psych Visit - Medication Management"</li>
+                        <li> during "Measurement Period"</li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator =</b>
+               
+               <ul>
+                  <li>AND: "Initial Patient Population"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exclusions =</b>
+               
+               <ul>
+                  <li>AND: "Medication, Active: Antidepressant Medication"  &lt;= 90 day(s) starts before start of "Occurrence A of Medication, Dispensed:
+                     Antidepressant Medication"
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Numerator 1 =</b>
+               
+               <ul>
+                  <li>AND: "Medication, Active: Antidepressant Medication (cumulative medication duration &gt;= 84 day(s))"  &lt;= 114 day(s) ends after
+                     start of "Occurrence A of Medication, Dispensed: Antidepressant Medication"
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Numerator 2 =</b>
+               
+               <ul>
+                  <li>AND: "Medication, Active: Antidepressant Medication (cumulative medication duration &gt;= 180 day(s))"  &lt;= 231 day(s) ends after
+                     start of "Occurrence A of Medication, Dispensed: Antidepressant Medication"
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exceptions =</b>
+               
+               <ul>
+                  <li>None</li>
+               </ul>
+               
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d2484650e1574" href="#toc">Data criteria (QDM Data Elements)</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Diagnosis, Active: Major Depression" using "Major Depression Grouping Value Set (2.16.840.1.113883.3.464.1003.105.12.1007)"
+            </li>
+            <li>
+               "Encounter, Performed: Annual Wellness Visit" using "Annual Wellness Visit Grouping Value Set (2.16.840.1.113883.3.526.3.1240)"
+            </li>
+            <li>
+               "Encounter, Performed: Face-to-Face Interaction" using "Face-to-Face Interaction Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1048)"
+            </li>
+            <li>
+               "Encounter, Performed: Home Healthcare Services" using "Home Healthcare Services Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1016)"
+            </li>
+            <li>
+               "Encounter, Performed: Office Visit" using "Office Visit Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1001)"
+            </li>
+            <li>
+               "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up" using "Preventive Care Services - Established Office Visit, 18 and Up Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1025)"
+            </li>
+            <li>
+               "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up" using "Preventive Care Services-Initial Office Visit, 18 and Up Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1023)"
+            </li>
+            <li>
+               "Encounter, Performed: Psych Visit - Diagnostic or Evaluative Interview" using "Psych Visit - Diagnostic or Evaluative Interview Grouping Value Set (2.16.840.1.113883.3.526.3.1013)"
+            </li>
+            <li>
+               "Encounter, Performed: Psych Visit - Individual Outpatient Interactive Psychotherapy" using "Psych Visit - Individual Outpatient Interactive Psychotherapy Grouping Value Set (2.16.840.1.113883.3.526.3.1015)"
+            </li>
+            <li>
+               "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy" using "Psych Visit - Individual Outpatient Psychotherapy Grouping Value Set (2.16.840.1.113883.3.526.3.1014)"
+            </li>
+            <li>
+               "Encounter, Performed: Psych Visit - Medication Management" using "Psych Visit - Medication Management Grouping Value Set (2.16.840.1.113883.3.526.3.1019)"
+            </li>
+            <li>
+               "Medication, Active: Antidepressant Medication" using "Antidepressant Medication Grouping Value Set (2.16.840.1.113883.3.464.1003.196.12.1213)"
+            </li>
+            <li>
+               "Medication, Dispensed: Antidepressant Medication" using "Antidepressant Medication Grouping Value Set (2.16.840.1.113883.3.464.1003.196.12.1213)"
+            </li>
+            <li>
+               "Patient Characteristic Birthdate: birth date" using "birth date LOINC Value Set (2.16.840.1.113883.3.560.100.4)"
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d2484650e2116" href="#toc">Reporting Stratification</a></h3>
+      <div>
+         
+         <ul>
+            <li>None</li>
+         </ul>
+         
+      </div>
+      <h3><a name="d2484650e2137" href="#toc">Supplemental Data Elements</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Patient Characteristic Ethnicity: Ethnicity" using "Ethnicity CDC Value Set (2.16.840.1.114222.4.11.837)"
+            </li>
+            <li>
+               "Patient Characteristic Payer: Payer" using "Payer Source of Payment Typology Value Set (2.16.840.1.114222.4.11.3591)"
+            </li>
+            <li>
+               "Patient Characteristic Race: Race" using "Race CDC Value Set (2.16.840.1.114222.4.11.836)"
+            </li>
+            <li>
+               "Patient Characteristic Sex: ONC Administrative Sex" using "ONC Administrative Sex Administrative Sex Value Set (2.16.840.1.113762.1.4.1)"
+            </li>
+         </ul>
+         
+      </div><br><hr align="left" color="teal" size="2" width="80%"><br><table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Set</span></td>
+               <td colspan="3" width="80%">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto;word-wrap:break-word">None</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

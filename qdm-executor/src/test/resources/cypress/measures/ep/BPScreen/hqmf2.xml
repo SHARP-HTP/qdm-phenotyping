@@ -1,0 +1,4293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<QualityMeasureDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <id root="2.16.840.1.113883.3.100.1" extension="8A4D92B2-3A00-2A25-013A-2D26C69D5CA4" />
+  <code code="57024-2" codeSystem="2.16.840.1.113883.6.1"/>
+  <title value="Preventive Care and Screening:  Screening for High Blood Pressure and Follow-Up Documented"/>
+  <text value="Percentage of patients aged 18 years and older seen during the reporting period who were screened for high blood pressure AND a recommended follow-up plan is documented based on the current blood pressure (BP) reading as indicated"/>
+  <statusCode code="completed" />
+  <setId root="2.16.840.1.113883.3.100.1" extension="9A033A94-3D9B-11E1-8634-00237D5BF174" />
+  <versionNumber value="1"/>
+  <author typeCode="AUT" contextControlCode="OP">
+    <responsibleParty classCode="ASSIGNED" />
+  </author>
+  <custodian typeCode="CST">
+    <responsibleParty classCode="ASSIGNED" />
+  </custodian>
+  <controlVariable>
+    <measurePeriod>
+      <code code="MSRTP" codeSystem="2.16.840.1.113883.3.560">
+        <displayName value="Measurement period"/>
+      </code>
+      <value>
+        <low value="201201010000" />
+        <high value="201212312359" />
+      </value>
+    </measurePeriod>
+  </controlVariable>
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="FINALIZED_DATE_TIME"/>
+			<code code="OTH">
+				<displayName value="Finalized Date/Time"/>
+			</code>
+			<value xsi:type="ED" value="201210041503-0500"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="COPYRIGHT"/>
+			<code code="COPY">
+				<displayName value="Copyright"/>
+			</code>
+			<value xsi:type="ED" value="Limited proprietary coding is contained in the measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. Quality Insights of Pennsylvania disclaims all liability for use or accuracy of any Current Procedural Terminology (CPT [R]) or other coding contained in the specifications.
+
+CPT (R) contained in the Measure specifications is copyright 2007-2011 American Medical Association. 
+
+LOINC (R) copyright 2004-2011 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms (R) (SNOMED CT [R]) copyright 2004-2011 International Health Terminology Standards Development Organization. All Rights Reserved.
+
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM]."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_SCORING"/>
+			<code code="MSRSCORE">
+				<displayName value="Measure Scoring"/>
+			</code>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_TYPE"/>
+			<code code="MSRTYPE">
+				<displayName value="Measure Type"/>
+			</code>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="STRATIFICATION"/>
+			<code code="STRAT">
+				<displayName value="Stratification"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="RISK_ADJUSTMENT"/>
+			<code code="MSRADJ">
+				<displayName value="Risk Adjustment"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="RATE_AGGREGATION"/>
+			<code code="MSRAGG">
+				<displayName value="Rate Aggregation"/>
+			</code>
+			<value xsi:type="ED" value="None"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="RATIONALE"/>
+			<code code="RAT">
+				<displayName value="Rationale"/>
+			</code>
+			<value xsi:type="ED" value="This measure assesses the percentage of patients aged 18 and older without known hypertension who were screened for high blood pressure. Hypertension is a prevalent condition that contributes to important adverse health outcomes, including premature death, heart attack, renal insufficiency and stroke. The United States Preventive Services Task Force (USPSTF, 2007) found good evidence that blood pressure measurement can indentify adults at increased risk for cardiovascular disease from high blood pressure. The relationship between systolic blood pressure and diastolic blood pressure and cardiovascular risk is continuous and graded. The actual level of blood pressure elevation should not be the sole factor in determining treatment. Clinicians should consider the patient’s overall cardiovascular risk profile, including smoking, diabetes, abnormal blood lipid values, age, sex, sedentary lifestyle, and obesity, when making treatment decisions. The seventh report of the Joint National Committee on Prevention, Detection, Evaluation, and Treatment of High Blood Pressure (JNC 7) recommends screening every 2 years for patients with blood pressure less than 120/80 mmHg and every year for patients with systolic blood pressure of 120 to 139 mmHg or diastolic blood pressure of 80 to 90 mmHg.
+
+Appropriate follow-up after blood pressure measurement is a pivotal component in preventing the progression of hypertension and the development of heart disease. Detection of marginally or fully elevated blood pressure by a specialty clinician warrants referral to a provider familiar with the management of hypertension and prehypertension.  Lifestyle modifications have demonstrated effectiveness in lowering blood pressure (JNC 7, 2003).  The synergistic effect of several lifestyle modifications results in greater benefits than a single modification alone. Baseline diagnostic/laboratory testing establishes if a co-existing underlying condition is the etiology of hypertension and evaluates if end organ damage from hypertension has already occurred. Landmark trials such as ALLHAT have repeatedly proven the efficacy of pharmacologic therapy to control blood pressure and reduce the complications of hypertension.  Follow-up intervals based on blood pressure control have been established by the JNC 7 and the USPSTF."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="CLINICAL_RECOMMENDATION_STATEMENT"/>
+			<code code="CRS">
+				<displayName value="Clinical Recommendation Statement"/>
+			</code>
+			<value xsi:type="ED" value="The U.S. Preventive Services Task Force (USPSTF) recommends screening for high blood pressure in adults age 18 years and older. This is a grade A recommendation."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="IMPROVEMENT_NOTATION"/>
+			<code code="IDUR">
+				<displayName value="Improvement Notation"/>
+			</code>
+			<value xsi:type="ED" value="Higher score indicates better quality."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="NQF_ID_NUMBER"/>
+			<code code="OTH">
+				<displayName value="NQF ID Number"/>
+			</code>
+			<value xsi:type="ED" value="Not Applicable"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DISCLAIMER"/>
+			<code code="DISC">
+				<displayName value="Disclaimer"/>
+			</code>
+			<value xsi:type="ED" value="These performance measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.
+
+THE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="EMEASURE_IDENTIFIER"/>
+			<code code="OTH">
+				<displayName value="eMeasure Identifier"/>
+			</code>
+			<value xsi:type="ED" value="22"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="REFERENCE"/>
+			<code code="REF">
+				<displayName value="Reference"/>
+			</code>
+			<value xsi:type="ED" value="U.S. Department of Health and Human Services, National Institutes of Health, National Heart, Lung, and Blood Institute & National High Blood Pressure Education Program (2003). The Seventh Report of the Joint National Committee on the Prevention, Detection, Evaluation, and Treatment of High Blood Pressure (JNC-7). NIH Publication No. 03-5233"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DEFINITION"/>
+			<code code="DEF">
+				<displayName value="Definition"/>
+			</code>
+			<value xsi:type="ED" value="Blood Pressure (BP) Classification: 
+BP is defined by four (4) BP reading classifications: Normal, Pre-Hypertensive, First Hypertensive, and Second Hypertensive Readings
+
+Recommended BP Follow-Up: 
+The current Report of the Joint National Committee on the Prevention, Detection, Evaluation, and Treatment of High Blood Pressure (JNC) recommends BP screening intervals, lifestyle modifications and interventions based on BP Classification of the current BP reading as listed in the “Recommended Blood Pressure Follow-Up Interventions” listed below
+
+Lifestyle Modifications: 
+The current JNC report outlines lifestyle modifications which must include one or more of the following as indicated:
+•  Weight Reduction
+•  DASH Eating Plan 
+•  Dietary Sodium Restriction
+•  Increased Physical Activity
+•  Moderation in ETOH Consumption
+
+Second Hypertensive Reading: 
+Requires both a BP reading of Systolic BP >= 140 mmHg OR Diastolic BP >= 90 mmHg during the current encounter AND a most recent BP reading within the last 12 months Systolic BP >= 140 mmHg OR Diastolic BP >= 90 mmHg
+
+Second Hypertensive Reading BP Interventions:  
+The current JNC report outlines BP follow-up interventions for a second hypertensive BP reading and must include one or more of the following as indicated:
+•  Anti-Hypertensive Pharmacologic Therapy 
+•  Laboratory Tests 
+•  Electrocardiogram (ECG)
+
+Recommended Blood Pressure Follow-Up Interventions:
+•  Normal BP: No follow-up required for Systolic BP < 120 mmHg AND Diastolic BP <80 mmHg
+•  Pre-Hypertensive BP: Rescreen every year with systolic BP of 120-139 mmHg OR diastolic BP of 80-89 mmHg AND follow-up with lifestyle recommendations OR referral to Alternative/Primary Care Provider
+•  First Hypertensive BP Reading: Patients with one elevated reading of systolic BP >= 140 mmHg OR diastolic BP >= 90 mmHg rescreen > 1 day and < 4 weeks follow-up  AND lifestyle recommendations OR referral to Alternative/Primary Care Provider  
+•  Second Hypertensive BP Reading: Patients with second elevated reading of  systolic BP >=140 mmHg OR diastolic BP >= 90 mmHg and follow-up with lifestyle recommendations  AND one or more of the Second Hypertensive Reading Interventions"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="GUIDANCE"/>
+			<code code="GUIDE">
+				<displayName value="Guidance"/>
+			</code>
+			<value xsi:type="ED" value="Both the systolic and diastolic blood pressure measurements are required for inclusion. If there are multiple blood pressures on the same date of service, use the lowest systolic and lowest diastolic blood pressure on that date as the representative blood pressure.
+
+Providers who report the measure must perform the blood pressure screening at the time of a qualifying visit by an eligible professional and may not obtain measurements from external sources. 
+
+The documented follow up plan must be related to the current BP reading as indicated, example: “Patient referred to primary care provider for BP management.”"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="TRANSMISSION_FORMAT"/>
+			<code code="OTH">
+				<displayName value="Transmission Format"/>
+			</code>
+			<value xsi:type="ED" value="TBD"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="INITIAL_PATIENT_POPULATION"/>
+			<code code="IPP">
+				<displayName value="Initial Patient Population"/>
+			</code>
+			<value xsi:type="ED" value="Percentage of patients aged 18 years and older before the start of the measurement period"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DENOMINATOR"/>
+			<code code="DENOM">
+				<displayName value="Denominator"/>
+			</code>
+			<value xsi:type="ED" value="Equals Initial Patient Population"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DENOMINATOR_EXCLUSIONS"/>
+			<code code="OTH">
+				<displayName value="Denominator Exclusions"/>
+			</code>
+			<value xsi:type="ED" value="Patient has an active diagnosis of hypertension"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="NUMERATOR"/>
+			<code code="NUMER">
+				<displayName value="Numerator"/>
+			</code>
+			<value xsi:type="ED" value="Patients who were screened for high blood pressure AND a recommended follow-up plan is documented as indicated if the blood pressure is pre-hypertensive or hypertensive"/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="NUMERATOR_EXCLUSIONS"/>
+			<code code="OTH">
+				<displayName value="Numerator Exclusions"/>
+			</code>
+			<value xsi:type="ED" value="Not Applicable."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="DENOMINATOR_EXCEPTIONS"/>
+			<code code="DENEXCEP">
+				<displayName value="Denominator Exceptions"/>
+			</code>
+			<value xsi:type="ED" value="Patient Reason(s): 
+Patient refuses to participate
+
+OR
+
+Medical Reason(s):
+Patient is in an urgent or emergent medical situation where time is of the essence and to delay treatment would jeopardize the patient’s health status.  This may include but is not limited to severely elevated BP when immediate medical treatment is indicated."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_POPULATION"/>
+			<code code="MSRPOPL">
+				<displayName value="Measure Population"/>
+			</code>
+			<value xsi:type="ED" value="Not Applicable."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="MEASURE_OBSERVATIONS"/>
+			<code code="OTH">
+				<displayName value="Measure Observations"/>
+			</code>
+			<value xsi:type="ED" value="Not Applicable."/>
+		</measureAttribute>
+	</subjectOf>
+
+  	<subjectOf>
+		<measureAttribute>
+			<id root="2.16.840.1.113883.3.100.1" extension="SUPPLEMENTAL_DATA_ELEMENTS"/>
+			<code code="OTH">
+				<displayName value="Supplemental Data Elements"/>
+			</code>
+			<value xsi:type="ED" value="For every patient evaluated by this measure also identify payer, race, ethnicity and sex."/>
+		</measureAttribute>
+	</subjectOf>
+
+  <component>
+    <dataCriteriaSection>
+      <code code="57025-9" codeSystem="2.16.840.1.113883.6.1"/>
+      <title value="Data Criteria Section"/>
+      <text>This section describes the data criteria.</text>
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedBpScreeningDenominatorEncounterCodesGroupedNew"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1920">
+            <displayName value="BP Screening Denominator Encounter Codes Grouped New"/>
+          </code>
+
+                    <text value="Encounter, Performed: BP Screening Denominator Encounter Codes Grouped New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedBpScreeningDenominatorEncounterCodesGroupedNew"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.157" identifierName="physical exam, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedNotDoneMedicalReason"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1521">
+            <displayName value="Medical reason"/>
+          </code>
+
+                    <text value="Physical Exam, Performed not done: Medical reason"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedNotDoneMedicalReason"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.157" identifierName="physical exam, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedNotDonePatientReasonRefused"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.791">
+            <displayName value="Patient Reason refused"/>
+          </code>
+
+                    <text value="Physical Exam, Performed not done: Patient Reason refused"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedNotDonePatientReasonRefused"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.157" identifierName="physical exam, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedNotDoneMedicalReason1"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1521">
+            <displayName value="Medical reason"/>
+          </code>
+
+                    <text value="Physical Exam, Performed not done: Medical reason"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedNotDoneMedicalReason1"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.157" identifierName="physical exam, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedNotDonePatientReasonRefused2"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.791">
+            <displayName value="Patient Reason refused"/>
+          </code>
+
+                    <text value="Physical Exam, Performed not done: Patient Reason refused"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedNotDonePatientReasonRefused2"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1920">
+            <displayName value="BP Screening Denominator Encounter Codes Grouped New"/>
+          </code>
+
+                    <text value="Encounter, Performed: BP Screening Denominator Encounter Codes Grouped New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_BP_SCREENING_DENOMINATOR_ENCOUNTER_CODES_GROUPED_NEW" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.157" identifierName="physical exam, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedDiastolicBloodPressure_precondition_4"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1033">
+            <displayName value="Diastolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Performed: Diastolic Blood Pressure"/>
+          <statusCode code="performed"/>
+          
+                    <reasonCode>
+            <item valueSet="2.16.840.1.113883.3.600.1521"/>
+          </reasonCode>
+
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SDU">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedDiastolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.157" identifierName="physical exam, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedDiastolicBloodPressure_precondition_6"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1033">
+            <displayName value="Diastolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Performed: Diastolic Blood Pressure"/>
+          <statusCode code="performed"/>
+          
+                    <reasonCode>
+            <item valueSet="2.16.840.1.113883.3.600.791"/>
+          </reasonCode>
+
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SDU">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedDiastolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.157" identifierName="physical exam, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedSystolicBloodPressure_precondition_8"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1032">
+            <displayName value="Systolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Performed: Systolic Blood Pressure"/>
+          <statusCode code="performed"/>
+          
+                    <reasonCode>
+            <item valueSet="2.16.840.1.113883.3.600.1521"/>
+          </reasonCode>
+
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SDU">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedSystolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.157" identifierName="physical exam, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedSystolicBloodPressure_precondition_10"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1032">
+            <displayName value="Systolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Performed: Systolic Blood Pressure"/>
+          <statusCode code="performed"/>
+          
+                    <reasonCode>
+            <item valueSet="2.16.840.1.113883.3.600.791"/>
+          </reasonCode>
+
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SDU">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedSystolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDiagnosisOfHypertensionGrouped_precondition_15"/>
+          </id>
+                    <text value="Diagnosis, Active: Diagnosis of hypertension grouped"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.600.263">
+            <displayName value="Diagnosis of hypertension grouped"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDiagnosisOfHypertensionGrouped"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_23"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1920">
+            <displayName value="BP Screening Denominator Encounter Codes Grouped New"/>
+          </code>
+
+                    <text value="Encounter, Performed: BP Screening Denominator Encounter Codes Grouped New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_BP_SCREENING_DENOMINATOR_ENCOUNTER_CODES_GROUPED_NEW" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.18" identifierName="physical exam, finding template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure_precondition_18"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1032">
+            <displayName value="Systolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Finding: Systolic Blood Pressure"/>
+          
+          
+          
+            <value xsi:type="IVL_PQ">
+          <high  value="120" unit="mm[Hg]"/>
+  </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_23"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.18" identifierName="physical exam, finding template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure_precondition_20"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1033">
+            <displayName value="Diastolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Finding: Diastolic Blood Pressure"/>
+          
+          
+          
+            <value xsi:type="IVL_PQ">
+          <high  value="80" unit="mm[Hg]"/>
+  </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_23"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_38"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1920">
+            <displayName value="BP Screening Denominator Encounter Codes Grouped New"/>
+          </code>
+
+                    <text value="Encounter, Performed: BP Screening Denominator Encounter Codes Grouped New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_BP_SCREENING_DENOMINATOR_ENCOUNTER_CODES_GROUPED_NEW" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.18" identifierName="physical exam, finding template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure_precondition_25"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1032">
+            <displayName value="Systolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Finding: Systolic Blood Pressure"/>
+          
+          
+          
+            <value xsi:type="IVL_PQ">
+          <high  value="140" unit="mm[Hg]"/>
+  </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_38"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.18" identifierName="physical exam, finding template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure_precondition_27"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1033">
+            <displayName value="Diastolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Finding: Diastolic Blood Pressure"/>
+          
+          
+          
+            <value xsi:type="IVL_PQ">
+          <high  value="90" unit="mm[Hg]"/>
+  </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_38"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.18" identifierName="physical exam, finding template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure_precondition_31"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1032">
+            <displayName value="Systolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Finding: Systolic Blood Pressure"/>
+          
+          
+          
+            <value xsi:type="IVL_PQ">
+      <low  value="120" unit="mm[Hg]"/>
+      </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_38"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.18" identifierName="physical exam, finding template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure_precondition_33"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1033">
+            <displayName value="Diastolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Finding: Diastolic Blood Pressure"/>
+          
+          
+          
+            <value xsi:type="IVL_PQ">
+      <low  value="80" unit="mm[Hg]"/>
+      </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_38"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralToAlternativeProviderPrimaryCareProvider_precondition_40"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1475">
+            <displayName value="Referral to Alternative Provider / Primary Care Provider"/>
+          </code>
+
+                    <text value="Intervention, Order: Referral to Alternative Provider / Primary Care Provider"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralToAlternativeProviderPrimaryCareProvider"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderRescreenBpWithin1Year_precondition_42"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1474">
+            <displayName value="Rescreen BP Within 1 Year"/>
+          </code>
+
+                    <text value="Intervention, Order: Rescreen BP Within 1 Year"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <observationCriteria classCode="OBS" moodCode="EVN">
+              <code code="410666004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT">
+                <displayName value="Reason"/> 
+              </code>
+                <value xsi:type="CD" valueSet="2.16.840.1.113883.3.600.2012">
+     <displayName value="Blood Pressure Measured"/>
+  </value>
+
+            </observationCriteria>
+          </outboundRelationship>
+          <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderRescreenBpWithin1Year"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_55"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1920">
+            <displayName value="BP Screening Denominator Encounter Codes Grouped New"/>
+          </code>
+
+                    <text value="Encounter, Performed: BP Screening Denominator Encounter Codes Grouped New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_BP_SCREENING_DENOMINATOR_ENCOUNTER_CODES_GROUPED_NEW" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderLifestyleRecommendation_precondition_44"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1508">
+            <displayName value="Lifestyle Recommendation"/>
+          </code>
+
+                    <text value="Intervention, Order: Lifestyle Recommendation"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_55"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderLifestyleRecommendation"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderWeightReductionRecommended_precondition_46"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1510">
+            <displayName value="Weight Reduction Recommended"/>
+          </code>
+
+                    <text value="Intervention, Order: Weight Reduction Recommended"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_55"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderWeightReductionRecommended"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderDietaryRecommendations_precondition_48"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1515">
+            <displayName value="Dietary Recommendations"/>
+          </code>
+
+                    <text value="Intervention, Order: Dietary Recommendations"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_55"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderDietaryRecommendations"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderPhysicalActivityRecommendation_precondition_50"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1518">
+            <displayName value="Physical Activity Recommendation"/>
+          </code>
+
+                    <text value="Intervention, Order: Physical Activity Recommendation"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_55"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderPhysicalActivityRecommendation"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderModerationOfEtohConsumptionRecommendation_precondition_52"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.823">
+            <displayName value="Moderation of ETOH Consumption Recommendation"/>
+          </code>
+
+                    <text value="Intervention, Order: Moderation of ETOH Consumption Recommendation"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_55"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderModerationOfEtohConsumptionRecommendation"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_68"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1920">
+            <displayName value="BP Screening Denominator Encounter Codes Grouped New"/>
+          </code>
+
+                    <text value="Encounter, Performed: BP Screening Denominator Encounter Codes Grouped New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_BP_SCREENING_DENOMINATOR_ENCOUNTER_CODES_GROUPED_NEW" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.18" identifierName="physical exam, finding template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure_precondition_63"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1032">
+            <displayName value="Systolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Finding: Systolic Blood Pressure"/>
+          
+          
+          
+            <value xsi:type="IVL_PQ">
+          <high  value="140" unit="mm[Hg]"/>
+  </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="a"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_68"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.18" identifierName="physical exam, finding template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure_precondition_65"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1033">
+            <displayName value="Diastolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Finding: Diastolic Blood Pressure"/>
+          
+          
+          
+            <value xsi:type="IVL_PQ">
+          <high  value="90" unit="mm[Hg]"/>
+  </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="a"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_68"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+          
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="GROUP_RECENT_165"/>
+          </id>
+          
+                    <text value=""/>
+          
+          
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="derived"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="GROUP_RECENT_165"/>
+            </observationReference>
+          </outboundRelationship>
+                    <excerpt typeCode="XCRPT">
+            <subsetCode code="XPRODUCT"/>
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure_precondition_63"/>
+            </observationReference>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure_precondition_65"/>
+            </observationReference>
+
+          </excerpt>
+                    <excerpt typeCode="XCRPT">
+            <subsetCode code="RECENT"/>
+            <observationCriteria moodCode="EVN" classCode="OBS">
+            </observationCriteria>
+          </excerpt>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_76"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1920">
+            <displayName value="BP Screening Denominator Encounter Codes Grouped New"/>
+          </code>
+
+                    <text value="Encounter, Performed: BP Screening Denominator Encounter Codes Grouped New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_BP_SCREENING_DENOMINATOR_ENCOUNTER_CODES_GROUPED_NEW" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.18" identifierName="physical exam, finding template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure_precondition_71"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1032">
+            <displayName value="Systolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Finding: Systolic Blood Pressure"/>
+          
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="a"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_76"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.18" identifierName="physical exam, finding template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure_precondition_73"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1033">
+            <displayName value="Diastolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Finding: Diastolic Blood Pressure"/>
+          
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="a"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_76"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_85"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1920">
+            <displayName value="BP Screening Denominator Encounter Codes Grouped New"/>
+          </code>
+
+                    <text value="Encounter, Performed: BP Screening Denominator Encounter Codes Grouped New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_BP_SCREENING_DENOMINATOR_ENCOUNTER_CODES_GROUPED_NEW" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.18" identifierName="physical exam, finding template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure_precondition_80"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1032">
+            <displayName value="Systolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Finding: Systolic Blood Pressure"/>
+          
+          
+          
+            <value xsi:type="IVL_PQ">
+      <low  value="140" unit="mm[Hg]"/>
+      </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_85"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.18" identifierName="physical exam, finding template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure_precondition_82"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1033">
+            <displayName value="Diastolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Finding: Diastolic Blood Pressure"/>
+          
+          
+          
+            <value xsi:type="IVL_PQ">
+      <low  value="90" unit="mm[Hg]"/>
+      </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_85"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralToAlternativeProviderPrimaryCareProvider_precondition_87"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1475">
+            <displayName value="Referral to Alternative Provider / Primary Care Provider"/>
+          </code>
+
+                    <text value="Intervention, Order: Referral to Alternative Provider / Primary Care Provider"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralToAlternativeProviderPrimaryCareProvider"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderRescreenBpWithin4Weeks_precondition_89"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1537">
+            <displayName value="Rescreen BP within 4 weeks"/>
+          </code>
+
+                    <text value="Intervention, Order: Rescreen BP within 4 weeks"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <observationCriteria classCode="OBS" moodCode="EVN">
+              <code code="410666004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT">
+                <displayName value="Reason"/> 
+              </code>
+                <value xsi:type="CD" valueSet="2.16.840.1.113883.3.600.2012">
+     <displayName value="Blood Pressure Measured"/>
+  </value>
+
+            </observationCriteria>
+          </outboundRelationship>
+          <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderRescreenBpWithin4Weeks"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_102"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1920">
+            <displayName value="BP Screening Denominator Encounter Codes Grouped New"/>
+          </code>
+
+                    <text value="Encounter, Performed: BP Screening Denominator Encounter Codes Grouped New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_BP_SCREENING_DENOMINATOR_ENCOUNTER_CODES_GROUPED_NEW" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderLifestyleRecommendation_precondition_91"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1508">
+            <displayName value="Lifestyle Recommendation"/>
+          </code>
+
+                    <text value="Intervention, Order: Lifestyle Recommendation"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_102"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderLifestyleRecommendation"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderWeightReductionRecommended_precondition_93"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1510">
+            <displayName value="Weight Reduction Recommended"/>
+          </code>
+
+                    <text value="Intervention, Order: Weight Reduction Recommended"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_102"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderWeightReductionRecommended"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderDietaryRecommendations_precondition_95"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1515">
+            <displayName value="Dietary Recommendations"/>
+          </code>
+
+                    <text value="Intervention, Order: Dietary Recommendations"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_102"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderDietaryRecommendations"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderPhysicalActivityRecommendation_precondition_97"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1518">
+            <displayName value="Physical Activity Recommendation"/>
+          </code>
+
+                    <text value="Intervention, Order: Physical Activity Recommendation"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_102"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderPhysicalActivityRecommendation"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderModerationOfEtohConsumptionRecommendation_precondition_99"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.823">
+            <displayName value="Moderation of ETOH Consumption Recommendation"/>
+          </code>
+
+                    <text value="Intervention, Order: Moderation of ETOH Consumption Recommendation"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_102"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderModerationOfEtohConsumptionRecommendation"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_115"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1920">
+            <displayName value="BP Screening Denominator Encounter Codes Grouped New"/>
+          </code>
+
+                    <text value="Encounter, Performed: BP Screening Denominator Encounter Codes Grouped New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_BP_SCREENING_DENOMINATOR_ENCOUNTER_CODES_GROUPED_NEW" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.18" identifierName="physical exam, finding template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure_precondition_110"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1032">
+            <displayName value="Systolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Finding: Systolic Blood Pressure"/>
+          
+          
+          
+            <value xsi:type="IVL_PQ">
+      <low  value="140" unit="mm[Hg]"/>
+      </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="a"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_115"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.18" identifierName="physical exam, finding template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure_precondition_112"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1033">
+            <displayName value="Diastolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Finding: Diastolic Blood Pressure"/>
+          
+          
+          
+            <value xsi:type="IVL_PQ">
+      <low  value="90" unit="mm[Hg]"/>
+      </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="a"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_115"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+          
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="GROUP_RECENT_167"/>
+          </id>
+          
+                    <text value=""/>
+          
+          
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="derived"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="GROUP_RECENT_167"/>
+            </observationReference>
+          </outboundRelationship>
+                    <excerpt typeCode="XCRPT">
+            <subsetCode code="UNION"/>
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure_precondition_110"/>
+            </observationReference>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure_precondition_112"/>
+            </observationReference>
+
+          </excerpt>
+                    <excerpt typeCode="XCRPT">
+            <subsetCode code="RECENT"/>
+            <observationCriteria moodCode="EVN" classCode="OBS">
+            </observationCriteria>
+          </excerpt>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_123"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1920">
+            <displayName value="BP Screening Denominator Encounter Codes Grouped New"/>
+          </code>
+
+                    <text value="Encounter, Performed: BP Screening Denominator Encounter Codes Grouped New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_BP_SCREENING_DENOMINATOR_ENCOUNTER_CODES_GROUPED_NEW" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.18" identifierName="physical exam, finding template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure_precondition_118"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1032">
+            <displayName value="Systolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Finding: Systolic Blood Pressure"/>
+          
+          
+          
+            <value xsi:type="IVL_PQ">
+      <low  value="140" unit="mm[Hg]"/>
+      </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_123"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.18" identifierName="physical exam, finding template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure_precondition_120"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1033">
+            <displayName value="Diastolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Finding: Diastolic Blood Pressure"/>
+          
+          
+          
+            <value xsi:type="IVL_PQ">
+      <low  value="90" unit="mm[Hg]"/>
+      </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_123"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralToAlternativeProviderPrimaryCareProvider_precondition_125"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1475">
+            <displayName value="Referral to Alternative Provider / Primary Care Provider"/>
+          </code>
+
+                    <text value="Intervention, Order: Referral to Alternative Provider / Primary Care Provider"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralToAlternativeProviderPrimaryCareProvider"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_138"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1920">
+            <displayName value="BP Screening Denominator Encounter Codes Grouped New"/>
+          </code>
+
+                    <text value="Encounter, Performed: BP Screening Denominator Encounter Codes Grouped New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_BP_SCREENING_DENOMINATOR_ENCOUNTER_CODES_GROUPED_NEW" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderLifestyleRecommendation_precondition_127"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1508">
+            <displayName value="Lifestyle Recommendation"/>
+          </code>
+
+                    <text value="Intervention, Order: Lifestyle Recommendation"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_138"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderLifestyleRecommendation"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderWeightReductionRecommended_precondition_129"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1510">
+            <displayName value="Weight Reduction Recommended"/>
+          </code>
+
+                    <text value="Intervention, Order: Weight Reduction Recommended"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_138"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderWeightReductionRecommended"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderDietaryRecommendations_precondition_131"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1515">
+            <displayName value="Dietary Recommendations"/>
+          </code>
+
+                    <text value="Intervention, Order: Dietary Recommendations"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_138"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderDietaryRecommendations"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderPhysicalActivityRecommendation_precondition_133"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1518">
+            <displayName value="Physical Activity Recommendation"/>
+          </code>
+
+                    <text value="Intervention, Order: Physical Activity Recommendation"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_138"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderPhysicalActivityRecommendation"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderModerationOfEtohConsumptionRecommendation_precondition_135"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.823">
+            <displayName value="Moderation of ETOH Consumption Recommendation"/>
+          </code>
+
+                    <text value="Intervention, Order: Moderation of ETOH Consumption Recommendation"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_138"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderModerationOfEtohConsumptionRecommendation"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_147"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1920">
+            <displayName value="BP Screening Denominator Encounter Codes Grouped New"/>
+          </code>
+
+                    <text value="Encounter, Performed: BP Screening Denominator Encounter Codes Grouped New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_BP_SCREENING_DENOMINATOR_ENCOUNTER_CODES_GROUPED_NEW" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <supplyCriteria moodCode="EVN" classCode="SPLY">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.17" identifierName="medication, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="MedicationOrderAntiHypertensivePharmacologicTherapy_precondition_140"/>
+          </id>
+                    <text value="Medication, Order: Anti-Hypertensive Pharmacologic Therapy"/>
+          <statusCode code="ordered"/>
+          
+          
+          <participation typeCode="PRD">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.600.1476">
+            <displayName value="Anti-Hypertensive Pharmacologic Therapy"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <supplyReference moodCode="EVN" classCode="SPLY">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </supplyReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_147"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="MedicationOrderAntiHypertensivePharmacologicTherapy"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </supplyCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.50" identifierName="laboratory test, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestOrderLaboratoryTestsForHypertension_precondition_142"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1482">
+            <displayName value="Laboratory Tests for Hypertension"/>
+          </code>
+
+                    <text value="Laboratory Test, Order: Laboratory Tests for Hypertension"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="laboratory_test"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_147"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestOrderLaboratoryTestsForHypertension"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.50" identifierName="laboratory test, order template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestOrderElectrocardiogramEcg_precondition_144"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1483">
+            <displayName value="Electrocardiogram (ECG)"/>
+          </code>
+
+                    <text value="Laboratory Test, Order: Electrocardiogram (ECG)"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="laboratory_test"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SAS">
+              <pauseQuantity xsi:type="IVL_PQ">
+          <high  value="1" unit="d"/>
+  </pauseQuantity>
+
+                        <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_147"/>
+            </encounterReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestOrderElectrocardiogramEcg"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_158"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1920">
+            <displayName value="BP Screening Denominator Encounter Codes Grouped New"/>
+          </code>
+
+                    <text value="Encounter, Performed: BP Screening Denominator Encounter Codes Grouped New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="DURING">
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_BP_SCREENING_DENOMINATOR_ENCOUNTER_CODES_GROUPED_NEW" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+                    <excerpt typeCode="XCRPT">
+            <subsetCode code="RECENT"/>
+            <encounterCriteria moodCode="EVN" classCode="ENC">
+            </encounterCriteria>
+          </excerpt>
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.25" identifierName="patient characteristic, birthdate template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthDate_precondition_161"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.560.100.4">
+            <displayName value="birth date"/>
+          </code>
+
+                    <text value="Patient Characteristic: birth date"/>
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="patient_characteristic_birthdate"/>
+            </observationReference>
+          </definition>
+                    <temporallyRelatedInformation typeCode="SBS">
+              <pauseQuantity xsi:type="IVL_PQ">
+      <low  value="18" unit="a"/>
+      </pauseQuantity>
+
+                        <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="MeasurePeriod"/>
+            </observationReference>
+
+          </temporallyRelatedInformation>
+
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthDate"/>
+            </observationReference>
+          </outboundRelationship>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.25" identifierName="patient characteristic, birthdate template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthDate"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.560.100.4">
+            <displayName value="birth date"/>
+          </code>
+
+                    <text value="Patient Characteristic: birth date"/>
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="patient_characteristic_birthdate"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthDate"/>
+            </observationReference>
+          </outboundRelationship>
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria  moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.2" identifierName="diagnosis, active template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDiagnosisOfHypertensionGrouped"/>
+          </id>
+                    <text value="Diagnosis, Active: Diagnosis of hypertension grouped"/>
+          <statusCode code="active"/>
+          
+          
+                    <value xsi:type="CD" valueSet="2.16.840.1.113883.3.600.263">
+            <displayName value="Diagnosis of hypertension grouped"/>
+          </value>
+
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="diagnosis"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDiagnosisOfHypertensionGrouped"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.18" identifierName="physical exam, finding template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1032">
+            <displayName value="Systolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Finding: Systolic Blood Pressure"/>
+          
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.18" identifierName="physical exam, finding template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1033">
+            <displayName value="Diastolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Finding: Diastolic Blood Pressure"/>
+          
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.57" identifierName="physical exam, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedDiastolicBloodPressure"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1033">
+            <displayName value="Diastolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Performed: Diastolic Blood Pressure"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedDiastolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.57" identifierName="physical exam, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedSystolicBloodPressure"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.526.3.1032">
+            <displayName value="Systolic Blood Pressure"/>
+          </code>
+
+                    <text value="Physical Exam, Performed: Systolic Blood Pressure"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedSystolicBloodPressure"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <supplyCriteria moodCode="EVN" classCode="SPLY">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.17" identifierName="medication, order template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="MedicationOrderAntiHypertensivePharmacologicTherapy"/>
+          </id>
+                    <text value="Medication, Order: Anti-Hypertensive Pharmacologic Therapy"/>
+          <statusCode code="ordered"/>
+          
+          
+          <participation typeCode="PRD">
+            <role classCode="THER">
+                        <code valueSet="2.16.840.1.113883.3.600.1476">
+            <displayName value="Anti-Hypertensive Pharmacologic Therapy"/>
+          </code>
+
+            </role>
+          </participation>
+          <definition>
+            <supplyReference moodCode="EVN" classCode="SPLY">
+              <id root="2.16.840.1.113883.3.100.1" extension="medication"/>
+            </supplyReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="MedicationOrderAntiHypertensivePharmacologicTherapy"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </supplyCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.50" identifierName="laboratory test, order template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestOrderLaboratoryTestsForHypertension"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1482">
+            <displayName value="Laboratory Tests for Hypertension"/>
+          </code>
+
+                    <text value="Laboratory Test, Order: Laboratory Tests for Hypertension"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="laboratory_test"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestOrderLaboratoryTestsForHypertension"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <observationCriteria moodCode="EVN" classCode="OBS">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.50" identifierName="laboratory test, order template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestOrderElectrocardiogramEcg"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1483">
+            <displayName value="Electrocardiogram (ECG)"/>
+          </code>
+
+                    <text value="Laboratory Test, Order: Electrocardiogram (ECG)"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <observationReference moodCode="EVN" classCode="OBS">
+              <id root="2.16.840.1.113883.3.100.1" extension="laboratory_test"/>
+            </observationReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestOrderElectrocardiogramEcg"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </observationCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralToAlternativeProviderPrimaryCareProvider"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1475">
+            <displayName value="Referral to Alternative Provider / Primary Care Provider"/>
+          </code>
+
+                    <text value="Intervention, Order: Referral to Alternative Provider / Primary Care Provider"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralToAlternativeProviderPrimaryCareProvider"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderRescreenBpWithin1Year"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1474">
+            <displayName value="Rescreen BP Within 1 Year"/>
+          </code>
+
+                    <text value="Intervention, Order: Rescreen BP Within 1 Year"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderRescreenBpWithin1Year"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderLifestyleRecommendation"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1508">
+            <displayName value="Lifestyle Recommendation"/>
+          </code>
+
+                    <text value="Intervention, Order: Lifestyle Recommendation"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderLifestyleRecommendation"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderWeightReductionRecommended"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1510">
+            <displayName value="Weight Reduction Recommended"/>
+          </code>
+
+                    <text value="Intervention, Order: Weight Reduction Recommended"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderWeightReductionRecommended"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderDietaryRecommendations"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1515">
+            <displayName value="Dietary Recommendations"/>
+          </code>
+
+                    <text value="Intervention, Order: Dietary Recommendations"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderDietaryRecommendations"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderPhysicalActivityRecommendation"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1518">
+            <displayName value="Physical Activity Recommendation"/>
+          </code>
+
+                    <text value="Intervention, Order: Physical Activity Recommendation"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderPhysicalActivityRecommendation"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderModerationOfEtohConsumptionRecommendation"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.823">
+            <displayName value="Moderation of ETOH Consumption Recommendation"/>
+          </code>
+
+                    <text value="Intervention, Order: Moderation of ETOH Consumption Recommendation"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderModerationOfEtohConsumptionRecommendation"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedBpScreeningDenominatorEncounterCodesGroupedNew"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1920">
+            <displayName value="BP Screening Denominator Encounter Codes Grouped New"/>
+          </code>
+
+                    <text value="Encounter, Performed: BP Screening Denominator Encounter Codes Grouped New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="EncounterPerformedBpScreeningDenominatorEncounterCodesGroupedNew"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.45" identifierName="intervention, order template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="InterventionOrderRescreenBpWithin4Weeks"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1537">
+            <displayName value="Rescreen BP within 4 weeks"/>
+          </code>
+
+                    <text value="Intervention, Order: Rescreen BP within 4 weeks"/>
+          <statusCode code="ordered"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="intervention"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderRescreenBpWithin4Weeks"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.157" identifierName="physical exam, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedNotDoneMedicalReason"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1521">
+            <displayName value="Medical reason"/>
+          </code>
+
+                    <text value="Physical Exam, Performed not done: Medical reason"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedNotDoneMedicalReason"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.157" identifierName="physical exam, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedNotDonePatientReasonRefused"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.791">
+            <displayName value="Patient Reason refused"/>
+          </code>
+
+                    <text value="Physical Exam, Performed not done: Patient Reason refused"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedNotDonePatientReasonRefused"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.157" identifierName="physical exam, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedNotDoneMedicalReason1"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1521">
+            <displayName value="Medical reason"/>
+          </code>
+
+                    <text value="Physical Exam, Performed not done: Medical reason"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedNotDoneMedicalReason1"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <procedureCriteria moodCode="EVN" classCode="PROC" actionNegationInd='true'>
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.157" identifierName="physical exam, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedNotDonePatientReasonRefused2"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.791">
+            <displayName value="Patient Reason refused"/>
+          </code>
+
+                    <text value="Physical Exam, Performed not done: Patient Reason refused"/>
+          <statusCode code="performed"/>
+          
+          
+          <definition>
+            <procedureReference moodCode="EVN" classCode="PROC">
+              <id root="2.16.840.1.113883.3.100.1" extension="physical_exam"/>
+            </procedureReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <subsetCode code="SOURCE"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedNotDonePatientReasonRefused2"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </procedureCriteria>
+      </entry>
+
+            <entry typeCode="DRIV">
+        <encounterCriteria moodCode="EVN" classCode="ENC">
+                    <templateId>
+            <item root="2.16.840.1.113883.3.560.1.79" identifierName="encounter, performed template"/>
+            <item root="2.16.840.1.113883.3.100.1.1" identifierName="Source data criteria template"/>
+          </templateId>
+
+          <id>
+            <item root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+          </id>
+                    <code xsi:type="CD" valueSet="2.16.840.1.113883.3.600.1920">
+            <displayName value="BP Screening Denominator Encounter Codes Grouped New"/>
+          </code>
+
+                    <text value="Encounter, Performed: BP Screening Denominator Encounter Codes Grouped New"/>
+          
+          
+          <definition>
+            <encounterReference moodCode="EVN" classCode="ENC">
+              <id root="2.16.840.1.113883.3.100.1" extension="encounter"/>
+            </encounterReference>
+          </definition>
+          
+                    <outboundRelationship typeCode="SUBJ">
+            <localVariableName controlInformationRoot="ENCOUNTER_PERFORMED_BP_SCREENING_DENOMINATOR_ENCOUNTER_CODES_GROUPED_NEW" controlInformationExtension="A"/>
+            <subsetCode code="SPECIFIC"/>
+            <observationReference classCode="OBS" moodCode="EVN">
+              <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3"/>
+            </observationReference>
+          </outboundRelationship>
+          
+          
+        </encounterCriteria>
+      </entry>
+
+    </dataCriteriaSection>
+  </component>
+  <component>
+    <populationCriteriaSection>
+      <id root="2.16.840.1.113883.3.100.1" extension="Population0"/>
+      <code code="57026-7" codeSystem="2.16.840.1.113883.6.1"/>
+      <title value=""/>
+      <text>This section describes the Initial Patient Population,
+        Numerator, Denominator, Denominator Exceptions, and Measure
+        Populations</text>
+            <component typeCode="COMP">
+        <patientPopulationCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="6C555ECA-82F5-4F0D-9E50-6CC995A324C7"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="IPP">
+            <displayName value="Initial Patient Population"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <encounterReference moodCode="EVN" classCode="ENC">
+      <id root="2.16.840.1.113883.3.100.1" extension="OccurrenceABpScreeningDenominatorEncounterCodesGroupedNew3_precondition_158"/>
+    </encounterReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PatientCharacteristicBirthDate_precondition_161"/>
+    </observationReference>
+</precondition>
+  </allTrue>
+</precondition>
+        </patientPopulationCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <denominatorCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="7FB2E4BC-C98B-4B58-80C8-546ABCABF95D"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="DENOM">
+            <displayName value="Denominator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN" nullFlavor="NA">
+            <allTrue>
+              <id/>
+            </allTrue>
+          </precondition>
+        </denominatorCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <numeratorCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="EA8BA82E-3DE3-435F-90CA-F34A98EC8AB2"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="NUMER">
+            <displayName value="Numerator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure_precondition_18"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure_precondition_20"/>
+    </observationReference>
+</precondition>
+  </allTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure_precondition_25"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure_precondition_27"/>
+    </observationReference>
+</precondition>
+  </allTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure_precondition_31"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure_precondition_33"/>
+    </observationReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralToAlternativeProviderPrimaryCareProvider_precondition_40"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderRescreenBpWithin1Year_precondition_42"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderLifestyleRecommendation_precondition_44"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderWeightReductionRecommended_precondition_46"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderDietaryRecommendations_precondition_48"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderPhysicalActivityRecommendation_precondition_50"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderModerationOfEtohConsumptionRecommendation_precondition_52"/>
+    </observationReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="GROUP_RECENT_165"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allFalse>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure_precondition_71"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure_precondition_73"/>
+    </observationReference>
+</precondition>
+  </allFalse>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure_precondition_80"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure_precondition_82"/>
+    </observationReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralToAlternativeProviderPrimaryCareProvider_precondition_87"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderRescreenBpWithin4Weeks_precondition_89"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderLifestyleRecommendation_precondition_91"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderWeightReductionRecommended_precondition_93"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderDietaryRecommendations_precondition_95"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderPhysicalActivityRecommendation_precondition_97"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderModerationOfEtohConsumptionRecommendation_precondition_99"/>
+    </observationReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="GROUP_RECENT_167"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingSystolicBloodPressure_precondition_118"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamFindingDiastolicBloodPressure_precondition_120"/>
+    </observationReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderReferralToAlternativeProviderPrimaryCareProvider_precondition_125"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderLifestyleRecommendation_precondition_127"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderWeightReductionRecommended_precondition_129"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderDietaryRecommendations_precondition_131"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderPhysicalActivityRecommendation_precondition_133"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="InterventionOrderModerationOfEtohConsumptionRecommendation_precondition_135"/>
+    </observationReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <substanceAdministrationReference moodCode="EVN" classCode="SBADM">
+      <id root="2.16.840.1.113883.3.100.1" extension="MedicationOrderAntiHypertensivePharmacologicTherapy_precondition_140"/>
+    </substanceAdministrationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestOrderLaboratoryTestsForHypertension_precondition_142"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="LaboratoryTestOrderElectrocardiogramEcg_precondition_144"/>
+    </observationReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+        </numeratorCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <denominatorExceptionCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="5BE22C4C-BC1F-419F-B043-A3F2A913D6B2"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="DENEXCEP">
+            <displayName value="Denominator Exception"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+  <atLeastOneTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedDiastolicBloodPressure_precondition_4"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedDiastolicBloodPressure_precondition_6"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedSystolicBloodPressure_precondition_8"/>
+    </observationReference>
+</precondition>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="PhysicalExamPerformedSystolicBloodPressure_precondition_10"/>
+    </observationReference>
+</precondition>
+  </atLeastOneTrue>
+</precondition>
+  </allTrue>
+</precondition>
+        </denominatorExceptionCriteria>
+      </component>
+
+            <component typeCode="COMP">
+        <denominatorExclusionCriteria  classCode="OBS" moodCode="EVN">
+          <id root="c75181d0-73eb-11de-8a39-0800200c9a66"
+            extension="B84D8676-2097-458C-8F24-87C63FF2E5FC"/>
+          <code codeSystem="2.16.840.1.113883.5.1063"
+              codeSystemName="HL7 Observation Value"
+              code="DENEX">
+            <displayName value="Denominator"/>
+          </code>
+          <isCriterionInd value="true"/>
+          <precondition typeCode="PRCN">
+  <allTrue>
+    <id/>
+    <precondition typeCode="PRCN">
+    <observationReference moodCode="EVN" classCode="OBS">
+      <id root="2.16.840.1.113883.3.100.1" extension="DiagnosisActiveDiagnosisOfHypertensionGrouped_precondition_15"/>
+    </observationReference>
+</precondition>
+  </allTrue>
+</precondition>
+        </denominatorExclusionCriteria>
+      </component>
+
+    </populationCriteriaSection>
+  </component>
+</QualityMeasureDocument>

@@ -1,0 +1,747 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:n1="urn:hl7-org:v3">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Preventive Care and Screening: Body Mass Index (BMI) Screening and Follow-Up</title><style type="text/css">
+body {
+	color: rgb(26, 26, 26);
+	background-color: rgb(255,255,255);
+	font-family: Verdana, Tahoma, sans-serif;
+	font-size: 11px;
+}
+
+a {
+	color: rgb(0, 0, 255);
+	background-color: rgb(255,255,255);
+}
+
+h1 {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+div {
+	width: 80%;
+}
+
+table {
+	line-height: 10pt;
+	width: 80%;
+}
+
+tr {
+	background-color: rgb(224,224,224);
+}
+
+td {
+	padding: 0.1cm 0.2cm;
+	vertical-align: top;
+}
+
+.h1center {
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+	width: 80%;
+}
+
+.header_table{
+	border: 1pt inset rgb(0,0,0);
+}
+
+.narr_table {
+	width: 100%;
+}
+
+.narr_tr {
+	background-color: rgb(225,225,225);
+}
+pre {
+ overflow: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+ white-space: pre-wrap; /* css-3 */
+ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+ white-space: -pre-wrap; /* Opera 4-6 */
+ white-space: -o-pre-wrap; /* Opera 7 */
+ word-wrap: break-word; /* Internet Explorer 5.5+ */
+ font-family: Verdana, Tahoma, sans-serif;
+ font-size: 11px;
+ text-align:left;
+ margin: 0px 0px 0px 0px;
+ padding:0px 0px 0px 0px;
+}
+.narr_th {
+	background-color: rgb(201,201,201);
+}
+
+.td_label{
+	font-weight: bold;
+	color: white;
+}
+	</style></head>
+   <body>
+      <table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Title</span></td>
+               <td width="80%" colspan="3">Preventive Care and Screening: Body Mass Index (BMI) Screening and Follow-Up</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Identifier<br>(Measure Authoring Tool)</span></td>
+               <td width="30%">69</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Version number</span></td>
+               <td width="30%">1</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">NQF Number</span></td>
+               <td width="30%">0421</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">GUID</span></td>
+               <td> 9a031bb8-3d9b-11e1-8634-00237d5bf174</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measurement Period</span></td>
+               <td width="80%" colspan="3">January 1, 20xx  through December 31, 20xx </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Steward</span></td>
+               <td width="80%" colspan="3">Centers for Medicare &amp; Medicaid Services</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Developer</span></td>
+               <td width="80%" colspan="3">Quality Insights of Pennsylvania</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Endorsed By</span></td>
+               <td width="80%" colspan="3">National Quality Forum</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Description</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Percentage of patients aged 18 years and older with an encounter during the reporting period with a documented calculated BMI during the encounter or during the previous six months, AND when the BMI is outside of normal parameters, follow-up is documented during the encounter or during the previous six months of the encounter with the BMI outside of normal parameters.
+
+Normal Parameters:       Age 65 years and older BMI =&gt; 23 and &lt; 30 
+                                    Age 18 &#8211; 64 years BMI =&gt; 18.5 and &lt; 25</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Copyright</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Limited proprietary coding is contained in the measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. Quality Insights of Pennsylvania disclaims all liability for use or accuracy of any Current Procedural Terminology (CPT [R]) or other coding contained in the specifications.
+
+CPT (R) contained in the Measure specifications is copyright 2007-2011 American Medical Association. 
+
+LOINC (R) copyright 2004-2011 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms (R) (SNOMED CT [R]) copyright 2004-2011 International Health Terminology Standards Development Organization. All Rights Reserved.
+
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Disclaimer</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>These performance measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.
+
+THE MEASURES AND SPECIFICATIONS ARE PROVIDED &#8220;AS IS&#8221; WITHOUT WARRANTY OF ANY KIND.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Scoring</span></td>
+               <td width="80%" colspan="3">Proportion</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Type</span></td>
+               <td width="80%" colspan="3">Process</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Stratification</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Risk Adjustment</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rate Aggregation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rationale</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>BMI Above Upper Parameter 
+In 2009, no state met the healthy people 2012 obesity target of 15 percent, and the self reported overall prevalence of obesity among U.S. adults had increased 1.1 percentage points from 2007. Overall self-reported obesity prevalence in the U.S. was 26.7 percent (CDC, 2010).  
+
+Obesity continues to be a public health concern in the United States and throughout the world. In the United States, obesity prevalence doubled among adults between 1980 and 2004 (Flegal et al., 2002; Ogden et al., 2006). Obesity is associated with increased risk of a number of conditions, including diabetes mellitus, cardiovascular disease, hypertension, and certain cancers, and with increased risk of disability and a modestly elevated risk of all-cause mortality. &#8220;Obesity is associated with an increased risk of death, particularly in adults younger than age 65 years. Obesity has been shown to reduce life expectancy by 6 to 20 years depending on age and race. Ischemic heart disease, diabetes, cancer (especially liver, kidney, breast, endometrial, prostate and colon), and respiratory diseases are the leading causes of death in persons who are obese&#8221; (AHRQ, 2011).
+
+Results from the 2009-2010 National Health and Nutrition Examination Survey (NHANES) indicate that an estimated 35.7 percent of adults are obese (CDC, 2012). Although the prevalence of adults in the U.S. who are obese is still high with about one-third of adults obese in 2007-2008, data suggest that the rate of increase for obesity in the U.S. in recent decades may be slowing (Flegal et al., 2010). 
+
+Finkelstein et al. (2009) found that across all payers, per capita medical spending for the obese is $1,429 higher per year, or roughly 42 percent higher than for someone of normal weight. In aggregate, the annual medical burden of obesity has increased from 6.5 percent to 9.1 percent of annual medical spending and could be as high as $147 billion per year (in 2008 dollars).  A study by Tsai et al. (2010) estimated cost for obesity to be even higher. A recent study by Cawley et al. (2012) reported findings that indicate that the effect of obesity of medical care cost is much greater than previously appreciated.  
+
+Ma et al. (2009) performed a retrospective, cross-sectional analysis of ambulatory visits in the National Ambulatory Medical Care Survey from 2005 and 2006. The study findings on obesity and office-based quality of care concluded the evidence is compelling that obesity is underappreciated in office-based physician practices across the United States. Many opportunities are missed for obesity screening and diagnosis, as well as for the prevention and treatment of obesity and related health risks, regardless of patient and provider characteristics. 
+
+BMI Below Normal Parameters 
+Poor nutrition or underlying health conditions can result in underweight. Results from the 2007-2008 National Health and Nutrition Examination Survey (CDC, 2010), using measured heights and weights, indicate an estimated 1.6% of U.S. adults are underweight with women more likely to be underweight than men. 
+
+Huffman (2002) states elderly patients with unintentional weight loss are at higher risk for infection, depression and death. The leading causes of involuntary weight loss are depression (especially in residents of long-term care facilities), cancer (lung and gastrointestinal malignancies), cardiac disorders and benign gastrointestinal diseases. Medications that may cause nausea and vomiting, dysphagia, dysgeusia and anorexia have been implicated. Polypharmacy can cause unintended weight loss, as can psychotropic medication reduction (e.g., by unmasking problems such as anxiety). In an observational study, Ranhoff et al. (2005) recommended  using BMI&lt; 23 for the elderly to identify positive, results with malnutrition screens and poor nutritional status.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Clinical Recommendation Statement</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Although multiple clinical recommendations addressing obesity have been developed by professional organizations, societies and associations, two recommendations have been identified which exemplify the intent of the measure and address the numerator and denominator.
+
+The US Preventive Health Services Task Force (USPSTF) The Guide to Clinical Preventive Services, 2010-2011 recommends that clinicians screen all adult patients for obesity and offer intensive counseling and behavioral interventions to promote sustained weight loss for obese adults (Level Evidence B). 
+
+Institute for Clinical Systems Improvement (ICSI, 2011) Prevention and Management of Obesity (Mature Adolescents and Adults) provides the following guidance: 
+
+&#8226;  Calculate the body mass index; classify the individual based on the body mass index categories. Educate patients about their body mass index and their associated risks. 
+
+&#8226;  Weight management requires a team approach. Be aware of clinical and community resources. The patient needs to have an ongoing therapeutic relationship and follow-up with a health care team. 
+
+&#8226;  Weight control is a lifelong commitment, and the health care team can assist with setting specific goals with the patient.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Improvement Notation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Higher score indicates better quality</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Centers for Disease Control and Prevention (2010).  Healthy People 2010.  Retrieved from http://www.cdc.gov/nchs/data/hpdata2010/hp2010_final_review.pdf</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Flegal, K.M., Carroll, M.D., Ogden, C.L., Johnson, C.L. (2002).  Prevalence and trends in obesity among US adults, 1999-2000. Journal of the American Medical Association, 288:  1723-7</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Ogden, C.L., Carroll, M.D., Curtin, L.R., McDowell, M.A., Tabak, C.J., Flegal, K.M. (2006). Prevalence of overweight and obesity in the United States, 1999-2004.  Journal of the American Medical Association, 295(13):  1549-1555</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Reference	Agency for Healthcare Research and Quality (2011).  Screening for and Management of Obesity and Overweight in Adults.  Evidence Synthesis Number 89.  Retrieved from http://www.uspreventiveservicestaskforce.org/uspstf11/obeseadult/obesees.pdf</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Centers for Disease Control and Prevention, National Center for Health Statistics (2012).  Prevalence of Obesity in the United States, 2009-2010.  NCHS Data Brief, No. 82.  Retrieved from http://www.cdc.gov/nchs/data/databriefs/db82.pdf</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Flegal, K.M., Graubard, B.L., Williamson, D.F., Mitchell, H. G. (2010).  Excess Deaths Associated With Underweight, Overweight, and Obesity.  Journal of the American Medical Association, Vol 293, No 15. pp.1861-1867</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Finkelstein, E.A., Trogdon, J.G., Cohen, J.W., &amp; Dietz, W. (2009). Annual Medical Spending Attributable To Obesity: Payer-And Service-Specific Estimates. Health Affairs, 28(5), w822-w831.  doi:  10.1377/hlthaff.28.5.w822</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Tsai, A.G., Williamson, D.F., &amp; Glick, H.A. (2010). Direct medical cost of overweight and obesity in the USA: a quantitative systematic review. Retrieved from http://www3.interscience.wiley.com/journal/123233768/abstract?CRETRY=1&amp;SRETRY=0</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Cawley, J., Meyerhoefer, C. (2012). The medical care costs of obesity:  An instrumental variables approach. Journal of Health Economics, 31:  219-213</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Ma, J., Xiao, L., &amp; Stafford, R.S. (2009). Adult Obesity and Office-Based of Care in the United States.  Obesity, 17(5):  1077-1085</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Centers for Disease Control and Prevention (2010).  Prevalence of Underweight Among Adults Aged 20 Years and Over: United States, 2007-2008.  Retrieved from http://www.cdc.gov/nchs/data/hestat/underweight_adult_07_08/underweight_adult_07_08.pdf</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Huffman, G.B. (2002). Evaluating and Treating Unintentional Weight Loss in the Elderly.  American Family Physician. Volume 65, Issue 4.  Retrieved from http://www.mdconsult.com</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Ranhoff, A.H., Gjoen, A.U., Mowe, M. (2005).  Screening for Malnutrition in Elderly Acute Medical Patients:  The Usefulness of MNA-SF.  The Journal of Nutrition, Health &amp; Aging.  9(4):  221-225</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Agency for Healthcare Research and Quality. The Guide to Clinical Preventive Services 2010-2011:  Recommendations of the U.S. Preventive Services Task Force.  Retrieved from http://www.ahrq.gov/clinic/pocketgd1011/pocketgd1011.pdf</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Institute for Clinical Systems Improvement (2011). Health Care Guideline: Prevention and Management of Obesity (Mature Adolescents and Adults).  Fifth Edition. Retrieved From http://www.icsi.org/obesity/obesity_3398.html</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Definition</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Body mass index (BMI) - expressed as weight/height (BMI; kg/m2), and is commonly used to classify weight categories. 
+
+Calculated BMI &#8211; Requires and eligible professional or their staff to measure both the height and weight. Self-reported values cannot be used. BMI is calculated either as weight in pounds divided by height in inches squared multiplied by 703, or as weight in kilograms divided by height in meters squared.
+
+Follow-Up Plan &#8211; Proposed outline of treatment to be conducted as a result of a BMI out of normal parameters. Such follow-up may include, but is not limited to: documentation of a future appointment, education, referral (such as, a registered dietician, nutritionist, occupational therapist, physical therapist, primary care provider, exercise physiologist, mental health professional, or surgeon), pharmacological interventions, dietary supplements, exercise counseling or nutrition counseling</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Guidance</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>BMI calculated and documented in the medical record may be reported if done in the provider&#8217;s office/facility or if BMI calculation within the past six months is documented in outside medical records obtained by the provider. If the most recent BMI is outside of normal parameters a follow-up plan is documented within the past six months of the calculated BMI. The documented follow up interventions must be related to the BMI outside of normal parameters, example:  &#8220;Patient referred to nutrition counseling for BMI above normal parameters&#8221;.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Transmission Format</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>TBD</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Initial Patient Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>There are two (2) Initial  Patient Populations for this measure
+
+Initial Patient Population 1:  All patients 65 years of age and older before the beginning of the measurement period with at least one eligible encounter during the measurement period NOT INCLUDING encounters where the patient is receiving palliative care, refuses BMI measurement, the patient is in an urgent or emergent medical situation where time is of the essence and to delay treatment would jeopardize the patient&#8217;s health status, or there is any other reason documented in the medical record by the provider explaining why BMI measurement was not appropriate. 
+
+Initial Patient Population 2:  All patients 18 through 64 years before the beginning of the measurement period with at least one eligible encounter during the measurement period NOT INCLUDING encounters where the patient is receiving palliative care, refuses BMI measurement, the patient is in an urgent or emergent medical situation where time is of the essence and to delay treatment would jeopardize the patient&#8217;s health status, or there is any other reason documented in the medical record by the provider explaining why BMI measurement was not appropriate.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Equals Initial Patient Population</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients who are pregnant.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients with a documented calculated BMI during the encounter or during the previous six months, AND when the BMI is outside of normal parameters, follow-up is documented during the encounter or during the previous six months of the encounter with the BMI outside of normal parameters</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exceptions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Observations</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Supplemental Data Elements</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</pre></div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="toc">Table of Contents</a></h2>
+      <ul>
+         <li><a href="#d6532918e632">Population criteria</a></li>
+         <li><a href="#d6532918e3084">Data criteria (QDM Data Elements)</a></li>
+         <li><a href="#d6532918e3625">Reporting Stratification</a></li>
+         <li><a href="#d6532918e3646">Supplemental Data Elements</a></li>
+      </ul>
+      <hr align="left" color="teal" size="2" width="80%">
+      <h3><a name="d6532918e632" href="#toc">Population criteria</a></h3>
+      <div>
+         
+         <p><span style="font-weight:bold; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;------ 
+               Population Criteria 1
+                ------</span></p>
+         
+         <ul>
+            <li>
+               <b>Initial Patient Population 1 =</b>
+               
+               <ul>
+                  <li>AND NOT: 
+                     <ul>
+                        <li>OR: "Procedure, Order: Palliative Care" starts before or during "Occurrence A of Encounter, Performed: BMI Encounter Code
+                           Set"
+                        </li>
+                        <li>OR: "Laboratory Test, Performed not done: Medical or Other reason not done" for "BMI LOINC calculation LOINC Value Set" during
+                           "Occurrence A of Encounter, Performed: BMI Encounter Code Set"
+                        </li>
+                        <li>OR: "Laboratory Test, Performed not done: Patient Reason Refused" for "BMI LOINC calculation LOINC Value Set" during "Occurrence
+                           A of Encounter, Performed: BMI Encounter Code Set"
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 65 year(s) starts before start of "Measurement Period"</li>
+                  <li>AND: "Occurrence A of Encounter, Performed: BMI Encounter Code Set" during "Measurement Period"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator 1 =</b>
+               
+               <ul>
+                  <li>AND: "Initial Patient Population 1"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exclusions 1 =</b>
+               
+               <ul>
+                  <li>AND NOT: "Occurrence A of Diagnosis, Active: Pregnancy Dx" ends before start of "Measurement Period"</li>
+                  <li>AND: "Occurrence A of Diagnosis, Active: Pregnancy Dx" starts before or during "Measurement Period"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Numerator 1 =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: MOST RECENT:"Occurrence A of Physical Exam, Finding: BMI Finding Code Set"  &lt;= 6 month(s) starts before or during "Occurrence
+                                 A of Encounter, Performed: BMI Encounter Code Set"
+                              </li>
+                              <li>AND: "Occurrence A of Physical Exam, Finding: BMI Finding Code Set (result &gt;= 23 kg/m2)"</li>
+                              <li>AND: "Occurrence A of Physical Exam, Finding: BMI Finding Code Set (result &lt; 30 kg/m2)"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: MOST RECENT:"Occurrence A of Physical Exam, Finding: BMI Finding Code Set"  &lt;= 6 month(s) starts before or during "Occurrence
+                                 A of Encounter, Performed: BMI Encounter Code Set"
+                              </li>
+                              <li>AND: "Occurrence A of Physical Exam, Finding: BMI Finding Code Set (result &gt;= 30 kg/m2)"</li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: "Intervention, Order: Above Normal Follow-up"  &lt;= 6 month(s) starts before or during "Occurrence A of Encounter, Performed:
+                                       BMI Encounter Code Set"
+                                    </li>
+                                    <li>OR: "Intervention, Order: Above Normal Referrals"  &lt;= 6 month(s) starts before or during "Occurrence A of Encounter, Performed:
+                                       BMI Encounter Code Set"
+                                    </li>
+                                    <li>OR: "Medication, Order: Above Normal Medications"  &lt;= 6 month(s) starts before or during "Occurrence A of Encounter, Performed:
+                                       BMI Encounter Code Set"
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: MOST RECENT:"Occurrence A of Physical Exam, Finding: BMI Finding Code Set"  &lt;= 6 month(s) starts before or during "Occurrence
+                                 A of Encounter, Performed: BMI Encounter Code Set"
+                              </li>
+                              <li>AND: "Occurrence A of Physical Exam, Finding: BMI Finding Code Set (result &lt; 23 kg/m2)"</li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: "Intervention, Order: Below Normal Follow up"  &lt;= 6 month(s) starts before or during "Occurrence A of Encounter, Performed:
+                                       BMI Encounter Code Set"
+                                    </li>
+                                    <li>OR: "Intervention, Order: Below Normal Referrals"  &lt;= 6 month(s) starts before or during "Occurrence A of Encounter, Performed:
+                                       BMI Encounter Code Set"
+                                    </li>
+                                    <li>OR: "Medication, Order: Below Normal Medications"  &lt;= 6 month(s) starts before or during "Occurrence A of Encounter, Performed:
+                                       BMI Encounter Code Set"
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exceptions 1=</b>
+               
+               <ul>
+                  <li>None</li>
+               </ul>
+               
+            </li>
+         </ul>
+         
+         <p><span style="font-weight:bold; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;------ 
+               Population Criteria 2
+                ------</span></p>
+         
+         <ul>
+            <li>
+               <b>Initial Patient Population 2 =</b>
+               
+               <ul>
+                  <li>AND NOT: 
+                     <ul>
+                        <li>OR: "Procedure, Order: Palliative Care" starts before or during "Occurrence A of Encounter, Performed: BMI Encounter Code
+                           Set"
+                        </li>
+                        <li>OR: "Laboratory Test, Performed not done: Medical or Other reason not done" for "BMI LOINC calculation LOINC Value Set" during
+                           "Occurrence A of Encounter, Performed: BMI Encounter Code Set"
+                        </li>
+                        <li>OR: "Laboratory Test, Performed not done: Patient Reason Refused" for "BMI LOINC calculation LOINC Value Set" during "Occurrence
+                           A of Encounter, Performed: BMI Encounter Code Set"
+                        </li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 18 year(s) starts before start of "Measurement Period"</li>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &lt;= 64 year(s) starts before start of "Measurement Period"</li>
+                  <li>AND: "Occurrence A of Encounter, Performed: BMI Encounter Code Set" during "Measurement Period"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator 2 =</b>
+               
+               <ul>
+                  <li>AND: "Initial Patient Population 2"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exclusions 2 =</b>
+               
+               <ul>
+                  <li>AND NOT: "Occurrence A of Diagnosis, Active: Pregnancy Dx" ends before start of "Measurement Period"</li>
+                  <li>AND: "Occurrence A of Diagnosis, Active: Pregnancy Dx" starts before or during "Measurement Period"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Numerator 2 =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: MOST RECENT:"Occurrence A of Physical Exam, Finding: BMI Finding Code Set"  &lt;= 6 month(s) starts before or during "Occurrence
+                                 A of Encounter, Performed: BMI Encounter Code Set"
+                              </li>
+                              <li>AND: "Occurrence A of Physical Exam, Finding: BMI Finding Code Set (result &gt;= 18.5 kg/m2)"</li>
+                              <li>AND: "Occurrence A of Physical Exam, Finding: BMI Finding Code Set (result &lt; 25 kg/m2)"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: MOST RECENT:"Occurrence A of Physical Exam, Finding: BMI Finding Code Set"  &lt;= 6 month(s) starts before or during "Occurrence
+                                 A of Encounter, Performed: BMI Encounter Code Set"
+                              </li>
+                              <li>AND: "Occurrence A of Physical Exam, Finding: BMI Finding Code Set (result &gt;= 25 kg/m2)"</li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: "Intervention, Order: Above Normal Follow-up"  &lt;= 6 month(s) starts before or during "Occurrence A of Encounter, Performed:
+                                       BMI Encounter Code Set"
+                                    </li>
+                                    <li>OR: "Intervention, Order: Above Normal Referrals"  &lt;= 6 month(s) starts before or during "Occurrence A of Encounter, Performed:
+                                       BMI Encounter Code Set"
+                                    </li>
+                                    <li>OR: "Medication, Order: Above Normal Medications"  &lt;= 6 month(s) starts before or during "Occurrence A of Encounter, Performed:
+                                       BMI Encounter Code Set"
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: MOST RECENT:"Occurrence A of Physical Exam, Finding: BMI Finding Code Set"  &lt;= 6 month(s) starts before or during "Occurrence
+                                 A of Encounter, Performed: BMI Encounter Code Set"
+                              </li>
+                              <li>AND: "Occurrence A of Physical Exam, Finding: BMI Finding Code Set (result &lt; 18.5 kg/m2)"</li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: "Intervention, Order: Below Normal Follow up"  &lt;= 6 month(s) starts before or during "Occurrence A of Encounter, Performed:
+                                       BMI Encounter Code Set"
+                                    </li>
+                                    <li>OR: "Intervention, Order: Below Normal Referrals"  &lt;= 6 month(s) starts before or during "Occurrence A of Encounter, Performed:
+                                       BMI Encounter Code Set"
+                                    </li>
+                                    <li>OR: "Medication, Order: Below Normal Medications"  &lt;= 6 month(s) starts before or during "Occurrence A of Encounter, Performed:
+                                       BMI Encounter Code Set"
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exceptions 2=</b>
+               
+               <ul>
+                  <li>None</li>
+               </ul>
+               
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d6532918e3084" href="#toc">Data criteria (QDM Data Elements)</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Diagnosis, Active: Pregnancy Dx" using "Pregnancy Dx Grouping Value Set (2.16.840.1.113883.3.600.1.1623)"
+            </li>
+            <li>
+               "Encounter, Performed: BMI Encounter Code Set" using "BMI Encounter Code Set Grouping Value Set (2.16.840.1.113883.3.600.1.1751)"
+            </li>
+            <li>
+               "Intervention, Order: Above Normal Follow-up" using "Above Normal Follow-up Grouping Value Set (2.16.840.1.113883.3.600.1.1525)"
+            </li>
+            <li>
+               "Intervention, Order: Above Normal Referrals" using "Above Normal Referrals Grouping Value Set (2.16.840.1.113883.3.600.1.1527)"
+            </li>
+            <li>
+               "Intervention, Order: Below Normal Follow up" using "Below Normal Follow up Grouping Value Set (2.16.840.1.113883.3.600.1.1528)"
+            </li>
+            <li>
+               "Intervention, Order: Below Normal Referrals" using "Below Normal Referrals Grouping Value Set (2.16.840.1.113883.3.600.1.1529)"
+            </li>
+            <li>
+               "Laboratory Test, Performed: BMI LOINC calculation" using "BMI LOINC calculation LOINC Value Set (2.16.840.1.113883.3.600.1.2040)"
+            </li>
+            <li>
+               "Laboratory Test, Performed not done: Medical or Other reason not done" using "Medical or Other reason not done SNOMED-CT Value Set (2.16.840.1.113883.3.600.1.1502)"
+            </li>
+            <li>
+               "Laboratory Test, Performed not done: Patient Reason Refused" using "Patient Reason Refused SNOMED-CT Value Set (2.16.840.1.113883.3.600.1.1503)"
+            </li>
+            <li>
+               "Medication, Order: Above Normal Medications" using "Above Normal Medications RxNorm Value Set (2.16.840.1.113883.3.600.1.1498)"
+            </li>
+            <li>
+               "Medication, Order: Below Normal Medications" using "Below Normal Medications RxNorm Value Set (2.16.840.1.113883.3.600.1.1499)"
+            </li>
+            <li>
+               "Patient Characteristic Birthdate: birth date" using "birth date LOINC Value Set (2.16.840.1.113883.3.560.100.4)"
+            </li>
+            <li>
+               "Physical Exam, Finding: BMI Finding Code Set" using "BMI Finding Code Set Grouping Value Set (2.16.840.1.113883.3.600.1.890)"
+            </li>
+            <li>
+               "Procedure, Order: Palliative Care" using "Palliative Care Grouping Value Set (2.16.840.1.113883.3.600.1.1579)"
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d6532918e3625" href="#toc">Reporting Stratification</a></h3>
+      <div>
+         
+         <ul>
+            <li>None</li>
+         </ul>
+         
+      </div>
+      <h3><a name="d6532918e3646" href="#toc">Supplemental Data Elements</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Patient Characteristic Ethnicity: Ethnicity" using "Ethnicity CDC Value Set (2.16.840.1.114222.4.11.837)"
+            </li>
+            <li>
+               "Patient Characteristic Payer: Payer" using "Payer Source of Payment Typology Value Set (2.16.840.1.114222.4.11.3591)"
+            </li>
+            <li>
+               "Patient Characteristic Race: Race" using "Race CDC Value Set (2.16.840.1.114222.4.11.836)"
+            </li>
+            <li>
+               "Patient Characteristic Sex: ONC Administrative Sex" using "ONC Administrative Sex Administrative Sex Value Set (2.16.840.1.113762.1.4.1)"
+            </li>
+         </ul>
+         
+      </div><br><hr align="left" color="teal" size="2" width="80%"><br><table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Set</span></td>
+               <td colspan="3" width="80%">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto;word-wrap:break-word">none</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

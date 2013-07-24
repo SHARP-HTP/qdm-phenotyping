@@ -1,0 +1,1916 @@
+{
+  "id": "0405",
+  "hqmf_id": "8A4D92B2-39CA-AF4B-0139-FEDEEAA44F14",
+  "hqmf_set_id": "1CDD20DE-5DE9-4759-8A93-31F1F8BAAAA2",
+  "hqmf_version_number": 1,
+  "title": "HIV/AIDS: Pneumocystis jiroveci pneumonia (PCP) prophylaxis",
+  "description": "Percentage of patients aged 6 weeks and older with a diagnosis of HIV/AIDS who were prescribed Pneumocystis jiroveci pneumonia (PCP) prophylaxis",
+  "cms_id": "CMS52v1",
+  "population_criteria": {
+    "DENEXCEP": {
+      "conjunction?": true,
+      "type": "DENEXCEP",
+      "title": "Denominator Exception",
+      "hqmf_id": "C86B8A8E-E7F9-459F-9204-84749E933D5A",
+      "preconditions": [
+        {
+          "id": 12,
+          "preconditions": [
+            {
+              "id": 10,
+              "reference": "OccurrenceBCd4Count4_precondition_10"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENEXCEP_1": {
+      "conjunction?": true,
+      "type": "DENEXCEP",
+      "title": "Denominator Exception",
+      "hqmf_id": "09511E55-257C-446A-90B1-A6E150EB16EE",
+      "preconditions": [
+        {
+          "id": 19,
+          "preconditions": [
+            {
+              "id": 17,
+              "preconditions": [
+                {
+                  "id": 13,
+                  "reference": "OccurrenceBCd4Count4_precondition_13"
+                },
+                {
+                  "id": 15,
+                  "reference": "OccurrenceBCd4Percentage7_precondition_15"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "2E4C6038-8797-4B3E-AEAC-CB91271262F4",
+      "preconditions": [
+        {
+          "id": 48,
+          "preconditions": [
+            {
+              "id": 46,
+              "preconditions": [
+                {
+                  "id": 20,
+                  "reference": "MedicationOrderPneumocystisJiroveciPneumoniaPcpProphylaxis_precondition_20"
+                },
+                {
+                  "id": 44,
+                  "preconditions": [
+                    {
+                      "id": 22,
+                      "reference": "OccurrenceADapsoneAndPyrimethamine9_precondition_22"
+                    },
+                    {
+                      "id": 24,
+                      "reference": "OccurrenceALeucovorin5_precondition_24"
+                    },
+                    {
+                      "id": 42,
+                      "preconditions": [
+                        {
+                          "id": 26,
+                          "reference": "OccurrenceALeucovorin5_precondition_26"
+                        },
+                        {
+                          "id": 33,
+                          "preconditions": [
+                            {
+                              "id": 30,
+                              "reference": "OccurrenceADapsoneAndPyrimethamine9_precondition_30"
+                            },
+                            {
+                              "id": 32,
+                              "preconditions": [
+                                {
+                                  "id": 28,
+                                  "reference": "OccurrenceADapsoneAndPyrimethamine9_precondition_28"
+                                }
+                              ],
+                              "conjunction_code": "atLeastOneTrue",
+                              "negation": true
+                            }
+                          ],
+                          "conjunction_code": "allTrue"
+                        },
+                        {
+                          "id": 40,
+                          "preconditions": [
+                            {
+                              "id": 37,
+                              "reference": "OccurrenceALeucovorin5_precondition_37"
+                            },
+                            {
+                              "id": 39,
+                              "preconditions": [
+                                {
+                                  "id": 35,
+                                  "reference": "OccurrenceALeucovorin5_precondition_35"
+                                }
+                              ],
+                              "conjunction_code": "atLeastOneTrue",
+                              "negation": true
+                            }
+                          ],
+                          "conjunction_code": "allTrue"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER_1": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "357AE0AD-A9A3-4672-9341-1FFEB98E8CC2",
+      "preconditions": [
+        {
+          "id": 55,
+          "preconditions": [
+            {
+              "id": 53,
+              "preconditions": [
+                {
+                  "id": 49,
+                  "reference": "MedicationOrderPneumocystisJiroveciPneumoniaPcpProphylaxis_precondition_49"
+                },
+                {
+                  "id": 51,
+                  "reference": "MedicationOrderPneumocystisJiroveciPneumoniaPcpProphylaxis_precondition_51"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER_2": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "A2DA02A3-F961-49BD-AC25-DCF79F9F0CDC",
+      "preconditions": [
+        {
+          "id": 58,
+          "preconditions": [
+            {
+              "id": 56,
+              "reference": "MedicationOrderPneumocystisJiroveciPneumoniaPcpProphylaxis_precondition_56"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "95A132E6-731A-4FC3-9DF4-794AA8164F99"
+    },
+    "DENOM_1": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "68D8E723-9A94-408F-AFB7-72CB1D3705D7"
+    },
+    "DENOM_2": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "3A015B79-AC35-4843-994E-3FB61BF633D7"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "4EDD11A3-39FE-492B-950B-EE46C54BCF53",
+      "preconditions": [
+        {
+          "id": 71,
+          "preconditions": [
+            {
+              "id": 59,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_59"
+            },
+            {
+              "id": 61,
+              "reference": "DiagnosisActiveHiv_precondition_61"
+            },
+            {
+              "id": 63,
+              "reference": "OccurrenceAHivVisit1_precondition_63"
+            },
+            {
+              "id": 65,
+              "reference": "OccurrenceBHivVisit2_precondition_65"
+            },
+            {
+              "id": 67,
+              "reference": "OccurrenceACd4Count3_precondition_67"
+            },
+            {
+              "id": 69,
+              "reference": "OccurrenceBHivVisit2_precondition_69"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "IPP_1": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "7D37B664-B3D8-4EBD-A8F5-05251A321427",
+      "preconditions": [
+        {
+          "id": 90,
+          "preconditions": [
+            {
+              "id": 72,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_72"
+            },
+            {
+              "id": 74,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_74"
+            },
+            {
+              "id": 76,
+              "reference": "DiagnosisActiveHiv_precondition_76"
+            },
+            {
+              "id": 78,
+              "reference": "OccurrenceAHivVisit1_precondition_78"
+            },
+            {
+              "id": 80,
+              "reference": "OccurrenceBHivVisit2_precondition_80"
+            },
+            {
+              "id": 82,
+              "reference": "OccurrenceBHivVisit2_precondition_82"
+            },
+            {
+              "id": 88,
+              "preconditions": [
+                {
+                  "id": 84,
+                  "reference": "OccurrenceACd4Count3_precondition_84"
+                },
+                {
+                  "id": 86,
+                  "reference": "OccurrenceACd4Percentage6_precondition_86"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "IPP_2": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "DA753C15-4DC9-4150-A2D3-51A04E59E706",
+      "preconditions": [
+        {
+          "id": 104,
+          "preconditions": [
+            {
+              "id": 92,
+              "reference": "OccurrenceAHiv8_precondition_91",
+              "conjunction_code": "allTrue"
+            },
+            {
+              "id": 94,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_94"
+            },
+            {
+              "id": 96,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_96"
+            },
+            {
+              "id": 98,
+              "reference": "OccurrenceAHivVisit1_precondition_98"
+            },
+            {
+              "id": 100,
+              "reference": "OccurrenceBHivVisit2_precondition_100"
+            },
+            {
+              "id": 102,
+              "reference": "OccurrenceBHivVisit2_precondition_102"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "LaboratoryTestResultCd4Percentage": {
+      "title": "CD4+ Percentage",
+      "description": "Laboratory Test, Result: CD4+ Percentage",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.121.12.1005",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultCd4Percentage"
+    },
+    "MedicationOrderLeucovorin": {
+      "title": "Leucovorin",
+      "description": "Medication, Order: Leucovorin",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1205",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderLeucovorin"
+    },
+    "MedicationOrderDapsoneAndPyrimethamine": {
+      "title": "Dapsone and pyrimethamine",
+      "description": "Medication, Order: Dapsone and pyrimethamine",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1202",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderDapsoneAndPyrimethamine"
+    },
+    "EncounterPerformedHivVisit": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHivVisit"
+    },
+    "LaboratoryTestResultCd4Count": {
+      "title": "CD4+ Count",
+      "description": "Laboratory Test, Result: CD4+ Count",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.121.12.1004",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultCd4Count"
+    },
+    "OccurrenceAHivVisit1": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HIV_VISIT",
+      "source_data_criteria": "OccurrenceAHivVisit1"
+    },
+    "OccurrenceACd4Count3": {
+      "title": "CD4+ Count",
+      "description": "Laboratory Test: CD4+ Count",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.121.12.1004",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "LABORATORY_TEST_CD4_COUNT",
+      "source_data_criteria": "OccurrenceACd4Count3"
+    },
+    "OccurrenceALeucovorin5": {
+      "title": "Leucovorin",
+      "description": "Medication, Ordered: Leucovorin",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1205",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ORDERED_LEUCOVORIN",
+      "source_data_criteria": "OccurrenceALeucovorin5"
+    },
+    "OccurrenceACd4Percentage6": {
+      "title": "CD4+ Percentage",
+      "description": "Laboratory Test: CD4+ Percentage",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.121.12.1005",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "LABORATORY_TEST_CD4_PERCENTAGE",
+      "source_data_criteria": "OccurrenceACd4Percentage6"
+    },
+    "OccurrenceAHiv8": {
+      "title": "HIV",
+      "description": "Diagnosis, Active: HIV",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.120.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_HIV",
+      "source_data_criteria": "OccurrenceAHiv8"
+    },
+    "OccurrenceADapsoneAndPyrimethamine9": {
+      "title": "Dapsone and pyrimethamine",
+      "description": "Medication, Ordered: Dapsone and pyrimethamine",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1202",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ORDERED_DAPSONE_AND_PYRIMETHAMINE",
+      "source_data_criteria": "OccurrenceADapsoneAndPyrimethamine9"
+    },
+    "OccurrenceBCd4Count4_precondition_10": {
+      "title": "CD4+ Count",
+      "description": "Laboratory Test: CD4+ Count",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.121.12.1004",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "LABORATORY_TEST_CD4_COUNT",
+      "source_data_criteria": "OccurrenceBCd4Count4",
+      "value": {
+        "type": "IVL_PQ",
+        "low": {
+          "type": "PQ",
+          "unit": "/mm3",
+          "value": "200",
+          "inclusive?": true,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "EAE",
+          "reference": "OccurrenceACd4Count3",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "3",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceBCd4Count4_precondition_13": {
+      "title": "CD4+ Count",
+      "description": "Laboratory Test: CD4+ Count",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.121.12.1004",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "LABORATORY_TEST_CD4_COUNT",
+      "source_data_criteria": "OccurrenceBCd4Count4",
+      "value": {
+        "type": "IVL_PQ",
+        "low": {
+          "type": "PQ",
+          "unit": "/mm3",
+          "value": "500",
+          "inclusive?": true,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "EAE",
+          "reference": "OccurrenceACd4Count3",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "3",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceBCd4Percentage7_precondition_15": {
+      "title": "CD4+ Percentage",
+      "description": "Laboratory Test: CD4+ Percentage",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.121.12.1005",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "LABORATORY_TEST_CD4_PERCENTAGE",
+      "source_data_criteria": "OccurrenceBCd4Percentage7",
+      "value": {
+        "type": "IVL_PQ",
+        "low": {
+          "type": "PQ",
+          "unit": "%",
+          "value": "15",
+          "inclusive?": true,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "EAE",
+          "reference": "OccurrenceACd4Percentage6",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "3",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "MedicationOrderPneumocystisJiroveciPneumoniaPcpProphylaxis_precondition_20": {
+      "title": "Pneumocystis Jiroveci Pneumonia (PCP) Prophylaxis",
+      "description": "Medication, Order: Pneumocystis Jiroveci Pneumonia (PCP) Prophylaxis",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1076",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderPneumocystisJiroveciPneumoniaPcpProphylaxis",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceACd4Count3",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "3",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceADapsoneAndPyrimethamine9_precondition_22": {
+      "title": "Dapsone and pyrimethamine",
+      "description": "Medication, Ordered: Dapsone and pyrimethamine",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1202",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ORDERED_DAPSONE_AND_PYRIMETHAMINE",
+      "source_data_criteria": "OccurrenceADapsoneAndPyrimethamine9",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceACd4Count3",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "3",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceALeucovorin5_precondition_24": {
+      "title": "Leucovorin",
+      "description": "Medication, Ordered: Leucovorin",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1205",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ORDERED_LEUCOVORIN",
+      "source_data_criteria": "OccurrenceALeucovorin5",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceACd4Count3",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "3",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceALeucovorin5_precondition_26": {
+      "title": "Leucovorin",
+      "description": "Medication, Ordered: Leucovorin",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1205",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ORDERED_LEUCOVORIN",
+      "source_data_criteria": "OccurrenceALeucovorin5",
+      "temporal_references": [
+        {
+          "type": "CONCURRENT",
+          "reference": "OccurrenceADapsoneAndPyrimethamine9"
+        }
+      ]
+    },
+    "OccurrenceADapsoneAndPyrimethamine9_precondition_30": {
+      "title": "Dapsone and pyrimethamine",
+      "description": "Medication, Ordered: Dapsone and pyrimethamine",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1202",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ORDERED_DAPSONE_AND_PYRIMETHAMINE",
+      "source_data_criteria": "OccurrenceADapsoneAndPyrimethamine9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceALeucovorin5",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": false,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceADapsoneAndPyrimethamine9_precondition_28": {
+      "title": "Dapsone and pyrimethamine",
+      "description": "Medication, Ordered: Dapsone and pyrimethamine",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1202",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ORDERED_DAPSONE_AND_PYRIMETHAMINE",
+      "source_data_criteria": "OccurrenceADapsoneAndPyrimethamine9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceALeucovorin5"
+        }
+      ]
+    },
+    "OccurrenceALeucovorin5_precondition_37": {
+      "title": "Leucovorin",
+      "description": "Medication, Ordered: Leucovorin",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1205",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ORDERED_LEUCOVORIN",
+      "source_data_criteria": "OccurrenceALeucovorin5",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceADapsoneAndPyrimethamine9",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": false,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceALeucovorin5_precondition_35": {
+      "title": "Leucovorin",
+      "description": "Medication, Ordered: Leucovorin",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1205",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ORDERED_LEUCOVORIN",
+      "source_data_criteria": "OccurrenceALeucovorin5",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceADapsoneAndPyrimethamine9"
+        }
+      ]
+    },
+    "MedicationOrderPneumocystisJiroveciPneumoniaPcpProphylaxis_precondition_49": {
+      "title": "Pneumocystis Jiroveci Pneumonia (PCP) Prophylaxis",
+      "description": "Medication, Order: Pneumocystis Jiroveci Pneumonia (PCP) Prophylaxis",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1076",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderPneumocystisJiroveciPneumoniaPcpProphylaxis",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceACd4Count3",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "3",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "MedicationOrderPneumocystisJiroveciPneumoniaPcpProphylaxis_precondition_51": {
+      "title": "Pneumocystis Jiroveci Pneumonia (PCP) Prophylaxis",
+      "description": "Medication, Order: Pneumocystis Jiroveci Pneumonia (PCP) Prophylaxis",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1076",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderPneumocystisJiroveciPneumoniaPcpProphylaxis",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceACd4Percentage6",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "3",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "MedicationOrderPneumocystisJiroveciPneumoniaPcpProphylaxis_precondition_56": {
+      "title": "Pneumocystis Jiroveci Pneumonia (PCP) Prophylaxis",
+      "description": "Medication, Order: Pneumocystis Jiroveci Pneumonia (PCP) Prophylaxis",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1076",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderPneumocystisJiroveciPneumoniaPcpProphylaxis",
+      "temporal_references": [
+        {
+          "type": "SDU",
+          "reference": "OccurrenceAHiv8"
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_59": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "6",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "DiagnosisActiveHiv_precondition_61": {
+      "title": "HIV",
+      "description": "Diagnosis, Active: HIV",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.120.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveHiv",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAHivVisit1_precondition_63": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HIV_VISIT",
+      "source_data_criteria": "OccurrenceAHivVisit1",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceBHivVisit2_precondition_65": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HIV_VISIT",
+      "source_data_criteria": "OccurrenceBHivVisit2",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceACd4Count3_precondition_67": {
+      "title": "CD4+ Count",
+      "description": "Laboratory Test: CD4+ Count",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.121.12.1004",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "LABORATORY_TEST_CD4_COUNT",
+      "source_data_criteria": "OccurrenceACd4Count3",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "/mm3",
+          "value": "200",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "9",
+              "inclusive?": false,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceBHivVisit2_precondition_69": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HIV_VISIT",
+      "source_data_criteria": "OccurrenceBHivVisit2",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceAHivVisit1",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "90",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_72": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_74": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "5",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "DiagnosisActiveHiv_precondition_76": {
+      "title": "HIV",
+      "description": "Diagnosis, Active: HIV",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.120.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveHiv",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAHivVisit1_precondition_78": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HIV_VISIT",
+      "source_data_criteria": "OccurrenceAHivVisit1",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceBHivVisit2_precondition_80": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HIV_VISIT",
+      "source_data_criteria": "OccurrenceBHivVisit2",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceBHivVisit2_precondition_82": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HIV_VISIT",
+      "source_data_criteria": "OccurrenceBHivVisit2",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceAHivVisit1",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "90",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceACd4Count3_precondition_84": {
+      "title": "CD4+ Count",
+      "description": "Laboratory Test: CD4+ Count",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.121.12.1004",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "LABORATORY_TEST_CD4_COUNT",
+      "source_data_criteria": "OccurrenceACd4Count3",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "/mm3",
+          "value": "500",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "9",
+              "inclusive?": false,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceACd4Percentage6_precondition_86": {
+      "title": "CD4+ Percentage",
+      "description": "Laboratory Test: CD4+ Percentage",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.121.12.1005",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "LABORATORY_TEST_CD4_PERCENTAGE",
+      "source_data_criteria": "OccurrenceACd4Percentage6",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "%",
+          "value": "15",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "9",
+              "inclusive?": false,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAHiv8_precondition_91": {
+      "title": "HIV",
+      "description": "Diagnosis, Active: HIV",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.120.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_HIV",
+      "source_data_criteria": "OccurrenceAHiv8",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ],
+      "subset_operators": [
+        {
+          "type": "FIRST"
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_94": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "wk",
+              "value": "6",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_96": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "1",
+              "inclusive?": false,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAHivVisit1_precondition_98": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HIV_VISIT",
+      "source_data_criteria": "OccurrenceAHivVisit1",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceBHivVisit2_precondition_100": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HIV_VISIT",
+      "source_data_criteria": "OccurrenceBHivVisit2",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceBHivVisit2_precondition_102": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HIV_VISIT",
+      "source_data_criteria": "OccurrenceBHivVisit2",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceAHivVisit1",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "90",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "DiagnosisActiveHiv": {
+      "title": "HIV",
+      "description": "Diagnosis, Active: HIV",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.120.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveHiv"
+    },
+    "MedicationOrderPneumocystisJiroveciPneumoniaPcpProphylaxis": {
+      "title": "Pneumocystis Jiroveci Pneumonia (PCP) Prophylaxis",
+      "description": "Medication, Order: Pneumocystis Jiroveci Pneumonia (PCP) Prophylaxis",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1076",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderPneumocystisJiroveciPneumoniaPcpProphylaxis"
+    },
+    "LaboratoryTestResultCd4Percentage": {
+      "title": "CD4+ Percentage",
+      "description": "Laboratory Test, Result: CD4+ Percentage",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.121.12.1005",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultCd4Percentage"
+    },
+    "MedicationOrderLeucovorin": {
+      "title": "Leucovorin",
+      "description": "Medication, Order: Leucovorin",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1205",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderLeucovorin"
+    },
+    "MedicationOrderDapsoneAndPyrimethamine": {
+      "title": "Dapsone and pyrimethamine",
+      "description": "Medication, Order: Dapsone and pyrimethamine",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1202",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderDapsoneAndPyrimethamine"
+    },
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "EncounterPerformedHivVisit": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHivVisit"
+    },
+    "LaboratoryTestResultCd4Count": {
+      "title": "CD4+ Count",
+      "description": "Laboratory Test, Result: CD4+ Count",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.121.12.1004",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultCd4Count"
+    },
+    "OccurrenceAHivVisit1": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HIV_VISIT",
+      "source_data_criteria": "OccurrenceAHivVisit1"
+    },
+    "OccurrenceBHivVisit2": {
+      "title": "HIV Visit",
+      "description": "Encounter, Performed: HIV Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1047",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_HIV_VISIT",
+      "source_data_criteria": "OccurrenceBHivVisit2"
+    },
+    "OccurrenceACd4Count3": {
+      "title": "CD4+ Count",
+      "description": "Laboratory Test: CD4+ Count",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.121.12.1004",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "LABORATORY_TEST_CD4_COUNT",
+      "source_data_criteria": "OccurrenceACd4Count3"
+    },
+    "OccurrenceBCd4Count4": {
+      "title": "CD4+ Count",
+      "description": "Laboratory Test: CD4+ Count",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.121.12.1004",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "LABORATORY_TEST_CD4_COUNT",
+      "source_data_criteria": "OccurrenceBCd4Count4"
+    },
+    "OccurrenceALeucovorin5": {
+      "title": "Leucovorin",
+      "description": "Medication, Ordered: Leucovorin",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1205",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ORDERED_LEUCOVORIN",
+      "source_data_criteria": "OccurrenceALeucovorin5"
+    },
+    "OccurrenceACd4Percentage6": {
+      "title": "CD4+ Percentage",
+      "description": "Laboratory Test: CD4+ Percentage",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.121.12.1005",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "LABORATORY_TEST_CD4_PERCENTAGE",
+      "source_data_criteria": "OccurrenceACd4Percentage6"
+    },
+    "OccurrenceBCd4Percentage7": {
+      "title": "CD4+ Percentage",
+      "description": "Laboratory Test: CD4+ Percentage",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.121.12.1005",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "LABORATORY_TEST_CD4_PERCENTAGE",
+      "source_data_criteria": "OccurrenceBCd4Percentage7"
+    },
+    "OccurrenceAHiv8": {
+      "title": "HIV",
+      "description": "Diagnosis, Active: HIV",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.120.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_HIV",
+      "source_data_criteria": "OccurrenceAHiv8"
+    },
+    "OccurrenceADapsoneAndPyrimethamine9": {
+      "title": "Dapsone and pyrimethamine",
+      "description": "Medication, Ordered: Dapsone and pyrimethamine",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1202",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ORDERED_DAPSONE_AND_PYRIMETHAMINE",
+      "source_data_criteria": "OccurrenceADapsoneAndPyrimethamine9"
+    }
+  },
+  "attributes": [
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "(c) 2012 American Medical Association and National Committee for Quality Assurance. All Rights Reserved.",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "Although advances in the management of HIV and AIDS diseases have been made, Pneumocystis carinii pneumonia (PCP) remains an important complication and cause of morbidity.  Without PCP prophylaxis, patients with HIV/AIDS are at increased risk of developing PCP, especially when CD4 cell counts fall 200mm3-250mm3 (Kaplan, 1998; Phair, 1990).  PCP prophylaxis is very effective and has been demonstrated to prolong life.   \r\n\r\nData from Kaiser Permanente suggests that a gap exists between what is recommended for patients with HIV infection, and what is actually performed.  According to 2005-2006 data from Kaiser Permanente California (both Northern and Southern), Georgia, and Oregon, only 71% of HIV-infected persons with a CD4<200mm3 received PCP prophylaxis (personal communication, 2007).",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "HIV-infected adults and adolescents, including pregnant women and those on HAART, should receive chemoprophylaxis against PCP if they have a CD4+T lymphocyte count of <200/mL or a history of oropharyngeal candidiasis. (USPH/IDSA, 2002)",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "A higher score indicates better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "0405",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "Physician Performance Measures (Measures) and related data specifications have been developed by the American Medical Association (AMA) - convened Physician Consortium for Performance Improvement(R) (the PCPI [TM]) and the National Committee for Quality Assurance (NCQA).  These Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The Measures, while copyrighted, can be reproduced and distributed, without modification, for noncommercial purposes, e.g., use by health care providers in connection with their practices. Commercial use is defined as the sale, license, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial uses of the Measures require a license agreement between the user and the AMA, (on behalf of the PCPI) or NCQA. Neither the AMA, NCQA, PCPI nor its members shall be responsible for any use of the Measures. \r\n\r\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND. \r\n\r\nLimited proprietary coding is contained in the Measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. The AMA, NCQA, the PCPI and its members disclaim all liability for use or accuracy of any Current Procedural Terminology (CPT[R]) or other coding contained in the specifications. \r\n\r\nCPT (R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC (R) copyright 2004-2011 Regenstrief Institute, Inc. \r\nThis material contains SNOMED Clinical Terms (R) (SNOMED CT (R)) copyright 2004-2011 International Health Terminology Standards Development Organization.  ICD-10 Copyright 2011 World Health Organization. All Rights Reserved.",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "52",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "Phair J, Munoz A, Detels R, Kaslow R, Rinaldo C, Saah A. The risk of Pneumocystis carinii pneumonia among men infected with human immunodeficiency virus type 1. Multicenter AIDS Cohort Study Group. NEJM. 1990 Jan 18;322:161-65.",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "None",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "Denominator 1: The CD4 count below 200 cells/mm3 must occur during the first nine months of the year.\r\n\r\nDenominator 2: The CD4 count below 500 cells/mm3 or the CD4 percentage below 15% must occur during the first nine months of the year.\r\n\r\nOnce all denominators and numerators are calculated, a total rate should be calculated using the sum of the three denominators and the sum of the three numerators.",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "Denominator 1: All patients aged 6 years and older with a diagnosis of HIV/AIDS and a CD4 count below 200 cells/mm3 who had at least two visits during the measurement year, with at least 90 days in between each visit\r\n\r\nDenominator 2: All patients aged 1-5 years of age with a diagnosis of HIV/AIDS and a CD4 count below 500 cells/mm3 or a CD4 percentage below 15% who had at least two visits during the measurement year, with at least 90 days in between each visit\r\n\r\nDenominator 3: All patients aged 6 weeks to 12 months with a diagnosis of HIV who had at least two visits during the measurement year, with at least 90 days in between each visit",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals Initial Patient Population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "None",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Numerator 1: Patients who were prescribed pneumocystis jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 200 cells/mm3\r\n\r\nNumerator 2: Patients who were prescribed pneumocystic jiroveci pneumonia (PCP) prophylaxis within 3 months of CD4 count below 500 cells/ mm3 or a CD4 percentage below 15%\r\n\r\nNumerator 3: Patients who were prescribed Pneumocystic jiroveci pneumonia (PCP) prophylaxis at the time of diagnosis of HIV",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "Numerator 1: Patient did not receive PCP prophylaxis because there was a CD4 count above 200 cells/mm3 during the three months after a CD4 count below 200 cells/mm3 \r\n\r\nNumerator 2: Patient did not receive PCP prophylaxis because there was a CD4 count above 500 cells/mm3 or CD4 percentage above 15% during the three months after a CD4 count below 500 cells/mm3 or CD4 percentage below 15% \r\n\r\nNumerator 3: None",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not Applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity, and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "NUMER": "NUMER",
+      "DENOM": "DENOM",
+      "IPP": "IPP",
+      "DENEXCEP": "DENEXCEP",
+      "title": "<=3 Mon. of CD4 <200 cells/mm3",
+      "id": "Population1"
+    },
+    {
+      "IPP": "IPP_2",
+      "DENOM": "DENOM_2",
+      "NUMER": "NUMER_2",
+      "title": "At Diagnosis of HIV",
+      "id": "Population2"
+    },
+    {
+      "IPP": "IPP_1",
+      "DENOM": "DENOM_1",
+      "NUMER": "NUMER_1",
+      "DENEXCEP": "DENEXCEP_1",
+      "title": "<=3 Mon. of CD4 <500 cells/mm3 or CD4 <15%",
+      "id": "Population3"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

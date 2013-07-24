@@ -1,0 +1,1956 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xslt/eMeasure.xsl"?>
+<QualityMeasureDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3">
+         
+      <!--
+         **************************************************************   
+         Measure Header Section
+         **************************************************************
+      --><typeId root="2.16.840.1.113883.1.3" extension="POQM_HD000001"/>
+   <id root="8a4d92b2-3ae8-f461-013a-f4e544d7003e"/>
+   <code code="57024-2" codeSystem="2.16.840.1.113883.6.1" displayName="Health Quality Measure Document"/>
+   <title>Preventive Care and Screening: Screening for Clinical Depression and Follow-Up Plan</title>
+   <text>Percentage of patients aged 12 years and older screened for clinical depression on the date of the encounter using an age appropriate standardized depression screening tool AND if positive, a follow-up plan is documented on the date of the positive screen.</text>
+   <statusCode code="Complete"/>
+   <setId root="9a031e24-3d9b-11e1-8634-00237d5bf174"/>
+   <versionNumber value="2"/>
+   <author typeCode="AUT">
+      <assignedPerson classCode="ASSIGNED">
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id root="5449c576-cbde-4886-9f33-2321e82d4d35"/>
+            <name>Quality Insights of Pennsylvania</name>
+            <contactParty classCode="CON" nullFlavor="UNK"/>
+         </representedOrganization>
+      </assignedPerson>
+   </author>
+   <custodian>
+      <assignedPerson classCode="ASSIGNED">
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id root="2.16.840.1.113883.3.560.3.31"/>
+            <name>Centers for Medicare &amp; Medicaid Services</name>
+            <contactParty classCode="CON" nullFlavor="UNK"/>
+         </representedOrganization>
+      </assignedPerson>
+   </custodian>
+   <verifier typeCode="VRF">
+      <assignedPerson classCode="ASSIGNED">
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <name>National Quality Forum</name>
+            <contactParty classCode="CON" nullFlavor="UNK"/>
+         </representedOrganization>
+      </assignedPerson>
+   </verifier>
+   <subjectOf>
+      <measureAttribute>
+         <code code="COPY" codeSystem="2.16.840.1.113883.5.4" displayName="Copyright"/>
+         <value xsi:type="ED" mediaType="text/plain">Limited proprietary coding is contained in the measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. Quality Insights of Pennsylvania disclaims all liability for use or accuracy of any Current Procedural Terminology (CPT [R]) or other coding contained in the specifications.&#xD;
+&#xD;
+CPT (R) contained in the Measure specifications is copyright 2007-2011 American Medical Association. &#xD;
+&#xD;
+LOINC (R) copyright 2004-2011 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms (R) (SNOMED CT [R]) copyright 2004-2011 International Health Terminology Standards Development Organization. All Rights Reserved.&#xD;
+&#xD;
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRSCORE" codeSystem="2.16.840.1.113883.5.4" displayName="Measure Scoring"/>
+         <value xsi:type="CD" code="PROPOR" codeSystem="2.16.840.1.113883.1.11.20367" displayName="Proportion"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRTYPE" codeSystem="2.16.840.1.113883.5.4" displayName="Measure Type"/>
+         <value xsi:type="CD" code="PROCESS" codeSystem="2.16.840.1.113883.1.11.20368" displayName="Process"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="STRAT" codeSystem="2.16.840.1.113883.5.4" displayName="Stratification"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRADJ" codeSystem="2.16.840.1.113883.5.4" displayName="Risk Adjustment"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRAGG" codeSystem="2.16.840.1.113883.5.4" displayName="Rate Aggregation"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="RAT" codeSystem="2.16.840.1.113883.5.4" displayName="Rationale"/>
+         <value xsi:type="ED" mediaType="text/plain">The World Health Organization, as seen in Pratt &amp; Brody (2008), found that major depression was the leading cause of disability worldwide. Depression causes suffering, decreases quality of life, and causes impairment in social and occupational functioning. It is associated with increased health care costs as well as with higher rates of many chronic medical conditions. Studies have shown that a higher number of depression symptoms are associated with poor health and impaired functioning, whether or not the criteria for a diagnosis of major depression are met. Persons 40-59 years of age had higher rates of depression than any other age group. Persons 12-17, 18-39 and 60 years of age and older had similar rates of depression. Depression was more common in females than in males. Non-Hispanic black persons had higher rates of depression than non-Hispanic white persons. In the 18-39 and 40-59 age groups, those with income below the federal poverty level had higher rates of depression than those with higher income. Among persons 12-17 and 60 years of age and older, rates of depression did not vary significantly by poverty status. Overall, approximately 80% of persons with depression reported some level of difficulty in functioning because of their depressive symptoms. In addition 35% of males and 22% of females with depression reported that their depressive symptoms make it very or extremely difficult for them to work, get things done at home, or get along with other people. More than one-half of all persons with mild depressive symptoms also reported some difficulty in daily functioning attributable to their symptoms. &#xD;
+&#xD;
+The negative outcomes associated with early onset depression, make it crucial to identify and treat depression in its early stages. As reported in Borner et al. (2010), a study conducted by the World Health Organization (WHO) reported that in North America, primary care and family physicians are likely to provide the first line of treatment for depressive disorders. Others consistently report a 10% prevalence rate of depression in primary care patients. But studies have shown that primary care physicians fail to recognize up to 50% of depressed patients, purportedly because of time constraints and a lack of brief, sensitive, easy-to administer psychiatric screening instruments. Coyle et al. (2003), suggested that the picture is more grim for adolescents, and that more than 70% of children and adolescents suffering from serious mood disorders go unrecognized or inadequately treated. In 2000, Healthy People 2010 recommended routine screening for mental health problems as a part of primary care for both children and adults.   &#xD;
+  &#xD;
+Major depressive disorder (MDD) is a debilitating condition that has been increasingly recognized among youth, particularly adolescents. The prevalence of current or recent depression among children is 3% and among adolescents is 6%. The lifetime prevalence of MDD among adolescents may be as high as 20%. Adolescent-onset MDD is associated with an increased risk of death by suicide, suicide attempts, and recurrence of major depression by young adulthood. MDD is also associated with early pregnancy, decreased school performance, and impaired work, social, and family functioning during young adulthood (Williams et al., 2009). Every fifth adolescent may have a history of depression by age 18. The increase in the onset of depression occurs around puberty. According to Zalsman et al. (2006), as reported in Borner et al. (2010), depression ranks among the most commonly reported mental health problems in adolescent girls. &#xD;
+&#xD;
+The economic burden of depression is substantial for individuals as well as society. Costs to an individual may include suffering, possible side effects from treatment, fees for mental health and medical visits and medications, time away from work and lost wages, transportation, and reduced quality of personal relationships. Costs to society may include loss of life, reduced productivity (because of both diminished capacity while at work and absenteeism from work), and increased costs of mental health and medical care. In 2000, the United States spent an estimated $83.1 billion in direct and indirect costs of depression (USPSTF, 2009).</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="CRS" codeSystem="2.16.840.1.113883.3.560" displayName="Clinical Recommendation Statement"/>
+         <value xsi:type="ED" mediaType="text/plain">Adolescent Recommendation (12-18 years) &#xD;
+The USPSTF recommends screening of adolescents (12-18 years of age) for major depressive disorder (MDD) when systems are in place to ensure accurate diagnosis, psychotherapy (cognitive-behavioral or interpersonal), and follow-up (2009).&#xD;
+&#xD;
+Level II Child Preventive Services should be assessed and offered to each patient; as such services have been shown to be effective. Such Level II services include: Screening adolescents ages 12-18 for major depressive disorder when systems are in place for accurate diagnosis, treatment, and follow-up (ICSI, 2010).&#xD;
+&#xD;
+Adult Recommendation (18 years and older) &#xD;
+The USPSTF recommends screening adults for depression when staff-assisted depression care supports are in place to assure accurate diagnosis, effective treatment, and follow-up (2009). &#xD;
+&#xD;
+Routine depression screening should be performed for adult patients (including older adults) but only if the practice has staff-assisted "systems in place to ensure that positive results are followed by accurate diagnosis, effective treatment, and careful follow-up" (ICSI, 2010).</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="IDUR" codeSystem="2.16.840.1.113883.3.560" displayName="Improvement Notation"/>
+         <value xsi:type="ED" mediaType="text/plain">Higher score indicates better quality.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>NQF ID Number</originalText>
+         </code>
+         <value xsi:type="II" root="2.16.840.1.113883.3.560.1" extension="0418"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DISC" codeSystem="2.16.840.1.113883.5.4" displayName="Disclaimer">
+            <originalText>Disclaimer</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">These performance measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.&#xD;
+&#xD;
+THE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>eMeasure Identifier</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">2</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <templateId root="2.16.840.1.113883.3.560.1.74"/>
+         <id root="3b0b4be1-e8b2-4093-bc8e-0850a36aed6e"/>
+         <code code="MSRTP" displayName="Measurement period" codeSystem="2.16.840.1.113883.3.560"/>
+         <value xsi:type="IVL_TS">
+            <low value="00000101"/>
+            <high value="00001231"/>
+         </value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <localVariableName>measureStartDate</localVariableName>
+      <measureAttribute>
+         <templateId root="2.16.840.1.113883.3.560.1.75"/>
+         <id root="5628ea6f-b6ca-4b27-82de-787dcf19ba10"/>
+         <code code="MSRSD" displayName="Measurement start date" codeSystem="2.16.840.1.113883.3.560"/>
+         <value xsi:type="TS" value="00000101"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <localVariableName>measureEndDate</localVariableName>
+      <measureAttribute>
+         <templateId root="2.16.840.1.113883.3.560.1.75"/>
+         <id root="be278cec-f131-449f-8389-d35d7ee99853"/>
+         <code code="MSRED" displayName="Measurement end date" codeSystem="2.16.840.1.113883.3.560"/>
+         <value xsi:type="TS" value="00001231"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">Pratt L.A. &amp; Brody DJ, NCHS Data Brief (2008). Sep;(7):1-8. Depression in the United States household population, 2005-2006.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">Borner, I., Braunstein, J. W., St. Victor, R., &amp; Pollack, J. (2010). Evaluation of a 2-Question Screening Tool for Detecting Depression in Adolescents in Primary Care, Clinical Pediatrics 49(10) 947–9532010</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">Coyle, J.T., Pine, D. S., Charney, D. S., Lewis, L, Nemeroff, C. B., et al. (2003). Depression and Bipolar Support Alliance Consensus Statement on the Unmet Needs in Diagnosis and Treatment of Mood Disorders in Children and Adolescents , Journal of the American Academy of Child &amp; Adolescent Psychiatry Volume 42, Issue 12, December, 1494–1503</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">US Department of Health &amp; Human Services, (n.d.) Healthy People 2010 Leading Health Indicators. Retrieved from http://www.healthypeople.gov/2010/LHI</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">Williams S.B., O’Connor, E.A., Eder, M., &amp; Whitlock, E.P. (2009). Screening for Child and Adolescent Depression in Primary Care Settings: A Systematic Evidence Review for the US Preventive Services Task Force. Pediatrics, 2009;123;e716-e735, DOI: 10.1542/peds.2008-2415</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">Zalsman, G., Brent, D.A. &amp; Weersing, V.R.( 2006). Depressive disorders in childhood and adolescence: an overview: epidemiology, clinical manifestation and risk factors. Child Adolesc Psychiatr Clin N Am. 2006;15:827-841</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">U.S. Preventive Services Task Force (2009). The Guide to Clinical Preventive Services – 2009. Recommendations of the Screening for Depression in Adults.124-126</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">INSTITUTE FOR CLINICAL SYSTEMS IMPROVEMENT (ICSI) (2010). Preventive Services for Children and Adolescents. Retrieved from  http://www.icsi.org/preventive_services_ for_children __guideline_/ preventive_services_for_children_and_adolescents_2531.html</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DEF" codeSystem="2.16.840.1.113883.3.560" displayName="Definition"/>
+         <value xsi:type="ED" mediaType="text/plain">Screening: &#xD;
+Completion of a clinical or diagnostic tool used to identify people at risk of developing or having a certain disease or condition, even in the absence of symptoms.  &#xD;
+&#xD;
+Standardized Depression Screening Tool – A normalized and validated depression screening tool developed  for the patient population in which it is being utilized&#xD;
+&#xD;
+Examples of depression screening tools include but are not limited to: &#xD;
+•  Adolescent Screening Tools (12-17 years) &#xD;
+Patient Health Questionnaire for Adolescents (PHQ-A), Beck Depression Inventory-Primary Care Version (BDI-PC), Mood Feeling Questionnaire, Center for Epidemiologic Studies Depression Scale (CES-D) and PRIME MD-PHQ2 &#xD;
+•  Adult Screening Tools (18 years and older) &#xD;
+Patient Health Questionnaire (PHQ9), Beck Depression Inventory (BDI or BDI-II), Center for Epidemiologic Studies Depression Scale (CES-D), Depression Scale (DEPS), Duke Anxiety-Depression Scale (DADS), Geriatric Depression Scale (SDS), Cornell Scale Screening and PRIME MD-PHQ2 &#xD;
+&#xD;
+Follow-Up Plan: &#xD;
+Proposed outline of treatment to be conducted as a result of positive clinical depression screening. Follow-up for a positive depression screening must include one (1) or more of the following: additional evaluation, suicide risk assessment, referral to a practitioner who is qualified to diagnose and treat depression, pharmacological interventions, other interventions or follow-up for the diagnosis or treatment of depression.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="GUIDE" codeSystem="2.16.840.1.113883.5.4" displayName="Guidance"/>
+         <value xsi:type="ED" mediaType="text/plain">A clinical depression screen is complete on the date of the encounter using an age appropriate standardized depression screening tool AND if positive, a follow-up plan is documented on the date of the positive screen. The documented follow up plan must be related to positive depression screening, example: “Patient referred for psychiatric evaluation due to positive depression screening.”&#xD;
+&#xD;
+Standardized Depression Screening Tools should be normalized and validated for the age appropriate patient population in which they are used.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Transmission Format</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">TBD</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="IPP" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Initial Patient Population</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">All patients aged 12 years and older before the beginning of the measurement period with at least one eligible encounter during the measurement period.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DENOM" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Denominator</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Equals Initial Patient Population</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Denominator Exclusions</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Patients with an active diagnosis for Depression or Bipolar Disorder</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="NUMER" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Numerator</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Patients screened for clinical depression on the date of the encounter  using an age appropriate standardized tool AND if positive, a follow-up plan is documented on the date of the positive screen</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Numerator Exclusions</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Not Applicable</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DENEXCEP" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Denominator Exceptions</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Patient Reason(s)&#xD;
+Patient refuses to participate &#xD;
+&#xD;
+OR&#xD;
+&#xD;
+Medical Reason(s)	&#xD;
+Patient is in an urgent or emergent situation where time is of the essence and to delay treatment would jeopardize the patient’s health status &#xD;
+&#xD;
+OR&#xD;
+&#xD;
+Situations where the patient’s functional capacity or motivation to improve may impact the accuracy of results of standardized depression assessment tools.  For example: certain court appointed cases or cases of delirium</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRPOPL" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Measure Population</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Not Applicable</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Measure Observations</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Not Applicable</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Supplemental Data Elements</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</value>
+      </measureAttribute>
+   </subjectOf>
+   <componentOf>
+      <qualityMeasureSet classCode="ACT">
+         <id root="962055a9-6b1d-46d2-bd00-6d166ee9dcab"/>
+         <title>Preventive Care and Screening</title>
+      </qualityMeasureSet>
+   </componentOf>
+         
+      <!--
+         **************************************************************   
+         Population Criteria Section
+         **************************************************************
+      --><component typeCode="COMP">
+      <section>
+         <code code="57026-7" codeSystem="2.16.840.1.113883.6.1" displayName="Population criteria"/>
+         <title>Population criteria</title>
+         <text>
+            <list>
+               <item>
+                  <content styleCode="Bold">Initial Patient Population =</content>
+                  <list>
+                     <item>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 12 year(s) starts before start of "Measurement Period"</item>
+                     <item>AND: "Occurrence A of Encounter, Performed: Depression Screening Denominator Encounter Codes New" during "Measurement Period"</item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Denominator =</content>
+                  <list>
+                     <item>AND: "Initial Patient Population"</item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Denominator Exclusions =</content>
+                  <list>
+                     <item>AND NOT: <list>
+                           <item>OR: "Occurrence A of Diagnosis, Active: Depression diagnosis"</item>
+                           <item>OR: "Occurrence A of Diagnosis, Active: Bipolar Diagnosis"</item>
+                           <item> ends before start of "Occurrence A of Encounter, Performed: Depression Screening Denominator Encounter Codes New"</item>
+                        </list>
+                     </item>
+                     <item>AND: <list>
+                           <item>OR: "Occurrence A of Diagnosis, Active: Depression diagnosis"</item>
+                           <item>OR: "Occurrence A of Diagnosis, Active: Bipolar Diagnosis"</item>
+                           <item> starts before start of "Occurrence A of Encounter, Performed: Depression Screening Denominator Encounter Codes New"</item>
+                        </list>
+                     </item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Numerator =</content>
+                  <list>
+                     <item>AND: <list>
+                           <item>OR: <list>
+                                 <item>OR: <list>
+                                       <item>AND: "Patient Characteristic Birthdate: birth date"  &lt; 18 year(s) starts before start of "Occurrence A of Intervention, Performed: Adolescent Depression Screening"</item>
+                                       <item>AND: "Occurrence A of Intervention, Performed: Adolescent Depression Screening" during "Measurement Period"</item>
+                                       <item>AND: <list>
+                                             <item>OR: "Diagnosis, Active: Depression diagnosis"</item>
+                                             <item>OR: "Intervention, Result: Positive Depression Screening"</item>
+                                             <item>  &lt;= 1 day(s) starts after start of "Occurrence A of Intervention, Performed: Adolescent Depression Screening"</item>
+                                          </list>
+                                       </item>
+                                       <item>AND: <list>
+                                             <item>OR: "Intervention, Performed: Additional evaluation for depression - adolescent"</item>
+                                             <item>OR: "Intervention, Order: Referral for Depression Adolescent"</item>
+                                             <item>OR: "Medication, Order: Depression medications - adolescent"</item>
+                                             <item>OR: "Intervention, Performed: Follow-up for depression - adolescent"</item>
+                                             <item>OR: "Procedure, Performed: Suicide Risk Assessment"</item>
+                                             <item>  &lt;= 1 day(s) starts after start of "Occurrence A of Intervention, Performed: Adolescent Depression Screening"</item>
+                                          </list>
+                                       </item>
+                                    </list>
+                                 </item>
+                                 <item>OR: <list>
+                                       <item>AND NOT: "Diagnosis, Active: Depression diagnosis"  &lt;= 1 day(s) starts after start of "Occurrence A of Intervention, Performed: Adolescent Depression Screening"</item>
+                                       <item>AND: "Patient Characteristic Birthdate: birth date"  &lt; 18 year(s) starts before start of "Occurrence A of Intervention, Performed: Adolescent Depression Screening"</item>
+                                       <item>AND: "Occurrence A of Intervention, Performed: Adolescent Depression Screening" during "Measurement Period"</item>
+                                       <item>AND: "Intervention, Result: Negative Depression Screening"  &lt;= 1 day(s) starts after start of "Occurrence A of Encounter, Performed: Depression Screening Denominator Encounter Codes New"</item>
+                                    </list>
+                                 </item>
+                              </list>
+                           </item>
+                           <item>OR: <list>
+                                 <item>OR: <list>
+                                       <item>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 18 year(s) starts before start of "Occurrence A of Intervention, Performed: Adult Depression Screening"</item>
+                                       <item>AND: "Occurrence A of Intervention, Performed: Adult Depression Screening" during "Measurement Period"</item>
+                                       <item>AND: <list>
+                                             <item>OR: "Diagnosis, Active: Depression diagnosis"</item>
+                                             <item>OR: "Intervention, Result: Positive Depression Screening"</item>
+                                             <item>  &lt;= 1 day(s) starts after start of "Occurrence A of Intervention, Performed: Adult Depression Screening"</item>
+                                          </list>
+                                       </item>
+                                       <item>AND: <list>
+                                             <item>OR: "Intervention, Performed: Additional evaluation for depression - adult"</item>
+                                             <item>OR: "Intervention, Order: Referral for Depression Adult"</item>
+                                             <item>OR: "Medication, Order: Depression medications - adult"</item>
+                                             <item>OR: "Intervention, Performed: Follow-up for depression - adult"</item>
+                                             <item>OR: "Procedure, Performed: Suicide Risk Assessment"</item>
+                                             <item>  &lt;= 1 day(s) starts after start of "Occurrence A of Intervention, Performed: Adult Depression Screening"</item>
+                                          </list>
+                                       </item>
+                                    </list>
+                                 </item>
+                                 <item>OR: <list>
+                                       <item>AND NOT: "Diagnosis, Active: Depression diagnosis"  &lt;= 1 day(s) starts after start of "Occurrence A of Intervention, Performed: Adult Depression Screening"</item>
+                                       <item>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 18 year(s) starts before start of "Occurrence A of Intervention, Performed: Adult Depression Screening"</item>
+                                       <item>AND: "Occurrence A of Intervention, Performed: Adult Depression Screening" during "Measurement Period"</item>
+                                       <item>AND: "Intervention, Result: Negative Depression Screening"  &lt;= 1 day(s) starts after start of "Occurrence A of Intervention, Performed: Adult Depression Screening"</item>
+                                    </list>
+                                 </item>
+                              </list>
+                           </item>
+                        </list>
+                     </item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Denominator Exceptions =</content>
+                  <list>
+                     <item>AND: <list>
+                           <item>OR: "Intervention, Performed not done: Medical reason contraindicated" for "Adolescent Depression Screening Grouping Value Set"</item>
+                           <item>OR: "Intervention, Performed not done: Medical reason contraindicated" for "Adult Depression Screening Grouping Value Set"</item>
+                           <item>OR: "Intervention, Performed not done: Patient Reason refused" for "Adolescent Depression Screening Grouping Value Set"</item>
+                           <item>OR: "Intervention, Performed not done: Patient Reason refused" for "Adult Depression Screening Grouping Value Set"</item>
+                           <item> during "Measurement Period"</item>
+                        </list>
+                     </item>
+                  </list>
+               </item>
+            </list>
+         </text><!--
+            **************************************************************   
+            Population Criteria Section: exceptions 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="0CDF2A7E-97A7-4B45-8719-A7416C71FDC3"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="DENEXCEP" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Denominator Exception"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true"><!-- Intervention, Performed pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.146"/>
+                           <id root="5103987c-c028-4bfb-9dd9-1f5a40225d11"/>
+                           <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.600.426" displayName="Adolescent Depression Screening Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Intervention, Performed not done: Medical reason contraindicated</title>
+                                 <statusCode code="completed"/>
+                                 <sourceOf typeCode="RSON">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <value xsi:type="CD" code="2.16.840.1.113883.3.600.792" displayName="Medical reason contraindicated SNOMED-CT Value Set"/>
+                                    </observation>
+                                 </sourceOf>
+                              </procedure>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true"><!-- Intervention, Performed pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.146"/>
+                           <id root="972ca089-2cfd-4fc9-9683-ff1a3c02145c"/>
+                           <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.600.431" displayName="Adult Depression Screening Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Intervention, Performed not done: Medical reason contraindicated</title>
+                                 <statusCode code="completed"/>
+                                 <sourceOf typeCode="RSON">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <value xsi:type="CD" code="2.16.840.1.113883.3.600.792" displayName="Medical reason contraindicated SNOMED-CT Value Set"/>
+                                    </observation>
+                                 </sourceOf>
+                              </procedure>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true"><!-- Intervention, Performed pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.146"/>
+                           <id root="5103987c-c028-4bfb-9dd9-1f5a40225d11"/>
+                           <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.600.426" displayName="Adolescent Depression Screening Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Intervention, Performed not done: Patient Reason refused</title>
+                                 <statusCode code="completed"/>
+                                 <sourceOf typeCode="RSON">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <value xsi:type="CD" code="2.16.840.1.113883.3.600.791" displayName="Patient Reason refused SNOMED-CT Value Set"/>
+                                    </observation>
+                                 </sourceOf>
+                              </procedure>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true"><!-- Intervention, Performed pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.146"/>
+                           <id root="972ca089-2cfd-4fc9-9683-ff1a3c02145c"/>
+                           <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.600.431" displayName="Adult Depression Screening Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Intervention, Performed not done: Patient Reason refused</title>
+                                 <statusCode code="completed"/>
+                                 <sourceOf typeCode="RSON">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                                       <value xsi:type="CD" code="2.16.840.1.113883.3.600.791" displayName="Patient Reason refused SNOMED-CT Value Set"/>
+                                    </observation>
+                                 </sourceOf>
+                              </procedure>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="DURING">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <id root="3b0b4be1-e8b2-4093-bc8e-0850a36aed6e"/>
+                           <title>Measurement Period</title>
+                        </observation>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry><!--
+            **************************************************************   
+            Population Criteria Section: exclusions 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true" actionNegationInd="true">
+               <id root="90B18275-DBB3-4773-9D63-F8A8BBE6B2CA"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="DENOM" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Denominator"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true">
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                           <id root="c8e3e0c0-a75e-4662-a345-30c9d02ef56b"/>
+                           <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                 <title>Occurrence A of Diagnosis, Active: Depression diagnosis</title>
+                                 <value xsi:type="CD" code="2.16.840.1.113883.3.600.145" displayName="Depression diagnosis Grouping Value Set"/>
+                                 <sourceOf typeCode="REFR">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                       <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                                    </observation>
+                                 </sourceOf>
+                              </observation>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                           <id root="d541b4f7-d09b-4741-b268-a261bade1767"/>
+                           <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                 <title>Occurrence A of Diagnosis, Active: Bipolar Diagnosis</title>
+                                 <value xsi:type="CD" code="2.16.840.1.113883.3.600.450" displayName="Bipolar Diagnosis Grouping Value Set"/>
+                                 <sourceOf typeCode="REFR">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                       <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                                    </observation>
+                                 </sourceOf>
+                              </observation>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="EBS">
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                           <id root="a01dab71-d122-41ea-9c8b-037801e17edf"/>
+                           <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                           <sourceOf typeCode="COMP">
+                              <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.600.1916" displayName="Depression Screening Denominator Encounter Codes New Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Occurrence A of Encounter, Performed: Depression Screening Denominator Encounter Codes New</title>
+                                 <statusCode code="completed"/>
+                              </encounter>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                           <id root="c8e3e0c0-a75e-4662-a345-30c9d02ef56b"/>
+                           <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                 <title>Occurrence A of Diagnosis, Active: Depression diagnosis</title>
+                                 <value xsi:type="CD" code="2.16.840.1.113883.3.600.145" displayName="Depression diagnosis Grouping Value Set"/>
+                                 <sourceOf typeCode="REFR">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                       <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                                    </observation>
+                                 </sourceOf>
+                              </observation>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                           <id root="d541b4f7-d09b-4741-b268-a261bade1767"/>
+                           <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                 <title>Occurrence A of Diagnosis, Active: Bipolar Diagnosis</title>
+                                 <value xsi:type="CD" code="2.16.840.1.113883.3.600.450" displayName="Bipolar Diagnosis Grouping Value Set"/>
+                                 <sourceOf typeCode="REFR">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                       <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                                    </observation>
+                                 </sourceOf>
+                              </observation>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="SBS">
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                           <id root="a01dab71-d122-41ea-9c8b-037801e17edf"/>
+                           <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                           <sourceOf typeCode="COMP">
+                              <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.600.1916" displayName="Depression Screening Denominator Encounter Codes New Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Occurrence A of Encounter, Performed: Depression Screening Denominator Encounter Codes New</title>
+                                 <statusCode code="completed"/>
+                              </encounter>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry><!--
+            **************************************************************   
+            Population Criteria Section: numerator 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="279AF66D-02AD-4B1A-BADE-C6FC0FE88AA6"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="NUMER" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Numerator"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="AND"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Birthdate pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.400"/>
+                                       <id root="4e98e1bf-1715-42fd-8537-54b2f28d2975"/>
+                                       <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <code code="21112-8" codeSystem="2.16.840.1.113883.6.1" displayName="Birth date"/>
+                                             <title>Patient Characteristic Birthdate: birth date</title>
+                                             <value xsi:type="CD" code="2.16.840.1.113883.3.560.100.4" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="birth date LOINC Value Set"/>
+                                             <sourceOf typeCode="SBS">
+                                                <pauseQuantity xsi:type="IVL_PQ">
+                                                   <high value="18" unit="a" inclusive="false"/>
+                                                </pauseQuantity>
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <id root="d5be22e0-10d2-4457-ba1a-e3630f312e05"/>
+                                                   <title>Occurrence A of Intervention, Performed: Adolescent Depression Screening</title>
+                                                </observation>
+                                             </sourceOf>
+                                          </observation>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="AND"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.46"/>
+                                       <id root="d5be22e0-10d2-4457-ba1a-e3630f312e05"/>
+                                       <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.600.426" displayName="Adolescent Depression Screening Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Occurrence A of Intervention, Performed: Adolescent Depression Screening</title>
+                                             <statusCode code="completed"/>
+                                             <sourceOf typeCode="DURING">
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <id root="3b0b4be1-e8b2-4093-bc8e-0850a36aed6e"/>
+                                                   <title>Measurement Period</title>
+                                                </observation>
+                                             </sourceOf>
+                                          </procedure>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="AND"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                                       <sourceOf typeCode="PRCN">
+                                          <conjunctionCode code="OR"/>
+                                          <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+                                             <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                                             <id root="55a23a92-3f3e-43b5-89a6-7c450c9f6362"/>
+                                             <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                                             <sourceOf typeCode="COMP">
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                                   <title>Diagnosis, Active: Depression diagnosis</title>
+                                                   <value xsi:type="CD" code="2.16.840.1.113883.3.600.145" displayName="Depression diagnosis Grouping Value Set"/>
+                                                   <sourceOf typeCode="REFR">
+                                                      <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                         <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                                         <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                                                      </observation>
+                                                   </sourceOf>
+                                                </observation>
+                                             </sourceOf>
+                                          </act>
+                                       </sourceOf>
+                                       <sourceOf typeCode="PRCN">
+                                          <conjunctionCode code="OR"/>
+                                          <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Result pattern -->
+                                             <templateId root="2.16.840.1.113883.3.560.1.47"/>
+                                             <id root="b046ff7e-b555-448c-ada5-6d548f9c8ca0"/>
+                                             <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                             <sourceOf typeCode="COMP">
+                                                <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="2.16.840.1.113883.3.600.793" displayName="Positive Depression Screening SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                                   <title>Intervention, Result: Positive Depression Screening</title>
+                                                   <statusCode code="completed"/>
+                                                </procedure>
+                                             </sourceOf>
+                                          </act>
+                                       </sourceOf>
+                                       <sourceOf typeCode="SAS">
+                                          <pauseQuantity xsi:type="URG_PQ">
+                                             <high value="1" unit="d" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed pattern -->
+                                             <templateId root="2.16.840.1.113883.3.560.1.46"/>
+                                             <id root="d5be22e0-10d2-4457-ba1a-e3630f312e05"/>
+                                             <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                             <sourceOf typeCode="COMP">
+                                                <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="2.16.840.1.113883.3.600.426" displayName="Adolescent Depression Screening Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                                   <title>Occurrence A of Intervention, Performed: Adolescent Depression Screening</title>
+                                                   <statusCode code="completed"/>
+                                                </procedure>
+                                             </sourceOf>
+                                          </act>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="AND"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                                       <sourceOf typeCode="PRCN">
+                                          <conjunctionCode code="OR"/>
+                                          <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed pattern -->
+                                             <templateId root="2.16.840.1.113883.3.560.1.46"/>
+                                             <id root="4218e83f-1cf6-450d-ba3d-dbe78974d02c"/>
+                                             <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                             <sourceOf typeCode="COMP">
+                                                <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="2.16.840.1.113883.3.600.1542" displayName="Additional evaluation for depression - adolescent SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                                   <title>Intervention, Performed: Additional evaluation for depression - adolescent</title>
+                                                   <statusCode code="completed"/>
+                                                </procedure>
+                                             </sourceOf>
+                                          </act>
+                                       </sourceOf>
+                                       <sourceOf typeCode="PRCN">
+                                          <conjunctionCode code="OR"/>
+                                          <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Order pattern -->
+                                             <templateId root="2.16.840.1.113883.3.560.1.45"/>
+                                             <id root="b0d8f4fa-05f4-4f52-a907-686012289363"/>
+                                             <code code="18776-5" displayName="Plan of care" codeSystem="2.16.840.1.113883.6.1"/>
+                                             <sourceOf typeCode="COMP">
+                                                <procedure classCode="PROC" moodCode="RQO" isCriterionInd="true">
+                                                   <code code="2.16.840.1.113883.3.600.537" displayName="Referral for Depression Adolescent SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                                   <title>Intervention, Order: Referral for Depression Adolescent</title>
+                                                </procedure>
+                                             </sourceOf>
+                                          </act>
+                                       </sourceOf>
+                                       <sourceOf typeCode="PRCN">
+                                          <conjunctionCode code="OR"/>
+                                          <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Medication, Order pattern -->
+                                             <templateId root="2.16.840.1.113883.3.560.1.17"/>
+                                             <id root="b93d61c0-a08b-4aaa-8aeb-0729805edf2c"/>
+                                             <code code="10160-0" displayName="Medications" codeSystem="2.16.840.1.113883.6.1"/>
+                                             <sourceOf typeCode="COMP">
+                                                <substanceAdministration classCode="SBADM" moodCode="RQO" isCriterionInd="true">
+                                                   <title>Medication, Order: Depression medications - adolescent</title>
+                                                   <participant typeCode="CSM">
+                                                      <roleParticipant classCode="MANU">
+                                                         <playingMaterial classCode="MMAT" determinerCode="KIND">
+                                                            <code code="2.16.840.1.113883.3.600.469" displayName="Depression medications - adolescent RxNorm Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                                         </playingMaterial>
+                                                      </roleParticipant>
+                                                   </participant>
+                                                </substanceAdministration>
+                                             </sourceOf>
+                                          </act>
+                                       </sourceOf>
+                                       <sourceOf typeCode="PRCN">
+                                          <conjunctionCode code="OR"/>
+                                          <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed pattern -->
+                                             <templateId root="2.16.840.1.113883.3.560.1.46"/>
+                                             <id root="af5fce35-5dfc-44b3-b940-af5b75921868"/>
+                                             <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                             <sourceOf typeCode="COMP">
+                                                <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="2.16.840.1.113883.3.600.467" displayName="Follow-up for depression - adolescent SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                                   <title>Intervention, Performed: Follow-up for depression - adolescent</title>
+                                                   <statusCode code="completed"/>
+                                                </procedure>
+                                             </sourceOf>
+                                          </act>
+                                       </sourceOf>
+                                       <sourceOf typeCode="PRCN">
+                                          <conjunctionCode code="OR"/>
+                                          <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                                             <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                                             <id root="19190eff-1c76-40e3-bb76-b10e1b42dcf7"/>
+                                             <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                             <sourceOf typeCode="COMP">
+                                                <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="2.16.840.1.113883.3.600.559" displayName="Suicide Risk Assessment SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                                   <title>Procedure, Performed: Suicide Risk Assessment</title>
+                                                </procedure>
+                                             </sourceOf>
+                                          </act>
+                                       </sourceOf>
+                                       <sourceOf typeCode="SAS">
+                                          <pauseQuantity xsi:type="URG_PQ">
+                                             <high value="1" unit="d" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed pattern -->
+                                             <templateId root="2.16.840.1.113883.3.560.1.46"/>
+                                             <id root="d5be22e0-10d2-4457-ba1a-e3630f312e05"/>
+                                             <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                             <sourceOf typeCode="COMP">
+                                                <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="2.16.840.1.113883.3.600.426" displayName="Adolescent Depression Screening Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                                   <title>Occurrence A of Intervention, Performed: Adolescent Depression Screening</title>
+                                                   <statusCode code="completed"/>
+                                                </procedure>
+                                             </sourceOf>
+                                          </act>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="AND"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true"><!-- Diagnosis, Active pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                                       <id root="55a23a92-3f3e-43b5-89a6-7c450c9f6362"/>
+                                       <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                             <title>Diagnosis, Active: Depression diagnosis</title>
+                                             <value xsi:type="CD" code="2.16.840.1.113883.3.600.145" displayName="Depression diagnosis Grouping Value Set"/>
+                                             <sourceOf typeCode="REFR">
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                                   <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                                                </observation>
+                                             </sourceOf>
+                                             <sourceOf typeCode="SAS">
+                                                <pauseQuantity xsi:type="IVL_PQ">
+                                                   <high value="1" unit="d" inclusive="true"/>
+                                                </pauseQuantity>
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <id root="d5be22e0-10d2-4457-ba1a-e3630f312e05"/>
+                                                   <title>Occurrence A of Intervention, Performed: Adolescent Depression Screening</title>
+                                                </observation>
+                                             </sourceOf>
+                                          </observation>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="AND"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Birthdate pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.400"/>
+                                       <id root="4e98e1bf-1715-42fd-8537-54b2f28d2975"/>
+                                       <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <code code="21112-8" codeSystem="2.16.840.1.113883.6.1" displayName="Birth date"/>
+                                             <title>Patient Characteristic Birthdate: birth date</title>
+                                             <value xsi:type="CD" code="2.16.840.1.113883.3.560.100.4" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="birth date LOINC Value Set"/>
+                                             <sourceOf typeCode="SBS">
+                                                <pauseQuantity xsi:type="IVL_PQ">
+                                                   <high value="18" unit="a" inclusive="false"/>
+                                                </pauseQuantity>
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <id root="d5be22e0-10d2-4457-ba1a-e3630f312e05"/>
+                                                   <title>Occurrence A of Intervention, Performed: Adolescent Depression Screening</title>
+                                                </observation>
+                                             </sourceOf>
+                                          </observation>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="AND"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.46"/>
+                                       <id root="d5be22e0-10d2-4457-ba1a-e3630f312e05"/>
+                                       <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.600.426" displayName="Adolescent Depression Screening Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Occurrence A of Intervention, Performed: Adolescent Depression Screening</title>
+                                             <statusCode code="completed"/>
+                                             <sourceOf typeCode="DURING">
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <id root="3b0b4be1-e8b2-4093-bc8e-0850a36aed6e"/>
+                                                   <title>Measurement Period</title>
+                                                </observation>
+                                             </sourceOf>
+                                          </procedure>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="AND"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Result pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.47"/>
+                                       <id root="77e4d8db-9731-4ca7-9c4d-71a73ef15389"/>
+                                       <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.600.794" displayName="Negative Depression Screening SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Intervention, Result: Negative Depression Screening</title>
+                                             <statusCode code="completed"/>
+                                             <sourceOf typeCode="SAS">
+                                                <pauseQuantity xsi:type="IVL_PQ">
+                                                   <high value="1" unit="d" inclusive="true"/>
+                                                </pauseQuantity>
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <id root="a01dab71-d122-41ea-9c8b-037801e17edf"/>
+                                                   <title>Occurrence A of Encounter, Performed: Depression Screening Denominator Encounter Codes New</title>
+                                                </observation>
+                                             </sourceOf>
+                                          </procedure>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="AND"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Birthdate pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.400"/>
+                                       <id root="4e98e1bf-1715-42fd-8537-54b2f28d2975"/>
+                                       <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <code code="21112-8" codeSystem="2.16.840.1.113883.6.1" displayName="Birth date"/>
+                                             <title>Patient Characteristic Birthdate: birth date</title>
+                                             <value xsi:type="CD" code="2.16.840.1.113883.3.560.100.4" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="birth date LOINC Value Set"/>
+                                             <sourceOf typeCode="SBS">
+                                                <pauseQuantity xsi:type="IVL_PQ">
+                                                   <low value="18" unit="a" inclusive="true"/>
+                                                </pauseQuantity>
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <id root="6786dd7c-0e00-45cb-a55f-018ed0d522be"/>
+                                                   <title>Occurrence A of Intervention, Performed: Adult Depression Screening</title>
+                                                </observation>
+                                             </sourceOf>
+                                          </observation>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="AND"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.46"/>
+                                       <id root="6786dd7c-0e00-45cb-a55f-018ed0d522be"/>
+                                       <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.600.431" displayName="Adult Depression Screening Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Occurrence A of Intervention, Performed: Adult Depression Screening</title>
+                                             <statusCode code="completed"/>
+                                             <sourceOf typeCode="DURING">
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <id root="3b0b4be1-e8b2-4093-bc8e-0850a36aed6e"/>
+                                                   <title>Measurement Period</title>
+                                                </observation>
+                                             </sourceOf>
+                                          </procedure>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="AND"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                                       <sourceOf typeCode="PRCN">
+                                          <conjunctionCode code="OR"/>
+                                          <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+                                             <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                                             <id root="55a23a92-3f3e-43b5-89a6-7c450c9f6362"/>
+                                             <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                                             <sourceOf typeCode="COMP">
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                                   <title>Diagnosis, Active: Depression diagnosis</title>
+                                                   <value xsi:type="CD" code="2.16.840.1.113883.3.600.145" displayName="Depression diagnosis Grouping Value Set"/>
+                                                   <sourceOf typeCode="REFR">
+                                                      <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                         <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                                         <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                                                      </observation>
+                                                   </sourceOf>
+                                                </observation>
+                                             </sourceOf>
+                                          </act>
+                                       </sourceOf>
+                                       <sourceOf typeCode="PRCN">
+                                          <conjunctionCode code="OR"/>
+                                          <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Result pattern -->
+                                             <templateId root="2.16.840.1.113883.3.560.1.47"/>
+                                             <id root="b046ff7e-b555-448c-ada5-6d548f9c8ca0"/>
+                                             <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                             <sourceOf typeCode="COMP">
+                                                <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="2.16.840.1.113883.3.600.793" displayName="Positive Depression Screening SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                                   <title>Intervention, Result: Positive Depression Screening</title>
+                                                   <statusCode code="completed"/>
+                                                </procedure>
+                                             </sourceOf>
+                                          </act>
+                                       </sourceOf>
+                                       <sourceOf typeCode="SAS">
+                                          <pauseQuantity xsi:type="URG_PQ">
+                                             <high value="1" unit="d" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed pattern -->
+                                             <templateId root="2.16.840.1.113883.3.560.1.46"/>
+                                             <id root="6786dd7c-0e00-45cb-a55f-018ed0d522be"/>
+                                             <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                             <sourceOf typeCode="COMP">
+                                                <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="2.16.840.1.113883.3.600.431" displayName="Adult Depression Screening Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                                   <title>Occurrence A of Intervention, Performed: Adult Depression Screening</title>
+                                                   <statusCode code="completed"/>
+                                                </procedure>
+                                             </sourceOf>
+                                          </act>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="AND"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                                       <sourceOf typeCode="PRCN">
+                                          <conjunctionCode code="OR"/>
+                                          <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed pattern -->
+                                             <templateId root="2.16.840.1.113883.3.560.1.46"/>
+                                             <id root="d90206e0-a4aa-44a2-aee8-8fd3c5b5a540"/>
+                                             <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                             <sourceOf typeCode="COMP">
+                                                <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="2.16.840.1.113883.3.600.1545" displayName="Additional evaluation for depression - adult SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                                   <title>Intervention, Performed: Additional evaluation for depression - adult</title>
+                                                   <statusCode code="completed"/>
+                                                </procedure>
+                                             </sourceOf>
+                                          </act>
+                                       </sourceOf>
+                                       <sourceOf typeCode="PRCN">
+                                          <conjunctionCode code="OR"/>
+                                          <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Order pattern -->
+                                             <templateId root="2.16.840.1.113883.3.560.1.45"/>
+                                             <id root="90d4214c-65c5-4c92-a124-7e7ef09fa5d2"/>
+                                             <code code="18776-5" displayName="Plan of care" codeSystem="2.16.840.1.113883.6.1"/>
+                                             <sourceOf typeCode="COMP">
+                                                <procedure classCode="PROC" moodCode="RQO" isCriterionInd="true">
+                                                   <code code="2.16.840.1.113883.3.600.538" displayName="Referral for Depression Adult SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                                   <title>Intervention, Order: Referral for Depression Adult</title>
+                                                </procedure>
+                                             </sourceOf>
+                                          </act>
+                                       </sourceOf>
+                                       <sourceOf typeCode="PRCN">
+                                          <conjunctionCode code="OR"/>
+                                          <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Medication, Order pattern -->
+                                             <templateId root="2.16.840.1.113883.3.560.1.17"/>
+                                             <id root="36b87372-8d7c-43a0-891e-0197d92d9990"/>
+                                             <code code="10160-0" displayName="Medications" codeSystem="2.16.840.1.113883.6.1"/>
+                                             <sourceOf typeCode="COMP">
+                                                <substanceAdministration classCode="SBADM" moodCode="RQO" isCriterionInd="true">
+                                                   <title>Medication, Order: Depression medications - adult</title>
+                                                   <participant typeCode="CSM">
+                                                      <roleParticipant classCode="MANU">
+                                                         <playingMaterial classCode="MMAT" determinerCode="KIND">
+                                                            <code code="2.16.840.1.113883.3.600.470" displayName="Depression medications - adult RxNorm Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                                         </playingMaterial>
+                                                      </roleParticipant>
+                                                   </participant>
+                                                </substanceAdministration>
+                                             </sourceOf>
+                                          </act>
+                                       </sourceOf>
+                                       <sourceOf typeCode="PRCN">
+                                          <conjunctionCode code="OR"/>
+                                          <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed pattern -->
+                                             <templateId root="2.16.840.1.113883.3.560.1.46"/>
+                                             <id root="bea8e615-bf84-4a90-a2b3-656cf1ca5a6e"/>
+                                             <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                             <sourceOf typeCode="COMP">
+                                                <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="2.16.840.1.113883.3.600.468" displayName="Follow-up for depression - adult SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                                   <title>Intervention, Performed: Follow-up for depression - adult</title>
+                                                   <statusCode code="completed"/>
+                                                </procedure>
+                                             </sourceOf>
+                                          </act>
+                                       </sourceOf>
+                                       <sourceOf typeCode="PRCN">
+                                          <conjunctionCode code="OR"/>
+                                          <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                                             <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                                             <id root="19190eff-1c76-40e3-bb76-b10e1b42dcf7"/>
+                                             <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                             <sourceOf typeCode="COMP">
+                                                <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="2.16.840.1.113883.3.600.559" displayName="Suicide Risk Assessment SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                                   <title>Procedure, Performed: Suicide Risk Assessment</title>
+                                                </procedure>
+                                             </sourceOf>
+                                          </act>
+                                       </sourceOf>
+                                       <sourceOf typeCode="SAS">
+                                          <pauseQuantity xsi:type="URG_PQ">
+                                             <high value="1" unit="d" inclusive="true"/>
+                                          </pauseQuantity>
+                                          <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed pattern -->
+                                             <templateId root="2.16.840.1.113883.3.560.1.46"/>
+                                             <id root="6786dd7c-0e00-45cb-a55f-018ed0d522be"/>
+                                             <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                             <sourceOf typeCode="COMP">
+                                                <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="2.16.840.1.113883.3.600.431" displayName="Adult Depression Screening Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                                   <title>Occurrence A of Intervention, Performed: Adult Depression Screening</title>
+                                                   <statusCode code="completed"/>
+                                                </procedure>
+                                             </sourceOf>
+                                          </act>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                           <sourceOf typeCode="PRCN">
+                              <conjunctionCode code="OR"/>
+                              <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="AND"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true"><!-- Diagnosis, Active pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                                       <id root="55a23a92-3f3e-43b5-89a6-7c450c9f6362"/>
+                                       <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                             <title>Diagnosis, Active: Depression diagnosis</title>
+                                             <value xsi:type="CD" code="2.16.840.1.113883.3.600.145" displayName="Depression diagnosis Grouping Value Set"/>
+                                             <sourceOf typeCode="REFR">
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                                   <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                                                </observation>
+                                             </sourceOf>
+                                             <sourceOf typeCode="SAS">
+                                                <pauseQuantity xsi:type="IVL_PQ">
+                                                   <high value="1" unit="d" inclusive="true"/>
+                                                </pauseQuantity>
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <id root="6786dd7c-0e00-45cb-a55f-018ed0d522be"/>
+                                                   <title>Occurrence A of Intervention, Performed: Adult Depression Screening</title>
+                                                </observation>
+                                             </sourceOf>
+                                          </observation>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="AND"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Birthdate pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.400"/>
+                                       <id root="4e98e1bf-1715-42fd-8537-54b2f28d2975"/>
+                                       <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                             <code code="21112-8" codeSystem="2.16.840.1.113883.6.1" displayName="Birth date"/>
+                                             <title>Patient Characteristic Birthdate: birth date</title>
+                                             <value xsi:type="CD" code="2.16.840.1.113883.3.560.100.4" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="birth date LOINC Value Set"/>
+                                             <sourceOf typeCode="SBS">
+                                                <pauseQuantity xsi:type="IVL_PQ">
+                                                   <low value="18" unit="a" inclusive="true"/>
+                                                </pauseQuantity>
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <id root="6786dd7c-0e00-45cb-a55f-018ed0d522be"/>
+                                                   <title>Occurrence A of Intervention, Performed: Adult Depression Screening</title>
+                                                </observation>
+                                             </sourceOf>
+                                          </observation>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="AND"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.46"/>
+                                       <id root="6786dd7c-0e00-45cb-a55f-018ed0d522be"/>
+                                       <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.600.431" displayName="Adult Depression Screening Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Occurrence A of Intervention, Performed: Adult Depression Screening</title>
+                                             <statusCode code="completed"/>
+                                             <sourceOf typeCode="DURING">
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <id root="3b0b4be1-e8b2-4093-bc8e-0850a36aed6e"/>
+                                                   <title>Measurement Period</title>
+                                                </observation>
+                                             </sourceOf>
+                                          </procedure>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                                 <sourceOf typeCode="PRCN">
+                                    <conjunctionCode code="AND"/>
+                                    <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Result pattern -->
+                                       <templateId root="2.16.840.1.113883.3.560.1.47"/>
+                                       <id root="77e4d8db-9731-4ca7-9c4d-71a73ef15389"/>
+                                       <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                                       <sourceOf typeCode="COMP">
+                                          <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                             <code code="2.16.840.1.113883.3.600.794" displayName="Negative Depression Screening SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                             <title>Intervention, Result: Negative Depression Screening</title>
+                                             <statusCode code="completed"/>
+                                             <sourceOf typeCode="SAS">
+                                                <pauseQuantity xsi:type="IVL_PQ">
+                                                   <high value="1" unit="d" inclusive="true"/>
+                                                </pauseQuantity>
+                                                <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                                   <id root="6786dd7c-0e00-45cb-a55f-018ed0d522be"/>
+                                                   <title>Occurrence A of Intervention, Performed: Adult Depression Screening</title>
+                                                </observation>
+                                             </sourceOf>
+                                          </procedure>
+                                       </sourceOf>
+                                    </act>
+                                 </sourceOf>
+                              </act>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry><!--
+            **************************************************************   
+            Population Criteria Section: denominator 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="AD6CD556-EE4C-4EC1-8AD1-31E48032BE12"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="DENOM" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Denominator"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="8F0C4421-8FD5-4CF9-B559-FAE930EB13B1"/>
+                     <title>Initial Patient Population</title>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry><!--
+            **************************************************************   
+            Population Criteria Section: population 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="8F0C4421-8FD5-4CF9-B559-FAE930EB13B1"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="IPP" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Initial Patient Population"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Birthdate pattern -->
+                     <templateId root="2.16.840.1.113883.3.560.1.400"/>
+                     <id root="4e98e1bf-1715-42fd-8537-54b2f28d2975"/>
+                     <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+                     <sourceOf typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="21112-8" codeSystem="2.16.840.1.113883.6.1" displayName="Birth date"/>
+                           <title>Patient Characteristic Birthdate: birth date</title>
+                           <value xsi:type="CD" code="2.16.840.1.113883.3.560.100.4" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="birth date LOINC Value Set"/>
+                           <sourceOf typeCode="SBS">
+                              <pauseQuantity xsi:type="IVL_PQ">
+                                 <low value="12" unit="a" inclusive="true"/>
+                              </pauseQuantity>
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <id root="3b0b4be1-e8b2-4093-bc8e-0850a36aed6e"/>
+                                 <title>Measurement Period</title>
+                              </observation>
+                           </sourceOf>
+                        </observation>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                     <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                     <id root="a01dab71-d122-41ea-9c8b-037801e17edf"/>
+                     <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                     <sourceOf typeCode="COMP">
+                        <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                           <code code="2.16.840.1.113883.3.600.1916" displayName="Depression Screening Denominator Encounter Codes New Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                           <title>Occurrence A of Encounter, Performed: Depression Screening Denominator Encounter Codes New</title>
+                           <statusCode code="completed"/>
+                           <sourceOf typeCode="DURING">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <id root="3b0b4be1-e8b2-4093-bc8e-0850a36aed6e"/>
+                                 <title>Measurement Period</title>
+                              </observation>
+                           </sourceOf>
+                        </encounter>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry>
+      </section>
+   </component>
+         
+      <!--
+         ******************************************   
+         Data Criteria Section
+         ******************************************
+      --><component typeCode="COMP">
+      <section>
+         <code code="57025-9" codeSystem="2.16.840.1.113883.6.1" displayName="Data criteria (QDM Data Elements)"/>
+         <title>Data criteria (QDM Data Elements)</title>
+         <text>
+            <list>
+               <item>
+                  <content>"Diagnosis, Active: Bipolar Diagnosis"</content> using "Bipolar Diagnosis Grouping Value Set (2.16.840.1.113883.3.600.450)"</item>
+               <item>
+                  <content>"Diagnosis, Active: Depression diagnosis"</content> using "Depression diagnosis Grouping Value Set (2.16.840.1.113883.3.600.145)"</item>
+               <item>
+                  <content>"Encounter, Performed: Depression Screening Denominator Encounter Codes New"</content> using "Depression Screening Denominator Encounter Codes New Grouping Value Set (2.16.840.1.113883.3.600.1916)"</item>
+               <item>
+                  <content>"Intervention, Order: Referral for Depression Adolescent"</content> using "Referral for Depression Adolescent SNOMED-CT Value Set (2.16.840.1.113883.3.600.537)"</item>
+               <item>
+                  <content>"Intervention, Order: Referral for Depression Adult"</content> using "Referral for Depression Adult SNOMED-CT Value Set (2.16.840.1.113883.3.600.538)"</item>
+               <item>
+                  <content>"Intervention, Performed: Additional evaluation for depression - adolescent"</content> using "Additional evaluation for depression - adolescent SNOMED-CT Value Set (2.16.840.1.113883.3.600.1542)"</item>
+               <item>
+                  <content>"Intervention, Performed: Additional evaluation for depression - adult"</content> using "Additional evaluation for depression - adult SNOMED-CT Value Set (2.16.840.1.113883.3.600.1545)"</item>
+               <item>
+                  <content>"Intervention, Performed: Adolescent Depression Screening"</content> using "Adolescent Depression Screening Grouping Value Set (2.16.840.1.113883.3.600.426)"</item>
+               <item>
+                  <content>"Intervention, Performed: Adult Depression Screening"</content> using "Adult Depression Screening Grouping Value Set (2.16.840.1.113883.3.600.431)"</item>
+               <item>
+                  <content>"Intervention, Performed: Follow-up for depression - adolescent"</content> using "Follow-up for depression - adolescent SNOMED-CT Value Set (2.16.840.1.113883.3.600.467)"</item>
+               <item>
+                  <content>"Intervention, Performed: Follow-up for depression - adult"</content> using "Follow-up for depression - adult SNOMED-CT Value Set (2.16.840.1.113883.3.600.468)"</item>
+               <item>
+                  <content>"Intervention, Performed not done: Medical reason contraindicated"</content> using "Medical reason contraindicated SNOMED-CT Value Set (2.16.840.1.113883.3.600.792)"</item>
+               <item>
+                  <content>"Intervention, Performed not done: Medical reason contraindicated"</content> using "Medical reason contraindicated SNOMED-CT Value Set (2.16.840.1.113883.3.600.792)"</item>
+               <item>
+                  <content>"Intervention, Performed not done: Patient Reason refused"</content> using "Patient Reason refused SNOMED-CT Value Set (2.16.840.1.113883.3.600.791)"</item>
+               <item>
+                  <content>"Intervention, Performed not done: Patient Reason refused"</content> using "Patient Reason refused SNOMED-CT Value Set (2.16.840.1.113883.3.600.791)"</item>
+               <item>
+                  <content>"Intervention, Result: Negative Depression Screening"</content> using "Negative Depression Screening SNOMED-CT Value Set (2.16.840.1.113883.3.600.794)"</item>
+               <item>
+                  <content>"Intervention, Result: Positive Depression Screening"</content> using "Positive Depression Screening SNOMED-CT Value Set (2.16.840.1.113883.3.600.793)"</item>
+               <item>
+                  <content>"Medication, Order: Depression medications - adolescent"</content> using "Depression medications - adolescent RxNorm Value Set (2.16.840.1.113883.3.600.469)"</item>
+               <item>
+                  <content>"Medication, Order: Depression medications - adult"</content> using "Depression medications - adult RxNorm Value Set (2.16.840.1.113883.3.600.470)"</item>
+               <item>
+                  <content>"Patient Characteristic Birthdate: birth date"</content> using "birth date LOINC Value Set (2.16.840.1.113883.3.560.100.4)"</item>
+               <item>
+                  <content>"Procedure, Performed: Suicide Risk Assessment"</content> using "Suicide Risk Assessment SNOMED-CT Value Set (2.16.840.1.113883.3.600.559)"</item>
+            </list>
+         </text>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.2"/>
+               <id root="55a23a92-3f3e-43b5-89a6-7c450c9f6362"/>
+               <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                     <title>Diagnosis, Active: Depression diagnosis</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.600.145" displayName="Depression diagnosis Grouping Value Set"/>
+                     <sourceOf typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                           <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                        </observation>
+                     </sourceOf>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.46"/>
+               <id root="5103987c-c028-4bfb-9dd9-1f5a40225d11"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.600.426" displayName="Adolescent Depression Screening Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Intervention, Performed: Adolescent Depression Screening</title>
+                     <statusCode code="completed"/>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.46"/>
+               <id root="972ca089-2cfd-4fc9-9683-ff1a3c02145c"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.600.431" displayName="Adult Depression Screening Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Intervention, Performed: Adult Depression Screening</title>
+                     <statusCode code="completed"/>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.2"/>
+               <id root="7f7b39c6-94e0-4ec5-aa2f-7565cd476732"/>
+               <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                     <title>Diagnosis, Active: Bipolar Diagnosis</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.600.450" displayName="Bipolar Diagnosis Grouping Value Set"/>
+                     <sourceOf typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                           <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                        </observation>
+                     </sourceOf>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Medication, Order pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.17"/>
+               <id root="b93d61c0-a08b-4aaa-8aeb-0729805edf2c"/>
+               <code code="10160-0" displayName="Medications" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <substanceAdministration classCode="SBADM" moodCode="RQO" isCriterionInd="true">
+                     <title>Medication, Order: Depression medications - adolescent</title>
+                     <participant typeCode="CSM">
+                        <roleParticipant classCode="MANU">
+                           <playingMaterial classCode="MMAT" determinerCode="KIND">
+                              <code code="2.16.840.1.113883.3.600.469" displayName="Depression medications - adolescent RxNorm Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                           </playingMaterial>
+                        </roleParticipant>
+                     </participant>
+                  </substanceAdministration>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Medication, Order pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.17"/>
+               <id root="36b87372-8d7c-43a0-891e-0197d92d9990"/>
+               <code code="10160-0" displayName="Medications" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <substanceAdministration classCode="SBADM" moodCode="RQO" isCriterionInd="true">
+                     <title>Medication, Order: Depression medications - adult</title>
+                     <participant typeCode="CSM">
+                        <roleParticipant classCode="MANU">
+                           <playingMaterial classCode="MMAT" determinerCode="KIND">
+                              <code code="2.16.840.1.113883.3.600.470" displayName="Depression medications - adult RxNorm Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                           </playingMaterial>
+                        </roleParticipant>
+                     </participant>
+                  </substanceAdministration>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.46"/>
+               <id root="af5fce35-5dfc-44b3-b940-af5b75921868"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.600.467" displayName="Follow-up for depression - adolescent SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Intervention, Performed: Follow-up for depression - adolescent</title>
+                     <statusCode code="completed"/>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.46"/>
+               <id root="bea8e615-bf84-4a90-a2b3-656cf1ca5a6e"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.600.468" displayName="Follow-up for depression - adult SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Intervention, Performed: Follow-up for depression - adult</title>
+                     <statusCode code="completed"/>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Order pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.45"/>
+               <id root="b0d8f4fa-05f4-4f52-a907-686012289363"/>
+               <code code="18776-5" displayName="Plan of care" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="RQO" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.600.537" displayName="Referral for Depression Adolescent SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Intervention, Order: Referral for Depression Adolescent</title>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Order pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.45"/>
+               <id root="90d4214c-65c5-4c92-a124-7e7ef09fa5d2"/>
+               <code code="18776-5" displayName="Plan of care" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="RQO" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.600.538" displayName="Referral for Depression Adult SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Intervention, Order: Referral for Depression Adult</title>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Result pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.47"/>
+               <id root="77e4d8db-9731-4ca7-9c4d-71a73ef15389"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.600.794" displayName="Negative Depression Screening SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Intervention, Result: Negative Depression Screening</title>
+                     <statusCode code="completed"/>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Result pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.47"/>
+               <id root="b046ff7e-b555-448c-ada5-6d548f9c8ca0"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.600.793" displayName="Positive Depression Screening SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Intervention, Result: Positive Depression Screening</title>
+                     <statusCode code="completed"/>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="f87b4134-0a95-4e93-8198-8a15decb43a7"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.600.1916" displayName="Depression Screening Denominator Encounter Codes New Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Depression Screening Denominator Encounter Codes New</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.46"/>
+               <id root="4218e83f-1cf6-450d-ba3d-dbe78974d02c"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.600.1542" displayName="Additional evaluation for depression - adolescent SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Intervention, Performed: Additional evaluation for depression - adolescent</title>
+                     <statusCode code="completed"/>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.46"/>
+               <id root="d90206e0-a4aa-44a2-aee8-8fd3c5b5a540"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.600.1545" displayName="Additional evaluation for depression - adult SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Intervention, Performed: Additional evaluation for depression - adult</title>
+                     <statusCode code="completed"/>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.6"/>
+               <id root="19190eff-1c76-40e3-bb76-b10e1b42dcf7"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.600.559" displayName="Suicide Risk Assessment SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Procedure, Performed: Suicide Risk Assessment</title>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Birthdate pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.400"/>
+               <id root="4e98e1bf-1715-42fd-8537-54b2f28d2975"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="21112-8" codeSystem="2.16.840.1.113883.6.1" displayName="Birth date"/>
+                     <title>Patient Characteristic Birthdate: birth date</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.560.100.4" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="birth date LOINC Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed not done pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.146"/>
+               <id root="d2e68add-23bf-4334-9397-262d8e5fd16f"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.600.792" displayName="Medical reason contraindicated SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Intervention, Performed not done: Medical reason contraindicated</title>
+                     <statusCode code="completed"/>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed not done pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.146"/>
+               <id root="17a93911-d961-4761-8c6b-a34255573556"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.600.792" displayName="Medical reason contraindicated SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Intervention, Performed not done: Medical reason contraindicated</title>
+                     <statusCode code="completed"/>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed not done pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.146"/>
+               <id root="e9e88871-f8ac-47b3-971e-d679e191775c"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.600.791" displayName="Patient Reason refused SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Intervention, Performed not done: Patient Reason refused</title>
+                     <statusCode code="completed"/>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Intervention, Performed not done pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.146"/>
+               <id root="878edf5a-6234-4689-aa3b-0be692484129"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.600.791" displayName="Patient Reason refused SNOMED-CT Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Intervention, Performed not done: Patient Reason refused</title>
+                     <statusCode code="completed"/>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="COMP">
+            <observation classCode="OBS" moodCode="DEF">
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="a01dab71-d122-41ea-9c8b-037801e17edf"/>
+               <sourceOf typeCode="DRIV">
+                  <localVariableName>Depression Screening Denominator Encounter Codes New</localVariableName>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="f87b4134-0a95-4e93-8198-8a15decb43a7"/>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry>
+         <entry typeCode="COMP">
+            <observation classCode="OBS" moodCode="DEF">
+               <templateId root="2.16.840.1.113883.3.560.1.46"/>
+               <id root="d5be22e0-10d2-4457-ba1a-e3630f312e05"/>
+               <sourceOf typeCode="DRIV">
+                  <localVariableName>Adolescent Depression Screening</localVariableName>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="5103987c-c028-4bfb-9dd9-1f5a40225d11"/>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry>
+         <entry typeCode="COMP">
+            <observation classCode="OBS" moodCode="DEF">
+               <templateId root="2.16.840.1.113883.3.560.1.46"/>
+               <id root="6786dd7c-0e00-45cb-a55f-018ed0d522be"/>
+               <sourceOf typeCode="DRIV">
+                  <localVariableName>Adult Depression Screening</localVariableName>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="972ca089-2cfd-4fc9-9683-ff1a3c02145c"/>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry>
+         <entry typeCode="COMP">
+            <observation classCode="OBS" moodCode="DEF">
+               <templateId root="2.16.840.1.113883.3.560.1.2"/>
+               <id root="d541b4f7-d09b-4741-b268-a261bade1767"/>
+               <sourceOf typeCode="DRIV">
+                  <localVariableName>Bipolar Diagnosis</localVariableName>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="7f7b39c6-94e0-4ec5-aa2f-7565cd476732"/>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry>
+         <entry typeCode="COMP">
+            <observation classCode="OBS" moodCode="DEF">
+               <templateId root="2.16.840.1.113883.3.560.1.2"/>
+               <id root="c8e3e0c0-a75e-4662-a345-30c9d02ef56b"/>
+               <sourceOf typeCode="DRIV">
+                  <localVariableName>Depression diagnosis</localVariableName>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="55a23a92-3f3e-43b5-89a6-7c450c9f6362"/>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry>
+      </section>
+   </component>
+            
+         <!--
+            **************************************************************   
+            Stratification Section
+            **************************************************************
+         --><component typeCode="COMP">
+      <section>
+         <code code="69669-0" codeSystem="2.16.840.1.113883.6.1" displayName="Population stratification description"/>
+         <title>Reporting Stratification</title>
+         <text>
+            <list>
+               <item>None</item>
+            </list>
+         </text>
+      </section>
+   </component>
+         
+      <!--
+         ******************************************   
+         Supplemental Data Elements Section
+         ******************************************
+      --><component typeCode="COMP">
+      <section>
+         <code code="69670-8" codeSystem="2.16.840.1.113883.6.1" displayName="Supplemental Data Elements"/>
+         <title>Supplemental Data Elements</title>
+         <text>
+            <list>
+               <item>
+                  <content>"Patient Characteristic Ethnicity: Ethnicity"</content> using "Ethnicity CDC Value Set (2.16.840.1.114222.4.11.837)"</item>
+               <item>
+                  <content>"Patient Characteristic Payer: Payer"</content> using "Payer Source of Payment Typology Value Set (2.16.840.1.114222.4.11.3591)"</item>
+               <item>
+                  <content>"Patient Characteristic Race: Race"</content> using "Race CDC Value Set (2.16.840.1.114222.4.11.836)"</item>
+               <item>
+                  <content>"Patient Characteristic Sex: ONC Administrative Sex"</content> using "ONC Administrative Sex Administrative Sex Value Set (2.16.840.1.113762.1.4.1)"</item>
+            </list>
+         </text>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Sex pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.402"/>
+               <id root="a6c71e33-49a4-4dd0-9352-aab7cc48374f"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="263495000" codeSystem="2.16.840.1.113883.6.96" displayName="Sex"/>
+                     <title>Patient Characteristic Sex: ONC Administrative Sex</title>
+                     <value xsi:type="CD" code="2.16.840.1.113762.1.4.1" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="ONC Administrative Sex Administrative Sex Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Race pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.406"/>
+               <id root="7f1716ef-5867-43ff-abe3-bcfe4ebe086d"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="32624-9" codeSystem="2.16.840.1.113883.6.1" displayName="Race"/>
+                     <title>Patient Characteristic Race: Race</title>
+                     <value xsi:type="CD" code="2.16.840.1.114222.4.11.836" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="Race CDC Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Ethnicity pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.403"/>
+               <id root="bcd59af8-9f22-435f-a56b-54d65ee65cc1"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="54133-4" codeSystem="2.16.840.1.113883.6.1" displayName="Ethnicity"/>
+                     <title>Patient Characteristic Ethnicity: Ethnicity</title>
+                     <value xsi:type="CD" code="2.16.840.1.114222.4.11.837" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="Ethnicity CDC Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Payer pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.405"/>
+               <id root="853179dd-4235-4e3b-b346-e6ca0d0be513"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" displayName="Payer"/>
+                     <title>Patient Characteristic Payer: Payer</title>
+                     <value xsi:type="CD" code="2.16.840.1.114222.4.11.3591" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="Payer Source of Payment Typology Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+      </section>
+   </component>
+</QualityMeasureDocument>

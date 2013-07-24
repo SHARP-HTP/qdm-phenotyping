@@ -1,0 +1,508 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:n1="urn:hl7-org:v3">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Functional Status Assessment for Hip Replacement</title><style type="text/css">
+body {
+	color: rgb(26, 26, 26);
+	background-color: rgb(255,255,255);
+	font-family: Verdana, Tahoma, sans-serif;
+	font-size: 11px;
+}
+
+a {
+	color: rgb(0, 0, 255);
+	background-color: rgb(255,255,255);
+}
+
+h1 {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+div {
+	width: 80%;
+}
+
+table {
+	line-height: 10pt;
+	width: 80%;
+}
+
+tr {
+	background-color: rgb(224,224,224);
+}
+
+td {
+	padding: 0.1cm 0.2cm;
+	vertical-align: top;
+}
+
+.h1center {
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+	width: 80%;
+}
+
+.header_table{
+	border: 1pt inset rgb(0,0,0);
+}
+
+.narr_table {
+	width: 100%;
+}
+
+.narr_tr {
+	background-color: rgb(225,225,225);
+}
+pre {
+ overflow: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+ white-space: pre-wrap; /* css-3 */
+ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+ white-space: -pre-wrap; /* Opera 4-6 */
+ white-space: -o-pre-wrap; /* Opera 7 */
+ word-wrap: break-word; /* Internet Explorer 5.5+ */
+ font-family: Verdana, Tahoma, sans-serif;
+ font-size: 11px;
+ text-align:left;
+ margin: 0px 0px 0px 0px;
+ padding:0px 0px 0px 0px;
+}
+.narr_th {
+	background-color: rgb(201,201,201);
+}
+
+.td_label{
+	font-weight: bold;
+	color: white;
+}
+	</style></head>
+   <body>
+      <table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Title</span></td>
+               <td width="80%" colspan="3">Functional Status Assessment for Hip Replacement</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Identifier<br>(Measure Authoring Tool)</span></td>
+               <td width="30%">56</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Version number</span></td>
+               <td width="30%">1</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">NQF Number</span></td>
+               <td width="30%">Not Applicable</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">GUID</span></td>
+               <td> 2f291003-3f2f-48af-bef9-e5aacb95ac3e</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measurement Period</span></td>
+               <td width="80%" colspan="3">January 1, 20xx  through December 31, 20xx </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Steward</span></td>
+               <td width="80%" colspan="3">Centers for Medicare &amp; Medicaid Services (CMS)</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Developer</span></td>
+               <td width="80%" colspan="3">National Committee for Quality Assurance (NCQA)</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Endorsed By</span></td>
+               <td width="80%" colspan="3">None</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Description</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Percentage of patients aged 18 years and older with primary total hip arthroplasty (THA) who completed baseline and follow-up (patient-reported) functional status assessments</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Copyright</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>TBD</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Disclaimer</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>TBD</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Scoring</span></td>
+               <td width="80%" colspan="3">Proportion</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Type</span></td>
+               <td width="80%" colspan="3">Process</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Stratification</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Risk Adjustment</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rate Aggregation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rationale</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Measuring functional status for patient undergoing total hip replacement permits longitudinal assessment - from the patient&#8217;s perspective -  of the impact of surgical intervention on pain, physical function, as well as health-related quality of life (Rothrock 2010).</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Clinical Recommendation Statement</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Clinicians should ask patients to report on functional status during at least two points in time while undergoing treatment: before surgery and after a period of post-sugical recovery.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Improvement Notation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>A higher score indicates better quality</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Bachmeier CJ, March LM, Cross MJ, Lapsley HM, Tribe KL, Courtenay BG et al.  A comparison of outcomes in osteoarthritis patient undergoing total hip and knee replacement surgery.  Osteoarthritis Cartilage 2001; 9:137-146.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Rose M, Bjorner JB, Becker J, Fries JF, Ware JE. Evaluation of a preliminary physical function item bank supported expected advantages of the Patient-Reported Outcomes Measurement Information System (PROMIS). J Clin Epidemiol 2008; 61:17-33.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Rothrock NE, Hays RD, Spritzer K, Yount SE, Riley W, Cella D. Relative to the general US population, chronic diseases are associated with poorer health-related quality of life as measured by the Patient-Reported Outcomes Measurement Information System (PROMIS). J Clin Epidemiol 2010; 63(11):1195-204.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Selim AJ, Berlowitz D, Kazis LE, Rogers W, Wright SM, Qian SX, Rohendler JA, Spiro A, Miller D, Selim BJ, Fincke BG.  Comparison of Health Outcomes for Male Seniors in the Veterans Health Administration and Medicare Advantage Plans.  Health Services Research 2010; 45(2): 376-396.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Definition</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Guidance</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>A Functional Status Assessment (FSA) is based on administration of a validated instrument to eligible patients that asks patients to answer questions related to various domains including: pain, physical function, emotional well-being, health-related quality of life, symptom acuity.
+
+The use of patient-reported outcomes data in eMeasures - such as this measure of functional status - demonstrates the need for the Quality Reporting Data Architecture (QRDA) to support a data attribute that indicates that the patient provided the information.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Transmission Format</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>TBD</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Initial Patient Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Adults aged 18 and older with a primary total hip arthroplasty (THA) and who had an outpatient encounter not more than 180 days prior to procedure, and at least 60 days and not more than 180 days after THA procedure.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Equals initial patient population</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients with multiple trauma at the time of the total hip arthroplasty or patients with severe cognitive impairment</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients with patient reported functional status assessment results (e.g., VR-12, VR-36,PROMIS-10-Global Health, PROMIS-29, HOOS) not more than 180 days prior to the primary THA procedure, and at least 60 days and not more than 180 days after THA procedure.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exceptions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Observations</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Supplemental Data Elements</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>For every patient evaluated by this measure also identify payer, race, ethnicity, and sex.</pre></div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="toc">Table of Contents</a></h2>
+      <ul>
+         <li><a href="#d2645870e511">Population criteria</a></li>
+         <li><a href="#d2645870e1794">Data criteria (QDM Data Elements)</a></li>
+         <li><a href="#d2645870e2233">Reporting Stratification</a></li>
+         <li><a href="#d2645870e2254">Supplemental Data Elements</a></li>
+      </ul>
+      <hr align="left" color="teal" size="2" width="80%">
+      <h3><a name="d2645870e511" href="#toc">Population criteria</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               <b>Initial Patient Population =</b>
+               
+               <ul>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 18 year(s) starts before start of "Measurement Period"</li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Occurrence A of Procedure, Performed: Primary THA Procedure"  &lt;= 180 day(s) ends before start of "Measurement Period"</li>
+                        <li>OR: "Occurrence A of Procedure, Performed: Primary THA Procedure"  &lt;= 185 day(s) ends after start of "Measurement Period"</li>
+                     </ul>
+                     
+                  </li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Encounter, Performed: Outpatient Consultation"  &lt;= 180 day(s) ends before start of "Occurrence A of Procedure, Performed:
+                                 Primary THA Procedure"
+                              </li>
+                              <li>AND: "Occurrence B of Encounter, Performed: Outpatient Consultation"  &gt;= 60 day(s) ends after end of "Occurrence A of Procedure,
+                                 Performed: Primary THA Procedure"
+                              </li>
+                              <li>AND: "Occurrence B of Encounter, Performed: Outpatient Consultation"  &lt;= 180 day(s) ends after end of "Occurrence A of Procedure,
+                                 Performed: Primary THA Procedure"
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Encounter, Performed: Face-to-Face Interaction"  &lt;= 180 day(s) ends before start of "Occurrence A of Procedure, Performed:
+                                 Primary THA Procedure"
+                              </li>
+                              <li>AND: "Occurrence B of Encounter, Performed: Face-to-Face Interaction"  &gt;= 60 day(s) ends after end of "Occurrence A of Procedure,
+                                 Performed: Primary THA Procedure"
+                              </li>
+                              <li>AND: "Occurrence B of Encounter, Performed: Face-to-Face Interaction"  &lt;= 180 day(s) ends after end of "Occurrence A of Procedure,
+                                 Performed: Primary THA Procedure"
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Encounter, Performed: Office Visit"  &lt;= 180 day(s) ends before start of "Occurrence A of Procedure, Performed: Primary
+                                 THA Procedure"
+                              </li>
+                              <li>AND: "Occurrence B of Encounter, Performed: Office Visit"  &gt;= 60 day(s) ends after end of "Occurrence A of Procedure, Performed:
+                                 Primary THA Procedure"
+                              </li>
+                              <li>AND: "Occurrence B of Encounter, Performed: Office Visit"  &lt;= 180 day(s) ends after end of "Occurrence A of Procedure, Performed:
+                                 Primary THA Procedure"
+                              </li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator =</b>
+               
+               <ul>
+                  <li>AND: "Initial Patient Population"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exclusions =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Diagnosis, Active: Fracture - Lower Body"  &lt; 1 day(s) starts before start of "Occurrence A of Procedure,
+                                 Performed: Primary THA Procedure"
+                              </li>
+                              <li>AND: "Occurrence A of Diagnosis, Active: Fracture - Lower Body"  &gt;= 1 hour(s) ends after start of "Occurrence A of Procedure,
+                                 Performed: Primary THA Procedure"
+                              </li>
+                              <li>AND: "Occurrence B of Diagnosis, Active: Fracture - Lower Body"  &lt; 1 day(s) starts before start of "Occurrence A of Procedure,
+                                 Performed: Primary THA Procedure"
+                              </li>
+                              <li>AND: "Occurrence B of Diagnosis, Active: Fracture - Lower Body"  &gt;= 1 hour(s) ends after start of "Occurrence A of Procedure,
+                                 Performed: Primary THA Procedure"
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND NOT: "Diagnosis, Active: Severe Dementia" ends before start of "Measurement Period"</li>
+                              <li>AND: "Diagnosis, Active: Severe Dementia" starts before or during "Measurement Period"</li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Numerator =</b>
+               
+               <ul>
+                  <li>AND: "Functional Status, Result: Functional Status Assessment for Hip Replacement"  &lt;= 180 day(s) ends before start of "Occurrence
+                     A of Procedure, Performed: Primary THA Procedure"
+                  </li>
+                  <li>AND: "Occurrence B of Functional Status, Result: Functional Status Assessment for Hip Replacement"  &gt;= 60 day(s) ends after
+                     end of "Occurrence A of Procedure, Performed: Primary THA Procedure"
+                  </li>
+                  <li>AND: "Occurrence B of Functional Status, Result: Functional Status Assessment for Hip Replacement"  &lt;= 180 day(s) ends after
+                     end of "Occurrence A of Procedure, Performed: Primary THA Procedure"
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exceptions =</b>
+               
+               <ul>
+                  <li>None</li>
+               </ul>
+               
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d2645870e1794" href="#toc">Data criteria (QDM Data Elements)</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Diagnosis, Active: Fracture - Lower Body" using "Fracture - Lower Body Grouping Value Set (2.16.840.1.113883.3.464.1003.113.12.1037)"
+            </li>
+            <li>
+               "Diagnosis, Active: Severe Dementia" using "Severe Dementia Grouping Value Set (2.16.840.1.113883.3.526.3.1025)"
+            </li>
+            <li>
+               "Encounter, Performed: Face-to-Face Interaction" using "Face-to-Face Interaction Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1048)"
+            </li>
+            <li>
+               "Encounter, Performed: Office Visit" using "Office Visit Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1001)"
+            </li>
+            <li>
+               "Encounter, Performed: Outpatient Consultation" using "Outpatient Consultation Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1008)"
+            </li>
+            <li>
+               "Functional Status, Result: Functional Status Assessment for Hip Replacement" using "Functional Status Assessment for Hip Replacement Grouping Value Set (2.16.840.1.113883.3.464.1003.118.12.1029)"
+            </li>
+            <li>
+               "Patient Characteristic Birthdate: birth date" using "birth date LOINC Value Set (2.16.840.1.113883.3.560.100.4)"
+            </li>
+            <li>
+               "Procedure, Performed: Primary THA Procedure" using "Primary THA Procedure Grouping Value Set (2.16.840.1.113883.3.464.1003.198.12.1006)"
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d2645870e2233" href="#toc">Reporting Stratification</a></h3>
+      <div>
+         
+         <ul>
+            <li>None</li>
+         </ul>
+         
+      </div>
+      <h3><a name="d2645870e2254" href="#toc">Supplemental Data Elements</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Patient Characteristic Ethnicity: Ethnicity" using "Ethnicity CDC Value Set (2.16.840.1.114222.4.11.837)"
+            </li>
+            <li>
+               "Patient Characteristic Payer: Payer" using "Payer Source of Payment Typology Value Set (2.16.840.1.114222.4.11.3591)"
+            </li>
+            <li>
+               "Patient Characteristic Race: Race" using "Race CDC Value Set (2.16.840.1.114222.4.11.836)"
+            </li>
+            <li>
+               "Patient Characteristic Sex: ONC Administrative Sex" using "ONC Administrative Sex Administrative Sex Value Set (2.16.840.1.113762.1.4.1)"
+            </li>
+         </ul>
+         
+      </div><br><hr align="left" color="teal" size="2" width="80%"><br><table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Set</span></td>
+               <td colspan="3" width="80%">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto;word-wrap:break-word">Not Applicable</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

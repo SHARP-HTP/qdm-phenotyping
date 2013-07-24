@@ -1,0 +1,1304 @@
+{
+  "id": "0088",
+  "hqmf_id": "8A4D92B2-3946-CDAE-0139-77E3674A60FC",
+  "hqmf_set_id": "50164228-9D64-4EFC-AF67-DA0547FF61F1",
+  "hqmf_version_number": 1,
+  "title": "Diabetic Retinopathy: Documentation of Presence or Absence of Macular Edema and Level of Severity of Retinopathy",
+  "description": "Percentage of patients aged 18 years and older with a diagnosis of diabetic retinopathy who had a dilated macular or fundus exam performed which included documentation of the level of severity of retinopathy and the presence or absence of macular edema during one or more office visits within 12 months",
+  "cms_id": "CMS167v1",
+  "population_criteria": {
+    "DENEXCEP": {
+      "conjunction?": true,
+      "type": "DENEXCEP",
+      "title": "Denominator Exception",
+      "hqmf_id": "4A8F700B-7C2F-4C3C-8E69-CD6C4FC19B68",
+      "preconditions": [
+        {
+          "id": 27,
+          "preconditions": [
+            {
+              "id": 12,
+              "preconditions": [
+                {
+                  "id": 8,
+                  "reference": "DiagnosticStudyPerformedMacularExam_precondition_8"
+                },
+                {
+                  "id": 10,
+                  "reference": "DiagnosticStudyPerformedMacularExam_precondition_10"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "9E5680D2-F915-4C8F-9D33-97419A04D9FF",
+      "preconditions": [
+        {
+          "id": 51,
+          "preconditions": [
+            {
+              "id": 36,
+              "preconditions": [
+                {
+                  "id": 28,
+                  "reference": "OccurrenceAMacularExam6_precondition_28"
+                },
+                {
+                  "id": 34,
+                  "preconditions": [
+                    {
+                      "id": 30,
+                      "reference": "OccurrenceAMacularExam6_precondition_30"
+                    },
+                    {
+                      "id": 32,
+                      "reference": "OccurrenceAMacularExam6_precondition_32"
+                    }
+                  ],
+                  "conjunction_code": "atLeastOneTrue"
+                }
+              ],
+              "conjunction_code": "allTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "979CC45F-8E2A-4A53-9113-BC43080BF2FF"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "CC8FFE30-647E-4DA2-9926-6FF829607725",
+      "preconditions": [
+        {
+          "id": 84,
+          "preconditions": [
+            {
+              "id": 52,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_52"
+            },
+            {
+              "id": 67,
+              "reference": "DiagnosisActiveDiabeticRetinopathy_precondition_67"
+            },
+            {
+              "id": 82,
+              "reference": "GROUP_COUNT_92",
+              "conjunction_code": "allTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "DiagnosticStudyResultMacularExam": {
+      "title": "Macular Exam",
+      "description": "Diagnostic Study, Result: Macular Exam",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_result",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1251",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosticStudyResultMacularExam"
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "DiagnosticStudyPerformedNotDoneMedicalReason": {
+      "title": "Medical Reason",
+      "description": "Diagnostic Study, Performed not done: Medical Reason",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "source_data_criteria": "DiagnosticStudyPerformedNotDoneMedicalReason"
+    },
+    "DiagnosticStudyPerformedNotDonePatientReason": {
+      "title": "Patient Reason",
+      "description": "Diagnostic Study, Performed not done: Patient Reason",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1008",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "source_data_criteria": "DiagnosticStudyPerformedNotDonePatientReason"
+    },
+    "OccurrenceAOphthalmologicalServices1_precondition_13": {
+      "title": "Ophthalmological Services",
+      "description": "Encounter, Performed: Ophthalmological Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1285",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OPHTHALMOLOGICAL_SERVICES",
+      "source_data_criteria": "OccurrenceAOphthalmologicalServices1"
+    },
+    "OccurrenceACareServicesInLongTermResidentialFacility2_precondition_15": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_CARE_SERVICES_IN_LONG_TERM_RESIDENTIAL_FACILITY",
+      "source_data_criteria": "OccurrenceACareServicesInLongTermResidentialFacility2"
+    },
+    "OccurrenceANursingFacilityVisit3_precondition_17": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_NURSING_FACILITY_VISIT",
+      "source_data_criteria": "OccurrenceANursingFacilityVisit3"
+    },
+    "OccurrenceAOfficeVisit4_precondition_19": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit4"
+    },
+    "OccurrenceAOutpatientConsultation5_precondition_21": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation5"
+    },
+    "OccurrenceAFaceToFaceInteraction7_precondition_23": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction7"
+    },
+    "DiagnosticStudyPerformedMacularExam_precondition_8": {
+      "title": "Macular Exam",
+      "description": "Diagnostic Study, Performed: Macular Exam",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1251",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "negation_code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "source_data_criteria": "DiagnosticStudyPerformedMacularExam",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "GROUP_DURING_CHILDREN_86"
+        }
+      ]
+    },
+    "GROUP_DURING_CHILDREN_86": {
+      "title": "GROUP_DURING_CHILDREN_86",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "OccurrenceAOphthalmologicalServices1_precondition_13",
+        "OccurrenceACareServicesInLongTermResidentialFacility2_precondition_15",
+        "OccurrenceANursingFacilityVisit3_precondition_17",
+        "OccurrenceAOfficeVisit4_precondition_19",
+        "OccurrenceAOutpatientConsultation5_precondition_21",
+        "OccurrenceAFaceToFaceInteraction7_precondition_23"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_DURING_CHILDREN_86"
+    },
+    "DiagnosticStudyPerformedMacularExam_precondition_10": {
+      "title": "Macular Exam",
+      "description": "Diagnostic Study, Performed: Macular Exam",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1251",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "negation_code_list_id": "2.16.840.1.113883.3.526.3.1008",
+      "source_data_criteria": "DiagnosticStudyPerformedMacularExam",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "GROUP_DURING_CHILDREN_86"
+        }
+      ]
+    },
+    "OccurrenceAOphthalmologicalServices1_precondition_37": {
+      "title": "Ophthalmological Services",
+      "description": "Encounter, Performed: Ophthalmological Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1285",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OPHTHALMOLOGICAL_SERVICES",
+      "source_data_criteria": "OccurrenceAOphthalmologicalServices1"
+    },
+    "OccurrenceACareServicesInLongTermResidentialFacility2_precondition_39": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_CARE_SERVICES_IN_LONG_TERM_RESIDENTIAL_FACILITY",
+      "source_data_criteria": "OccurrenceACareServicesInLongTermResidentialFacility2"
+    },
+    "OccurrenceANursingFacilityVisit3_precondition_41": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_NURSING_FACILITY_VISIT",
+      "source_data_criteria": "OccurrenceANursingFacilityVisit3"
+    },
+    "OccurrenceAOfficeVisit4_precondition_43": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit4"
+    },
+    "OccurrenceAOutpatientConsultation5_precondition_45": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation5"
+    },
+    "OccurrenceAFaceToFaceInteraction7_precondition_47": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction7"
+    },
+    "OccurrenceAMacularExam6_precondition_28": {
+      "title": "Macular Exam",
+      "description": "Diagnostic Study Result: Macular Exam",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_result",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1251",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study_result",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSTIC_STUDY_RESULT_MACULAR_EXAM",
+      "source_data_criteria": "OccurrenceAMacularExam6",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1283",
+        "title": "Level of Severity of Retinopathy Findings"
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "GROUP_DURING_CHILDREN_88"
+        }
+      ]
+    },
+    "GROUP_DURING_CHILDREN_88": {
+      "title": "GROUP_DURING_CHILDREN_88",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "OccurrenceAOphthalmologicalServices1_precondition_37",
+        "OccurrenceACareServicesInLongTermResidentialFacility2_precondition_39",
+        "OccurrenceANursingFacilityVisit3_precondition_41",
+        "OccurrenceAOfficeVisit4_precondition_43",
+        "OccurrenceAOutpatientConsultation5_precondition_45",
+        "OccurrenceAFaceToFaceInteraction7_precondition_47"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_DURING_CHILDREN_88"
+    },
+    "OccurrenceAMacularExam6_precondition_30": {
+      "title": "Macular Exam",
+      "description": "Diagnostic Study Result: Macular Exam",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_result",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1251",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study_result",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSTIC_STUDY_RESULT_MACULAR_EXAM",
+      "source_data_criteria": "OccurrenceAMacularExam6",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1284",
+        "title": "Macular Edema Findings Absent"
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "GROUP_DURING_CHILDREN_88"
+        }
+      ]
+    },
+    "OccurrenceAMacularExam6_precondition_32": {
+      "title": "Macular Exam",
+      "description": "Diagnostic Study Result: Macular Exam",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_result",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1251",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study_result",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSTIC_STUDY_RESULT_MACULAR_EXAM",
+      "source_data_criteria": "OccurrenceAMacularExam6",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1320",
+        "title": "Macular Edema Findings Present"
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "GROUP_DURING_CHILDREN_88"
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_52": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "18",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAOphthalmologicalServices1_precondition_54": {
+      "title": "Ophthalmological Services",
+      "description": "Encounter, Performed: Ophthalmological Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1285",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OPHTHALMOLOGICAL_SERVICES",
+      "source_data_criteria": "OccurrenceAOphthalmologicalServices1",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceACareServicesInLongTermResidentialFacility2_precondition_56": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_CARE_SERVICES_IN_LONG_TERM_RESIDENTIAL_FACILITY",
+      "source_data_criteria": "OccurrenceACareServicesInLongTermResidentialFacility2",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceANursingFacilityVisit3_precondition_58": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_NURSING_FACILITY_VISIT",
+      "source_data_criteria": "OccurrenceANursingFacilityVisit3",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit4_precondition_60": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit4",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAOutpatientConsultation5_precondition_62": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation5",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAFaceToFaceInteraction7_precondition_64": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction7",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "DiagnosisActiveDiabeticRetinopathy_precondition_67": {
+      "title": "Diabetic Retinopathy",
+      "description": "Diagnosis, Active: Diabetic Retinopathy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.327",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveDiabeticRetinopathy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_90"
+        }
+      ]
+    },
+    "GROUP_SBE_CHILDREN_90": {
+      "title": "GROUP_SBE_CHILDREN_90",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "OccurrenceAOphthalmologicalServices1_precondition_54",
+        "OccurrenceACareServicesInLongTermResidentialFacility2_precondition_56",
+        "OccurrenceANursingFacilityVisit3_precondition_58",
+        "OccurrenceAOfficeVisit4_precondition_60",
+        "OccurrenceAOutpatientConsultation5_precondition_62",
+        "OccurrenceAFaceToFaceInteraction7_precondition_64"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_SBE_CHILDREN_90"
+    },
+    "EncounterPerformedOphthalmologicalServices_precondition_69": {
+      "title": "Ophthalmological Services",
+      "description": "Encounter, Performed: Ophthalmological Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1285",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOphthalmologicalServices",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedCareServicesInLongTermResidentialFacility_precondition_71": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedCareServicesInLongTermResidentialFacility",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedNursingFacilityVisit_precondition_73": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedNursingFacilityVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedOfficeVisit_precondition_75": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedOutpatientConsultation_precondition_77": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOutpatientConsultation",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPatientProviderInteraction_precondition_79": {
+      "title": "Patient Provider Interaction",
+      "description": "Encounter, Performed: Patient Provider Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPatientProviderInteraction",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "GROUP_COUNT_92": {
+      "title": "GROUP_COUNT_92",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "EncounterPerformedOphthalmologicalServices_precondition_69",
+        "EncounterPerformedCareServicesInLongTermResidentialFacility_precondition_71",
+        "EncounterPerformedNursingFacilityVisit_precondition_73",
+        "EncounterPerformedOfficeVisit_precondition_75",
+        "EncounterPerformedOutpatientConsultation_precondition_77",
+        "EncounterPerformedPatientProviderInteraction_precondition_79"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_COUNT_92",
+      "subset_operators": [
+        {
+          "type": "COUNT",
+          "value": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "value": "2",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "EncounterPerformedOphthalmologicalServices": {
+      "title": "Ophthalmological Services",
+      "description": "Encounter, Performed: Ophthalmological Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1285",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOphthalmologicalServices"
+    },
+    "EncounterPerformedCareServicesInLongTermResidentialFacility": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedCareServicesInLongTermResidentialFacility"
+    },
+    "EncounterPerformedNursingFacilityVisit": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedNursingFacilityVisit"
+    },
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedOutpatientConsultation": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOutpatientConsultation"
+    },
+    "EncounterPerformedPatientProviderInteraction": {
+      "title": "Patient Provider Interaction",
+      "description": "Encounter, Performed: Patient Provider Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPatientProviderInteraction"
+    },
+    "DiagnosisActiveDiabeticRetinopathy": {
+      "title": "Diabetic Retinopathy",
+      "description": "Diagnosis, Active: Diabetic Retinopathy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.327",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveDiabeticRetinopathy"
+    },
+    "DiagnosticStudyPerformedMacularExam": {
+      "title": "Macular Exam",
+      "description": "Diagnostic Study, Performed: Macular Exam",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1251",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosticStudyPerformedMacularExam"
+    },
+    "DiagnosticStudyResultMacularExam": {
+      "title": "Macular Exam",
+      "description": "Diagnostic Study, Result: Macular Exam",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_result",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1251",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosticStudyResultMacularExam"
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "DiagnosticStudyPerformedNotDoneMedicalReason": {
+      "title": "Medical Reason",
+      "description": "Diagnostic Study, Performed not done: Medical Reason",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "source_data_criteria": "DiagnosticStudyPerformedNotDoneMedicalReason"
+    },
+    "DiagnosticStudyPerformedNotDonePatientReason": {
+      "title": "Patient Reason",
+      "description": "Diagnostic Study, Performed not done: Patient Reason",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1008",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study",
+      "status": "performed",
+      "hard_status": false,
+      "negation": true,
+      "source_data_criteria": "DiagnosticStudyPerformedNotDonePatientReason"
+    },
+    "OccurrenceAOphthalmologicalServices1": {
+      "title": "Ophthalmological Services",
+      "description": "Encounter, Performed: Ophthalmological Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1285",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OPHTHALMOLOGICAL_SERVICES",
+      "source_data_criteria": "OccurrenceAOphthalmologicalServices1"
+    },
+    "OccurrenceACareServicesInLongTermResidentialFacility2": {
+      "title": "Care Services in Long-Term Residential Facility",
+      "description": "Encounter, Performed: Care Services in Long-Term Residential Facility",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_CARE_SERVICES_IN_LONG_TERM_RESIDENTIAL_FACILITY",
+      "source_data_criteria": "OccurrenceACareServicesInLongTermResidentialFacility2"
+    },
+    "OccurrenceANursingFacilityVisit3": {
+      "title": "Nursing Facility Visit",
+      "description": "Encounter, Performed: Nursing Facility Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_NURSING_FACILITY_VISIT",
+      "source_data_criteria": "OccurrenceANursingFacilityVisit3"
+    },
+    "OccurrenceAOfficeVisit4": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit4"
+    },
+    "OccurrenceAOutpatientConsultation5": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation5"
+    },
+    "OccurrenceAMacularExam6": {
+      "title": "Macular Exam",
+      "description": "Diagnostic Study Result: Macular Exam",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_result",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1251",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study_result",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSTIC_STUDY_RESULT_MACULAR_EXAM",
+      "source_data_criteria": "OccurrenceAMacularExam6"
+    },
+    "OccurrenceAFaceToFaceInteraction7": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction7"
+    }
+  },
+  "attributes": [
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "Copyright 2012 American Medical Association and National Committee for Quality Assurance. All Rights Reserved.",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "Several level 1 RCT studies demonstrate the ability of timely treatment to reduce the rate and severity of vision loss from diabetes (Diabetic Retinopathy Study – DRS, Early Treatment Diabetic Retinopathy Study – ETDRS). Necessary examination prerequisites to applying the study results are that the presence and severity of both peripheral diabetic retinopathy and macular edema be accurately documented. In the RAND chronic disease quality project, while administrative data indicated that roughly half of the patients had an eye exam in the recommended time period, chart review data indicated that only 19% had documented evidence of a dilated examination (McGlynn, 2003). Thus, ensuring timely treatment that could prevent 95% of the blindness due to diabetes requires the performance and documentation of key examination parameters. The documented level of severity of retinopathy and the documented presence or absence of macular edema assists with the on-going plan of care for the patient with diabetic retinopathy.",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "Since treatment is effective in reducing the risk of visual loss, detailed examination is indicated to assess for the following features that often lead to visual impairment: presence of macular edema, optic nerve neovascularization and/or neovascularization elsewhere, signs of severe NPDR and vitreous or preretinal hemorrhage (Level A:III Recommendation) (AAO, 2003).",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "Higher score indicates better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "0088",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "Physician Performance Measures (Measures) and related data specifications have been developed by the American Medical Association (AMA) - convened Physician Consortium for Performance Improvement(R) (the PCPI[TM]) and the National Committee for Quality Assurance (NCQA). These Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The Measures, while copyrighted, can be reproduced and distributed, without modification, for noncommercial purposes, e.g., use by health care providers in connection with their practices. Commercial use is defined as the sale, license, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial uses of the Measures require a license agreement between the user and the AMA, (on behalf of the PCPI) or NCQA. Neither the AMA, NCQA, PCPI nor its members shall be responsible for any use of the Measures. \r\n\r\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND. \r\n\r\nLimited proprietary coding is contained in the Measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. The AMA, NCQA, the PCPI and its members disclaim all liability for use or accuracy of any Current Procedural Terminology (CPT[R]) or other coding contained in the specifications. \r\n\r\nCPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC(R) copyright 2004-2011 Regenstrief Institute, Inc. \r\nThis material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 copyright 2011 World Health Organization. All Rights Reserved.\r\n\r\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "167",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "McGlynn EA, Asch SM, Adams J, Keesey J, Hicks J, DeCristofaro A, Kerr EA. The quality of health care delivered to adults in the United States. N Engl J Med 2003 Jun 26;348(26):2635-45.",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "Documentation – The medical record must include: documentation of the level of severity of retinopathy (e.g., background diabetic retinopathy, proliferative diabetic retinopathy, non-proliferative diabetic retinopathy) AND documentation of whether macular edema was present or absent \r\nMacular Edema – Acceptable synonyms for macular edema include: intraretinal thickening, serous detachment of the retina, or pigment epithelial detachment \r\nSeverity of Retinopathy – mild nonproliferative, preproliferative, very severe nonproliferative",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "None",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "All patients aged 18 years and older with a diagnosis of diabetic retinopathy",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals Initial Patient Population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "None",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Patients who had a dilated macular or fundus exam performed which included documentation of the level of severity of retinopathy AND the presence or absence of macular edema during one or more office visits within 12 months",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "Documentation of medical reason(s) for not performing a dilated macular or fundus examination\r\nDocumentation of patient reason(s) for not performing a dilated macular or fundus examination",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not Applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "IPP": "IPP",
+      "DENOM": "DENOM",
+      "NUMER": "NUMER",
+      "DENEXCEP": "DENEXCEP"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

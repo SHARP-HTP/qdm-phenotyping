@@ -1,0 +1,558 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:n1="urn:hl7-org:v3">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Diabetes: Urine Protein Screening</title><style type="text/css">
+body {
+	color: rgb(26, 26, 26);
+	background-color: rgb(255,255,255);
+	font-family: Verdana, Tahoma, sans-serif;
+	font-size: 11px;
+}
+
+a {
+	color: rgb(0, 0, 255);
+	background-color: rgb(255,255,255);
+}
+
+h1 {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+div {
+	width: 80%;
+}
+
+table {
+	line-height: 10pt;
+	width: 80%;
+}
+
+tr {
+	background-color: rgb(224,224,224);
+}
+
+td {
+	padding: 0.1cm 0.2cm;
+	vertical-align: top;
+}
+
+.h1center {
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+	width: 80%;
+}
+
+.header_table{
+	border: 1pt inset rgb(0,0,0);
+}
+
+.narr_table {
+	width: 100%;
+}
+
+.narr_tr {
+	background-color: rgb(225,225,225);
+}
+pre {
+ overflow: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+ white-space: pre-wrap; /* css-3 */
+ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+ white-space: -pre-wrap; /* Opera 4-6 */
+ white-space: -o-pre-wrap; /* Opera 7 */
+ word-wrap: break-word; /* Internet Explorer 5.5+ */
+ font-family: Verdana, Tahoma, sans-serif;
+ font-size: 11px;
+ text-align:left;
+ margin: 0px 0px 0px 0px;
+ padding:0px 0px 0px 0px;
+}
+.narr_th {
+	background-color: rgb(201,201,201);
+}
+
+.td_label{
+	font-weight: bold;
+	color: white;
+}
+	</style></head>
+   <body>
+      <table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Title</span></td>
+               <td width="80%" colspan="3">Diabetes: Urine Protein Screening</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Identifier<br>(Measure Authoring Tool)</span></td>
+               <td width="30%">134</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Version number</span></td>
+               <td width="30%">1</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">NQF Number</span></td>
+               <td width="30%">0062</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">GUID</span></td>
+               <td> 7b2a9277-43da-4d99-9bee-6ac271a07747</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measurement Period</span></td>
+               <td width="80%" colspan="3">January 1, 20xx  through December 31, 20xx </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Steward</span></td>
+               <td width="80%" colspan="3">National Committee for Quality Assurance</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Developer</span></td>
+               <td width="80%" colspan="3">National Committee for Quality Assurance</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Endorsed By</span></td>
+               <td width="80%" colspan="3">National Quality Forum</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Description</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>The percentage of patients 18-75 years of age with diabetes who had a nephropathy screening test or evidence of nephropathy during the measurement period.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Copyright</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Physician Performance Measure (Measures) and related data specifications were developed by the National Committee for Quality Assurance (NCQA). 
+
+The Measures are copyrighted but can be reproduced and distributed, without modification, for noncommercial purposes (e.g., use by healthcare providers in connection with their practices). Commercial use is defined as the sale, licensing, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial use of the Measures requires a license agreement between the user and NCQA. NCQA is not responsible for any use of the Measures. 
+
+Copyright 2012 National Committee for Quality Assurance. All Rights Reserved. 
+
+Limited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets. NCQA disclaims all liability for use or accuracy of any CPT or other codes contained in the specifications.
+
+CPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC(R) copyright 2004-2011 Regenstrief Institute, Inc. 
+This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 copyright 2011 World Health Organization. All Rights Reserved.
+
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Disclaimer</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>These performance Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.
+
+THE MEASURES AND SPECIFICATIONS ARE PROVIDED &#8220;AS IS&#8221; WITHOUT WARRANTY OF ANY KIND.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Scoring</span></td>
+               <td width="80%" colspan="3">Proportion</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Type</span></td>
+               <td width="80%" colspan="3">Process</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Stratification</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Risk Adjustment</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rate Aggregation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rationale</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Diabetes mellitus (diabetes) is a group of diseases characterized by high blood glucose levels caused by the body's inability to correctly produce or utilize the hormone insulin (National Institute of Diabetes and Digestive and Kidney Diseases 2011). It is recognized as a leading cause of death and disability in the U.S. and is highly underreported as a cause of death (National Institute of Diabetes and Digestive and Kidney Diseases 2011). Diabetes may cause life-threatening, life-ending or life-altering complications, including end-stage kidney disease. Diabetes is the primary cause of kidney failure, accounting for 44 percent of newly diagnosed cases in 2005 (National Institute of Diabetes and Digestive and Kidney Diseases 2011). Clinical guidelines recommend regular testing to evaluate urine albumin excretions and serum creatinine and the estimated glomerular filtration rate derived from serum creatinine, in addition to comparing measurements when screening for chronic kidney disease (American Diabetes Association 2009; American Association of Clinical Endocrinologists 2007).</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Clinical Recommendation Statement</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>American Diabetes Association (2009):
+- Perform an annual test to assess urine albumin excretion in type 1 diabetic patients with diabetes duration of &gt;=5 years and in all type 2 diabetic patients, starting at diagnosis. (Level of Evidence E)
+- Measure serum creatinine at least annually in all adults with diabetes regardless of the degree of urine albumin excretion. The serum creatinine should be used to estimate GFR and stage the level of chronic kidney disease (CKD), if present. (Level of Evidence E)
+- In the treatment of the nonpregnant patient with micro- or macroalbuminuria, either ACE inhibitors or ARBs should be used. (Level of Evidence A)
+
+American Association of Clinical Endocrinologists (2007): Screen all patients with diabetes mellitus for chronic kidney disease annually; screening should begin 5 years after diagnosis in patients with Type 1 diabetes mellitus (T1DM) and at the time of diagnosis in patients with Type 2 diabetes mellitus (T2DM). Testing includes:
+- Measurement of albumin-to-creatinine ratio in a spot urine specimen and measurement of the estimated glomerular filtration rate derived from serum creatinine
+- The following are diagnostic criteria for chronic kidney disease:
+. Estimated glomerular filtration rate &lt;60 mL/min/1.73 m2 or albumin-to-creatinine ratio &gt;=30 mg albumin/g creatinine
+. Microalbuminuria &gt;=30 mg albumin/g creatinine
+. Macroalbuminuria &gt;=300 mg albumin/g creatinine (Grade A)
+. Prescribe an angiotensin-converting enzyme inhibitor or an angiotensin receptor blocker in the antihypertensive regimen in the absence of contraindications. (Grade A)
+
+California Healthcare Foundation/American Geriatrics Society (2003): A test for the presence of microalbumin should be performed at diagnosis in patients with type 2 diabetes mellitus. After the initial screening and in the absence of previously demonstrated macro- or microalbuminuria, a test for the presence of microalbumin should be performed annually. (Level III, Grade A)</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Improvement Notation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Higher score indicates better quality</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>American Association of Clinical Endocrinologists. 2007. "Medical Guidelines for Clinical Practice for the Management of Diabetes Mellitus." Endocr Pract 13(Suppl 1):4-68.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>American Diabetes Association. 2009. "Standards of Medical Care in Diabetes-2009." Diabetes Care 2009 32 (Suppl 1):S6-S12.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>California Healthcare Foundation/American Geriatrics Society Panel on Improving Care of Elders with Diabetes. 2003. "Guidelines for Improving the Care of the Older Person with Diabetes Mellitus." J Am Geriatr Soc 51:S265-S280. http://ww.americangeriatrics.org/education/diabetes_executive_summary.shtml</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>National Institute of Diabetes and Digestive and Kidney Diseases. 2011. "Causes of Diabetes." (September) 
+http://diabetes.niddk.nih.gov/dm/pubs/causes/index.aspx</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Definition</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Guidance</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Only patients with a diagnosis of Type 1 or Type 2 diabetes should be included in the denominator of this measure; patients with a diagnosis of secondary diabetes due to another condition should not be included.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Transmission Format</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>TBD</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Initial Patient Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients 18-75 years of age with diabetes with a visit during the measurement period</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Equals Initial Patient Population</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients with a diagnosis of gestational diabetes during the measurement period</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients with a screening for nephropathy or evidence of nephropathy during the measurement period</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exceptions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Observations</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Supplemental Data Elements</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</pre></div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="toc">Table of Contents</a></h2>
+      <ul>
+         <li><a href="#d6544980e497">Population criteria</a></li>
+         <li><a href="#d6544980e2011">Data criteria (QDM Data Elements)</a></li>
+         <li><a href="#d6544980e2936">Reporting Stratification</a></li>
+         <li><a href="#d6544980e2957">Supplemental Data Elements</a></li>
+      </ul>
+      <hr align="left" color="teal" size="2" width="80%">
+      <h3><a name="d6544980e497" href="#toc">Population criteria</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               <b>Initial Patient Population =</b>
+               
+               <ul>
+                  <li>AND: "Diagnosis, Active: Diabetes" starts before or during "Measurement Period"</li>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 18 year(s) starts before start of "Measurement Period"</li>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &lt;= 75 year(s) starts before start of "Measurement Period"</li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Encounter, Performed: Office Visit"</li>
+                        <li>OR: "Encounter, Performed: Face-to-Face Interaction"</li>
+                        <li>OR: "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up"</li>
+                        <li>OR: "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up"</li>
+                        <li>OR: "Encounter, Performed: Home Healthcare Services"</li>
+                        <li>OR: "Encounter, Performed: Annual Wellness Visit"</li>
+                        <li> during "Measurement Period"</li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator =</b>
+               
+               <ul>
+                  <li>AND: "Initial Patient Population"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exclusions =</b>
+               
+               <ul>
+                  <li>AND NOT: "Occurrence A of Diagnosis, Active: Gestational Diabetes" ends before start of "Measurement Period"</li>
+                  <li>AND: "Occurrence A of Diagnosis, Active: Gestational Diabetes" starts before or during "Measurement Period"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Numerator =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>AND NOT: "Occurrence A of Medication, Active: ACE inhibitor or ARB" ends before start of "Measurement Period"</li>
+                              <li>AND: "Occurrence A of Medication, Active: ACE inhibitor or ARB" starts before or during "Measurement Period"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND NOT: "Occurrence A of Diagnosis, Active: Hypertensive Chronic Kidney Disease" ends before start of "Measurement Period"</li>
+                              <li>AND: "Occurrence A of Diagnosis, Active: Hypertensive Chronic Kidney Disease" starts before or during "Measurement Period"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND NOT: "Occurrence A of Diagnosis, Active: Glomerulonephritis and Nephrotic Syndrome" ends before start of "Measurement
+                                 Period"
+                              </li>
+                              <li>AND: "Occurrence A of Diagnosis, Active: Glomerulonephritis and Nephrotic Syndrome" starts before or during "Measurement Period"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND NOT: "Occurrence A of Diagnosis, Active: Diabetic Nephropathy" ends before start of "Measurement Period"</li>
+                              <li>AND: "Occurrence A of Diagnosis, Active: Diabetic Nephropathy" starts before or during "Measurement Period"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND NOT: "Occurrence A of Diagnosis, Active: Proteinuria" ends before start of "Measurement Period"</li>
+                              <li>AND: "Occurrence A of Diagnosis, Active: Proteinuria" starts before or during "Measurement Period"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Procedure, Performed: Kidney Transplant"</li>
+                              <li>OR: "Procedure, Performed: Vascular Access for Dialysis"</li>
+                              <li>OR: "Procedure, Performed: Dialysis Services"</li>
+                              <li>OR: "Intervention, Performed: Other Services Related to Dialysis"</li>
+                              <li>OR: "Intervention, Performed: Dialysis Education"</li>
+                              <li>OR: "Encounter, Performed: ESRD Monthly Outpatient Services"</li>
+                              <li>OR: "Laboratory Test, Result: Microalbumin Test (result)"</li>
+                              <li>OR: "Laboratory Test, Result: Macroalbumin Test (result: 'Positive Finding')"</li>
+                              <li> during "Measurement Period"</li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exceptions =</b>
+               
+               <ul>
+                  <li>None</li>
+               </ul>
+               
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d6544980e2011" href="#toc">Data criteria (QDM Data Elements)</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Diagnosis, Active: Diabetes" using "Diabetes Grouping Value Set (2.16.840.1.113883.3.464.1003.103.12.1001)"
+            </li>
+            <li>
+               "Diagnosis, Active: Diabetic Nephropathy" using "Diabetic Nephropathy Grouping Value Set (2.16.840.1.113883.3.464.1003.109.12.1004)"
+            </li>
+            <li>
+               "Diagnosis, Active: Gestational Diabetes" using "Gestational Diabetes Grouping Value Set (2.16.840.1.113883.3.464.1003.103.12.1010)"
+            </li>
+            <li>
+               "Diagnosis, Active: Glomerulonephritis and Nephrotic Syndrome" using "Glomerulonephritis and Nephrotic Syndrome Grouping Value Set (2.16.840.1.113883.3.464.1003.109.12.1018)"
+            </li>
+            <li>
+               "Diagnosis, Active: Hypertensive Chronic Kidney Disease" using "Hypertensive Chronic Kidney Disease Grouping Value Set (2.16.840.1.113883.3.464.1003.109.12.1017)"
+            </li>
+            <li>
+               "Diagnosis, Active: Proteinuria" using "Proteinuria Grouping Value Set (2.16.840.1.113883.3.526.3.1003)"
+            </li>
+            <li>
+               "Encounter, Performed: Annual Wellness Visit" using "Annual Wellness Visit Grouping Value Set (2.16.840.1.113883.3.526.3.1240)"
+            </li>
+            <li>
+               "Encounter, Performed: ESRD Monthly Outpatient Services" using "ESRD Monthly Outpatient Services Grouping Value Set (2.16.840.1.113883.3.464.1003.109.12.1014)"
+            </li>
+            <li>
+               "Encounter, Performed: Face-to-Face Interaction" using "Face-to-Face Interaction Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1048)"
+            </li>
+            <li>
+               "Encounter, Performed: Home Healthcare Services" using "Home Healthcare Services Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1016)"
+            </li>
+            <li>
+               "Encounter, Performed: Office Visit" using "Office Visit Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1001)"
+            </li>
+            <li>
+               "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up" using "Preventive Care Services - Established Office Visit, 18 and Up Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1025)"
+            </li>
+            <li>
+               "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up" using "Preventive Care Services-Initial Office Visit, 18 and Up Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1023)"
+            </li>
+            <li>
+               "Intervention, Performed: Dialysis Education" using "Dialysis Education Grouping Value Set (2.16.840.1.113883.3.464.1003.109.12.1016)"
+            </li>
+            <li>
+               "Intervention, Performed: Other Services Related to Dialysis" using "Other Services Related to Dialysis Grouping Value Set (2.16.840.1.113883.3.464.1003.109.12.1015)"
+            </li>
+            <li>
+               "Laboratory Test, Result: Macroalbumin Test" using "Macroalbumin Test Grouping Value Set (2.16.840.1.113883.3.464.1003.109.12.1019)"
+            </li>
+            <li>
+               "Laboratory Test, Result: Microalbumin Test" using "Microalbumin Test Grouping Value Set (2.16.840.1.113883.3.464.1003.109.12.1005)"
+            </li>
+            <li>
+               "Medication, Active: ACE inhibitor or ARB" using "ACE inhibitor or ARB Grouping Value Set (2.16.840.1.113883.3.526.3.1139)"
+            </li>
+            <li>
+               "Patient Characteristic Birthdate: birth date" using "birth date LOINC Value Set (2.16.840.1.113883.3.560.100.4)"
+            </li>
+            <li>
+               "Procedure, Performed: Dialysis Services" using "Dialysis Services Grouping Value Set (2.16.840.1.113883.3.464.1003.109.12.1013)"
+            </li>
+            <li>
+               "Procedure, Performed: Kidney Transplant" using "Kidney Transplant Grouping Value Set (2.16.840.1.113883.3.464.1003.109.12.1012)"
+            </li>
+            <li>
+               "Procedure, Performed: Vascular Access for Dialysis" using "Vascular Access for Dialysis Grouping Value Set (2.16.840.1.113883.3.464.1003.109.12.1011)"
+            </li>
+            <li>
+               Attribute: "Result: Positive Finding" using "Positive Finding Grouping Value Set  (2.16.840.1.113883.3.464.1003.121.12.1016)"
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d6544980e2936" href="#toc">Reporting Stratification</a></h3>
+      <div>
+         
+         <ul>
+            <li>None</li>
+         </ul>
+         
+      </div>
+      <h3><a name="d6544980e2957" href="#toc">Supplemental Data Elements</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Patient Characteristic Ethnicity: Ethnicity" using "Ethnicity CDC Value Set (2.16.840.1.114222.4.11.837)"
+            </li>
+            <li>
+               "Patient Characteristic Payer: Payer" using "Payer Source of Payment Typology Value Set (2.16.840.1.114222.4.11.3591)"
+            </li>
+            <li>
+               "Patient Characteristic Race: Race" using "Race CDC Value Set (2.16.840.1.114222.4.11.836)"
+            </li>
+            <li>
+               "Patient Characteristic Sex: ONC Administrative Sex" using "ONC Administrative Sex Administrative Sex Value Set (2.16.840.1.113762.1.4.1)"
+            </li>
+         </ul>
+         
+      </div><br><hr align="left" color="teal" size="2" width="80%"><br><table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Set</span></td>
+               <td colspan="3" width="80%">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto;word-wrap:break-word">None</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

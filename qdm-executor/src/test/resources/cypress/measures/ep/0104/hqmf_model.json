@@ -1,0 +1,1576 @@
+{
+  "id": "0104",
+  "hqmf_id": "8A4D92B2-397A-48D2-0139-A1E9806F0EF4",
+  "hqmf_set_id": "60176FBF-BFDC-4892-9C9E-604F206553C8",
+  "hqmf_version_number": 1,
+  "title": "Major Depressive Disorder (MDD): Suicide Risk Assessment",
+  "description": "Percentage of patients aged 18 years and older with a new diagnosis or recurrent episode of MDD who had a suicide risk assessment completed at each visit during the measurement period.",
+  "cms_id": "CMS161v1",
+  "population_criteria": {
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "23EDD625-811C-4AD8-9299-BC2D5CB75AB1",
+      "preconditions": [
+        {
+          "id": 29,
+          "preconditions": [
+            {
+              "id": 27,
+              "reference": "InterventionPerformedSuicideRiskAssessment_precondition_27"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "DEF813F8-E5DF-493E-800F-73FED1604F06"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "A93F6A91-FD65-40CB-B9BA-07240F19EBB2",
+      "preconditions": [
+        {
+          "id": 109,
+          "preconditions": [
+            {
+              "id": 30,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_30"
+            },
+            {
+              "id": 49,
+              "reference": "GROUP_COUNT_113",
+              "conjunction_code": "allTrue"
+            },
+            {
+              "id": 107,
+              "preconditions": [
+                {
+                  "id": 56,
+                  "preconditions": [
+                    {
+                      "id": 53,
+                      "reference": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_53"
+                    },
+                    {
+                      "id": 55,
+                      "preconditions": [
+                        {
+                          "id": 51,
+                          "reference": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_51"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 63,
+                  "preconditions": [
+                    {
+                      "id": 60,
+                      "reference": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_60"
+                    },
+                    {
+                      "id": 62,
+                      "preconditions": [
+                        {
+                          "id": 58,
+                          "reference": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_58"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 70,
+                  "preconditions": [
+                    {
+                      "id": 67,
+                      "reference": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_67"
+                    },
+                    {
+                      "id": 69,
+                      "preconditions": [
+                        {
+                          "id": 65,
+                          "reference": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_65"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 77,
+                  "preconditions": [
+                    {
+                      "id": 74,
+                      "reference": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_74"
+                    },
+                    {
+                      "id": 76,
+                      "preconditions": [
+                        {
+                          "id": 72,
+                          "reference": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_72"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 84,
+                  "preconditions": [
+                    {
+                      "id": 81,
+                      "reference": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_81"
+                    },
+                    {
+                      "id": 83,
+                      "preconditions": [
+                        {
+                          "id": 79,
+                          "reference": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_79"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 91,
+                  "preconditions": [
+                    {
+                      "id": 88,
+                      "reference": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_88"
+                    },
+                    {
+                      "id": 90,
+                      "preconditions": [
+                        {
+                          "id": 86,
+                          "reference": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_86"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 98,
+                  "preconditions": [
+                    {
+                      "id": 95,
+                      "reference": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_95"
+                    },
+                    {
+                      "id": 97,
+                      "preconditions": [
+                        {
+                          "id": 93,
+                          "reference": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_93"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 105,
+                  "preconditions": [
+                    {
+                      "id": 102,
+                      "reference": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_102"
+                    },
+                    {
+                      "id": 104,
+                      "preconditions": [
+                        {
+                          "id": 100,
+                          "reference": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_100"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "DiagnosisActiveMajorDepressiveDisorderNewOrRecurrent": {
+      "title": "Major Depressive Disorder New or Recurrent",
+      "description": "Diagnosis, Active: Major Depressive Disorder New or Recurrent",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.558",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveMajorDepressiveDisorderNewOrRecurrent"
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "OccurrenceAPsychVisitDiagnosticOrEvaluativeInterview1": {
+      "title": "Psych Visit - Diagnostic or Evaluative Interview",
+      "description": "Encounter, Performed: Psych Visit - Diagnostic or Evaluative Interview",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1013",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_DIAGNOSTIC_OR_EVALUATIVE_INTERVIEW",
+      "source_data_criteria": "OccurrenceAPsychVisitDiagnosticOrEvaluativeInterview1"
+    },
+    "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2": {
+      "title": "Psych Visit - Individual Outpatient Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_INDIVIDUAL_OUTPATIENT_PSYCHOTHERAPY",
+      "source_data_criteria": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2"
+    },
+    "OccurrenceAPsychVisitIndividualOutpatientInteractivePsychotherapy3": {
+      "title": "Psych Visit - Individual Outpatient Interactive Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Interactive Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1015",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_INDIVIDUAL_OUTPATIENT_INTERACTIVE_PSYCHOTHERAPY",
+      "source_data_criteria": "OccurrenceAPsychVisitIndividualOutpatientInteractivePsychotherapy3"
+    },
+    "OccurrenceAPsychVisitMedicationManagement4": {
+      "title": "Psych Visit - Medication Management",
+      "description": "Encounter, Performed: Psych Visit - Medication Management",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1019",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_MEDICATION_MANAGEMENT",
+      "source_data_criteria": "OccurrenceAPsychVisitMedicationManagement4"
+    },
+    "OccurrenceAOfficeVisit5": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit5"
+    },
+    "OccurrenceAOutpatientConsultation6": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation6"
+    },
+    "OccurrenceAPsychoanalysis7": {
+      "title": "Psychoanalysis",
+      "description": "Encounter, Performed: Psychoanalysis",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1141",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCHOANALYSIS",
+      "source_data_criteria": "OccurrenceAPsychoanalysis7"
+    },
+    "OccurrenceAFaceToFaceInteraction8": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction8"
+    },
+    "OccurrenceAPsychVisitDiagnosticOrEvaluativeInterview1_precondition_10": {
+      "title": "Psych Visit - Diagnostic or Evaluative Interview",
+      "description": "Encounter, Performed: Psych Visit - Diagnostic or Evaluative Interview",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1013",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_DIAGNOSTIC_OR_EVALUATIVE_INTERVIEW",
+      "source_data_criteria": "OccurrenceAPsychVisitDiagnosticOrEvaluativeInterview1"
+    },
+    "OccurrenceAPsychVisitIndividualOutpatientInteractivePsychotherapy3_precondition_12": {
+      "title": "Psych Visit - Individual Outpatient Interactive Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Interactive Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1015",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_INDIVIDUAL_OUTPATIENT_INTERACTIVE_PSYCHOTHERAPY",
+      "source_data_criteria": "OccurrenceAPsychVisitIndividualOutpatientInteractivePsychotherapy3"
+    },
+    "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2_precondition_14": {
+      "title": "Psych Visit - Individual Outpatient Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_INDIVIDUAL_OUTPATIENT_PSYCHOTHERAPY",
+      "source_data_criteria": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2"
+    },
+    "OccurrenceAPsychVisitMedicationManagement4_precondition_16": {
+      "title": "Psych Visit - Medication Management",
+      "description": "Encounter, Performed: Psych Visit - Medication Management",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1019",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_MEDICATION_MANAGEMENT",
+      "source_data_criteria": "OccurrenceAPsychVisitMedicationManagement4"
+    },
+    "OccurrenceAOfficeVisit5_precondition_18": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit5"
+    },
+    "OccurrenceAOutpatientConsultation6_precondition_20": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation6"
+    },
+    "OccurrenceAPsychoanalysis7_precondition_22": {
+      "title": "Psychoanalysis",
+      "description": "Encounter, Performed: Psychoanalysis",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1141",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCHOANALYSIS",
+      "source_data_criteria": "OccurrenceAPsychoanalysis7"
+    },
+    "OccurrenceAFaceToFaceInteraction8_precondition_24": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction8"
+    },
+    "InterventionPerformedSuicideRiskAssessment_precondition_27": {
+      "title": "Suicide Risk Assessment",
+      "description": "Intervention, Performed: Suicide Risk Assessment",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1484",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionPerformedSuicideRiskAssessment",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "GROUP_DURING_CHILDREN_111"
+        }
+      ]
+    },
+    "GROUP_DURING_CHILDREN_111": {
+      "title": "GROUP_DURING_CHILDREN_111",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "OccurrenceAPsychVisitDiagnosticOrEvaluativeInterview1_precondition_10",
+        "OccurrenceAPsychVisitIndividualOutpatientInteractivePsychotherapy3_precondition_12",
+        "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2_precondition_14",
+        "OccurrenceAPsychVisitMedicationManagement4_precondition_16",
+        "OccurrenceAOfficeVisit5_precondition_18",
+        "OccurrenceAOutpatientConsultation6_precondition_20",
+        "OccurrenceAPsychoanalysis7_precondition_22",
+        "OccurrenceAFaceToFaceInteraction8_precondition_24"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_DURING_CHILDREN_111"
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_30": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "18",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedPsychVisitDiagnosticOrEvaluativeInterview_precondition_32": {
+      "title": "Psych Visit - Diagnostic or Evaluative Interview",
+      "description": "Encounter, Performed: Psych Visit - Diagnostic or Evaluative Interview",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1013",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychVisitDiagnosticOrEvaluativeInterview",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPsychVisitIndividualOutpatientInteractivePsychotherapy_precondition_34": {
+      "title": "Psych Visit - Individual Outpatient Interactive Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Interactive Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1015",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychVisitIndividualOutpatientInteractivePsychotherapy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy_precondition_36": {
+      "title": "Psych Visit - Individual Outpatient Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPsychVisitMedicationManagement_precondition_38": {
+      "title": "Psych Visit - Medication Management",
+      "description": "Encounter, Performed: Psych Visit - Medication Management",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1019",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychVisitMedicationManagement",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedOfficeVisit_precondition_40": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedOutpatientConsultation_precondition_42": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOutpatientConsultation",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPsychoanalysis_precondition_44": {
+      "title": "Psychoanalysis",
+      "description": "Encounter, Performed: Psychoanalysis",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1141",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychoanalysis",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPatientProviderInteraction_precondition_46": {
+      "title": "Patient Provider Interaction",
+      "description": "Encounter, Performed: Patient Provider Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPatientProviderInteraction",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "GROUP_COUNT_113": {
+      "title": "GROUP_COUNT_113",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "EncounterPerformedPsychVisitDiagnosticOrEvaluativeInterview_precondition_32",
+        "EncounterPerformedPsychVisitIndividualOutpatientInteractivePsychotherapy_precondition_34",
+        "EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy_precondition_36",
+        "EncounterPerformedPsychVisitMedicationManagement_precondition_38",
+        "EncounterPerformedOfficeVisit_precondition_40",
+        "EncounterPerformedOutpatientConsultation_precondition_42",
+        "EncounterPerformedPsychoanalysis_precondition_44",
+        "EncounterPerformedPatientProviderInteraction_precondition_46"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_COUNT_113",
+      "subset_operators": [
+        {
+          "type": "COUNT",
+          "value": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "value": "2",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_53": {
+      "title": "Major Depressive Disorder New or Recurrent",
+      "description": "Diagnosis, Active: Major Depressive Disorder New or Recurrent",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.558",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSIVE_DISORDER_NEW_OR_RECURRENT",
+      "source_data_criteria": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAPsychVisitDiagnosticOrEvaluativeInterview1"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_51": {
+      "title": "Major Depressive Disorder New or Recurrent",
+      "description": "Diagnosis, Active: Major Depressive Disorder New or Recurrent",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.558",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSIVE_DISORDER_NEW_OR_RECURRENT",
+      "source_data_criteria": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAPsychVisitDiagnosticOrEvaluativeInterview1"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_60": {
+      "title": "Major Depressive Disorder New or Recurrent",
+      "description": "Diagnosis, Active: Major Depressive Disorder New or Recurrent",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.558",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSIVE_DISORDER_NEW_OR_RECURRENT",
+      "source_data_criteria": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAFaceToFaceInteraction8"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_58": {
+      "title": "Major Depressive Disorder New or Recurrent",
+      "description": "Diagnosis, Active: Major Depressive Disorder New or Recurrent",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.558",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSIVE_DISORDER_NEW_OR_RECURRENT",
+      "source_data_criteria": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAFaceToFaceInteraction8"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_67": {
+      "title": "Major Depressive Disorder New or Recurrent",
+      "description": "Diagnosis, Active: Major Depressive Disorder New or Recurrent",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.558",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSIVE_DISORDER_NEW_OR_RECURRENT",
+      "source_data_criteria": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAPsychVisitIndividualOutpatientInteractivePsychotherapy3"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_65": {
+      "title": "Major Depressive Disorder New or Recurrent",
+      "description": "Diagnosis, Active: Major Depressive Disorder New or Recurrent",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.558",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSIVE_DISORDER_NEW_OR_RECURRENT",
+      "source_data_criteria": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAPsychVisitIndividualOutpatientInteractivePsychotherapy3"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_74": {
+      "title": "Major Depressive Disorder New or Recurrent",
+      "description": "Diagnosis, Active: Major Depressive Disorder New or Recurrent",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.558",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSIVE_DISORDER_NEW_OR_RECURRENT",
+      "source_data_criteria": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_72": {
+      "title": "Major Depressive Disorder New or Recurrent",
+      "description": "Diagnosis, Active: Major Depressive Disorder New or Recurrent",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.558",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSIVE_DISORDER_NEW_OR_RECURRENT",
+      "source_data_criteria": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_81": {
+      "title": "Major Depressive Disorder New or Recurrent",
+      "description": "Diagnosis, Active: Major Depressive Disorder New or Recurrent",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.558",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSIVE_DISORDER_NEW_OR_RECURRENT",
+      "source_data_criteria": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAPsychVisitMedicationManagement4"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_79": {
+      "title": "Major Depressive Disorder New or Recurrent",
+      "description": "Diagnosis, Active: Major Depressive Disorder New or Recurrent",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.558",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSIVE_DISORDER_NEW_OR_RECURRENT",
+      "source_data_criteria": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAPsychVisitMedicationManagement4"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_88": {
+      "title": "Major Depressive Disorder New or Recurrent",
+      "description": "Diagnosis, Active: Major Depressive Disorder New or Recurrent",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.558",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSIVE_DISORDER_NEW_OR_RECURRENT",
+      "source_data_criteria": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAOutpatientConsultation6"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_86": {
+      "title": "Major Depressive Disorder New or Recurrent",
+      "description": "Diagnosis, Active: Major Depressive Disorder New or Recurrent",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.558",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSIVE_DISORDER_NEW_OR_RECURRENT",
+      "source_data_criteria": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAOutpatientConsultation6"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_95": {
+      "title": "Major Depressive Disorder New or Recurrent",
+      "description": "Diagnosis, Active: Major Depressive Disorder New or Recurrent",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.558",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSIVE_DISORDER_NEW_OR_RECURRENT",
+      "source_data_criteria": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAOfficeVisit5"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_93": {
+      "title": "Major Depressive Disorder New or Recurrent",
+      "description": "Diagnosis, Active: Major Depressive Disorder New or Recurrent",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.558",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSIVE_DISORDER_NEW_OR_RECURRENT",
+      "source_data_criteria": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAOfficeVisit5"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_102": {
+      "title": "Major Depressive Disorder New or Recurrent",
+      "description": "Diagnosis, Active: Major Depressive Disorder New or Recurrent",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.558",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSIVE_DISORDER_NEW_OR_RECURRENT",
+      "source_data_criteria": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAPsychoanalysis7"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9_precondition_100": {
+      "title": "Major Depressive Disorder New or Recurrent",
+      "description": "Diagnosis, Active: Major Depressive Disorder New or Recurrent",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.558",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSIVE_DISORDER_NEW_OR_RECURRENT",
+      "source_data_criteria": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAPsychoanalysis7"
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "DiagnosisActiveMajorDepressiveDisorderNewOrRecurrent": {
+      "title": "Major Depressive Disorder New or Recurrent",
+      "description": "Diagnosis, Active: Major Depressive Disorder New or Recurrent",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.558",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveMajorDepressiveDisorderNewOrRecurrent"
+    },
+    "EncounterPerformedPsychVisitDiagnosticOrEvaluativeInterview": {
+      "title": "Psych Visit - Diagnostic or Evaluative Interview",
+      "description": "Encounter, Performed: Psych Visit - Diagnostic or Evaluative Interview",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1013",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychVisitDiagnosticOrEvaluativeInterview"
+    },
+    "EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy": {
+      "title": "Psych Visit - Individual Outpatient Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy"
+    },
+    "EncounterPerformedPsychVisitIndividualOutpatientInteractivePsychotherapy": {
+      "title": "Psych Visit - Individual Outpatient Interactive Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Interactive Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1015",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychVisitIndividualOutpatientInteractivePsychotherapy"
+    },
+    "EncounterPerformedPsychVisitMedicationManagement": {
+      "title": "Psych Visit - Medication Management",
+      "description": "Encounter, Performed: Psych Visit - Medication Management",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1019",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychVisitMedicationManagement"
+    },
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedOutpatientConsultation": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOutpatientConsultation"
+    },
+    "EncounterPerformedPsychoanalysis": {
+      "title": "Psychoanalysis",
+      "description": "Encounter, Performed: Psychoanalysis",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1141",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychoanalysis"
+    },
+    "EncounterPerformedPatientProviderInteraction": {
+      "title": "Patient Provider Interaction",
+      "description": "Encounter, Performed: Patient Provider Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPatientProviderInteraction"
+    },
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "InterventionPerformedSuicideRiskAssessment": {
+      "title": "Suicide Risk Assessment",
+      "description": "Intervention, Performed: Suicide Risk Assessment",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1484",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "InterventionPerformedSuicideRiskAssessment"
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "OccurrenceAPsychVisitDiagnosticOrEvaluativeInterview1": {
+      "title": "Psych Visit - Diagnostic or Evaluative Interview",
+      "description": "Encounter, Performed: Psych Visit - Diagnostic or Evaluative Interview",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1013",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_DIAGNOSTIC_OR_EVALUATIVE_INTERVIEW",
+      "source_data_criteria": "OccurrenceAPsychVisitDiagnosticOrEvaluativeInterview1"
+    },
+    "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2": {
+      "title": "Psych Visit - Individual Outpatient Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_INDIVIDUAL_OUTPATIENT_PSYCHOTHERAPY",
+      "source_data_criteria": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2"
+    },
+    "OccurrenceAPsychVisitIndividualOutpatientInteractivePsychotherapy3": {
+      "title": "Psych Visit - Individual Outpatient Interactive Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Interactive Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1015",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_INDIVIDUAL_OUTPATIENT_INTERACTIVE_PSYCHOTHERAPY",
+      "source_data_criteria": "OccurrenceAPsychVisitIndividualOutpatientInteractivePsychotherapy3"
+    },
+    "OccurrenceAPsychVisitMedicationManagement4": {
+      "title": "Psych Visit - Medication Management",
+      "description": "Encounter, Performed: Psych Visit - Medication Management",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1019",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_MEDICATION_MANAGEMENT",
+      "source_data_criteria": "OccurrenceAPsychVisitMedicationManagement4"
+    },
+    "OccurrenceAOfficeVisit5": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit5"
+    },
+    "OccurrenceAOutpatientConsultation6": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation6"
+    },
+    "OccurrenceAPsychoanalysis7": {
+      "title": "Psychoanalysis",
+      "description": "Encounter, Performed: Psychoanalysis",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1141",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCHOANALYSIS",
+      "source_data_criteria": "OccurrenceAPsychoanalysis7"
+    },
+    "OccurrenceAFaceToFaceInteraction8": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction8"
+    },
+    "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9": {
+      "title": "Major Depressive Disorder New or Recurrent",
+      "description": "Diagnosis, Active: Major Depressive Disorder New or Recurrent",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.558",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSIVE_DISORDER_NEW_OR_RECURRENT",
+      "source_data_criteria": "OccurrenceAMajorDepressiveDisorderNewOrRecurrent9"
+    }
+  },
+  "attributes": [
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "Copyright 2012 American Medical Association. All Rights Reserved.",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "Research has shown that patients with major depressive disorder are at a high risk for suicide, which makes this assessment an important aspect of care that should be assessed at each visit.",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "A careful assessment of the patient's risk for suicide is crucial. An assessment of the presence of suicidal ideation is essential, including the degree to which the patient intends to act on any suicidal ideation and the extent to which the patient has made plans for or begun to prepare for suicide. (APA)\r\nThe components of an evaluation for suicide risk [include an assessment of the following]:\r\n1) Presence of suicidal or homicidal ideation, intent, or plans\r\n2) Access to means for suicide and the lethality of those means\r\n3) Presence of psychotic symptoms, command hallucinations, or severe anxiety\r\n4) Presence of alcohol or substance abuse\r\n5) History and seriousness of previous attempts\r\n6) Family history or recent exposure to suicide (APA)",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "Higher score indicates better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "0104",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "Physician Performance Measures (Measures) and related data specifications have been developed by the American Medical Association (AMA) - convened Physician Consortium for Performance Improvement(R) (the PCPI[TM]). These Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The Measures, while copyrighted, can be reproduced and distributed, without modification, for noncommercial purposes, e.g., use by health care providers in connection with their practices. Commercial use is defined as the sale, license, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial uses of the Measures require a license agreement between the user and the AMA, (on behalf of the PCPI). Neither the AMA, PCPI nor its members shall be responsible for any use of the Measures. \r\n\r\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND. \r\n\r\nLimited proprietary coding is contained in the Measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. The AMA, the PCPI and its members disclaim all liability for use or accuracy of any Current Procedural Terminology (CPT[R]) or other coding contained in the specifications. \r\n\r\nCPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC(R) copyright 2004-2011 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 copyright 2011 World Health Organization. All Rights Reserved.\r\n\r\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "161",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "American Psychiatric Association (APA). Practice guidelines for the treatment of patients with major depressive disorder (revision). Am J Psychiatry. 2000;157(suppl 4): 1-45.",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "None",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "The level of analysis for this measure is every visit for major depressive disorder during the measurement period. A minimum of two encounters are required during the measurement year for a patient to be included in this measure; if the patient is only seen once by the eligible professional, the patient is not included in the measure. Once it has been established that the patient has been seen at least twice by the eligible professional, every visit for major depressive disorder should be counted as a measurable event for the measure calculation. For example, at every visit for MDD, the patient should have a suicide risk assessment.\r\n\r\nUse of a standardized tool or instrument to assess suicide risk will meet numerator performance. Standardized tools can be mapped to the concept “Intervention, Performed: Suicide Risk Assessment” included in the numerator logic below.",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "All patients aged 18 years and older with a new diagnosis or recurrent episode of MDD",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals Initial Patient Population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "None",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Patients who had suicide risk assessment completed at each visit",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "None",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not Applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "IPP": "IPP",
+      "DENOM": "DENOM",
+      "NUMER": "NUMER"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

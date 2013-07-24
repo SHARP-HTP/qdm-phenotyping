@@ -1,0 +1,646 @@
+{
+  "id": "0032",
+  "hqmf_id": "8A4D92B2-397A-48D2-0139-B0CBA8DB32C3",
+  "hqmf_set_id": "42E7E489-790F-427A-A1A6-D6E807F65A6D",
+  "hqmf_version_number": 1,
+  "title": "Cervical Cancer Screening",
+  "description": "Percentage of women 21-64 years of age, who received one or more Pap tests to screen for cervical cancer.",
+  "cms_id": "CMS124v1",
+  "population_criteria": {
+    "DENEX": {
+      "conjunction?": true,
+      "type": "DENEX",
+      "title": "Denominator",
+      "hqmf_id": "0CD45DF8-BC85-428B-9D06-533469CD7E6E",
+      "preconditions": [
+        {
+          "id": 3,
+          "preconditions": [
+            {
+              "id": 1,
+              "reference": "ProcedurePerformedHysterectomyWithNoResidualCervix_precondition_1"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "E40D12ED-CEF9-4267-94CB-0CC086034618",
+      "preconditions": [
+        {
+          "id": 6,
+          "preconditions": [
+            {
+              "id": 4,
+              "reference": "LaboratoryTestResultPapTest_precondition_4"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "529A6FCF-5B60-4345-B243-1499271F1936"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "00C25F61-F04B-414D-A82A-C6735821CD0C",
+      "preconditions": [
+        {
+          "id": 25,
+          "preconditions": [
+            {
+              "id": 7,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_7"
+            },
+            {
+              "id": 9,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_9"
+            },
+            {
+              "id": 11,
+              "reference": "PatientCharacteristicSexFemale_precondition_11"
+            },
+            {
+              "id": 23,
+              "preconditions": [
+                {
+                  "id": 13,
+                  "reference": "EncounterPerformedOfficeVisit_precondition_13"
+                },
+                {
+                  "id": 15,
+                  "reference": "EncounterPerformedFaceToFaceInteraction_precondition_15"
+                },
+                {
+                  "id": 17,
+                  "reference": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_17"
+                },
+                {
+                  "id": 19,
+                  "reference": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_19"
+                },
+                {
+                  "id": 21,
+                  "reference": "EncounterPerformedHomeHealthcareServices_precondition_21"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "ProcedurePerformedHysterectomyWithNoResidualCervix_precondition_1": {
+      "title": "Hysterectomy with No Residual Cervix",
+      "description": "Procedure, Performed: Hysterectomy with No Residual Cervix",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.198.12.1014",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedHysterectomyWithNoResidualCervix",
+      "temporal_references": [
+        {
+          "type": "EBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "LaboratoryTestResultPapTest_precondition_4": {
+      "title": "Pap Test",
+      "description": "Laboratory Test, Result: Pap Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1017",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultPapTest",
+      "value": {
+        "type": "ANYNonNull"
+      },
+      "temporal_references": [
+        {
+          "type": "EBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "2",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_7": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "24",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_9": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "64",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicSexFemale_precondition_11": {
+      "title": "Female",
+      "description": "Patient Characteristic Sex: Female",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.2",
+      "property": "gender",
+      "type": "characteristic",
+      "definition": "patient_characteristic_gender",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicSexFemale",
+      "value": {
+        "type": "CD",
+        "system": "Administrative Sex",
+        "code": "F"
+      }
+    },
+    "EncounterPerformedOfficeVisit_precondition_13": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedFaceToFaceInteraction_precondition_15": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_17": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_19": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedHomeHealthcareServices_precondition_21": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHomeHealthcareServices",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "PatientCharacteristicSexFemale": {
+      "title": "Female",
+      "description": "Patient Characteristic Sex: Female",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.2",
+      "property": "gender",
+      "type": "characteristic",
+      "definition": "patient_characteristic_gender",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicSexFemale",
+      "value": {
+        "type": "CD",
+        "system": "Administrative Sex",
+        "code": "F"
+      }
+    },
+    "LaboratoryTestResultPapTest": {
+      "title": "Pap Test",
+      "description": "Laboratory Test, Result: Pap Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1017",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultPapTest"
+    },
+    "ProcedurePerformedHysterectomyWithNoResidualCervix": {
+      "title": "Hysterectomy with No Residual Cervix",
+      "description": "Procedure, Performed: Hysterectomy with No Residual Cervix",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.198.12.1014",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedHysterectomyWithNoResidualCervix"
+    },
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "EncounterPerformedHomeHealthcareServices": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHomeHealthcareServices"
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp"
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp"
+    }
+  },
+  "attributes": [
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "Physician Performance Measure (Measures) and related data specifications were developed by the National Committee for Quality Assurance (NCQA). \r\n\r\nThe Measures are copyrighted but can be reproduced and distributed, without modification, for noncommercial purposes (e.g., use by healthcare providers in connection with their practices). Commercial use is defined as the sale, licensing, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial use of the Measures requires a license agreement between the user and NCQA. NCQA is not responsible for any use of the Measures. \r\n\r\nCopyright 2012 National Committee for Quality Assurance. All Rights Reserved. \r\n\r\nLimited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets. NCQA disclaims all liability for use or accuracy of any CPT or other codes contained in the specifications.\r\n\r\nCPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC(R) copyright 2004-2011 Regenstrief Institute, Inc. \r\nThis material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 Copyright 2011 World Health Organization. All Rights Reserved.\r\n\r\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "Cervical cancer has a high survival rate when detected early, yet it is the second most common cancer among women worldwide (Myers et al. 2008). In the United States, about 12,000 women are diagnosed with cervical cancer each year. In 2010, more than 4,000 women died from cervical cancer (American Cancer Society 2010). For women in whom pre-cancerous lesions have been detected through Pap tests, the likelihood of survival is nearly 100 percent with appropriate evaluation, treatment and follow-up (American Cancer Society 2011). For women under 50 years old, cervical cancer is diagnosed in the early stage 61 percent of the time (American Cancer Society 2010). In 2008, the prevalence of recent Pap test use was lowest among older women, women with no health insurance and recent immigrants (American Cancer Society 2011).",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "U.S. Preventive Services Task Force (USPSTF) (2003)\r\nGrade: A Recommendation. The USPSTF strongly recommends screening for cervical cancer in women who have been sexually active and have a cervix.\r\nGrade: D Recommendation. The USPSTF recommends against routinely screening women older than age 65 for cervical cancer if they have had adequate recent screening with normal Pap smears and are not otherwise at high risk for cervical cancer.\r\nGrade: D Recommendation. The USPSTF recommends against routine Pap smear screening in women who have had a total hysterectomy for benign disease.\r\nGrade: I Statement. The USPSTF concludes that the evidence is insufficient to recommend for or against the routine use of new technologies to screen for cervical cancer.\r\nGrade: I recommendation. The USPSTF concludes that the evidence is insufficient to recommend for or against the routine use of human papillomavirus (HPV) testing as a primary screening test for cervical cancer.\r\nKaiser Permanente National Cervical Cancer Screening Guideline Development Team, 2006\r\nRecommendations 1A-D: Effectiveness of Cervical Cancer Primary Screening Tests in Asymptomatic, Average-Risk Women\r\n• Routine cervical cancer screening is recommended for all asymptomatic, average-risk women. (Evidence-based: B)\r\n• Either of the following tests are options for cervical cancer screening in asymptomatic, average-risk women under age 30.\r\n• Conventional cytology (Evidence-based: B)\r\n• Liquid-based cytology (Consensus-based)",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "Higher score equals better quality.",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "0032",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "These performance Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.\r\n\r\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND.",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "124",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "American Cancer Society. 2010. Cancer Facts & Figures 2010. Atlanta: American Cancer Society.",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "None",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "None",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "Women 24-64 years of age with a visit during the measurement period",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals Initial Patient Population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Women who had a hysterectomy with no residual cervix",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Women with one or more Pap tests during the measurement period or the two years prior to the measurement period",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "None",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not Applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "IPP": "IPP",
+      "DENOM": "DENOM",
+      "NUMER": "NUMER",
+      "DENEX": "DENEX"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

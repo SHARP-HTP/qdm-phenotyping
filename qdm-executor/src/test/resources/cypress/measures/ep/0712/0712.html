@@ -1,0 +1,800 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:n1="urn:hl7-org:v3">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Depression Utilization of the PHQ-9 Tool</title><style type="text/css">
+body {
+	color: rgb(26, 26, 26);
+	background-color: rgb(255,255,255);
+	font-family: Verdana, Tahoma, sans-serif;
+	font-size: 11px;
+}
+
+a {
+	color: rgb(0, 0, 255);
+	background-color: rgb(255,255,255);
+}
+
+h1 {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+div {
+	width: 80%;
+}
+
+table {
+	line-height: 10pt;
+	width: 80%;
+}
+
+tr {
+	background-color: rgb(224,224,224);
+}
+
+td {
+	padding: 0.1cm 0.2cm;
+	vertical-align: top;
+}
+
+.h1center {
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+	width: 80%;
+}
+
+.header_table{
+	border: 1pt inset rgb(0,0,0);
+}
+
+.narr_table {
+	width: 100%;
+}
+
+.narr_tr {
+	background-color: rgb(225,225,225);
+}
+pre {
+ overflow: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+ white-space: pre-wrap; /* css-3 */
+ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+ white-space: -pre-wrap; /* Opera 4-6 */
+ white-space: -o-pre-wrap; /* Opera 7 */
+ word-wrap: break-word; /* Internet Explorer 5.5+ */
+ font-family: Verdana, Tahoma, sans-serif;
+ font-size: 11px;
+ text-align:left;
+ margin: 0px 0px 0px 0px;
+ padding:0px 0px 0px 0px;
+}
+.narr_th {
+	background-color: rgb(201,201,201);
+}
+
+.td_label{
+	font-weight: bold;
+	color: white;
+}
+	</style></head>
+   <body>
+      <table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Title</span></td>
+               <td width="80%" colspan="3">Depression Utilization of the PHQ-9 Tool</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Identifier<br>(Measure Authoring Tool)</span></td>
+               <td width="30%">160</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Version number</span></td>
+               <td width="30%">1</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">NQF Number</span></td>
+               <td width="30%">0712</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">GUID</span></td>
+               <td> a4b9763c-847e-4e02-bb7e-acc596e90e2c</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measurement Period</span></td>
+               <td width="80%" colspan="3">January 1, 20xx  through December 31, 20xx </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Steward</span></td>
+               <td width="80%" colspan="3">Minnesota Community Measurement</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Developer</span></td>
+               <td width="80%" colspan="3">Minnesota Community Measurement</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Endorsed By</span></td>
+               <td width="80%" colspan="3">National Quality Forum</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Description</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Adult patients age 18 and older with the diagnosis of major depression or dysthymia who have a PHQ-9 tool administered at least once during a 4 month period in which there was a qualifying visit.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Copyright</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Copyright MN Community Measurement, 2012. All rights reserved</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Disclaimer</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>This measure is &#8220;re-tooled&#8221; from the existing NQF # 712 measure. eMeasure development was a collaboration between MN Community Measurement and the Iowa Foundation for Medical Care (IFMC) with technical assistance provided by IFMC.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Scoring</span></td>
+               <td width="80%" colspan="3">Proportion</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Type</span></td>
+               <td width="80%" colspan="3">Process</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Stratification</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Risk Adjustment</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rate Aggregation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rationale</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>The Centers for Disease Control and Prevention states that nationally 15.7% of people report being told by a health care professional that they had depression at some point in their lifetime. Persons with a current diagnosis of depression and a lifetime diagnosis of depression or anxiety were significantly more likely than persons without these conditions to have cardiovascular disease, diabetes, asthma and obesity and to be a current smoker, to be physically inactive and to drink heavily. According to National Institute of Mental Health (NIMH), 6.7 percent of the U.S. population ages 18 and older (14.8 million people) in any given year have a diagnosis of a major depressive disorder. Major depression is the leading cause of disability in the U.S. for ages 15 - 44. Additionally, dysthymia accounts for an additional 3.3 million Americans.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Clinical Recommendation Statement</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>This process measure for using the PHQ-9 tool is directly related to the desired outcomes of demonstrating improvement in symptoms of depression (remission). Improvement in the symptoms of depression and an ongoing assessment of the current treatment plan is crucial to the reduction of symptoms and psychosocial well being of patients with major depression. Most people treated for initial depression need to be on medication at least six to twelve months after adequate response to symptoms, patients with recurrent depression need to be treated for three years or more and response with psychotherapy can take eight to twelve weeks of regular and frequent therapy to show improvement. Remission is defined as a PHQ-9 score of less than five at twelve months. The Patient Health Questionnaire (PHQ-9) tool is a widely accepted, standardized tool [Copyright (C) 2005 Pfizer, Inc. All rights reserved] that is completed by the patient, ideally at each visit, and utilized by the provider to monitor treatment progress. This tool was selected for measuring outcomes for this population because it is 1) validated with a sensitivity of .080 and a specificity of 0.92 with substantial heterogeneity I2 = 82%, 2) widely accepted and utilized in Minnesota, 3) available for clinical use, 4) translated into many languages and 5) easy for the patient to complete and the provider to score. This nine question tool contains the following questions which are scored on a scale of 0 to 27 based on the scale of Not at All (0), Several Days (1), More Than Half the Days (2), or Nearly Every Day (3) for responses to the questions over the last 2 weeks. 
+&#8226; Little interest or pleasure in doing things 
+&#8226; Feeling down, depressed, or hopeless
+&#8226; Feeling tired or having little energy 
+&#8226; Poor appetite or overeating 
+&#8226; Feeling bad about yourself - or that you are a failure or have let yourself or your family down 
+&#8226; Trouble concentrating on things, such as reading the newspaper or watching television 
+&#8226; Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual 
+&#8226; Thoughts that you would be better off dead or of hurting yourself in some way</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Improvement Notation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Higher scores indicate better quality</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Centers for Disease Control and Prevention: Anxiety and Depression Effective Treatments Exist: People with depression and anxiety should seek help as early as possible to reduce health effects and improve quality of life. March 2009. Based on 2006 Behavior Risk Factor Surveillance System www.cdc.gov/Features/dsBRFSSDepressionAnxiety/</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Suicide Prevention Resource Center: Minnesota Suicide Fact Sheet; Suicides 1999 - 2005 www.sprc.org/</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>www.nimh.nih.gov/health/publications/the-numbers-count-mental-disorders-in-america</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>National Institute of Mental Health: The Numbers Count: Mental Disorders in America August 2009</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Screening for Depression in Medical Settings with the Patient Health Questionnaire (PHQ) A Diagnostic Meta Analysis. Gilbody, Simon et al Journal of General Internal Medicine Sept 2007</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>The PHQ-9: Validity of a Brief Depression Severity Measure Kurt Kroenke, MD, Robert Spitzer, MD J Gen Intern Med 2001 16:606-613</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Collaborative Care for Depression: a Cumulative Meta-analysis and Review of Longer-term Outcomes. Gilbody, Simon et al Archives Internal Medicine Dec 2006</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Definition</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Guidance</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Transmission Format</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>TBD</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Initial Patient Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Adult patients age 18 and older with an office visit and the diagnosis of major depression or dysthymia during each four month period</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Equals the Initial Patient Population</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>1: Patients who died
+2: Patients who received hospice services
+3: Patients who were permanent nursing home residents (&gt; 1 year)
+4: Patients with a diagnosis of bipolar disorder
+5: Patients with a diagnosis of personality disorder</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Adult patients who have a PHQ-9 tool administered at least once during the four-month period.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exceptions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Observations</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Supplemental Data Elements</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</pre></div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="toc">Table of Contents</a></h2>
+      <ul>
+         <li><a href="#d3196199e530">Population criteria</a></li>
+         <li><a href="#d3196199e4447">Data criteria (QDM Data Elements)</a></li>
+         <li><a href="#d3196199e5056">Reporting Stratification</a></li>
+         <li><a href="#d3196199e5077">Supplemental Data Elements</a></li>
+      </ul>
+      <hr align="left" color="teal" size="2" width="80%">
+      <h3><a name="d3196199e530" href="#toc">Population criteria</a></h3>
+      <div>
+         
+         <p><span style="font-weight:bold; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;------ 
+               Population Criteria 1
+                ------</span></p>
+         
+         <ul>
+            <li>
+               <b>Initial Patient Population 1 =</b>
+               
+               <ul>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 18 year(s) starts before start of "Measurement Period"</li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>AND NOT: "Occurrence A of Diagnosis, Active: Major Depression" ends before start of "Occurrence A of Encounter, Performed:
+                                 Office Visit"
+                              </li>
+                              <li>AND: "Occurrence A of Diagnosis, Active: Major Depression" starts before or during ("Occurrence A of Encounter, Performed:
+                                 Office Visit"  &lt;= 4 month(s) ends before or during "Measurement End Date")
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND NOT: "Occurrence A of Diagnosis, Active: Dysthymia" ends before start of "Occurrence A of Encounter, Performed: Office
+                                 Visit"
+                              </li>
+                              <li>AND: "Occurrence A of Diagnosis, Active: Dysthymia" starts before or during ("Occurrence A of Encounter, Performed: Office
+                                 Visit"  &lt;= 4 month(s) ends before or during "Measurement End Date")
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND NOT: "Occurrence A of Diagnosis, Active: Major Depression" ends before start of "Occurrence A of Encounter, Performed:
+                                 Psych Visit - Individual Outpatient Psychotherapy"
+                              </li>
+                              <li>AND: "Occurrence A of Diagnosis, Active: Major Depression (ordinality: 'principal')" starts before or during ("Occurrence
+                                 A of Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy"  &lt;= 4 month(s) ends before or during "Measurement
+                                 End Date")
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND NOT: "Occurrence A of Diagnosis, Active: Dysthymia" ends before start of "Occurrence A of Encounter, Performed: Psych
+                                 Visit - Individual Outpatient Psychotherapy"
+                              </li>
+                              <li>AND: "Occurrence A of Diagnosis, Active: Dysthymia (ordinality: 'principal')" starts before or during ("Occurrence A of Encounter,
+                                 Performed: Psych Visit - Individual Outpatient Psychotherapy"  &lt;= 4 month(s) ends before or during "Measurement End Date")
+                              </li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator 1 =</b>
+               
+               <ul>
+                  <li>AND: "Initial Patient Population 1"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exclusions 1 =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Patient Characteristic Expired: Deceased"</li>
+                        <li>OR: "Intervention, Order: Palliative Care"</li>
+                        <li>OR: "Diagnosis, Active: Bipolar Disorder"</li>
+                        <li>OR: "Diagnosis, Active: Personality Disorder"</li>
+                        <li>OR: "Encounter, Performed: Residence (facility location: 'Nursing Home')"</li>
+                        <li>  &lt;= 4 month(s) starts before or during "Measurement End Date"</li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Numerator 1 =</b>
+               
+               <ul>
+                  <li>AND: "Risk Category Assessment: PHQ-9 Tool (result)"  &lt;= 4 month(s) ends before or during "Measurement End Date"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exceptions 1=</b>
+               
+               <ul>
+                  <li>None</li>
+               </ul>
+               
+            </li>
+         </ul>
+         
+         <p><span style="font-weight:bold; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;------ 
+               Population Criteria 2
+                ------</span></p>
+         
+         <ul>
+            <li>
+               <b>Initial Patient Population 2 =</b>
+               
+               <ul>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 18 year(s) starts before start of "Measurement Period"</li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Encounter, Performed: Office Visit"  &gt;= 5 month(s) starts after start of "Measurement Start Date"</li>
+                              <li>AND: "Occurrence A of Encounter, Performed: Office Visit"  &lt;= 8 month(s) starts after start of "Measurement Start Date"</li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: 
+                                       <ul>
+                                          <li>AND NOT: "Occurrence A of Diagnosis, Active: Major Depression" ends before start of "Occurrence A of Encounter, Performed:
+                                             Office Visit"
+                                          </li>
+                                          <li>AND: "Occurrence A of Diagnosis, Active: Major Depression" starts before or during "Occurrence A of Encounter, Performed:
+                                             Office Visit"
+                                          </li>
+                                       </ul>
+                                       
+                                    </li>
+                                    <li>OR: 
+                                       <ul>
+                                          <li>AND NOT: "Occurrence A of Diagnosis, Active: Dysthymia" ends before start of "Occurrence A of Encounter, Performed: Office
+                                             Visit"
+                                          </li>
+                                          <li>AND: "Occurrence A of Diagnosis, Active: Dysthymia" starts before or during "Occurrence A of Encounter, Performed: Office
+                                             Visit"
+                                          </li>
+                                       </ul>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy"  &gt;= 5 month(s) starts after
+                                 start of "Measurement Start Date"
+                              </li>
+                              <li>AND: "Occurrence A of Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy"  &lt;= 8 month(s) starts after
+                                 start of "Measurement Start Date"
+                              </li>
+                              <li>AND: 
+                                 <ul>
+                                    <li>OR: 
+                                       <ul>
+                                          <li>AND NOT: "Occurrence A of Diagnosis, Active: Major Depression" ends before start of "Occurrence A of Encounter, Performed:
+                                             Psych Visit - Individual Outpatient Psychotherapy"
+                                          </li>
+                                          <li>AND: "Occurrence A of Diagnosis, Active: Major Depression (ordinality: 'principal')" starts before or during "Occurrence A
+                                             of Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy"
+                                          </li>
+                                       </ul>
+                                       
+                                    </li>
+                                    <li>OR: 
+                                       <ul>
+                                          <li>AND NOT: "Occurrence A of Diagnosis, Active: Dysthymia" ends before start of "Occurrence A of Encounter, Performed: Psych
+                                             Visit - Individual Outpatient Psychotherapy"
+                                          </li>
+                                          <li>AND: "Occurrence A of Diagnosis, Active: Dysthymia (ordinality: 'principal')" starts before or during "Occurrence A of Encounter,
+                                             Performed: Psych Visit - Individual Outpatient Psychotherapy"
+                                          </li>
+                                       </ul>
+                                       
+                                    </li>
+                                 </ul>
+                                 
+                              </li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator 2 =</b>
+               
+               <ul>
+                  <li>AND: "Initial Patient Population 2"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exclusions 2 =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Patient Characteristic Expired: Deceased"  &gt;= 5 month(s) starts after start of "Measurement Start Date"</li>
+                              <li>AND: "Patient Characteristic Expired: Deceased"  &lt;= 8 month(s) starts after start of "Measurement Start Date"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Intervention, Order: Palliative Care"  &gt;= 5 month(s) starts after start of "Measurement Start Date"</li>
+                              <li>AND: "Occurrence A of Intervention, Order: Palliative Care"  &lt;= 8 month(s) starts after start of "Measurement Start Date"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Diagnosis, Active: Bipolar Disorder"  &gt;= 5 month(s) starts after start of "Measurement Start Date"</li>
+                              <li>AND: "Occurrence A of Diagnosis, Active: Bipolar Disorder"  &lt;= 8 month(s) starts after start of "Measurement Start Date"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Diagnosis, Active: Personality Disorder"  &gt;= 5 month(s) starts after start of "Measurement Start Date"</li>
+                              <li>AND: "Occurrence A of Diagnosis, Active: Personality Disorder"  &lt;= 8 month(s) starts after start of "Measurement Start Date"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND: "Occurrence A of Encounter, Performed: Residence (facility location: 'Nursing Home')"  &gt;= 5 month(s) starts after start
+                                 of "Measurement Start Date"
+                              </li>
+                              <li>AND: "Occurrence A of Encounter, Performed: Residence"  &lt;= 8 month(s) starts after start of "Measurement Start Date"</li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Numerator 2 =</b>
+               
+               <ul>
+                  <li>AND: "Occurrence A of Risk Category Assessment: PHQ-9 Tool (result)"  &gt;= 5 month(s) ends after start of "Measurement Start
+                     Date"
+                  </li>
+                  <li>AND: "Occurrence A of Risk Category Assessment: PHQ-9 Tool"  &lt;= 8 month(s) ends after start of "Measurement Start Date"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exceptions 2=</b>
+               
+               <ul>
+                  <li>None</li>
+               </ul>
+               
+            </li>
+         </ul>
+         
+         <p><span style="font-weight:bold; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;------ 
+               Population Criteria 3
+                ------</span></p>
+         
+         <ul>
+            <li>
+               <b>Initial Patient Population 3 =</b>
+               
+               <ul>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 18 year(s) starts before start of "Measurement Period"</li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: 
+                           <ul>
+                              <li>AND NOT: "Occurrence A of Diagnosis, Active: Major Depression" ends before start of "Occurrence A of Encounter, Performed:
+                                 Office Visit"
+                              </li>
+                              <li>AND: "Occurrence A of Diagnosis, Active: Major Depression" starts before or during ("Occurrence A of Encounter, Performed:
+                                 Office Visit"  &lt;= 4 month(s) ends after start of "Measurement Start Date")
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND NOT: "Occurrence A of Diagnosis, Active: Dysthymia" ends before start of "Occurrence A of Encounter, Performed: Office
+                                 Visit"
+                              </li>
+                              <li>AND: "Occurrence A of Diagnosis, Active: Dysthymia" starts before or during ("Occurrence A of Encounter, Performed: Office
+                                 Visit"  &lt;= 4 month(s) ends after start of "Measurement Start Date")
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND NOT: "Occurrence A of Diagnosis, Active: Major Depression" ends before start of "Occurrence A of Encounter, Performed:
+                                 Psych Visit - Individual Outpatient Psychotherapy"
+                              </li>
+                              <li>AND: "Occurrence A of Diagnosis, Active: Major Depression (ordinality: 'principal')" starts before or during ("Occurrence
+                                 A of Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy"  &lt;= 4 month(s) ends after start of "Measurement
+                                 Start Date")
+                              </li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>AND NOT: "Occurrence A of Diagnosis, Active: Dysthymia" ends before start of "Occurrence A of Encounter, Performed: Psych
+                                 Visit - Individual Outpatient Psychotherapy"
+                              </li>
+                              <li>AND: "Occurrence A of Diagnosis, Active: Dysthymia (ordinality: 'principal')" starts before or during ("Occurrence A of Encounter,
+                                 Performed: Psych Visit - Individual Outpatient Psychotherapy"  &lt;= 4 month(s) ends after start of "Measurement Start Date")
+                              </li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator 3 =</b>
+               
+               <ul>
+                  <li>AND: "Initial Patient Population 3"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exclusions 3 =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Patient Characteristic Expired: Deceased"</li>
+                        <li>OR: "Intervention, Order: Palliative Care"</li>
+                        <li>OR: "Diagnosis, Active: Bipolar Disorder"</li>
+                        <li>OR: "Diagnosis, Active: Personality Disorder"</li>
+                        <li>OR: "Encounter, Performed: Residence (facility location: 'Nursing Home')"</li>
+                        <li>  &lt;= 4 month(s) starts after start of "Measurement Start Date"</li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Numerator 3 =</b>
+               
+               <ul>
+                  <li>AND: "Risk Category Assessment: PHQ-9 Tool (result)"  &lt;= 4 month(s) ends after start of "Measurement Start Date"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exceptions 3=</b>
+               
+               <ul>
+                  <li>None</li>
+               </ul>
+               
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d3196199e4447" href="#toc">Data criteria (QDM Data Elements)</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Diagnosis, Active: Bipolar Disorder" using "Bipolar Disorder Grouping Value Set (2.16.840.1.113883.3.67.1.101.1.128)"
+            </li>
+            <li>
+               "Diagnosis, Active: Dysthymia" using "Dysthymia Grouping Value Set (2.16.840.1.113883.3.67.1.101.1.254)"
+            </li>
+            <li>
+               "Diagnosis, Active: Major Depression" using "Major Depression Grouping Value Set (2.16.840.1.113883.3.464.1003.105.12.1007)"
+            </li>
+            <li>
+               "Diagnosis, Active: Personality Disorder" using "Personality Disorder Grouping Value Set (2.16.840.1.113883.3.67.1.101.1.246)"
+            </li>
+            <li>
+               "Encounter, Performed: Office Visit" using "Office Visit Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1001)"
+            </li>
+            <li>
+               "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy" using "Psych Visit - Individual Outpatient Psychotherapy Grouping Value Set (2.16.840.1.113883.3.526.3.1014)"
+            </li>
+            <li>
+               "Encounter, Performed: Residence" using "Residence Grouping Value Set (2.16.840.1.113883.3.67.1.101.11.725)"
+            </li>
+            <li>
+               "Intervention, Order: Palliative Care" using "Palliative Care Grouping Value Set (2.16.840.1.113883.3.526.3.1024)"
+            </li>
+            <li>
+               "Patient Characteristic Birthdate: birth date" using "birth date LOINC Value Set (2.16.840.1.113883.3.560.100.4)"
+            </li>
+            <li>
+               "Patient Characteristic Expired: Deceased" using "Deceased Grouping Value Set (2.16.840.1.113883.3.67.1.101.11.721)"
+            </li>
+            <li>
+               "Risk Category Assessment: PHQ-9 Tool" using "PHQ-9 Tool Grouping Value Set (2.16.840.1.113883.3.67.1.101.11.723)"
+            </li>
+            <li>
+               Attribute: "Ordinality: Principal" using "Principal Grouping Value Set  (2.16.840.1.113883.3.67.1.101.11.724)"
+            </li>
+            <li>
+               Attribute: "Facility location: Nursing Home" using "Nursing Home Grouping Value Set  (2.16.840.1.113883.3.67.1.101.11.722)"
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d3196199e5056" href="#toc">Reporting Stratification</a></h3>
+      <div>
+         
+         <ul>
+            <li>None</li>
+         </ul>
+         
+      </div>
+      <h3><a name="d3196199e5077" href="#toc">Supplemental Data Elements</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Patient Characteristic Ethnicity: Ethnicity" using "Ethnicity CDC Value Set (2.16.840.1.114222.4.11.837)"
+            </li>
+            <li>
+               "Patient Characteristic Payer: Payer" using "Payer Source of Payment Typology Value Set (2.16.840.1.114222.4.11.3591)"
+            </li>
+            <li>
+               "Patient Characteristic Race: Race" using "Race CDC Value Set (2.16.840.1.114222.4.11.836)"
+            </li>
+            <li>
+               "Patient Characteristic Sex: ONC Administrative Sex" using "ONC Administrative Sex Administrative Sex Value Set (2.16.840.1.113762.1.4.1)"
+            </li>
+         </ul>
+         
+      </div><br><hr align="left" color="teal" size="2" width="80%"><br><table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Set</span></td>
+               <td colspan="3" width="80%">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto;word-wrap:break-word">None</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

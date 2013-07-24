@@ -1,0 +1,1119 @@
+{
+  "id": "0075",
+  "hqmf_id": "8A4D92B2-397A-48D2-0139-C63D3E41543C",
+  "hqmf_set_id": "500E4792-7F94-4E34-8546-EE71C56FE463",
+  "hqmf_version_number": 1,
+  "title": "Ischemic Vascular Disease (IVD): Complete Lipid Panel and LDL Control",
+  "description": "Percentage of patients 18 years of age and older who were discharged alive for acute myocardial infarction (AMI), coronary artery bypass graft (CABG) or percutaneous coronary interventions (PCI) in the 12 months prior to the measurement period, or who had an active diagnosis of ischemic vascular disease (IVD) during the measurement period, and who had a complete lipid profile performed during the measurement period and whose LDL-C was adequately controlled (< 100 mg/dL).",
+  "cms_id": "CMS182v1",
+  "population_criteria": {
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "ABAFC87D-EA16-4B76-B5DF-368F62140B78",
+      "preconditions": [
+        {
+          "id": 18,
+          "preconditions": [
+            {
+              "id": 16,
+              "preconditions": [
+                {
+                  "id": 4,
+                  "reference": "LaboratoryTestResultCompleteLipidPanel_precondition_4"
+                },
+                {
+                  "id": 14,
+                  "preconditions": [
+                    {
+                      "id": 6,
+                      "reference": "LaboratoryTestResultTotalCholesterolLaboratoryTest_precondition_6"
+                    },
+                    {
+                      "id": 8,
+                      "reference": "LaboratoryTestResultHdlCLaboratoryTest_precondition_8"
+                    },
+                    {
+                      "id": 10,
+                      "reference": "OccurrenceALdlCLaboratoryTest1_precondition_10"
+                    },
+                    {
+                      "id": 12,
+                      "reference": "LaboratoryTestResultTriglyceridesLaboratoryTest_precondition_12"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER_1": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "8CB81543-C3CC-49FF-B4CA-9EFBA11D9E82",
+      "preconditions": [
+        {
+          "id": 24,
+          "preconditions": [
+            {
+              "id": 20,
+              "reference": "OccurrenceALdlCLaboratoryTest1_precondition_19",
+              "conjunction_code": "allTrue"
+            },
+            {
+              "id": 22,
+              "reference": "OccurrenceALdlCLaboratoryTest1_precondition_22"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "09D403C8-34E6-46D1-969E-D009BB16946E"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "C1DA21D1-6090-478D-ACE5-9E181C586823",
+      "preconditions": [
+        {
+          "id": 63,
+          "preconditions": [
+            {
+              "id": 25,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_25"
+            },
+            {
+              "id": 47,
+              "preconditions": [
+                {
+                  "id": 32,
+                  "preconditions": [
+                    {
+                      "id": 29,
+                      "reference": "OccurrenceAIschemicVascularDisease3_precondition_29"
+                    },
+                    {
+                      "id": 31,
+                      "preconditions": [
+                        {
+                          "id": 27,
+                          "reference": "OccurrenceAIschemicVascularDisease3_precondition_27"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 39,
+                  "preconditions": [
+                    {
+                      "id": 36,
+                      "reference": "OccurrenceAAcuteMyocardialInfarction2_precondition_36"
+                    },
+                    {
+                      "id": 38,
+                      "preconditions": [
+                        {
+                          "id": 34,
+                          "reference": "DiagnosisActiveAcuteMyocardialInfarction_precondition_34"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 45,
+                  "preconditions": [
+                    {
+                      "id": 41,
+                      "reference": "ProcedurePerformedPercutaneousCoronaryInterventions_precondition_41"
+                    },
+                    {
+                      "id": 43,
+                      "reference": "ProcedurePerformedCoronaryArteryBypassGraft_precondition_43"
+                    }
+                  ],
+                  "conjunction_code": "atLeastOneTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            },
+            {
+              "id": 61,
+              "preconditions": [
+                {
+                  "id": 49,
+                  "reference": "EncounterPerformedOfficeVisit_precondition_49"
+                },
+                {
+                  "id": 51,
+                  "reference": "EncounterPerformedFaceToFaceInteraction_precondition_51"
+                },
+                {
+                  "id": 53,
+                  "reference": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_53"
+                },
+                {
+                  "id": 55,
+                  "reference": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_55"
+                },
+                {
+                  "id": 57,
+                  "reference": "EncounterPerformedHomeHealthcareServices_precondition_57"
+                },
+                {
+                  "id": 59,
+                  "reference": "EncounterPerformedAnnualWellnessVisit_precondition_59"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "DiagnosisActiveIschemicVascularDisease": {
+      "title": "Ischemic Vascular Disease",
+      "description": "Diagnosis, Active: Ischemic Vascular Disease",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveIschemicVascularDisease"
+    },
+    "LaboratoryTestResultLdlCLaboratoryTest": {
+      "title": "LDL-C Laboratory Test",
+      "description": "Laboratory Test, Result: LDL-C Laboratory Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1248",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultLdlCLaboratoryTest"
+    },
+    "LaboratoryTestResultCompleteLipidPanel_precondition_4": {
+      "title": "Complete Lipid Panel",
+      "description": "Laboratory Test, Result: Complete Lipid Panel",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1015",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultCompleteLipidPanel",
+      "value": {
+        "type": "ANYNonNull"
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "LaboratoryTestResultTotalCholesterolLaboratoryTest_precondition_6": {
+      "title": "Total Cholesterol Laboratory Test",
+      "description": "Laboratory Test, Result: Total Cholesterol Laboratory Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1013",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultTotalCholesterolLaboratoryTest",
+      "value": {
+        "type": "ANYNonNull"
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "LaboratoryTestResultHdlCLaboratoryTest_precondition_8": {
+      "title": "HDL-C Laboratory Test",
+      "description": "Laboratory Test, Result: HDL-C Laboratory Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1012",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultHdlCLaboratoryTest",
+      "value": {
+        "type": "ANYNonNull"
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceALdlCLaboratoryTest1_precondition_10": {
+      "title": "LDL-C Laboratory Test",
+      "description": "Laboratory Test: LDL-C Laboratory Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1248",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "LABORATORY_TEST_LDL_C_LABORATORY_TEST",
+      "source_data_criteria": "OccurrenceALdlCLaboratoryTest1",
+      "value": {
+        "type": "ANYNonNull"
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "LaboratoryTestResultTriglyceridesLaboratoryTest_precondition_12": {
+      "title": "Triglycerides Laboratory Test",
+      "description": "Laboratory Test, Result: Triglycerides Laboratory Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1014",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultTriglyceridesLaboratoryTest",
+      "value": {
+        "type": "ANYNonNull"
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceALdlCLaboratoryTest1_precondition_19": {
+      "title": "LDL-C Laboratory Test",
+      "description": "Laboratory Test: LDL-C Laboratory Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1248",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "LABORATORY_TEST_LDL_C_LABORATORY_TEST",
+      "source_data_criteria": "OccurrenceALdlCLaboratoryTest1",
+      "subset_operators": [
+        {
+          "type": "RECENT"
+        }
+      ]
+    },
+    "OccurrenceALdlCLaboratoryTest1_precondition_22": {
+      "title": "LDL-C Laboratory Test",
+      "description": "Laboratory Test: LDL-C Laboratory Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1248",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "LABORATORY_TEST_LDL_C_LABORATORY_TEST",
+      "source_data_criteria": "OccurrenceALdlCLaboratoryTest1",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "mg/dL",
+          "value": "100",
+          "inclusive?": false,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_25": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "18",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAIschemicVascularDisease3_precondition_29": {
+      "title": "Ischemic Vascular Disease",
+      "description": "Diagnosis, Active: Ischemic Vascular Disease",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_ISCHEMIC_VASCULAR_DISEASE",
+      "source_data_criteria": "OccurrenceAIschemicVascularDisease3",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAIschemicVascularDisease3_precondition_27": {
+      "title": "Ischemic Vascular Disease",
+      "description": "Diagnosis, Active: Ischemic Vascular Disease",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_ISCHEMIC_VASCULAR_DISEASE",
+      "source_data_criteria": "OccurrenceAIschemicVascularDisease3",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAAcuteMyocardialInfarction2_precondition_36": {
+      "title": "Acute Myocardial Infarction",
+      "description": "Diagnosis, Active: Acute Myocardial Infarction",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_ACUTE_MYOCARDIAL_INFARCTION",
+      "source_data_criteria": "OccurrenceAAcuteMyocardialInfarction2",
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "12",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "DiagnosisActiveAcuteMyocardialInfarction_precondition_34": {
+      "title": "Acute Myocardial Infarction",
+      "description": "Diagnosis, Active: Acute Myocardial Infarction",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAcuteMyocardialInfarction",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "ProcedurePerformedPercutaneousCoronaryInterventions_precondition_41": {
+      "title": "Percutaneous Coronary Interventions",
+      "description": "Procedure, Performed: Percutaneous Coronary Interventions",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1010",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedPercutaneousCoronaryInterventions",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "12",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "ProcedurePerformedCoronaryArteryBypassGraft_precondition_43": {
+      "title": "Coronary Artery Bypass Graft",
+      "description": "Procedure, Performed: Coronary Artery Bypass Graft",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1002",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedCoronaryArteryBypassGraft",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "12",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedOfficeVisit_precondition_49": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedFaceToFaceInteraction_precondition_51": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_53": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_55": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedHomeHealthcareServices_precondition_57": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHomeHealthcareServices",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedAnnualWellnessVisit_precondition_59": {
+      "title": "Annual Wellness Visit",
+      "description": "Encounter, Performed: Annual Wellness Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1240",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedAnnualWellnessVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "DiagnosisActiveIschemicVascularDisease": {
+      "title": "Ischemic Vascular Disease",
+      "description": "Diagnosis, Active: Ischemic Vascular Disease",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveIschemicVascularDisease"
+    },
+    "ProcedurePerformedPercutaneousCoronaryInterventions": {
+      "title": "Percutaneous Coronary Interventions",
+      "description": "Procedure, Performed: Percutaneous Coronary Interventions",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1010",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedPercutaneousCoronaryInterventions"
+    },
+    "DiagnosisActiveAcuteMyocardialInfarction": {
+      "title": "Acute Myocardial Infarction",
+      "description": "Diagnosis, Active: Acute Myocardial Infarction",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAcuteMyocardialInfarction"
+    },
+    "ProcedurePerformedCoronaryArteryBypassGraft": {
+      "title": "Coronary Artery Bypass Graft",
+      "description": "Procedure, Performed: Coronary Artery Bypass Graft",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1002",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedCoronaryArteryBypassGraft"
+    },
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp"
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp"
+    },
+    "EncounterPerformedAnnualWellnessVisit": {
+      "title": "Annual Wellness Visit",
+      "description": "Encounter, Performed: Annual Wellness Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1240",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedAnnualWellnessVisit"
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "EncounterPerformedHomeHealthcareServices": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHomeHealthcareServices"
+    },
+    "LaboratoryTestResultCompleteLipidPanel": {
+      "title": "Complete Lipid Panel",
+      "description": "Laboratory Test, Result: Complete Lipid Panel",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1015",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultCompleteLipidPanel"
+    },
+    "LaboratoryTestResultHdlCLaboratoryTest": {
+      "title": "HDL-C Laboratory Test",
+      "description": "Laboratory Test, Result: HDL-C Laboratory Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1012",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultHdlCLaboratoryTest"
+    },
+    "LaboratoryTestResultLdlCLaboratoryTest": {
+      "title": "LDL-C Laboratory Test",
+      "description": "Laboratory Test, Result: LDL-C Laboratory Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1248",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultLdlCLaboratoryTest"
+    },
+    "LaboratoryTestResultTriglyceridesLaboratoryTest": {
+      "title": "Triglycerides Laboratory Test",
+      "description": "Laboratory Test, Result: Triglycerides Laboratory Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1014",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultTriglyceridesLaboratoryTest"
+    },
+    "LaboratoryTestResultTotalCholesterolLaboratoryTest": {
+      "title": "Total Cholesterol Laboratory Test",
+      "description": "Laboratory Test, Result: Total Cholesterol Laboratory Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1013",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultTotalCholesterolLaboratoryTest"
+    },
+    "OccurrenceALdlCLaboratoryTest1": {
+      "title": "LDL-C Laboratory Test",
+      "description": "Laboratory Test: LDL-C Laboratory Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1248",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "LABORATORY_TEST_LDL_C_LABORATORY_TEST",
+      "source_data_criteria": "OccurrenceALdlCLaboratoryTest1"
+    },
+    "OccurrenceAAcuteMyocardialInfarction2": {
+      "title": "Acute Myocardial Infarction",
+      "description": "Diagnosis, Active: Acute Myocardial Infarction",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_ACUTE_MYOCARDIAL_INFARCTION",
+      "source_data_criteria": "OccurrenceAAcuteMyocardialInfarction2"
+    },
+    "OccurrenceAIschemicVascularDisease3": {
+      "title": "Ischemic Vascular Disease",
+      "description": "Diagnosis, Active: Ischemic Vascular Disease",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_ISCHEMIC_VASCULAR_DISEASE",
+      "source_data_criteria": "OccurrenceAIschemicVascularDisease3"
+    }
+  },
+  "attributes": [
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "Physician Performance Measure (Measures) and related data specifications were developed by the National Committee for Quality Assurance (NCQA). \r\n\r\nThe Measures are copyrighted but can be reproduced and distributed, without modification, for noncommercial purposes (e.g., use by healthcare providers in connection with their practices). Commercial use is defined as the sale, licensing, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial use of the Measures requires a license agreement between the user and NCQA. NCQA is not responsible for any use of the Measures. \r\n\r\n(c) 2012 National Committee for Quality Assurance. All Rights Reserved. \r\n\r\nLimited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets.  NCQA disclaims all liability for use or accuracy of any CPT or other codes contained in the specifications.\r\n\r\nCPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC (R) copyright 2004-2011 Regenstrief Institute, Inc. \r\nThis material contains SNOMED Clinical Terms (R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation.  ICD-10 Copyright 2011 World Health Organization. All Rights Reserved.",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "A 10 percent decrease in total cholesterol levels (population wide) may result in an estimated 30 percent reduction in the incidence of coronary heart disease (CHD) (Centers for Disease Control and Prevention 2000). Based on data from the Third Report of the Expert Panel on Detection, Evaluation, and Treatment of High Blood Cholesterol in Adults:\r\n•Less than half of persons who qualify for any kind of lipid-modifying treatment for CHD risk reduction are receiving it\r\n•Less than half of even the highest-risk persons, those who have symptomatic CHD, are receiving lipid-lowering treatment\r\n•Only about a third of treated patients are achieving their LDL goal; less than 20 percent of CHD patients are at their LDL goal (National Cholesterol Education Program (NCEP) Expert Panel on Detection, Evaluation, and Treatment of High Blood Pressure 2002)\r\n\r\nAccording to data from the Behavioral Risk Factor Surveillance System (BRFSS) from 1991–2003, the prevalence of cholesterol screening during the preceding 5 years increased from 67.3 percent in 1991 to 73.1 percent in 2003 (Centers for Disease Control and Prevention 2005).\r\n\r\nBetween 1988–94 and 1999–2002, the age-adjusted mean total serum cholesterol level of adults20 years of age and  older decreased from 206 mg/dL to 203 mg/dL, and LDL cholesterol levels decreased from 129 mg/dL to 123 mg/dL. The mean level of LDL cholesterol for American adults age 20 and older is 123 mg/dL (Carroll et al. 2005). However, even given this decrease, there is still a significant amount of room for improvement.",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "Third report of the National Cholesterol Education Program (NCEP) Expert Panel on Detection, Evaluation, and Treatment of High Blood Cholesterol in Adults (Adult Treatment Panel III) (2002)\r\n\r\nIn high-risk persons, the recommended LDL-C goal is < 100 mg/dL.\r\n\r\n[1]An LDL-C goal of < 70 mg/dL is a therapeutic option on the basis of available clinical trial evidence, especially for patients at very high risk.\t\r\n\r\n[2]If LDL-C is > 100 mg/dL, an LDL-lowering drug is indicated simultaneously with lifestyle changes.\r\n\r\n[3]If baseline LDL-C is < 100 mg/dL, institution of an LDL-lowering drug to achieve an LDL-C level of < 70 mg/dL is a therapeutic option on the basis of available clinical trial evidence.\r\n\r\n[4]If a high-risk person has high triglycerides or low HDL-C, consideration can be given to combining a fibrate or nicotinic acid with an LDL-lowering drug. When triglycerides are > 200 mg/dL, non-HDL-C is a secondary target of therapy, with a goal 30 mg/dL higher than the identified LDL-C goal.\r\n\r\nThe U.S. Preventive Services Task Force (USPSTF) strongly recommends screening men aged 35 and older for lipid disorders. This is a grade A recommendation. \r\n\r\nThe USPSTF recommends screening men 20 to 25 years of age for lipid disorders if they are at increased risk for coronary heart disease. This is a grade B recommendation. \r\n\r\nThe USPSTF strongly recommends screening women aged 45 and older for lipid disorders if they are at increased risk for coronary heart disease. This is a grade A recommendation. \r\n\r\nThe USPSTF recommends screening women 20 to 45 years of age for lipid disorders if they are at increased risk for coronary heart disease. This is a grade B recommendation (U.S. Preventive Services Task Force 2008).",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "Higher score indicates better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "0075",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "These performance Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.\r\n\r\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND.",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "182",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "U.S. Preventive Services Task Force. 2008. “Screening for lipid disorders in adults” (June) http://www.uspreventiveservicestaskforce.org/uspstf/uspschol.htm",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "None",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "Only patients who were discharged alive for acute myocardial infarction (AMI), coronary artery bypass graft (CABG) or percutaneous coronary interventions (PCI) are included in this measure",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "None",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "Patients 18 years of age and older with a visit during the measurement period, and an active diagnosis of ischemic vascular disease (IVD) during the measurement period, or who were discharged alive for acute myocardial infarction (AMI), coronary artery bypass graft (CABG) or percutaneous coronary interventions (PCI) in the 12 months prior to the measurement period",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals Initial Patient Population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Numerator 1: Patients with a complete lipid profile performed during the measurement period\r\nNumerator 2: Patients whose most recent LDL-C level performed during the measurement period is <100 mg/dL",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "None",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not Applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "NUMER": "NUMER",
+      "DENOM": "DENOM",
+      "IPP": "IPP",
+      "title": "Complete Lipid Profile",
+      "id": "Population1"
+    },
+    {
+      "NUMER": "NUMER_1",
+      "DENOM": "DENOM",
+      "IPP": "IPP",
+      "title": "Most Recent LDL-C <100 mg/dL",
+      "id": "Population2"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

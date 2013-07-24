@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xslt/eMeasure.xsl"?>
+<QualityMeasureDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3">
+         
+      <!--
+         **************************************************************   
+         Measure Header Section
+         **************************************************************
+      --><typeId root="2.16.840.1.113883.1.3" extension="POQM_HD000001"/>
+   <id root="8a4d92b2-35fb-4aa7-0136-1cb01c4d758c"/>
+   <code code="57024-2" codeSystem="2.16.840.1.113883.6.1" displayName="Health Quality Measure Document"/>
+   <title>Pregnant women that had HBsAg testing</title>
+   <text>This measure identifies pregnant women who had a HBsAg (hepatitis B) test during their pregnancy.</text>
+   <statusCode code="InProgress"/>
+   <setId root="3bbfc929-50c8-44b8-8d34-82be75c08a70"/>
+   <versionNumber value="1"/>
+   <author typeCode="AUT">
+      <assignedPerson classCode="ASSIGNED">
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id root="f1341739-c342-4f9f-b856-e0733a39d0b3"/>
+            <name>OptumInsight</name>
+            <contactParty classCode="CON" nullFlavor="UNK"/>
+         </representedOrganization>
+      </assignedPerson>
+   </author>
+   <custodian>
+      <assignedPerson classCode="ASSIGNED">
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id root="2c5e3247-a797-43cf-a67c-0c5f967ffd74"/>
+            <name>OptumInsight</name>
+            <contactParty classCode="CON" nullFlavor="UNK"/>
+         </representedOrganization>
+      </assignedPerson>
+   </custodian>
+   <verifier typeCode="VRF">
+      <assignedPerson classCode="ASSIGNED">
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <name>National Quality Forum</name>
+            <contactParty classCode="CON" nullFlavor="UNK"/>
+         </representedOrganization>
+      </assignedPerson>
+   </verifier>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Finalized Date/Time</originalText>
+         </code>
+         <value xsi:type="TS" value="201208310916-0500"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="COPY" codeSystem="2.16.840.1.113883.5.4" displayName="Copyright"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRSCORE" codeSystem="2.16.840.1.113883.5.4" displayName="Measure Scoring"/>
+         <value xsi:type="CD" code="PROPOR" codeSystem="2.16.840.1.113883.1.11.20367" displayName="Proportion"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRTYPE" codeSystem="2.16.840.1.113883.5.4" displayName="Measure Type"/>
+         <value xsi:type="CD" code="PROCESS" codeSystem="2.16.840.1.113883.1.11.20368" displayName="Process"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="STRAT" codeSystem="2.16.840.1.113883.5.4" displayName="Stratification"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRADJ" codeSystem="2.16.840.1.113883.5.4" displayName="Risk Adjustment"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRAGG" codeSystem="2.16.840.1.113883.5.4" displayName="Rate Aggregation"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="RAT" codeSystem="2.16.840.1.113883.5.4" displayName="Rationale"/>
+         <value xsi:type="ED" mediaType="text/plain">The USPSTF found good evidence that universal prenatal screening for HBV infection using HBsAg substantially reduces prenatal transmission of HBV and the subsequent development of chronic HBV infection (USPSTF 2004). The current practice of vaccinating all infants against HBV infection and post-exposure prophylaxis with hepatitis B immune globulin administered at birth to infants of HBV-infected mothers substantially reduces the risk for acquiring HBV infection.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="CRS" codeSystem="2.16.840.1.113883.3.560" displayName="Clinical Recommendation Statement"/>
+         <value xsi:type="ED" mediaType="text/plain">The U.S. Preventive Services Task Force (USPSTF) strongly recommends screening for hepatitis B virus (HBV) infection in pregnant women at their first prenatal visit (USPSTF 2004). This is a grade A* recommendation from the USPSTF. In addition, the American College of Obstetricians and Gynecologists (ACOG) recommend screening all pregnant women for HBV infection (ACOG 2002).</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="IDUR" codeSystem="2.16.840.1.113883.3.560" displayName="Improvement Notation"/>
+         <value xsi:type="ED" mediaType="text/plain">Higher score indicates better quality</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>NQF ID Number</originalText>
+         </code>
+         <value xsi:type="II" root="2.16.840.1.113883.3.560.1" extension="0608"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DISC" codeSystem="2.16.840.1.113883.5.4" displayName="Disclaimer">
+            <originalText>Disclaimer</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>eMeasure Identifier</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">158</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <templateId root="2.16.840.1.113883.3.560.1.74"/>
+         <id root="58327c77-ef36-439e-b187-d885cd5d139e"/>
+         <code code="MSRTP" displayName="Measurement period" codeSystem="2.16.840.1.113883.3.560"/>
+         <value xsi:type="IVL_TS">
+            <low value="00000101"/>
+            <high value="00001231"/>
+         </value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <localVariableName>measureStartDate</localVariableName>
+      <measureAttribute>
+         <templateId root="2.16.840.1.113883.3.560.1.75"/>
+         <id root="9d9b6e16-b26e-4a73-9af6-aadc6dc3e08b"/>
+         <code code="MSRSD" displayName="Measurement start date" codeSystem="2.16.840.1.113883.3.560"/>
+         <value xsi:type="TS" value="00000101"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <localVariableName>measureEndDate</localVariableName>
+      <measureAttribute>
+         <templateId root="2.16.840.1.113883.3.560.1.75"/>
+         <id root="6be03c5f-a3ed-4b34-8ee3-a561729b2ebd"/>
+         <code code="MSRED" displayName="Measurement end date" codeSystem="2.16.840.1.113883.3.560"/>
+         <value xsi:type="TS" value="00001231"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">U.S. Preventive Services Task Force. Screening for Hepatitis B Infection: Recommendation Statement. February 2004. Agency for Healthcare Research and Quality, Rockville, MD. http://www.ahrq.gov/clinic/3rduspstf/hepbscr/hepbrs.htm Accessed June 10, 2009</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">American Academy of Pediatrics, American College of Obstetricians and Gynecologists. Guidelines for perinatal care, 5th ed. Elk Grove Village (IL): AAP; Washington, DC: ACOG; 2002.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DEF" codeSystem="2.16.840.1.113883.3.560" displayName="Definition"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="GUIDE" codeSystem="2.16.840.1.113883.5.4" displayName="Guidance"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Transmission Format</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">TBD</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="IPP" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Initial Patient Population</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">All female patients aged 12 and older who had a full term delivery during the measurement period.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DENOM" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Denominator</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Equals Initial Patient Population.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Denominator Exclusions</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="NUMER" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Numerator</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Patients who were tested for Hepatitis B surface antigen (HBsAg) during pregnancy within 280 days prior to delivery.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Numerator Exclusions</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Not Applicable</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DENEXCEP" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Denominator Exceptions</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Patients with current or past Hepatitis B infection.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRPOPL" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Measure Population</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Not Applicable</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Measure Observations</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Not Applicable</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Supplemental Data Elements</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</value>
+      </measureAttribute>
+   </subjectOf>
+   <componentOf>
+      <qualityMeasureSet classCode="ACT">
+         <id root="7b25626e-0615-4962-be11-39eb42adf183"/>
+         <title>None</title>
+      </qualityMeasureSet>
+   </componentOf>
+         
+      <!--
+         **************************************************************   
+         Population Criteria Section
+         **************************************************************
+      --><component typeCode="COMP">
+      <section>
+         <code code="57026-7" codeSystem="2.16.840.1.113883.6.1" displayName="Population criteria"/>
+         <title>Population criteria</title>
+         <text>
+            <list>
+               <item>
+                  <content styleCode="Bold">Initial Patient Population =</content>
+                  <list>
+                     <item>AND:  FIRST: "Occurrence A of Procedure, Performed: Delivery" during "Measurement Period"</item>
+                     <item>AND NOT: "Occurrence A of Diagnosis, Active: Full Term Delivery" ends before start of "Occurrence A of Procedure, Performed: Delivery"</item>
+                     <item>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 12 year(s) starts before start of "Measurement Period"</item>
+                     <item>AND: "Patient Characteristic Sex: Female"</item>
+                     <item>AND: "Occurrence A of Diagnosis, Active: Full Term Delivery" starts before or during "Occurrence A of Procedure, Performed: Delivery"</item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Denominator =</content>
+                  <list>
+                     <item>AND: "Initial Patient Population"</item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Denominator Exclusions =</content>
+                  <list>
+                     <item>None</item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Numerator =</content>
+                  <list>
+                     <item>AND: "Laboratory Test, Performed: HBsAg"  &lt;= 280 day(s) starts before start of "Occurrence A of Procedure, Performed: Delivery"</item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Denominator Exceptions =</content>
+                  <list>
+                     <item>AND: <list>
+                           <item>OR: "Diagnosis, Active: Hepatitis B"</item>
+                           <item>OR: "Diagnosis, Inactive: Hepatitis B"</item>
+                           <item> starts before start of "Occurrence A of Procedure, Performed: Delivery"</item>
+                        </list>
+                     </item>
+                  </list>
+               </item>
+            </list>
+         </text><!--
+            **************************************************************   
+            Population Criteria Section: exceptions 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="DF1C41FB-FB6B-4235-986B-1479D520CD4A"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="DENEXCEP" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Denominator Exception"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                           <id root="0310c280-f7c1-4761-8e6e-ebfd21126357"/>
+                           <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                 <title>Diagnosis, Active: Hepatitis B</title>
+                                 <value xsi:type="CD" code="2.16.840.1.113883.3.67.1.101.1.269" displayName="Hepatitis B Grouping Value Set"/>
+                                 <sourceOf typeCode="REFR">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                       <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                                    </observation>
+                                 </sourceOf>
+                              </observation>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Inactive pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.23"/>
+                           <id root="06b56d2d-bd80-4633-bed5-fb923b251a4b"/>
+                           <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                 <title>Diagnosis, Inactive: Hepatitis B</title>
+                                 <value xsi:type="CD" code="2.16.840.1.113883.3.67.1.101.1.269" displayName="Hepatitis B Grouping Value Set"/>
+                                 <sourceOf typeCode="REFR">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                       <value xsi:type="CD" code="73425007" displayName="inactive" codeSystem="2.16.840.1.113883.6.96"/>
+                                    </observation>
+                                 </sourceOf>
+                              </observation>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="SBS">
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                           <id root="18076a4d-2518-4f47-8cda-fa72f5f451f3"/>
+                           <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.67.1.101.1.278" displayName="Delivery Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Occurrence A of Procedure, Performed: Delivery</title>
+                              </procedure>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry><!--
+            **************************************************************   
+            Population Criteria Section: numerator 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="6F32F052-F111-4D97-BEBC-55A7208C8566"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="NUMER" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Numerator"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Laboratory Test, Performed pattern -->
+                     <templateId root="2.16.840.1.113883.3.560.1.5"/>
+                     <id root="2a60bbf1-5910-41ee-996a-1f28148a5202"/>
+                     <code code="30954-2" displayName="Results" codeSystem="2.16.840.1.113883.6.1"/>
+                     <sourceOf typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="2.16.840.1.113883.3.67.1.101.1.279" displayName="HBsAg Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                           <title>Laboratory Test, Performed: HBsAg</title>
+                           <statusCode code="completed"/>
+                           <sourceOf typeCode="SBS">
+                              <pauseQuantity xsi:type="IVL_PQ">
+                                 <high value="280" unit="d" inclusive="true"/>
+                              </pauseQuantity>
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <id root="18076a4d-2518-4f47-8cda-fa72f5f451f3"/>
+                                 <title>Occurrence A of Procedure, Performed: Delivery</title>
+                              </observation>
+                           </sourceOf>
+                        </observation>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry><!--
+            **************************************************************   
+            Population Criteria Section: denominator 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="4A1DDE20-02BE-44CC-BCA4-613AEEE3ABB7"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="DENOM" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Denominator"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="63FBE113-2ECD-4E1B-92D4-D15AA1A25653"/>
+                     <title>Initial Patient Population</title>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry><!--
+            **************************************************************   
+            Population Criteria Section: population 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="63FBE113-2ECD-4E1B-92D4-D15AA1A25653"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="IPP" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Initial Patient Population"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <subsetCode code="FIRST"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                     <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                     <id root="18076a4d-2518-4f47-8cda-fa72f5f451f3"/>
+                     <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                     <sourceOf typeCode="COMP">
+                        <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                           <code code="2.16.840.1.113883.3.67.1.101.1.278" displayName="Delivery Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                           <title>Occurrence A of Procedure, Performed: Delivery</title>
+                           <sourceOf typeCode="DURING">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <id root="58327c77-ef36-439e-b187-d885cd5d139e"/>
+                                 <title>Measurement Period</title>
+                              </observation>
+                           </sourceOf>
+                        </procedure>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true" actionNegationInd="true"><!-- Diagnosis, Active pattern -->
+                     <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                     <id root="f14a795a-fcc3-494b-bf24-350aa2fdf688"/>
+                     <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                     <sourceOf typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                           <title>Occurrence A of Diagnosis, Active: Full Term Delivery</title>
+                           <value xsi:type="CD" code="2.16.840.1.113883.3.67.1.101.1.273" displayName="Full Term Delivery Grouping Value Set"/>
+                           <sourceOf typeCode="REFR">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                 <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                              </observation>
+                           </sourceOf>
+                           <sourceOf typeCode="EBS">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <id root="18076a4d-2518-4f47-8cda-fa72f5f451f3"/>
+                                 <title>Occurrence A of Procedure, Performed: Delivery</title>
+                              </observation>
+                           </sourceOf>
+                        </observation>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Birthdate pattern -->
+                     <templateId root="2.16.840.1.113883.3.560.1.400"/>
+                     <id root="65b0c275-c37a-4066-acea-b4ce8854f17a"/>
+                     <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+                     <sourceOf typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="21112-8" codeSystem="2.16.840.1.113883.6.1" displayName="Birth date"/>
+                           <title>Patient Characteristic Birthdate: birth date</title>
+                           <value xsi:type="CD" code="2.16.840.1.113883.3.560.100.4" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="birth date LOINC Value Set"/>
+                           <sourceOf typeCode="SBS">
+                              <pauseQuantity xsi:type="IVL_PQ">
+                                 <low value="12" unit="a" inclusive="true"/>
+                              </pauseQuantity>
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <id root="58327c77-ef36-439e-b187-d885cd5d139e"/>
+                                 <title>Measurement Period</title>
+                              </observation>
+                           </sourceOf>
+                        </observation>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Sex pattern -->
+                     <templateId root="2.16.840.1.113883.3.560.1.402"/>
+                     <id root="40512a0c-b8f1-4160-ab62-937e88fe5044"/>
+                     <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+                     <sourceOf typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="263495000" codeSystem="2.16.840.1.113883.6.96" displayName="Sex"/>
+                           <title>Patient Characteristic Sex: Female</title>
+                           <value xsi:type="CD" code="2.16.840.1.113883.3.560.100.2" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="Female Administrative Sex Value Set"/>
+                        </observation>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+                     <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                     <id root="f14a795a-fcc3-494b-bf24-350aa2fdf688"/>
+                     <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                     <sourceOf typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                           <title>Occurrence A of Diagnosis, Active: Full Term Delivery</title>
+                           <value xsi:type="CD" code="2.16.840.1.113883.3.67.1.101.1.273" displayName="Full Term Delivery Grouping Value Set"/>
+                           <sourceOf typeCode="REFR">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                 <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                              </observation>
+                           </sourceOf>
+                           <sourceOf typeCode="EAS" inversionInd="true">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <id root="18076a4d-2518-4f47-8cda-fa72f5f451f3"/>
+                                 <title>Occurrence A of Procedure, Performed: Delivery</title>
+                              </observation>
+                           </sourceOf>
+                        </observation>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry>
+      </section>
+   </component>
+         
+      <!--
+         ******************************************   
+         Data Criteria Section
+         ******************************************
+      --><component typeCode="COMP">
+      <section>
+         <code code="57025-9" codeSystem="2.16.840.1.113883.6.1" displayName="Data criteria (QDM Data Elements)"/>
+         <title>Data criteria (QDM Data Elements)</title>
+         <text>
+            <list>
+               <item>
+                  <content>"Diagnosis, Active: Full Term Delivery"</content> using "Full Term Delivery Grouping Value Set (2.16.840.1.113883.3.67.1.101.1.273)"</item>
+               <item>
+                  <content>"Diagnosis, Active: Hepatitis B"</content> using "Hepatitis B Grouping Value Set (2.16.840.1.113883.3.67.1.101.1.269)"</item>
+               <item>
+                  <content>"Diagnosis, Inactive: Hepatitis B"</content> using "Hepatitis B Grouping Value Set (2.16.840.1.113883.3.67.1.101.1.269)"</item>
+               <item>
+                  <content>"Laboratory Test, Performed: HBsAg"</content> using "HBsAg Grouping Value Set (2.16.840.1.113883.3.67.1.101.1.279)"</item>
+               <item>
+                  <content>"Patient Characteristic Birthdate: birth date"</content> using "birth date LOINC Value Set (2.16.840.1.113883.3.560.100.4)"</item>
+               <item>
+                  <content>"Patient Characteristic Sex: Female"</content> using "Female Administrative Sex Value Set (2.16.840.1.113883.3.560.100.2)"</item>
+               <item>
+                  <content>"Procedure, Performed: Delivery"</content> using "Delivery Grouping Value Set (2.16.840.1.113883.3.67.1.101.1.278)"</item>
+            </list>
+         </text>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Birthdate pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.400"/>
+               <id root="65b0c275-c37a-4066-acea-b4ce8854f17a"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="21112-8" codeSystem="2.16.840.1.113883.6.1" displayName="Birth date"/>
+                     <title>Patient Characteristic Birthdate: birth date</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.560.100.4" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="birth date LOINC Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.2"/>
+               <id root="0f2dad49-1174-459c-9b2f-79cd07d888e4"/>
+               <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                     <title>Diagnosis, Active: Full Term Delivery</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.67.1.101.1.273" displayName="Full Term Delivery Grouping Value Set"/>
+                     <sourceOf typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                           <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                        </observation>
+                     </sourceOf>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Laboratory Test, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.5"/>
+               <id root="2a60bbf1-5910-41ee-996a-1f28148a5202"/>
+               <code code="30954-2" displayName="Results" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.67.1.101.1.279" displayName="HBsAg Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Laboratory Test, Performed: HBsAg</title>
+                     <statusCode code="completed"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.2"/>
+               <id root="0310c280-f7c1-4761-8e6e-ebfd21126357"/>
+               <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                     <title>Diagnosis, Active: Hepatitis B</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.67.1.101.1.269" displayName="Hepatitis B Grouping Value Set"/>
+                     <sourceOf typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                           <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                        </observation>
+                     </sourceOf>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Inactive pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.23"/>
+               <id root="06b56d2d-bd80-4633-bed5-fb923b251a4b"/>
+               <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                     <title>Diagnosis, Inactive: Hepatitis B</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.67.1.101.1.269" displayName="Hepatitis B Grouping Value Set"/>
+                     <sourceOf typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                           <value xsi:type="CD" code="73425007" displayName="inactive" codeSystem="2.16.840.1.113883.6.96"/>
+                        </observation>
+                     </sourceOf>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Sex pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.402"/>
+               <id root="40512a0c-b8f1-4160-ab62-937e88fe5044"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="263495000" codeSystem="2.16.840.1.113883.6.96" displayName="Sex"/>
+                     <title>Patient Characteristic Sex: Female</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.560.100.2" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="Female Administrative Sex Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.6"/>
+               <id root="6bf5dbca-b985-47da-ae8e-e07e9debb44a"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.67.1.101.1.278" displayName="Delivery Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Procedure, Performed: Delivery</title>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="COMP">
+            <observation classCode="OBS" moodCode="DEF">
+               <templateId root="2.16.840.1.113883.3.560.1.6"/>
+               <id root="18076a4d-2518-4f47-8cda-fa72f5f451f3"/>
+               <sourceOf typeCode="DRIV">
+                  <localVariableName>Delivery</localVariableName>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="6bf5dbca-b985-47da-ae8e-e07e9debb44a"/>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry>
+         <entry typeCode="COMP">
+            <observation classCode="OBS" moodCode="DEF">
+               <templateId root="2.16.840.1.113883.3.560.1.2"/>
+               <id root="f14a795a-fcc3-494b-bf24-350aa2fdf688"/>
+               <sourceOf typeCode="DRIV">
+                  <localVariableName>Full Term Delivery</localVariableName>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="0f2dad49-1174-459c-9b2f-79cd07d888e4"/>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry>
+      </section>
+   </component>
+            
+         <!--
+            **************************************************************   
+            Stratification Section
+            **************************************************************
+         --><component typeCode="COMP">
+      <section>
+         <code code="69669-0" codeSystem="2.16.840.1.113883.6.1" displayName="Population stratification description"/>
+         <title>Reporting Stratification</title>
+         <text>
+            <list>
+               <item>None</item>
+            </list>
+         </text>
+      </section>
+   </component>
+         
+      <!--
+         ******************************************   
+         Supplemental Data Elements Section
+         ******************************************
+      --><component typeCode="COMP">
+      <section>
+         <code code="69670-8" codeSystem="2.16.840.1.113883.6.1" displayName="Supplemental Data Elements"/>
+         <title>Supplemental Data Elements</title>
+         <text>
+            <list>
+               <item>
+                  <content>"Patient Characteristic Ethnicity: Ethnicity"</content> using "Ethnicity CDC Value Set (2.16.840.1.114222.4.11.837)"</item>
+               <item>
+                  <content>"Patient Characteristic Payer: Payer"</content> using "Payer Source of Payment Typology Value Set (2.16.840.1.114222.4.11.3591)"</item>
+               <item>
+                  <content>"Patient Characteristic Race: Race"</content> using "Race CDC Value Set (2.16.840.1.114222.4.11.836)"</item>
+               <item>
+                  <content>"Patient Characteristic Sex: ONC Administrative Sex"</content> using "ONC Administrative Sex Administrative Sex Value Set (2.16.840.1.113762.1.4.1)"</item>
+            </list>
+         </text>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Sex pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.402"/>
+               <id root="d0ee5027-905a-4acd-8158-b281d34c222d"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="263495000" codeSystem="2.16.840.1.113883.6.96" displayName="Sex"/>
+                     <title>Patient Characteristic Sex: ONC Administrative Sex</title>
+                     <value xsi:type="CD" code="2.16.840.1.113762.1.4.1" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="ONC Administrative Sex Administrative Sex Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Race pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.406"/>
+               <id root="519b5a66-2a76-423b-9eab-d9c17865446b"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="32624-9" codeSystem="2.16.840.1.113883.6.1" displayName="Race"/>
+                     <title>Patient Characteristic Race: Race</title>
+                     <value xsi:type="CD" code="2.16.840.1.114222.4.11.836" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="Race CDC Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Ethnicity pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.403"/>
+               <id root="9b56428f-1d88-4535-bd7e-0681a379ad28"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="54133-4" codeSystem="2.16.840.1.113883.6.1" displayName="Ethnicity"/>
+                     <title>Patient Characteristic Ethnicity: Ethnicity</title>
+                     <value xsi:type="CD" code="2.16.840.1.114222.4.11.837" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="Ethnicity CDC Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Payer pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.405"/>
+               <id root="997dfed2-09fa-4dd3-99a4-23b1df5f171c"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" displayName="Payer"/>
+                     <title>Patient Characteristic Payer: Payer</title>
+                     <value xsi:type="CD" code="2.16.840.1.114222.4.11.3591" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="Payer Source of Payment Typology Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+      </section>
+   </component>
+</QualityMeasureDocument>

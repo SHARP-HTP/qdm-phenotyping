@@ -1,0 +1,1113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="xslt/eMeasure.xsl"?>
+<QualityMeasureDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3">
+         
+      <!--
+         **************************************************************   
+         Measure Header Section
+         **************************************************************
+      --><typeId root="2.16.840.1.113883.1.3" extension="POQM_HD000001"/>
+   <id root="8a4d92b2-35fb-4aa7-0136-403ad4504573"/>
+   <code code="57024-2" codeSystem="2.16.840.1.113883.6.1" displayName="Health Quality Measure Document"/>
+   <title>Colorectal Cancer Screening</title>
+   <text>Percentage of adults 50-75 years of age who had appropriate screening for colorectal cancer.</text>
+   <statusCode code="InProgress"/>
+   <setId root="aa2a4bbc-864f-45ee-b17a-7ebcc62e6aac"/>
+   <versionNumber value="1"/>
+   <author typeCode="AUT">
+      <assignedPerson classCode="ASSIGNED">
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id root="2.16.840.1.113883.3.464"/>
+            <name>National Committee for Quality Assurance</name>
+            <contactParty classCode="CON" nullFlavor="UNK"/>
+         </representedOrganization>
+      </assignedPerson>
+   </author>
+   <custodian>
+      <assignedPerson classCode="ASSIGNED">
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id root="2.16.840.1.113883.3.464"/>
+            <name>National Committee for Quality Assurance</name>
+            <contactParty classCode="CON" nullFlavor="UNK"/>
+         </representedOrganization>
+      </assignedPerson>
+   </custodian>
+   <verifier typeCode="VRF">
+      <assignedPerson classCode="ASSIGNED">
+         <representedOrganization classCode="ORG" determinerCode="INSTANCE">
+            <name>National Quality Forum</name>
+            <contactParty classCode="CON" nullFlavor="UNK"/>
+         </representedOrganization>
+      </assignedPerson>
+   </verifier>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Finalized Date/Time</originalText>
+         </code>
+         <value xsi:type="TS" value="201208221531-0500"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="COPY" codeSystem="2.16.840.1.113883.5.4" displayName="Copyright"/>
+         <value xsi:type="ED" mediaType="text/plain">Physician Performance Measure (Measures) and related data specifications were developed by the National Committee for Quality Assurance (NCQA). 
+
+The Measures are copyrighted but can be reproduced and distributed, without modification, for noncommercial purposes (e.g., use by healthcare providers in connection with their practices). Commercial use is defined as the sale, licensing, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial use of the Measures requires a license agreement between the user and NCQA. NCQA is not responsible for any use of the Measures. 
+
+Copyright 2012 National Committee for Quality Assurance. All Rights Reserved. 
+
+Limited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets.  NCQA disclaims all liability for use or accuracy of any CPT or other codes contained in the specifications.
+
+CPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC(R) copyright 2004-2011 Regenstrief Institute, Inc. 
+This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 Copyright 2011 World Health Organization. All Rights Reserved.
+
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRSCORE" codeSystem="2.16.840.1.113883.5.4" displayName="Measure Scoring"/>
+         <value xsi:type="CD" code="PROPOR" codeSystem="2.16.840.1.113883.1.11.20367" displayName="Proportion"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRTYPE" codeSystem="2.16.840.1.113883.5.4" displayName="Measure Type"/>
+         <value xsi:type="CD" code="PROCESS" codeSystem="2.16.840.1.113883.1.11.20368" displayName="Process"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="STRAT" codeSystem="2.16.840.1.113883.5.4" displayName="Stratification"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRADJ" codeSystem="2.16.840.1.113883.5.4" displayName="Risk Adjustment"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRAGG" codeSystem="2.16.840.1.113883.5.4" displayName="Rate Aggregation"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="RAT" codeSystem="2.16.840.1.113883.5.4" displayName="Rationale"/>
+         <value xsi:type="ED" mediaType="text/plain">An estimated 142,570 men and women were diagnosed with colon cancer in 2010. In the same year, 51,370 were estimated to have died from the disease, making colorectal cancer the third leading cause of cancer death in the United States (American Cancer Society 2010). 
+
+Screening for colorectal cancer is extremely important as there are no signs or symptoms of the cancer in the early stages. If the disease is caught in its earliest stages, it has a five-year survival rate of 91%; however, the disease is often not caught this early. While screening is extremely effective in detecting colorectal cancer, it remains underutilized (American Cancer Society 2010). 
+
+Fecal occult blood tests, colonoscopy, and flexible sigmoidoscopy are shown to be effective screening methods (United States Preventive Services Task Force, 2008). Colorectal screening of individuals with no symptoms can identify polyps whose removal can prevent more than 90% of colorectal cancers (Rozen 2004). 
+
+Studies have shown that the cost-effectiveness of colorectal cancer screening is $40,000 per life year gained, which is similar to the cost-effectiveness of mammography for breast cancer screening (Hawk and Levin 2005).</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="CRS" codeSystem="2.16.840.1.113883.3.560" displayName="Clinical Recommendation Statement"/>
+         <value xsi:type="ED" mediaType="text/plain">The United States Preventive Services Task Force (2008): 
+
+[1]The USPSTF recommends screening for colorectal cancer using fecal occult blood testing, sigmoidoscopy, or colonoscopy in adults, beginning at age 50 years and continuing until age 75 years (A recommendation). 
+[2]The USPSTF concludes that the evidence is insufficient to assess the benefits and harms of computed tomographic (CT) colonography and fecal DNA testing as screening modalities for colorectal cancer (I statement). 
+
+The American Cancer Society, The American College of Radiology, and the U.S. Multi-Society Task Force on Colorectal Cancer (Levin et al. 2008): 
+
+Tests that Detect Adenomatous Polyps and Cancer
+[1]Colonoscopy (every 10 yrs) 
+[2]Flexible sigmoidoscopy (every 5 yrs) 
+[3]fecal occult blood tests (fecal occult blood test (FOBT)) 
+[4]Double contrast barium enema (DCBE) (every 5 yrs)
+[5]Computed tomographic colonography (CTC) (every 5 years) 
+
+Tests that Primarily Detect Cancer: 
+[1] guaiac fecal occult blood test (gFOBT) with high sensitivity for cancer (annually) 
+[2] fecal immunochemical test (FIT) with high sensitivity for cancer (annually) 
+[3] stool DNA (sDNA) with high sensitivity for cancer (interval uncertain) 
+
+Modalities not approved: 
+[1] Single digital rectal examination fecal occult blood test (FOBT) has a poor sensitivity for CRC and should not be performed as a primary screening method 
+[2] Studies evaluating virtual colonoscopy and fecal DNA testing for CRC screening have yielded conflicting results and therefore cannot be recommended</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="IDUR" codeSystem="2.16.840.1.113883.3.560" displayName="Improvement Notation"/>
+         <value xsi:type="ED" mediaType="text/plain">Higher score indicates better quality</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>NQF ID Number</originalText>
+         </code>
+         <value xsi:type="II" root="2.16.840.1.113883.3.560.1" extension="0034"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DISC" codeSystem="2.16.840.1.113883.5.4" displayName="Disclaimer">
+            <originalText>Disclaimer</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">These performance Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.
+
+THE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>eMeasure Identifier</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">130</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <templateId root="2.16.840.1.113883.3.560.1.74"/>
+         <id root="750726af-3866-4775-bd52-25488c9edf48"/>
+         <code code="MSRTP" displayName="Measurement period" codeSystem="2.16.840.1.113883.3.560"/>
+         <value xsi:type="IVL_TS">
+            <low value="00000101"/>
+            <high value="00001231"/>
+         </value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <localVariableName>measureStartDate</localVariableName>
+      <measureAttribute>
+         <templateId root="2.16.840.1.113883.3.560.1.75"/>
+         <id root="5f5ff4b3-efe4-4762-86ff-0909ba8e7760"/>
+         <code code="MSRSD" displayName="Measurement start date" codeSystem="2.16.840.1.113883.3.560"/>
+         <value xsi:type="TS" value="00000101"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <localVariableName>measureEndDate</localVariableName>
+      <measureAttribute>
+         <templateId root="2.16.840.1.113883.3.560.1.75"/>
+         <id root="56339d8c-85e4-4d39-ae77-59ecb39c7e6c"/>
+         <code code="MSRED" displayName="Measurement end date" codeSystem="2.16.840.1.113883.3.560"/>
+         <value xsi:type="TS" value="00001231"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">Levin, B. D.A. Lieberman, B. McFarland, K.S. Andrews, D. Brooks, J. Bond, C. Dash, F.M. Giardiello, S. Glick, D. Johnson, C.D. Johnson, T.R. Levin, P.J. Pickhardt, D.K. Rex, R.A. Smith, A. Thorson, S.J. Winawer. 2008. “Screening and Surveillance for the Early Detection of Colorectal Cancer and Adenomatous Polyps, 2008: A Joint Guideline from the American Cancer Society, the US Multi-Society Task Force on Colorectal Cancer, and the American College of Radiology.” CA Cancer J Clin 58(3):130-60.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">US Preventive Services Task Force (USPSTF). 2008. “Screening for colorectal cancer: U.S. Preventive Services Task Force recommendation statement.” Ann Intern Med 149(9):627-37.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">American Cancer Society. 2010. Cancer Facts &amp; Figures 2010. Atlanta: American Cancer Society.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">Hawk, E.T., and Levin, B. 2005. Colorectal cancer prevention. J Clin Oncol 23:378-388.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4" displayName="Reference"/>
+         <value xsi:type="ED" mediaType="text/plain">Rozen, P. 2004. Cancer of the gastrointestinal tract: early detection or early prevention? Eur J Cancer Prev 13(1):71-5.</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DEF" codeSystem="2.16.840.1.113883.3.560" displayName="Definition"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="GUIDE" codeSystem="2.16.840.1.113883.5.4" displayName="Guidance"/>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Transmission Format</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">TBD</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="IPP" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Initial Patient Population</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Patients 51-75 years of age with a visit during the measurement period</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DENOM" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Denominator</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Equals Initial Patient Population</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Denominator Exclusions</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Patients with a diagnosis or past history of total colectomy or colorectal cancer</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="NUMER" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Numerator</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Patients with one or more screenings for colorectal cancer. Appropriate screenings are defined by any one of the following criteria below: 
+- Fecal occult blood test (FOBT) during the measurement period 
+- Flexible sigmoidoscopy during the measurement period or the four years prior to the measurement period 
+- Colonoscopy during the measurement period or the nine years prior to the measurement period</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Numerator Exclusions</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Not Applicable</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DENEXCEP" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Denominator Exceptions</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">None</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRPOPL" codeSystem="2.16.840.1.113883.5.1063">
+            <originalText>Measure Population</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Not Applicable</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Measure Observations</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">Not Applicable</value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText>Supplemental Data Elements</originalText>
+         </code>
+         <value xsi:type="ED" mediaType="text/plain">For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</value>
+      </measureAttribute>
+   </subjectOf>
+   <componentOf>
+      <qualityMeasureSet classCode="ACT">
+         <id root="79955dab-c8d9-4d10-9c16-34d2bf7007ff"/>
+         <title>None</title>
+      </qualityMeasureSet>
+   </componentOf>
+         
+      <!--
+         **************************************************************   
+         Population Criteria Section
+         **************************************************************
+      --><component typeCode="COMP">
+      <section>
+         <code code="57026-7" codeSystem="2.16.840.1.113883.6.1" displayName="Population criteria"/>
+         <title>Population criteria</title>
+         <text>
+            <list>
+               <item>
+                  <content styleCode="Bold">Initial Patient Population =</content>
+                  <list>
+                     <item>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 51 year(s) starts before start of "Measurement Period"</item>
+                     <item>AND: "Patient Characteristic Birthdate: birth date"  &lt;= 75 year(s) starts before start of "Measurement Period"</item>
+                     <item>AND: <list>
+                           <item>OR: "Encounter, Performed: Office Visit"</item>
+                           <item>OR: "Encounter, Performed: Face-to-Face Interaction"</item>
+                           <item>OR: "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up"</item>
+                           <item>OR: "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up"</item>
+                           <item>OR: "Encounter, Performed: Home Healthcare Services"</item>
+                           <item>OR: "Encounter, Performed: Annual Wellness Visit"</item>
+                           <item> during "Measurement Period"</item>
+                        </list>
+                     </item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Denominator =</content>
+                  <list>
+                     <item>AND: "Initial Patient Population"</item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Denominator Exclusions =</content>
+                  <list>
+                     <item>AND: <list>
+                           <item>OR: "Diagnosis, Resolved: Malignant Neoplasm of Colon"</item>
+                           <item>OR: "Diagnosis, Active: Malignant Neoplasm of Colon"</item>
+                           <item>OR: "Diagnosis, Inactive: Malignant Neoplasm of Colon"</item>
+                           <item>OR: "Procedure, Performed: Total Colectomy"</item>
+                           <item> starts before or during "Measurement Period"</item>
+                        </list>
+                     </item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Numerator =</content>
+                  <list>
+                     <item>AND: <list>
+                           <item>OR: "Procedure, Performed: Colonoscopy"  &lt;= 9 year(s) starts before or during "Measurement Period"</item>
+                           <item>OR: "Laboratory Test, Result: Fecal Occult Blood Test (FOBT) (result)" during "Measurement Period"</item>
+                           <item>OR: "Procedure, Performed: Flexible Sigmoidoscopy"  &lt;= 4 year(s) starts before or during "Measurement Period"</item>
+                        </list>
+                     </item>
+                  </list>
+               </item>
+               <item>
+                  <content styleCode="Bold">Denominator Exceptions =</content>
+                  <list>
+                     <item>None</item>
+                  </list>
+               </item>
+            </list>
+         </text><!--
+            **************************************************************   
+            Population Criteria Section: exclusions 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true" actionNegationInd="true">
+               <id root="24AD578A-9880-40BF-A400-1E6B96320E29"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="DENOM" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Denominator"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Resolved pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.24"/>
+                           <id root="0f82416a-3fcc-424e-acfe-d24b1c56f39a"/>
+                           <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                 <title>Diagnosis, Resolved: Malignant Neoplasm of Colon</title>
+                                 <value xsi:type="CD" code="2.16.840.1.113883.3.464.1003.108.12.1001" displayName="Malignant Neoplasm of Colon Grouping Value Set"/>
+                                 <sourceOf typeCode="REFR">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                       <value xsi:type="CD" code="413322009" displayName="resolved" codeSystem="2.16.840.1.113883.6.96"/>
+                                    </observation>
+                                 </sourceOf>
+                              </observation>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.2"/>
+                           <id root="a52f5d0f-622c-48fa-8d5e-30f3dfbf662f"/>
+                           <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                 <title>Diagnosis, Active: Malignant Neoplasm of Colon</title>
+                                 <value xsi:type="CD" code="2.16.840.1.113883.3.464.1003.108.12.1001" displayName="Malignant Neoplasm of Colon Grouping Value Set"/>
+                                 <sourceOf typeCode="REFR">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                       <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                                    </observation>
+                                 </sourceOf>
+                              </observation>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Inactive pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.23"/>
+                           <id root="b055da12-ff90-494b-82ec-2a3d6ffcf9a9"/>
+                           <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                                 <title>Diagnosis, Inactive: Malignant Neoplasm of Colon</title>
+                                 <value xsi:type="CD" code="2.16.840.1.113883.3.464.1003.108.12.1001" displayName="Malignant Neoplasm of Colon Grouping Value Set"/>
+                                 <sourceOf typeCode="REFR">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                       <value xsi:type="CD" code="73425007" displayName="inactive" codeSystem="2.16.840.1.113883.6.96"/>
+                                    </observation>
+                                 </sourceOf>
+                              </observation>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                           <id root="79137631-e49f-4ea8-8775-244e9f52eef6"/>
+                           <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.464.1003.198.12.1019" displayName="Total Colectomy Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Procedure, Performed: Total Colectomy</title>
+                              </procedure>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="EAS" inversionInd="true">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <id root="750726af-3866-4775-bd52-25488c9edf48"/>
+                           <title>Measurement Period</title>
+                        </observation>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry><!--
+            **************************************************************   
+            Population Criteria Section: numerator 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="4E245EF3-049D-4FBB-BF54-16FFE8DE5DAF"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="NUMER" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Numerator"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                           <id root="66496743-8d64-4504-9165-fc89d05c101d"/>
+                           <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.464.1003.108.12.1020" displayName="Colonoscopy Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Procedure, Performed: Colonoscopy</title>
+                                 <sourceOf typeCode="EAS" inversionInd="true">
+                                    <pauseQuantity xsi:type="IVL_PQ">
+                                       <high value="9" unit="a" inclusive="true"/>
+                                    </pauseQuantity>
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <id root="750726af-3866-4775-bd52-25488c9edf48"/>
+                                       <title>Measurement Period</title>
+                                    </observation>
+                                 </sourceOf>
+                              </procedure>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Laboratory Test, Result pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.12"/>
+                           <id root="2e7aa21c-789c-4a25-a83e-7af3678a4f33"/>
+                           <code code="30954-2" displayName="Results" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.464.1003.198.12.1011" displayName="Fecal Occult Blood Test (FOBT) Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Laboratory Test, Result: Fecal Occult Blood Test (FOBT) (result)</title>
+                                 <statusCode code="completed"/>
+                                 <sourceOf typeCode="REFR">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <templateId root="2.16.840.1.113883.3.560.1.1019.1"/>
+                                       <code code="385676005" codeSystem="2.16.840.1.113883.6.96" displayName="result" codeSystemName="SNOMED-CT"/>
+                                       <value xsi:type="ANYNonNull"/>
+                                    </observation>
+                                 </sourceOf>
+                                 <sourceOf typeCode="DURING">
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <id root="750726af-3866-4775-bd52-25488c9edf48"/>
+                                       <title>Measurement Period</title>
+                                    </observation>
+                                 </sourceOf>
+                              </observation>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.6"/>
+                           <id root="4f34aedd-ec6c-4f64-9022-1395ed9a430a"/>
+                           <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+                           <sourceOf typeCode="COMP">
+                              <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.464.1003.198.12.1010" displayName="Flexible Sigmoidoscopy Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Procedure, Performed: Flexible Sigmoidoscopy</title>
+                                 <sourceOf typeCode="EAS" inversionInd="true">
+                                    <pauseQuantity xsi:type="IVL_PQ">
+                                       <high value="4" unit="a" inclusive="true"/>
+                                    </pauseQuantity>
+                                    <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                       <id root="750726af-3866-4775-bd52-25488c9edf48"/>
+                                       <title>Measurement Period</title>
+                                    </observation>
+                                 </sourceOf>
+                              </procedure>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry><!--
+            **************************************************************   
+            Population Criteria Section: denominator 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="3043DE09-63D4-4B79-9583-CC331EF04211"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="DENOM" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Denominator"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <id root="73149355-016D-4A0E-B7F6-BA2AEA23564D"/>
+                     <title>Initial Patient Population</title>
+                  </observation>
+               </sourceOf>
+            </observation>
+         </entry><!--
+            **************************************************************   
+            Population Criteria Section: population 
+            **************************************************************
+      -->
+         <entry typeCode="DRIV">
+            <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+               <id root="73149355-016D-4A0E-B7F6-BA2AEA23564D"/>
+               <code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+               <value xsi:type="CD" code="IPP" codeSystem="2.16.840.1.113883.5.1063" codeSystemName="HL7 Observation Value" displayName="Initial Patient Population"/><!--  top and/or -->
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Birthdate pattern -->
+                     <templateId root="2.16.840.1.113883.3.560.1.400"/>
+                     <id root="ac579c65-a92a-452f-bddc-c27203bd0770"/>
+                     <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+                     <sourceOf typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="21112-8" codeSystem="2.16.840.1.113883.6.1" displayName="Birth date"/>
+                           <title>Patient Characteristic Birthdate: birth date</title>
+                           <value xsi:type="CD" code="2.16.840.1.113883.3.560.100.4" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="birth date LOINC Value Set"/>
+                           <sourceOf typeCode="SBS">
+                              <pauseQuantity xsi:type="IVL_PQ">
+                                 <low value="51" unit="a" inclusive="true"/>
+                              </pauseQuantity>
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <id root="750726af-3866-4775-bd52-25488c9edf48"/>
+                                 <title>Measurement Period</title>
+                              </observation>
+                           </sourceOf>
+                        </observation>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Birthdate pattern -->
+                     <templateId root="2.16.840.1.113883.3.560.1.400"/>
+                     <id root="ac579c65-a92a-452f-bddc-c27203bd0770"/>
+                     <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+                     <sourceOf typeCode="COMP">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="21112-8" codeSystem="2.16.840.1.113883.6.1" displayName="Birth date"/>
+                           <title>Patient Characteristic Birthdate: birth date</title>
+                           <value xsi:type="CD" code="2.16.840.1.113883.3.560.100.4" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="birth date LOINC Value Set"/>
+                           <sourceOf typeCode="SBS">
+                              <pauseQuantity xsi:type="IVL_PQ">
+                                 <high value="75" unit="a" inclusive="true"/>
+                              </pauseQuantity>
+                              <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                                 <id root="750726af-3866-4775-bd52-25488c9edf48"/>
+                                 <title>Measurement Period</title>
+                              </observation>
+                           </sourceOf>
+                        </observation>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+               <sourceOf typeCode="PRCN">
+                  <conjunctionCode code="AND"/>
+                  <act classCode="ACT" moodCode="EVN" isCriterionInd="true">
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                           <id root="c4268528-d6b7-4629-8dbb-26629bb1f712"/>
+                           <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                           <sourceOf typeCode="COMP">
+                              <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.464.1003.101.12.1001" displayName="Office Visit Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Encounter, Performed: Office Visit</title>
+                                 <statusCode code="completed"/>
+                              </encounter>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                           <id root="0b56a44d-70f7-4f84-ac28-a40fb1a1ba99"/>
+                           <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                           <sourceOf typeCode="COMP">
+                              <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.464.1003.101.12.1048" displayName="Face-to-Face Interaction Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Encounter, Performed: Face-to-Face Interaction</title>
+                                 <statusCode code="completed"/>
+                              </encounter>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                           <id root="0817c03a-890d-4a5e-9a3c-b0ea070f674f"/>
+                           <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                           <sourceOf typeCode="COMP">
+                              <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.464.1003.101.12.1025" displayName="Preventive Care Services - Established Office Visit, 18 and Up Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up</title>
+                                 <statusCode code="completed"/>
+                              </encounter>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                           <id root="129f8a85-56a3-44a6-b96b-26b713852b95"/>
+                           <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                           <sourceOf typeCode="COMP">
+                              <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.464.1003.101.12.1023" displayName="Preventive Care Services-Initial Office Visit, 18 and Up Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up</title>
+                                 <statusCode code="completed"/>
+                              </encounter>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                           <id root="f02276c9-6d34-4d2e-acf9-7e829200bbcc"/>
+                           <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                           <sourceOf typeCode="COMP">
+                              <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.464.1003.101.12.1016" displayName="Home Healthcare Services Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Encounter, Performed: Home Healthcare Services</title>
+                                 <statusCode code="completed"/>
+                              </encounter>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="PRCN">
+                        <conjunctionCode code="OR"/>
+                        <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+                           <templateId root="2.16.840.1.113883.3.560.1.79"/>
+                           <id root="c8fda9da-fef6-4651-b99e-e690abd83d95"/>
+                           <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+                           <sourceOf typeCode="COMP">
+                              <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                                 <code code="2.16.840.1.113883.3.526.3.1240" displayName="Annual Wellness Visit Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                                 <title>Encounter, Performed: Annual Wellness Visit</title>
+                                 <statusCode code="completed"/>
+                              </encounter>
+                           </sourceOf>
+                        </act>
+                     </sourceOf>
+                     <sourceOf typeCode="DURING">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <id root="750726af-3866-4775-bd52-25488c9edf48"/>
+                           <title>Measurement Period</title>
+                        </observation>
+                     </sourceOf>
+                  </act>
+               </sourceOf>
+            </observation>
+         </entry>
+      </section>
+   </component>
+         
+      <!--
+         ******************************************   
+         Data Criteria Section
+         ******************************************
+      --><component typeCode="COMP">
+      <section>
+         <code code="57025-9" codeSystem="2.16.840.1.113883.6.1" displayName="Data criteria (QDM Data Elements)"/>
+         <title>Data criteria (QDM Data Elements)</title>
+         <text>
+            <list>
+               <item>
+                  <content>"Diagnosis, Active: Malignant Neoplasm of Colon"</content> using "Malignant Neoplasm of Colon Grouping Value Set (2.16.840.1.113883.3.464.1003.108.12.1001)"</item>
+               <item>
+                  <content>"Diagnosis, Inactive: Malignant Neoplasm of Colon"</content> using "Malignant Neoplasm of Colon Grouping Value Set (2.16.840.1.113883.3.464.1003.108.12.1001)"</item>
+               <item>
+                  <content>"Diagnosis, Resolved: Malignant Neoplasm of Colon"</content> using "Malignant Neoplasm of Colon Grouping Value Set (2.16.840.1.113883.3.464.1003.108.12.1001)"</item>
+               <item>
+                  <content>"Encounter, Performed: Annual Wellness Visit"</content> using "Annual Wellness Visit Grouping Value Set (2.16.840.1.113883.3.526.3.1240)"</item>
+               <item>
+                  <content>"Encounter, Performed: Face-to-Face Interaction"</content> using "Face-to-Face Interaction Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1048)"</item>
+               <item>
+                  <content>"Encounter, Performed: Home Healthcare Services"</content> using "Home Healthcare Services Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1016)"</item>
+               <item>
+                  <content>"Encounter, Performed: Office Visit"</content> using "Office Visit Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1001)"</item>
+               <item>
+                  <content>"Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up"</content> using "Preventive Care Services - Established Office Visit, 18 and Up Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1025)"</item>
+               <item>
+                  <content>"Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up"</content> using "Preventive Care Services-Initial Office Visit, 18 and Up Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1023)"</item>
+               <item>
+                  <content>"Laboratory Test, Result: Fecal Occult Blood Test (FOBT)"</content> using "Fecal Occult Blood Test (FOBT) Grouping Value Set (2.16.840.1.113883.3.464.1003.198.12.1011)"</item>
+               <item>
+                  <content>"Patient Characteristic Birthdate: birth date"</content> using "birth date LOINC Value Set (2.16.840.1.113883.3.560.100.4)"</item>
+               <item>
+                  <content>"Procedure, Performed: Colonoscopy"</content> using "Colonoscopy Grouping Value Set (2.16.840.1.113883.3.464.1003.108.12.1020)"</item>
+               <item>
+                  <content>"Procedure, Performed: Flexible Sigmoidoscopy"</content> using "Flexible Sigmoidoscopy Grouping Value Set (2.16.840.1.113883.3.464.1003.198.12.1010)"</item>
+               <item>
+                  <content>"Procedure, Performed: Total Colectomy"</content> using "Total Colectomy Grouping Value Set (2.16.840.1.113883.3.464.1003.198.12.1019)"</item>
+            </list>
+         </text>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Birthdate pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.400"/>
+               <id root="ac579c65-a92a-452f-bddc-c27203bd0770"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="21112-8" codeSystem="2.16.840.1.113883.6.1" displayName="Birth date"/>
+                     <title>Patient Characteristic Birthdate: birth date</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.560.100.4" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="birth date LOINC Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Resolved pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.24"/>
+               <id root="0f82416a-3fcc-424e-acfe-d24b1c56f39a"/>
+               <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                     <title>Diagnosis, Resolved: Malignant Neoplasm of Colon</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.464.1003.108.12.1001" displayName="Malignant Neoplasm of Colon Grouping Value Set"/>
+                     <sourceOf typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                           <value xsi:type="CD" code="413322009" displayName="resolved" codeSystem="2.16.840.1.113883.6.96"/>
+                        </observation>
+                     </sourceOf>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.6"/>
+               <id root="79137631-e49f-4ea8-8775-244e9f52eef6"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.198.12.1019" displayName="Total Colectomy Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Procedure, Performed: Total Colectomy</title>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.6"/>
+               <id root="66496743-8d64-4504-9165-fc89d05c101d"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.108.12.1020" displayName="Colonoscopy Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Procedure, Performed: Colonoscopy</title>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Procedure, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.6"/>
+               <id root="4f34aedd-ec6c-4f64-9022-1395ed9a430a"/>
+               <code code="47519-4" displayName="Procedures" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <procedure classCode="PROC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.198.12.1010" displayName="Flexible Sigmoidoscopy Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Procedure, Performed: Flexible Sigmoidoscopy</title>
+                  </procedure>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Laboratory Test, Result pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.12"/>
+               <id root="2e7aa21c-789c-4a25-a83e-7af3678a4f33"/>
+               <code code="30954-2" displayName="Results" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.198.12.1011" displayName="Fecal Occult Blood Test (FOBT) Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Laboratory Test, Result: Fecal Occult Blood Test (FOBT)</title>
+                     <statusCode code="completed"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Active pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.2"/>
+               <id root="a52f5d0f-622c-48fa-8d5e-30f3dfbf662f"/>
+               <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                     <title>Diagnosis, Active: Malignant Neoplasm of Colon</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.464.1003.108.12.1001" displayName="Malignant Neoplasm of Colon Grouping Value Set"/>
+                     <sourceOf typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                           <value xsi:type="CD" code="55561003" displayName="active" codeSystem="2.16.840.1.113883.6.96"/>
+                        </observation>
+                     </sourceOf>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Diagnosis, Inactive pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.23"/>
+               <id root="b055da12-ff90-494b-82ec-2a3d6ffcf9a9"/>
+               <code code="11450-4" displayName="Problem" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="55607006" codeSystem="2.16.840.1.113883.6.96" displayName="Problem"/>
+                     <title>Diagnosis, Inactive: Malignant Neoplasm of Colon</title>
+                     <value xsi:type="CD" code="2.16.840.1.113883.3.464.1003.108.12.1001" displayName="Malignant Neoplasm of Colon Grouping Value Set"/>
+                     <sourceOf typeCode="REFR">
+                        <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                           <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                           <value xsi:type="CD" code="73425007" displayName="inactive" codeSystem="2.16.840.1.113883.6.96"/>
+                        </observation>
+                     </sourceOf>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="c4268528-d6b7-4629-8dbb-26629bb1f712"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1001" displayName="Office Visit Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Office Visit</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="0b56a44d-70f7-4f84-ac28-a40fb1a1ba99"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1048" displayName="Face-to-Face Interaction Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Face-to-Face Interaction</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="f02276c9-6d34-4d2e-acf9-7e829200bbcc"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1016" displayName="Home Healthcare Services Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Home Healthcare Services</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="0817c03a-890d-4a5e-9a3c-b0ea070f674f"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1025" displayName="Preventive Care Services - Established Office Visit, 18 and Up Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="129f8a85-56a3-44a6-b96b-26b713852b95"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.464.1003.101.12.1023" displayName="Preventive Care Services-Initial Office Visit, 18 and Up Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Encounter, Performed pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.79"/>
+               <id root="c8fda9da-fef6-4651-b99e-e690abd83d95"/>
+               <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" displayName="Encounter list"/>
+               <sourceOf typeCode="COMP">
+                  <encounter classCode="ENC" moodCode="EVN" isCriterionInd="true">
+                     <code code="2.16.840.1.113883.3.526.3.1240" displayName="Annual Wellness Visit Grouping Value Set" codeSystem="2.16.840.1.113883.3.560.101.1"/>
+                     <title>Encounter, Performed: Annual Wellness Visit</title>
+                     <statusCode code="completed"/>
+                  </encounter>
+               </sourceOf>
+            </act>
+         </entry>
+      </section>
+   </component>
+            
+         <!--
+            **************************************************************   
+            Stratification Section
+            **************************************************************
+         --><component typeCode="COMP">
+      <section>
+         <code code="69669-0" codeSystem="2.16.840.1.113883.6.1" displayName="Population stratification description"/>
+         <title>Reporting Stratification</title>
+         <text>
+            <list>
+               <item>None</item>
+            </list>
+         </text>
+      </section>
+   </component>
+         
+      <!--
+         ******************************************   
+         Supplemental Data Elements Section
+         ******************************************
+      --><component typeCode="COMP">
+      <section>
+         <code code="69670-8" codeSystem="2.16.840.1.113883.6.1" displayName="Supplemental Data Elements"/>
+         <title>Supplemental Data Elements</title>
+         <text>
+            <list>
+               <item>
+                  <content>"Patient Characteristic Ethnicity: Ethnicity"</content> using "Ethnicity CDC Value Set (2.16.840.1.114222.4.11.837)"</item>
+               <item>
+                  <content>"Patient Characteristic Payer: Payer"</content> using "Payer Source of Payment Typology Value Set (2.16.840.1.114222.4.11.3591)"</item>
+               <item>
+                  <content>"Patient Characteristic Race: Race"</content> using "Race CDC Value Set (2.16.840.1.114222.4.11.836)"</item>
+               <item>
+                  <content>"Patient Characteristic Sex: ONC Administrative Sex"</content> using "ONC Administrative Sex Administrative Sex Value Set (2.16.840.1.113762.1.4.1)"</item>
+            </list>
+         </text>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Sex pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.402"/>
+               <id root="3eebd5f1-6f70-47d7-834d-b5f31e22cc47"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="263495000" codeSystem="2.16.840.1.113883.6.96" displayName="Sex"/>
+                     <title>Patient Characteristic Sex: ONC Administrative Sex</title>
+                     <value xsi:type="CD" code="2.16.840.1.113762.1.4.1" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="ONC Administrative Sex Administrative Sex Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Race pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.406"/>
+               <id root="c7cc7e22-c79a-4e69-b8c4-06ca3b217606"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="32624-9" codeSystem="2.16.840.1.113883.6.1" displayName="Race"/>
+                     <title>Patient Characteristic Race: Race</title>
+                     <value xsi:type="CD" code="2.16.840.1.114222.4.11.836" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="Race CDC Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Ethnicity pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.403"/>
+               <id root="3366d0e2-bff4-46b9-b14e-c6c51de1af72"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="54133-4" codeSystem="2.16.840.1.113883.6.1" displayName="Ethnicity"/>
+                     <title>Patient Characteristic Ethnicity: Ethnicity</title>
+                     <value xsi:type="CD" code="2.16.840.1.114222.4.11.837" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="Ethnicity CDC Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+         <entry typeCode="DRIV">
+            <act classCode="ACT" moodCode="EVN" isCriterionInd="true"><!-- Patient Characteristic Payer pattern -->
+               <templateId root="2.16.840.1.113883.3.560.1.405"/>
+               <id root="0f7a608d-09e9-489f-a676-a9527646de22"/>
+               <code code="45970-1" displayName="Demographics" codeSystem="2.16.840.1.113883.6.1"/>
+               <sourceOf typeCode="COMP">
+                  <observation classCode="OBS" moodCode="EVN" isCriterionInd="true">
+                     <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" displayName="Payer"/>
+                     <title>Patient Characteristic Payer: Payer</title>
+                     <value xsi:type="CD" code="2.16.840.1.114222.4.11.3591" codeSystem="2.16.840.1.113883.3.560.101.1" displayName="Payer Source of Payment Typology Value Set"/>
+                  </observation>
+               </sourceOf>
+            </act>
+         </entry>
+      </section>
+   </component>
+</QualityMeasureDocument>

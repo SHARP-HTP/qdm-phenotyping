@@ -1,0 +1,669 @@
+{
+  "id": "0608",
+  "hqmf_id": "8A4D92B2-35FB-4AA7-0136-1CB01C4D758C",
+  "hqmf_set_id": "3BBFC929-50C8-44B8-8D34-82BE75C08A70",
+  "hqmf_version_number": 1,
+  "title": "Pregnant women that had HBsAg testing",
+  "description": "This measure identifies pregnant women who had a HBsAg (hepatitis B) test during their pregnancy.",
+  "cms_id": "CMS158v1",
+  "population_criteria": {
+    "DENEXCEP": {
+      "conjunction?": true,
+      "type": "DENEXCEP",
+      "title": "Denominator Exception",
+      "hqmf_id": "DF1C41FB-FB6B-4235-986B-1479D520CD4A",
+      "preconditions": [
+        {
+          "id": 10,
+          "preconditions": [
+            {
+              "id": 7,
+              "preconditions": [
+                {
+                  "id": 3,
+                  "reference": "DiagnosisActiveHepatitisB_precondition_3"
+                },
+                {
+                  "id": 5,
+                  "reference": "DiagnosisInactiveHepatitisB_precondition_5"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "6F32F052-F111-4D97-BEBC-55A7208C8566",
+      "preconditions": [
+        {
+          "id": 13,
+          "preconditions": [
+            {
+              "id": 11,
+              "reference": "LaboratoryTestPerformedHbsag_precondition_11"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "4A1DDE20-02BE-44CC-BCA4-613AEEE3ABB7"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "63FBE113-2ECD-4E1B-92D4-D15AA1A25653",
+      "preconditions": [
+        {
+          "id": 26,
+          "preconditions": [
+            {
+              "id": 15,
+              "reference": "OccurrenceADelivery1_precondition_14",
+              "conjunction_code": "allTrue"
+            },
+            {
+              "id": 19,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_19"
+            },
+            {
+              "id": 21,
+              "reference": "PatientCharacteristicSexFemale_precondition_21"
+            },
+            {
+              "id": 23,
+              "reference": "OccurrenceAFullTermDelivery2_precondition_23"
+            },
+            {
+              "id": 25,
+              "preconditions": [
+                {
+                  "id": 17,
+                  "reference": "OccurrenceAFullTermDelivery2_precondition_17"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue",
+              "negation": true
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "DiagnosisActiveFullTermDelivery": {
+      "title": "Full Term Delivery",
+      "description": "Diagnosis, Active: Full Term Delivery",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.273",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveFullTermDelivery"
+    },
+    "ProcedurePerformedDelivery": {
+      "title": "Delivery",
+      "description": "Procedure, Performed: Delivery",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.278",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedDelivery"
+    },
+    "OccurrenceADelivery1": {
+      "title": "Delivery",
+      "description": "Procedure, Performed: Delivery",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.278",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_DELIVERY",
+      "source_data_criteria": "OccurrenceADelivery1"
+    },
+    "OccurrenceADelivery1_precondition_8": {
+      "title": "Delivery",
+      "description": "Procedure, Performed: Delivery",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.278",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_DELIVERY",
+      "source_data_criteria": "OccurrenceADelivery1"
+    },
+    "DiagnosisActiveHepatitisB_precondition_3": {
+      "title": "Hepatitis B",
+      "description": "Diagnosis, Active: Hepatitis B",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.269",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveHepatitisB",
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "OccurrenceADelivery1_precondition_8"
+        }
+      ]
+    },
+    "DiagnosisInactiveHepatitisB_precondition_5": {
+      "title": "Hepatitis B",
+      "description": "Diagnosis, Inactive: Hepatitis B",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_inactive",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.269",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "inactive",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DiagnosisInactiveHepatitisB",
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "OccurrenceADelivery1_precondition_8"
+        }
+      ]
+    },
+    "LaboratoryTestPerformedHbsag_precondition_11": {
+      "title": "HBsAg",
+      "description": "Laboratory Test, Performed: HBsAg",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.279",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestPerformedHbsag",
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "OccurrenceADelivery1",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "280",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceADelivery1_precondition_14": {
+      "title": "Delivery",
+      "description": "Procedure, Performed: Delivery",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.278",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_DELIVERY",
+      "source_data_criteria": "OccurrenceADelivery1",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ],
+      "subset_operators": [
+        {
+          "type": "FIRST"
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_19": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "12",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicSexFemale_precondition_21": {
+      "title": "Female",
+      "description": "Patient Characteristic Sex: Female",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.2",
+      "property": "gender",
+      "type": "characteristic",
+      "definition": "patient_characteristic_gender",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicSexFemale",
+      "value": {
+        "type": "CD",
+        "system": "Administrative Sex",
+        "code": "F"
+      }
+    },
+    "OccurrenceAFullTermDelivery2_precondition_23": {
+      "title": "Full Term Delivery",
+      "description": "Diagnosis, Active: Full Term Delivery",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.273",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_FULL_TERM_DELIVERY",
+      "source_data_criteria": "OccurrenceAFullTermDelivery2",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceADelivery1"
+        }
+      ]
+    },
+    "OccurrenceAFullTermDelivery2_precondition_17": {
+      "title": "Full Term Delivery",
+      "description": "Diagnosis, Active: Full Term Delivery",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.273",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_FULL_TERM_DELIVERY",
+      "source_data_criteria": "OccurrenceAFullTermDelivery2",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceADelivery1"
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "DiagnosisActiveFullTermDelivery": {
+      "title": "Full Term Delivery",
+      "description": "Diagnosis, Active: Full Term Delivery",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.273",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveFullTermDelivery"
+    },
+    "LaboratoryTestPerformedHbsag": {
+      "title": "HBsAg",
+      "description": "Laboratory Test, Performed: HBsAg",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.279",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestPerformedHbsag"
+    },
+    "DiagnosisActiveHepatitisB": {
+      "title": "Hepatitis B",
+      "description": "Diagnosis, Active: Hepatitis B",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.269",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveHepatitisB"
+    },
+    "DiagnosisInactiveHepatitisB": {
+      "title": "Hepatitis B",
+      "description": "Diagnosis, Inactive: Hepatitis B",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_inactive",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.269",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "inactive",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DiagnosisInactiveHepatitisB"
+    },
+    "PatientCharacteristicSexFemale": {
+      "title": "Female",
+      "description": "Patient Characteristic Sex: Female",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.2",
+      "property": "gender",
+      "type": "characteristic",
+      "definition": "patient_characteristic_gender",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicSexFemale",
+      "value": {
+        "type": "CD",
+        "system": "Administrative Sex",
+        "code": "F"
+      }
+    },
+    "ProcedurePerformedDelivery": {
+      "title": "Delivery",
+      "description": "Procedure, Performed: Delivery",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.278",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedDelivery"
+    },
+    "OccurrenceADelivery1": {
+      "title": "Delivery",
+      "description": "Procedure, Performed: Delivery",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.278",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_DELIVERY",
+      "source_data_criteria": "OccurrenceADelivery1"
+    },
+    "OccurrenceAFullTermDelivery2": {
+      "title": "Full Term Delivery",
+      "description": "Diagnosis, Active: Full Term Delivery",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.273",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_FULL_TERM_DELIVERY",
+      "source_data_criteria": "OccurrenceAFullTermDelivery2"
+    }
+  },
+  "attributes": [
+    {
+      "id": "FINALIZED_DATE_TIME",
+      "code": "OTH",
+      "value": "201208310916-0500",
+      "name": "Finalized Date/Time"
+    },
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "None",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "The USPSTF found good evidence that universal prenatal screening for HBV infection using HBsAg substantially reduces prenatal transmission of HBV and the subsequent development of chronic HBV infection (USPSTF 2004). The current practice of vaccinating all infants against HBV infection and post-exposure prophylaxis with hepatitis B immune globulin administered at birth to infants of HBV-infected mothers substantially reduces the risk for acquiring HBV infection.",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "The U.S. Preventive Services Task Force (USPSTF) strongly recommends screening for hepatitis B virus (HBV) infection in pregnant women at their first prenatal visit (USPSTF 2004). This is a grade A* recommendation from the USPSTF. In addition, the American College of Obstetricians and Gynecologists (ACOG) recommend screening all pregnant women for HBV infection (ACOG 2002).",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "Higher score indicates better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "0608",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "None",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "158",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "American Academy of Pediatrics, American College of Obstetricians and Gynecologists. Guidelines for perinatal care, 5th ed. Elk Grove Village (IL): AAP; Washington, DC: ACOG; 2002.",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "None",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "None",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "All female patients aged 12 and older who had a full term delivery during the measurement period.",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals Initial Patient Population.",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "None",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Patients who were tested for Hepatitis B surface antigen (HBsAg) during pregnancy within 280 days prior to delivery.",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "Patients with current or past Hepatitis B infection.",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not Applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "IPP": "IPP",
+      "DENOM": "DENOM",
+      "NUMER": "NUMER",
+      "DENEXCEP": "DENEXCEP"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

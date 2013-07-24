@@ -1,0 +1,525 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:n1="urn:hl7-org:v3">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   
+      <title>Use of Imaging Studies for Low Back Pain</title><style type="text/css">
+body {
+	color: rgb(26, 26, 26);
+	background-color: rgb(255,255,255);
+	font-family: Verdana, Tahoma, sans-serif;
+	font-size: 11px;
+}
+
+a {
+	color: rgb(0, 0, 255);
+	background-color: rgb(255,255,255);
+}
+
+h1 {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 11pt;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 8pt;
+	font-weight: bold;
+}
+
+div {
+	width: 80%;
+}
+
+table {
+	line-height: 10pt;
+	width: 80%;
+}
+
+tr {
+	background-color: rgb(224,224,224);
+}
+
+td {
+	padding: 0.1cm 0.2cm;
+	vertical-align: top;
+}
+
+.h1center {
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+	width: 80%;
+}
+
+.header_table{
+	border: 1pt inset rgb(0,0,0);
+}
+
+.narr_table {
+	width: 100%;
+}
+
+.narr_tr {
+	background-color: rgb(225,225,225);
+}
+pre {
+ overflow: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+ white-space: pre-wrap; /* css-3 */
+ white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+ white-space: -pre-wrap; /* Opera 4-6 */
+ white-space: -o-pre-wrap; /* Opera 7 */
+ word-wrap: break-word; /* Internet Explorer 5.5+ */
+ font-family: Verdana, Tahoma, sans-serif;
+ font-size: 11px;
+ text-align:left;
+ margin: 0px 0px 0px 0px;
+ padding:0px 0px 0px 0px;
+}
+.narr_th {
+	background-color: rgb(201,201,201);
+}
+
+.td_label{
+	font-weight: bold;
+	color: white;
+}
+	</style></head>
+   <body>
+      <table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Title</span></td>
+               <td width="80%" colspan="3">Use of Imaging Studies for Low Back Pain</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Identifier<br>(Measure Authoring Tool)</span></td>
+               <td width="30%">166</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">eMeasure Version number</span></td>
+               <td width="30%">2</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">NQF Number</span></td>
+               <td width="30%">0052</td>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">GUID</span></td>
+               <td> b6016b47-b65d-4be0-866f-1d397886ca89</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measurement Period</span></td>
+               <td width="80%" colspan="3">January 1, 20xx  through December 31, 20xx </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Steward</span></td>
+               <td width="80%" colspan="3">National Committee for Quality Assurance</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Developer</span></td>
+               <td width="80%" colspan="3">National Committee for Quality Assurance</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Endorsed By</span></td>
+               <td width="80%" colspan="3">National Quality Forum</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Description</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Percentage of patients 18-50 years of age with a diagnosis of low back pain who did not have an imaging study (plain X-ray, MRI, CT scan) within 28 days of the diagnosis.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Copyright</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Physician Performance Measure (Measures) and related data specifications were developed by the National Committee for Quality Assurance (NCQA). 
+
+The Measures are copyrighted but can be reproduced and distributed, without modification, for noncommercial purposes (e.g., use by healthcare providers in connection with their practices). Commercial use is defined as the sale, licensing, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial use of the Measures requires a license agreement between the user and NCQA. NCQA is not responsible for any use of the Measures. 
+
+Copyright 2012 National Committee for Quality Assurance. All Rights Reserved. 
+
+Limited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets. NCQA disclaims all liability for use or accuracy of any CPT or other codes contained in the specifications.
+
+CPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC(R) copyright 2004-2011 Regenstrief Institute, Inc. 
+This material contains SNOMED Clinical Terms (R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 Copyright 2011 World Health Organization. All Rights Reserved.
+
+Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Disclaimer</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>These performance Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.
+
+THE MEASURES AND SPECIFICATIONS ARE PROVIDED &#8220;AS IS&#8221; WITHOUT WARRANTY OF ANY KIND.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Scoring</span></td>
+               <td width="80%" colspan="3">Proportion</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Type</span></td>
+               <td width="80%" colspan="3">Process</td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Stratification</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Risk Adjustment</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rate Aggregation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Rationale</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Low back pain is a pervasive problem that affects two thirds of adults at some time in their lives. It ranks among the top ten reasons for patient visits to internists and is the most common and expensive reason for work disability in the U.S.  Low back pain is second only to upper respiratory problems as a symptom-related reason for visits to a physician (Jarvik and Deyo 2000; U.S. Preventive Services Task Force 2004). 
+
+Back pain is among the most common musculoskeletal conditions, afflicting approximately 31 million Americans, and is the number one cause of activity limitation in young adults (Rizzo, Abbott, and Berger 1998). Low back pain is responsible for direct health care expenditures of more than $20 billion annually, and as much as $50 billion per year when indirect costs are included (Patel 2000). This accounts for over 4.7 million missed work days per year (Dagenais, Caro, and Haldeman 2008).</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Clinical Recommendation Statement</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>American College of Physicians and the American Pain Society (Chou et al. 2007)
+ 
+Clinicians should not routinely obtain imaging or other diagnostic tests in patients with nonspecific low back pain (strong recommendation, moderate-quality evidence). 
+
+Institute for Clinical Systems Improvement (2008)
+
+&#8226; Back pain assessment should include a subjective pain rating, functional status, patient history including notation of presence or absence of "red flags" (Cauda Equina syndrome or other conditions) and psychosocial indicators, assessment of prior treatment and response, employment status, and clinician's objective assessment.
+&#8226; Reduce unnecessary imaging unless &#8220;red flag&#8221; indicators exist.
+&#8226; A conservative approach should be first-line treatment. Emphasize patient education and conservative home self-care, which includes limited bed rest, early ambulation, postural advice, resumption of light-duty activities, use of ice and heat, anti-inflammatory and analgesic over-the-counter medications, and early return to work or activities.
+&#8226; Patients with acute low back pain should be advised to stay active and continue ordinary daily activity within the limits permitted by the pain. For chronic back pain, there is evidence that exercise therapy is effective.
+&#8226; Consult or refer to surgical spine specialist (neurosurgeon, orthopedic surgeon, or other) or non-surgical spine specialist (physical therapist, chiropractic provider, osteopathic or allopathic physician, or other) if conservative treatment fails.
+
+U.S. Preventive Services Task Force (USPSTF) (2004)
+The USPSTF concludes that the evidence is insufficient to recommend for or against the routine use of interventions to prevent low back pain in adults in primary care settings. (I recommendation)</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Improvement Notation</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Higher score indicates better quality</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Chou, R., A. Qaseem, V. Snow, D. Casey, J.T. Cross Jr., P. Shekelle, D.K. Owens, and the Clinical Efficacy Assessment Subcommittee of the American College of Physicians and the American College of Physicians/American Pain Society Low Back Pain Guidelines Panel. 2008. &#8220;Diagnosis and treatment of low back pain: A joint clinical practice guideline from the American College of Physicians and the American Pain Society.&#8221; Ann Intern Med 147(7):478-491.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Institute for Clinical Systems Improvement. 2008. &#8220;Health Care Guideline: Adult Low Back Pain&#8221; Bloomington: Institute for Clinical Systems Improvement.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Jarvik, J.G., and R.A. Deyo. 2002. &#8220;Diagnostic evaluation of low back pain with emphasis on imaging.&#8221; Ann Intern Med 137:586-597.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>U.S. Preventive Services Task Force. 2004. &#8220;Primary care interventions to prevent low back pain in adults.&#8221; (February) http://www.uspreventiveservicestaskforce.org/uspstf/uspsback.htm</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Rizzo, J.A. T.A. Abbott, and M.L. Berger. 1998. &#8220;The labor productivity effects of chronic backache in the United States.&#8221; Med Care 36(10):1471-1488.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Dagenais, S., J. Caro, and S. Haldeman. 2008. &#8220;A systematic review of low back pain cost of illness studied in the United States and internationally.&#8221; Spine Journal 8(1):8-20.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Reference</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patel, A.T., and A.A. Ogle. 2000. &#8220;Diagnosis and management of acute low back pain.&#8221; Am Fam Phys 61(6):1779-1786.  http://www.aafp.org/afp/20000315/1779.html</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Definition</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>This measure applies to the first episode of low back pain during the measurement period.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Guidance</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>The outpatient or emergency department visit in the Initial Patient Population needs to occur during the first 337 days of the measurement period (337 days allows 28 days for the numerator event). This visit must be the first visit for low back pain during the measurement period.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Transmission Format</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>TBD</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Initial Patient Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients 18-50 years of age with a diagnosis of low back pain during an outpatient or emergency department visit</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Equals Initial Patient Population</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Exclude patients with a diagnosis of cancer any time in their history or patients with a diagnosis of recent trauma, IV drug abuse, or neurologic impairment during the 12-month period prior to the outpatient or emergency department visit.
+
+Exclude patients with a diagnosis of low back pain within the 180 days prior to the outpatient or emergency department visit.</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Patients without an imaging study conducted on the date of the outpatient or emergency department visit or in the 28 days following the outpatient or emergency department visit</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Numerator Exclusions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Denominator Exceptions</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>None</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Population</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Observations</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>Not Applicable</pre></div>
+               </td>
+            </tr>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Supplemental Data Elements</span></td>
+               <td width="80%" colspan="3">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto"><pre>For every patient evaluated by this measure also identify payer, race, ethnicity and sex.</pre></div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <h2><a name="toc">Table of Contents</a></h2>
+      <ul>
+         <li><a href="#d3996884e530">Population criteria</a></li>
+         <li><a href="#d3996884e1525">Data criteria (QDM Data Elements)</a></li>
+         <li><a href="#d3996884e2050">Reporting Stratification</a></li>
+         <li><a href="#d3996884e2071">Supplemental Data Elements</a></li>
+      </ul>
+      <hr align="left" color="teal" size="2" width="80%">
+      <h3><a name="d3996884e530" href="#toc">Population criteria</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               <b>Initial Patient Population =</b>
+               
+               <ul>
+                  <li>AND:  FIRST: "Occurrence A of Diagnosis, Active: Low Back Pain" starts during "Measurement Period"</li>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &gt;= 18 year(s) starts before start of "Measurement Period"</li>
+                  <li>AND: "Patient Characteristic Birthdate: birth date"  &lt;= 50 year(s) starts before start of "Measurement Period"</li>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Occurrence A of Diagnosis, Active: Low Back Pain" starts during ("Encounter, Performed: Office Visit"  &lt;= 337 day(s)
+                           starts after start of "Measurement Period")
+                        </li>
+                        <li>OR: "Occurrence A of Diagnosis, Active: Low Back Pain" starts during ("Encounter, Performed: Emergency Department Visit" 
+                           &lt;= 337 day(s) starts after start of "Measurement Period")
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator =</b>
+               
+               <ul>
+                  <li>AND: "Initial Patient Population"</li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exclusions =</b>
+               
+               <ul>
+                  <li>AND: 
+                     <ul>
+                        <li>OR: "Diagnosis, Active: Low Back Pain"  &lt;= 180 day(s) starts before start of "Occurrence A of Diagnosis, Active: Low Back
+                           Pain"
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Diagnosis, Active: All Cancer"</li>
+                              <li>OR: "Diagnosis, Inactive: All Cancer"</li>
+                              <li>OR: "Diagnosis, Resolved: All Cancer"</li>
+                              <li> starts before or during "Measurement Period"</li>
+                           </ul>
+                           
+                        </li>
+                        <li>OR: 
+                           <ul>
+                              <li>OR: "Diagnosis, Active: Trauma"</li>
+                              <li>OR: "Diagnosis, Active: IV Drug Abuse"</li>
+                              <li>OR: "Diagnosis, Active: Neurologic impairment"</li>
+                              <li>  &lt;= 365 day(s) starts before or during "Measurement Period"</li>
+                           </ul>
+                           
+                        </li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Numerator =</b>
+               
+               <ul>
+                  <li>AND NOT: 
+                     <ul>
+                        <li>OR: "Diagnostic Study, Performed: X-Ray of Lower Spine"</li>
+                        <li>OR: "Diagnostic Study, Performed: MRI of Lower Spine"</li>
+                        <li>OR: "Diagnostic Study, Performed: CT Scan of Lower Spine"</li>
+                        <li>  &lt;= 28 day(s) starts after start of "Occurrence A of Diagnosis, Active: Low Back Pain"</li>
+                     </ul>
+                     
+                  </li>
+               </ul>
+               
+            </li>
+            <li>
+               <b>Denominator Exceptions =</b>
+               
+               <ul>
+                  <li>None</li>
+               </ul>
+               
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d3996884e1525" href="#toc">Data criteria (QDM Data Elements)</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Diagnosis, Active: All Cancer" using "All Cancer Grouping Value Set (2.16.840.1.113883.3.464.1003.108.12.1011)"
+            </li>
+            <li>
+               "Diagnosis, Active: IV Drug Abuse" using "IV Drug Abuse Grouping Value Set (2.16.840.1.113883.3.464.1003.106.12.1003)"
+            </li>
+            <li>
+               "Diagnosis, Active: Low Back Pain" using "Low Back Pain Grouping Value Set (2.16.840.1.113883.3.464.1003.113.12.1001)"
+            </li>
+            <li>
+               "Diagnosis, Active: Neurologic impairment" using "Neurologic impairment Grouping Value Set (2.16.840.1.113883.3.464.1003.114.12.1012)"
+            </li>
+            <li>
+               "Diagnosis, Active: Trauma" using "Trauma Grouping Value Set (2.16.840.1.113883.3.464.1003.113.12.1036)"
+            </li>
+            <li>
+               "Diagnosis, Inactive: All Cancer" using "All Cancer Grouping Value Set (2.16.840.1.113883.3.464.1003.108.12.1011)"
+            </li>
+            <li>
+               "Diagnosis, Resolved: All Cancer" using "All Cancer Grouping Value Set (2.16.840.1.113883.3.464.1003.108.12.1011)"
+            </li>
+            <li>
+               "Diagnostic Study, Performed: CT Scan of Lower Spine" using "CT Scan of Lower Spine Grouping Value Set (2.16.840.1.113883.3.464.1003.113.12.1035)"
+            </li>
+            <li>
+               "Diagnostic Study, Performed: MRI of Lower Spine" using "MRI of Lower Spine Grouping Value Set (2.16.840.1.113883.3.464.1003.113.12.1034)"
+            </li>
+            <li>
+               "Diagnostic Study, Performed: X-Ray of Lower Spine" using "X-Ray of Lower Spine Grouping Value Set (2.16.840.1.113883.3.464.1003.113.12.1033)"
+            </li>
+            <li>
+               "Encounter, Performed: Emergency Department Visit" using "Emergency Department Visit Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1010)"
+            </li>
+            <li>
+               "Encounter, Performed: Office Visit" using "Office Visit Grouping Value Set (2.16.840.1.113883.3.464.1003.101.12.1001)"
+            </li>
+            <li>
+               "Patient Characteristic Birthdate: birth date" using "birth date LOINC Value Set (2.16.840.1.113883.3.560.100.4)"
+            </li>
+         </ul>
+         
+      </div>
+      <h3><a name="d3996884e2050" href="#toc">Reporting Stratification</a></h3>
+      <div>
+         
+         <ul>
+            <li>None</li>
+         </ul>
+         
+      </div>
+      <h3><a name="d3996884e2071" href="#toc">Supplemental Data Elements</a></h3>
+      <div>
+         
+         <ul>
+            <li>
+               "Patient Characteristic Ethnicity: Ethnicity" using "Ethnicity CDC Value Set (2.16.840.1.114222.4.11.837)"
+            </li>
+            <li>
+               "Patient Characteristic Payer: Payer" using "Payer Source of Payment Typology Value Set (2.16.840.1.114222.4.11.3591)"
+            </li>
+            <li>
+               "Patient Characteristic Race: Race" using "Race CDC Value Set (2.16.840.1.114222.4.11.836)"
+            </li>
+            <li>
+               "Patient Characteristic Sex: ONC Administrative Sex" using "ONC Administrative Sex Administrative Sex Value Set (2.16.840.1.113762.1.4.1)"
+            </li>
+         </ul>
+         
+      </div><br><hr align="left" color="teal" size="2" width="80%"><br><table class="header_table">
+         <tbody>
+            <tr>
+               <td width="20%" bgcolor="#656565" style="background-color:#656565"><span class="td_label">Measure Set</span></td>
+               <td colspan="3" width="80%">
+                  <div style="width:660px;overflow-x:hidden;overflow-y:auto;word-wrap:break-word">None</div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

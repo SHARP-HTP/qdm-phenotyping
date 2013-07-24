@@ -1,0 +1,2314 @@
+{
+  "id": "0387",
+  "hqmf_id": "8A4D92B2-397A-48D2-0139-B0A6A11F2DA5",
+  "hqmf_set_id": "AC639794-CB3F-4F4F-8FA6-680300D5ED4E",
+  "hqmf_version_number": 1,
+  "title": "Breast Cancer: Hormonal Therapy for Stage IC-IIIC Estrogen Receptor/Progesterone Receptor (ER/PR) Positive Breast Cancer",
+  "description": "Percentage of female patients aged 18 years and older with Stage IC through IIIC, ER or PR positive breast cancer who were prescribed tamoxifen or aromatase inhibitor (AI) during the 12-month reporting period",
+  "cms_id": "CMS140v1",
+  "population_criteria": {
+    "DENEXCEP": {
+      "conjunction?": true,
+      "type": "DENEXCEP",
+      "title": "Denominator Exception",
+      "hqmf_id": "B8D56FC2-3E81-4DB6-AD11-0733881F19D3",
+      "preconditions": [
+        {
+          "id": 44,
+          "preconditions": [
+            {
+              "id": 42,
+              "preconditions": [
+                {
+                  "id": 11,
+                  "preconditions": [
+                    {
+                      "id": 7,
+                      "reference": "ProcedurePerformedRadiationTherapyIi_precondition_7"
+                    },
+                    {
+                      "id": 9,
+                      "reference": "ProcedurePerformedChemotherapy_precondition_9"
+                    }
+                  ],
+                  "conjunction_code": "atLeastOneTrue"
+                },
+                {
+                  "id": 35,
+                  "preconditions": [
+                    {
+                      "id": 13,
+                      "reference": "MedicationOrderTamoxifenOrAromataseInhibitorTherapy_precondition_13"
+                    },
+                    {
+                      "id": 15,
+                      "reference": "MedicationOrderTamoxifenOrAromataseInhibitorTherapy_precondition_15"
+                    },
+                    {
+                      "id": 17,
+                      "reference": "MedicationIntoleranceTamoxifenOrAromataseInhibitorTherapy_precondition_17"
+                    },
+                    {
+                      "id": 19,
+                      "reference": "DiagnosisActiveIntoleranceToTamoxifenOrAromataseInhibitorTherapy_precondition_19"
+                    },
+                    {
+                      "id": 21,
+                      "reference": "MedicationActiveGonadotropinReleasingHormoneAnalogueMedication_precondition_21"
+                    },
+                    {
+                      "id": 23,
+                      "reference": "ProcedurePerformedBilateralOophorectomy_precondition_23"
+                    },
+                    {
+                      "id": 25,
+                      "reference": "DiagnosisActiveMetastaticSitesCommonToBreastCancer_precondition_25"
+                    },
+                    {
+                      "id": 27,
+                      "reference": "PatientCharacteristicClinicalTrialParticipantClinicalTrialParticipant_precondition_27"
+                    },
+                    {
+                      "id": 29,
+                      "reference": "MedicationOrderTamoxifenOrAromataseInhibitorTherapy_precondition_29"
+                    },
+                    {
+                      "id": 31,
+                      "reference": "MedicationAllergyTamoxifenOrAromataseInhibitorTherapy_precondition_31"
+                    },
+                    {
+                      "id": 33,
+                      "reference": "DiagnosisActiveAllergyToTamoxifenOrAromataseInhibitorTherapy_precondition_33"
+                    }
+                  ],
+                  "conjunction_code": "atLeastOneTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "85C17301-DCF5-42A5-8198-B7EAD4059D9B",
+      "preconditions": [
+        {
+          "id": 68,
+          "preconditions": [
+            {
+              "id": 66,
+              "preconditions": [
+                {
+                  "id": 50,
+                  "reference": "MedicationOrderTamoxifenOrAromataseInhibitorTherapy_precondition_50"
+                },
+                {
+                  "id": 57,
+                  "preconditions": [
+                    {
+                      "id": 54,
+                      "reference": "OccurrenceATamoxifenOrAromataseInhibitorTherapy5_precondition_54"
+                    },
+                    {
+                      "id": 56,
+                      "preconditions": [
+                        {
+                          "id": 52,
+                          "reference": "OccurrenceATamoxifenOrAromataseInhibitorTherapy5_precondition_52"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 64,
+                  "preconditions": [
+                    {
+                      "id": 61,
+                      "reference": "OccurrenceATamoxifenOrAromataseInhibitorTherapy5_precondition_61"
+                    },
+                    {
+                      "id": 63,
+                      "preconditions": [
+                        {
+                          "id": 59,
+                          "reference": "OccurrenceATamoxifenOrAromataseInhibitorTherapy5_precondition_59"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "E0AA489B-07FF-436D-9244-3F0C76E6F9E1",
+      "preconditions": [
+        {
+          "id": 139,
+          "preconditions": [
+            {
+              "id": 71,
+              "reference": "DiagnosisActiveBreastCancerErOrPrPositive_precondition_71"
+            },
+            {
+              "id": 78,
+              "reference": "OccurrenceAClinicalStagingProcedure4_precondition_78"
+            },
+            {
+              "id": 136,
+              "preconditions": [
+                {
+                  "id": 80,
+                  "reference": "OccurrenceAClinicalStagingProcedure4_precondition_80"
+                },
+                {
+                  "id": 110,
+                  "preconditions": [
+                    {
+                      "id": 94,
+                      "preconditions": [
+                        {
+                          "id": 82,
+                          "reference": "OccurrenceAClinicalStagingProcedure4_precondition_82"
+                        },
+                        {
+                          "id": 84,
+                          "reference": "OccurrenceAClinicalStagingProcedure4_precondition_84"
+                        },
+                        {
+                          "id": 86,
+                          "reference": "OccurrenceAClinicalStagingProcedure4_precondition_86"
+                        },
+                        {
+                          "id": 88,
+                          "reference": "OccurrenceAClinicalStagingProcedure4_precondition_88"
+                        },
+                        {
+                          "id": 90,
+                          "reference": "OccurrenceAClinicalStagingProcedure4_precondition_90"
+                        },
+                        {
+                          "id": 92,
+                          "reference": "OccurrenceAClinicalStagingProcedure4_precondition_92"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue"
+                    },
+                    {
+                      "id": 108,
+                      "preconditions": [
+                        {
+                          "id": 96,
+                          "reference": "OccurrenceAClinicalStagingProcedure4_precondition_96"
+                        },
+                        {
+                          "id": 98,
+                          "reference": "OccurrenceAClinicalStagingProcedure4_precondition_98"
+                        },
+                        {
+                          "id": 100,
+                          "reference": "OccurrenceAClinicalStagingProcedure4_precondition_100"
+                        },
+                        {
+                          "id": 102,
+                          "reference": "OccurrenceAClinicalStagingProcedure4_precondition_102"
+                        },
+                        {
+                          "id": 104,
+                          "reference": "OccurrenceAClinicalStagingProcedure4_precondition_104"
+                        },
+                        {
+                          "id": 106,
+                          "reference": "OccurrenceAClinicalStagingProcedure4_precondition_106"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 128,
+                  "preconditions": [
+                    {
+                      "id": 118,
+                      "preconditions": [
+                        {
+                          "id": 112,
+                          "reference": "OccurrenceAClinicalStagingProcedure4_precondition_112"
+                        },
+                        {
+                          "id": 114,
+                          "reference": "OccurrenceAClinicalStagingProcedure4_precondition_114"
+                        },
+                        {
+                          "id": 116,
+                          "reference": "OccurrenceAClinicalStagingProcedure4_precondition_116"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue"
+                    },
+                    {
+                      "id": 126,
+                      "preconditions": [
+                        {
+                          "id": 120,
+                          "reference": "OccurrenceAClinicalStagingProcedure4_precondition_120"
+                        },
+                        {
+                          "id": 122,
+                          "reference": "OccurrenceAClinicalStagingProcedure4_precondition_122"
+                        },
+                        {
+                          "id": 124,
+                          "reference": "OccurrenceAClinicalStagingProcedure4_precondition_124"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 134,
+                  "preconditions": [
+                    {
+                      "id": 130,
+                      "reference": "OccurrenceAClinicalStagingProcedure4_precondition_130"
+                    },
+                    {
+                      "id": 132,
+                      "reference": "OccurrenceAClinicalStagingProcedure4_precondition_132"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            },
+            {
+              "id": 138,
+              "preconditions": [
+                {
+                  "id": 69,
+                  "reference": "OccurrenceAClinicalStagingProcedure4_precondition_69"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue",
+              "negation": true
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "A00C579A-AC1C-4525-B40B-822A012F4B31",
+      "preconditions": [
+        {
+          "id": 159,
+          "preconditions": [
+            {
+              "id": 146,
+              "reference": "OccurrenceABreastCancer1_precondition_145",
+              "conjunction_code": "allTrue"
+            },
+            {
+              "id": 148,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_148"
+            },
+            {
+              "id": 155,
+              "reference": "GROUP_COUNT_169",
+              "conjunction_code": "allTrue"
+            },
+            {
+              "id": 157,
+              "reference": "PatientCharacteristicSexFemale_precondition_157"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedPatientProviderInteraction": {
+      "title": "Patient Provider Interaction",
+      "description": "Encounter, Performed: Patient Provider Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPatientProviderInteraction"
+    },
+    "MedicationActiveTamoxifenOrAromataseInhibitorTherapy": {
+      "title": "Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Medication, Active: Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1315",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationActiveTamoxifenOrAromataseInhibitorTherapy"
+    },
+    "DiagnosisActiveBreastCancer": {
+      "title": "Breast Cancer",
+      "description": "Diagnosis, Active: Breast Cancer",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.389",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveBreastCancer"
+    },
+    "ProcedurePerformedClinicalStagingProcedure": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedClinicalStagingProcedure"
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "MedicationOrderNotDoneMedicalReason": {
+      "title": "Medical Reason",
+      "description": "Medication, Order not done: Medical Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDoneMedicalReason"
+    },
+    "MedicationOrderNotDonePatientReason": {
+      "title": "Patient Reason",
+      "description": "Medication, Order not done: Patient Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1008",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDonePatientReason"
+    },
+    "MedicationOrderNotDoneSystemReason": {
+      "title": "System Reason",
+      "description": "Medication, Order not done: System Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1009",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDoneSystemReason"
+    },
+    "OccurrenceABreastCancer1": {
+      "title": "Breast Cancer",
+      "description": "Diagnosis, Active: Breast Cancer",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.389",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_BREAST_CANCER",
+      "source_data_criteria": "OccurrenceABreastCancer1"
+    },
+    "OccurrenceAOfficeVisit2": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit2"
+    },
+    "OccurrenceAFaceToFaceInteraction6": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction6"
+    },
+    "ProcedurePerformedRadiationTherapyIi_precondition_7": {
+      "title": "Radiation Therapy II",
+      "description": "Procedure, Performed: Radiation Therapy II",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1339",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedRadiationTherapyIi",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "ProcedurePerformedChemotherapy_precondition_9": {
+      "title": "Chemotherapy",
+      "description": "Procedure, Performed: Chemotherapy",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.485",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedChemotherapy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit2_precondition_36": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit2"
+    },
+    "OccurrenceAFaceToFaceInteraction6_precondition_38": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction6"
+    },
+    "MedicationOrderTamoxifenOrAromataseInhibitorTherapy_precondition_13": {
+      "title": "Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Medication, Order: Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1315",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "negation_code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "source_data_criteria": "MedicationOrderTamoxifenOrAromataseInhibitorTherapy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_161"
+        }
+      ]
+    },
+    "GROUP_SBE_CHILDREN_161": {
+      "title": "GROUP_SBE_CHILDREN_161",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "OccurrenceAOfficeVisit2_precondition_36",
+        "OccurrenceAFaceToFaceInteraction6_precondition_38"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_SBE_CHILDREN_161"
+    },
+    "MedicationOrderTamoxifenOrAromataseInhibitorTherapy_precondition_15": {
+      "title": "Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Medication, Order: Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1315",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "negation_code_list_id": "2.16.840.1.113883.3.526.3.1008",
+      "source_data_criteria": "MedicationOrderTamoxifenOrAromataseInhibitorTherapy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_161"
+        }
+      ]
+    },
+    "MedicationIntoleranceTamoxifenOrAromataseInhibitorTherapy_precondition_17": {
+      "title": "Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Medication, Intolerance: Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "allergy",
+      "qds_data_type": "allergy",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1315",
+      "type": "medications",
+      "definition": "medication_intolerance",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationIntoleranceTamoxifenOrAromataseInhibitorTherapy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_161"
+        }
+      ]
+    },
+    "DiagnosisActiveIntoleranceToTamoxifenOrAromataseInhibitorTherapy_precondition_19": {
+      "title": "Intolerance to Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Diagnosis, Active: Intolerance to Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1318",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveIntoleranceToTamoxifenOrAromataseInhibitorTherapy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_161"
+        }
+      ]
+    },
+    "MedicationActiveGonadotropinReleasingHormoneAnalogueMedication_precondition_21": {
+      "title": "Gonadotropin-releasing hormone analogue medication",
+      "description": "Medication, Active: Gonadotropin-releasing hormone analogue medication",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1316",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationActiveGonadotropinReleasingHormoneAnalogueMedication",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_161"
+        }
+      ]
+    },
+    "ProcedurePerformedBilateralOophorectomy_precondition_23": {
+      "title": "Bilateral Oophorectomy",
+      "description": "Procedure, Performed: Bilateral Oophorectomy",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.471",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedBilateralOophorectomy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_161"
+        }
+      ]
+    },
+    "DiagnosisActiveMetastaticSitesCommonToBreastCancer_precondition_25": {
+      "title": "Metastatic Sites Common to Breast Cancer",
+      "description": "Diagnosis, Active: Metastatic Sites Common to Breast Cancer",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.447",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveMetastaticSitesCommonToBreastCancer",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_161"
+        }
+      ]
+    },
+    "PatientCharacteristicClinicalTrialParticipantClinicalTrialParticipant_precondition_27": {
+      "title": "Clinical Trial Participant",
+      "description": "Patient Characteristic Clinical Trial Participant: Clinical Trial Participant",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1125",
+      "property": "clinicalTrialParticipant",
+      "type": "characteristic",
+      "definition": "patient_characteristic_clinical_trial_participant",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicClinicalTrialParticipantClinicalTrialParticipant",
+      "inline_code_list": {
+        "SNOMED-CT": [
+          "185923000",
+          "399174000",
+          "399223003",
+          "428024001",
+          "444061006",
+          "444734003"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_161"
+        }
+      ]
+    },
+    "MedicationOrderTamoxifenOrAromataseInhibitorTherapy_precondition_29": {
+      "title": "Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Medication, Order: Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1315",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "negation_code_list_id": "2.16.840.1.113883.3.526.3.1009",
+      "source_data_criteria": "MedicationOrderTamoxifenOrAromataseInhibitorTherapy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_161"
+        }
+      ]
+    },
+    "MedicationAllergyTamoxifenOrAromataseInhibitorTherapy_precondition_31": {
+      "title": "Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Medication, Allergy: Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "allergy",
+      "qds_data_type": "allergy",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1315",
+      "type": "medications",
+      "definition": "medication_allergy",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationAllergyTamoxifenOrAromataseInhibitorTherapy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_161"
+        }
+      ]
+    },
+    "DiagnosisActiveAllergyToTamoxifenOrAromataseInhibitorTherapy_precondition_33": {
+      "title": "Allergy to Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Diagnosis, Active: Allergy to Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1317",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAllergyToTamoxifenOrAromataseInhibitorTherapy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_161"
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit2_precondition_45": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit2"
+    },
+    "OccurrenceAFaceToFaceInteraction6_precondition_47": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction6"
+    },
+    "MedicationOrderTamoxifenOrAromataseInhibitorTherapy_precondition_50": {
+      "title": "Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Medication, Order: Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1315",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderTamoxifenOrAromataseInhibitorTherapy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "GROUP_DURING_CHILDREN_163"
+        }
+      ]
+    },
+    "GROUP_DURING_CHILDREN_163": {
+      "title": "GROUP_DURING_CHILDREN_163",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "OccurrenceAOfficeVisit2_precondition_45",
+        "OccurrenceAFaceToFaceInteraction6_precondition_47"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_DURING_CHILDREN_163"
+    },
+    "OccurrenceATamoxifenOrAromataseInhibitorTherapy5_precondition_54": {
+      "title": "Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Medication, Active: Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1315",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_TAMOXIFEN_OR_AROMATASE_INHIBITOR_THERAPY",
+      "source_data_criteria": "OccurrenceATamoxifenOrAromataseInhibitorTherapy5",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAOfficeVisit2"
+        }
+      ]
+    },
+    "OccurrenceATamoxifenOrAromataseInhibitorTherapy5_precondition_52": {
+      "title": "Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Medication, Active: Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1315",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_TAMOXIFEN_OR_AROMATASE_INHIBITOR_THERAPY",
+      "source_data_criteria": "OccurrenceATamoxifenOrAromataseInhibitorTherapy5",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAOfficeVisit2"
+        }
+      ]
+    },
+    "OccurrenceATamoxifenOrAromataseInhibitorTherapy5_precondition_61": {
+      "title": "Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Medication, Active: Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1315",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_TAMOXIFEN_OR_AROMATASE_INHIBITOR_THERAPY",
+      "source_data_criteria": "OccurrenceATamoxifenOrAromataseInhibitorTherapy5",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAFaceToFaceInteraction6"
+        }
+      ]
+    },
+    "OccurrenceATamoxifenOrAromataseInhibitorTherapy5_precondition_59": {
+      "title": "Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Medication, Active: Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1315",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_TAMOXIFEN_OR_AROMATASE_INHIBITOR_THERAPY",
+      "source_data_criteria": "OccurrenceATamoxifenOrAromataseInhibitorTherapy5",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAFaceToFaceInteraction6"
+        }
+      ]
+    },
+    "DiagnosisActiveBreastCancerErOrPrPositive_precondition_71": {
+      "title": "Breast Cancer ER or PR Positive",
+      "description": "Diagnosis, Active: Breast Cancer ER or PR Positive",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1303",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveBreastCancerErOrPrPositive",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "OccurrenceABreastCancer1"
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit2_precondition_73": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit2"
+    },
+    "OccurrenceAFaceToFaceInteraction6_precondition_75": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction6"
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_78": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1302",
+        "title": "Breast Distant Metastasis Status M0"
+      },
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_165"
+        }
+      ]
+    },
+    "GROUP_SBE_CHILDREN_165": {
+      "title": "GROUP_SBE_CHILDREN_165",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "OccurrenceAOfficeVisit2_precondition_73",
+        "OccurrenceAFaceToFaceInteraction6_precondition_75"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_SBE_CHILDREN_165"
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_80": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1314",
+        "title": "Breast Cancer Regional Lymph Node Status N3"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_82": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1304",
+        "title": "Breast Cancer Primary Tumor Size T0"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_84": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1305",
+        "title": "Breast Cancer Primary Tumor Size T1"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_86": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1164",
+        "title": "Breast Cancer Primary Tumor Size T1a"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_88": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1270",
+        "title": "Breast Cancer Primary Tumor Size T1b"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_90": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1306",
+        "title": "Breast Cancer Primary Tumor Size T1c"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_92": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1197",
+        "title": "Breast Cancer Primary Tumor Size T1mi"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_96": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1329",
+        "title": "Breast Cancer Regional Lymph Node Status N1"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_98": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1311",
+        "title": "Breast Cancer Regional Lymph Node Status pN1a"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_100": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1330",
+        "title": "Breast Cancer Regional Lymph Node Status pN1b"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_102": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1331",
+        "title": "Breast Cancer Regional Lymph Node Status pN1c"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_104": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1312",
+        "title": "Breast Cancer Regional Lymph Node Status pN1mi"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_106": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1313",
+        "title": "Breast Cancer Regional Lymph Node Status N2"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_112": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1307",
+        "title": "Breast Cancer Primary Tumor Size T2"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_114": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1308",
+        "title": "Breast Cancer Primary Tumor Size T3"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_116": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1309",
+        "title": "Breast Cancer Primary Tumor Size T4"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_120": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1310",
+        "title": "Breast Cancer Regional Lymph Node Status N0"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_122": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1329",
+        "title": "Breast Cancer Regional Lymph Node Status N1"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_124": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1313",
+        "title": "Breast Cancer Regional Lymph Node Status N2"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_130": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1306",
+        "title": "Breast Cancer Primary Tumor Size T1c"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_132": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "value": {
+        "type": "CD",
+        "code_list_id": "2.16.840.1.113883.3.526.3.1310",
+        "title": "Breast Cancer Regional Lymph Node Status N0"
+      }
+    },
+    "OccurrenceAClinicalStagingProcedure4_precondition_69": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4",
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "OccurrenceABreastCancer1"
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit2_precondition_140": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit2",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAFaceToFaceInteraction6_precondition_142": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction6",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceABreastCancer1_precondition_145": {
+      "title": "Breast Cancer",
+      "description": "Diagnosis, Active: Breast Cancer",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.389",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_BREAST_CANCER",
+      "source_data_criteria": "OccurrenceABreastCancer1",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "GROUP_SBE_CHILDREN_167",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "5",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ],
+      "subset_operators": [
+        {
+          "type": "FIRST"
+        }
+      ]
+    },
+    "GROUP_SBE_CHILDREN_167": {
+      "title": "GROUP_SBE_CHILDREN_167",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "OccurrenceAOfficeVisit2_precondition_140",
+        "OccurrenceAFaceToFaceInteraction6_precondition_142"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_SBE_CHILDREN_167"
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_148": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "18",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit2_precondition_150": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit2",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAPatientProviderInteraction3_precondition_152": {
+      "title": "Patient Provider Interaction",
+      "description": "Encounter, Performed: Patient Provider Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PATIENT_PROVIDER_INTERACTION",
+      "source_data_criteria": "OccurrenceAPatientProviderInteraction3",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "GROUP_COUNT_169": {
+      "title": "GROUP_COUNT_169",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "OccurrenceAOfficeVisit2_precondition_150",
+        "OccurrenceAPatientProviderInteraction3_precondition_152"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_COUNT_169",
+      "subset_operators": [
+        {
+          "type": "COUNT",
+          "value": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "value": "2",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicSexFemale_precondition_157": {
+      "title": "Female",
+      "description": "Patient Characteristic Sex: Female",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.2",
+      "property": "gender",
+      "type": "characteristic",
+      "definition": "patient_characteristic_gender",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicSexFemale",
+      "value": {
+        "type": "CD",
+        "system": "Administrative Sex",
+        "code": "F"
+      }
+    }
+  },
+  "source_data_criteria": {
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedPatientProviderInteraction": {
+      "title": "Patient Provider Interaction",
+      "description": "Encounter, Performed: Patient Provider Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPatientProviderInteraction"
+    },
+    "PatientCharacteristicSexFemale": {
+      "title": "Female",
+      "description": "Patient Characteristic Sex: Female",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.2",
+      "property": "gender",
+      "type": "characteristic",
+      "definition": "patient_characteristic_gender",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicSexFemale",
+      "value": {
+        "type": "CD",
+        "system": "Administrative Sex",
+        "code": "F"
+      }
+    },
+    "DiagnosisActiveBreastCancerErOrPrPositive": {
+      "title": "Breast Cancer ER or PR Positive",
+      "description": "Diagnosis, Active: Breast Cancer ER or PR Positive",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1303",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveBreastCancerErOrPrPositive"
+    },
+    "MedicationOrderTamoxifenOrAromataseInhibitorTherapy": {
+      "title": "Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Medication, Order: Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1315",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderTamoxifenOrAromataseInhibitorTherapy"
+    },
+    "MedicationActiveTamoxifenOrAromataseInhibitorTherapy": {
+      "title": "Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Medication, Active: Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1315",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationActiveTamoxifenOrAromataseInhibitorTherapy"
+    },
+    "MedicationAllergyTamoxifenOrAromataseInhibitorTherapy": {
+      "title": "Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Medication, Allergy: Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "allergy",
+      "qds_data_type": "allergy",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1315",
+      "type": "medications",
+      "definition": "medication_allergy",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationAllergyTamoxifenOrAromataseInhibitorTherapy"
+    },
+    "MedicationIntoleranceTamoxifenOrAromataseInhibitorTherapy": {
+      "title": "Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Medication, Intolerance: Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "allergy",
+      "qds_data_type": "allergy",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1315",
+      "type": "medications",
+      "definition": "medication_intolerance",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationIntoleranceTamoxifenOrAromataseInhibitorTherapy"
+    },
+    "DiagnosisActiveIntoleranceToTamoxifenOrAromataseInhibitorTherapy": {
+      "title": "Intolerance to Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Diagnosis, Active: Intolerance to Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1318",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveIntoleranceToTamoxifenOrAromataseInhibitorTherapy"
+    },
+    "DiagnosisActiveAllergyToTamoxifenOrAromataseInhibitorTherapy": {
+      "title": "Allergy to Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Diagnosis, Active: Allergy to Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1317",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAllergyToTamoxifenOrAromataseInhibitorTherapy"
+    },
+    "MedicationActiveGonadotropinReleasingHormoneAnalogueMedication": {
+      "title": "Gonadotropin-releasing hormone analogue medication",
+      "description": "Medication, Active: Gonadotropin-releasing hormone analogue medication",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1316",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationActiveGonadotropinReleasingHormoneAnalogueMedication"
+    },
+    "ProcedurePerformedBilateralOophorectomy": {
+      "title": "Bilateral Oophorectomy",
+      "description": "Procedure, Performed: Bilateral Oophorectomy",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.471",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedBilateralOophorectomy"
+    },
+    "DiagnosisActiveMetastaticSitesCommonToBreastCancer": {
+      "title": "Metastatic Sites Common to Breast Cancer",
+      "description": "Diagnosis, Active: Metastatic Sites Common to Breast Cancer",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.447",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveMetastaticSitesCommonToBreastCancer"
+    },
+    "PatientCharacteristicClinicalTrialParticipantClinicalTrialParticipant": {
+      "title": "Clinical Trial Participant",
+      "description": "Patient Characteristic Clinical Trial Participant: Clinical Trial Participant",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1125",
+      "property": "clinicalTrialParticipant",
+      "type": "characteristic",
+      "definition": "patient_characteristic_clinical_trial_participant",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicClinicalTrialParticipantClinicalTrialParticipant",
+      "inline_code_list": {
+        "SNOMED-CT": [
+          "185923000",
+          "399174000",
+          "399223003",
+          "428024001",
+          "444061006",
+          "444734003"
+        ]
+      }
+    },
+    "ProcedurePerformedChemotherapy": {
+      "title": "Chemotherapy",
+      "description": "Procedure, Performed: Chemotherapy",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.485",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedChemotherapy"
+    },
+    "ProcedurePerformedRadiationTherapyIi": {
+      "title": "Radiation Therapy II",
+      "description": "Procedure, Performed: Radiation Therapy II",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1339",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedRadiationTherapyIi"
+    },
+    "DiagnosisActiveBreastCancer": {
+      "title": "Breast Cancer",
+      "description": "Diagnosis, Active: Breast Cancer",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.389",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveBreastCancer"
+    },
+    "ProcedurePerformedClinicalStagingProcedure": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedClinicalStagingProcedure"
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "MedicationOrderNotDoneMedicalReason": {
+      "title": "Medical Reason",
+      "description": "Medication, Order not done: Medical Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1007",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDoneMedicalReason"
+    },
+    "MedicationOrderNotDonePatientReason": {
+      "title": "Patient Reason",
+      "description": "Medication, Order not done: Patient Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1008",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDonePatientReason"
+    },
+    "MedicationOrderNotDoneSystemReason": {
+      "title": "System Reason",
+      "description": "Medication, Order not done: System Reason",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1009",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": true,
+      "source_data_criteria": "MedicationOrderNotDoneSystemReason"
+    },
+    "OccurrenceABreastCancer1": {
+      "title": "Breast Cancer",
+      "description": "Diagnosis, Active: Breast Cancer",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.389",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_BREAST_CANCER",
+      "source_data_criteria": "OccurrenceABreastCancer1"
+    },
+    "OccurrenceAOfficeVisit2": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit2"
+    },
+    "OccurrenceAPatientProviderInteraction3": {
+      "title": "Patient Provider Interaction",
+      "description": "Encounter, Performed: Patient Provider Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1012",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PATIENT_PROVIDER_INTERACTION",
+      "source_data_criteria": "OccurrenceAPatientProviderInteraction3"
+    },
+    "OccurrenceAClinicalStagingProcedure4": {
+      "title": "Clinical Staging Procedure",
+      "description": "Procedure, Performed: Clinical Staging Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1098",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_CLINICAL_STAGING_PROCEDURE",
+      "source_data_criteria": "OccurrenceAClinicalStagingProcedure4"
+    },
+    "OccurrenceATamoxifenOrAromataseInhibitorTherapy5": {
+      "title": "Tamoxifen or Aromatase Inhibitor Therapy",
+      "description": "Medication, Active: Tamoxifen or Aromatase Inhibitor Therapy",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1315",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_TAMOXIFEN_OR_AROMATASE_INHIBITOR_THERAPY",
+      "source_data_criteria": "OccurrenceATamoxifenOrAromataseInhibitorTherapy5"
+    },
+    "OccurrenceAFaceToFaceInteraction6": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction6"
+    }
+  },
+  "attributes": [
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "Copyright 2012 American Medical Association, American Society of Clinical Oncology, and National Comprehensive Cancer Network. All Rights Reserved.",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "Despite evidence suggesting the role of adjuvant endocrine therapy in lowering the risk of tumor recurrence, many female patients who should be receiving this therapy are not. \r\n\r\nThis measure assesses whether patients with a certain stage of breast cancer (IC through IIIC) and ER/PR+ are currently receiving the therapy. \r\n\r\nThere are allowable medical, patient, and system reasons to document instances in which a woman with stage IC through IIIC, ER/PR+ may not be a candidate for the therapy.",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "Adjuvant therapy for postmenopausal women with hormone receptor–positive breast cancer should include an aromatase inhibitor in order to lower the risk of tumor recurrence. Aromatase inhibitors are appropriate as initial treatment for women with contraindications to tamoxifen. For all other postmenopausal women, treatment options include 5 years of aromatase inhibitors treatment or sequential therapy consisting of tamoxifen (for either 2 to 3 years or 5 years) followed by aromatase inhibitors for 2 to 3, or 5 years (ASCO guidelines include narrative rankings) (ASCO). \r\n\r\nPatients intolerant of aromatase inhibitors should receive tamoxifen. Women with hormone receptor–negative tumors should not receive adjuvant endocrine therapy (ASCO guidelines include narrative rankings) (ASCO). \r\n\r\nPatients with invasive breast cancers that are estrogen or progesterone receptor positive should be considered for adjuvant endocrine therapy regardless of patient age, lymph node status, or whether or not adjuvant chemotherapy is to be administered (Category 2A) (NCCN). \r\n\r\nThe most firmly established adjuvant endocrine therapy is tamoxifen for both premenopausal and postmenopausal women. Prospective, randomized trials demonstrate that the optimal duration of tamoxifen appears to be five years. In patients receiving both tamoxifen and chemotherapy, chemotherapy should be given first, followed by sequential tamoxifen. Several studies have evaluated aromatase inhibitors in the treatment of postmenopausal women with early-stage breast cancer (Category 2A) (NCCN).",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "Higher score indicates better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "0387",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "Physician Performance Measures (Measures) and related data specifications have been developed by the American Medical Association (AMA) - convened Physician Consortium for Performance Improvement(R) (the PCPI[TM]), American Society of Clinical Oncology, and National Comprehensive Cancer Network. These Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications. The Measures, while copyrighted, can be reproduced and distributed, without modification, for noncommercial purposes, e.g., use by health care providers in connection with their practices. Commercial use is defined as the sale, license, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial uses of the Measures require a license agreement between the user and the AMA, (on behalf of the PCPI) or American Society of Clinical Oncology or National Comprehensive Cancer Network. Neither the AMA, American Society of Clinical Oncology, National Comprehensive Cancer Network, PCPI nor its members shall be responsible for any use of the Measures. \r\n\r\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND. \r\n\r\nLimited proprietary coding is contained in the Measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. The AMA, American Society of Clinical Oncology, National Comprehensive Cancer Network, the PCPI and its members disclaim all liability for use or accuracy of any Current Procedural Terminology (CPT[R]) or other coding contained in the specifications. \r\n\r\nCPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC(R) copyright 2004-2011 Regenstrief Institute, Inc. \r\n\r\nThis material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 copyright 2011 World Health Organization. All Rights Reserved.\r\n\r\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "140",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "National Comprehensive Cancer Network (NCCN). Clinical Practice Guidelines in Oncology: Breast Cancer. Version 1, 2007. Available at: http://www.nccn.org/professionals/physician_gls/PDF/breast.pdf.",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "None",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "The denominator for this measure has been limited to patients with a first recorded breast cancer diagnosis within the past 5 years. The numerator captures patients who are prescribed adjuvant tamoxifen or AI, or received adjuvant tamoxifen or AI during the 12 month period. Date of breast cancer diagnosis is defined as date of pathologic diagnosis.",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "All female patients aged 18 years and older with a diagnosis of breast cancer",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals Initial Patient Population with stage IC through IIIC, estrogen receptor (ER) or progesterone receptor (PR) positive breast cancer",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "None",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Patients who were prescribed tamoxifen or aromatase inhibitor (AI) during the 12-month reporting period",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "- Documentation of medical reason(s) for not prescribing tamoxifen or aromatase inhibitor (e.g., patient’s disease has progressed to metastatic, patient is receiving a gonadotropin-releasing hormone analogue, patient has received oophorectomy, patient is receiving radiation or chemotherapy, patient’s diagnosis date was >= 5 years from reporting date, other medical reason)\r\n- Documentation of patient reason(s) for not prescribing tamoxifen or aromatase inhibitor (e.g., patient refusal, other patient reasons)\r\n- Documentation of system reason(s) for not prescribing tamoxifen or aromatase inhibitor (e.g., patient is currently enrolled in a clinical trial, other system reasons)",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not Applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "IPP": "IPP",
+      "DENOM": "DENOM",
+      "NUMER": "NUMER",
+      "DENEXCEP": "DENEXCEP"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

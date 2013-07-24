@@ -119,13 +119,15 @@ class TemporalProcessor {
                 if(range.high){
                     def unit = getUnit(range.high.unit)
                     sb.append """
-                        ${property} ${highOp(range.high)} '${time."$minusOrPlusFn$unit"(Integer.parseInt(range.high.value)).toString(DroolsDateFormat.PATTERN)}'
+                        ${property} != null,
+                        toDays(${property}) ${highOp(range.high)} toDays(new Date('${time."$minusOrPlusFn$unit"(Integer.parseInt(range.high.value)).toString(DroolsDateFormat.PATTERN)}'))
                         """
                 }
                 if(range.low){
                     def unit = getUnit(range.low.unit)
                     sb.append """
-                        ${property} ${lowOp(range.low)} '${time."$minusOrPlusFn$unit"(Integer.parseInt(range.low.value)).toString(DroolsDateFormat.PATTERN)}'
+                        ${property} != null,
+                        toDays(${property}) ${lowOp(range.low)} toDays(new Date('${time."$minusOrPlusFn$unit"(Integer.parseInt(range.low.value)).toString(DroolsDateFormat.PATTERN)}'))
                         """
                 }
             } else {
@@ -139,7 +141,8 @@ class TemporalProcessor {
                         break
                 }
                 sb.append """
-                        ${property} $op '${time.toString(DroolsDateFormat.PATTERN)}'
+                        ${property} != null,
+                        toDays(${property}) $op toDays(new Date('${time.toString(DroolsDateFormat.PATTERN)}'))
                         """
             }
 
@@ -156,6 +159,7 @@ class TemporalProcessor {
         switch (unit){
             case "a" : return "Years"
             case "mo" : return "Months"
+            case "d" : return "Days"
             default: throw new UnsupportedOperationException("Unit: $unit is not recognized.")
         }
     }

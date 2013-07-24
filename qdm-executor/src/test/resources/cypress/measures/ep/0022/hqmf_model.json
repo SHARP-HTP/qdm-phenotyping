@@ -1,0 +1,704 @@
+{
+  "id": "0022",
+  "hqmf_id": "8A4D92B2-3946-CDAE-0139-77E59FA3632E",
+  "hqmf_set_id": "A3837FF8-1ABC-4BA9-800E-FD4E7953ADBD",
+  "hqmf_version_number": 1,
+  "title": "Use of High-Risk Medications in the Elderly",
+  "description": "Percentage of patients 66 years of age and older who were ordered high-risk medications. Two rates are reported.\r\na. Percentage of patients who were ordered at least one high-risk medication. \r\nb. Percentage of patients who were ordered at least two different high-risk medications.",
+  "cms_id": "CMS156v1",
+  "population_criteria": {
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "5C60D69A-56F1-4649-B965-09C9A458A611",
+      "preconditions": [
+        {
+          "id": 7,
+          "preconditions": [
+            {
+              "id": 5,
+              "preconditions": [
+                {
+                  "id": 1,
+                  "reference": "MedicationOrderHighRiskMedicationsForTheElderly_precondition_1"
+                },
+                {
+                  "id": 3,
+                  "reference": "MedicationOrderHighRiskMedicationsWithDaysSupplyCriteria_precondition_3"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER_1": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "4CDE555A-900B-430D-B00F-51AECA354EBE",
+      "preconditions": [
+        {
+          "id": 15,
+          "preconditions": [
+            {
+              "id": 13,
+              "reference": "GROUP_COUNT_34",
+              "conjunction_code": "allTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "B97723EA-4D1D-49BE-B6AF-EBE6B8DCB0F6"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "300101AF-9DCF-497E-B23A-138A2B173861",
+      "preconditions": [
+        {
+          "id": 32,
+          "preconditions": [
+            {
+              "id": 16,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_16"
+            },
+            {
+              "id": 30,
+              "preconditions": [
+                {
+                  "id": 18,
+                  "reference": "EncounterPerformedOfficeVisit_precondition_18"
+                },
+                {
+                  "id": 20,
+                  "reference": "EncounterPerformedFaceToFaceInteraction_precondition_20"
+                },
+                {
+                  "id": 22,
+                  "reference": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_22"
+                },
+                {
+                  "id": 24,
+                  "reference": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_24"
+                },
+                {
+                  "id": 26,
+                  "reference": "EncounterPerformedAnnualWellnessVisit_precondition_26"
+                },
+                {
+                  "id": 28,
+                  "reference": "EncounterPerformedHomeHealthcareServices_precondition_28"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "MedicationOrderHighRiskMedicationsForTheElderly_precondition_1": {
+      "title": "High Risk Medications for the Elderly",
+      "description": "Medication, Order: High Risk Medications for the Elderly",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1253",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderHighRiskMedicationsForTheElderly",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "MedicationOrderHighRiskMedicationsWithDaysSupplyCriteria_precondition_3": {
+      "title": "High-Risk Medications With Days Supply Criteria",
+      "description": "Medication, Order: High-Risk Medications With Days Supply Criteria",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1254",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderHighRiskMedicationsWithDaysSupplyCriteria",
+      "field_values": {
+        "CUMULATIVE_MEDICATION_DURATION": {
+          "type": "IVL_PQ",
+          "low": {
+            "type": "PQ",
+            "unit": "d",
+            "value": "90",
+            "inclusive?": false,
+            "derived?": false
+          }
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "MedicationOrderHighRiskMedicationsForTheElderly_precondition_8": {
+      "title": "High Risk Medications for the Elderly",
+      "description": "Medication, Order: High Risk Medications for the Elderly",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1253",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderHighRiskMedicationsForTheElderly",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "MedicationOrderHighRiskMedicationsWithDaysSupplyCriteria_precondition_10": {
+      "title": "High-Risk Medications With Days Supply Criteria",
+      "description": "Medication, Order: High-Risk Medications With Days Supply Criteria",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1254",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderHighRiskMedicationsWithDaysSupplyCriteria",
+      "field_values": {
+        "CUMULATIVE_MEDICATION_DURATION": {
+          "type": "IVL_PQ",
+          "low": {
+            "type": "PQ",
+            "unit": "d",
+            "value": "90",
+            "inclusive?": false,
+            "derived?": false
+          }
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "GROUP_COUNT_34": {
+      "title": "GROUP_COUNT_34",
+      "description": "",
+      "standard_category": "",
+      "qds_data_type": "",
+      "children_criteria": [
+        "MedicationOrderHighRiskMedicationsForTheElderly_precondition_8",
+        "MedicationOrderHighRiskMedicationsWithDaysSupplyCriteria_precondition_10"
+      ],
+      "derivation_operator": "UNION",
+      "type": "derived",
+      "definition": "derived",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "GROUP_COUNT_34",
+      "subset_operators": [
+        {
+          "type": "COUNT",
+          "value": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "value": "2",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_16": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "66",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedOfficeVisit_precondition_18": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedFaceToFaceInteraction_precondition_20": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_22": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_24": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedAnnualWellnessVisit_precondition_26": {
+      "title": "Annual Wellness Visit",
+      "description": "Encounter, Performed: Annual Wellness Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1240",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedAnnualWellnessVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedHomeHealthcareServices_precondition_28": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHomeHealthcareServices",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp"
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp"
+    },
+    "EncounterPerformedAnnualWellnessVisit": {
+      "title": "Annual Wellness Visit",
+      "description": "Encounter, Performed: Annual Wellness Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1240",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedAnnualWellnessVisit"
+    },
+    "EncounterPerformedHomeHealthcareServices": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHomeHealthcareServices"
+    },
+    "MedicationOrderHighRiskMedicationsForTheElderly": {
+      "title": "High Risk Medications for the Elderly",
+      "description": "Medication, Order: High Risk Medications for the Elderly",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1253",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderHighRiskMedicationsForTheElderly"
+    },
+    "MedicationOrderHighRiskMedicationsWithDaysSupplyCriteria": {
+      "title": "High-Risk Medications With Days Supply Criteria",
+      "description": "Medication, Order: High-Risk Medications With Days Supply Criteria",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1254",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderHighRiskMedicationsWithDaysSupplyCriteria"
+    }
+  },
+  "attributes": [
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "Physician Performance Measure (Measures) and related data specifications were developed by the National Committee for Quality Assurance (NCQA). \r\n\r\nThe Measures are copyrighted but can be reproduced and distributed, without modification, for noncommercial purposes (e.g., use by healthcare providers in connection with their practices). Commercial use is defined as the sale, licensing, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial use of the Measures requires a license agreement between the user and NCQA. NCQA is not responsible for any use of the Measures. \r\n\r\nCopyright 2012 National Committee for Quality Assurance. All Rights Reserved. \r\n\r\nLimited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets.  NCQA disclaims all liability for use or accuracy of any CPT or other codes contained in the specifications.\r\n\r\nCPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC (R) copyright 2004-2011 Regenstrief Institute, Inc. \r\nThis material contains SNOMED Clinical Terms (R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation. ICD-10 Copyright 2011 World Health Organization. All Rights Reserved.\r\n\r\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "Seniors receiving inappropriate medications are more likely to report poorer health status at follow-up, compared to seniors who receive appropriate medications (Fu, Liu, and Christensen 2004). In 2005, rates of potentially inappropriate medication use in the elderly were as large or larger than in a 1996 national sample, highlighting the need for progress in this area (Simon et al. 2005). While some adverse drug events are not preventable, studies estimate that between 30 and 80 percent of adverse drug events in the elderly are preventable (MacKinnon and Hepler 2003).\r\n\r\nReducing the number of inappropriate prescriptions can lead to improved patient safety and significant cost savings.  Conservative estimates of extra costs due to potentially inappropriate medications in the elderly average $7.2 billion a year (Fu, Liu, and Christensen 2004). Medication use by older adults will likely increase further as the U.S. population ages, new drugs are developed, and new therapeutic and preventive uses for medications are discovered (Rothberg et al. 2008). By the year 2030, nearly one in five U.S. residents is expected to be aged 65 years or older; this age group is projected to more than double in number from 38.7 million in 2008 to more than 88.5 million in 2050.  Likewise, the population aged 85 years or older is expected to increase almost four-fold, from 5.4 million to 19 million between 2008 and 2050.  As the elderly population continues to grow, the number of older adults who present with multiple medical conditions for which several medications are prescribed continues to increase, resulting in polypharmacy (Gray and Gardner 2009).",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "The  measure is based on the literature and key clinical expert consensus processes by Beers in 1997, Zahn in 2001 and an updated process by Fick in 2003, which identified drugs of concern in the elderly based on various high-risk criteria. NCQA's Medication Management expert panel selected a subset of drugs that should be used with caution in the elderly for inclusion in the proposed measure based upon these two lists.  NCQA analyzed the prevalence of drugs prescribed according to their Beers and Zhan's classifications and determined that drugs identified by Zhan that are classified as never or rarely appropriate would form the basis for the list (Fick 2003).\r\n\r\nCertain medications (MacKinnon 2003) are associated with increased risk of harms from drug side-effects and drug toxicity and pose a concern for patient safety. There is clinical consensus that these drugs pose increased risks in the elderly (Kaufman 2005). Studies link prescription drug use by the elderly with adverse drug events that contribute to hospitalization, increased length of hospital stay, increased duration of illness, nursing home placement and falls and fractures that are further associated with physical, functional and social decline in the elderly (AHRQ 2009).",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "Lower score indicates better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "0022",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "These performance Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.\r\n\r\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND.",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "156",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "Rothberg, M.B., P.S. Perkow, F. Liu, B. Korc-Grodzicki, M.J. Brennan, S. Bellantonio, M. Heelon, P.K. Lindenauer. 2008. “Potentially Inappropriate Medication Use in Hospitalized Elders.” J Hosp Med 3:91-102.",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "A high-risk medication is identified by either of the following:\r\na.\tA prescription for medications classified as high risk at any dose and for any duration\r\nb.\tPrescriptions for medications classified as high risk at any dose with greater than a 90 days supply.",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "The intent of Numerator 1 of the measure is to assess if the patient has been prescribed one high-risk medication.  The intent of Numerator 2 of the measure is to assess if the patient has been prescribed at least two different high-risk medications.\r\n\r\nCUMULATIVE MEDICATION DURATION is the total number of days of a medication for an individual. Days of medication can be derived from number of doses per day divided by the frequency. The cumulative duration can be calculated as the sum of the number of medication dispensed days x number of medication refills over a set period of time, excluding any gaps during which a medication was not dispensed. For example, if a medication was prescribed for 30 days with 3 refills, then a gap of 3 month, then prescribed again for 60 days with 2 refills, the cumulative medication duration for would be (30 x 3) + (60 x 2) = 150 days over the 10 month period.",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "Patients 66 years and older who had a visit during the measurement period",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals initial patient population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "None",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Numerator 1: Patients with an order for at least one high-risk medication during the measurement period. \r\nNumerator 2: Patients with an order for at least two different high-risk medications during the measurement period.",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "None",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "NUMER": "NUMER",
+      "DENOM": "DENOM",
+      "IPP": "IPP",
+      "title": "1+ High-Risk Medications",
+      "id": "Population1"
+    },
+    {
+      "NUMER": "NUMER_1",
+      "DENOM": "DENOM",
+      "IPP": "IPP",
+      "title": "2+ High-Risk Medications",
+      "id": "Population2"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

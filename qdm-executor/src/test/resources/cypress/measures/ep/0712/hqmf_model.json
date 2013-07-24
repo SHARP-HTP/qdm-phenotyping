@@ -1,0 +1,2978 @@
+{
+  "id": "0712",
+  "hqmf_id": "8A4D92B2-397A-48D2-0139-A27B83221F9A",
+  "hqmf_set_id": "A4B9763C-847E-4E02-BB7E-ACC596E90E2C",
+  "hqmf_version_number": 1,
+  "title": "Depression Utilization of the PHQ-9 Tool",
+  "description": "Adult patients age 18 and older with the diagnosis of major depression or dysthymia who have a PHQ-9 tool administered at least once during a 4 month period in which there was a qualifying visit.",
+  "cms_id": "CMS160v1",
+  "population_criteria": {
+    "DENEX": {
+      "conjunction?": true,
+      "type": "DENEX",
+      "title": "Denominator",
+      "hqmf_id": "FB7AF536-4C73-4655-ABD6-05DE418804DD",
+      "preconditions": [
+        {
+          "id": 22,
+          "preconditions": [
+            {
+              "id": 20,
+              "preconditions": [
+                {
+                  "id": 10,
+                  "reference": "PatientCharacteristicExpiredDeceased_precondition_10"
+                },
+                {
+                  "id": 12,
+                  "reference": "InterventionOrderPalliativeCare_precondition_12"
+                },
+                {
+                  "id": 14,
+                  "reference": "DiagnosisActiveBipolarDisorder_precondition_14"
+                },
+                {
+                  "id": 16,
+                  "reference": "DiagnosisActivePersonalityDisorder_precondition_16"
+                },
+                {
+                  "id": 18,
+                  "reference": "EncounterPerformedResidence_precondition_18"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENEX_1": {
+      "conjunction?": true,
+      "type": "DENEX",
+      "title": "Denominator",
+      "hqmf_id": "0A550CEF-0FD2-46F7-86C9-B8F6ADF9BDE3",
+      "preconditions": [
+        {
+          "id": 55,
+          "preconditions": [
+            {
+              "id": 53,
+              "preconditions": [
+                {
+                  "id": 27,
+                  "preconditions": [
+                    {
+                      "id": 23,
+                      "reference": "PatientCharacteristicExpiredDeceased_precondition_23"
+                    },
+                    {
+                      "id": 25,
+                      "reference": "PatientCharacteristicExpiredDeceased_precondition_25"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 33,
+                  "preconditions": [
+                    {
+                      "id": 29,
+                      "reference": "OccurrenceAPalliativeCare4_precondition_29"
+                    },
+                    {
+                      "id": 31,
+                      "reference": "OccurrenceAPalliativeCare4_precondition_31"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 39,
+                  "preconditions": [
+                    {
+                      "id": 35,
+                      "reference": "OccurrenceABipolarDisorder5_precondition_35"
+                    },
+                    {
+                      "id": 37,
+                      "reference": "OccurrenceABipolarDisorder5_precondition_37"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 45,
+                  "preconditions": [
+                    {
+                      "id": 41,
+                      "reference": "OccurrenceAPersonalityDisorder6_precondition_41"
+                    },
+                    {
+                      "id": 43,
+                      "reference": "OccurrenceAPersonalityDisorder6_precondition_43"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 51,
+                  "preconditions": [
+                    {
+                      "id": 47,
+                      "reference": "OccurrenceAResidence7_precondition_47"
+                    },
+                    {
+                      "id": 49,
+                      "reference": "OccurrenceAResidence7_precondition_49"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENEX_2": {
+      "conjunction?": true,
+      "type": "DENEX",
+      "title": "Denominator",
+      "hqmf_id": "7E613FC0-C9CE-4BBA-A607-0649890F9B2C",
+      "preconditions": [
+        {
+          "id": 68,
+          "preconditions": [
+            {
+              "id": 66,
+              "preconditions": [
+                {
+                  "id": 56,
+                  "reference": "PatientCharacteristicExpiredDeceased_precondition_56"
+                },
+                {
+                  "id": 58,
+                  "reference": "InterventionOrderPalliativeCare_precondition_58"
+                },
+                {
+                  "id": 60,
+                  "reference": "DiagnosisActiveBipolarDisorder_precondition_60"
+                },
+                {
+                  "id": 62,
+                  "reference": "DiagnosisActivePersonalityDisorder_precondition_62"
+                },
+                {
+                  "id": 64,
+                  "reference": "EncounterPerformedResidence_precondition_64"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "EC9186A5-FBBE-4A57-A3E3-BA12CD98D790",
+      "preconditions": [
+        {
+          "id": 71,
+          "preconditions": [
+            {
+              "id": 69,
+              "reference": "RiskCategoryAssessmentPhq9Tool_precondition_69"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER_1": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "D9C32C3E-E242-4AFC-9E38-9A3384008057",
+      "preconditions": [
+        {
+          "id": 76,
+          "preconditions": [
+            {
+              "id": 72,
+              "reference": "OccurrenceAPhq9Tool3_precondition_72"
+            },
+            {
+              "id": 74,
+              "reference": "OccurrenceAPhq9Tool3_precondition_74"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER_2": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "CB534223-295B-42CE-B5FA-2BB9BCA42D94",
+      "preconditions": [
+        {
+          "id": 79,
+          "preconditions": [
+            {
+              "id": 77,
+              "reference": "RiskCategoryAssessmentPhq9Tool_precondition_77"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "6ABAFEED-5D16-4605-9DB7-F020367D2C06"
+    },
+    "DENOM_1": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "20688519-EA16-476B-8203-4848062FF825"
+    },
+    "DENOM_2": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "2E1BC6AC-93A8-4459-8918-4FE7451FB4F3"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "8983C993-132A-4DC2-A968-D7ED50B225A6",
+      "preconditions": [
+        {
+          "id": 116,
+          "preconditions": [
+            {
+              "id": 80,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_80"
+            },
+            {
+              "id": 114,
+              "preconditions": [
+                {
+                  "id": 88,
+                  "preconditions": [
+                    {
+                      "id": 85,
+                      "reference": "OccurrenceAMajorDepression8_precondition_85"
+                    },
+                    {
+                      "id": 87,
+                      "preconditions": [
+                        {
+                          "id": 82,
+                          "reference": "OccurrenceAMajorDepression8_precondition_82"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 96,
+                  "preconditions": [
+                    {
+                      "id": 93,
+                      "reference": "OccurrenceADysthymia9_precondition_93"
+                    },
+                    {
+                      "id": 95,
+                      "preconditions": [
+                        {
+                          "id": 90,
+                          "reference": "OccurrenceADysthymia9_precondition_90"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 104,
+                  "preconditions": [
+                    {
+                      "id": 101,
+                      "reference": "OccurrenceAMajorDepression8_precondition_101"
+                    },
+                    {
+                      "id": 103,
+                      "preconditions": [
+                        {
+                          "id": 98,
+                          "reference": "OccurrenceAMajorDepression8_precondition_98"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 112,
+                  "preconditions": [
+                    {
+                      "id": 109,
+                      "reference": "OccurrenceADysthymia9_precondition_109"
+                    },
+                    {
+                      "id": 111,
+                      "preconditions": [
+                        {
+                          "id": 106,
+                          "reference": "OccurrenceADysthymia9_precondition_106"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "IPP_1": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "231FB0B6-5347-4E96-835A-9F834E981151",
+      "preconditions": [
+        {
+          "id": 165,
+          "preconditions": [
+            {
+              "id": 117,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_117"
+            },
+            {
+              "id": 163,
+              "preconditions": [
+                {
+                  "id": 139,
+                  "preconditions": [
+                    {
+                      "id": 119,
+                      "reference": "OccurrenceAOfficeVisit1_precondition_119"
+                    },
+                    {
+                      "id": 121,
+                      "reference": "OccurrenceAOfficeVisit1_precondition_121"
+                    },
+                    {
+                      "id": 137,
+                      "preconditions": [
+                        {
+                          "id": 128,
+                          "preconditions": [
+                            {
+                              "id": 125,
+                              "reference": "OccurrenceAMajorDepression8_precondition_125"
+                            },
+                            {
+                              "id": 127,
+                              "preconditions": [
+                                {
+                                  "id": 123,
+                                  "reference": "OccurrenceAMajorDepression8_precondition_123"
+                                }
+                              ],
+                              "conjunction_code": "atLeastOneTrue",
+                              "negation": true
+                            }
+                          ],
+                          "conjunction_code": "allTrue"
+                        },
+                        {
+                          "id": 135,
+                          "preconditions": [
+                            {
+                              "id": 132,
+                              "reference": "OccurrenceADysthymia9_precondition_132"
+                            },
+                            {
+                              "id": 134,
+                              "preconditions": [
+                                {
+                                  "id": 130,
+                                  "reference": "OccurrenceADysthymia9_precondition_130"
+                                }
+                              ],
+                              "conjunction_code": "atLeastOneTrue",
+                              "negation": true
+                            }
+                          ],
+                          "conjunction_code": "allTrue"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 161,
+                  "preconditions": [
+                    {
+                      "id": 141,
+                      "reference": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2_precondition_141"
+                    },
+                    {
+                      "id": 143,
+                      "reference": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2_precondition_143"
+                    },
+                    {
+                      "id": 159,
+                      "preconditions": [
+                        {
+                          "id": 150,
+                          "preconditions": [
+                            {
+                              "id": 147,
+                              "reference": "OccurrenceAMajorDepression8_precondition_147"
+                            },
+                            {
+                              "id": 149,
+                              "preconditions": [
+                                {
+                                  "id": 145,
+                                  "reference": "OccurrenceAMajorDepression8_precondition_145"
+                                }
+                              ],
+                              "conjunction_code": "atLeastOneTrue",
+                              "negation": true
+                            }
+                          ],
+                          "conjunction_code": "allTrue"
+                        },
+                        {
+                          "id": 157,
+                          "preconditions": [
+                            {
+                              "id": 154,
+                              "reference": "OccurrenceADysthymia9_precondition_154"
+                            },
+                            {
+                              "id": 156,
+                              "preconditions": [
+                                {
+                                  "id": 152,
+                                  "reference": "OccurrenceADysthymia9_precondition_152"
+                                }
+                              ],
+                              "conjunction_code": "atLeastOneTrue",
+                              "negation": true
+                            }
+                          ],
+                          "conjunction_code": "allTrue"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "IPP_2": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "BA56146B-0F81-48E4-93EF-0C683F509D06",
+      "preconditions": [
+        {
+          "id": 202,
+          "preconditions": [
+            {
+              "id": 166,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_166"
+            },
+            {
+              "id": 200,
+              "preconditions": [
+                {
+                  "id": 174,
+                  "preconditions": [
+                    {
+                      "id": 171,
+                      "reference": "OccurrenceAMajorDepression8_precondition_171"
+                    },
+                    {
+                      "id": 173,
+                      "preconditions": [
+                        {
+                          "id": 168,
+                          "reference": "OccurrenceAMajorDepression8_precondition_168"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 182,
+                  "preconditions": [
+                    {
+                      "id": 179,
+                      "reference": "OccurrenceADysthymia9_precondition_179"
+                    },
+                    {
+                      "id": 181,
+                      "preconditions": [
+                        {
+                          "id": 176,
+                          "reference": "OccurrenceADysthymia9_precondition_176"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 190,
+                  "preconditions": [
+                    {
+                      "id": 187,
+                      "reference": "OccurrenceAMajorDepression8_precondition_187"
+                    },
+                    {
+                      "id": 189,
+                      "preconditions": [
+                        {
+                          "id": 184,
+                          "reference": "OccurrenceAMajorDepression8_precondition_184"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 198,
+                  "preconditions": [
+                    {
+                      "id": 195,
+                      "reference": "OccurrenceADysthymia9_precondition_195"
+                    },
+                    {
+                      "id": 197,
+                      "preconditions": [
+                        {
+                          "id": 192,
+                          "reference": "OccurrenceADysthymia9_precondition_192"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "DiagnosisActiveDysthymia": {
+      "title": "Dysthymia",
+      "description": "Diagnosis, Active: Dysthymia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.254",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveDysthymia"
+    },
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy": {
+      "title": "Psych Visit - Individual Outpatient Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy"
+    },
+    "DiagnosisActiveMajorDepression": {
+      "title": "Major Depression",
+      "description": "Diagnosis, Active: Major Depression",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.105.12.1007",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveMajorDepression"
+    },
+    "OccurrenceAOfficeVisit1": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit1"
+    },
+    "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2": {
+      "title": "Psych Visit - Individual Outpatient Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_INDIVIDUAL_OUTPATIENT_PSYCHOTHERAPY",
+      "source_data_criteria": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2"
+    },
+    "PatientCharacteristicExpiredDeceased_precondition_10": {
+      "title": "Deceased",
+      "description": "Patient Characteristic Expired: Deceased",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.11.721",
+      "property": "expired",
+      "type": "characteristic",
+      "definition": "patient_characteristic_expired",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicExpiredDeceased",
+      "inline_code_list": {
+        "SNOMED-CT": [
+          "18632008",
+          "371828006"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "InterventionOrderPalliativeCare_precondition_12": {
+      "title": "Palliative Care",
+      "description": "Intervention, Order: Palliative Care",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1024",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "InterventionOrderPalliativeCare",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "DiagnosisActiveBipolarDisorder_precondition_14": {
+      "title": "Bipolar Disorder",
+      "description": "Diagnosis, Active: Bipolar Disorder",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.128",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveBipolarDisorder",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "DiagnosisActivePersonalityDisorder_precondition_16": {
+      "title": "Personality Disorder",
+      "description": "Diagnosis, Active: Personality Disorder",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.246",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActivePersonalityDisorder",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedResidence_precondition_18": {
+      "title": "Residence",
+      "description": "Encounter, Performed: Residence",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.11.725",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedResidence",
+      "field_values": {
+        "FACILITY_LOCATION": {
+          "type": "CD",
+          "code_list_id": "2.16.840.1.113883.3.67.1.101.11.722",
+          "title": "Nursing Home"
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicExpiredDeceased_precondition_23": {
+      "title": "Deceased",
+      "description": "Patient Characteristic Expired: Deceased",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.11.721",
+      "property": "expired",
+      "type": "characteristic",
+      "definition": "patient_characteristic_expired",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicExpiredDeceased",
+      "inline_code_list": {
+        "SNOMED-CT": [
+          "18632008",
+          "371828006"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "5",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicExpiredDeceased_precondition_25": {
+      "title": "Deceased",
+      "description": "Patient Characteristic Expired: Deceased",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.11.721",
+      "property": "expired",
+      "type": "characteristic",
+      "definition": "patient_characteristic_expired",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicExpiredDeceased",
+      "inline_code_list": {
+        "SNOMED-CT": [
+          "18632008",
+          "371828006"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "8",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAPalliativeCare4_precondition_29": {
+      "title": "Palliative Care",
+      "description": "Intervention, Ordered: Palliative Care",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1024",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "INTERVENTION_ORDERED_PALLIATIVE_CARE",
+      "source_data_criteria": "OccurrenceAPalliativeCare4",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "5",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAPalliativeCare4_precondition_31": {
+      "title": "Palliative Care",
+      "description": "Intervention, Ordered: Palliative Care",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1024",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "INTERVENTION_ORDERED_PALLIATIVE_CARE",
+      "source_data_criteria": "OccurrenceAPalliativeCare4",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "8",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceABipolarDisorder5_precondition_35": {
+      "title": "Bipolar Disorder",
+      "description": "Diagnosis, Active: Bipolar Disorder",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.128",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_BIPOLAR_DISORDER",
+      "source_data_criteria": "OccurrenceABipolarDisorder5",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "5",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceABipolarDisorder5_precondition_37": {
+      "title": "Bipolar Disorder",
+      "description": "Diagnosis, Active: Bipolar Disorder",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.128",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_BIPOLAR_DISORDER",
+      "source_data_criteria": "OccurrenceABipolarDisorder5",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "8",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAPersonalityDisorder6_precondition_41": {
+      "title": "Personality Disorder",
+      "description": "Diagnosis, Active: Personality Disorder",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.246",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_PERSONALITY_DISORDER",
+      "source_data_criteria": "OccurrenceAPersonalityDisorder6",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "5",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAPersonalityDisorder6_precondition_43": {
+      "title": "Personality Disorder",
+      "description": "Diagnosis, Active: Personality Disorder",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.246",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_PERSONALITY_DISORDER",
+      "source_data_criteria": "OccurrenceAPersonalityDisorder6",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "8",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAResidence7_precondition_47": {
+      "title": "Residence",
+      "description": "Encounter, Performed: Residence",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.11.725",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_RESIDENCE",
+      "source_data_criteria": "OccurrenceAResidence7",
+      "field_values": {
+        "FACILITY_LOCATION": {
+          "type": "CD",
+          "code_list_id": "2.16.840.1.113883.3.67.1.101.11.722",
+          "title": "Nursing Home"
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "5",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAResidence7_precondition_49": {
+      "title": "Residence",
+      "description": "Encounter, Performed: Residence",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.11.725",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_RESIDENCE",
+      "source_data_criteria": "OccurrenceAResidence7",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "8",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicExpiredDeceased_precondition_56": {
+      "title": "Deceased",
+      "description": "Patient Characteristic Expired: Deceased",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.11.721",
+      "property": "expired",
+      "type": "characteristic",
+      "definition": "patient_characteristic_expired",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicExpiredDeceased",
+      "inline_code_list": {
+        "SNOMED-CT": [
+          "18632008",
+          "371828006"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "InterventionOrderPalliativeCare_precondition_58": {
+      "title": "Palliative Care",
+      "description": "Intervention, Order: Palliative Care",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1024",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "InterventionOrderPalliativeCare",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "DiagnosisActiveBipolarDisorder_precondition_60": {
+      "title": "Bipolar Disorder",
+      "description": "Diagnosis, Active: Bipolar Disorder",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.128",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveBipolarDisorder",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "DiagnosisActivePersonalityDisorder_precondition_62": {
+      "title": "Personality Disorder",
+      "description": "Diagnosis, Active: Personality Disorder",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.246",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActivePersonalityDisorder",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedResidence_precondition_64": {
+      "title": "Residence",
+      "description": "Encounter, Performed: Residence",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.11.725",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedResidence",
+      "field_values": {
+        "FACILITY_LOCATION": {
+          "type": "CD",
+          "code_list_id": "2.16.840.1.113883.3.67.1.101.11.722",
+          "title": "Nursing Home"
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "RiskCategoryAssessmentPhq9Tool_precondition_69": {
+      "title": "PHQ-9 Tool",
+      "description": "Risk Category Assessment: PHQ-9 Tool",
+      "standard_category": "risk_category_assessment",
+      "qds_data_type": "risk_category_assessment",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.11.723",
+      "type": "risk_category_assessments",
+      "definition": "risk_category_assessment",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "RiskCategoryAssessmentPhq9Tool",
+      "value": {
+        "type": "ANYNonNull"
+      },
+      "temporal_references": [
+        {
+          "type": "EBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAPhq9Tool3_precondition_72": {
+      "title": "PHQ-9 Tool",
+      "description": "Risk Category Assessment: PHQ-9 Tool",
+      "standard_category": "risk_category_assessment",
+      "qds_data_type": "risk_category_assessment",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.11.723",
+      "type": "risk_category_assessments",
+      "definition": "risk_category_assessment",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "RISK_CATEGORY_ASSESSMENT_PHQ_9_TOOL",
+      "source_data_criteria": "OccurrenceAPhq9Tool3",
+      "value": {
+        "type": "ANYNonNull"
+      },
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "5",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAPhq9Tool3_precondition_74": {
+      "title": "PHQ-9 Tool",
+      "description": "Risk Category Assessment: PHQ-9 Tool",
+      "standard_category": "risk_category_assessment",
+      "qds_data_type": "risk_category_assessment",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.11.723",
+      "type": "risk_category_assessments",
+      "definition": "risk_category_assessment",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "RISK_CATEGORY_ASSESSMENT_PHQ_9_TOOL",
+      "source_data_criteria": "OccurrenceAPhq9Tool3",
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "8",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "RiskCategoryAssessmentPhq9Tool_precondition_77": {
+      "title": "PHQ-9 Tool",
+      "description": "Risk Category Assessment: PHQ-9 Tool",
+      "standard_category": "risk_category_assessment",
+      "qds_data_type": "risk_category_assessment",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.11.723",
+      "type": "risk_category_assessments",
+      "definition": "risk_category_assessment",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "RiskCategoryAssessmentPhq9Tool",
+      "value": {
+        "type": "ANYNonNull"
+      },
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_80": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "18",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit1_precondition_84": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit1",
+      "temporal_references": [
+        {
+          "type": "EBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAMajorDepression8_precondition_85": {
+      "title": "Major Depression",
+      "description": "Diagnosis, Active: Major Depression",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.105.12.1007",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSION",
+      "source_data_criteria": "OccurrenceAMajorDepression8",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAOfficeVisit1_precondition_84"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepression8_precondition_82": {
+      "title": "Major Depression",
+      "description": "Diagnosis, Active: Major Depression",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.105.12.1007",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSION",
+      "source_data_criteria": "OccurrenceAMajorDepression8",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAOfficeVisit1"
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit1_precondition_92": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit1",
+      "temporal_references": [
+        {
+          "type": "EBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceADysthymia9_precondition_93": {
+      "title": "Dysthymia",
+      "description": "Diagnosis, Active: Dysthymia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.254",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_DYSTHYMIA",
+      "source_data_criteria": "OccurrenceADysthymia9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAOfficeVisit1_precondition_92"
+        }
+      ]
+    },
+    "OccurrenceADysthymia9_precondition_90": {
+      "title": "Dysthymia",
+      "description": "Diagnosis, Active: Dysthymia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.254",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_DYSTHYMIA",
+      "source_data_criteria": "OccurrenceADysthymia9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAOfficeVisit1"
+        }
+      ]
+    },
+    "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2_precondition_100": {
+      "title": "Psych Visit - Individual Outpatient Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_INDIVIDUAL_OUTPATIENT_PSYCHOTHERAPY",
+      "source_data_criteria": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2",
+      "temporal_references": [
+        {
+          "type": "EBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAMajorDepression8_precondition_101": {
+      "title": "Major Depression",
+      "description": "Diagnosis, Active: Major Depression",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.105.12.1007",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSION",
+      "source_data_criteria": "OccurrenceAMajorDepression8",
+      "field_values": {
+        "ORDINAL": {
+          "type": "CD",
+          "code_list_id": "2.16.840.1.113883.3.67.1.101.11.724",
+          "title": "principal"
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2_precondition_100"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepression8_precondition_98": {
+      "title": "Major Depression",
+      "description": "Diagnosis, Active: Major Depression",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.105.12.1007",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSION",
+      "source_data_criteria": "OccurrenceAMajorDepression8",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2"
+        }
+      ]
+    },
+    "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2_precondition_108": {
+      "title": "Psych Visit - Individual Outpatient Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_INDIVIDUAL_OUTPATIENT_PSYCHOTHERAPY",
+      "source_data_criteria": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2",
+      "temporal_references": [
+        {
+          "type": "EBE",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceADysthymia9_precondition_109": {
+      "title": "Dysthymia",
+      "description": "Diagnosis, Active: Dysthymia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.254",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_DYSTHYMIA",
+      "source_data_criteria": "OccurrenceADysthymia9",
+      "field_values": {
+        "ORDINAL": {
+          "type": "CD",
+          "code_list_id": "2.16.840.1.113883.3.67.1.101.11.724",
+          "title": "principal"
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2_precondition_108"
+        }
+      ]
+    },
+    "OccurrenceADysthymia9_precondition_106": {
+      "title": "Dysthymia",
+      "description": "Diagnosis, Active: Dysthymia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.254",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_DYSTHYMIA",
+      "source_data_criteria": "OccurrenceADysthymia9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2"
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_117": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "18",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit1_precondition_119": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit1",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "5",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit1_precondition_121": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit1",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "8",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAMajorDepression8_precondition_125": {
+      "title": "Major Depression",
+      "description": "Diagnosis, Active: Major Depression",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.105.12.1007",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSION",
+      "source_data_criteria": "OccurrenceAMajorDepression8",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAOfficeVisit1"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepression8_precondition_123": {
+      "title": "Major Depression",
+      "description": "Diagnosis, Active: Major Depression",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.105.12.1007",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSION",
+      "source_data_criteria": "OccurrenceAMajorDepression8",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAOfficeVisit1"
+        }
+      ]
+    },
+    "OccurrenceADysthymia9_precondition_132": {
+      "title": "Dysthymia",
+      "description": "Diagnosis, Active: Dysthymia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.254",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_DYSTHYMIA",
+      "source_data_criteria": "OccurrenceADysthymia9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAOfficeVisit1"
+        }
+      ]
+    },
+    "OccurrenceADysthymia9_precondition_130": {
+      "title": "Dysthymia",
+      "description": "Diagnosis, Active: Dysthymia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.254",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_DYSTHYMIA",
+      "source_data_criteria": "OccurrenceADysthymia9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAOfficeVisit1"
+        }
+      ]
+    },
+    "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2_precondition_141": {
+      "title": "Psych Visit - Individual Outpatient Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_INDIVIDUAL_OUTPATIENT_PSYCHOTHERAPY",
+      "source_data_criteria": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "5",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2_precondition_143": {
+      "title": "Psych Visit - Individual Outpatient Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_INDIVIDUAL_OUTPATIENT_PSYCHOTHERAPY",
+      "source_data_criteria": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "8",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAMajorDepression8_precondition_147": {
+      "title": "Major Depression",
+      "description": "Diagnosis, Active: Major Depression",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.105.12.1007",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSION",
+      "source_data_criteria": "OccurrenceAMajorDepression8",
+      "field_values": {
+        "ORDINAL": {
+          "type": "CD",
+          "code_list_id": "2.16.840.1.113883.3.67.1.101.11.724",
+          "title": "principal"
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepression8_precondition_145": {
+      "title": "Major Depression",
+      "description": "Diagnosis, Active: Major Depression",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.105.12.1007",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSION",
+      "source_data_criteria": "OccurrenceAMajorDepression8",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2"
+        }
+      ]
+    },
+    "OccurrenceADysthymia9_precondition_154": {
+      "title": "Dysthymia",
+      "description": "Diagnosis, Active: Dysthymia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.254",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_DYSTHYMIA",
+      "source_data_criteria": "OccurrenceADysthymia9",
+      "field_values": {
+        "ORDINAL": {
+          "type": "CD",
+          "code_list_id": "2.16.840.1.113883.3.67.1.101.11.724",
+          "title": "principal"
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2"
+        }
+      ]
+    },
+    "OccurrenceADysthymia9_precondition_152": {
+      "title": "Dysthymia",
+      "description": "Diagnosis, Active: Dysthymia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.254",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_DYSTHYMIA",
+      "source_data_criteria": "OccurrenceADysthymia9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2"
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_166": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "18",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit1_precondition_170": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit1",
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAMajorDepression8_precondition_171": {
+      "title": "Major Depression",
+      "description": "Diagnosis, Active: Major Depression",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.105.12.1007",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSION",
+      "source_data_criteria": "OccurrenceAMajorDepression8",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAOfficeVisit1_precondition_170"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepression8_precondition_168": {
+      "title": "Major Depression",
+      "description": "Diagnosis, Active: Major Depression",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.105.12.1007",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSION",
+      "source_data_criteria": "OccurrenceAMajorDepression8",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAOfficeVisit1"
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit1_precondition_178": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit1",
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceADysthymia9_precondition_179": {
+      "title": "Dysthymia",
+      "description": "Diagnosis, Active: Dysthymia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.254",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_DYSTHYMIA",
+      "source_data_criteria": "OccurrenceADysthymia9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAOfficeVisit1_precondition_178"
+        }
+      ]
+    },
+    "OccurrenceADysthymia9_precondition_176": {
+      "title": "Dysthymia",
+      "description": "Diagnosis, Active: Dysthymia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.254",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_DYSTHYMIA",
+      "source_data_criteria": "OccurrenceADysthymia9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAOfficeVisit1"
+        }
+      ]
+    },
+    "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2_precondition_186": {
+      "title": "Psych Visit - Individual Outpatient Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_INDIVIDUAL_OUTPATIENT_PSYCHOTHERAPY",
+      "source_data_criteria": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2",
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAMajorDepression8_precondition_187": {
+      "title": "Major Depression",
+      "description": "Diagnosis, Active: Major Depression",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.105.12.1007",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSION",
+      "source_data_criteria": "OccurrenceAMajorDepression8",
+      "field_values": {
+        "ORDINAL": {
+          "type": "CD",
+          "code_list_id": "2.16.840.1.113883.3.67.1.101.11.724",
+          "title": "principal"
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2_precondition_186"
+        }
+      ]
+    },
+    "OccurrenceAMajorDepression8_precondition_184": {
+      "title": "Major Depression",
+      "description": "Diagnosis, Active: Major Depression",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.105.12.1007",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSION",
+      "source_data_criteria": "OccurrenceAMajorDepression8",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2"
+        }
+      ]
+    },
+    "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2_precondition_194": {
+      "title": "Psych Visit - Individual Outpatient Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_INDIVIDUAL_OUTPATIENT_PSYCHOTHERAPY",
+      "source_data_criteria": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2",
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "4",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceADysthymia9_precondition_195": {
+      "title": "Dysthymia",
+      "description": "Diagnosis, Active: Dysthymia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.254",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_DYSTHYMIA",
+      "source_data_criteria": "OccurrenceADysthymia9",
+      "field_values": {
+        "ORDINAL": {
+          "type": "CD",
+          "code_list_id": "2.16.840.1.113883.3.67.1.101.11.724",
+          "title": "principal"
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2_precondition_194"
+        }
+      ]
+    },
+    "OccurrenceADysthymia9_precondition_192": {
+      "title": "Dysthymia",
+      "description": "Diagnosis, Active: Dysthymia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.254",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_DYSTHYMIA",
+      "source_data_criteria": "OccurrenceADysthymia9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2"
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "DiagnosisActiveDysthymia": {
+      "title": "Dysthymia",
+      "description": "Diagnosis, Active: Dysthymia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.254",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveDysthymia"
+    },
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy": {
+      "title": "Psych Visit - Individual Outpatient Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPsychVisitIndividualOutpatientPsychotherapy"
+    },
+    "PatientCharacteristicExpiredDeceased": {
+      "title": "Deceased",
+      "description": "Patient Characteristic Expired: Deceased",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.11.721",
+      "property": "expired",
+      "type": "characteristic",
+      "definition": "patient_characteristic_expired",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicExpiredDeceased",
+      "inline_code_list": {
+        "SNOMED-CT": [
+          "18632008",
+          "371828006"
+        ]
+      }
+    },
+    "InterventionOrderPalliativeCare": {
+      "title": "Palliative Care",
+      "description": "Intervention, Order: Palliative Care",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1024",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "InterventionOrderPalliativeCare"
+    },
+    "DiagnosisActiveBipolarDisorder": {
+      "title": "Bipolar Disorder",
+      "description": "Diagnosis, Active: Bipolar Disorder",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.128",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveBipolarDisorder"
+    },
+    "DiagnosisActivePersonalityDisorder": {
+      "title": "Personality Disorder",
+      "description": "Diagnosis, Active: Personality Disorder",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.246",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActivePersonalityDisorder"
+    },
+    "EncounterPerformedResidence": {
+      "title": "Residence",
+      "description": "Encounter, Performed: Residence",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.11.725",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedResidence"
+    },
+    "RiskCategoryAssessmentPhq9Tool": {
+      "title": "PHQ-9 Tool",
+      "description": "Risk Category Assessment: PHQ-9 Tool",
+      "standard_category": "risk_category_assessment",
+      "qds_data_type": "risk_category_assessment",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.11.723",
+      "type": "risk_category_assessments",
+      "definition": "risk_category_assessment",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "RiskCategoryAssessmentPhq9Tool"
+    },
+    "DiagnosisActiveMajorDepression": {
+      "title": "Major Depression",
+      "description": "Diagnosis, Active: Major Depression",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.105.12.1007",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveMajorDepression"
+    },
+    "OccurrenceAOfficeVisit1": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit1"
+    },
+    "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2": {
+      "title": "Psych Visit - Individual Outpatient Psychotherapy",
+      "description": "Encounter, Performed: Psych Visit - Individual Outpatient Psychotherapy",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1014",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_PSYCH_VISIT_INDIVIDUAL_OUTPATIENT_PSYCHOTHERAPY",
+      "source_data_criteria": "OccurrenceAPsychVisitIndividualOutpatientPsychotherapy2"
+    },
+    "OccurrenceAPhq9Tool3": {
+      "title": "PHQ-9 Tool",
+      "description": "Risk Category Assessment: PHQ-9 Tool",
+      "standard_category": "risk_category_assessment",
+      "qds_data_type": "risk_category_assessment",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.11.723",
+      "type": "risk_category_assessments",
+      "definition": "risk_category_assessment",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "RISK_CATEGORY_ASSESSMENT_PHQ_9_TOOL",
+      "source_data_criteria": "OccurrenceAPhq9Tool3"
+    },
+    "OccurrenceAPalliativeCare4": {
+      "title": "Palliative Care",
+      "description": "Intervention, Ordered: Palliative Care",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1024",
+      "type": "interventions",
+      "definition": "intervention",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "INTERVENTION_ORDERED_PALLIATIVE_CARE",
+      "source_data_criteria": "OccurrenceAPalliativeCare4"
+    },
+    "OccurrenceABipolarDisorder5": {
+      "title": "Bipolar Disorder",
+      "description": "Diagnosis, Active: Bipolar Disorder",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.128",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_BIPOLAR_DISORDER",
+      "source_data_criteria": "OccurrenceABipolarDisorder5"
+    },
+    "OccurrenceAPersonalityDisorder6": {
+      "title": "Personality Disorder",
+      "description": "Diagnosis, Active: Personality Disorder",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.246",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_PERSONALITY_DISORDER",
+      "source_data_criteria": "OccurrenceAPersonalityDisorder6"
+    },
+    "OccurrenceAResidence7": {
+      "title": "Residence",
+      "description": "Encounter, Performed: Residence",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.11.725",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_RESIDENCE",
+      "source_data_criteria": "OccurrenceAResidence7"
+    },
+    "OccurrenceAMajorDepression8": {
+      "title": "Major Depression",
+      "description": "Diagnosis, Active: Major Depression",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.105.12.1007",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_MAJOR_DEPRESSION",
+      "source_data_criteria": "OccurrenceAMajorDepression8"
+    },
+    "OccurrenceADysthymia9": {
+      "title": "Dysthymia",
+      "description": "Diagnosis, Active: Dysthymia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.67.1.101.1.254",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_DYSTHYMIA",
+      "source_data_criteria": "OccurrenceADysthymia9"
+    }
+  },
+  "attributes": [
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "Copyright MN Community Measurement, 2012. All rights reserved",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "The Centers for Disease Control and Prevention states that nationally 15.7% of people report being told by a health care professional that they had depression at some point in their lifetime. Persons with a current diagnosis of depression and a lifetime diagnosis of depression or anxiety were significantly more likely than persons without these conditions to have cardiovascular disease, diabetes, asthma and obesity and to be a current smoker, to be physically inactive and to drink heavily. According to National Institute of Mental Health (NIMH), 6.7 percent of the U.S. population ages 18 and older (14.8 million people) in any given year have a diagnosis of a major depressive disorder. Major depression is the leading cause of disability in the U.S. for ages 15 - 44. Additionally, dysthymia accounts for an additional 3.3 million Americans.",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "This process measure for using the PHQ-9 tool is directly related to the desired outcomes of demonstrating improvement in symptoms of depression (remission). Improvement in the symptoms of depression and an ongoing assessment of the current treatment plan is crucial to the reduction of symptoms and psychosocial well being of patients with major depression. Most people treated for initial depression need to be on medication at least six to twelve months after adequate response to symptoms, patients with recurrent depression need to be treated for three years or more and response with psychotherapy can take eight to twelve weeks of regular and frequent therapy to show improvement. Remission is defined as a PHQ-9 score of less than five at twelve months. The Patient Health Questionnaire (PHQ-9) tool is a widely accepted, standardized tool [Copyright (C) 2005 Pfizer, Inc. All rights reserved] that is completed by the patient, ideally at each visit, and utilized by the provider to monitor treatment progress. This tool was selected for measuring outcomes for this population because it is 1) validated with a sensitivity of .080 and a specificity of 0.92 with substantial heterogeneity I2 = 82%, 2) widely accepted and utilized in Minnesota, 3) available for clinical use, 4) translated into many languages and 5) easy for the patient to complete and the provider to score. This nine question tool contains the following questions which are scored on a scale of 0 to 27 based on the scale of Not at All (0), Several Days (1), More Than Half the Days (2), or Nearly Every Day (3) for responses to the questions over the last 2 weeks. \r\n• Little interest or pleasure in doing things \r\n• Feeling down, depressed, or hopeless\r\n• Feeling tired or having little energy \r\n• Poor appetite or overeating \r\n• Feeling bad about yourself - or that you are a failure or have let yourself or your family down \r\n• Trouble concentrating on things, such as reading the newspaper or watching television \r\n• Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual \r\n• Thoughts that you would be better off dead or of hurting yourself in some way",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "Higher scores indicate better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "0712",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "This measure is “re-tooled” from the existing NQF # 712 measure. eMeasure development was a collaboration between MN Community Measurement and the Iowa Foundation for Medical Care (IFMC) with technical assistance provided by IFMC.",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "160",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "Collaborative Care for Depression: a Cumulative Meta-analysis and Review of Longer-term Outcomes. Gilbody, Simon et al Archives Internal Medicine Dec 2006",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "None",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "None",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "Adult patients age 18 and older with an office visit and the diagnosis of major depression or dysthymia during each four month period",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals the Initial Patient Population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "1: Patients who died\r\n2: Patients who received hospice services\r\n3: Patients who were permanent nursing home residents (> 1 year)\r\n4: Patients with a diagnosis of bipolar disorder\r\n5: Patients with a diagnosis of personality disorder",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Adult patients who have a PHQ-9 tool administered at least once during the four-month period.",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "None",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "NUMER": "NUMER",
+      "DENOM": "DENOM",
+      "IPP": "IPP",
+      "DENEX": "DENEX",
+      "title": "Sep-Dec",
+      "id": "Population1"
+    },
+    {
+      "IPP": "IPP_1",
+      "DENOM": "DENOM_1",
+      "NUMER": "NUMER_1",
+      "DENEX": "DENEX_1",
+      "title": "May-Aug",
+      "id": "Population2"
+    },
+    {
+      "IPP": "IPP_2",
+      "DENOM": "DENOM_2",
+      "NUMER": "NUMER_2",
+      "DENEX": "DENEX_2",
+      "title": "Jan-Apr",
+      "id": "Population3"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

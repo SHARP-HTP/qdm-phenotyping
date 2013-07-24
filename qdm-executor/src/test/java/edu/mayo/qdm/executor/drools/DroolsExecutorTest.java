@@ -8,4 +8,5 @@ public class DroolsExecutorTest {
 	public void TestGetMeasurementPeriod() throws Exception {
        //
     }
+
 }

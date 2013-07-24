@@ -1,0 +1,1018 @@
+{
+  "id": "HypertensionImprovement",
+  "hqmf_id": "8A4D92B2-3B79-4CE2-013B-905D18991EB6",
+  "hqmf_set_id": "1D8363CE-A529-490B-8C98-9B54AA75DA06",
+  "hqmf_version_number": 2,
+  "title": "Hypertension: Improvement in Blood Pressure",
+  "description": "Percentage of patients aged 18-85 years of age with a diagnosis of hypertension whose blood pressure improved during the measurement period.",
+  "cms_id": "CMS65v2",
+  "population_criteria": {
+    "DENEX": {
+      "conjunction?": true,
+      "type": "DENEX",
+      "title": "Denominator",
+      "hqmf_id": "846DAB29-39A7-49BA-8FD3-E0080F69BA57",
+      "preconditions": [
+        {
+          "id": 22,
+          "preconditions": [
+            {
+              "id": 20,
+              "preconditions": [
+                {
+                  "id": 5,
+                  "reference": "DiagnosisActiveEndStageRenalDisease_precondition_5"
+                },
+                {
+                  "id": 7,
+                  "reference": "ProcedurePerformedRenalTransplant_precondition_7"
+                },
+                {
+                  "id": 9,
+                  "reference": "ProcedurePerformedHemodialysis_precondition_9"
+                },
+                {
+                  "id": 11,
+                  "reference": "ProcedurePerformedPeritonealDialysis_precondition_11"
+                },
+                {
+                  "id": 18,
+                  "preconditions": [
+                    {
+                      "id": 15,
+                      "reference": "DiagnosisActivePregnancy_precondition_15"
+                    },
+                    {
+                      "id": 17,
+                      "preconditions": [
+                        {
+                          "id": 13,
+                          "reference": "DiagnosisActivePregnancy_precondition_13"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "FDCFC985-24B5-48A1-A6B0-9B21A345A87C",
+      "preconditions": [
+        {
+          "id": 37,
+          "preconditions": [
+            {
+              "id": 24,
+              "reference": "OccurrenceBBloodPressureVisit4_precondition_23",
+              "conjunction_code": "allTrue"
+            },
+            {
+              "id": 27,
+              "reference": "OccurrenceBSystolicBloodPressure2_precondition_26",
+              "conjunction_code": "allTrue"
+            },
+            {
+              "id": 29,
+              "reference": "OccurrenceBBloodPressureVisit4_precondition_29"
+            },
+            {
+              "id": 35,
+              "preconditions": [
+                {
+                  "id": 31,
+                  "reference": "PhysicalExamFindingDeltaSystolicBloodPressure_precondition_31"
+                },
+                {
+                  "id": 33,
+                  "reference": "OccurrenceBSystolicBloodPressure2_precondition_33"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "7CE0EC39-7281-4D0E-B6D2-C9E95C51750D"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "906B858A-9A28-468A-BCA5-6A399328B803",
+      "preconditions": [
+        {
+          "id": 52,
+          "preconditions": [
+            {
+              "id": 39,
+              "reference": "OccurrenceABloodPressureVisit3_precondition_38",
+              "conjunction_code": "allTrue"
+            },
+            {
+              "id": 42,
+              "reference": "OccurrenceASystolicBloodPressure1_precondition_41",
+              "conjunction_code": "allTrue"
+            },
+            {
+              "id": 44,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_44"
+            },
+            {
+              "id": 46,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_46"
+            },
+            {
+              "id": 48,
+              "reference": "DiagnosisActiveHypertension_precondition_48"
+            },
+            {
+              "id": 50,
+              "reference": "OccurrenceASystolicBloodPressure1_precondition_50"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "PhysicalExamFindingSystolicBloodPressure": {
+      "title": "Systolic Blood Pressure",
+      "description": "Physical Exam, Finding: Systolic Blood Pressure",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1032",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PhysicalExamFindingSystolicBloodPressure"
+    },
+    "EncounterPerformedBloodPressureVisit": {
+      "title": "Blood Pressure Visit",
+      "description": "Encounter, Performed: Blood Pressure Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1056",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedBloodPressureVisit"
+    },
+    "OccurrenceABloodPressureVisit3": {
+      "title": "Blood Pressure Visit",
+      "description": "Encounter, Performed: Blood Pressure Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1056",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_BLOOD_PRESSURE_VISIT",
+      "source_data_criteria": "OccurrenceABloodPressureVisit3"
+    },
+    "OccurrenceBBloodPressureVisit4": {
+      "title": "Blood Pressure Visit",
+      "description": "Encounter, Performed: Blood Pressure Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1056",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_BLOOD_PRESSURE_VISIT",
+      "source_data_criteria": "OccurrenceBBloodPressureVisit4"
+    },
+    "DiagnosisActiveEndStageRenalDisease_precondition_5": {
+      "title": "End Stage Renal Disease",
+      "description": "Diagnosis, Active: End Stage Renal Disease",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.353",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveEndStageRenalDisease",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "ProcedurePerformedRenalTransplant_precondition_7": {
+      "title": "Renal Transplant",
+      "description": "Procedure, Performed: Renal Transplant",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.109.12.1002",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedRenalTransplant",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "ProcedurePerformedHemodialysis_precondition_9": {
+      "title": "Hemodialysis",
+      "description": "Procedure, Performed: Hemodialysis",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1083",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedHemodialysis",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "ProcedurePerformedPeritonealDialysis_precondition_11": {
+      "title": "Peritoneal Dialysis",
+      "description": "Procedure, Performed: Peritoneal Dialysis",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1084",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedPeritonealDialysis",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "DiagnosisActivePregnancy_precondition_15": {
+      "title": "Pregnancy",
+      "description": "Diagnosis, Active: Pregnancy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.378",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActivePregnancy",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "DiagnosisActivePregnancy_precondition_13": {
+      "title": "Pregnancy",
+      "description": "Diagnosis, Active: Pregnancy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.378",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActivePregnancy",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceBBloodPressureVisit4_precondition_23": {
+      "title": "Blood Pressure Visit",
+      "description": "Encounter, Performed: Blood Pressure Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1056",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_BLOOD_PRESSURE_VISIT",
+      "source_data_criteria": "OccurrenceBBloodPressureVisit4",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceABloodPressureVisit3",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "6",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ],
+      "subset_operators": [
+        {
+          "type": "FIRST"
+        }
+      ]
+    },
+    "OccurrenceBSystolicBloodPressure2_precondition_26": {
+      "title": "Systolic Blood Pressure",
+      "description": "Physical Exam: Systolic Blood Pressure",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1032",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "PHYSICAL_EXAM_SYSTOLIC_BLOOD_PRESSURE",
+      "source_data_criteria": "OccurrenceBSystolicBloodPressure2",
+      "value": {
+        "type": "ANYNonNull"
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceBBloodPressureVisit4"
+        }
+      ],
+      "subset_operators": [
+        {
+          "type": "RECENT"
+        }
+      ]
+    },
+    "OccurrenceBBloodPressureVisit4_precondition_29": {
+      "title": "Blood Pressure Visit",
+      "description": "Encounter, Performed: Blood Pressure Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1056",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_BLOOD_PRESSURE_VISIT",
+      "source_data_criteria": "OccurrenceBBloodPressureVisit4",
+      "temporal_references": [
+        {
+          "type": "EDU",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "PhysicalExamFindingDeltaSystolicBloodPressure_precondition_31": {
+      "title": "Delta systolic blood pressure",
+      "description": "Physical Exam, Finding: Delta systolic blood pressure",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.121.12.1013",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PhysicalExamFindingDeltaSystolicBloodPressure",
+      "value": {
+        "type": "IVL_PQ",
+        "low": {
+          "type": "PQ",
+          "unit": "mm[Hg]",
+          "value": "10",
+          "inclusive?": true,
+          "derived?": false
+        }
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceBBloodPressureVisit4"
+        }
+      ]
+    },
+    "OccurrenceBSystolicBloodPressure2_precondition_33": {
+      "title": "Systolic Blood Pressure",
+      "description": "Physical Exam: Systolic Blood Pressure",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1032",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "PHYSICAL_EXAM_SYSTOLIC_BLOOD_PRESSURE",
+      "source_data_criteria": "OccurrenceBSystolicBloodPressure2",
+      "value": {
+        "type": "IVL_PQ",
+        "high": {
+          "type": "PQ",
+          "unit": "mm[Hg]",
+          "value": "140",
+          "inclusive?": false,
+          "derived?": false
+        }
+      }
+    },
+    "OccurrenceABloodPressureVisit3_precondition_38": {
+      "title": "Blood Pressure Visit",
+      "description": "Encounter, Performed: Blood Pressure Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1056",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_BLOOD_PRESSURE_VISIT",
+      "source_data_criteria": "OccurrenceABloodPressureVisit3",
+      "temporal_references": [
+        {
+          "type": "SAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "mo",
+              "value": "6",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ],
+      "subset_operators": [
+        {
+          "type": "FIRST"
+        }
+      ]
+    },
+    "OccurrenceASystolicBloodPressure1_precondition_41": {
+      "title": "Systolic Blood Pressure",
+      "description": "Physical Exam: Systolic Blood Pressure",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1032",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PHYSICAL_EXAM_SYSTOLIC_BLOOD_PRESSURE",
+      "source_data_criteria": "OccurrenceASystolicBloodPressure1",
+      "value": {
+        "type": "ANYNonNull"
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "OccurrenceABloodPressureVisit3"
+        }
+      ],
+      "subset_operators": [
+        {
+          "type": "RECENT"
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_44": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "18",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_46": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "85",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "DiagnosisActiveHypertension_precondition_48": {
+      "title": "Hypertension",
+      "description": "Diagnosis, Active: Hypertension",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1016",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveHypertension",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "OccurrenceABloodPressureVisit3"
+        }
+      ]
+    },
+    "OccurrenceASystolicBloodPressure1_precondition_50": {
+      "title": "Systolic Blood Pressure",
+      "description": "Physical Exam: Systolic Blood Pressure",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1032",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PHYSICAL_EXAM_SYSTOLIC_BLOOD_PRESSURE",
+      "source_data_criteria": "OccurrenceASystolicBloodPressure1",
+      "value": {
+        "type": "IVL_PQ",
+        "low": {
+          "type": "PQ",
+          "unit": "mm[Hg]",
+          "value": "140",
+          "inclusive?": true,
+          "derived?": false
+        }
+      }
+    }
+  },
+  "source_data_criteria": {
+    "ProcedurePerformedRenalTransplant": {
+      "title": "Renal Transplant",
+      "description": "Procedure, Performed: Renal Transplant",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.109.12.1002",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedRenalTransplant"
+    },
+    "ProcedurePerformedHemodialysis": {
+      "title": "Hemodialysis",
+      "description": "Procedure, Performed: Hemodialysis",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1083",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedHemodialysis"
+    },
+    "PhysicalExamFindingDeltaSystolicBloodPressure": {
+      "title": "Delta systolic blood pressure",
+      "description": "Physical Exam, Finding: Delta systolic blood pressure",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.121.12.1013",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PhysicalExamFindingDeltaSystolicBloodPressure"
+    },
+    "DiagnosisActivePregnancy": {
+      "title": "Pregnancy",
+      "description": "Diagnosis, Active: Pregnancy",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.378",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActivePregnancy"
+    },
+    "ProcedurePerformedPeritonealDialysis": {
+      "title": "Peritoneal Dialysis",
+      "description": "Procedure, Performed: Peritoneal Dialysis",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1084",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedPeritonealDialysis"
+    },
+    "DiagnosisActiveEndStageRenalDisease": {
+      "title": "End Stage Renal Disease",
+      "description": "Diagnosis, Active: End Stage Renal Disease",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.353",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveEndStageRenalDisease"
+    },
+    "DiagnosisActiveHypertension": {
+      "title": "Hypertension",
+      "description": "Diagnosis, Active: Hypertension",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.104.12.1016",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveHypertension"
+    },
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "PhysicalExamFindingSystolicBloodPressure": {
+      "title": "Systolic Blood Pressure",
+      "description": "Physical Exam, Finding: Systolic Blood Pressure",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1032",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PhysicalExamFindingSystolicBloodPressure"
+    },
+    "EncounterPerformedBloodPressureVisit": {
+      "title": "Blood Pressure Visit",
+      "description": "Encounter, Performed: Blood Pressure Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1056",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedBloodPressureVisit"
+    },
+    "OccurrenceASystolicBloodPressure1": {
+      "title": "Systolic Blood Pressure",
+      "description": "Physical Exam: Systolic Blood Pressure",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1032",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PHYSICAL_EXAM_SYSTOLIC_BLOOD_PRESSURE",
+      "source_data_criteria": "OccurrenceASystolicBloodPressure1"
+    },
+    "OccurrenceBSystolicBloodPressure2": {
+      "title": "Systolic Blood Pressure",
+      "description": "Physical Exam: Systolic Blood Pressure",
+      "standard_category": "physical_exam",
+      "qds_data_type": "physical_exam",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1032",
+      "type": "physical_exams",
+      "definition": "physical_exam",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "PHYSICAL_EXAM_SYSTOLIC_BLOOD_PRESSURE",
+      "source_data_criteria": "OccurrenceBSystolicBloodPressure2"
+    },
+    "OccurrenceABloodPressureVisit3": {
+      "title": "Blood Pressure Visit",
+      "description": "Encounter, Performed: Blood Pressure Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1056",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_BLOOD_PRESSURE_VISIT",
+      "source_data_criteria": "OccurrenceABloodPressureVisit3"
+    },
+    "OccurrenceBBloodPressureVisit4": {
+      "title": "Blood Pressure Visit",
+      "description": "Encounter, Performed: Blood Pressure Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1056",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_BLOOD_PRESSURE_VISIT",
+      "source_data_criteria": "OccurrenceBBloodPressureVisit4"
+    }
+  },
+  "attributes": [
+    {
+      "id": "FINALIZED_DATE_TIME",
+      "code": "OTH",
+      "value": "201212121240-0600",
+      "name": "Finalized Date/Time"
+    },
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "TBD",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "TBD",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "High blood pressure is one of the most common risk factors for cardiovascular disease and stroke. Less than half of those with hypertension have their condition controlled. Uncontrolled and untreated hypertension was associated with increased risk of total and cardiovascular mortality among the general hypertensive population. Health-care system improvements, including use of electronic health records with registry and clinical decision support functions, could facilitate better treatment and follow-up management, and improve patient-physician interaction.\n\nEpidemiological studies and randomized trials have repeatedly demonstrated that the relative risk of cardiovascular disease increases continuously with increasing levels of BP. The benefit of lowering a high blood pressure is to reduce the risk of developing a cardiovascular disease in the future. For example, it is estimated that reducing a high diastolic blood pressure by 6 mm Hg reduces your relative risk of having a stroke in the future by about 35-40%, and reduces your relative risk of developing heart disease by about 20-25%. Larger reductions in blood pressure provide greater benefits.",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "JNC-7: Treating systolic blood pressure and diastolic blood pressure to targets that are <140/90 mmHg is associated with a decrease in cardiovascular disease complications",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "A higher score indicates better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "TBD",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "65",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "http://www.patient.co.uk/health/High-Blood-Pressure-(Hypertension).htm",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "Adequate control: a systolic blood pressure < 140 mmHg. \n\nFollow-up blood pressure: blood pressure (both systolic and diastolic) taken during the first outpatient encounter during the measurement year that occurs at least six months after the initial BP.\n\nBaseline blood pressure: blood pressure (both systolic and diastolic) taken during the first outpatient encounter of the measurement year during which the patient has an active diagnosis of hypertension. This must occur during the first six months of the year. \n\nImprovement in blood pressure: the follow-up BP is at least 10 mmHg less than the baseline systolic BP.\n\nUncontrolled BP: a systolic BP >= 140 mmHg.",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "Blood pressure readings must be taken while the patient is sitting. If multiple measurements occur on the same date, the last systolic and diastolic readings should be used.",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "All patients aged 18-85 years of age, who had at least one outpatient visit in the first six months of the measurement year, who have a diagnosis of hypertension documented during that outpatient visit, and who have uncontrolled baseline blood pressure at the time of that visit",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals Initial Patient Population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Exclude from the denominator all patients with evidence of end-stage renal disease (ESRD) on or prior to December 31 of the measurement year. Documentation of dialysis or renal transplant also meets the criteria for evidence of ESRD.\n\nExclude from the denominator all patients with a diagnosis of pregnancy during the measurement year.",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Patients whose follow-up blood pressure is at least 10 mmHg less than their baseline blood pressure or is adequately controlled.\n\nIf a follow-up blood pressure reading is not recorded during the measurement year, the patient’s blood pressure is assumed “not improved.”",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "None",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not Applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "IPP": "IPP",
+      "DENOM": "DENOM",
+      "NUMER": "NUMER",
+      "DENEX": "DENEX"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

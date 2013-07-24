@@ -25,6 +25,10 @@ public class Encounter extends Event {
         super(null,null,null);
     }
 
+    public Encounter(String encounterId, Concept concept, Date date) {
+        this(encounterId, concept, date, date);
+    }
+
     public Encounter(String encounterId, Concept concept, Date startDate, Date endDate) {
         super(concept, startDate, endDate);
         this.encounterId = encounterId;

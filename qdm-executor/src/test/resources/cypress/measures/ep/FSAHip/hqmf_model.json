@@ -1,0 +1,1260 @@
+{
+  "id": "FSAHip",
+  "hqmf_id": "8A4D92B2-356D-A09E-0135-AF80862E655B",
+  "hqmf_set_id": "2F291003-3F2F-48AF-BEF9-E5AACB95AC3E",
+  "hqmf_version_number": 1,
+  "title": "Functional Status Assessment for Hip Replacement",
+  "description": "Percentage of patients aged 18 years and older with primary total hip arthroplasty (THA) who completed baseline and follow-up (patient-reported) functional status assessments",
+  "cms_id": "CMS56v1",
+  "population_criteria": {
+    "DENEX": {
+      "conjunction?": true,
+      "type": "DENEX",
+      "title": "Denominator",
+      "hqmf_id": "BF45A376-D93D-4BA6-9F46-A52082A44597",
+      "preconditions": [
+        {
+          "id": 27,
+          "preconditions": [
+            {
+              "id": 25,
+              "preconditions": [
+                {
+                  "id": 16,
+                  "preconditions": [
+                    {
+                      "id": 8,
+                      "reference": "OccurrenceAFractureLowerBody5_precondition_8"
+                    },
+                    {
+                      "id": 10,
+                      "reference": "OccurrenceAFractureLowerBody5_precondition_10"
+                    },
+                    {
+                      "id": 12,
+                      "reference": "OccurrenceBFractureLowerBody6_precondition_12"
+                    },
+                    {
+                      "id": 14,
+                      "reference": "OccurrenceBFractureLowerBody6_precondition_14"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 23,
+                  "preconditions": [
+                    {
+                      "id": 20,
+                      "reference": "DiagnosisActiveSevereDementia_precondition_20"
+                    },
+                    {
+                      "id": 22,
+                      "preconditions": [
+                        {
+                          "id": 18,
+                          "reference": "DiagnosisActiveSevereDementia_precondition_18"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "9ADF9BD8-682B-4BF1-8D16-D29D54B82B66",
+      "preconditions": [
+        {
+          "id": 34,
+          "preconditions": [
+            {
+              "id": 28,
+              "reference": "FunctionalStatusResultFunctionalStatusAssessmentForHipReplacement_precondition_28"
+            },
+            {
+              "id": 30,
+              "reference": "OccurrenceAFunctionalStatusAssessmentForHipReplacement2_precondition_30"
+            },
+            {
+              "id": 32,
+              "reference": "OccurrenceAFunctionalStatusAssessmentForHipReplacement2_precondition_32"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "16074BEE-136D-443D-8201-C5193B46490D"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "30BF2515-F3B1-444E-9DBB-776194F1EEEB",
+      "preconditions": [
+        {
+          "id": 69,
+          "preconditions": [
+            {
+              "id": 35,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_35"
+            },
+            {
+              "id": 41,
+              "preconditions": [
+                {
+                  "id": 37,
+                  "reference": "OccurrenceAPrimaryThaProcedure1_precondition_37"
+                },
+                {
+                  "id": 39,
+                  "reference": "OccurrenceAPrimaryThaProcedure1_precondition_39"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            },
+            {
+              "id": 67,
+              "preconditions": [
+                {
+                  "id": 49,
+                  "preconditions": [
+                    {
+                      "id": 43,
+                      "reference": "EncounterPerformedOutpatientConsultation_precondition_43"
+                    },
+                    {
+                      "id": 45,
+                      "reference": "OccurrenceAOutpatientConsultation3_precondition_45"
+                    },
+                    {
+                      "id": 47,
+                      "reference": "OccurrenceAOutpatientConsultation3_precondition_47"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 57,
+                  "preconditions": [
+                    {
+                      "id": 51,
+                      "reference": "EncounterPerformedFaceToFaceInteraction_precondition_51"
+                    },
+                    {
+                      "id": 53,
+                      "reference": "OccurrenceAFaceToFaceInteraction4_precondition_53"
+                    },
+                    {
+                      "id": 55,
+                      "reference": "OccurrenceAFaceToFaceInteraction4_precondition_55"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 65,
+                  "preconditions": [
+                    {
+                      "id": 59,
+                      "reference": "EncounterPerformedOfficeVisit_precondition_59"
+                    },
+                    {
+                      "id": 61,
+                      "reference": "OccurrenceAOfficeVisit7_precondition_61"
+                    },
+                    {
+                      "id": 63,
+                      "reference": "OccurrenceAOfficeVisit7_precondition_63"
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "DiagnosisActiveFractureLowerBody": {
+      "title": "Fracture - Lower Body",
+      "description": "Diagnosis, Active: Fracture - Lower Body",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1037",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveFractureLowerBody"
+    },
+    "ProcedurePerformedPrimaryThaProcedure": {
+      "title": "Primary THA Procedure",
+      "description": "Procedure, Performed: Primary THA Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.198.12.1006",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedPrimaryThaProcedure"
+    },
+    "OccurrenceAPrimaryThaProcedure1": {
+      "title": "Primary THA Procedure",
+      "description": "Procedure, Performed: Primary THA Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.198.12.1006",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_PRIMARY_THA_PROCEDURE",
+      "source_data_criteria": "OccurrenceAPrimaryThaProcedure1"
+    },
+    "OccurrenceAFractureLowerBody5_precondition_8": {
+      "title": "Fracture - Lower Body",
+      "description": "Diagnosis, Active: Fracture - Lower Body",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1037",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_FRACTURE_LOWER_BODY",
+      "source_data_criteria": "OccurrenceAFractureLowerBody5",
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "OccurrenceAPrimaryThaProcedure1",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": false,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAFractureLowerBody5_precondition_10": {
+      "title": "Fracture - Lower Body",
+      "description": "Diagnosis, Active: Fracture - Lower Body",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1037",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_FRACTURE_LOWER_BODY",
+      "source_data_criteria": "OccurrenceAFractureLowerBody5",
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "OccurrenceAPrimaryThaProcedure1",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "h",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceBFractureLowerBody6_precondition_12": {
+      "title": "Fracture - Lower Body",
+      "description": "Diagnosis, Active: Fracture - Lower Body",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1037",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_FRACTURE_LOWER_BODY",
+      "source_data_criteria": "OccurrenceBFractureLowerBody6",
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "OccurrenceAPrimaryThaProcedure1",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "1",
+              "inclusive?": false,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceBFractureLowerBody6_precondition_14": {
+      "title": "Fracture - Lower Body",
+      "description": "Diagnosis, Active: Fracture - Lower Body",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1037",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_FRACTURE_LOWER_BODY",
+      "source_data_criteria": "OccurrenceBFractureLowerBody6",
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "OccurrenceAPrimaryThaProcedure1",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "h",
+              "value": "1",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "DiagnosisActiveSevereDementia_precondition_20": {
+      "title": "Severe Dementia",
+      "description": "Diagnosis, Active: Severe Dementia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1025",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveSevereDementia",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "DiagnosisActiveSevereDementia_precondition_18": {
+      "title": "Severe Dementia",
+      "description": "Diagnosis, Active: Severe Dementia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1025",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveSevereDementia",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "FunctionalStatusResultFunctionalStatusAssessmentForHipReplacement_precondition_28": {
+      "title": "Functional Status Assessment  for Hip Replacement",
+      "description": "Functional Status, Result: Functional Status Assessment  for Hip Replacement",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.118.12.1029",
+      "type": "functional_statuses",
+      "definition": "functional_status_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "FunctionalStatusResultFunctionalStatusAssessmentForHipReplacement",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAPrimaryThaProcedure1",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "180",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAFunctionalStatusAssessmentForHipReplacement2_precondition_30": {
+      "title": "Functional Status Assessment  for Hip Replacement",
+      "description": "Functional Status Result: Functional Status Assessment  for Hip Replacement",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.118.12.1029",
+      "type": "functional_statuses",
+      "definition": "functional_status_result",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "FUNCTIONAL_STATUS_RESULT_FUNCTIONAL_STATUS_ASSESSMENT_FOR_HIP_REPLACEMENT",
+      "source_data_criteria": "OccurrenceAFunctionalStatusAssessmentForHipReplacement2",
+      "temporal_references": [
+        {
+          "type": "EAE",
+          "reference": "OccurrenceAPrimaryThaProcedure1",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "60",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAFunctionalStatusAssessmentForHipReplacement2_precondition_32": {
+      "title": "Functional Status Assessment  for Hip Replacement",
+      "description": "Functional Status Result: Functional Status Assessment  for Hip Replacement",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.118.12.1029",
+      "type": "functional_statuses",
+      "definition": "functional_status_result",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "FUNCTIONAL_STATUS_RESULT_FUNCTIONAL_STATUS_ASSESSMENT_FOR_HIP_REPLACEMENT",
+      "source_data_criteria": "OccurrenceAFunctionalStatusAssessmentForHipReplacement2",
+      "temporal_references": [
+        {
+          "type": "EAE",
+          "reference": "OccurrenceAPrimaryThaProcedure1",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "180",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_35": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "18",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAPrimaryThaProcedure1_precondition_37": {
+      "title": "Primary THA Procedure",
+      "description": "Procedure, Performed: Primary THA Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.198.12.1006",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_PRIMARY_THA_PROCEDURE",
+      "source_data_criteria": "OccurrenceAPrimaryThaProcedure1",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "180",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAPrimaryThaProcedure1_precondition_39": {
+      "title": "Primary THA Procedure",
+      "description": "Procedure, Performed: Primary THA Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.198.12.1006",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_PRIMARY_THA_PROCEDURE",
+      "source_data_criteria": "OccurrenceAPrimaryThaProcedure1",
+      "temporal_references": [
+        {
+          "type": "EAS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "185",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedOutpatientConsultation_precondition_43": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOutpatientConsultation",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAPrimaryThaProcedure1",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "180",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAOutpatientConsultation3_precondition_45": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation3",
+      "temporal_references": [
+        {
+          "type": "EAE",
+          "reference": "OccurrenceAPrimaryThaProcedure1",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "60",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAOutpatientConsultation3_precondition_47": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation3",
+      "temporal_references": [
+        {
+          "type": "EAE",
+          "reference": "OccurrenceAPrimaryThaProcedure1",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "180",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedFaceToFaceInteraction_precondition_51": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAPrimaryThaProcedure1",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "180",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAFaceToFaceInteraction4_precondition_53": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction4",
+      "temporal_references": [
+        {
+          "type": "EAE",
+          "reference": "OccurrenceAPrimaryThaProcedure1",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "60",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAFaceToFaceInteraction4_precondition_55": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction4",
+      "temporal_references": [
+        {
+          "type": "EAE",
+          "reference": "OccurrenceAPrimaryThaProcedure1",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "180",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "EncounterPerformedOfficeVisit_precondition_59": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "OccurrenceAPrimaryThaProcedure1",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "180",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit7_precondition_61": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit7",
+      "temporal_references": [
+        {
+          "type": "EAE",
+          "reference": "OccurrenceAPrimaryThaProcedure1",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "60",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "OccurrenceAOfficeVisit7_precondition_63": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit7",
+      "temporal_references": [
+        {
+          "type": "EAE",
+          "reference": "OccurrenceAPrimaryThaProcedure1",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "180",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "EncounterPerformedOutpatientConsultation": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOutpatientConsultation"
+    },
+    "DiagnosisActiveFractureLowerBody": {
+      "title": "Fracture - Lower Body",
+      "description": "Diagnosis, Active: Fracture - Lower Body",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1037",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveFractureLowerBody"
+    },
+    "DiagnosisActiveSevereDementia": {
+      "title": "Severe Dementia",
+      "description": "Diagnosis, Active: Severe Dementia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.526.3.1025",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveSevereDementia"
+    },
+    "FunctionalStatusResultFunctionalStatusAssessmentForHipReplacement": {
+      "title": "Functional Status Assessment  for Hip Replacement",
+      "description": "Functional Status, Result: Functional Status Assessment  for Hip Replacement",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.118.12.1029",
+      "type": "functional_statuses",
+      "definition": "functional_status_result",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "FunctionalStatusResultFunctionalStatusAssessmentForHipReplacement"
+    },
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "ProcedurePerformedPrimaryThaProcedure": {
+      "title": "Primary THA Procedure",
+      "description": "Procedure, Performed: Primary THA Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.198.12.1006",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedPrimaryThaProcedure"
+    },
+    "OccurrenceAPrimaryThaProcedure1": {
+      "title": "Primary THA Procedure",
+      "description": "Procedure, Performed: Primary THA Procedure",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.198.12.1006",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "PROCEDURE_PERFORMED_PRIMARY_THA_PROCEDURE",
+      "source_data_criteria": "OccurrenceAPrimaryThaProcedure1"
+    },
+    "OccurrenceAFunctionalStatusAssessmentForHipReplacement2": {
+      "title": "Functional Status Assessment  for Hip Replacement",
+      "description": "Functional Status Result: Functional Status Assessment  for Hip Replacement",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_result",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.118.12.1029",
+      "type": "functional_statuses",
+      "definition": "functional_status_result",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "FUNCTIONAL_STATUS_RESULT_FUNCTIONAL_STATUS_ASSESSMENT_FOR_HIP_REPLACEMENT",
+      "source_data_criteria": "OccurrenceAFunctionalStatusAssessmentForHipReplacement2"
+    },
+    "OccurrenceAOutpatientConsultation3": {
+      "title": "Outpatient Consultation",
+      "description": "Encounter, Performed: Outpatient Consultation",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1008",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OUTPATIENT_CONSULTATION",
+      "source_data_criteria": "OccurrenceAOutpatientConsultation3"
+    },
+    "OccurrenceAFaceToFaceInteraction4": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_FACE_TO_FACE_INTERACTION",
+      "source_data_criteria": "OccurrenceAFaceToFaceInteraction4"
+    },
+    "OccurrenceAFractureLowerBody5": {
+      "title": "Fracture - Lower Body",
+      "description": "Diagnosis, Active: Fracture - Lower Body",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1037",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_FRACTURE_LOWER_BODY",
+      "source_data_criteria": "OccurrenceAFractureLowerBody5"
+    },
+    "OccurrenceBFractureLowerBody6": {
+      "title": "Fracture - Lower Body",
+      "description": "Diagnosis, Active: Fracture - Lower Body",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.113.12.1037",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "B",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_FRACTURE_LOWER_BODY",
+      "source_data_criteria": "OccurrenceBFractureLowerBody6"
+    },
+    "OccurrenceAOfficeVisit7": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "ENCOUNTER_PERFORMED_OFFICE_VISIT",
+      "source_data_criteria": "OccurrenceAOfficeVisit7"
+    }
+  },
+  "attributes": [
+    {
+      "id": "FINALIZED_DATE_TIME",
+      "code": "OTH",
+      "value": "201209191211-0500",
+      "name": "Finalized Date/Time"
+    },
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "TBD",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "None",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "Measuring functional status for patient undergoing total hip replacement permits longitudinal assessment - from the patient’s perspective -  of the impact of surgical intervention on pain, physical function, as well as health-related quality of life (Rothrock 2010).",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "Clinicians should ask patients to report on functional status during at least two points in time while undergoing treatment: before surgery and after a period of post-sugical recovery.",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "A higher score indicates better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "TBD",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "56",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "Selim AJ, Berlowitz D, Kazis LE, Rogers W, Wright SM, Qian SX, Rohendler JA, Spiro A, Miller D, Selim BJ, Fincke BG.  Comparison of Health Outcomes for Male Seniors in the Veterans Health Administration and Medicare Advantage Plans.  Health Services Research 2010; 45(2): 376-396.",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "None",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "A Functional Status Assessment (FSA) is based on administration of a validated instrument to eligible patients that asks patients to answer questions related to various domains including: pain, physical function, emotional well-being, health-related quality of life, symptom acuity.\r\n\r\nThe use of patient-reported outcomes data in eMeasures - such as this measure of functional status - demonstrates the need for the Quality Reporting Data Architecture (QRDA) to support a data attribute that indicates that the patient provided the information.",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "TBD",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "Adults aged 18 and older with a primary total hip arthroplasty (THA) and who had an outpatient encounter not more than 180 days prior to procedure, and at least 60 days and not more than 180 days after THA procedure.",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals initial patient population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Patients with multiple trauma at the time of the total hip arthroplasty or patients with severe cognitive impairment",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Patients with patient reported functional status assessment results (e.g., VR-12, VR-36,PROMIS-10-Global Health, PROMIS-29, HOOS) not more than 180 days prior to the primary THA procedure, and at least 60 days and not more than 180 days after THA procedure.",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "None",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not Applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not Applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity, and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "IPP": "IPP",
+      "DENOM": "DENOM",
+      "NUMER": "NUMER",
+      "DENEX": "DENEX"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}

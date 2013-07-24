@@ -16,7 +16,8 @@ class CriteriaFactory {
 
     def TODO_CRITERIA = {json, measurementPeriod ->
         [
-                toDrools:{"(/* Unimplemented Criteria: `$json.qds_data_type` -- TODO */ eval(true) )"},
+                toDrools: {throw new UnsupportedOperationException("Unimplemented Criteria: `$json.qds_data_type`")},
+                //toDrools:{"(/* Unimplemented Criteria: `$json.qds_data_type` -- TODO */ eval(true) )"},
                 hasEventList:{false}
         ] as Criteria
     }
@@ -41,8 +42,8 @@ class CriteriaFactory {
                 "medication_dispensed": { json, measurementPeriod -> new Medication(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
                 "medication_active": { json, measurementPeriod -> new Medication(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
                 "medication_administered": { json, measurementPeriod -> new Medication(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "device_applied": TODO_CRITERIA,
-                "medication_order": TODO_CRITERIA
+                "medication_order": { json, measurementPeriod -> new Medication(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "device_applied": TODO_CRITERIA
         ]
 
     def getCriteria(json, measurementPeriod) {
@@ -70,7 +71,6 @@ class CriteriaFactory {
             if (criteriaFn != null) {
                 criteriaFn(json, measurementPeriod)
             } else {
-                print criteriaFactoryMap
                 throw new RuntimeException("Critieria type: `$qdsType` not recognized. JSON -> $json")
             }
         }

@@ -1,0 +1,4247 @@
+{
+  "id": "0033",
+  "hqmf_id": "8A4D92B2-397A-48D2-0139-B0CC617E335D",
+  "hqmf_set_id": "C9930664-BE3D-4FFE-AE4A-5CF4933ECB89",
+  "hqmf_version_number": 1,
+  "title": "Chlamydia Screening for Women",
+  "description": "Percentage of women 16-24 years of age who were identified as sexually active and who had at least one test for chlamydia during the measurement period.",
+  "cms_id": "CMS153v1",
+  "population_criteria": {
+    "DENEX": {
+      "conjunction?": true,
+      "type": "DENEX",
+      "title": "Denominator",
+      "hqmf_id": "79BF0F27-D9ED-4A1B-8691-4F530B82E702",
+      "preconditions": [
+        {
+          "id": 20,
+          "preconditions": [
+            {
+              "id": 11,
+              "reference": "OccurrenceAPregnancyTest1_precondition_11"
+            },
+            {
+              "id": 17,
+              "preconditions": [
+                {
+                  "id": 13,
+                  "reference": "MedicationOrderIsotretinoin_precondition_13"
+                },
+                {
+                  "id": 15,
+                  "reference": "DiagnosticStudyOrderXRayStudyAllInclusive_precondition_15"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "NUMER": {
+      "conjunction?": true,
+      "type": "NUMER",
+      "title": "Numerator",
+      "hqmf_id": "5EEFBE76-ADDD-4E44-912A-9E1AF9FD4B3B",
+      "preconditions": [
+        {
+          "id": 23,
+          "preconditions": [
+            {
+              "id": 21,
+              "reference": "LaboratoryTestResultChlamydiaScreening_precondition_21"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "DENOM": {
+      "conjunction?": true,
+      "type": "DENOM",
+      "title": "Denominator",
+      "hqmf_id": "DAB0D223-4FA9-4B87-807D-1DA41AAE05C8"
+    },
+    "IPP": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "8FE9026F-C329-4664-A595-9D06D80C3A74",
+      "preconditions": [
+        {
+          "id": 131,
+          "preconditions": [
+            {
+              "id": 24,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_24"
+            },
+            {
+              "id": 26,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_26"
+            },
+            {
+              "id": 28,
+              "reference": "PatientCharacteristicSexFemale_precondition_28"
+            },
+            {
+              "id": 44,
+              "preconditions": [
+                {
+                  "id": 30,
+                  "reference": "EncounterPerformedOfficeVisit_precondition_30"
+                },
+                {
+                  "id": 32,
+                  "reference": "EncounterPerformedFaceToFaceInteraction_precondition_32"
+                },
+                {
+                  "id": 34,
+                  "reference": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_34"
+                },
+                {
+                  "id": 36,
+                  "reference": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_36"
+                },
+                {
+                  "id": 38,
+                  "reference": "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17_precondition_38"
+                },
+                {
+                  "id": 40,
+                  "reference": "EncounterPerformedPreventiveCareInitialOfficeVisit0To17_precondition_40"
+                },
+                {
+                  "id": 42,
+                  "reference": "EncounterPerformedHomeHealthcareServices_precondition_42"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            },
+            {
+              "id": 129,
+              "preconditions": [
+                {
+                  "id": 51,
+                  "preconditions": [
+                    {
+                      "id": 48,
+                      "reference": "OccurrenceAOtherFemaleReproductiveConditions2_precondition_48"
+                    },
+                    {
+                      "id": 50,
+                      "preconditions": [
+                        {
+                          "id": 46,
+                          "reference": "OccurrenceAOtherFemaleReproductiveConditions2_precondition_46"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 58,
+                  "preconditions": [
+                    {
+                      "id": 55,
+                      "reference": "OccurrenceAGenitalHerpes3_precondition_55"
+                    },
+                    {
+                      "id": 57,
+                      "preconditions": [
+                        {
+                          "id": 53,
+                          "reference": "OccurrenceAGenitalHerpes3_precondition_53"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 65,
+                  "preconditions": [
+                    {
+                      "id": 62,
+                      "reference": "OccurrenceAGonococcalInfectionsAndVenerealDiseases4_precondition_62"
+                    },
+                    {
+                      "id": 64,
+                      "preconditions": [
+                        {
+                          "id": 60,
+                          "reference": "OccurrenceAGonococcalInfectionsAndVenerealDiseases4_precondition_60"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 72,
+                  "preconditions": [
+                    {
+                      "id": 69,
+                      "reference": "OccurrenceAContraceptiveMedications5_precondition_69"
+                    },
+                    {
+                      "id": 71,
+                      "preconditions": [
+                        {
+                          "id": 67,
+                          "reference": "OccurrenceAContraceptiveMedications5_precondition_67"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 79,
+                  "preconditions": [
+                    {
+                      "id": 76,
+                      "reference": "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6_precondition_76"
+                    },
+                    {
+                      "id": 78,
+                      "preconditions": [
+                        {
+                          "id": 74,
+                          "reference": "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6_precondition_74"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 86,
+                  "preconditions": [
+                    {
+                      "id": 83,
+                      "reference": "OccurrenceAChlamydia7_precondition_83"
+                    },
+                    {
+                      "id": 85,
+                      "preconditions": [
+                        {
+                          "id": 81,
+                          "reference": "OccurrenceAChlamydia7_precondition_81"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 93,
+                  "preconditions": [
+                    {
+                      "id": 90,
+                      "reference": "OccurrenceAHiv8_precondition_90"
+                    },
+                    {
+                      "id": 92,
+                      "preconditions": [
+                        {
+                          "id": 88,
+                          "reference": "OccurrenceAHiv8_precondition_88"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 100,
+                  "preconditions": [
+                    {
+                      "id": 97,
+                      "reference": "OccurrenceASyphilis9_precondition_97"
+                    },
+                    {
+                      "id": 99,
+                      "preconditions": [
+                        {
+                          "id": 95,
+                          "reference": "OccurrenceASyphilis9_precondition_95"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 107,
+                  "preconditions": [
+                    {
+                      "id": 104,
+                      "reference": "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10_precondition_104"
+                    },
+                    {
+                      "id": 106,
+                      "preconditions": [
+                        {
+                          "id": 102,
+                          "reference": "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10_precondition_102"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 127,
+                  "preconditions": [
+                    {
+                      "id": 109,
+                      "reference": "LaboratoryTestOrderPregnancyTest_precondition_109"
+                    },
+                    {
+                      "id": 111,
+                      "reference": "LaboratoryTestOrderPapTest_precondition_111"
+                    },
+                    {
+                      "id": 113,
+                      "reference": "ProcedurePerformedDeliveryLiveBirths_precondition_113"
+                    },
+                    {
+                      "id": 115,
+                      "reference": "LaboratoryTestOrderLabTestsDuringPregnancy_precondition_115"
+                    },
+                    {
+                      "id": 117,
+                      "reference": "LaboratoryTestOrderLabTestsForSexuallyTransmittedInfections_precondition_117"
+                    },
+                    {
+                      "id": 119,
+                      "reference": "MedicationOrderContraceptiveMedications_precondition_119"
+                    },
+                    {
+                      "id": 121,
+                      "reference": "DiagnosticStudyOrderDiagnosticStudiesDuringPregnancy_precondition_121"
+                    },
+                    {
+                      "id": 123,
+                      "reference": "ProcedurePerformedProceduresDuringPregnancy_precondition_123"
+                    },
+                    {
+                      "id": 125,
+                      "reference": "ProcedurePerformedProceduresInvolvingContraceptiveDevices_precondition_125"
+                    }
+                  ],
+                  "conjunction_code": "atLeastOneTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "IPP_1": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "8FE9026F-C329-4664-A595-9D06D80C3A74",
+      "preconditions": [
+        {
+          "id": 239,
+          "preconditions": [
+            {
+              "id": 132,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_132"
+            },
+            {
+              "id": 134,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_134"
+            },
+            {
+              "id": 136,
+              "reference": "PatientCharacteristicSexFemale_precondition_136"
+            },
+            {
+              "id": 152,
+              "preconditions": [
+                {
+                  "id": 138,
+                  "reference": "EncounterPerformedOfficeVisit_precondition_138"
+                },
+                {
+                  "id": 140,
+                  "reference": "EncounterPerformedFaceToFaceInteraction_precondition_140"
+                },
+                {
+                  "id": 142,
+                  "reference": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_142"
+                },
+                {
+                  "id": 144,
+                  "reference": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_144"
+                },
+                {
+                  "id": 146,
+                  "reference": "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17_precondition_146"
+                },
+                {
+                  "id": 148,
+                  "reference": "EncounterPerformedPreventiveCareInitialOfficeVisit0To17_precondition_148"
+                },
+                {
+                  "id": 150,
+                  "reference": "EncounterPerformedHomeHealthcareServices_precondition_150"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            },
+            {
+              "id": 237,
+              "preconditions": [
+                {
+                  "id": 159,
+                  "preconditions": [
+                    {
+                      "id": 156,
+                      "reference": "OccurrenceAOtherFemaleReproductiveConditions2_precondition_156"
+                    },
+                    {
+                      "id": 158,
+                      "preconditions": [
+                        {
+                          "id": 154,
+                          "reference": "OccurrenceAOtherFemaleReproductiveConditions2_precondition_154"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 166,
+                  "preconditions": [
+                    {
+                      "id": 163,
+                      "reference": "OccurrenceAGenitalHerpes3_precondition_163"
+                    },
+                    {
+                      "id": 165,
+                      "preconditions": [
+                        {
+                          "id": 161,
+                          "reference": "OccurrenceAGenitalHerpes3_precondition_161"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 173,
+                  "preconditions": [
+                    {
+                      "id": 170,
+                      "reference": "OccurrenceAGonococcalInfectionsAndVenerealDiseases4_precondition_170"
+                    },
+                    {
+                      "id": 172,
+                      "preconditions": [
+                        {
+                          "id": 168,
+                          "reference": "OccurrenceAGonococcalInfectionsAndVenerealDiseases4_precondition_168"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 180,
+                  "preconditions": [
+                    {
+                      "id": 177,
+                      "reference": "OccurrenceAContraceptiveMedications5_precondition_177"
+                    },
+                    {
+                      "id": 179,
+                      "preconditions": [
+                        {
+                          "id": 175,
+                          "reference": "OccurrenceAContraceptiveMedications5_precondition_175"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 187,
+                  "preconditions": [
+                    {
+                      "id": 184,
+                      "reference": "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6_precondition_184"
+                    },
+                    {
+                      "id": 186,
+                      "preconditions": [
+                        {
+                          "id": 182,
+                          "reference": "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6_precondition_182"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 194,
+                  "preconditions": [
+                    {
+                      "id": 191,
+                      "reference": "OccurrenceAChlamydia7_precondition_191"
+                    },
+                    {
+                      "id": 193,
+                      "preconditions": [
+                        {
+                          "id": 189,
+                          "reference": "OccurrenceAChlamydia7_precondition_189"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 201,
+                  "preconditions": [
+                    {
+                      "id": 198,
+                      "reference": "OccurrenceAHiv8_precondition_198"
+                    },
+                    {
+                      "id": 200,
+                      "preconditions": [
+                        {
+                          "id": 196,
+                          "reference": "OccurrenceAHiv8_precondition_196"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 208,
+                  "preconditions": [
+                    {
+                      "id": 205,
+                      "reference": "OccurrenceASyphilis9_precondition_205"
+                    },
+                    {
+                      "id": 207,
+                      "preconditions": [
+                        {
+                          "id": 203,
+                          "reference": "OccurrenceASyphilis9_precondition_203"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 215,
+                  "preconditions": [
+                    {
+                      "id": 212,
+                      "reference": "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10_precondition_212"
+                    },
+                    {
+                      "id": 214,
+                      "preconditions": [
+                        {
+                          "id": 210,
+                          "reference": "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10_precondition_210"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 235,
+                  "preconditions": [
+                    {
+                      "id": 217,
+                      "reference": "LaboratoryTestOrderPregnancyTest_precondition_217"
+                    },
+                    {
+                      "id": 219,
+                      "reference": "LaboratoryTestOrderPapTest_precondition_219"
+                    },
+                    {
+                      "id": 221,
+                      "reference": "ProcedurePerformedDeliveryLiveBirths_precondition_221"
+                    },
+                    {
+                      "id": 223,
+                      "reference": "LaboratoryTestOrderLabTestsDuringPregnancy_precondition_223"
+                    },
+                    {
+                      "id": 225,
+                      "reference": "LaboratoryTestOrderLabTestsForSexuallyTransmittedInfections_precondition_225"
+                    },
+                    {
+                      "id": 227,
+                      "reference": "MedicationOrderContraceptiveMedications_precondition_227"
+                    },
+                    {
+                      "id": 229,
+                      "reference": "DiagnosticStudyOrderDiagnosticStudiesDuringPregnancy_precondition_229"
+                    },
+                    {
+                      "id": 231,
+                      "reference": "ProcedurePerformedProceduresDuringPregnancy_precondition_231"
+                    },
+                    {
+                      "id": 233,
+                      "reference": "ProcedurePerformedProceduresInvolvingContraceptiveDevices_precondition_233"
+                    }
+                  ],
+                  "conjunction_code": "atLeastOneTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    },
+    "IPP_2": {
+      "conjunction?": true,
+      "type": "IPP",
+      "title": "Initial Patient Population",
+      "hqmf_id": "8FE9026F-C329-4664-A595-9D06D80C3A74",
+      "preconditions": [
+        {
+          "id": 347,
+          "preconditions": [
+            {
+              "id": 240,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_240"
+            },
+            {
+              "id": 242,
+              "reference": "PatientCharacteristicBirthdateBirthDate_precondition_242"
+            },
+            {
+              "id": 244,
+              "reference": "PatientCharacteristicSexFemale_precondition_244"
+            },
+            {
+              "id": 260,
+              "preconditions": [
+                {
+                  "id": 246,
+                  "reference": "EncounterPerformedOfficeVisit_precondition_246"
+                },
+                {
+                  "id": 248,
+                  "reference": "EncounterPerformedFaceToFaceInteraction_precondition_248"
+                },
+                {
+                  "id": 250,
+                  "reference": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_250"
+                },
+                {
+                  "id": 252,
+                  "reference": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_252"
+                },
+                {
+                  "id": 254,
+                  "reference": "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17_precondition_254"
+                },
+                {
+                  "id": 256,
+                  "reference": "EncounterPerformedPreventiveCareInitialOfficeVisit0To17_precondition_256"
+                },
+                {
+                  "id": 258,
+                  "reference": "EncounterPerformedHomeHealthcareServices_precondition_258"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            },
+            {
+              "id": 345,
+              "preconditions": [
+                {
+                  "id": 267,
+                  "preconditions": [
+                    {
+                      "id": 264,
+                      "reference": "OccurrenceAOtherFemaleReproductiveConditions2_precondition_264"
+                    },
+                    {
+                      "id": 266,
+                      "preconditions": [
+                        {
+                          "id": 262,
+                          "reference": "OccurrenceAOtherFemaleReproductiveConditions2_precondition_262"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 274,
+                  "preconditions": [
+                    {
+                      "id": 271,
+                      "reference": "OccurrenceAGenitalHerpes3_precondition_271"
+                    },
+                    {
+                      "id": 273,
+                      "preconditions": [
+                        {
+                          "id": 269,
+                          "reference": "OccurrenceAGenitalHerpes3_precondition_269"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 281,
+                  "preconditions": [
+                    {
+                      "id": 278,
+                      "reference": "OccurrenceAGonococcalInfectionsAndVenerealDiseases4_precondition_278"
+                    },
+                    {
+                      "id": 280,
+                      "preconditions": [
+                        {
+                          "id": 276,
+                          "reference": "OccurrenceAGonococcalInfectionsAndVenerealDiseases4_precondition_276"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 288,
+                  "preconditions": [
+                    {
+                      "id": 285,
+                      "reference": "OccurrenceAContraceptiveMedications5_precondition_285"
+                    },
+                    {
+                      "id": 287,
+                      "preconditions": [
+                        {
+                          "id": 283,
+                          "reference": "OccurrenceAContraceptiveMedications5_precondition_283"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 295,
+                  "preconditions": [
+                    {
+                      "id": 292,
+                      "reference": "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6_precondition_292"
+                    },
+                    {
+                      "id": 294,
+                      "preconditions": [
+                        {
+                          "id": 290,
+                          "reference": "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6_precondition_290"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 302,
+                  "preconditions": [
+                    {
+                      "id": 299,
+                      "reference": "OccurrenceAChlamydia7_precondition_299"
+                    },
+                    {
+                      "id": 301,
+                      "preconditions": [
+                        {
+                          "id": 297,
+                          "reference": "OccurrenceAChlamydia7_precondition_297"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 309,
+                  "preconditions": [
+                    {
+                      "id": 306,
+                      "reference": "OccurrenceAHiv8_precondition_306"
+                    },
+                    {
+                      "id": 308,
+                      "preconditions": [
+                        {
+                          "id": 304,
+                          "reference": "OccurrenceAHiv8_precondition_304"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 316,
+                  "preconditions": [
+                    {
+                      "id": 313,
+                      "reference": "OccurrenceASyphilis9_precondition_313"
+                    },
+                    {
+                      "id": 315,
+                      "preconditions": [
+                        {
+                          "id": 311,
+                          "reference": "OccurrenceASyphilis9_precondition_311"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 323,
+                  "preconditions": [
+                    {
+                      "id": 320,
+                      "reference": "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10_precondition_320"
+                    },
+                    {
+                      "id": 322,
+                      "preconditions": [
+                        {
+                          "id": 318,
+                          "reference": "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10_precondition_318"
+                        }
+                      ],
+                      "conjunction_code": "atLeastOneTrue",
+                      "negation": true
+                    }
+                  ],
+                  "conjunction_code": "allTrue"
+                },
+                {
+                  "id": 343,
+                  "preconditions": [
+                    {
+                      "id": 325,
+                      "reference": "LaboratoryTestOrderPregnancyTest_precondition_325"
+                    },
+                    {
+                      "id": 327,
+                      "reference": "LaboratoryTestOrderPapTest_precondition_327"
+                    },
+                    {
+                      "id": 329,
+                      "reference": "ProcedurePerformedDeliveryLiveBirths_precondition_329"
+                    },
+                    {
+                      "id": 331,
+                      "reference": "LaboratoryTestOrderLabTestsDuringPregnancy_precondition_331"
+                    },
+                    {
+                      "id": 333,
+                      "reference": "LaboratoryTestOrderLabTestsForSexuallyTransmittedInfections_precondition_333"
+                    },
+                    {
+                      "id": 335,
+                      "reference": "MedicationOrderContraceptiveMedications_precondition_335"
+                    },
+                    {
+                      "id": 337,
+                      "reference": "DiagnosticStudyOrderDiagnosticStudiesDuringPregnancy_precondition_337"
+                    },
+                    {
+                      "id": 339,
+                      "reference": "ProcedurePerformedProceduresDuringPregnancy_precondition_339"
+                    },
+                    {
+                      "id": 341,
+                      "reference": "ProcedurePerformedProceduresInvolvingContraceptiveDevices_precondition_341"
+                    }
+                  ],
+                  "conjunction_code": "atLeastOneTrue"
+                }
+              ],
+              "conjunction_code": "atLeastOneTrue"
+            }
+          ],
+          "conjunction_code": "allTrue"
+        }
+      ]
+    }
+  },
+  "data_criteria": {
+    "DiagnosisActiveOtherFemaleReproductiveConditions": {
+      "title": "Other Female Reproductive Conditions",
+      "description": "Diagnosis, Active: Other Female Reproductive Conditions",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1006",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveOtherFemaleReproductiveConditions"
+    },
+    "DiagnosisActiveGenitalHerpes": {
+      "title": "Genital Herpes",
+      "description": "Diagnosis, Active: Genital Herpes",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.110.12.1049",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveGenitalHerpes"
+    },
+    "DiagnosisActiveInflammatoryDiseasesOfFemaleReproductiveOrgans": {
+      "title": "Inflammatory Diseases of Female Reproductive Organs",
+      "description": "Diagnosis, Active: Inflammatory Diseases of Female Reproductive Organs",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1004",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveInflammatoryDiseasesOfFemaleReproductiveOrgans"
+    },
+    "DiagnosisActiveChlamydia": {
+      "title": "Chlamydia",
+      "description": "Diagnosis, Active: Chlamydia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveChlamydia"
+    },
+    "DiagnosisActiveSyphilis": {
+      "title": "Syphilis",
+      "description": "Diagnosis, Active: Syphilis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1002",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveSyphilis"
+    },
+    "DiagnosisActiveGonococcalInfectionsAndVenerealDiseases": {
+      "title": "Gonococcal Infections and Venereal Diseases",
+      "description": "Diagnosis, Active: Gonococcal Infections and Venereal Diseases",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveGonococcalInfectionsAndVenerealDiseases"
+    },
+    "DiagnosisActiveComplicationsOfPregnancyChildbirthAndThePuerperium": {
+      "title": "Complications of Pregnancy, Childbirth and the Puerperium",
+      "description": "Diagnosis, Active: Complications of Pregnancy, Childbirth and the Puerperium",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1012",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveComplicationsOfPregnancyChildbirthAndThePuerperium"
+    },
+    "DiagnosisActiveHiv": {
+      "title": "HIV",
+      "description": "Diagnosis, Active: HIV",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.120.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveHiv"
+    },
+    "MedicationActiveContraceptiveMedications": {
+      "title": "Contraceptive Medications",
+      "description": "Medication, Active: Contraceptive Medications",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1080",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationActiveContraceptiveMedications"
+    },
+    "OccurrenceAPregnancyTest1_precondition_11": {
+      "title": "Pregnancy Test",
+      "description": "Laboratory Test, Ordered: Pregnancy Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1011",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "LABORATORY_TEST_ORDERED_PREGNANCY_TEST",
+      "source_data_criteria": "OccurrenceAPregnancyTest1",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAPregnancyTest1_precondition_18": {
+      "title": "Pregnancy Test",
+      "description": "Laboratory Test, Ordered: Pregnancy Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1011",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "LABORATORY_TEST_ORDERED_PREGNANCY_TEST",
+      "source_data_criteria": "OccurrenceAPregnancyTest1"
+    },
+    "MedicationOrderIsotretinoin_precondition_13": {
+      "title": "Isotretinoin",
+      "description": "Medication, Order: Isotretinoin",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1143",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderIsotretinoin",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceAPregnancyTest1_precondition_18",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "7",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "DiagnosticStudyOrderXRayStudyAllInclusive_precondition_15": {
+      "title": "X-Ray Study (all inclusive)",
+      "description": "Diagnostic Study, Order: X-Ray Study (all inclusive)",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.198.12.1034",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DiagnosticStudyOrderXRayStudyAllInclusive",
+      "temporal_references": [
+        {
+          "type": "SAE",
+          "reference": "OccurrenceAPregnancyTest1_precondition_18",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "d",
+              "value": "7",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "LaboratoryTestResultChlamydiaScreening_precondition_21": {
+      "title": "Chlamydia Screening",
+      "description": "Laboratory Test, Result: Chlamydia Screening",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.110.12.1052",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultChlamydiaScreening",
+      "value": {
+        "type": "ANYNonNull"
+      },
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_24": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "16",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_26": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "24",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicSexFemale_precondition_28": {
+      "title": "Female",
+      "description": "Patient Characteristic Sex: Female",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.2",
+      "property": "gender",
+      "type": "characteristic",
+      "definition": "patient_characteristic_gender",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicSexFemale",
+      "value": {
+        "type": "CD",
+        "system": "Administrative Sex",
+        "code": "F"
+      }
+    },
+    "EncounterPerformedOfficeVisit_precondition_30": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedFaceToFaceInteraction_precondition_32": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_34": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_36": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17_precondition_38": {
+      "title": "Preventive Care - Established Office Visit, 0 to 17",
+      "description": "Encounter, Performed: Preventive Care - Established Office Visit, 0 to 17",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1024",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareInitialOfficeVisit0To17_precondition_40": {
+      "title": "Preventive Care- Initial Office Visit, 0 to 17",
+      "description": "Encounter, Performed: Preventive Care- Initial Office Visit, 0 to 17",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1022",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareInitialOfficeVisit0To17",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedHomeHealthcareServices_precondition_42": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHomeHealthcareServices",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAOtherFemaleReproductiveConditions2_precondition_48": {
+      "title": "Other Female Reproductive Conditions",
+      "description": "Diagnosis, Active: Other Female Reproductive Conditions",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1006",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_OTHER_FEMALE_REPRODUCTIVE_CONDITIONS",
+      "source_data_criteria": "OccurrenceAOtherFemaleReproductiveConditions2",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAOtherFemaleReproductiveConditions2_precondition_46": {
+      "title": "Other Female Reproductive Conditions",
+      "description": "Diagnosis, Active: Other Female Reproductive Conditions",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1006",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_OTHER_FEMALE_REPRODUCTIVE_CONDITIONS",
+      "source_data_criteria": "OccurrenceAOtherFemaleReproductiveConditions2",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAGenitalHerpes3_precondition_55": {
+      "title": "Genital Herpes",
+      "description": "Diagnosis, Active: Genital Herpes",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.110.12.1049",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_GENITAL_HERPES",
+      "source_data_criteria": "OccurrenceAGenitalHerpes3",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAGenitalHerpes3_precondition_53": {
+      "title": "Genital Herpes",
+      "description": "Diagnosis, Active: Genital Herpes",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.110.12.1049",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_GENITAL_HERPES",
+      "source_data_criteria": "OccurrenceAGenitalHerpes3",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAGonococcalInfectionsAndVenerealDiseases4_precondition_62": {
+      "title": "Gonococcal Infections and Venereal Diseases",
+      "description": "Diagnosis, Active: Gonococcal Infections and Venereal Diseases",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_GONOCOCCAL_INFECTIONS_AND_VENEREAL_DISEASES",
+      "source_data_criteria": "OccurrenceAGonococcalInfectionsAndVenerealDiseases4",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAGonococcalInfectionsAndVenerealDiseases4_precondition_60": {
+      "title": "Gonococcal Infections and Venereal Diseases",
+      "description": "Diagnosis, Active: Gonococcal Infections and Venereal Diseases",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_GONOCOCCAL_INFECTIONS_AND_VENEREAL_DISEASES",
+      "source_data_criteria": "OccurrenceAGonococcalInfectionsAndVenerealDiseases4",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAContraceptiveMedications5_precondition_69": {
+      "title": "Contraceptive Medications",
+      "description": "Medication, Active: Contraceptive Medications",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1080",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_CONTRACEPTIVE_MEDICATIONS",
+      "source_data_criteria": "OccurrenceAContraceptiveMedications5",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAContraceptiveMedications5_precondition_67": {
+      "title": "Contraceptive Medications",
+      "description": "Medication, Active: Contraceptive Medications",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1080",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_CONTRACEPTIVE_MEDICATIONS",
+      "source_data_criteria": "OccurrenceAContraceptiveMedications5",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6_precondition_76": {
+      "title": "Inflammatory Diseases of Female Reproductive Organs",
+      "description": "Diagnosis, Active: Inflammatory Diseases of Female Reproductive Organs",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1004",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_INFLAMMATORY_DISEASES_OF_FEMALE_REPRODUCTIVE_ORGANS",
+      "source_data_criteria": "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6_precondition_74": {
+      "title": "Inflammatory Diseases of Female Reproductive Organs",
+      "description": "Diagnosis, Active: Inflammatory Diseases of Female Reproductive Organs",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1004",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_INFLAMMATORY_DISEASES_OF_FEMALE_REPRODUCTIVE_ORGANS",
+      "source_data_criteria": "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAChlamydia7_precondition_83": {
+      "title": "Chlamydia",
+      "description": "Diagnosis, Active: Chlamydia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_CHLAMYDIA",
+      "source_data_criteria": "OccurrenceAChlamydia7",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAChlamydia7_precondition_81": {
+      "title": "Chlamydia",
+      "description": "Diagnosis, Active: Chlamydia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_CHLAMYDIA",
+      "source_data_criteria": "OccurrenceAChlamydia7",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAHiv8_precondition_90": {
+      "title": "HIV",
+      "description": "Diagnosis, Active: HIV",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.120.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_HIV",
+      "source_data_criteria": "OccurrenceAHiv8",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAHiv8_precondition_88": {
+      "title": "HIV",
+      "description": "Diagnosis, Active: HIV",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.120.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_HIV",
+      "source_data_criteria": "OccurrenceAHiv8",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceASyphilis9_precondition_97": {
+      "title": "Syphilis",
+      "description": "Diagnosis, Active: Syphilis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1002",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_SYPHILIS",
+      "source_data_criteria": "OccurrenceASyphilis9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceASyphilis9_precondition_95": {
+      "title": "Syphilis",
+      "description": "Diagnosis, Active: Syphilis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1002",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_SYPHILIS",
+      "source_data_criteria": "OccurrenceASyphilis9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10_precondition_104": {
+      "title": "Complications of Pregnancy, Childbirth and the Puerperium",
+      "description": "Diagnosis, Active: Complications of Pregnancy, Childbirth and the Puerperium",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1012",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_COMPLICATIONS_OF_PREGNANCY_CHILDBIRTH_AND_THE_PUERPERIUM",
+      "source_data_criteria": "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10_precondition_102": {
+      "title": "Complications of Pregnancy, Childbirth and the Puerperium",
+      "description": "Diagnosis, Active: Complications of Pregnancy, Childbirth and the Puerperium",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1012",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_COMPLICATIONS_OF_PREGNANCY_CHILDBIRTH_AND_THE_PUERPERIUM",
+      "source_data_criteria": "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "LaboratoryTestOrderPregnancyTest_precondition_109": {
+      "title": "Pregnancy Test",
+      "description": "Laboratory Test, Order: Pregnancy Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1011",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestOrderPregnancyTest",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "LaboratoryTestOrderPapTest_precondition_111": {
+      "title": "Pap Test",
+      "description": "Laboratory Test, Order: Pap Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1017",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestOrderPapTest",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "ProcedurePerformedDeliveryLiveBirths_precondition_113": {
+      "title": "Delivery Live Births",
+      "description": "Procedure, Performed: Delivery Live Births",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1015",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedDeliveryLiveBirths",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "LaboratoryTestOrderLabTestsDuringPregnancy_precondition_115": {
+      "title": "Lab Tests During Pregnancy",
+      "description": "Laboratory Test, Order: Lab Tests During Pregnancy",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1007",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestOrderLabTestsDuringPregnancy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "LaboratoryTestOrderLabTestsForSexuallyTransmittedInfections_precondition_117": {
+      "title": "Lab Tests for Sexually Transmitted Infections",
+      "description": "Laboratory Test, Order: Lab Tests for Sexually Transmitted Infections",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.110.12.1051",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestOrderLabTestsForSexuallyTransmittedInfections",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "MedicationOrderContraceptiveMedications_precondition_119": {
+      "title": "Contraceptive Medications",
+      "description": "Medication, Order: Contraceptive Medications",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1080",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderContraceptiveMedications",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "DiagnosticStudyOrderDiagnosticStudiesDuringPregnancy_precondition_121": {
+      "title": "Diagnostic Studies During Pregnancy",
+      "description": "Diagnostic Study, Order: Diagnostic Studies During Pregnancy",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1008",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DiagnosticStudyOrderDiagnosticStudiesDuringPregnancy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "ProcedurePerformedProceduresDuringPregnancy_precondition_123": {
+      "title": "Procedures During Pregnancy",
+      "description": "Procedure, Performed: Procedures During Pregnancy",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1009",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedProceduresDuringPregnancy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "ProcedurePerformedProceduresInvolvingContraceptiveDevices_precondition_125": {
+      "title": "Procedures Involving Contraceptive Devices",
+      "description": "Procedure, Performed: Procedures Involving Contraceptive Devices",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1010",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedProceduresInvolvingContraceptiveDevices",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_132": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "16",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_134": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "20",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicSexFemale_precondition_136": {
+      "title": "Female",
+      "description": "Patient Characteristic Sex: Female",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.2",
+      "property": "gender",
+      "type": "characteristic",
+      "definition": "patient_characteristic_gender",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicSexFemale",
+      "value": {
+        "type": "CD",
+        "system": "Administrative Sex",
+        "code": "F"
+      }
+    },
+    "EncounterPerformedOfficeVisit_precondition_138": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedFaceToFaceInteraction_precondition_140": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_142": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_144": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17_precondition_146": {
+      "title": "Preventive Care - Established Office Visit, 0 to 17",
+      "description": "Encounter, Performed: Preventive Care - Established Office Visit, 0 to 17",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1024",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareInitialOfficeVisit0To17_precondition_148": {
+      "title": "Preventive Care- Initial Office Visit, 0 to 17",
+      "description": "Encounter, Performed: Preventive Care- Initial Office Visit, 0 to 17",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1022",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareInitialOfficeVisit0To17",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedHomeHealthcareServices_precondition_150": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHomeHealthcareServices",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAOtherFemaleReproductiveConditions2_precondition_156": {
+      "title": "Other Female Reproductive Conditions",
+      "description": "Diagnosis, Active: Other Female Reproductive Conditions",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1006",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_OTHER_FEMALE_REPRODUCTIVE_CONDITIONS",
+      "source_data_criteria": "OccurrenceAOtherFemaleReproductiveConditions2",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAOtherFemaleReproductiveConditions2_precondition_154": {
+      "title": "Other Female Reproductive Conditions",
+      "description": "Diagnosis, Active: Other Female Reproductive Conditions",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1006",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_OTHER_FEMALE_REPRODUCTIVE_CONDITIONS",
+      "source_data_criteria": "OccurrenceAOtherFemaleReproductiveConditions2",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAGenitalHerpes3_precondition_163": {
+      "title": "Genital Herpes",
+      "description": "Diagnosis, Active: Genital Herpes",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.110.12.1049",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_GENITAL_HERPES",
+      "source_data_criteria": "OccurrenceAGenitalHerpes3",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAGenitalHerpes3_precondition_161": {
+      "title": "Genital Herpes",
+      "description": "Diagnosis, Active: Genital Herpes",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.110.12.1049",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_GENITAL_HERPES",
+      "source_data_criteria": "OccurrenceAGenitalHerpes3",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAGonococcalInfectionsAndVenerealDiseases4_precondition_170": {
+      "title": "Gonococcal Infections and Venereal Diseases",
+      "description": "Diagnosis, Active: Gonococcal Infections and Venereal Diseases",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_GONOCOCCAL_INFECTIONS_AND_VENEREAL_DISEASES",
+      "source_data_criteria": "OccurrenceAGonococcalInfectionsAndVenerealDiseases4",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAGonococcalInfectionsAndVenerealDiseases4_precondition_168": {
+      "title": "Gonococcal Infections and Venereal Diseases",
+      "description": "Diagnosis, Active: Gonococcal Infections and Venereal Diseases",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_GONOCOCCAL_INFECTIONS_AND_VENEREAL_DISEASES",
+      "source_data_criteria": "OccurrenceAGonococcalInfectionsAndVenerealDiseases4",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAContraceptiveMedications5_precondition_177": {
+      "title": "Contraceptive Medications",
+      "description": "Medication, Active: Contraceptive Medications",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1080",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_CONTRACEPTIVE_MEDICATIONS",
+      "source_data_criteria": "OccurrenceAContraceptiveMedications5",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAContraceptiveMedications5_precondition_175": {
+      "title": "Contraceptive Medications",
+      "description": "Medication, Active: Contraceptive Medications",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1080",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_CONTRACEPTIVE_MEDICATIONS",
+      "source_data_criteria": "OccurrenceAContraceptiveMedications5",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6_precondition_184": {
+      "title": "Inflammatory Diseases of Female Reproductive Organs",
+      "description": "Diagnosis, Active: Inflammatory Diseases of Female Reproductive Organs",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1004",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_INFLAMMATORY_DISEASES_OF_FEMALE_REPRODUCTIVE_ORGANS",
+      "source_data_criteria": "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6_precondition_182": {
+      "title": "Inflammatory Diseases of Female Reproductive Organs",
+      "description": "Diagnosis, Active: Inflammatory Diseases of Female Reproductive Organs",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1004",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_INFLAMMATORY_DISEASES_OF_FEMALE_REPRODUCTIVE_ORGANS",
+      "source_data_criteria": "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAChlamydia7_precondition_191": {
+      "title": "Chlamydia",
+      "description": "Diagnosis, Active: Chlamydia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_CHLAMYDIA",
+      "source_data_criteria": "OccurrenceAChlamydia7",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAChlamydia7_precondition_189": {
+      "title": "Chlamydia",
+      "description": "Diagnosis, Active: Chlamydia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_CHLAMYDIA",
+      "source_data_criteria": "OccurrenceAChlamydia7",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAHiv8_precondition_198": {
+      "title": "HIV",
+      "description": "Diagnosis, Active: HIV",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.120.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_HIV",
+      "source_data_criteria": "OccurrenceAHiv8",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAHiv8_precondition_196": {
+      "title": "HIV",
+      "description": "Diagnosis, Active: HIV",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.120.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_HIV",
+      "source_data_criteria": "OccurrenceAHiv8",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceASyphilis9_precondition_205": {
+      "title": "Syphilis",
+      "description": "Diagnosis, Active: Syphilis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1002",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_SYPHILIS",
+      "source_data_criteria": "OccurrenceASyphilis9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceASyphilis9_precondition_203": {
+      "title": "Syphilis",
+      "description": "Diagnosis, Active: Syphilis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1002",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_SYPHILIS",
+      "source_data_criteria": "OccurrenceASyphilis9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10_precondition_212": {
+      "title": "Complications of Pregnancy, Childbirth and the Puerperium",
+      "description": "Diagnosis, Active: Complications of Pregnancy, Childbirth and the Puerperium",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1012",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_COMPLICATIONS_OF_PREGNANCY_CHILDBIRTH_AND_THE_PUERPERIUM",
+      "source_data_criteria": "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10_precondition_210": {
+      "title": "Complications of Pregnancy, Childbirth and the Puerperium",
+      "description": "Diagnosis, Active: Complications of Pregnancy, Childbirth and the Puerperium",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1012",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_COMPLICATIONS_OF_PREGNANCY_CHILDBIRTH_AND_THE_PUERPERIUM",
+      "source_data_criteria": "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "LaboratoryTestOrderPregnancyTest_precondition_217": {
+      "title": "Pregnancy Test",
+      "description": "Laboratory Test, Order: Pregnancy Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1011",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestOrderPregnancyTest",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "LaboratoryTestOrderPapTest_precondition_219": {
+      "title": "Pap Test",
+      "description": "Laboratory Test, Order: Pap Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1017",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestOrderPapTest",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "ProcedurePerformedDeliveryLiveBirths_precondition_221": {
+      "title": "Delivery Live Births",
+      "description": "Procedure, Performed: Delivery Live Births",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1015",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedDeliveryLiveBirths",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "LaboratoryTestOrderLabTestsDuringPregnancy_precondition_223": {
+      "title": "Lab Tests During Pregnancy",
+      "description": "Laboratory Test, Order: Lab Tests During Pregnancy",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1007",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestOrderLabTestsDuringPregnancy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "LaboratoryTestOrderLabTestsForSexuallyTransmittedInfections_precondition_225": {
+      "title": "Lab Tests for Sexually Transmitted Infections",
+      "description": "Laboratory Test, Order: Lab Tests for Sexually Transmitted Infections",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.110.12.1051",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestOrderLabTestsForSexuallyTransmittedInfections",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "MedicationOrderContraceptiveMedications_precondition_227": {
+      "title": "Contraceptive Medications",
+      "description": "Medication, Order: Contraceptive Medications",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1080",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderContraceptiveMedications",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "DiagnosticStudyOrderDiagnosticStudiesDuringPregnancy_precondition_229": {
+      "title": "Diagnostic Studies During Pregnancy",
+      "description": "Diagnostic Study, Order: Diagnostic Studies During Pregnancy",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1008",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DiagnosticStudyOrderDiagnosticStudiesDuringPregnancy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "ProcedurePerformedProceduresDuringPregnancy_precondition_231": {
+      "title": "Procedures During Pregnancy",
+      "description": "Procedure, Performed: Procedures During Pregnancy",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1009",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedProceduresDuringPregnancy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "ProcedurePerformedProceduresInvolvingContraceptiveDevices_precondition_233": {
+      "title": "Procedures Involving Contraceptive Devices",
+      "description": "Procedure, Performed: Procedures Involving Contraceptive Devices",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1010",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedProceduresInvolvingContraceptiveDevices",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_240": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "low": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "21",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicBirthdateBirthDate_precondition_242": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      },
+      "temporal_references": [
+        {
+          "type": "SBS",
+          "reference": "MeasurePeriod",
+          "range": {
+            "type": "IVL_PQ",
+            "high": {
+              "type": "PQ",
+              "unit": "a",
+              "value": "24",
+              "inclusive?": true,
+              "derived?": false
+            }
+          }
+        }
+      ]
+    },
+    "PatientCharacteristicSexFemale_precondition_244": {
+      "title": "Female",
+      "description": "Patient Characteristic Sex: Female",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.2",
+      "property": "gender",
+      "type": "characteristic",
+      "definition": "patient_characteristic_gender",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicSexFemale",
+      "value": {
+        "type": "CD",
+        "system": "Administrative Sex",
+        "code": "F"
+      }
+    },
+    "EncounterPerformedOfficeVisit_precondition_246": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedFaceToFaceInteraction_precondition_248": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp_precondition_250": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp_precondition_252": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17_precondition_254": {
+      "title": "Preventive Care - Established Office Visit, 0 to 17",
+      "description": "Encounter, Performed: Preventive Care - Established Office Visit, 0 to 17",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1024",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedPreventiveCareInitialOfficeVisit0To17_precondition_256": {
+      "title": "Preventive Care- Initial Office Visit, 0 to 17",
+      "description": "Encounter, Performed: Preventive Care- Initial Office Visit, 0 to 17",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1022",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareInitialOfficeVisit0To17",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "EncounterPerformedHomeHealthcareServices_precondition_258": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHomeHealthcareServices",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAOtherFemaleReproductiveConditions2_precondition_264": {
+      "title": "Other Female Reproductive Conditions",
+      "description": "Diagnosis, Active: Other Female Reproductive Conditions",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1006",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_OTHER_FEMALE_REPRODUCTIVE_CONDITIONS",
+      "source_data_criteria": "OccurrenceAOtherFemaleReproductiveConditions2",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAOtherFemaleReproductiveConditions2_precondition_262": {
+      "title": "Other Female Reproductive Conditions",
+      "description": "Diagnosis, Active: Other Female Reproductive Conditions",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1006",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_OTHER_FEMALE_REPRODUCTIVE_CONDITIONS",
+      "source_data_criteria": "OccurrenceAOtherFemaleReproductiveConditions2",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAGenitalHerpes3_precondition_271": {
+      "title": "Genital Herpes",
+      "description": "Diagnosis, Active: Genital Herpes",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.110.12.1049",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_GENITAL_HERPES",
+      "source_data_criteria": "OccurrenceAGenitalHerpes3",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAGenitalHerpes3_precondition_269": {
+      "title": "Genital Herpes",
+      "description": "Diagnosis, Active: Genital Herpes",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.110.12.1049",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_GENITAL_HERPES",
+      "source_data_criteria": "OccurrenceAGenitalHerpes3",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAGonococcalInfectionsAndVenerealDiseases4_precondition_278": {
+      "title": "Gonococcal Infections and Venereal Diseases",
+      "description": "Diagnosis, Active: Gonococcal Infections and Venereal Diseases",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_GONOCOCCAL_INFECTIONS_AND_VENEREAL_DISEASES",
+      "source_data_criteria": "OccurrenceAGonococcalInfectionsAndVenerealDiseases4",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAGonococcalInfectionsAndVenerealDiseases4_precondition_276": {
+      "title": "Gonococcal Infections and Venereal Diseases",
+      "description": "Diagnosis, Active: Gonococcal Infections and Venereal Diseases",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_GONOCOCCAL_INFECTIONS_AND_VENEREAL_DISEASES",
+      "source_data_criteria": "OccurrenceAGonococcalInfectionsAndVenerealDiseases4",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAContraceptiveMedications5_precondition_285": {
+      "title": "Contraceptive Medications",
+      "description": "Medication, Active: Contraceptive Medications",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1080",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_CONTRACEPTIVE_MEDICATIONS",
+      "source_data_criteria": "OccurrenceAContraceptiveMedications5",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAContraceptiveMedications5_precondition_283": {
+      "title": "Contraceptive Medications",
+      "description": "Medication, Active: Contraceptive Medications",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1080",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_CONTRACEPTIVE_MEDICATIONS",
+      "source_data_criteria": "OccurrenceAContraceptiveMedications5",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6_precondition_292": {
+      "title": "Inflammatory Diseases of Female Reproductive Organs",
+      "description": "Diagnosis, Active: Inflammatory Diseases of Female Reproductive Organs",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1004",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_INFLAMMATORY_DISEASES_OF_FEMALE_REPRODUCTIVE_ORGANS",
+      "source_data_criteria": "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6_precondition_290": {
+      "title": "Inflammatory Diseases of Female Reproductive Organs",
+      "description": "Diagnosis, Active: Inflammatory Diseases of Female Reproductive Organs",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1004",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_INFLAMMATORY_DISEASES_OF_FEMALE_REPRODUCTIVE_ORGANS",
+      "source_data_criteria": "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAChlamydia7_precondition_299": {
+      "title": "Chlamydia",
+      "description": "Diagnosis, Active: Chlamydia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_CHLAMYDIA",
+      "source_data_criteria": "OccurrenceAChlamydia7",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAChlamydia7_precondition_297": {
+      "title": "Chlamydia",
+      "description": "Diagnosis, Active: Chlamydia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_CHLAMYDIA",
+      "source_data_criteria": "OccurrenceAChlamydia7",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAHiv8_precondition_306": {
+      "title": "HIV",
+      "description": "Diagnosis, Active: HIV",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.120.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_HIV",
+      "source_data_criteria": "OccurrenceAHiv8",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAHiv8_precondition_304": {
+      "title": "HIV",
+      "description": "Diagnosis, Active: HIV",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.120.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_HIV",
+      "source_data_criteria": "OccurrenceAHiv8",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceASyphilis9_precondition_313": {
+      "title": "Syphilis",
+      "description": "Diagnosis, Active: Syphilis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1002",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_SYPHILIS",
+      "source_data_criteria": "OccurrenceASyphilis9",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceASyphilis9_precondition_311": {
+      "title": "Syphilis",
+      "description": "Diagnosis, Active: Syphilis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1002",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_SYPHILIS",
+      "source_data_criteria": "OccurrenceASyphilis9",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10_precondition_320": {
+      "title": "Complications of Pregnancy, Childbirth and the Puerperium",
+      "description": "Diagnosis, Active: Complications of Pregnancy, Childbirth and the Puerperium",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1012",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_COMPLICATIONS_OF_PREGNANCY_CHILDBIRTH_AND_THE_PUERPERIUM",
+      "source_data_criteria": "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10",
+      "temporal_references": [
+        {
+          "type": "SBE",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10_precondition_318": {
+      "title": "Complications of Pregnancy, Childbirth and the Puerperium",
+      "description": "Diagnosis, Active: Complications of Pregnancy, Childbirth and the Puerperium",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1012",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_COMPLICATIONS_OF_PREGNANCY_CHILDBIRTH_AND_THE_PUERPERIUM",
+      "source_data_criteria": "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10",
+      "temporal_references": [
+        {
+          "type": "EBS",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "LaboratoryTestOrderPregnancyTest_precondition_325": {
+      "title": "Pregnancy Test",
+      "description": "Laboratory Test, Order: Pregnancy Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1011",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestOrderPregnancyTest",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "LaboratoryTestOrderPapTest_precondition_327": {
+      "title": "Pap Test",
+      "description": "Laboratory Test, Order: Pap Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1017",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestOrderPapTest",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "ProcedurePerformedDeliveryLiveBirths_precondition_329": {
+      "title": "Delivery Live Births",
+      "description": "Procedure, Performed: Delivery Live Births",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1015",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedDeliveryLiveBirths",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "LaboratoryTestOrderLabTestsDuringPregnancy_precondition_331": {
+      "title": "Lab Tests During Pregnancy",
+      "description": "Laboratory Test, Order: Lab Tests During Pregnancy",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1007",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestOrderLabTestsDuringPregnancy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "LaboratoryTestOrderLabTestsForSexuallyTransmittedInfections_precondition_333": {
+      "title": "Lab Tests for Sexually Transmitted Infections",
+      "description": "Laboratory Test, Order: Lab Tests for Sexually Transmitted Infections",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.110.12.1051",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestOrderLabTestsForSexuallyTransmittedInfections",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "MedicationOrderContraceptiveMedications_precondition_335": {
+      "title": "Contraceptive Medications",
+      "description": "Medication, Order: Contraceptive Medications",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1080",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderContraceptiveMedications",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "DiagnosticStudyOrderDiagnosticStudiesDuringPregnancy_precondition_337": {
+      "title": "Diagnostic Studies During Pregnancy",
+      "description": "Diagnostic Study, Order: Diagnostic Studies During Pregnancy",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1008",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DiagnosticStudyOrderDiagnosticStudiesDuringPregnancy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "ProcedurePerformedProceduresDuringPregnancy_precondition_339": {
+      "title": "Procedures During Pregnancy",
+      "description": "Procedure, Performed: Procedures During Pregnancy",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1009",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedProceduresDuringPregnancy",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    },
+    "ProcedurePerformedProceduresInvolvingContraceptiveDevices_precondition_341": {
+      "title": "Procedures Involving Contraceptive Devices",
+      "description": "Procedure, Performed: Procedures Involving Contraceptive Devices",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1010",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedProceduresInvolvingContraceptiveDevices",
+      "temporal_references": [
+        {
+          "type": "DURING",
+          "reference": "MeasurePeriod"
+        }
+      ]
+    }
+  },
+  "source_data_criteria": {
+    "PatientCharacteristicBirthdateBirthDate": {
+      "title": "birth date",
+      "description": "Patient Characteristic Birthdate: birth date",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.4",
+      "property": "birthtime",
+      "type": "characteristic",
+      "definition": "patient_characteristic_birthdate",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicBirthdateBirthDate",
+      "inline_code_list": {
+        "LOINC": [
+          "21112-8"
+        ]
+      }
+    },
+    "LaboratoryTestResultChlamydiaScreening": {
+      "title": "Chlamydia Screening",
+      "description": "Laboratory Test, Result: Chlamydia Screening",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.110.12.1052",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestResultChlamydiaScreening"
+    },
+    "DiagnosisActiveOtherFemaleReproductiveConditions": {
+      "title": "Other Female Reproductive Conditions",
+      "description": "Diagnosis, Active: Other Female Reproductive Conditions",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1006",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveOtherFemaleReproductiveConditions"
+    },
+    "DiagnosisActiveGenitalHerpes": {
+      "title": "Genital Herpes",
+      "description": "Diagnosis, Active: Genital Herpes",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.110.12.1049",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveGenitalHerpes"
+    },
+    "DiagnosisActiveInflammatoryDiseasesOfFemaleReproductiveOrgans": {
+      "title": "Inflammatory Diseases of Female Reproductive Organs",
+      "description": "Diagnosis, Active: Inflammatory Diseases of Female Reproductive Organs",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1004",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveInflammatoryDiseasesOfFemaleReproductiveOrgans"
+    },
+    "DiagnosisActiveChlamydia": {
+      "title": "Chlamydia",
+      "description": "Diagnosis, Active: Chlamydia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveChlamydia"
+    },
+    "DiagnosisActiveSyphilis": {
+      "title": "Syphilis",
+      "description": "Diagnosis, Active: Syphilis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1002",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveSyphilis"
+    },
+    "DiagnosisActiveGonococcalInfectionsAndVenerealDiseases": {
+      "title": "Gonococcal Infections and Venereal Diseases",
+      "description": "Diagnosis, Active: Gonococcal Infections and Venereal Diseases",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveGonococcalInfectionsAndVenerealDiseases"
+    },
+    "DiagnosisActiveComplicationsOfPregnancyChildbirthAndThePuerperium": {
+      "title": "Complications of Pregnancy, Childbirth and the Puerperium",
+      "description": "Diagnosis, Active: Complications of Pregnancy, Childbirth and the Puerperium",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1012",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveComplicationsOfPregnancyChildbirthAndThePuerperium"
+    },
+    "DiagnosisActiveHiv": {
+      "title": "HIV",
+      "description": "Diagnosis, Active: HIV",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.120.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveHiv"
+    },
+    "ProcedurePerformedProceduresDuringPregnancy": {
+      "title": "Procedures During Pregnancy",
+      "description": "Procedure, Performed: Procedures During Pregnancy",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1009",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedProceduresDuringPregnancy"
+    },
+    "ProcedurePerformedProceduresInvolvingContraceptiveDevices": {
+      "title": "Procedures Involving Contraceptive Devices",
+      "description": "Procedure, Performed: Procedures Involving Contraceptive Devices",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1010",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedProceduresInvolvingContraceptiveDevices"
+    },
+    "ProcedurePerformedDeliveryLiveBirths": {
+      "title": "Delivery Live Births",
+      "description": "Procedure, Performed: Delivery Live Births",
+      "standard_category": "procedure",
+      "qds_data_type": "procedure_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1015",
+      "type": "procedures",
+      "definition": "procedure",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "ProcedurePerformedDeliveryLiveBirths"
+    },
+    "MedicationActiveContraceptiveMedications": {
+      "title": "Contraceptive Medications",
+      "description": "Medication, Active: Contraceptive Medications",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1080",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "MedicationActiveContraceptiveMedications"
+    },
+    "PatientCharacteristicSexFemale": {
+      "title": "Female",
+      "description": "Patient Characteristic Sex: Female",
+      "standard_category": "individual_characteristic",
+      "qds_data_type": "individual_characteristic",
+      "code_list_id": "2.16.840.1.113883.3.560.100.2",
+      "property": "gender",
+      "type": "characteristic",
+      "definition": "patient_characteristic_gender",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "PatientCharacteristicSexFemale",
+      "value": {
+        "type": "CD",
+        "system": "Administrative Sex",
+        "code": "F"
+      }
+    },
+    "MedicationOrderIsotretinoin": {
+      "title": "Isotretinoin",
+      "description": "Medication, Order: Isotretinoin",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1143",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderIsotretinoin"
+    },
+    "LaboratoryTestOrderPapTest": {
+      "title": "Pap Test",
+      "description": "Laboratory Test, Order: Pap Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.108.12.1017",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestOrderPapTest"
+    },
+    "DiagnosticStudyOrderDiagnosticStudiesDuringPregnancy": {
+      "title": "Diagnostic Studies During Pregnancy",
+      "description": "Diagnostic Study, Order: Diagnostic Studies During Pregnancy",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1008",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DiagnosticStudyOrderDiagnosticStudiesDuringPregnancy"
+    },
+    "LaboratoryTestOrderPregnancyTest": {
+      "title": "Pregnancy Test",
+      "description": "Laboratory Test, Order: Pregnancy Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1011",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestOrderPregnancyTest"
+    },
+    "MedicationOrderContraceptiveMedications": {
+      "title": "Contraceptive Medications",
+      "description": "Medication, Order: Contraceptive Medications",
+      "standard_category": "medication",
+      "qds_data_type": "medication_order",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1080",
+      "type": "medications",
+      "definition": "medication",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "MedicationOrderContraceptiveMedications"
+    },
+    "LaboratoryTestOrderLabTestsDuringPregnancy": {
+      "title": "Lab Tests During Pregnancy",
+      "description": "Laboratory Test, Order: Lab Tests During Pregnancy",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1007",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestOrderLabTestsDuringPregnancy"
+    },
+    "LaboratoryTestOrderLabTestsForSexuallyTransmittedInfections": {
+      "title": "Lab Tests for Sexually Transmitted Infections",
+      "description": "Laboratory Test, Order: Lab Tests for Sexually Transmitted Infections",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.110.12.1051",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "LaboratoryTestOrderLabTestsForSexuallyTransmittedInfections"
+    },
+    "EncounterPerformedOfficeVisit": {
+      "title": "Office Visit",
+      "description": "Encounter, Performed: Office Visit",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1001",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedOfficeVisit"
+    },
+    "EncounterPerformedFaceToFaceInteraction": {
+      "title": "Face-to-Face Interaction",
+      "description": "Encounter, Performed: Face-to-Face Interaction",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1048",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedFaceToFaceInteraction"
+    },
+    "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp": {
+      "title": "Preventive Care Services - Established Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services - Established Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1025",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesEstablishedOfficeVisit18AndUp"
+    },
+    "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp": {
+      "title": "Preventive Care Services-Initial Office Visit, 18 and Up",
+      "description": "Encounter, Performed: Preventive Care Services-Initial Office Visit, 18 and Up",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1023",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareServicesInitialOfficeVisit18AndUp"
+    },
+    "EncounterPerformedHomeHealthcareServices": {
+      "title": "Home Healthcare Services",
+      "description": "Encounter, Performed: Home Healthcare Services",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1016",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedHomeHealthcareServices"
+    },
+    "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17": {
+      "title": "Preventive Care - Established Office Visit, 0 to 17",
+      "description": "Encounter, Performed: Preventive Care - Established Office Visit, 0 to 17",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1024",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17"
+    },
+    "EncounterPerformedPreventiveCareInitialOfficeVisit0To17": {
+      "title": "Preventive Care- Initial Office Visit, 0 to 17",
+      "description": "Encounter, Performed: Preventive Care- Initial Office Visit, 0 to 17",
+      "standard_category": "encounter",
+      "qds_data_type": "encounter",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.101.12.1022",
+      "type": "encounters",
+      "definition": "encounter",
+      "status": "performed",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "EncounterPerformedPreventiveCareInitialOfficeVisit0To17"
+    },
+    "DiagnosticStudyOrderXRayStudyAllInclusive": {
+      "title": "X-Ray Study (all inclusive)",
+      "description": "Diagnostic Study, Order: X-Ray Study (all inclusive)",
+      "standard_category": "diagnostic_study",
+      "qds_data_type": "diagnostic_study_performed",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.198.12.1034",
+      "type": "diagnostic_studies",
+      "definition": "diagnostic_study",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "source_data_criteria": "DiagnosticStudyOrderXRayStudyAllInclusive"
+    },
+    "OccurrenceAPregnancyTest1": {
+      "title": "Pregnancy Test",
+      "description": "Laboratory Test, Ordered: Pregnancy Test",
+      "standard_category": "laboratory_test",
+      "qds_data_type": "laboratory_test",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1011",
+      "type": "laboratory_tests",
+      "definition": "laboratory_test",
+      "status": "ordered",
+      "hard_status": true,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "LABORATORY_TEST_ORDERED_PREGNANCY_TEST",
+      "source_data_criteria": "OccurrenceAPregnancyTest1"
+    },
+    "OccurrenceAOtherFemaleReproductiveConditions2": {
+      "title": "Other Female Reproductive Conditions",
+      "description": "Diagnosis, Active: Other Female Reproductive Conditions",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1006",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_OTHER_FEMALE_REPRODUCTIVE_CONDITIONS",
+      "source_data_criteria": "OccurrenceAOtherFemaleReproductiveConditions2"
+    },
+    "OccurrenceAGenitalHerpes3": {
+      "title": "Genital Herpes",
+      "description": "Diagnosis, Active: Genital Herpes",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.110.12.1049",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_GENITAL_HERPES",
+      "source_data_criteria": "OccurrenceAGenitalHerpes3"
+    },
+    "OccurrenceAGonococcalInfectionsAndVenerealDiseases4": {
+      "title": "Gonococcal Infections and Venereal Diseases",
+      "description": "Diagnosis, Active: Gonococcal Infections and Venereal Diseases",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1001",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_GONOCOCCAL_INFECTIONS_AND_VENEREAL_DISEASES",
+      "source_data_criteria": "OccurrenceAGonococcalInfectionsAndVenerealDiseases4"
+    },
+    "OccurrenceAContraceptiveMedications5": {
+      "title": "Contraceptive Medications",
+      "description": "Medication, Active: Contraceptive Medications",
+      "standard_category": "medication",
+      "qds_data_type": "medication_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.196.12.1080",
+      "type": "medications",
+      "definition": "medication",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "MEDICATION_ACTIVE_CONTRACEPTIVE_MEDICATIONS",
+      "source_data_criteria": "OccurrenceAContraceptiveMedications5"
+    },
+    "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6": {
+      "title": "Inflammatory Diseases of Female Reproductive Organs",
+      "description": "Diagnosis, Active: Inflammatory Diseases of Female Reproductive Organs",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1004",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_INFLAMMATORY_DISEASES_OF_FEMALE_REPRODUCTIVE_ORGANS",
+      "source_data_criteria": "OccurrenceAInflammatoryDiseasesOfFemaleReproductiveOrgans6"
+    },
+    "OccurrenceAChlamydia7": {
+      "title": "Chlamydia",
+      "description": "Diagnosis, Active: Chlamydia",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_CHLAMYDIA",
+      "source_data_criteria": "OccurrenceAChlamydia7"
+    },
+    "OccurrenceAHiv8": {
+      "title": "HIV",
+      "description": "Diagnosis, Active: HIV",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.120.12.1003",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_HIV",
+      "source_data_criteria": "OccurrenceAHiv8"
+    },
+    "OccurrenceASyphilis9": {
+      "title": "Syphilis",
+      "description": "Diagnosis, Active: Syphilis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.112.12.1002",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_SYPHILIS",
+      "source_data_criteria": "OccurrenceASyphilis9"
+    },
+    "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10": {
+      "title": "Complications of Pregnancy, Childbirth and the Puerperium",
+      "description": "Diagnosis, Active: Complications of Pregnancy, Childbirth and the Puerperium",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.111.12.1012",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "specific_occurrence": "A",
+      "specific_occurrence_const": "DIAGNOSIS_ACTIVE_COMPLICATIONS_OF_PREGNANCY_CHILDBIRTH_AND_THE_PUERPERIUM",
+      "source_data_criteria": "OccurrenceAComplicationsOfPregnancyChildbirthAndThePuerperium10"
+    }
+  },
+  "attributes": [
+    {
+      "id": "COPYRIGHT",
+      "code": "COPY",
+      "value": "Physician Performance Measure (Measures) and related data specifications were developed by the National Committee for Quality Assurance (NCQA). \r\n\r\nThe Measures are copyrighted but can be reproduced and distributed, without modification, for noncommercial purposes (e.g., use by healthcare providers in connection with their practices). Commercial use is defined as the sale, licensing, or distribution of the Measures for commercial gain, or incorporation of the Measures into a product or service that is sold, licensed or distributed for commercial gain. Commercial use of the Measures requires a license agreement between the user and NCQA. NCQA is not responsible for any use of the Measures. \r\n\r\nCopyright 2012 National Committee for Quality Assurance. All Rights Reserved. \r\n\r\nLimited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets.  NCQA disclaims all liability for use or accuracy of any CPT or other codes contained in the specifications.\r\n\r\nCPT(R) contained in the Measure specifications is copyright 2004-2011 American Medical Association. LOINC (R) copyright 2004-2011 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms (R) (SNOMED CT[R]) copyright 2004-2011 International Health Terminology Standards Development Organisation.  ICD-10 Copyright 2011 World Health Organization. All Rights Reserved.\r\n\r\nDue to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM].",
+      "name": "Copyright"
+    },
+    {
+      "id": "MEASURE_SCORING",
+      "code": "MSRSCORE",
+      "name": "Measure Scoring"
+    },
+    {
+      "id": "MEASURE_TYPE",
+      "code": "MSRTYPE",
+      "name": "Measure Type"
+    },
+    {
+      "id": "STRATIFICATION",
+      "code": "STRAT",
+      "value": "Report a total score, and each of the following strata:\r\nStratum 1: Patients age 16-20 \r\nStratum 2: Patients age 21-24",
+      "name": "Stratification"
+    },
+    {
+      "id": "RISK_ADJUSTMENT",
+      "code": "MSRADJ",
+      "value": "None",
+      "name": "Risk Adjustment"
+    },
+    {
+      "id": "RATE_AGGREGATION",
+      "code": "MSRAGG",
+      "value": "None",
+      "name": "Rate Aggregation"
+    },
+    {
+      "id": "RATIONALE",
+      "code": "RAT",
+      "value": "Chlamydia trachomatis is the most common sexually transmitted bacterial infection in the U.S., resulting in over 2.8 million new cases each year (Centers for Disease Control and Prevention 2011 - Chlamydia).  It is often known as a “silent” disease because most infected people have no symptoms and therefore are unaware they have an infection (United States Preventive Services Task Force, 2007; Centers for Disease Control and Prevention 2011- Chlamydia). Although chlamydia symptoms are usually mild or nonexistent, untreated infections can lead to serious and irreversible complications (United States Preventive Services Task Force 2007).\r\n\r\nWomen are particularly vulnerable when infected with chlamydia. Left untreated, chlamydia can cause pelvic inflammatory disease (PID), permanent damage to a woman's fallopian tubes, uterus and surrounding tissue, or Reiter Syndrome, which includes pink eye (conjunctivitis) and skin lesions affecting the lower extremities. Between 10 and 15 percent of untreated chlamydia infections result in PID, which can lead to ectopic pregnancy and infertility (Centers for Disease Control and Prevention 2011 – Chlamydia). As many as 15 percent of women with PID will become infertile (Centers for Disease Control and Prevention 2011 – Pelvic Inflammatory Disease). Additionally, pregnant women might experience premature delivery, miscarriage, low birth weight, infant mortality, or they may pass conjunctivitis or chlamydia pneumonia to their infants (United States Preventive Services Task Force, 2007; Centers for Disease Control and Prevention 2011- Chlamydia). Chlamydia is the leading cause of preventable infertility and, among other adverse pregnancy related problems, can cause preterm birth, miscarriages, infant mortality, and neonatal chlamydia infections (United States Preventive Services Task Force 2007).\r\n\r\nOver 900,000 chlamydia infections were reported to the Centers for Disease Control and Prevention (CDC) from 50 states and the District of Columbia in 2004. Since many cases are not reported or even diagnosed, it is estimated that there are actually 2.8 million new cases of chlamydia each year (Centers for Disease Control and Prevention 2010). From 1987 through 2004, the reported rate of chlamydia infection in women increased from 78.5 cases to 485 cases per 100,000 people, though a portion of the increase in prevalence is attributed to continued expansion of chlamydia screening programs (Centers for Disease Control and Prevention 2005).\r\n\r\nA significant proportion of sexually active individuals, both male and female, continue to go undiagnosed due to the disease's asymptomatic nature (Wilson et al. 2009). Approximately 75 percent of chlamydia infections in women and 95 percent in men are asymptomatic, resulting in delayed medical care and treatment (Centers for Disease Control and Prevention 2011 – Pelvic Inflammatory Disease). Women whose sexual partners are not screened and appropriately treated are at high risk for re-infection. Multiple chlamydia infections increase a woman’s risk of serious reproductive health complications (Centers for Disease Control and Prevention 2010).",
+      "name": "Rationale"
+    },
+    {
+      "id": "CLINICAL_RECOMMENDATION_STATEMENT",
+      "code": "CRS",
+      "value": "U.S. Preventive Services Task Force (2007):\r\nAll sexually active nonpregnant young women age 24 years or younger and older women (pregnant or not) who are at increased risk should be screened for a chlamydial infection. \r\n\r\nThe USPSTF found fair evidence that nucleic acid amplification tests (NAATs) can identify chlamydial infection in asymptomatic men and women, including asymptomatic pregnant women, with high test specificity. \r\n\r\nIf clinicians have not concurrently screened for chlamydial infection, the CDC recommends presumptive treatment for chlamydia at the time of treatment for gonorrhea. In order to prevent recurrent transmission, partners of infected individuals should be tested and treated if infected, or treated presumptively.  \r\n\r\nAmerican Academy of Family Physicians (2009):\r\nThe AAFP strongly recommends screening for chlamydia infection for all sexually active non-pregnant young women aged 24 and younger and for older non-pregnant women who are at increased risk. \r\n\r\nThe AAFP recommends screening for chlamydia infection for all pregnant women aged 24 younger and for older pregnant women who are at increased risk.",
+      "name": "Clinical Recommendation Statement"
+    },
+    {
+      "id": "IMPROVEMENT_NOTATION",
+      "code": "IDUR",
+      "value": "Higher score indicates better quality",
+      "name": "Improvement Notation"
+    },
+    {
+      "id": "NQF_ID_NUMBER",
+      "code": "OTH",
+      "value": "0033",
+      "name": "NQF ID Number"
+    },
+    {
+      "id": "DISCLAIMER",
+      "code": "DISC",
+      "value": "These performance Measures are not clinical guidelines and do not establish a standard of medical care, and have not been tested for all potential applications.\r\n\r\nTHE MEASURES AND SPECIFICATIONS ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND.",
+      "name": "Disclaimer"
+    },
+    {
+      "id": "EMEASURE_IDENTIFIER",
+      "code": "OTH",
+      "value": "153",
+      "name": "eMeasure Identifier"
+    },
+    {
+      "id": "REFERENCE",
+      "code": "REF",
+      "value": "American Academy of Family Physicians (AAFP). 2009. Summary of recommendations for clinical preventive services. Revision 6.8. Leawood: American Academy of Family Physicians (AAFP).",
+      "name": "Reference"
+    },
+    {
+      "id": "DEFINITION",
+      "code": "DEF",
+      "value": "None",
+      "name": "Definition"
+    },
+    {
+      "id": "GUIDANCE",
+      "code": "GUIDE",
+      "value": "Codes to identify sexually active women include codes for: pregnancy, sexually transmitted infections, contraceptives or contraceptive devices, and infertility treatments.\r\n\r\nThe denominator exclusion does not apply to patients who qualify for the initial patient population based on services other than the pregnancy test alone.",
+      "name": "Guidance"
+    },
+    {
+      "id": "TRANSMISSION_FORMAT",
+      "code": "OTH",
+      "value": "None",
+      "name": "Transmission Format"
+    },
+    {
+      "id": "INITIAL_PATIENT_POPULATION",
+      "code": "IPP",
+      "value": "Women 16 to 24 years of age who are sexually active and who had a visit in the measurement period",
+      "name": "Initial Patient Population"
+    },
+    {
+      "id": "DENOMINATOR",
+      "code": "DENOM",
+      "value": "Equals Initial Patient Population",
+      "name": "Denominator"
+    },
+    {
+      "id": "DENOMINATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Women who received a pregnancy test solely as a safety precaution before ordering an x-ray or specified medications",
+      "name": "Denominator Exclusions"
+    },
+    {
+      "id": "NUMERATOR",
+      "code": "NUMER",
+      "value": "Women with at least one chlamydia test during the measurement period",
+      "name": "Numerator"
+    },
+    {
+      "id": "NUMERATOR_EXCLUSIONS",
+      "code": "OTH",
+      "value": "Not applicable",
+      "name": "Numerator Exclusions"
+    },
+    {
+      "id": "DENOMINATOR_EXCEPTIONS",
+      "code": "DENEXCEP",
+      "value": "None",
+      "name": "Denominator Exceptions"
+    },
+    {
+      "id": "MEASURE_POPULATION",
+      "code": "MSRPOPL",
+      "value": "Not applicable",
+      "name": "Measure Population"
+    },
+    {
+      "id": "MEASURE_OBSERVATIONS",
+      "code": "OTH",
+      "value": "Not applicable",
+      "name": "Measure Observations"
+    },
+    {
+      "id": "SUPPLEMENTAL_DATA_ELEMENTS",
+      "code": "OTH",
+      "value": "For every patient evaluated by this measure also identify payer, race, ethnicity and sex.",
+      "name": "Supplemental Data Elements"
+    }
+  ],
+  "populations": [
+    {
+      "NUMER": "NUMER",
+      "DENOM": "DENOM",
+      "IPP": "IPP",
+      "DENEX": "DENEX",
+      "title": "16-24",
+      "id": "Population1"
+    },
+    {
+      "IPP": "IPP_1",
+      "DENOM": "DENOM",
+      "NUMER": "NUMER",
+      "DENEX": "DENEX",
+      "stratification": "5A86F687-6425-45BF-9167-4C311FE929EA",
+      "title": "RS1: 16-20",
+      "id": "Population2"
+    },
+    {
+      "IPP": "IPP_2",
+      "DENOM": "DENOM",
+      "NUMER": "NUMER",
+      "DENEX": "DENEX",
+      "stratification": "85F6C45A-82D1-45E2-BAA9-9F0D780AD237",
+      "title": "RS2: 21-24",
+      "id": "Population3"
+    }
+  ],
+  "measure_period": {
+    "type": "IVL_TS",
+    "low": {
+      "type": "TS",
+      "value": "201201010000",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "high": {
+      "type": "TS",
+      "value": "201212312359",
+      "inclusive?": true,
+      "derived?": false
+    },
+    "width": {
+      "type": "PQ",
+      "unit": "a",
+      "value": "1",
+      "inclusive?": true,
+      "derived?": false
+    }
+  }
+}
