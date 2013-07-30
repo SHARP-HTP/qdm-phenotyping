@@ -7,43 +7,22 @@ import java.util.Date;
 /**
  * @author Herman and Darin IHC
  */
-public class RiskCategoryAssessment extends CodedEntry {
+public class RiskCategoryAssessment extends Event {
     private static Logger logger = Logger.getLogger(RiskCategoryAssessment.class);
-
-    private Date startDate;
-    private Date endDate;
 
     /*
      * For JSON only
      */
     private RiskCategoryAssessment() {
-        super(null);
-    }
-
-    public RiskCategoryAssessment(Concept concept) {
-        this(concept, null);
+        super(null,null,null);
     }
 
     public RiskCategoryAssessment(Concept concept, Date date) {
-        super(concept);
-        this.startDate = date;
-        this.endDate = date;
+        super(concept, date);
     }
 
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
+    public RiskCategoryAssessment(Concept concept, Date startDate, Date endDate) {
+        super(concept, startDate, endDate);
     }
 
     public String toString() {

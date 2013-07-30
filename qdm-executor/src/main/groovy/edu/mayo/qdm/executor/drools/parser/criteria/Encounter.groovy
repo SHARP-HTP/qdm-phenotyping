@@ -7,4 +7,5 @@ class Encounter extends AbstractBaseCriteria {
     def getName() {
         "Encounter"
     }
+
 }

@@ -14,62 +14,77 @@ class CriteriaFactory {
     @Resource
     ValueSetCodeResolver valueSetCodeResolver
 
-    def TODO_CRITERIA = {json, measurementPeriod ->
+    def TODO_CRITERIA = {json, measurementPeriod, measureJson ->
         [
                 toDrools: {throw new UnsupportedOperationException("Unimplemented Criteria: `$json.qds_data_type`")},
-                //toDrools:{"(/* Unimplemented Criteria: `$json.qds_data_type` -- TODO */ eval(true) )"},
                 hasEventList:{false}
         ] as Criteria
     }
 
     def criteriaFactoryMap =
         [
-                "individual_characteristic": { json, measurementPeriod -> new IndividualCharacteristic(json, measurementPeriod) },
+                "individual_characteristic": { json, measurementPeriod, measureJson -> new IndividualCharacteristic(json, measurementPeriod) },
                 "allergy": TODO_CRITERIA,
                 "communication": TODO_CRITERIA,
-                "procedure_performed":  { json, measurementPeriod -> new Procedure(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "procedure_performed":  { json, measurementPeriod, measureJson -> new Procedure(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
                 "procedure_result": TODO_CRITERIA,
                 "procedure_intolerance":  TODO_CRITERIA,
-                "risk_category_assessment":  { json, measurementPeriod -> new RiskCategoryAssessment(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "encounter": { json, measurementPeriod -> new Encounter(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "diagnosis_active": { json, measurementPeriod -> new Diagnosis(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "diagnosis_inactive": { json, measurementPeriod -> new Diagnosis(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "diagnosis_resolved": { json, measurementPeriod -> new Diagnosis(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "laboratory_test": { json, measurementPeriod -> new Lab(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "physical_exam": { json, measurementPeriod -> new PhysicalExamFinding(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "diagnostic_study_result": { json, measurementPeriod -> new Lab(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "risk_category_assessment":  { json, measurementPeriod, measureJson -> new RiskCategoryAssessment(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "encounter": { json, measurementPeriod, measureJson -> new Encounter(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "diagnosis_active": { json, measurementPeriod, measureJson -> new Diagnosis(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "diagnosis_inactive": { json, measurementPeriod, measureJson -> new Diagnosis(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "diagnosis_resolved": { json, measurementPeriod, measureJson -> new Diagnosis(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "laboratory_test": { json, measurementPeriod, measureJson -> new Lab(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "physical_exam": { json, measurementPeriod, measureJson -> new PhysicalExamFinding(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "diagnostic_study_result": { json, measurementPeriod, measureJson -> new Lab(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
                 "diagnostic_study_performed": TODO_CRITERIA,
-                "medication_dispensed": { json, measurementPeriod -> new Medication(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "medication_active": { json, measurementPeriod -> new Medication(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "medication_administered": { json, measurementPeriod -> new Medication(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "medication_order": { json, measurementPeriod -> new Medication(json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "medication_dispensed": { json, measurementPeriod, measureJson -> new Medication(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "medication_active": { json, measurementPeriod, measureJson -> new Medication(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "medication_administered": { json, measurementPeriod, measureJson -> new Medication(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
+                "medication_order": { json, measurementPeriod, measureJson -> new Medication(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
                 "device_applied": TODO_CRITERIA
         ]
 
-    def getCriteria(json, measurementPeriod) {
+    def getCriteria(json, measurementPeriod, measureJson) {
         if(BooleanUtils.toBoolean(json.negation)){
-            def criteria = this.doGetCriteria(json, measurementPeriod)
+            def criteria = this.doGetCriteria(json, measurementPeriod, measureJson)
             [
-                toDrools:{"() not( ${criteria.toDrools()} )"},
+                toDrools:{"not( ${criteria.toDrools()} )"},
                 hasEventList:{criteria.hasEventList()},
             ] as Criteria
         } else {
-            this.doGetCriteria(json, measurementPeriod)
+            this.doGetCriteria(json, measurementPeriod, measureJson)
         }
     }
 
-    private def doGetCriteria(json, measurementPeriod) {
+    private def doGetCriteria(json, measurementPeriod, measureJson) {
         def qdsType = json.qds_data_type
 
         if(json.type.equals("derived")){
+            def collections = []
+
+            json.children_criteria.each {
+                collections.add(it)
+            }
+
+            def criteria =
+            """
+                \$groupResult : java.util.List( ) from collect(
+                 PreconditionResult(
+                 (${collections.collect{"id == \"$it\""}.join(" || ")})
+                 , patient == \$p))
+
+                 \$event : edu.mayo.qdm.patient.Event()
+                    from droolsUtil.combine(\$groupResult)
+            """
             [
-                toDrools:{"()/* Derived -- TODO */"},
-                hasEventList:{false},
+                toDrools:{criteria},
+                hasEventList:{true},
             ] as Criteria
         } else {
             def criteriaFn = this.criteriaFactoryMap.get(qdsType)
             if (criteriaFn != null) {
-                criteriaFn(json, measurementPeriod)
+                criteriaFn(json, measurementPeriod, measureJson)
             } else {
                 throw new RuntimeException("Critieria type: `$qdsType` not recognized. JSON -> $json")
             }

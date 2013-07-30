@@ -1,10 +1,12 @@
 package edu.mayo.qdm.executor.drools.parser
+
 import edu.mayo.qdm.executor.MeasurementPeriod
 import edu.mayo.qdm.executor.ResultCallback
-import edu.mayo.qdm.executor.drools.parser.criteria.CriteriaFactory
-import edu.mayo.qdm.executor.drools.parser.criteria.Interval
 import edu.mayo.qdm.executor.drools.DroolsUtil
 import edu.mayo.qdm.executor.drools.PreconditionResult
+import edu.mayo.qdm.executor.drools.SpecificOccurrence
+import edu.mayo.qdm.executor.drools.parser.criteria.CriteriaFactory
+import edu.mayo.qdm.executor.drools.parser.criteria.Interval
 import edu.mayo.qdm.executor.drools.parser.criteria.MeasurementValue
 import edu.mayo.qdm.patient.Concept
 import edu.mayo.qdm.patient.Patient
@@ -16,6 +18,7 @@ import org.apache.http.entity.mime.MultipartEntity
 import org.apache.http.entity.mime.content.InputStreamBody
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
+
 /*
  * The main JSON -> Drools converter.
  */
@@ -43,7 +46,7 @@ class Qdm2Drools {
      * @param qdmXml the QDM/HQMF XML file as a String.
      * @return the JSON representation
      */
-    private def getJsonFromQdmFile(qdmXml) {
+    protected def getJsonFromQdmFile(qdmXml) {
         def qdmXmlFile = new InputStreamBody(IOUtils.toInputStream(qdmXml), "qdm.xml")
 
         def http = new HTTPBuilder(this.qdm2jsonServiceUrl + "/qdm2json")
@@ -74,9 +77,7 @@ class Qdm2Drools {
         log.info "Used Data Criteria Size: ${usedDataCriteria.size()}"
 
         json.data_criteria.each {
-            if(usedDataCriteria.contains(it.key)){
-                sb.append( printDataCriteria( it, measurementPeriod ) )
-            }
+            sb.append( printDataCriteria( it, measurementPeriod, json ) )
         }
 
         sb.append( printRuleFunctions(json) )
@@ -112,6 +113,7 @@ class Qdm2Drools {
         """
         import ${Set.name};
         import ${Date.name};
+        import ${Calendar.name};
         import ${PreconditionResult.name};
         import ${ResultCallback.name};
         import ${Patient.name};
@@ -120,6 +122,7 @@ class Qdm2Drools {
         import ${MeasurementValue.name};
         import ${DroolsUtil.name};
         import ${MeasurementPeriod.name};
+        import ${SpecificOccurrence.name};
         /*
             ID: ${qdm.id}
             Title: ${qdm.title}
@@ -138,26 +141,34 @@ class Qdm2Drools {
      * Print the start of a Population Criteria section (IPP, DENOM, etc).
      */
     private def printPopulationCriteria(populationCriteria, sb, usedDataCriteria){
-
         def name = populationCriteria.key
+
+        def salience
+        switch(name){
+            case "IPP": salience = "-1000"; break
+            case "DENOM": salience = "-1001"; break
+            case "DENEX": salience = "-1002"; break
+            case "NUMER": salience = "-1003"; break
+            default: salience = "-1004"; break
+        }
+
         sb.append("""
         /* Rule */
         rule "$name"
             dialect "mvel"
             no-loop
-            salience 1
+            salience $salience
 
         when
             \$p : Patient( )
             not ( PreconditionResult(id == "$name", patient == \$p) )
             ${switch(name){
                 case "DENOM": return """PreconditionResult(id == "IPP", patient == \$p)"""
-                case "NUMER": return """PreconditionResult(id == "DENOM", patient == \$p)"""
-                case "DENEX": return """
+                case "NUMER": return """
                                         PreconditionResult(id == "DENOM", patient == \$p)
-                                         and
-                                        not(PreconditionResult(id == "NUMER", patient == \$p))
+                                        not ( PreconditionResult(id == "DENEX", patient == \$p) )
                                      """
+                case "DENEX": return """PreconditionResult(id == "DENOM", patient == \$p)"""
                 default: ""
             }}
         """)
@@ -171,7 +182,7 @@ class Qdm2Drools {
             preconditions.eachWithIndex {
                 prcn, idx ->
                     def cnj = conjunctionToBoolean(prcn.conjunction_code)
-
+                    if(prcn.negation) sb.append("not(")
                     if(prcn.reference){
                         def dataCriteriaRef = prcn.reference
                         usedDataCriteria.add(dataCriteriaRef)
@@ -185,6 +196,7 @@ class Qdm2Drools {
                     if(idx != preconditions.size() -1) {
                         sb.append(" ${cnj} ")
                     }
+                    if(prcn.negation) sb.append(")")
             }
         }
         sb.append("""
@@ -213,7 +225,7 @@ class Qdm2Drools {
         rule "${prcn.id}"
             dialect "mvel"
             no-loop
-            salience 1
+            salience 0
 
         when
             \$p : Patient( )
@@ -233,7 +245,10 @@ class Qdm2Drools {
 
                         prcn.preconditions.eachWithIndex {
                             nestedPrc, idx ->
+
+                                if(nestedPrc.negation) sb.append("not(")
                                 sb.append(printPreconditionReference(nestedPrc.id))
+                                if(nestedPrc.negation) sb.append(") ")
 
                                 if(idx != prcn.preconditions.size() -1) {
                                     sb.append(" ${cnj} ")
@@ -262,23 +277,26 @@ class Qdm2Drools {
             """
     }
 
-    private def printDataCriteria(dataCriteria, measurementPeriod){
+    private def printDataCriteria(dataCriteria, measurementPeriod, measureJson){
         def name = dataCriteria.key
-        def criteria = criteriaFactory.getCriteria(dataCriteria.value, measurementPeriod)
+        def criteria = criteriaFactory.getCriteria(dataCriteria.value, measurementPeriod, measureJson)
         def hasEventList = criteria.hasEventList()
+        def negated = dataCriteria.value.negation
+        def specificOccurrence = dataCriteria.value.specific_occurrence
 
         """
         /* Rule */
         rule "${name}"
             dialect "mvel"
             no-loop
-            salience -1
+            salience 0
 
         when
-            \$p : Patient ${criteriaFactory.getCriteria(dataCriteria.value, measurementPeriod).toDrools()}
+            \$p : Patient ${hasEventList ? "()" : "("} ${criteria.toDrools()} ${hasEventList ? "" : ")"}
 
         then
-            insert(new PreconditionResult("${name}", \$p ${hasEventList ? ",\$events" : ""}))
+            insert(new PreconditionResult("${name}", \$p ${hasEventList && !negated ? ",\$event" : ""}))
+            //insert(new SpecificOccurrence("\$event", \$p ${hasEventList && !negated ? ",\$event" : ""}))
         end
         """
     }

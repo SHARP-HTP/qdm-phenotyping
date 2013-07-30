@@ -11,80 +11,95 @@ import org.joda.time.DateTime
 @Log4j
 class TemporalProcessor {
 
-    def processTemporalReferences(temporalReferences, measurementPeriod, startProperty="startDate", endProperty="endDate"){
-        temporalReferences.collect(processTemporalReference.rcurry(measurementPeriod, startProperty, endProperty)).join(" and ")
+    class TemporalResult{
+        String variables
+        String criteria
     }
 
-    def processTemporalReference = {temporalReference, measurementPeriod, startProperty, endProperty ->
+    def processTemporalReferences(temporalReferences, measurementPeriod, measureJson, startProperty="startDate", endProperty="endDate"){
+        def result = temporalReferences.collect(processTemporalReference.rcurry(measurementPeriod, measureJson, startProperty, endProperty))
+
+        new TemporalResult(
+            variables: result.inject('') { str, element -> str + (element.variables ?: '') },
+            criteria: result.inject('') { str, element -> str + (element.criteria ?: '') }
+        )
+    }
+
+    def processTemporalReference = {temporalReference, measurementPeriod, measureJson, startProperty, endProperty ->
         def type = temporalReference.type
 
         if(this.hasProperty(type)){
-            this."$type"(temporalReference, startProperty, endProperty, measurementPeriod)
+            this."$type"(temporalReference, startProperty, endProperty, measurementPeriod, measureJson)
         } else {
             throw new RuntimeException("Temporal Reference Type `$type` not recognized\n. JSON ->  $temporalReference")
         }
     }
 
-    def DURING = {temporalReference, startProperty, endProperty, measurementPeriod ->
-        def start = SAS(temporalReference, startProperty, endProperty, measurementPeriod)
-        def end = EBE(temporalReference, startProperty, endProperty, measurementPeriod)
+    def DURING = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
+        def start = SAS(temporalReference, startProperty, endProperty, measurementPeriod, measureJson)
+        def end = EBE(temporalReference, startProperty, endProperty, measurementPeriod, measureJson)
 
+        return new TemporalResult(
+                variables: start.variables,
+                criteria:
         """
-        $start,
-        $end
+        $start.criteria,
+        $end.criteria
+        """)
+    }
+
+    def SDU = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
+        def startAfterStart = SAS(temporalReference, startProperty, endProperty, measurementPeriod, measureJson)
+        def startBeforeEnd = SBE(temporalReference, startProperty, endProperty, measurementPeriod, measureJson)
+
+        return new TemporalResult(
+                variables: startAfterStart.variables,
+                criteria:
         """
+        $startAfterStart.criteria,
+        $startBeforeEnd.criteria
+        """)
     }
 
-    def SDU = {temporalReference, startProperty, endProperty, measurementPeriod ->
-        def startAfterStart = SAS(temporalReference, startProperty, endProperty, measurementPeriod)
-        def startBeforeEnd = SBE(temporalReference, startProperty, endProperty, measurementPeriod)
-
-        """
-        $startAfterStart,
-        $startBeforeEnd
-        """
+    def EAE = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
+        return this.temporalReference(temporalReference, endProperty, measurementPeriod, measureJson, EndOrStart.END, BeforeOrAfter.AFTER)
     }
 
-    def EAE = {temporalReference, startProperty, endProperty, measurementPeriod ->
-        return this.temporalReference(temporalReference, endProperty, measurementPeriod, EndOrStart.END, BeforeOrAfter.AFTER)
+    def EBE = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
+        return this.temporalReference(temporalReference, endProperty, measurementPeriod, measureJson, EndOrStart.END, BeforeOrAfter.BEFORE)
     }
 
-    def EBE = {temporalReference, startProperty, endProperty, measurementPeriod ->
-        return this.temporalReference(temporalReference, endProperty, measurementPeriod, EndOrStart.END, BeforeOrAfter.BEFORE)
+    def EBS = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
+        return this.temporalReference(temporalReference, endProperty, measurementPeriod, measureJson, EndOrStart.START, BeforeOrAfter.BEFORE)
     }
 
-    def EBS = {temporalReference, startProperty, endProperty, measurementPeriod ->
-        return this.temporalReference(temporalReference, endProperty, measurementPeriod, EndOrStart.START, BeforeOrAfter.BEFORE)
+    def EAS = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
+        return this.temporalReference(temporalReference, endProperty, measurementPeriod, measureJson, EndOrStart.START, BeforeOrAfter.AFTER)
     }
 
-    def EAS = {temporalReference, startProperty, endProperty, measurementPeriod ->
-        return this.temporalReference(temporalReference, endProperty, measurementPeriod, EndOrStart.START, BeforeOrAfter.AFTER)
+    def SAS = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
+        return this.temporalReference(temporalReference, startProperty, measurementPeriod, measureJson, EndOrStart.START, BeforeOrAfter.AFTER)
     }
 
-    def SAS = {temporalReference, startProperty, endProperty, measurementPeriod ->
-        return this.temporalReference(temporalReference, startProperty, measurementPeriod, EndOrStart.START, BeforeOrAfter.AFTER)
+    def SAE = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
+        return this.temporalReference(temporalReference, startProperty, measurementPeriod, measureJson, EndOrStart.END, BeforeOrAfter.AFTER)
     }
 
-    def SAE = {temporalReference, startProperty, endProperty, measurementPeriod ->
-        return this.temporalReference(temporalReference, startProperty, measurementPeriod, EndOrStart.END, BeforeOrAfter.AFTER)
+    def SBS = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
+        return this.temporalReference(temporalReference, startProperty, measurementPeriod, measureJson, EndOrStart.START, BeforeOrAfter.BEFORE)
     }
 
-    def SBS = {temporalReference, startProperty, endProperty, measurementPeriod ->
-        return this.temporalReference(temporalReference, startProperty, measurementPeriod, EndOrStart.START, BeforeOrAfter.BEFORE)
-    }
-
-    def SBE = {temporalReference, startProperty, endProperty, measurementPeriod ->
-        return this.temporalReference(temporalReference, startProperty, measurementPeriod, EndOrStart.END, BeforeOrAfter.BEFORE)
+    def SBE = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
+        return this.temporalReference(temporalReference, startProperty, measurementPeriod, measureJson, EndOrStart.END, BeforeOrAfter.BEFORE)
     }
 
     enum EndOrStart {END,START}
     enum BeforeOrAfter {BEFORE,AFTER}
 
-    def temporalReference(temporalReference, property, measurementPeriod, EndOrStart endOrStart, BeforeOrAfter beforeOrAfter){
+    def temporalReference(temporalReference, property, measurementPeriod, measureJson, EndOrStart endOrStart, BeforeOrAfter beforeOrAfter){
         def reference = temporalReference.reference
 
         if(reference == "MeasurePeriod"){
-
             def sb = new StringBuilder()
 
             def time
@@ -109,6 +124,7 @@ class TemporalProcessor {
                         lowOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '<=' : '<'}
                         minusOrPlusFn = "minus"
                         break
+
                     case BeforeOrAfter.AFTER:
                         lowOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '>=' : '>'}
                         highOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '<=' : '<'}
@@ -120,7 +136,7 @@ class TemporalProcessor {
                     def unit = getUnit(range.high.unit)
                     sb.append """
                         ${property} != null,
-                        toDays(${property}) ${highOp(range.high)} toDays(new Date('${time."$minusOrPlusFn$unit"(Integer.parseInt(range.high.value)).toString(DroolsDateFormat.PATTERN)}'))
+                        toDays(${property}) ${highOp(range.high)} toDays(new Date('${time."$minusOrPlusFn$unit"(Integer.parseInt(range.high.value)).toString(DroolsDateFormat.PATTERN)}')),
                         """
                 }
                 if(range.low){
@@ -129,30 +145,91 @@ class TemporalProcessor {
                         ${property} != null,
                         toDays(${property}) ${lowOp(range.low)} toDays(new Date('${time."$minusOrPlusFn$unit"(Integer.parseInt(range.low.value)).toString(DroolsDateFormat.PATTERN)}'))
                         """
+                } else {
+                    def op = getOperator(beforeOrAfter)
+                    sb.append("""$property $op "${time.toString(DroolsDateFormat.PATTERN)}"\n""")
                 }
             } else {
-                def op
-                switch (beforeOrAfter){
-                    case BeforeOrAfter.BEFORE:
-                        op = "<"
-                        break
-                    case BeforeOrAfter.AFTER:
-                        op = ">"
-                        break
-                }
+                def op = getOperator(beforeOrAfter)
+
                 sb.append """
                         ${property} != null,
                         toDays(${property}) $op toDays(new Date('${time.toString(DroolsDateFormat.PATTERN)}'))
                         """
             }
 
-            return sb.toString()
+            return new TemporalResult(criteria: sb.toString())
+        } else {
+            def sb = new StringBuffer()
+
+            def targetProperty;
+            switch (endOrStart){
+                case EndOrStart.START:
+                    targetProperty = "startDate"
+                    break
+                case EndOrStart.END:
+                    targetProperty = "endDate"
+                    break
+            }
+
+            if(temporalReference.range){
+                def range = temporalReference.range
+
+                def highOp
+                def lowOp
+                def minusOrPlus
+                switch (beforeOrAfter){
+                    case BeforeOrAfter.BEFORE:
+                        highOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '>=' : '>'}
+                        lowOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '<=' : '<'}
+                        minusOrPlus = "-"
+                        break
+
+                    case BeforeOrAfter.AFTER:
+                        lowOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '>=' : '>'}
+                        highOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '<=' : '<'}
+                        minusOrPlus = ""
+                        break
+                }
+
+                if(range.high){
+                    def calendarType = toCalendarType(range.high.unit)
+                    sb.append("toDays($property) ${highOp(range.high)} toDays(droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${range.high.value})),\n")
+                }
+                if(range.low){
+                    def calendarType = toCalendarType(range.low.unit)
+                    sb.append("toDays($property) ${lowOp(range.low)} toDays(droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${range.low.value}))\n")
+                } else {
+                    def op = getOperator(beforeOrAfter)
+                    sb.append("$property $op \$${temporalReference.reference}.event.$targetProperty\n")
+                }
+            } else {
+                def op = getOperator(beforeOrAfter)
+                sb.append("toDays($property) $op toDays(\$${temporalReference.reference}.event.$targetProperty)")
+            }
+
+            return new TemporalResult(
+                    variables: """\$${temporalReference.reference} : PreconditionResult(id == "${temporalReference.reference}", patient == \$p)""",
+                    criteria:
+            """
+            \$${temporalReference.reference}.event != null,
+            ${sb.toString()}
+            """)
+        }
+    }
+
+    def getOperator(beforeOrAfter){
+        def op
+        switch (beforeOrAfter){
+            case BeforeOrAfter.BEFORE:
+                op = "<="
+                break
+            case BeforeOrAfter.AFTER:
+                op = ">="
+                break
         }
 
-        //TODO: Need to be able to handle non Measurement Period temporal references.
-        log.warn("Non-measurement period: " + temporalReference.toString())
-
-        "/* TODO Non-measurement peroid */ true "
+        op
     }
 
     def getUnit(unit){
@@ -160,6 +237,15 @@ class TemporalProcessor {
             case "a" : return "Years"
             case "mo" : return "Months"
             case "d" : return "Days"
+            default: throw new UnsupportedOperationException("Unit: $unit is not recognized.")
+        }
+    }
+
+    def toCalendarType(unit){
+        switch (unit){
+            case "a" : return "YEAR"
+            case "mo" : return "MONTH"
+            case "d" : return "DATE"
             default: throw new UnsupportedOperationException("Unit: $unit is not recognized.")
         }
     }

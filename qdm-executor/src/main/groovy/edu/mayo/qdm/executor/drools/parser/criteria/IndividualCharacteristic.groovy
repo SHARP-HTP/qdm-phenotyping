@@ -44,7 +44,7 @@ class IndividualCharacteristic implements Criteria {
     }
 
     def handleGenericPatientCharacteristic(json){
-        "/*TODO - Generic Patient Characteristic.*/"
+        "/*TODO - Generic Patient Characteristic.*/ eval(true) "
     }
 
     def birthtime = { json, measurementPeriod ->
@@ -53,13 +53,14 @@ class IndividualCharacteristic implements Criteria {
                 measurementPeriod,
                 "birthdate",
                 "birthdate"
-        )
+        ).criteria
     }
 
     def gender = { json, measurementPeriod ->
         def genderValueSet = json.code_list_id
 
         switch (genderValueSet){
+            case "2.16.840.1.113762.1.4.1": return "true"
             case "2.16.840.1.113883.3.560.100.2": return "\$p.sex == ${Gender.name}.FEMALE"
             case "2.16.840.1.113883.3.560.100.1": return "\$p.sex == ${Gender.name}.MALE"
             default: throw new RuntimeException("Cannot determine Gender for JSON -> $json")
@@ -67,7 +68,7 @@ class IndividualCharacteristic implements Criteria {
     }
 
     def race = { json, measurementPeriod ->
-        throw new RuntimeException(json.toString())
+        "eval(true)"
     }
 
     def ethnicity = { json, measurementPeriod ->
@@ -88,7 +89,7 @@ class IndividualCharacteristic implements Criteria {
 
     @Override
     def toDrools() {
-        """( $resultString )"""
+        resultString
     }
 
     @Override

@@ -24,16 +24,13 @@
 package edu.mayo.qdm.executor.drools;
 
 
-import edu.mayo.qdm.executor.drools.parser.criteria.Interval;
-import edu.mayo.qdm.patient.CodedEntry;
-import edu.mayo.qdm.patient.PhysicalExamFinding;
 import edu.mayo.qdm.executor.valueset.ValueSetCodeResolver;
+import edu.mayo.qdm.patient.CodedEntry;
+import edu.mayo.qdm.patient.Event;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 /**
  * The Class DroolsUtil.
@@ -66,17 +63,54 @@ public final class DroolsUtil {
         return returnList;
     }
 
-    public Collection<PhysicalExamFinding>
-        findMatches(String valueSetOid, Iterable<PhysicalExamFinding> codedEntries, Interval interval){
-        List<PhysicalExamFinding> returnList = new ArrayList<PhysicalExamFinding>();
-        for(PhysicalExamFinding finding : this.findMatches(valueSetOid, codedEntries)){
+    public Collection<Event> combine(List<PreconditionResult> results){
+        List<Event> returnList = new ArrayList<Event>();
 
-            if(interval.satisfied(finding.getValue())){
-                returnList.add(finding);
-            }
+        for(PreconditionResult result : results){
+           // returnList.addAll(result.getTemporalEvents());
         }
 
         return returnList;
     }
 
+    public Calendar getCalendar(Date date){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+
+        return calendar;
+    }
+
+    public Date add(Calendar calendar, int unit, int value){
+        calendar.add(unit, value);
+
+        return calendar.getTime();
+    }
+/*
+    public Collection<Event> combine(SpecificOccurrence o, Set<Event> e){
+        if(o.getOccurrences() == null){
+            return e;
+        } else {
+            Set<Event> events = new HashSet<Event>();
+            events.addAll(e);
+            events.retainAll(o.getOccurrences());
+            return events;
+        }
+    }
+
+
+    public <T extends Event> T mostRecent(Iterable <T> codedEntries){
+        T mostRecent = null;
+        for(T entry : codedEntries){
+            if(mostRecent == null || mostRecent.getStartDate().after(entry.getStartDate())){
+                mostRecent = entry;
+            }
+        }
+
+        return (T) new Lab(null, null, new Date(), new Date());
+    }
+
+    public void intersect(List<Event> list, SpecificOccurrence occurs) {
+        occurs.getOccurrences().retainAll(list);
+    }
+    */
 }

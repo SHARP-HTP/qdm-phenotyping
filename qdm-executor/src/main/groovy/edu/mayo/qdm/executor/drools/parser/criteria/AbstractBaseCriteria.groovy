@@ -9,6 +9,7 @@ import org.springframework.util.Assert
 abstract class AbstractBaseCriteria implements Criteria {
     def temporalProcessor = new TemporalProcessor()
 
+    def measureJson
     def json
     def valueSetCodeResolver
     def measurementPeriod
@@ -22,10 +23,11 @@ abstract class AbstractBaseCriteria implements Criteria {
 
         def valueSetOid = json.code_list_id
 
-        def references = temporalProcessor.processTemporalReferences(json.temporal_references, measurementPeriod)
+        def references = temporalProcessor.processTemporalReferences(json.temporal_references, measurementPeriod, measureJson)
 
-        """( )
-        \$events : Set( size > 0 ) from collect( edu.mayo.qdm.patient.$name($references) from droolsUtil.findMatches("$valueSetOid", \$p.get${pluralName}()))
+        """
+        ${references.variables}
+        \$event : edu.mayo.qdm.patient.$name($references.criteria) from droolsUtil.findMatches("$valueSetOid", \$p.get${pluralName}())
         """
     }
 

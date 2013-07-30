@@ -4,13 +4,14 @@ import edu.mayo.qdm.executor.drools.DroolsExecutor
 import edu.mayo.qdm.executor.drools.cypress.AbstractAllCypressMeasuresTestIT
 import org.apache.commons.io.IOUtils
 import org.joda.time.DateTime
+import org.junit.Ignore
 import org.junit.Test
 import org.springframework.beans.factory.annotation.Autowired
 
 import static org.junit.Assert.assertEquals
-
 /**
  */
+@Ignore
 class CypressValidationTestIT extends AbstractAllCypressMeasuresTestIT {
 
     @Autowired

@@ -29,14 +29,16 @@ class TemporalProcessorTest {
                     ]
                 ]
 
-        def ivl = proc.processTemporalReference(temporalReferences, MeasurementPeriod.getCalendarYear(new Date()), "birthdate", "birthdate")
+        def ivl = proc.processTemporalReference(temporalReferences, MeasurementPeriod.getCalendarYear(new Date()), null, "birthdate", "birthdate")
 
-        assertEquals "birthdate <= '01-Jan-1948'".trim(), ivl.trim()
+        println ivl.criteria
+
+        assertTrue ivl.criteria.contains("toDays(birthdate) <= toDays(new Date('01-Jan-1948'))")
 
     }
 
     @Test
-    void testLowAndHigh(){
+    void testLowAndHighSBS(){
         def proc = new TemporalProcessor()
 
         def temporalReferences =
@@ -48,25 +50,193 @@ class TemporalProcessorTest {
                             low: [
                                     type: "PQ",
                                     unit: "a",
-                                    value: "65",
+                                    value: "18",
                                     "inclusive?": true,
                                     "derived?": false
                             ],
                             high: [
                                     type: "PQ",
                                     unit: "a",
-                                    value: "18",
+                                    value: "65",
                                     "inclusive?": false,
                                     "derived?": false
                             ]
                     ]
             ]
 
-        def ivl = proc.processTemporalReference(temporalReferences, MeasurementPeriod.getCalendarYear(new Date()), "birthdate", "birthdate")
+        def ivl = proc.processTemporalReference(temporalReferences, MeasurementPeriod.getCalendarYear(new Date()), null, "birthdate", "birthdate")
 
+        println ivl.criteria
 
-        assertTrue ivl.contains("birthdate > '01-Jan-1995'")
-        assertTrue ivl.contains("birthdate <= '01-Jan-1948'")
+        assertTrue ivl.criteria.contains("toDays(birthdate) > toDays(new Date('01-Jan-1948'))")
+        assertTrue ivl.criteria.contains("toDays(birthdate) <= toDays(new Date('01-Jan-1995'))")
 
+    }
+
+    @Test
+    void testLowAndHighEBE(){
+        def proc = new TemporalProcessor()
+
+        def temporalReferences =
+            [
+                    type: "EBE",
+                    reference: "MeasurePeriod",
+                    range: [
+                            type: "IVL_PQ",
+                            high: [
+                                    type: "PQ",
+                                    unit: "mo",
+                                    value: "24",
+                                    "inclusive?": true,
+                                    "derived?": false
+                            ],
+                            low: [
+                                    type: "PQ",
+                                    unit: "mo",
+                                    value: "12",
+                                    "inclusive?": true,
+                                    "derived?": false
+                            ]
+                    ]
+            ]
+
+        def ivl = proc.processTemporalReference(temporalReferences, MeasurementPeriod.getCalendarYear(new Date()), null, "start", "end")
+
+        println ivl.criteria
+
+        assertTrue ivl.criteria.contains("toDays(end) >= toDays(new Date('31-Dec-2011'))")
+        assertTrue ivl.criteria.contains("toDays(end) <= toDays(new Date('31-Dec-2012'))")
+    }
+
+    @Test
+    void testLowAndHighEAE(){
+        def proc = new TemporalProcessor()
+
+        def temporalReferences =
+            [
+                    type: "EAE",
+                    reference: "MeasurePeriod",
+                    range: [
+                            type: "IVL_PQ",
+                            high: [
+                                    type: "PQ",
+                                    unit: "mo",
+                                    value: "24",
+                                    "inclusive?": true,
+                                    "derived?": false
+                            ],
+                            low: [
+                                    type: "PQ",
+                                    unit: "mo",
+                                    value: "12",
+                                    "inclusive?": true,
+                                    "derived?": false
+                            ]
+                    ]
+            ]
+
+        def ivl = proc.processTemporalReference(temporalReferences, MeasurementPeriod.getCalendarYear(new Date()), null, "start", "end")
+
+        println ivl.criteria
+
+        assertTrue ivl.criteria.contains("toDays(end) >= toDays(new Date('31-Dec-2014'))")
+        assertTrue ivl.criteria.contains("toDays(end) <= toDays(new Date('31-Dec-2015'))")
+    }
+
+    @Test
+    void testHighEBE(){
+        def proc = new TemporalProcessor()
+
+        def temporalReferences =
+            [
+                    type: "EBE",
+                    reference: "MeasurePeriod",
+                    range: [
+                            type: "IVL_PQ",
+                            high: [
+                                    type: "PQ",
+                                    unit: "a",
+                                    value: "2",
+                                    "inclusive?": true,
+                                    "derived?": false
+                            ]
+                    ]
+            ]
+
+        def ivl = proc.processTemporalReference(temporalReferences, MeasurementPeriod.getCalendarYear(new Date()), null, "start", "end")
+
+        println ivl.criteria
+
+        assertTrue ivl.criteria.contains("toDays(end) >= toDays(new Date('31-Dec-2011'))")
+    }
+
+    @Test
+    void testLowAndHighSAE(){
+        def proc = new TemporalProcessor()
+
+        def temporalReferences =
+            [
+                    type: "SAE",
+                    reference: "MeasurePeriod",
+                    range: [
+                            type: "IVL_PQ",
+                            high: [
+                                    type: "PQ",
+                                    unit: "mo",
+                                    value: "24",
+                                    "inclusive?": true,
+                                    "derived?": false
+                            ],
+                            low: [
+                                    type: "PQ",
+                                    unit: "mo",
+                                    value: "12",
+                                    "inclusive?": true,
+                                    "derived?": false
+                            ]
+                    ]
+            ]
+
+        def ivl = proc.processTemporalReference(temporalReferences, MeasurementPeriod.getCalendarYear(new Date()), null, "start", "end")
+
+        println ivl.criteria
+
+        assertTrue ivl.criteria.contains("toDays(start) >= toDays(new Date('31-Dec-2014'))")
+        assertTrue ivl.criteria.contains("toDays(start) <= toDays(new Date('31-Dec-2015'))")
+    }
+
+    @Test
+    void testLowAndHighNonMeasurementPeriodSAE(){
+        def proc = new TemporalProcessor()
+
+        def temporalReferences =
+            [
+                    type: "SAE",
+                    reference: "some_other_event",
+                    range: [
+                            type: "IVL_PQ",
+                            high: [
+                                    type: "PQ",
+                                    unit: "mo",
+                                    value: "24",
+                                    "inclusive?": true,
+                                    "derived?": false
+                            ],
+                            low: [
+                                    type: "PQ",
+                                    unit: "mo",
+                                    value: "12",
+                                    "inclusive?": true,
+                                    "derived?": false
+                            ]
+                    ]
+            ]
+
+        def ivl = proc.processTemporalReference(temporalReferences, MeasurementPeriod.getCalendarYear(new Date()), null, "start", "end")
+
+        println ivl.criteria
+
+        assertTrue ivl.criteria.contains("toDays(start) <= toDays(droolsUtil.add(droolsUtil.getCalendar(\$some_other_event.event.endDate), Calendar.MONTH, 24))")
+        assertTrue ivl.criteria.contains("toDays(start) >= toDays(droolsUtil.add(droolsUtil.getCalendar(\$some_other_event.event.endDate), Calendar.MONTH, 12))")
     }
 }

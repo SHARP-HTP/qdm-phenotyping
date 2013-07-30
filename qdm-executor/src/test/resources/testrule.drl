@@ -1,44 +1,78 @@
 import edu.mayo.qdm.executor.drools.PreconditionResult;
-import edu.mayo.qdm.patient.Patient;
+
+import edu.mayo.qdm.patient.*;
 import java.util.List;
-import edu.mayo.qdm.executor.drools.DroolsUtil;
+import edu.mayo.qdm.executor.drools.DroolsUtil
+import java.util.Iterator;
+import edu.mayo.qdm.executor.drools.SpecificOccurrence
+import java.util.Calendar;
 
 global DroolsUtil droolsUtil
 
-rule "Precondition #3"
+rule "2"
       dialect "mvel"
+      no-loop
+      salience -1
   when
-      PreconditionResult( id == "Precondition #2" )
+
+    $p : Patient( birthdate >= "01-Jan-1980")
+
+    $lab : Lab (
+        startDate.time + 2 < new java.util.Date("01-Jan-2000").time
+    ) from $p.labs
+
   then
-      insert(new PreconditionResult("Precondition #3", null))
+      insert( new PreconditionResult("2", $p, $lab))
+      System.out.println("Rule 2");
 
 end
 
-rule "Precondition #1"
+rule "3"
       dialect "mvel"
+      no-loop
+      salience -1
   when
-      $p : Patient()
-      $l : List(size > 0)  from collect( edu.mayo.qdm.patient.Lab( startDate > "01-Jan-1980" ) from $p.getLabs() )
+
+    $p : Patient( birthdate >= "01-Jan-1980")
+
+    $r : PreconditionResult(id == "2", patient == $p)
+    $lab : Lab(
+        endDate > "01-Jan-3000",
+        this == $r.event
+    ) from $p.labs
+
   then
-      System.out.println($l);
-      insert(new PreconditionResult("Precondition #1", $p))
+      insert( new PreconditionResult("3", $p, $lab))
+      System.out.println("Rule 3");
 
 end
 
-rule "Precondition #2"
+rule "4"
       dialect "mvel"
+      no-loop
+      salience -1
   when
-      $p : Patient ()
+    $p : Patient( birthdate >= "01-Jan-1980")
+
+    $r : PreconditionResult(id == "4", patient == $p)
+
+    $lab : Lab(
+        this == $r.event,
+        startDate < "01-Jan-2000"
+    ) from $p.labs
+
   then
-	  insert(new PreconditionResult("Precondition #2", $p))
+      System.out.println("Rule 4");
+
 end
 
-rule "Initial Patient Population"
+rule "TEST 1"
       dialect "mvel"
+      no-loop
   when
-    Patient( birthdate >= "01-Jan-1980")
+    $p : Patient()
 
   then
-      System.out.println("hi!!!");
+      System.out.println("HERE!!!!!");
 
 end

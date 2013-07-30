@@ -7,25 +7,21 @@ import java.util.Date;
 /**
  * @author Herman and Darin IHC
  */
-public class Medication extends CodedEntry {
+public class Medication extends Event {
     private static Logger logger = Logger.getLogger(Medication.class);
 
     private double value;
     private String units;
-    private Date startDate;
-    private Date endDate;
 
     /*
      * For JSON only
      */
     private Medication() {
-        super(null);
+        super(null,null,null);
     }
 
     public Medication(Concept concept, Date startDate, Date endDate) {
-        super(concept);
-        this.startDate = startDate;
-        this.endDate = endDate;
+        super(concept, startDate, endDate);
     }
 
     public double getValue() {
@@ -42,22 +38,6 @@ public class Medication extends CodedEntry {
 
     public void setUnits(String units) {
         this.units = units;
-    }
-
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
     }
 
     public String toString() {

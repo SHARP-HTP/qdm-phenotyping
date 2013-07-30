@@ -19,6 +19,10 @@ public class Lab extends Event {
         super(null,null,null);
     }
 
+    public Lab(Concept concept, Value value, Date date) {
+        super(concept, date);
+    }
+
     public Lab(Concept concept, Value value, Date startDate, Date endDate) {
         super(concept, startDate, endDate);
         this.value = value;

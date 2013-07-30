@@ -10,9 +10,6 @@ import java.util.Date;
 public class Diagnosis extends Event {
     private static Logger logger = Logger.getLogger(Diagnosis.class);
 
-    private Date startingDate;
-    private Date endDate;
-
     /*
      * For JSON only
      */

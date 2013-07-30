@@ -1,10 +1,10 @@
 package test;
 
 import edu.mayo.qdm.executor.drools.DroolsUtil;
+import edu.mayo.qdm.executor.valueset.ValueSetCodeResolver;
 import edu.mayo.qdm.patient.Concept;
 import edu.mayo.qdm.patient.Lab;
 import edu.mayo.qdm.patient.Patient;
-import edu.mayo.qdm.executor.valueset.ValueSetCodeResolver;
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
 import org.drools.builder.KnowledgeBuilder;
@@ -18,7 +18,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Collection;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -62,15 +61,16 @@ public class TestQdmRules {
         }));
 		
 		Patient p1 = new Patient("1");
-        p1.addLab(new Lab(null,null,new Date(),new Date()));
-        p1.addLab(new Lab(null,null,new Date(),new Date()));
+        p1.addLab(new Lab(null,null,new DateTime(1980,1,1,0,0).toDate(),new DateTime(4000,1,1,0,0).toDate()));
+        p1.addLab(new Lab(null,null,new DateTime(3000,1,1,0,0).toDate(),new DateTime(4000,1,1,0,0).toDate()));
+        p1.addLab(new Lab(null,null,new DateTime(1980,1,1,0,0).toDate(),new DateTime(1980,1,1,0,0).toDate()));
 
 		p1.setBirthdate(new DateTime(1980,1,1,0,0).toDate());
         Patient p2 = new Patient("2");
         p2.setBirthdate(new DateTime(2000, 10, 10, 10, 10).toDate());
 		
 		ksession.insert(p1);
-        ksession.insert(p2);
+        //ksession.insert(p2);
 		
 		ksession.fireAllRules();
 	}

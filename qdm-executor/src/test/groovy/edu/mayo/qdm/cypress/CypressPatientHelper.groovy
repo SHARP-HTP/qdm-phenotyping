@@ -42,9 +42,22 @@ class CypressPatientHelper {
             def code = procedure.codes.iterator().next()
             def oid = procedure.oid
 
-            if(oid == "2.16.840.1.113883.3.560.1.18"){
-                def value = procedure.values?.iterator().next()
+            if(oid == "2.16.840.1.113883.3.560.1.11"
+                    || oid == "2.16.840.1.113883.3.560.1.21"){
+                def value = procedure.values?.iterator()?.next()
+                def val = value?.scalar != null ? new Value(value.scalar, value.unit) : null;
 
+                patient.addLab(
+                        new Lab(
+                                new Concept(code.value[0], code.key, null),
+                                val,
+                                toDate(procedure.start_time),
+                                toDate(procedure.end_time)))
+            } else if(oid == "2.16.840.1.113883.3.560.1.21"){
+                patient.addRiskCategoryAssessment(
+                        new RiskCategoryAssessment(new Concept(code.value[0], code.key, null), toDate(procedure.start_time), toDate(procedure.end_time)))
+            } else if(oid == "2.16.840.1.113883.3.560.1.18"){
+                def value = procedure.values?.iterator().next()
                 def val = value.scalar != null ? new Value(value.scalar, value.unit) : null;
 
                 patient.addPhysicalExamFinding(

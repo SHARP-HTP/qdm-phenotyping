@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 @Ignore
-public class DroolsExecutorCompileTestIT extends AbstractAllMeasuresTestIT {
+public class DroolsExecutorCompileTestIT extends AbstractAllMeasuresTestITBase {
 
     public DroolsExecutorCompileTestIT(XmlStream xml) {
         super(xml);

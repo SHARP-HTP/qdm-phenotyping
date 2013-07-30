@@ -22,7 +22,7 @@ import java.util.zip.ZipInputStream;
 
 @RunWith(Parameterized.class)
 @ContextConfiguration("classpath:/qdm-executor-context.xml")
-public class AbstractAllMeasuresTestIT {
+public class AbstractAllMeasuresTestITBase {
 
 	@Autowired
 	protected DroolsExecutor executor;
@@ -34,7 +34,7 @@ public class AbstractAllMeasuresTestIT {
         protected String name;
 	}
 
-	public AbstractAllMeasuresTestIT(XmlStream xml){
+	public AbstractAllMeasuresTestITBase(XmlStream xml){
 		super();
 		this.xml = xml;
 	}
