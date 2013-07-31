@@ -1,0 +1,1056 @@
+     import java.util.Set;
+        import java.util.Date;
+        import java.util.Calendar;
+        import edu.mayo.qdm.executor.drools.PreconditionResult;
+        import edu.mayo.qdm.executor.ResultCallback;
+        import edu.mayo.qdm.patient.Patient;
+        import edu.mayo.qdm.patient.Concept;
+        import edu.mayo.qdm.executor.drools.parser.criteria.Interval;
+        import edu.mayo.qdm.executor.drools.parser.criteria.MeasurementValue;
+        import edu.mayo.qdm.executor.drools.DroolsUtil;
+        import edu.mayo.qdm.executor.MeasurementPeriod;
+        import edu.mayo.qdm.executor.drools.SpecificOccurrence2;
+        /*
+            ID: 0069
+            Title: Appropriate Treatment for Children with Upper Respiratory Infection (URI)
+            Description: Percentage of children 3 months-18 years of age who were diagnosed with upper respiratory infection (URI) and were not dispensed an antibiotic prescription on or three days after the episode.
+            HQMF Version: 1
+            CMS ID: CMS154v1
+        */
+
+        global ResultCallback resultCallback
+        global DroolsUtil droolsUtil
+        global MeasurementPeriod measurementPeriod
+
+        /* Rule */
+        rule "IPP"
+            dialect "mvel"
+            no-loop
+            salience -1000
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "IPP", patient == $p) )
+
+
+            PreconditionResult( id == "48", patient == $p )
+
+        then
+            insert(new PreconditionResult("IPP", $p))
+            resultCallback.hit("IPP", $p);
+        end
+
+        /* Rule */
+        rule "48"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "48", patient == $p) )
+
+            PreconditionResult( id == "12", patient == $p )
+             and
+            PreconditionResult( id == "14", patient == $p )
+             and
+            PreconditionResult( id == "46", patient == $p )
+
+        then
+            insert(new PreconditionResult("48", $p))
+        end
+
+
+        /* Rule */
+        rule "12"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "12", patient == $p) )
+
+            PreconditionResult( id == "PatientCharacteristicBirthdateBirthDate_precondition_12", patient == $p )
+
+        then
+            insert(new PreconditionResult("12", $p))
+        end
+
+
+        /* Rule */
+        rule "14"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "14", patient == $p) )
+
+            PreconditionResult( id == "PatientCharacteristicBirthdateBirthDate_precondition_14", patient == $p )
+
+        then
+            insert(new PreconditionResult("14", $p))
+        end
+
+
+        /* Rule */
+        rule "46"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "46", patient == $p) )
+
+            PreconditionResult( id == "29", patient == $p )
+             or
+            PreconditionResult( id == "43", patient == $p )
+
+        then
+            insert(new PreconditionResult("46", $p))
+        end
+
+
+        /* Rule */
+        rule "29"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "29", patient == $p) )
+
+            PreconditionResult( id == "OccurrenceAUpperRespiratoryInfection1_precondition_29", patient == $p )
+
+        then
+            insert(new PreconditionResult("29", $p))
+        end
+
+
+        /* Rule */
+        rule "43"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "43", patient == $p) )
+
+            PreconditionResult( id == "31", patient == $p )
+             or
+            PreconditionResult( id == "33", patient == $p )
+             or
+            PreconditionResult( id == "35", patient == $p )
+             or
+            PreconditionResult( id == "37", patient == $p )
+             or
+            PreconditionResult( id == "39", patient == $p )
+             or
+            PreconditionResult( id == "41", patient == $p )
+
+        then
+            insert(new PreconditionResult("43", $p))
+        end
+
+
+        /* Rule */
+        rule "31"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "31", patient == $p) )
+
+            PreconditionResult( id == "EncounterPerformedOfficeVisit_precondition_31", patient == $p )
+
+        then
+            insert(new PreconditionResult("31", $p))
+        end
+
+
+        /* Rule */
+        rule "33"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "33", patient == $p) )
+
+            PreconditionResult( id == "EncounterPerformedEmergencyDepartmentVisit_precondition_33", patient == $p )
+
+        then
+            insert(new PreconditionResult("33", $p))
+        end
+
+
+        /* Rule */
+        rule "35"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "35", patient == $p) )
+
+            PreconditionResult( id == "EncounterPerformedPreventiveCareInitialOfficeVisit0To17_precondition_35", patient == $p )
+
+        then
+            insert(new PreconditionResult("35", $p))
+        end
+
+
+        /* Rule */
+        rule "37"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "37", patient == $p) )
+
+            PreconditionResult( id == "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17_precondition_37", patient == $p )
+
+        then
+            insert(new PreconditionResult("37", $p))
+        end
+
+
+        /* Rule */
+        rule "39"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "39", patient == $p) )
+
+            PreconditionResult( id == "EncounterPerformedHospitalObservationCareInitial_precondition_39", patient == $p )
+
+        then
+            insert(new PreconditionResult("39", $p))
+        end
+
+
+        /* Rule */
+        rule "41"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "41", patient == $p) )
+
+            PreconditionResult( id == "EncounterPerformedFaceToFaceInteraction_precondition_41", patient == $p )
+
+        then
+            insert(new PreconditionResult("41", $p))
+        end
+
+
+        /* Rule */
+        rule "DENOM"
+            dialect "mvel"
+            no-loop
+            salience -1001
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "DENOM", patient == $p) )
+            PreconditionResult(id == "IPP", patient == $p)
+
+        then
+            insert(new PreconditionResult("DENOM", $p))
+            resultCallback.hit("DENOM", $p);
+        end
+
+        /* Rule */
+        rule "DENEX"
+            dialect "mvel"
+            no-loop
+            salience -1002
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "DENEX", patient == $p) )
+            PreconditionResult(id == "DENOM", patient == $p)
+
+            PreconditionResult( id == "8", patient == $p )
+
+        then
+            System.out.println("DENEX");
+            insert(new PreconditionResult("DENEX", $p))
+            resultCallback.hit("DENEX", $p);
+        end
+
+        /* Rule */
+        rule "8"
+            dialect "mvel"
+            no-loop
+            salience -888
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "8", patient == $p) )
+
+            PreconditionResult( id == "6", patient == $p )
+
+        then
+            insert(new PreconditionResult("8", $p))
+        end
+
+
+        /* Rule */
+        rule "6"
+            dialect "mvel"
+            no-loop
+            salience 888
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "6", patient == $p) )
+
+            PreconditionResult( id == "2", patient == $p )
+             or
+            PreconditionResult( id == "4", patient == $p )
+
+        then
+            insert(new PreconditionResult("6", $p))
+        end
+
+
+        /* Rule */
+        rule "2"
+            dialect "mvel"
+            no-loop
+            salience 888
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "2", patient == $p) )
+
+            PreconditionResult( id == "DiagnosisActiveCompetingConditionsForRespiratoryConditions_precondition_2", patient == $p )
+
+        then
+            insert(new PreconditionResult("2", $p))
+        end
+
+
+        /* Rule */
+        rule "4"
+            dialect "mvel"
+            no-loop
+            salience 888
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "4", patient == $p) )
+
+            PreconditionResult( id == "MedicationActiveAntibioticMedications_precondition_4", patient == $p )
+
+        then
+            insert(new PreconditionResult("4", $p))
+        end
+
+
+        /* Rule */
+        rule "NUMER"
+            dialect "mvel"
+            no-loop
+            salience -1003
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "NUMER", patient == $p) )
+
+                                        PreconditionResult(id == "DENOM", patient == $p)
+                                        not ( PreconditionResult(id == "DENEX", patient == $p) )
+
+        not(
+            PreconditionResult( id == "11", patient == $p )
+            )
+        then
+            insert(new PreconditionResult("NUMER", $p))
+            resultCallback.hit("NUMER", $p);
+        end
+
+        /* Rule */
+        rule "11"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "11", patient == $p) )
+
+            PreconditionResult( id == "9", patient == $p )
+
+        then
+            insert(new PreconditionResult("11", $p))
+        end
+
+
+        /* Rule */
+        rule "9"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient( )
+            not ( PreconditionResult(id == "9", patient == $p) )
+
+            PreconditionResult( id == "MedicationOrderAntibioticMedications_precondition_9", patient == $p )
+
+        then
+            insert(new PreconditionResult("9", $p))
+        end
+
+
+        /* Rule */
+        rule "OccurrenceAUpperRespiratoryInfection1_precondition_29"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient ()
+        $GROUP_SDU_CHILDREN_50 : PreconditionResult(id == "GROUP_SDU_CHILDREN_50", patient == $p , specificOccurrence == "A" )
+        $event : edu.mayo.qdm.patient.Diagnosis(
+
+
+            $GROUP_SDU_CHILDREN_50.event != null,
+            toDays(startDate) >= toDays($GROUP_SDU_CHILDREN_50.event.startDate)
+            ,
+
+            $GROUP_SDU_CHILDREN_50.event != null,
+            toDays(startDate) <= toDays($GROUP_SDU_CHILDREN_50.event.endDate)
+
+
+            ,this == $GROUP_SDU_CHILDREN_50.event
+            ) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.102.12.1022", $p.getDiagnoses())
+
+
+        then
+            insert(new PreconditionResult("OccurrenceAUpperRespiratoryInfection1_precondition_29", $p ,$event))
+
+        end
+
+        /* Rule */
+        rule "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17_precondition_37"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient ()
+        $OccurrenceAUpperRespiratoryInfection1_precondition_44 : PreconditionResult(id == "OccurrenceAUpperRespiratoryInfection1_precondition_44", patient == $p )
+        $event : edu.mayo.qdm.patient.Encounter(
+
+
+            $OccurrenceAUpperRespiratoryInfection1_precondition_44.event != null,
+            toDays(startDate) >= toDays($OccurrenceAUpperRespiratoryInfection1_precondition_44.event.startDate)
+            ,
+
+            $OccurrenceAUpperRespiratoryInfection1_precondition_44.event != null,
+            toDays(endDate) <= toDays($OccurrenceAUpperRespiratoryInfection1_precondition_44.event.endDate)
+
+
+
+            ) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1024", $p.getEncounters())
+
+
+        then
+            insert(new PreconditionResult("EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17_precondition_37", $p ,$event))
+
+        end
+
+        /* Rule */
+        rule "EncounterPerformedPreventiveCareInitialOfficeVisit0To17_precondition_20"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient ()
+
+        $event : edu.mayo.qdm.patient.Encounter(
+
+
+                        startDate != null,
+                        toDays(startDate) >= toDays(new Date('01-Jan-2012'))
+                        ,
+
+                        endDate != null,
+                        toDays(endDate) <= toDays(new Date('31-Dec-2012'))
+
+
+
+            ) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1022", $p.getEncounters())
+
+
+        then
+            insert(new PreconditionResult("EncounterPerformedPreventiveCareInitialOfficeVisit0To17_precondition_20", $p ,$event))
+
+        end
+
+        /* Rule */
+        rule "DiagnosisActiveCompetingConditionsForRespiratoryConditions_precondition_2"
+            dialect "mvel"
+            no-loop
+            salience -2
+
+        when
+            $p : Patient ()
+        $OccurrenceAUpperRespiratoryInfection1 : SpecificOccurrence2(id == "A", patient == $p )
+        $event : edu.mayo.qdm.patient.Diagnosis(
+
+            $OccurrenceAUpperRespiratoryInfection1.event != null,
+            toDays(startDate) <= toDays(droolsUtil.add(droolsUtil.getCalendar($OccurrenceAUpperRespiratoryInfection1.event.startDate), Calendar.DATE, 3)),
+startDate >= $OccurrenceAUpperRespiratoryInfection1.event.startDate
+
+
+
+            ) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.102.12.1017", $p.getDiagnoses())
+
+
+        then
+            insert(new PreconditionResult("DiagnosisActiveCompetingConditionsForRespiratoryConditions_precondition_2", $p ,$event, $OccurrenceAUpperRespiratoryInfection1.event))
+
+        end
+
+         /* Rule */
+        rule "RETRACT3"
+            dialect "mvel"
+            //no-loop
+            salience -3
+
+        when
+            $p : Patient ()
+            $e : PreconditionResult(id == "DiagnosisActiveCompetingConditionsForRespiratoryConditions_precondition_2", patient == $p )
+            $so : SpecificOccurrence2(id == "A", patient == $p, event != $e.specificOccurrence)
+        then
+            System.out.println("RETRACTing3" + $so.event.toString());
+            retract($so)
+        end
+
+        /* Rule */
+        rule "MedicationActiveAntibioticMedications_precondition_4"
+            dialect "mvel"
+            no-loop
+            salience -4
+
+        when
+            $p : Patient ()
+        $OccurrenceAUpperRespiratoryInfection1 : SpecificOccurrence2(id == "A", patient == $p )
+        $event : edu.mayo.qdm.patient.Medication(
+
+            $OccurrenceAUpperRespiratoryInfection1.event != null,
+            toDays(startDate) >= toDays(droolsUtil.add(droolsUtil.getCalendar($OccurrenceAUpperRespiratoryInfection1.event.endDate), Calendar.DATE, -30)),
+startDate <= $OccurrenceAUpperRespiratoryInfection1.event.endDate
+
+
+
+            ) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.196.12.1001", $p.getMedications())
+
+
+        then
+            System.out.println("INSERTing4" + $OccurrenceAUpperRespiratoryInfection1.event.toString());
+            insert(new PreconditionResult("MedicationActiveAntibioticMedications_precondition_4", $p ,$event, $OccurrenceAUpperRespiratoryInfection1.event))
+
+        end
+
+         /* Rule */
+        rule "RETRACT2"
+            dialect "mvel"
+            //no-loop
+            salience -5
+
+        when
+            $p : Patient ()
+            $e : PreconditionResult(id == "MedicationOrderAntibioticMedications_precondition_4", patient == $p )
+            $so : SpecificOccurrence2(id == "A", patient == $p, event != $e.specificOccurrence)
+        then
+            System.out.println("RETRACTing2" + $so.event.toString());
+            retract($so)
+        end
+
+        /* Rule */
+        rule "EncounterPerformedEmergencyDepartmentVisit_precondition_18"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient ()
+
+        $event : edu.mayo.qdm.patient.Encounter(
+
+
+                        startDate != null,
+                        toDays(startDate) >= toDays(new Date('01-Jan-2012'))
+                        ,
+
+                        endDate != null,
+                        toDays(endDate) <= toDays(new Date('31-Dec-2012'))
+
+
+
+            ) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1010", $p.getEncounters())
+
+
+        then
+            insert(new PreconditionResult("EncounterPerformedEmergencyDepartmentVisit_precondition_18", $p ,$event))
+
+        end
+
+        /* Rule */
+        rule "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17_precondition_22"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient ()
+
+        $event : edu.mayo.qdm.patient.Encounter(
+
+
+                        startDate != null,
+                        toDays(startDate) >= toDays(new Date('01-Jan-2012'))
+                        ,
+
+                        endDate != null,
+                        toDays(endDate) <= toDays(new Date('31-Dec-2012'))
+
+
+
+            ) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1024", $p.getEncounters())
+
+
+        then
+            insert(new PreconditionResult("EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17_precondition_22", $p ,$event))
+
+        end
+
+        /* Rule */
+        rule "EncounterPerformedHospitalObservationCareInitial_precondition_24"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient ()
+
+        $event : edu.mayo.qdm.patient.Encounter(
+
+
+                        startDate != null,
+                        toDays(startDate) >= toDays(new Date('01-Jan-2012'))
+                        ,
+
+                        endDate != null,
+                        toDays(endDate) <= toDays(new Date('31-Dec-2012'))
+
+
+
+            ) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1002", $p.getEncounters())
+
+
+        then
+            insert(new PreconditionResult("EncounterPerformedHospitalObservationCareInitial_precondition_24", $p ,$event))
+
+        end
+
+        /* Rule */
+        rule "EncounterPerformedHospitalObservationCareInitial_precondition_39"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient ()
+        $OccurrenceAUpperRespiratoryInfection1_precondition_44 : PreconditionResult(id == "OccurrenceAUpperRespiratoryInfection1_precondition_44", patient == $p )
+        $event : edu.mayo.qdm.patient.Encounter(
+
+
+            $OccurrenceAUpperRespiratoryInfection1_precondition_44.event != null,
+            toDays(startDate) >= toDays($OccurrenceAUpperRespiratoryInfection1_precondition_44.event.startDate)
+            ,
+
+            $OccurrenceAUpperRespiratoryInfection1_precondition_44.event != null,
+            toDays(endDate) <= toDays($OccurrenceAUpperRespiratoryInfection1_precondition_44.event.endDate)
+
+
+
+            ) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1002", $p.getEncounters())
+
+
+        then
+            insert(new PreconditionResult("EncounterPerformedHospitalObservationCareInitial_precondition_39", $p ,$event))
+
+        end
+
+        /* Rule */
+        rule "EncounterPerformedEmergencyDepartmentVisit_precondition_33"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient ()
+        $OccurrenceAUpperRespiratoryInfection1_precondition_44 : PreconditionResult(id == "OccurrenceAUpperRespiratoryInfection1_precondition_44", patient == $p )
+        $event : edu.mayo.qdm.patient.Encounter(
+
+
+            $OccurrenceAUpperRespiratoryInfection1_precondition_44.event != null,
+            toDays(startDate) >= toDays($OccurrenceAUpperRespiratoryInfection1_precondition_44.event.startDate)
+            ,
+
+            $OccurrenceAUpperRespiratoryInfection1_precondition_44.event != null,
+            toDays(endDate) <= toDays($OccurrenceAUpperRespiratoryInfection1_precondition_44.event.endDate)
+
+
+
+            ) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1010", $p.getEncounters())
+
+
+        then
+            insert(new PreconditionResult("EncounterPerformedEmergencyDepartmentVisit_precondition_33", $p ,$event))
+
+        end
+
+        /* Rule */
+        rule "DiagnosisActiveUpperRespiratoryInfection"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient ()
+
+        $event : edu.mayo.qdm.patient.Diagnosis(
+
+
+            ) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.102.12.1022", $p.getDiagnoses())
+
+
+        then
+            insert(new PreconditionResult("DiagnosisActiveUpperRespiratoryInfection", $p ,$event))
+
+        end
+
+        /* Rule */
+        rule "GROUP_SDU_CHILDREN_50"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient ()
+                $groupResult : java.util.List( ) from collect(
+                 PreconditionResult(
+                 (id == "EncounterPerformedOfficeVisit_precondition_16" || id == "EncounterPerformedEmergencyDepartmentVisit_precondition_18" || id == "EncounterPerformedPreventiveCareInitialOfficeVisit0To17_precondition_20" || id == "EncounterPerformedPreventiveCareEstablishedOfficeVisit0To17_precondition_22" || id == "EncounterPerformedHospitalObservationCareInitial_precondition_24" || id == "EncounterPerformedFaceToFaceInteraction_precondition_26")
+                 , patient == $p))
+
+                 $event : edu.mayo.qdm.patient.Event()
+                    from droolsUtil.combine($groupResult)
+
+
+        then
+            insert(new PreconditionResult("GROUP_SDU_CHILDREN_50", $p ,$event))
+
+        end
+
+        /* Rule */
+        rule "EncounterPerformedPreventiveCareInitialOfficeVisit0To17_precondition_35"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient ()
+        $OccurrenceAUpperRespiratoryInfection1_precondition_44 : PreconditionResult(id == "OccurrenceAUpperRespiratoryInfection1_precondition_44", patient == $p )
+        $event : edu.mayo.qdm.patient.Encounter(
+
+
+            $OccurrenceAUpperRespiratoryInfection1_precondition_44.event != null,
+            toDays(startDate) >= toDays($OccurrenceAUpperRespiratoryInfection1_precondition_44.event.startDate)
+            ,
+
+            $OccurrenceAUpperRespiratoryInfection1_precondition_44.event != null,
+            toDays(endDate) <= toDays($OccurrenceAUpperRespiratoryInfection1_precondition_44.event.endDate)
+
+
+
+            ) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1022", $p.getEncounters())
+
+
+        then
+            insert(new PreconditionResult("EncounterPerformedPreventiveCareInitialOfficeVisit0To17_precondition_35", $p ,$event))
+
+        end
+
+        /* Rule */
+        rule "MedicationOrderAntibioticMedications_precondition_9"
+            dialect "mvel"
+            no-loop
+            salience 2
+
+        when
+            $p : Patient ()
+        $OccurrenceAUpperRespiratoryInfection1 : SpecificOccurrence2(id == "A", patient == $p )
+        $event : edu.mayo.qdm.patient.Medication(
+
+            $OccurrenceAUpperRespiratoryInfection1.event != null,
+            toDays(startDate) <= toDays(droolsUtil.add(droolsUtil.getCalendar($OccurrenceAUpperRespiratoryInfection1.event.startDate), Calendar.DATE, 3)),
+startDate >= $OccurrenceAUpperRespiratoryInfection1.event.startDate
+
+
+
+            ) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.196.12.1001", $p.getMedications())
+
+
+        then
+            System.out.println("INSERTing1" + $OccurrenceAUpperRespiratoryInfection1.event);
+            insert(new PreconditionResult("MedicationOrderAntibioticMedications_precondition_9", $p ,$event, $OccurrenceAUpperRespiratoryInfection1.event))
+
+        end
+
+         /* Rule */
+        rule "RETRACT"
+            dialect "mvel"
+            //no-loop
+            salience 1
+
+        when
+            $p : Patient ()
+            $e : PreconditionResult(id == "MedicationOrderAntibioticMedications_precondition_9", patient == $p )
+            $so : SpecificOccurrence2(id == "A", patient == $p, event != $e.specificOccurrence)
+        then
+            System.out.println("RETRACTing" + $e.specificOccurrence);
+            retract($so)
+        end
+
+        /* Rule */
+        rule "EncounterPerformedOfficeVisit_precondition_16"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient ()
+
+        $event : edu.mayo.qdm.patient.Encounter(
+
+
+                        startDate != null,
+                        toDays(startDate) >= toDays(new Date('01-Jan-2012'))
+                        ,
+
+                        endDate != null,
+                        toDays(endDate) <= toDays(new Date('31-Dec-2012'))
+
+
+
+            ) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1001", $p.getEncounters())
+
+
+        then
+            insert(new PreconditionResult("EncounterPerformedOfficeVisit_precondition_16", $p ,$event))
+
+        end
+
+        /* Rule */
+        rule "EncounterPerformedFaceToFaceInteraction_precondition_41"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient ()
+        $OccurrenceAUpperRespiratoryInfection1_precondition_44 : PreconditionResult(id == "OccurrenceAUpperRespiratoryInfection1_precondition_44", patient == $p )
+        $event : edu.mayo.qdm.patient.Encounter(
+
+
+            $OccurrenceAUpperRespiratoryInfection1_precondition_44.event != null,
+            toDays(startDate) >= toDays($OccurrenceAUpperRespiratoryInfection1_precondition_44.event.startDate)
+            ,
+
+            $OccurrenceAUpperRespiratoryInfection1_precondition_44.event != null,
+            toDays(endDate) <= toDays($OccurrenceAUpperRespiratoryInfection1_precondition_44.event.endDate)
+
+
+
+            ) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1048", $p.getEncounters())
+
+
+        then
+            insert(new PreconditionResult("EncounterPerformedFaceToFaceInteraction_precondition_41", $p ,$event))
+
+        end
+
+        /* Rule */
+        rule "PatientCharacteristicBirthdateBirthDate_precondition_12"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient (
+                        birthdate != null,
+                        toDays(birthdate) <= toDays(new Date('01-Oct-2011'))
+                         )
+
+        then
+            insert(new PreconditionResult("PatientCharacteristicBirthdateBirthDate_precondition_12", $p ))
+
+        end
+
+        /* Rule */
+        rule "OccurrenceAUpperRespiratoryInfection1"
+            dialect "mvel"
+            no-loop
+            salience 100
+
+        when
+            $p : Patient ()
+
+        $event : edu.mayo.qdm.patient.Diagnosis(
+
+
+            ) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.102.12.1022", $p.getDiagnoses())
+
+
+        then
+            System.out.println("Inserting SO");
+            insert(new SpecificOccurrence2($event, "A", $p))
+            //insert(new PreconditionResult("OccurrenceAUpperRespiratoryInfection1", $p ,$event, "A"))
+
+        end
+
+        /* Rule */
+        rule "PatientCharacteristicBirthdateBirthDate_precondition_14"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient (
+                        birthdate != null,
+                        toDays(birthdate) >= toDays(new Date('01-Jan-1994')),
+                        birthdate <= "01-Jan-2012"
+ )
+
+        then
+            insert(new PreconditionResult("PatientCharacteristicBirthdateBirthDate_precondition_14", $p ))
+
+        end
+
+        /* Rule */
+        rule "OccurrenceAUpperRespiratoryInfection1_precondition_44"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient ()
+
+        $event : edu.mayo.qdm.patient.Diagnosis(
+
+
+                        startDate != null,
+                        toDays(startDate) >= toDays(new Date('01-Jan-2012'))
+                        ,
+
+                        endDate != null,
+                        toDays(endDate) <= toDays(new Date('31-Dec-2012'))
+
+
+
+            ) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.102.12.1022", $p.getDiagnoses())
+
+
+        then
+            insert(new PreconditionResult("OccurrenceAUpperRespiratoryInfection1_precondition_44", $p ,$event))
+
+        end
+
+        /* Rule */
+        rule "EncounterPerformedFaceToFaceInteraction_precondition_26"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient ()
+
+        $event : edu.mayo.qdm.patient.Encounter(
+
+
+                        startDate != null,
+                        toDays(startDate) >= toDays(new Date('01-Jan-2012'))
+                        ,
+
+                        endDate != null,
+                        toDays(endDate) <= toDays(new Date('31-Dec-2012'))
+
+
+
+            ) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1048", $p.getEncounters())
+
+
+        then
+            insert(new PreconditionResult("EncounterPerformedFaceToFaceInteraction_precondition_26", $p ,$event))
+
+        end
+
+        /* Rule */
+        rule "EncounterPerformedOfficeVisit_precondition_31"
+            dialect "mvel"
+            no-loop
+            salience 0
+
+        when
+            $p : Patient ()
+        $OccurrenceAUpperRespiratoryInfection1_precondition_44 : PreconditionResult(id == "OccurrenceAUpperRespiratoryInfection1_precondition_44", patient == $p )
+        $event : edu.mayo.qdm.patient.Encounter(
+
+
+            $OccurrenceAUpperRespiratoryInfection1_precondition_44.event != null,
+            toDays(startDate) >= toDays($OccurrenceAUpperRespiratoryInfection1_precondition_44.event.startDate)
+            ,
+
+            $OccurrenceAUpperRespiratoryInfection1_precondition_44.event != null,
+            toDays(endDate) <= toDays($OccurrenceAUpperRespiratoryInfection1_precondition_44.event.endDate)
+
+
+
+            ) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1001", $p.getEncounters())
+
+
+        then
+            insert(new PreconditionResult("EncounterPerformedOfficeVisit_precondition_31", $p ,$event))
+
+        end
+
+        function Long toDays(Date date) {
+            if(date == null){
+                return null;
+            } else {
+                return new Long(java.util.concurrent.TimeUnit.MILLISECONDS.toDays(date.getTime()));
+            }
+        }

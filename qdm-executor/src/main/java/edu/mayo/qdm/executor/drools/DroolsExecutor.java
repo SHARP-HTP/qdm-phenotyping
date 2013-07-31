@@ -135,7 +135,7 @@ public class DroolsExecutor implements Executor {
                     this.getDroolsRules(qdmXml, measurementPeriod)),
                     ResourceType.DRL);
         } catch (IOException e) {
-            throw new IllegalStateException("Problem reading XSLT file.");
+            throw new IllegalStateException("Problem reading Droos file.", e);
         }
 
         // Check the builder for errors

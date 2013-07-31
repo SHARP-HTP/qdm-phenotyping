@@ -13,7 +13,7 @@ class CypressPatientHelper {
     def getPatients(){
         def patients = []
         def resolver = new PathMatchingResourcePatternResolver()
-        resolver.getResources("classpath:/cypress/patients/ep/*.json").each {
+        resolver.getResources("classpath:/cypress/patients/ep/GP_Peds_A.json").each {
             patients.add(transform(slurper.parse(new InputStreamReader(it.getInputStream()))))
         }
 

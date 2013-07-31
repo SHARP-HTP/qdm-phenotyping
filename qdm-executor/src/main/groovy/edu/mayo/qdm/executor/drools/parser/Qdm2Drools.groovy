@@ -62,6 +62,10 @@ class Qdm2Drools {
     }
 
     def String qdm2drools(String qdmXml, MeasurementPeriod measurementPeriod) {
+        this.doGetQdm2drools(qdmXml, measurementPeriod)
+    }
+
+    def String doGetQdm2drools(qdmXml, measurementPeriod) {
         def json = getJsonFromQdmFile(qdmXml)
 
         def sb = new StringBuilder()
@@ -295,8 +299,14 @@ class Qdm2Drools {
             \$p : Patient ${hasEventList ? "()" : "("} ${criteria.toDrools()} ${hasEventList ? "" : ")"}
 
         then
-            insert(new PreconditionResult("${name}", \$p ${hasEventList && !negated ? ",\$event" : ""}))
-            //insert(new SpecificOccurrence("\$event", \$p ${hasEventList && !negated ? ",\$event" : ""}))
+            ${
+            if(specificOccurrence){
+                """insert(new PreconditionResult("${name}", \$p ${hasEventList && !negated ? ",\$event" : ""}, "$specificOccurrence"))"""
+            } else {
+                """insert(new PreconditionResult("${name}", \$p ${hasEventList && !negated ? ",\$event" : ""}))"""
+            }
+        }
+
         end
         """
     }

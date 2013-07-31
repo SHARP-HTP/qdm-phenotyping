@@ -85,19 +85,13 @@ public final class DroolsUtil {
 
         return calendar.getTime();
     }
-/*
-    public Collection<Event> combine(SpecificOccurrence o, Set<Event> e){
-        if(o.getOccurrences() == null){
-            return e;
-        } else {
-            Set<Event> events = new HashSet<Event>();
-            events.addAll(e);
-            events.retainAll(o.getOccurrences());
-            return events;
-        }
+
+    public void combine(SpecificOccurrence o, List<Event> e){
+        o.getEvent().retainAll(e);
+
     }
 
-
+/*
     public <T extends Event> T mostRecent(Iterable <T> codedEntries){
         T mostRecent = null;
         for(T entry : codedEntries){

@@ -8,6 +8,7 @@ public class PreconditionResult {
 	private String id;
 	private Patient patient;
     private Event event;
+    private Event specificOccurrence;
 
     public PreconditionResult(String id, Patient patient) {
         this(id, patient, null);
@@ -18,6 +19,22 @@ public class PreconditionResult {
         this.id = id;
         this.patient = patient;
         this.event = event;
+    }
+
+    public PreconditionResult(String id, Patient patient, Event event, Event specificOccurrence) {
+        super();
+        this.id = id;
+        this.patient = patient;
+        this.event = event;
+        this.specificOccurrence = specificOccurrence;
+    }
+
+    public Event getSpecificOccurrence() {
+        return specificOccurrence;
+    }
+
+    public void setSpecificOccurrence(Event specificOccurrence) {
+        this.specificOccurrence = specificOccurrence;
     }
 
     public String getId() {

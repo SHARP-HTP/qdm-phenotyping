@@ -12,7 +12,7 @@ import org.joda.time.DateTime
 class TemporalProcessor {
 
     class TemporalResult{
-        String variables
+        List variables
         String criteria
     }
 
@@ -20,7 +20,7 @@ class TemporalProcessor {
         def result = temporalReferences.collect(processTemporalReference.rcurry(measurementPeriod, measureJson, startProperty, endProperty))
 
         new TemporalResult(
-            variables: result.inject('') { str, element -> str + (element.variables ?: '') },
+            variables: result.collect { it.variables }.flatten(),
             criteria: result.inject('') { str, element -> str + (element.criteria ?: '') }
         )
     }
@@ -209,7 +209,7 @@ class TemporalProcessor {
             }
 
             return new TemporalResult(
-                    variables: """\$${temporalReference.reference} : PreconditionResult(id == "${temporalReference.reference}", patient == \$p)""",
+                    variables: [temporalReference.reference],
                     criteria:
             """
             \$${temporalReference.reference}.event != null,

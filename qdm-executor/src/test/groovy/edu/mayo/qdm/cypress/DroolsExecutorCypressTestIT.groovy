@@ -109,11 +109,18 @@ public class DroolsExecutorCypressTestIT {
     }
 
     void doExecute(measureId) throws IOException{
+        /*
         qdm2Drools.metaClass.getJsonFromQdmFile = {
             xml ->
                 slurper.parseText(
                         IOUtils.toString(new ClassPathResource("cypress/measures/ep/$measureId/hqmf_model.json").inputStream))
         }
+        */
+
+        qdm2Drools.metaClass.doGetQdm2drools = {
+            xml, period -> IOUtils.toString(new ClassPathResource("0069.drl").inputStream)
+        }
+
         def xmlStream = new ClassPathResource("cypress/measures/ep/${measureId}/hqmf1.xml").getInputStream()
 
         def xmlString = IOUtils.toString(xmlStream, "UTF-8")

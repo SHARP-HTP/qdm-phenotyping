@@ -23,11 +23,22 @@ abstract class AbstractBaseCriteria implements Criteria {
 
         def valueSetOid = json.code_list_id
 
+        def specificOccurrence = json.specific_occurrence
+
         def references = temporalProcessor.processTemporalReferences(json.temporal_references, measurementPeriod, measureJson)
 
         """
-        ${references.variables}
-        \$event : edu.mayo.qdm.patient.$name($references.criteria) from droolsUtil.findMatches("$valueSetOid", \$p.get${pluralName}())
+        ${references.variables.findAll().collect {"""\$$it : PreconditionResult(id == "$it", patient == \$p ${specificOccurrence ? """, specificOccurrence == "$specificOccurrence" """ : ""})""" }.join(",")   }
+        \$event : edu.mayo.qdm.patient.$name(
+            ${references.criteria}
+            ${
+                if(specificOccurrence){
+                     references.variables.findAll().collect {""",this == \$${it}.event"""}.join(" ")
+                } else {
+                    ""
+                }
+            }
+            ) from droolsUtil.findMatches("$valueSetOid", \$p.get${pluralName}())
         """
     }
 

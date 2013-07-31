@@ -4,22 +4,45 @@ import edu.mayo.qdm.patient.*;
 import java.util.List;
 import edu.mayo.qdm.executor.drools.DroolsUtil
 import java.util.Iterator;
-import edu.mayo.qdm.executor.drools.SpecificOccurrence
+import edu.mayo.qdm.executor.drools.*
 import java.util.Calendar;
 
 global DroolsUtil droolsUtil
 
+rule "1"
+      dialect "mvel"
+      no-loop
+      salience 100
+  when
+
+    $p : Patient( )
+
+    $lab : Lab (
+        /*startDate < "01-Jan-2000"*/
+    ) from $p.labs
+
+  then
+      insert( new PreconditionResult("1", $p, $lab, "A"))
+      insert( new SpecificOccurrence2($lab, "A", $p))
+      System.out.println("Rule 1");
+
+end
+
 rule "2"
       dialect "mvel"
       no-loop
-      salience -1
+      salience 99
   when
 
-    $p : Patient( birthdate >= "01-Jan-1980")
+    $p : Patient( )
+
+    $result : SpecificOccurrence2(patient == $p, id == "A")
 
     $lab : Lab (
-        startDate.time + 2 < new java.util.Date("01-Jan-2000").time
+        endDate > "01-Jan-3000" &&
+        this == $result.event
     ) from $p.labs
+
 
   then
       insert( new PreconditionResult("2", $p, $lab))
@@ -27,18 +50,36 @@ rule "2"
 
 end
 
+rule "retraction2"
+      dialect "mvel"
+      no-loop
+      salience 98
+  when
+
+    $p : Patient( )
+
+    $result : PreconditionResult(id == "2", patient == $p)
+    $sa : SpecificOccurrence2(patient == $p, event != $result.event)
+
+  then
+      retract($sa)
+      System.out.println("RETRACT");
+
+end
+
 rule "3"
       dialect "mvel"
       no-loop
-      salience -1
+      salience 99
   when
 
-    $p : Patient( birthdate >= "01-Jan-1980")
+    $p : Patient( )
 
-    $r : PreconditionResult(id == "2", patient == $p)
-    $lab : Lab(
-        endDate > "01-Jan-3000",
-        this == $r.event
+    $result : SpecificOccurrence2(patient == $p, id == "A")
+
+    $lab : Lab (
+        endDate < "01-Jan-3000" &&
+        this == $result.event
     ) from $p.labs
 
   then
@@ -47,32 +88,22 @@ rule "3"
 
 end
 
-rule "4"
+
+rule "MAIN"
       dialect "mvel"
       no-loop
-      salience -1
+      salience -100
   when
-    $p : Patient( birthdate >= "01-Jan-1980")
 
-    $r : PreconditionResult(id == "4", patient == $p)
+    $p : Patient( )
 
-    $lab : Lab(
-        this == $r.event,
-        startDate < "01-Jan-2000"
-    ) from $p.labs
+    PreconditionResult(id == "1", patient == $p)
+    PreconditionResult(id == "2", patient == $p)
+    PreconditionResult(id == "3", patient == $p)
+
 
   then
-      System.out.println("Rule 4");
+      System.out.println("MAIN");
 
 end
 
-rule "TEST 1"
-      dialect "mvel"
-      no-loop
-  when
-    $p : Patient()
-
-  then
-      System.out.println("HERE!!!!!");
-
-end
