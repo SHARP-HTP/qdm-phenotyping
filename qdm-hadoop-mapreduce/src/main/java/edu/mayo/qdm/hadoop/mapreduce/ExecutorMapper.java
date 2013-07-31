@@ -1,9 +1,9 @@
 package edu.mayo.qdm.hadoop.mapreduce;
 
-import edu.mayo.qdm.Executor;
-import edu.mayo.qdm.ExecutorFactory;
-import edu.mayo.qdm.QdmProcessor;
-import edu.mayo.qdm.Results;
+import edu.mayo.qdm.executor.Executor;
+import edu.mayo.qdm.executor.ExecutorFactory;
+import edu.mayo.qdm.executor.QdmProcessor;
+import edu.mayo.qdm.executor.Results;
 import edu.mayo.qdm.patient.Patient;
 import org.apache.commons.io.IOUtils;
 import org.apache.hadoop.filecache.DistributedCache;
@@ -48,6 +48,6 @@ public class ExecutorMapper extends Mapper<LongWritable,Text,Text,Text> {
 
         String qdmXml = IOUtils.toString(cacheReader);
 
-        this.qdmProcessor = executor.getQdmProcessor(qdmXml);
+        this.qdmProcessor = executor.getQdmProcessor(qdmXml, null);
     }
 }
