@@ -27,11 +27,16 @@ abstract class AbstractBaseCriteria implements Criteria {
 
         """
         ${references.variables}
-        \$event : edu.mayo.qdm.patient.$name($references.criteria) from droolsUtil.findMatches("$valueSetOid", \$p.get${pluralName}())
+        \$event : edu.mayo.qdm.patient.$name(
+                        $references.criteria
+                        ${this.getCriteria()}
+        ) from droolsUtil.findMatches("$valueSetOid", \$p.get${pluralName}())
         """
     }
 
     abstract def getName()
+
+    def getCriteria() { "" }
 
     def getPluralName(){
         getName() + "s"

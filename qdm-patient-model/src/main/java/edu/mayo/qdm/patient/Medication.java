@@ -12,6 +12,7 @@ public class Medication extends Event {
 
     private double value;
     private String units;
+    private MedicationStatus medicationStatus;
 
     /*
      * For JSON only
@@ -20,8 +21,9 @@ public class Medication extends Event {
         super(null,null,null);
     }
 
-    public Medication(Concept concept, Date startDate, Date endDate) {
+    public Medication(Concept concept, MedicationStatus medicationStatus, Date startDate, Date endDate) {
         super(concept, startDate, endDate);
+        this.medicationStatus = medicationStatus;
     }
 
     public double getValue() {
@@ -38,6 +40,14 @@ public class Medication extends Event {
 
     public void setUnits(String units) {
         this.units = units;
+    }
+
+    public MedicationStatus getMedicationStatus() {
+        return medicationStatus;
+    }
+
+    public void setMedicationStatus(MedicationStatus medicationStatus) {
+        this.medicationStatus = medicationStatus;
     }
 
     public String toString() {

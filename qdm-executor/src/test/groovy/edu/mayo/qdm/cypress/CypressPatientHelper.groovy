@@ -73,8 +73,9 @@ class CypressPatientHelper {
 
         json.medications.each { medication ->
             def code = medication.codes.iterator().next()
+            def status = this.toMedicationStatus(medication."status_code")
             patient.addMedication(
-                new Medication(new Concept(code.value[0], code.key, null), toDate(medication.start_time), toDate(medication.end_time)))
+                new Medication(new Concept(code.value[0], code.key, null), status, toDate(medication.start_time), toDate(medication.end_time)))
         }
 
         json.conditions.each { condition ->
@@ -116,6 +117,18 @@ class CypressPatientHelper {
             def message = "Criteria($it.key) - Expected: $expected, Actual: $actual, Found Patients: ${results.get(it.key).collect {it.sourcePid}}"
 
             callback(it, expected, actual, message)
+        }
+    }
+
+    def toMedicationStatus(statusJson){
+        def status = statusJson."HL7 ActStatus"[0]
+
+        switch (status){
+            case "active": return MedicationStatus.ACTIVE
+            case "administered": return MedicationStatus.ADMINISTERED
+            case "dispensed": return MedicationStatus.DISPENSED
+            case "ordered": return MedicationStatus.ORDERED
+            default : throw new RuntimeException("""Status: $status not recognized.""")
         }
     }
 

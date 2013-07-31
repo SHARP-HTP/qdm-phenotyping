@@ -1,5 +1,4 @@
 package edu.mayo.qdm.executor.drools.parser
-
 import edu.mayo.qdm.executor.MeasurementPeriod
 import edu.mayo.qdm.executor.ResultCallback
 import edu.mayo.qdm.executor.drools.DroolsUtil
@@ -9,6 +8,7 @@ import edu.mayo.qdm.executor.drools.parser.criteria.CriteriaFactory
 import edu.mayo.qdm.executor.drools.parser.criteria.Interval
 import edu.mayo.qdm.executor.drools.parser.criteria.MeasurementValue
 import edu.mayo.qdm.patient.Concept
+import edu.mayo.qdm.patient.MedicationStatus
 import edu.mayo.qdm.patient.Patient
 import groovy.util.logging.Log4j
 import groovyx.net.http.HTTPBuilder
@@ -18,7 +18,6 @@ import org.apache.http.entity.mime.MultipartEntity
 import org.apache.http.entity.mime.content.InputStreamBody
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
-
 /*
  * The main JSON -> Drools converter.
  */
@@ -123,6 +122,7 @@ class Qdm2Drools {
         import ${DroolsUtil.name};
         import ${MeasurementPeriod.name};
         import ${SpecificOccurrence.name};
+        import ${MedicationStatus.name}
         /*
             ID: ${qdm.id}
             Title: ${qdm.title}
