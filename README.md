@@ -1,4 +1,4 @@
-# _qdm-phenotyping_
+# _qdm-phenotyping_ [![Build Status](https://travis-ci.org/SHARP-HTP/qdm-phenotyping.png?branch=master)](https://travis-ci.org/SHARP-HTP/qdm-phenotyping)
 
 QDM Phenotyping is a tool suite to automate the transformation of QDM/HQMF XML into Drools Rules, and execute them against a Hadoop data source.
 
