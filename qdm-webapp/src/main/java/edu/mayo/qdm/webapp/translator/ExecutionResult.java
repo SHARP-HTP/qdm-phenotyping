@@ -23,11 +23,6 @@
  */
 package edu.mayo.qdm.webapp.translator;
 
-import org.apache.commons.io.FileUtils;
-
-import java.io.File;
-import java.io.IOException;
-
 /**
  * The Class ExecutionResult.
  *
@@ -35,64 +30,19 @@ import java.io.IOException;
  */
 public class ExecutionResult {
 
-	private File image;
-	private File xml;
-	private File tempDir;
+	private String xml;
 	
 	/**
 	 * Instantiates a new execution result.
 	 *
-	 * @param image the image
 	 * @param xml the xml
 	 */
-	public ExecutionResult(File image, File xml, File tempDir) {
+	public ExecutionResult(String xml) {
 		super();
-		this.image = image;
-		this.xml = xml;
-		this.tempDir = tempDir;
-	}
-	
-	/**
-	 * Gets the image.
-	 *
-	 * @return the image
-	 */
-	public File getImage() {
-		return image;
-	}
-	
-	/**
-	 * Sets the image.
-	 *
-	 * @param image the new image
-	 */
-	public void setImage(File image) {
-		this.image = image;
-	}
-	
-	/**
-	 * Gets the xml.
-	 *
-	 * @return the xml
-	 */
-	public File getXml() {
-		return xml;
-	}
-	
-	/**
-	 * Sets the xml.
-	 *
-	 * @param xml the new xml
-	 */
-	public void setXml(File xml) {
 		this.xml = xml;
 	}
-	
-	public void cleanup() throws IOException {
-		if(this.tempDir != null){
-			FileUtils.deleteDirectory(this.tempDir);
-		}
-	}
-	
-	
+
+    public String getXml() {
+        return xml;
+    }
 }

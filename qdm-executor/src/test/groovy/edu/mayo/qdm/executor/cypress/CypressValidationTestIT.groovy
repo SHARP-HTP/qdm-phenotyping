@@ -1,4 +1,7 @@
-package edu.mayo.qdm.cypress
+package edu.mayo.qdm.executor.cypress
+
+import edu.mayo.qdm.cypress.CypressPatientDataSource
+import edu.mayo.qdm.cypress.CypressValidator
 import edu.mayo.qdm.executor.MeasurementPeriod
 import edu.mayo.qdm.executor.drools.DroolsExecutor
 import edu.mayo.qdm.executor.drools.cypress.AbstractAllCypressMeasuresTestIT
@@ -17,7 +20,8 @@ class CypressValidationTestIT extends AbstractAllCypressMeasuresTestIT {
     @Autowired
     private DroolsExecutor executor
 
-    def cypressHelper = new CypressPatientHelper()
+    def cypressDataSource = new CypressPatientDataSource()
+    def cypressValidator = new CypressValidator()
 
     public CypressValidationTestIT(xml) {
         super(xml)
@@ -31,13 +35,13 @@ class CypressValidationTestIT extends AbstractAllCypressMeasuresTestIT {
     void doExecute(xmlStream) throws IOException{
         def xmlString = IOUtils.toString(xmlStream, "UTF-8")
 
-        def patientList = cypressHelper.getPatients()
+        def patientList = cypressDataSource.getPatients()
 
         def results = this.executor.execute(patientList, xmlString, MeasurementPeriod.getCalendarYear(new DateTime(2012,1,1,1,1).toDate()))
 
         def measureId = new XmlParser().parseText(xmlString).id[0].@root
 
-        cypressHelper.checkResults(measureId, results,
+        cypressValidator.checkResults(measureId, results,
                 {population, expected, actual, message ->
                     println message
                     assertEquals expected, actual, 0

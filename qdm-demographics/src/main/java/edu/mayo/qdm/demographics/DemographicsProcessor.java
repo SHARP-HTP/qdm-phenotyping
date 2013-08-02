@@ -6,6 +6,10 @@ import edu.mayo.qdm.demographics.model.DemographicType;
 import edu.mayo.qdm.demographics.model.Demographics;
 import edu.mayo.qdm.patient.Patient;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import java.io.StringWriter;
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -16,10 +20,10 @@ import java.util.Set;
  */
 public class DemographicsProcessor {
 
-    public Demographics getDemographics(Map<String,Iterable<Patient>> results){
+    public Demographics getDemographics(Map<String,Set<Patient>> results){
         Map<AbstractDemographicsItem,Integer> counter = new HashMap<AbstractDemographicsItem,Integer>();
 
-        for(Map.Entry<String, Iterable<Patient>> entrySet : results.entrySet()){
+        for(Map.Entry<String, Set<Patient>> entrySet : results.entrySet()){
             for(Patient patient : entrySet.getValue()){
                 Set<AbstractDemographicsItem> items =
                     this.getDemographicItems(entrySet.getKey(), patient);
@@ -54,6 +58,21 @@ public class DemographicsProcessor {
         }
 
         return demographics;
+    }
+
+    public String toXml(Demographics demographics) {
+        String result;
+        StringWriter sw = new StringWriter();
+        try {
+            JAXBContext carContext = JAXBContext.newInstance(Demographics.class);
+            Marshaller carMarshaller = carContext.createMarshaller();
+            carMarshaller.marshal(demographics, sw);
+            result = sw.toString();
+        } catch (JAXBException e) {
+            throw new RuntimeException(e);
+        }
+
+        return result;
     }
 
     protected Set<AbstractDemographicsItem> getDemographicItems(String population, Patient patient){

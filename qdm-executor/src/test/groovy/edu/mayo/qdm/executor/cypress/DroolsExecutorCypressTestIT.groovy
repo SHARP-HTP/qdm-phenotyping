@@ -1,4 +1,7 @@
-package edu.mayo.qdm.cypress
+package edu.mayo.qdm.executor.cypress
+
+import edu.mayo.qdm.cypress.CypressPatientDataSource
+import edu.mayo.qdm.cypress.CypressValidator
 import edu.mayo.qdm.executor.MeasurementPeriod
 import edu.mayo.qdm.executor.drools.DroolsExecutor
 import edu.mayo.qdm.executor.drools.parser.Qdm2Drools
@@ -24,7 +27,8 @@ public class DroolsExecutorCypressTestIT {
     @Autowired
     private Qdm2Drools qdm2Drools
 
-    def cypressHelper = new CypressPatientHelper()
+    def cypressDataSource = new CypressPatientDataSource()
+    def cypressValidator = new CypressValidator()
 
     def slurper = new JsonSlurper()
 	
@@ -123,13 +127,13 @@ public class DroolsExecutorCypressTestIT {
 
         def xmlString = IOUtils.toString(xmlStream, "UTF-8")
 
-        def patientList = cypressHelper.getPatients()
+        def patientList = cypressDataSource.getPatients()
 
         def results = this.executor.execute(patientList, xmlString, MeasurementPeriod.getCalendarYear(new DateTime(2012,1,1,1,1).toDate()))
 
         def measureIdUuid = new XmlParser().parseText(xmlString).id[0].@root
 
-        cypressHelper.checkResults(measureIdUuid, results,
+        cypressValidator.checkResults(measureIdUuid, results,
                 {population, expected, actual, message ->
                     println message
                     //assertEquals expected, actual, 0

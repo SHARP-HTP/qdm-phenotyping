@@ -31,6 +31,7 @@ import edu.mayo.qdm.webapp.rest.xml.XmlProcessor;
 import edu.mayo.qdm.webapp.translator.ExecutionResult;
 import edu.mayo.qdm.webapp.translator.Launcher;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.springframework.http.HttpHeaders;
@@ -170,84 +171,64 @@ public class TranslatorController {
 			throw new IllegalStateException("ServletRequest expected to be of type MultipartHttpServletRequest");
 		}
 		
-		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
-		MultipartFile multipartFile = multipartRequest.getFile("file");
-		
-		final File zip = File.createTempFile(UUID.randomUUID().toString(), ".zip");
-		
-		multipartFile.transferTo(zip);
-		
-		try {
-			final String id = this.idGenerator.getId();
-			
-			final FileSystemResult result = this.fileSystemResolver.getNewFiles(id);
-			
-			FileUtils.copyFile(zip, result.getZip());
-	
-			String zipFileName = multipartFile.getOriginalFilename();
-			
-			final ExecutionInfo info = new ExecutionInfo();
-			info.setId(id);
-			info.setStatus(Status.PROCESSING);
-			info.setStart(new Date());
-			info.setParameters(new Parameters(startDate,endDate, zipFileName));
-			
-			this.fileSystemResolver.setExecutionInfo(id, info);
-	
-			this.executorService.submit(new Runnable(){
+	    final MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+		final MultipartFile multipartFile = multipartRequest.getFile("file");
 
-				@Override
-				public void run() {
-					ExecutionResult translatorResult = null;
-					try {
+        final String id = this.idGenerator.getId();
 
-						translatorResult = launcher.launchTranslator(
-								result.getZip().getAbsolutePath(),
-								startDate,
-								endDate);
-						
-						info.setStatus(Status.COMPLETE);
-						info.setFinish(new Date());
-						fileSystemResolver.setExecutionInfo(id, info);
-							
-						copy(translatorResult.getImage(), result.getImage());
-						copy(translatorResult.getXml(), result.getXml());
-					
-					} catch (Exception e) {
-						info.setStatus(Status.FAILED);
-						info.setFinish(new Date());
-						
-						info.setError(ExceptionUtils.getFullStackTrace(e));
-						fileSystemResolver.setExecutionInfo(id, info);
-						
-						throw new RuntimeException(e);
-					} finally {
-						try {
-							if(translatorResult != null){
-								translatorResult.cleanup();
-							}
-						} catch (IOException e) {
-							throw new RuntimeException(e);
-						}
-					}
-					
-				}
-				
-			});
-	
-			if(this.isHtmlRequest(multipartRequest)){
-				return new ModelAndView("redirect:/executions");
-			} else {
-				String locationUrl = "execution/" + id;
-				
-				final HttpHeaders headers = new HttpHeaders();
-			    headers.setLocation(URI.create(locationUrl));
-			    
-				return new ResponseEntity(headers, HttpStatus.CREATED);
-			}
-		} finally {
-			FileUtils.deleteQuietly(zip);
-		}
+        final FileSystemResult result = this.fileSystemResolver.getNewFiles(id);
+
+        String zipFileName = multipartFile.getOriginalFilename();
+
+        final ExecutionInfo info = new ExecutionInfo();
+        info.setId(id);
+        info.setStatus(Status.PROCESSING);
+        info.setStart(new Date());
+        info.setParameters(new Parameters(startDate,endDate, zipFileName));
+
+        this.fileSystemResolver.setExecutionInfo(id, info);
+
+        this.executorService.submit(new Runnable(){
+
+            @Override
+            public void run() {
+                ExecutionResult translatorResult = null;
+                try {
+
+                    translatorResult = launcher.launchTranslator(
+                            IOUtils.toString(multipartFile.getInputStream()),
+                            dateValidator.parse(startDate),
+                            dateValidator.parse(endDate));
+
+                    info.setStatus(Status.COMPLETE);
+                    info.setFinish(new Date());
+                    fileSystemResolver.setExecutionInfo(id, info);
+
+                    FileUtils.writeStringToFile(result.getXml(), translatorResult.getXml());
+                } catch (Exception e) {
+                    info.setStatus(Status.FAILED);
+                    info.setFinish(new Date());
+
+                    info.setError(ExceptionUtils.getFullStackTrace(e));
+                    fileSystemResolver.setExecutionInfo(id, info);
+
+                    throw new RuntimeException(e);
+                }
+            }
+
+        });
+
+        if(this.isHtmlRequest(multipartRequest)){
+            return new ModelAndView("redirect:/executions");
+        } else {
+            String locationUrl = "execution/" + id;
+
+            final HttpHeaders headers = new HttpHeaders();
+            headers.setLocation(URI.create(locationUrl));
+
+            return new ResponseEntity(headers, HttpStatus.CREATED);
+        }
+
 	}
 	
 	/**

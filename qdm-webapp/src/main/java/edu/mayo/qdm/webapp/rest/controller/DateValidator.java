@@ -1,11 +1,11 @@
 package edu.mayo.qdm.webapp.rest.controller;
 
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.stereotype.Component;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import org.springframework.beans.factory.InitializingBean;
-import org.springframework.stereotype.Component;
 
 @Component
 public class DateValidator implements InitializingBean {
@@ -33,7 +33,7 @@ public class DateValidator implements InitializingBean {
 	}
 	
 	public void validateDate(String date, DateType type){
-		Date dateToCheck = this.getDate(date);
+		Date dateToCheck = this.parse(date);
 		
 		Date lowerBound;
 		Date upperBound;
@@ -67,7 +67,7 @@ public class DateValidator implements InitializingBean {
 				lowerBound + " " + upperBound);
 	}
 	
-	private Date getDate(String date){
+	protected Date parse(String date){
 		try {
 			return this.dateFormat.parse(date);
 		} catch (ParseException e) {

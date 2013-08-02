@@ -53,6 +53,10 @@ public class Results {
         return this.resultMap.keySet();
     }
 
+    public Map<String,Set<Patient>> asMap(){
+        return new HashMap<String,Set<Patient>>(this.resultMap);
+    }
+
     public Set<Patient> get(String populationCriteria) {
         Set<Patient> set = this.resultMap.get(populationCriteria);
         if(set == null){

@@ -12,7 +12,7 @@ class DemographicsProcessorTest {
     @Test
     void testGetDemographics() {
         def p = new DemographicsProcessor()
-        def demos = p.getDemographics("IPP":[new Patient(birthdate: new Date())])
+        def demos = p.getDemographics("IPP":[new Patient(birthdate: new Date())] as Set)
 
         def stat = demos.demographicType[0].demographicCategory[0].each {
             assertEquals 1, it.demographicStat.size()
