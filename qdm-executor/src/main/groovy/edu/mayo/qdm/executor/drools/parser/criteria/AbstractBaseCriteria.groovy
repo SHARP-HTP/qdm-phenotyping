@@ -1,6 +1,7 @@
 package edu.mayo.qdm.executor.drools.parser.criteria
 
 import edu.mayo.qdm.executor.drools.parser.TemporalProcessor
+import org.apache.commons.lang.BooleanUtils
 import org.springframework.util.Assert
 
 /**
@@ -25,9 +26,10 @@ abstract class AbstractBaseCriteria implements Criteria {
 
         def references = temporalProcessor.processTemporalReferences(json.temporal_references, measurementPeriod, measureJson)
 
+        def negation = BooleanUtils.toBoolean(json.negation)
         """
         ${references.variables}
-        \$event : edu.mayo.qdm.patient.$name(
+        ${negation ? "not " : "\$event : "}edu.mayo.qdm.patient.$name(
                         ${ [references.criteria,this.getCriteria()].findAll().join(",") }
         ) from droolsUtil.findMatches("$valueSetOid", \$p.get${pluralName}())
         """

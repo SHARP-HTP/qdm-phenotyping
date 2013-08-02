@@ -237,6 +237,7 @@ class TemporalProcessor {
             case "a" : return "Years"
             case "mo" : return "Months"
             case "d" : return "Days"
+            case "h" : return "Hours"
             default: throw new UnsupportedOperationException("Unit: $unit is not recognized.")
         }
     }
@@ -246,6 +247,7 @@ class TemporalProcessor {
             case "a" : return "YEAR"
             case "mo" : return "MONTH"
             case "d" : return "DATE"
+            case "h" : return "HOUR"
             default: throw new UnsupportedOperationException("Unit: $unit is not recognized.")
         }
     }

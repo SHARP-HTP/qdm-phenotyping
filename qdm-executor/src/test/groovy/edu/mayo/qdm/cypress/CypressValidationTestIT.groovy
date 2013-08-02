@@ -35,7 +35,7 @@ class CypressValidationTestIT extends AbstractAllCypressMeasuresTestIT {
 
         def results = this.executor.execute(patientList, xmlString, MeasurementPeriod.getCalendarYear(new DateTime(2012,1,1,1,1).toDate()))
 
-        def measureId = new XmlParser().parseText(xmlString).subjectOf.measureAttribute.value.find { it.@root == "2.16.840.1.113883.3.560.1" }.@extension
+        def measureId = new XmlParser().parseText(xmlString).id[0].@root
 
         cypressHelper.checkResults(measureId, results,
                 {population, expected, actual, message ->

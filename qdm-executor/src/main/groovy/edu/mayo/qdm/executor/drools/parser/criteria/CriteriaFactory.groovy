@@ -49,7 +49,7 @@ class CriteriaFactory {
         if(BooleanUtils.toBoolean(json.negation)){
             def criteria = this.doGetCriteria(json, measurementPeriod, measureJson)
             [
-                toDrools:{"not( ${criteria.toDrools()} )"},
+                toDrools:{"${criteria.toDrools()}"},
                 hasEventList:{criteria.hasEventList()},
             ] as Criteria
         } else {

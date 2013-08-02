@@ -99,6 +99,11 @@ public class DroolsExecutorCypressTestIT {
     }
 
     @Test
+    public void TestExecute0421() throws IOException{
+        doExecute("0421")
+    }
+
+    @Test
     public void TestExecuteHIVRNAControl() throws IOException{
         doExecute("HIVRNAControl")
     }
@@ -122,7 +127,9 @@ public class DroolsExecutorCypressTestIT {
 
         def results = this.executor.execute(patientList, xmlString, MeasurementPeriod.getCalendarYear(new DateTime(2012,1,1,1,1).toDate()))
 
-        cypressHelper.checkResults(measureId, results,
+        def measureIdUuid = new XmlParser().parseText(xmlString).id[0].@root
+
+        cypressHelper.checkResults(measureIdUuid, results,
                 {population, expected, actual, message ->
                     println message
                     //assertEquals expected, actual, 0

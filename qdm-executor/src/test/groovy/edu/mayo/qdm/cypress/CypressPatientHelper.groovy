@@ -108,7 +108,7 @@ class CypressPatientHelper {
             slurper.parse(new InputStreamReader(
                 new ClassPathResource("/cypress/results/by_measure.json").getInputStream()))
 
-        def resultJson = resultsJson.find { it.nqf_id == measureId}
+        def resultJson = resultsJson.find { it.measure_id == measureId.toUpperCase() }
 
         println """NQF ID: $measureId"""
         resultJson.population_ids.each {
