@@ -64,7 +64,8 @@ class CypressPatientHelper {
                     new PhysicalExamFinding(
                         new Concept(code.value[0], code.key, null),
                             val,
-                            toDate(procedure.start_time)))
+                            toDate(procedure.start_time),
+                            toDate(procedure.end_time)))
             } else {
                 patient.addProcedure(
                     new Procedure(new Concept(code.value[0], code.key, null), toDate(procedure.start_time), toDate(procedure.end_time)))

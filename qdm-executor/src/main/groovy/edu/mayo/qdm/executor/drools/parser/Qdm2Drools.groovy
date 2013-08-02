@@ -223,8 +223,6 @@ class Qdm2Drools {
                     if(prcn.reference){
                         def dataCriteriaRef = prcn.reference
 
-                        agendaGroupStack << dataCriteriaRef
-
                         sb.append(printPreconditionReference(dataCriteriaRef))
                     } else {
                         nestedPreconditions.add(prcn)
@@ -276,8 +274,6 @@ class Qdm2Drools {
 
                     if(prcn.reference){
                         def dataCriteriaRef = prcn.reference
-
-                        agendaGroupStack << dataCriteriaRef
 
                         sb.append(printPreconditionReference(dataCriteriaRef))
                     } else {

@@ -26,7 +26,6 @@ package edu.mayo.qdm.executor.drools;
 
 import edu.mayo.qdm.executor.valueset.ValueSetCodeResolver;
 import edu.mayo.qdm.patient.CodedEntry;
-import edu.mayo.qdm.patient.Event;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -58,16 +57,6 @@ public final class DroolsUtil {
             if(this.valueSetCodeResolver.isCodeInSet(valueSetOid, entry.getConcept())){
                 returnList.add(entry);
             }
-        }
-
-        return returnList;
-    }
-
-    public Collection<Event> combine(List<PreconditionResult> results){
-        List<Event> returnList = new ArrayList<Event>();
-
-        for(PreconditionResult result : results){
-           // returnList.addAll(result.getTemporalEvents());
         }
 
         return returnList;

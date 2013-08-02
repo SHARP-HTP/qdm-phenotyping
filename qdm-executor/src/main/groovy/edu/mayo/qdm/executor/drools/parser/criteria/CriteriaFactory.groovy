@@ -69,13 +69,11 @@ class CriteriaFactory {
 
             def criteria =
             """
-                \$groupResult : java.util.List( ) from collect(
-                 PreconditionResult(
-                 (${collections.collect{"id == \"$it\""}.join(" || ")})
-                 , patient == \$p))
+                PreconditionResult(
+                 (${collections.collect{"id == \"$it\""}.join(" || ")}),
+                 \$event : event,
+                 patient == \$p)
 
-                 \$event : edu.mayo.qdm.patient.Event()
-                    from droolsUtil.combine(\$groupResult)
             """
             [
                 toDrools:{criteria},
