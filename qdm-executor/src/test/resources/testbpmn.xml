@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions id="Definition"
+             targetNamespace="http://www.example.org/MinimalExample"
+             typeLanguage="http://www.java.com/javaTypes"
+             expressionLanguage="http://www.mvel.org/2.0"
+             xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/20100501/BPMN20.xsd"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+             xmlns:tns="http://www.jboss.org/drools">
+
+    <process processType="Private" isExecutable="true" id="com.sample.HelloWorld" name="com.sample.HelloWorld" tns:adHoc="true">
+
+        <startEvent id="start">
+
+        </startEvent>
+        <!-- nodes -->
+        <scriptTask id="_2" name="Task1" >
+            <script>System.out.println("Task1");</script>
+        </scriptTask>
+        <scriptTask id="_3" name="Task2" >
+            <script>System.out.println("Task2");</script>
+        </scriptTask>
+        <scriptTask id="_4" name="Task3" >
+            <script>System.out.println("Task3");</script>
+        </scriptTask>
+        <scriptTask id="_5" name="Task4" >
+            <script>System.out.println("Task4");</script>
+        </scriptTask>
+        <endEvent id="_6" name="End" >
+            <terminateEventDefinition/>
+        </endEvent>
+
+        <exclusiveGateway id="_7" name="Gateway" gatewayDirection="Diverging" />
+
+
+        <!-- connections -->
+        <sequenceFlow sourceRef="start" targetRef="_4">
+            <conditionExpression xsi:type="tFormalExpression" language="http://www.jboss.org/drools/rule" >
+                eval(false)
+            </conditionExpression>
+        </sequenceFlow>
+
+        <sequenceFlow id="_7-_5" sourceRef="_7" targetRef="_5" name="default" >
+            <conditionExpression xsi:type="tFormalExpression" language="http://www.jboss.org/drools/rule" >
+                eval(true)
+            </conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="_7-_6" sourceRef="_7" targetRef="_6" name="Person" >
+            <conditionExpression xsi:type="tFormalExpression" language="http://www.jboss.org/drools/rule" >
+                eval(true)
+            </conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow id="_4-_7" sourceRef="_4" targetRef="_7" />
+
+    </process>
+
+
+
+</definitions>

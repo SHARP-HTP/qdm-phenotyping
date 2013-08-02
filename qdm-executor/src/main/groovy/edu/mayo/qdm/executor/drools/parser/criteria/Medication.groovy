@@ -10,7 +10,7 @@ class Medication extends AbstractBaseCriteria {
 
     @Override
     def getCriteria() {
-        """,medicationStatus == ${toMedicationStatus(this.json.status)}"""
+        """medicationStatus == ${toMedicationStatus(this.json.status)}"""
     }
 
     def toMedicationStatus(jsonStatus){
@@ -18,6 +18,7 @@ class Medication extends AbstractBaseCriteria {
             case "active" : return "MedicationStatus.ACTIVE"
             case "ordered" : return "MedicationStatus.ORDERED"
             case "administered" : return "MedicationStatus.ADMINISTERED"
+            case "dispensed" : return "MedicationStatus.DISPENSED"
             default: throw new RuntimeException("""Json Medication Status: $jsonStatus not recognized.""")
         }
     }

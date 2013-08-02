@@ -27,6 +27,8 @@ class Qdm2Drools {
 
     def qdm2jsonServiceUrl = "http://qdm2json.herokuapp.com";
 
+    final DATA_CRITERIA_AGENDA_GROUP = "dataCriteria"
+
     @Autowired
     CriteriaFactory criteriaFactory;
 
@@ -38,6 +40,14 @@ class Qdm2Drools {
         super()
         this.qdm2jsonServiceUrl = qdm2jsonServiceUrl
     }
+
+    def populationPriority = ["IPP":4,"DENOM":3,"DENEX":2,"NUMER":1]
+    def populationSorter = { a, b ->
+        def rank1 = populationPriority.get(a,0)
+        def rank2 = populationPriority.get(b,0)
+
+        rank1 <=> rank2
+    } as Comparator
 
     /**
      * Generate a JSON representation of a QDM/HQMF XML file.
@@ -67,19 +77,21 @@ class Qdm2Drools {
 
         sb.append(printRuleHeader(json))
 
-        def usedDataCriteria = [] as HashSet
-        json.population_criteria.each {
-            printPopulationCriteria( it, sb, usedDataCriteria)
-        }
+        def agendaGroupStack = []
 
-        log.info "Listed Data Criteria Size: ${json.data_criteria.size()}"
-        log.info "Used Data Criteria Size: ${usedDataCriteria.size()}"
+        json.population_criteria.sort(populationSorter).each {
+            printPopulationCriteria( it, sb, agendaGroupStack)
+        }
 
         json.data_criteria.each {
             sb.append( printDataCriteria( it, measurementPeriod, json ) )
         }
 
         sb.append( printRuleFunctions(json) )
+
+        agendaGroupStack << DATA_CRITERIA_AGENDA_GROUP
+
+        sb.append( printInitRule(agendaGroupStack) )
 
         def rule = sb.toString()
 
@@ -88,6 +100,28 @@ class Qdm2Drools {
         System.out.print(rule)
 
         rule
+    }
+
+    private def printInitRule(agendaGroupStack){
+        """
+        /* Initialization Rule */
+        rule "Initialize QDM Drools"
+            dialect "mvel"
+            no-loop
+            salience ${Integer.MAX_VALUE}
+
+        when
+
+        then
+            ${
+            agendaGroupStack.collect {
+            """
+            drools.setFocus( "$it" );"""
+            }.join()
+
+            }
+        end
+        """
     }
 
     /**
@@ -140,7 +174,7 @@ class Qdm2Drools {
     /**
      * Print the start of a Population Criteria section (IPP, DENOM, etc).
      */
-    private def printPopulationCriteria(populationCriteria, sb, usedDataCriteria){
+    private def printPopulationCriteria(populationCriteria, sb, agendaGroupStack){
         def name = populationCriteria.key
 
         def salience
@@ -152,12 +186,15 @@ class Qdm2Drools {
             default: salience = "-1004"; break
         }
 
+        agendaGroupStack << name
+
         sb.append("""
         /* Rule */
         rule "$name"
             dialect "mvel"
             no-loop
             salience $salience
+            agenda-group "$name"
 
         when
             \$p : Patient( )
@@ -185,7 +222,8 @@ class Qdm2Drools {
                     if(prcn.negation) sb.append("not(")
                     if(prcn.reference){
                         def dataCriteriaRef = prcn.reference
-                        usedDataCriteria.add(dataCriteriaRef)
+
+                        agendaGroupStack << dataCriteriaRef
 
                         sb.append(printPreconditionReference(dataCriteriaRef))
                     } else {
@@ -206,10 +244,10 @@ class Qdm2Drools {
         end
         """)
 
-        printPreconditions( nestedPreconditions, sb, usedDataCriteria )
+        printPreconditions( nestedPreconditions, sb, agendaGroupStack )
     }
 
-    private def printPreconditions(preconditions, sb, usedDataCriteria){
+    private def printPreconditions(preconditions, sb, agendaGroupStack){
         if (preconditions == null) return
 
         def nestedPreconditions = []
@@ -219,6 +257,8 @@ class Qdm2Drools {
             preconditions.each {
                 prcn ->
 
+                    agendaGroupStack << prcn.id
+
                     sb.append(
         """
         /* Rule */
@@ -226,6 +266,7 @@ class Qdm2Drools {
             dialect "mvel"
             no-loop
             salience 0
+            agenda-group "${prcn.id}"
 
         when
             \$p : Patient( )
@@ -235,7 +276,8 @@ class Qdm2Drools {
 
                     if(prcn.reference){
                         def dataCriteriaRef = prcn.reference
-                        usedDataCriteria.add(dataCriteriaRef)
+
+                        agendaGroupStack << dataCriteriaRef
 
                         sb.append(printPreconditionReference(dataCriteriaRef))
                     } else {
@@ -245,6 +287,8 @@ class Qdm2Drools {
 
                         prcn.preconditions.eachWithIndex {
                             nestedPrc, idx ->
+
+                                agendaGroupStack << nestedPrc.id
 
                                 if(nestedPrc.negation) sb.append("not(")
                                 sb.append(printPreconditionReference(nestedPrc.id))
@@ -268,7 +312,7 @@ class Qdm2Drools {
             }
         }
 
-        nestedPreconditions.each { printPreconditions(it, sb, usedDataCriteria)}
+        nestedPreconditions.each { printPreconditions(it, sb, agendaGroupStack)}
     }
 
     private def printPreconditionReference(preconditionReference){
@@ -290,6 +334,7 @@ class Qdm2Drools {
             dialect "mvel"
             no-loop
             salience 0
+            agenda-group "$DATA_CRITERIA_AGENDA_GROUP"
 
         when
             \$p : Patient ${hasEventList ? "()" : "("} ${criteria.toDrools()} ${hasEventList ? "" : ")"}

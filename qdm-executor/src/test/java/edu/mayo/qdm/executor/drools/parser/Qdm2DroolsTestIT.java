@@ -38,7 +38,7 @@ public class Qdm2DroolsTestIT {
     private void doTestCreateRules(String rule) throws IOException {
         String drools = qdm2Drools.qdm2drools(
                 IOUtils.toString(
-                        new ClassPathResource("qdmxml/"+rule+".xml").getInputStream()),
+                        new ClassPathResource("qdmxml/" + rule + ".xml").getInputStream()),
                 MeasurementPeriod.getCalendarYear(new Date())
         );
 

@@ -1,0 +1,50 @@
+import edu.mayo.qdm.executor.drools.PreconditionResult;
+
+import edu.mayo.qdm.patient.*;
+import java.util.List;
+import edu.mayo.qdm.executor.drools.DroolsUtil
+import java.util.Iterator;
+import edu.mayo.qdm.executor.drools.SpecificOccurrence
+import java.util.Calendar;
+
+global DroolsUtil droolsUtil
+
+rule "TEST 1"
+      dialect "mvel"
+      ruleflow-group "1"
+  when
+
+  then
+      System.out.println("HERE!!!!!");
+
+end
+
+rule "2"
+      dialect "mvel"
+      ruleflow-group "2"
+  when
+
+    $p : Patient( )
+
+    $lab : Lab ( ) from $p.labs
+
+  then
+      insert( new PreconditionResult("2", $p, $lab))
+      System.out.println("Rule 2");
+
+end
+
+rule "3"
+      dialect "mvel"
+      ruleflow-group "3"
+  when
+
+    $p : Patient( )
+
+    $lab : Lab ( startDate > "12-Jan-9999" ) from $p.labs
+
+  then
+      insert( new PreconditionResult("3", $p, $lab))
+      System.out.println("Rule 3");
+
+end

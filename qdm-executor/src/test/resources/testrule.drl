@@ -9,17 +9,15 @@ import java.util.Calendar;
 
 global DroolsUtil droolsUtil
 
+
 rule "2"
       dialect "mvel"
-      no-loop
-      salience -1
+      agenda-group "2"
   when
 
-    $p : Patient( birthdate >= "01-Jan-1980")
+    $p : Patient( )
 
-    $lab : Lab (
-        startDate.time + 2 < new java.util.Date("01-Jan-2000").time
-    ) from $p.labs
+    $lab : Lab ( ) from $p.labs
 
   then
       insert( new PreconditionResult("2", $p, $lab))
@@ -29,11 +27,10 @@ end
 
 rule "3"
       dialect "mvel"
-      no-loop
-      salience -1
+      agenda-group "3"
   when
 
-    $p : Patient( birthdate >= "01-Jan-1980")
+    $p : Patient( )
 
     $r : PreconditionResult(id == "2", patient == $p)
     $lab : Lab(
@@ -49,10 +46,9 @@ end
 
 rule "4"
       dialect "mvel"
-      no-loop
-      salience -1
+      agenda-group "4"
   when
-    $p : Patient( birthdate >= "01-Jan-1980")
+    $p : Patient( )
 
     $r : PreconditionResult(id == "4", patient == $p)
 
@@ -66,13 +62,24 @@ rule "4"
 
 end
 
-rule "TEST 1"
+rule "TEST 2"
       dialect "mvel"
-      no-loop
+      agenda-group "1"
+      salience 2000
   when
-    $p : Patient()
 
   then
-      System.out.println("HERE!!!!!");
+      System.out.println("HERE2!!!!!");
+
+end
+
+rule "TEST 1"
+      dialect "mvel"
+      agenda-group "1"
+      salience 11000
+  when
+
+  then
+      System.out.println("HERE1!!!!!");
 
 end
