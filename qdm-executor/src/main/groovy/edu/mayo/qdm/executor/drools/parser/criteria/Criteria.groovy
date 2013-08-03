@@ -19,4 +19,6 @@ interface Criteria {
      */
     def hasEventList()
 
+    def isPatientCriteria()
+
 }

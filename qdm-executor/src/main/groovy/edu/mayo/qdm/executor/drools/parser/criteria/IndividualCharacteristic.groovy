@@ -97,4 +97,9 @@ class IndividualCharacteristic implements Criteria {
         false
     }
 
+    @Override
+    def isPatientCriteria(){
+        true
+    }
+
 }

@@ -11,13 +11,16 @@ import javax.annotation.Resource
 @Component
 class CriteriaFactory {
 
+    def GroupOperatorFactory groupOperatorFactory = new GroupOperatorFactory()
+
     @Resource
     ValueSetCodeResolver valueSetCodeResolver
 
     def TODO_CRITERIA = {json, measurementPeriod, measureJson ->
         [
                 toDrools: {throw new UnsupportedOperationException("Unimplemented Criteria: `$json.qds_data_type`")},
-                hasEventList:{false}
+                hasEventList:{false},
+                isPatientCriteria:{false}
         ] as Criteria
     }
 
@@ -51,6 +54,7 @@ class CriteriaFactory {
             [
                 toDrools:{"${criteria.toDrools()}"},
                 hasEventList:{criteria.hasEventList()},
+                isPatientCriteria:{false}
             ] as Criteria
         } else {
             this.doGetCriteria(json, measurementPeriod, measureJson)
@@ -67,18 +71,34 @@ class CriteriaFactory {
                 collections.add(it)
             }
 
-            def criteria =
-            """
-                PreconditionResult(
-                 (${collections.collect{"id == \"$it\""}.join(" || ")}),
-                 \$event : event,
-                 patient == \$p)
+            def subsets = json.subset_operators
+            if(subsets){
+                if(subsets.size() != 1){
+                    throw new UnsupportedOperationException("Cannot process more than one Subset Operator per Group.\nJSON ->  $json")
+                }
 
-            """
-            [
-                toDrools:{criteria},
-                hasEventList:{true},
-            ] as Criteria
+                def subsetOperator = subsets[0].type
+
+                if(this.groupOperatorFactory.hasProperty(subsetOperator)){
+                    return this.groupOperatorFactory."$subsetOperator"(json, subsets[0])
+                } else {
+                    throw new RuntimeException("Subset Operator `$subsetOperator` not recognized.\nJSON ->  $json")
+                }
+            } else {
+                def criteria =
+                """
+                    PreconditionResult(
+                     (${collections.collect{"id == \"$it\""}.join(" || ")}),
+                     \$event : event,
+                     patient == \$p)
+
+                """
+                [
+                    toDrools:{criteria},
+                    hasEventList:{true},
+                    isPatientCriteria:{false}
+                ] as Criteria
+            }
         } else {
             def criteriaFn = this.criteriaFactoryMap.get(qdsType)
             if (criteriaFn != null) {

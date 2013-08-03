@@ -47,4 +47,9 @@ abstract class AbstractBaseCriteria implements Criteria {
     def hasEventList(){
         true
     }
+
+    @Override
+    def isPatientCriteria(){
+        false
+    }
 }

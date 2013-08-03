@@ -1,5 +1,4 @@
 package edu.mayo.qdm.executor.cypress
-
 import edu.mayo.qdm.cypress.CypressPatientDataSource
 import edu.mayo.qdm.cypress.CypressValidator
 import edu.mayo.qdm.executor.MeasurementPeriod

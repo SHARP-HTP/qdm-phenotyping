@@ -321,6 +321,7 @@ class Qdm2Drools {
         def name = dataCriteria.key
         def criteria = criteriaFactory.getCriteria(dataCriteria.value, measurementPeriod, measureJson)
         def hasEventList = criteria.hasEventList()
+        def isPatientCriteria =  criteria.isPatientCriteria()
         def negated = dataCriteria.value.negation
         def specificOccurrence = dataCriteria.value.specific_occurrence
 
@@ -333,7 +334,7 @@ class Qdm2Drools {
             agenda-group "$DATA_CRITERIA_AGENDA_GROUP"
 
         when
-            \$p : Patient ${hasEventList ? "()" : "("} ${criteria.toDrools()} ${hasEventList ? "" : ")"}
+            \$p : Patient ${isPatientCriteria ? "(" : "()"} ${criteria.toDrools()} ${isPatientCriteria ? ")" : ""}
 
         then
             insert(new PreconditionResult("${name}", \$p ${hasEventList && !negated ? ",\$event" : ""}))

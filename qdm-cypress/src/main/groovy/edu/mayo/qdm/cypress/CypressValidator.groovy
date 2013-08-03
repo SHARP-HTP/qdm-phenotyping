@@ -14,7 +14,11 @@ class CypressValidator {
             slurper.parse(new InputStreamReader(
                     new ClassPathResource("/cypress/results/by_measure.json").getInputStream()))
 
-        def resultJson = resultsJson.find { it.measure_id == measureId.toUpperCase() }
+        def resultJson = resultsJson.find {
+            ((it.measure_id == measureId.toUpperCase())
+            &&
+            (it.sub_id == null || it.sub_id == "a"))
+        }
 
         println """NQF ID: $measureId"""
         resultJson.population_ids.each {
