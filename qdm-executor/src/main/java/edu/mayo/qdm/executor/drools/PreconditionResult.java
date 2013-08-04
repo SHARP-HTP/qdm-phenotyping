@@ -8,7 +8,6 @@ public class PreconditionResult {
 	private String id;
 	private Patient patient;
     private Event event;
-    //private Set<Event> events;
 
     public PreconditionResult(String id, Patient patient) {
         super();
@@ -22,15 +21,6 @@ public class PreconditionResult {
         this.patient = patient;
         this.event = event;
     }
-
-    /*
-    public PreconditionResult(String id, Patient patient, Set<Event> events) {
-        super();
-        this.id = id;
-        this.patient = patient;
-        this.events = events;
-    }
-    */
 
     public String getId() {
         return id;
@@ -51,11 +41,5 @@ public class PreconditionResult {
     public Event getEvent() {
         return event;
     }
-
-    /*
-    public Set<Event> getEvents() {
-        return events;
-    }
-    */
 
 }
