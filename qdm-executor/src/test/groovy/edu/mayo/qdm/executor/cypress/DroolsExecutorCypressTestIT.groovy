@@ -102,6 +102,14 @@ public class DroolsExecutorCypressTestIT {
         doExecute("0069")
     }
 
+    /*
+     * "FIRST" Group Operator
+     */
+    @Test
+    public void TestExecute0105() throws IOException{
+        doExecute("0105")
+    }
+
     @Test
     public void TestExecute0421() throws IOException{
         doExecute("0421")

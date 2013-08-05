@@ -83,3 +83,20 @@ rule "TEST 1"
       System.out.println("HERE1!!!!!");
 
 end
+
+
+rule "RECENT"
+      dialect "mvel"
+  when
+      $p : Patient( )
+
+      $total : Long() from accumulate(
+      Lab( $startDate : startDate ) from $p.labs,
+      max( $startDate.time ) )
+
+
+      $lab2 : Lab( startDate.time == $total ) from $p.labs
+  then
+    System.out.println("RECENT!!!!!" + $total.toString() );
+
+end

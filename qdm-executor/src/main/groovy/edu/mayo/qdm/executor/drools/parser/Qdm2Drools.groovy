@@ -8,6 +8,7 @@ import edu.mayo.qdm.executor.drools.parser.criteria.CriteriaFactory
 import edu.mayo.qdm.executor.drools.parser.criteria.Interval
 import edu.mayo.qdm.executor.drools.parser.criteria.MeasurementValue
 import edu.mayo.qdm.patient.Concept
+import edu.mayo.qdm.patient.Event
 import edu.mayo.qdm.patient.MedicationStatus
 import edu.mayo.qdm.patient.Patient
 import groovy.util.logging.Log4j
@@ -151,6 +152,7 @@ class Qdm2Drools {
         import ${ResultCallback.name};
         import ${Patient.name};
         import ${Concept.name};
+        import ${Event.name};
         import ${Interval.name};
         import ${MeasurementValue.name};
         import ${DroolsUtil.name};

@@ -33,4 +33,30 @@ class GroupOperatorFactory {
         json, subsetOperator ->
         throw new UnsupportedOperationException("`RECENT` Subset Operator not implemented.")
     }
+
+    def FIRST = {
+        json, subsetOperator ->
+
+        def childCriteria = json.children_criteria.collect { "id == \"$it\"" }.join(" || ")
+        def droolsString = """
+
+        \$max : Long() from accumulate(
+                PreconditionResult(
+                    ($childCriteria),
+                    \$startDate : event.startDate ),
+                max( \$startDate.time ) )
+
+
+        \$firstEvent : PreconditionResult(
+            ($childCriteria),
+            event.startDate.time == \$max )
+
+        \$event : Event( ) from \$firstEvent.event
+        """
+        [
+            toDrools:{droolsString},
+            hasEventList:{true},
+            isPatientCriteria:{false}
+        ] as Criteria
+    }
 }
