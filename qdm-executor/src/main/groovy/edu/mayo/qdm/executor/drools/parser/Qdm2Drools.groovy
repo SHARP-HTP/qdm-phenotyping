@@ -26,8 +26,8 @@ import org.springframework.stereotype.Component
 @Component
 class Qdm2Drools {
 
-    //def qdm2jsonServiceUrl = "http://qdm2json.herokuapp.com";
-    def qdm2jsonServiceUrl = "http://localhost:4567";
+    def qdm2jsonServiceUrl = "http://qdm2json.herokuapp.com";
+    //def qdm2jsonServiceUrl = "http://localhost:4567";
 
     final GROUP_DATA_CRITERIA_AGENDA_GROUP = "groupDataCriteria"
     final GROUP_DEPENDENT_DATA_CRITERIA_AGENDA_GROUP = "groupDependentDataCriteria"
