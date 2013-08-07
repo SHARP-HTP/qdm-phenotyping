@@ -26,6 +26,8 @@ package edu.mayo.qdm.executor.drools;
 
 import edu.mayo.qdm.executor.valueset.ValueSetCodeResolver;
 import edu.mayo.qdm.patient.CodedEntry;
+import edu.mayo.qdm.patient.Concept;
+import edu.mayo.qdm.patient.Event;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -67,6 +69,10 @@ public final class DroolsUtil {
         calendar.setTime(date);
 
         return calendar;
+    }
+
+    public Event toEvent(Date date, String code, String codingScheme){
+        return new Event(new Concept(code,codingScheme,null), date);
     }
 
     public Date add(Calendar calendar, int unit, int value){

@@ -1,26 +1,26 @@
 package edu.mayo.qdm.executor.drools.parser.criteria
 
-import edu.mayo.qdm.executor.drools.parser.TemporalProcessor
 import edu.mayo.qdm.patient.Gender
-import org.apache.commons.lang.BooleanUtils
 import org.apache.commons.lang.StringUtils
 
-import java.text.SimpleDateFormat;
-
+import java.text.SimpleDateFormat
 /**
  */
 class IndividualCharacteristic implements Criteria {
 
-    def temporalProcessor = new TemporalProcessor()
-
     def resultString
+
+    def name
 
     def dateFormat = new SimpleDateFormat()
 
-    IndividualCharacteristic(json, measurementPeriod){
-        def property = json.property;
+    IndividualCharacteristic(fullJson, measurementPeriod){
+        this.name = fullJson.key
 
-        def droolsString;
+        def json = fullJson.value
+        def property = json.property
+
+        def droolsString
 
         if(StringUtils.isEmpty(property)){
             if(json.definition.equals("patient_characteristic")){
@@ -36,24 +36,11 @@ class IndividualCharacteristic implements Criteria {
             }
         }
 
-        if(BooleanUtils.toBoolean(json.negation)){
-            this.resultString = "not( $droolsString )"
-        } else {
-            this.resultString = droolsString
-        }
+        this.resultString = droolsString
     }
 
     def handleGenericPatientCharacteristic(json){
         "/*TODO - Generic Patient Characteristic.*/ eval(true) "
-    }
-
-    def birthtime = { json, measurementPeriod ->
-        temporalProcessor.processTemporalReferences(
-                json.temporal_references,
-                measurementPeriod,
-                "birthdate",
-                "birthdate"
-        ).criteria
     }
 
     def gender = { json, measurementPeriod ->
@@ -88,18 +75,18 @@ class IndividualCharacteristic implements Criteria {
     }
 
     @Override
-    def toDrools() {
-        resultString
+    def getLHS() {
+        """
+        \$p : Patient(
+                ${this.resultString}
+        )
+        """
     }
 
     @Override
-    def hasEventList(){
-        false
+    def getRHS() {
+        """
+        insert(new PreconditionResult("$name", \$p))
+        """
     }
-
-    @Override
-    def isPatientCriteria(){
-        true
-    }
-
 }

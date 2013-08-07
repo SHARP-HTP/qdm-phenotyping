@@ -1,5 +1,4 @@
 package edu.mayo.qdm.executor.cypress
-
 import edu.mayo.qdm.cypress.CypressPatientDataSource
 import edu.mayo.qdm.cypress.CypressValidator
 import edu.mayo.qdm.executor.MeasurementPeriod
@@ -15,6 +14,7 @@ import org.springframework.core.io.ClassPathResource
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
 
+import static org.junit.Assert.assertEquals
 import static org.junit.Assert.assertNotNull
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -93,6 +93,11 @@ public class DroolsExecutorCypressTestIT {
     }
 
     @Test
+    public void TestExecute0041() throws IOException{
+        doExecute("0041")
+    }
+
+    @Test
     public void TestExecute0034() throws IOException{
         doExecute("0034")
     }
@@ -116,6 +121,16 @@ public class DroolsExecutorCypressTestIT {
     }
 
     @Test
+    public void TestExecute0418() throws IOException{
+        doExecute("0418")
+    }
+
+    @Test
+    public void TestExecute0038() throws IOException{
+        doExecute("0038")
+    }
+
+    @Test
     public void TestExecuteHIVRNAControl() throws IOException{
         doExecute("HIVRNAControl")
     }
@@ -125,12 +140,16 @@ public class DroolsExecutorCypressTestIT {
         doExecute("DementiaCognitive")
     }
 
-    void doExecute(measureId) throws IOException{
+    void doExecute(measureId, strictCheck=true) throws IOException{
+
+        /*
         qdm2Drools.metaClass.getJsonFromQdmFile = {
             xml ->
                 slurper.parseText(
                         IOUtils.toString(new ClassPathResource("cypress/measures/ep/$measureId/hqmf_model.json").inputStream))
         }
+        */
+
         def xmlStream = new ClassPathResource("cypress/measures/ep/${measureId}/hqmf1.xml").getInputStream()
 
         def xmlString = IOUtils.toString(xmlStream, "UTF-8")
@@ -141,11 +160,18 @@ public class DroolsExecutorCypressTestIT {
 
         def measureIdUuid = new XmlParser().parseText(xmlString).id[0].@root
 
+        def error
         cypressValidator.checkResults(measureIdUuid, results,
                 {population, expected, actual, message ->
                     println message
-                    //assertEquals expected, actual, 0
+                    try {
+                        assertEquals expected, actual, 0
+                    } catch (AssertionError e){
+                        error = e
+                    }
                 })
+
+        if(error != null) throw error
     }
 
 }

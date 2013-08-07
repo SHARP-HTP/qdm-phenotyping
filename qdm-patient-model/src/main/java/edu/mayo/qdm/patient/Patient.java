@@ -45,6 +45,8 @@ public class Patient {
         JSON_MAPPER.getSerializationConfig().setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
     }
 
+    private Set<Allergy> allergies = new HashSet<Allergy>();
+    private Set<Communication> communications = new HashSet<Communication>();
     private Set<Lab> labs = new HashSet<Lab>();
     private Set<Encounter> encounters = new HashSet<Encounter>();
     private Set<Medication> medications = new HashSet<Medication>();
@@ -88,6 +90,10 @@ public class Patient {
 
     public Date getBirthdate() {
         return this.birthdate;
+    }
+
+    public Event birthdateAsEvent(){
+        return new Event(null, this.birthdate);
     }
 
     public Boolean getConsent() {
@@ -165,6 +171,17 @@ public class Patient {
         getPhysicalExamFindings().add(physicalExamFinding);
     }
 
+    public Set<Allergy> getAllergies() {
+        return allergies;
+    }
+
+    public void addAllergy(Allergy allergy) {
+        if (allergy == null) {
+            throw new IllegalArgumentException();
+        }
+        getAllergies().add(allergy);
+    }
+
     public Set<Procedure> getProcedures() {
         return procedures;
     }
@@ -174,6 +191,17 @@ public class Patient {
             throw new IllegalArgumentException();
         }
         getProcedures().add(procedure);
+    }
+
+    public Set<Communication> getCommunications() {
+        return communications;
+    }
+
+    public void addCommunication(Communication communication) {
+        if (communication == null) {
+            throw new IllegalArgumentException();
+        }
+        getCommunications().add(communication);
     }
 
     public Set<RiskCategoryAssessment> getRiskCategoryAssessments() {

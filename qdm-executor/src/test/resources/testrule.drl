@@ -84,19 +84,38 @@ rule "TEST 1"
 
 end
 
-
-rule "RECENT"
+rule "RECENT2"
       dialect "mvel"
   when
       $p : Patient( )
-
-      $total : Long() from accumulate(
-      Lab( $startDate : startDate ) from $p.labs,
-      max( $startDate.time ) )
-
-
-      $lab2 : Lab( startDate.time == $total ) from $p.labs
+      $lab : Lab( ) from $p.labs
   then
-    System.out.println("RECENT!!!!!" + $total.toString() );
+    System.out.println("$$$$");
+    insert(new PreconditionResult("1-1",$p,$lab))
+end
+
+rule "RECENT3"
+      dialect "mvel"
+  when
+      $p : Patient( )
+      $lab : Lab( ) from $p.labs
+  then
+    System.out.println("33$$$$");
+    insert(new PreconditionResult("2-2",$p,$lab))
+end
+
+rule "RECENT"
+      dialect "mvel"
+      salience -100
+  when
+
+
+      $p : Patient($event : birthdateAsEvent)
+      $r : PreconditionResult(id == "4", patient == $p, event.startDate < $event.startDate)
+
+
+
+  then
+    System.out.println("hi");
 
 end

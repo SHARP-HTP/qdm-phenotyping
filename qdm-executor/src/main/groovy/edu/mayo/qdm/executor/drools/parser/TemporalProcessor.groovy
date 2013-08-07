@@ -48,6 +48,19 @@ class TemporalProcessor {
         """)
     }
 
+    def EDU = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
+        def endAfterStart = EAS(temporalReference, startProperty, endProperty, measurementPeriod, measureJson)
+        def endBeforeEnd = EBE(temporalReference, startProperty, endProperty, measurementPeriod, measureJson)
+
+        return new TemporalResult(
+                variables: endAfterStart.variables,
+                criteria:
+                        """
+        $endAfterStart.criteria,
+        $endBeforeEnd.criteria
+        """)
+    }
+
     def SDU = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
         def startAfterStart = SAS(temporalReference, startProperty, endProperty, measurementPeriod, measureJson)
         def startBeforeEnd = SBE(temporalReference, startProperty, endProperty, measurementPeriod, measureJson)
@@ -136,14 +149,14 @@ class TemporalProcessor {
                     def unit = getUnit(range.high.unit)
                     sb.append """
                         ${property} != null,
-                        toDays(${property}) ${highOp(range.high)} toDays(new Date('${time."$minusOrPlusFn$unit"(Integer.parseInt(range.high.value)).toString(DroolsDateFormat.PATTERN)}')),
+                        ${property} ${highOp(range.high)} new Date('${time."$minusOrPlusFn$unit"(Integer.parseInt(range.high.value)).toString(DroolsDateFormat.PATTERN)}'),
                         """
                 }
                 if(range.low){
                     def unit = getUnit(range.low.unit)
                     sb.append """
                         ${property} != null,
-                        toDays(${property}) ${lowOp(range.low)} toDays(new Date('${time."$minusOrPlusFn$unit"(Integer.parseInt(range.low.value)).toString(DroolsDateFormat.PATTERN)}'))
+                        ${property} ${lowOp(range.low)} new Date('${time."$minusOrPlusFn$unit"(Integer.parseInt(range.low.value)).toString(DroolsDateFormat.PATTERN)}')
                         """
                 } else {
                     def op = getOperator(beforeOrAfter)
@@ -154,7 +167,7 @@ class TemporalProcessor {
 
                 sb.append """
                         ${property} != null,
-                        toDays(${property}) $op toDays(new Date('${time.toString(DroolsDateFormat.PATTERN)}'))
+                        ${property} $op new Date('${time.toString(DroolsDateFormat.PATTERN)}')
                         """
             }
 
@@ -194,18 +207,18 @@ class TemporalProcessor {
 
                 if(range.high){
                     def calendarType = toCalendarType(range.high.unit)
-                    sb.append("toDays($property) ${highOp(range.high)} toDays(droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${range.high.value})),\n")
+                    sb.append("$property ${highOp(range.high)} droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${range.high.value}),\n")
                 }
                 if(range.low){
                     def calendarType = toCalendarType(range.low.unit)
-                    sb.append("toDays($property) ${lowOp(range.low)} toDays(droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${range.low.value}))\n")
+                    sb.append("$property ${lowOp(range.low)} droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${range.low.value})\n")
                 } else {
                     def op = getOperator(beforeOrAfter)
                     sb.append("$property $op \$${temporalReference.reference}.event.$targetProperty\n")
                 }
             } else {
                 def op = getOperator(beforeOrAfter)
-                sb.append("toDays($property) $op toDays(\$${temporalReference.reference}.event.$targetProperty)")
+                sb.append("$property $op \$${temporalReference.reference}.event.$targetProperty")
             }
 
             return new TemporalResult(
@@ -236,6 +249,7 @@ class TemporalProcessor {
         switch (unit){
             case "a" : return "Years"
             case "mo" : return "Months"
+            case "wk" : return "Weeks"
             case "d" : return "Days"
             case "h" : return "Hours"
             default: throw new UnsupportedOperationException("Unit: $unit is not recognized.")
@@ -246,6 +260,7 @@ class TemporalProcessor {
         switch (unit){
             case "a" : return "YEAR"
             case "mo" : return "MONTH"
+            case "wk" : return "WEEK_OF_YEAR"
             case "d" : return "DATE"
             case "h" : return "HOUR"
             default: throw new UnsupportedOperationException("Unit: $unit is not recognized.")

@@ -5,20 +5,8 @@ package edu.mayo.qdm.executor.drools.parser.criteria
  */
 interface Criteria {
 
-    /**
-     * Get the Drools representation of this Criteria
-     *
-     * @return the String Drools representation
-     */
-    def toDrools()
+    def getLHS()
 
-    /**
-     * True if this Criteria is made up of a series of {@link edu.mayo.qdm.patient.Event}s
-     *
-     * @return true/false
-     */
-    def hasEventList()
-
-    def isPatientCriteria()
+    def getRHS()
 
 }

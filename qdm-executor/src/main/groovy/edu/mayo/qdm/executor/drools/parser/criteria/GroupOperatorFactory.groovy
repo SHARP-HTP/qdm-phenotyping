@@ -1,12 +1,13 @@
 package edu.mayo.qdm.executor.drools.parser.criteria
-
 /**
  * Processes Precondition Group Operations, such as COUNTing, RECENT events, etc.
  */
 class GroupOperatorFactory {
 
     def COUNT = {
-        json, subsetOperator ->
+        fullJson, subsetOperator ->
+            def json = fullJson.value
+
             def low = subsetOperator.value.low
             def high = subsetOperator.value.high
 
@@ -18,45 +19,58 @@ class GroupOperatorFactory {
                 countCriteria << """ size <${low."inclusive?" ? "=" : ""} ${high.value}"""
             }
             def droolsString = """
+            \$p : Patient ( )
             \$events : Set( ${countCriteria.join(",")} ) from collect ( PreconditionResult (
                      (${json.children_criteria.collect{"id == \"$it\""}.join(" || ")}),
                      patient == \$p))
             """
             [
-                toDrools:{droolsString},
-                hasEventList:{false},
-                isPatientCriteria:{false}
+                getLHS:{droolsString},
+                getRHS:{
+                    """
+                    insert(new PreconditionResult("${fullJson.key}", \$p))
+                    """
+                }
             ] as Criteria
     }
 
     def RECENT = {
-        json, subsetOperator ->
-        throw new UnsupportedOperationException("`RECENT` Subset Operator not implemented.")
+        fullJson, subsetOperator ->
+            firstOrRecent(fullJson, subsetOperator, "max")
     }
 
     def FIRST = {
-        json, subsetOperator ->
+        fullJson, subsetOperator ->
+            firstOrRecent(fullJson, subsetOperator, "min")
+    }
+
+    def firstOrRecent(fullJson, subsetOperator, minOrMax){
+        def json = fullJson.value
 
         def childCriteria = json.children_criteria.collect { "id == \"$it\"" }.join(" || ")
         def droolsString = """
-
-        \$max : Long() from accumulate(
+        \$p : Patient ( )
+        \$m : Number() from accumulate(
                 PreconditionResult(
+                    patient == \$p,
                     ($childCriteria),
+                    event.startDate != null,
                     \$startDate : event.startDate ),
-                max( \$startDate.time ) )
+                $minOrMax( \$startDate.time ) )
 
-
-        \$firstEvent : PreconditionResult(
+        \$specificEvent : PreconditionResult(
+            patient == \$p,
             ($childCriteria),
-            event.startDate.time == \$max )
+            event.startDate == new java.util.Date(\$m) )
 
-        \$event : Event( ) from \$firstEvent.event
         """
         [
-            toDrools:{droolsString},
-            hasEventList:{true},
-            isPatientCriteria:{false}
+            getLHS:{droolsString},
+            getRHS:{
+                """
+                insert(new PreconditionResult("${fullJson.key}", \$p, \$specificEvent.event))
+                """
+            }
         ] as Criteria
     }
 }

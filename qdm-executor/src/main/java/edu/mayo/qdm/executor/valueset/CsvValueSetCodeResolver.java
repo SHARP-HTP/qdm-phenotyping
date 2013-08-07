@@ -27,7 +27,6 @@ import edu.mayo.qdm.patient.Concept;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.stereotype.Component;
 import org.supercsv.cellprocessor.ift.CellProcessor;
 import org.supercsv.io.CsvMapReader;
 import org.supercsv.io.ICsvMapReader;
@@ -41,7 +40,7 @@ import java.util.*;
  *
  * @author <a href="mailto:kevin.peterson@mayo.edu">Kevin Peterson</a>
  */
-@Component
+//@Component
 public class CsvValueSetCodeResolver implements ValueSetCodeResolver, InitializingBean {
 
     private Map<ValueSetKey,Set<Concept>> valueSetMap;

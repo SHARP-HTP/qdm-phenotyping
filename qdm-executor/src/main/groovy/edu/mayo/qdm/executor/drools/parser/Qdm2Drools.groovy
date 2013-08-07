@@ -26,9 +26,14 @@ import org.springframework.stereotype.Component
 @Component
 class Qdm2Drools {
 
-    def qdm2jsonServiceUrl = "http://qdm2json.herokuapp.com";
+    //def qdm2jsonServiceUrl = "http://qdm2json.herokuapp.com";
+    def qdm2jsonServiceUrl = "http://localhost:4567";
 
-    final DATA_CRITERIA_AGENDA_GROUP = "dataCriteria"
+    final GROUP_DATA_CRITERIA_AGENDA_GROUP = "groupDataCriteria"
+    final GROUP_DEPENDENT_DATA_CRITERIA_AGENDA_GROUP = "groupDependentDataCriteria"
+    final SPECIFIC_OCCURRENCE_AGENDA_GROUP = "specificOccurrence"
+    final SPECIFIC_OCCURRENCE_CRITERIA_AGENDA_GROUP = "specificOccurrenceCriteria"
+    final GENERAL_DATA_CRITERIA_AGENDA_GROUP = "generalDataCriteria"
 
     @Autowired
     CriteriaFactory criteriaFactory;
@@ -71,6 +76,25 @@ class Qdm2Drools {
         resp
     }
 
+    def getDependencies(json, criteria){
+        if(criteria == null) return []
+
+        if(isGroup(criteria)){
+            def dependencies = []
+            dependencies << criteria.key
+            criteria.value.children_criteria.each {
+                dependencies << it
+                def match = json.data_criteria.find {
+                    entry -> entry.key == it
+                }
+                getDependencies(json, match).each { dependencies << it }
+            }
+            return dependencies
+        } else {
+            return criteria.value.temporal_references.findAll { it.reference != "MeasurePeriod" }.collect { it.reference }
+        }
+    }
+
     def String qdm2drools(String qdmXml, MeasurementPeriod measurementPeriod) {
         def json = getJsonFromQdmFile(qdmXml)
 
@@ -78,21 +102,28 @@ class Qdm2Drools {
 
         sb.append(printRuleHeader(json))
 
-        def agendaGroupStack = []
-
         json.population_criteria.sort(populationSorter).each {
-            printPopulationCriteria( it, sb, agendaGroupStack)
+            printPopulationCriteria( it, sb )
+        }
+
+        def priorityStack = []
+        json.data_criteria.findAll(isGroup).each {
+            getDependencies(json, it).each { priorityStack << it}
         }
 
         json.data_criteria.each {
-            sb.append( printDataCriteria( it, measurementPeriod, json ) )
+            switch(it){
+                //case isSpecificOccurrence : sb.append( printSpecificOccurrenceDataCriteria( it, measurementPeriod, json, priorityStack ) ); break;
+                //case isSpecificOccurrenceCriteria : sb.append( printSpecificOccurrenceCritieriaDataCriteria( it, measurementPeriod, json, priorityStack ) ); break;
+                default : sb.append( printDataCriteria( it, measurementPeriod, json, priorityStack ) ); break;
+            }
         }
 
         sb.append( printRuleFunctions(json) )
 
-        agendaGroupStack << DATA_CRITERIA_AGENDA_GROUP
-
-        sb.append( printInitRule(agendaGroupStack) )
+        if(priorityStack.size() > 0){
+            sb.append( printInitRule(priorityStack) )
+        }
 
         def rule = sb.toString()
 
@@ -101,6 +132,22 @@ class Qdm2Drools {
         System.out.print(rule)
 
         rule
+    }
+
+    def isGroup = {
+        it.value.type == "derived"
+    }
+
+    def isSpecificOccurrence = {
+        it.value.specific_occurrence &&
+        it.value.specific_occurrence_const &&
+        it.key == it.value.source_data_criteria
+    }
+
+    def isSpecificOccurrenceCriteria = {
+        it.value.specific_occurrence &&
+        it.value.specific_occurrence_const &&
+        it.key != it.value.source_data_criteria
     }
 
     private def printInitRule(agendaGroupStack){
@@ -176,7 +223,7 @@ class Qdm2Drools {
     /**
      * Print the start of a Population Criteria section (IPP, DENOM, etc).
      */
-    private def printPopulationCriteria(populationCriteria, sb, agendaGroupStack){
+    private def printPopulationCriteria(populationCriteria, sb){
         def name = populationCriteria.key
 
         def salience
@@ -188,15 +235,12 @@ class Qdm2Drools {
             default: salience = "-1004"; break
         }
 
-        agendaGroupStack << name
-
         sb.append("""
         /* Rule */
         rule "$name"
             dialect "mvel"
             no-loop
             salience $salience
-            agenda-group "$name"
 
         when
             \$p : Patient( )
@@ -208,6 +252,10 @@ class Qdm2Drools {
                                         not ( PreconditionResult(id == "DENEX", patient == \$p) )
                                      """
                 case "DENEX": return """PreconditionResult(id == "DENOM", patient == \$p)"""
+                case "DENEXCEP": return """
+                                        PreconditionResult(id == "DENOM", patient == \$p)
+                                        not PreconditionResult(id == "NUMER", patient == \$p)
+                                        """
                 default: ""
             }}
         """)
@@ -244,10 +292,10 @@ class Qdm2Drools {
         end
         """)
 
-        printPreconditions( nestedPreconditions, sb, agendaGroupStack )
+        printPreconditions( nestedPreconditions, sb )
     }
 
-    private def printPreconditions(preconditions, sb, agendaGroupStack){
+    private def printPreconditions(preconditions, sb ){
         if (preconditions == null) return
 
         def nestedPreconditions = []
@@ -257,8 +305,6 @@ class Qdm2Drools {
             preconditions.each {
                 prcn ->
 
-                    agendaGroupStack << prcn.id
-
                     sb.append(
         """
         /* Rule */
@@ -266,7 +312,6 @@ class Qdm2Drools {
             dialect "mvel"
             no-loop
             salience 0
-            agenda-group "${prcn.id}"
 
         when
             \$p : Patient( )
@@ -286,8 +331,6 @@ class Qdm2Drools {
                         prcn.preconditions.eachWithIndex {
                             nestedPrc, idx ->
 
-                                agendaGroupStack << nestedPrc.id
-
                                 if(nestedPrc.negation) sb.append("not(")
                                 sb.append(printPreconditionReference(nestedPrc.id))
                                 if(nestedPrc.negation) sb.append(") ")
@@ -301,6 +344,7 @@ class Qdm2Drools {
                     sb.append(
         """
         then
+            System.out.println("${prcn.id}");
             insert(new PreconditionResult("${prcn.id}", \$p))
         end
 
@@ -310,7 +354,7 @@ class Qdm2Drools {
             }
         }
 
-        nestedPreconditions.each { printPreconditions(it, sb, agendaGroupStack)}
+        nestedPreconditions.each { printPreconditions(it, sb)}
     }
 
     private def printPreconditionReference(preconditionReference){
@@ -319,28 +363,28 @@ class Qdm2Drools {
             """
     }
 
-    private def printDataCriteria(dataCriteria, measurementPeriod, measureJson){
+    private def printDataCriteria(dataCriteria, measurementPeriod, measureJson, priorityStack){
         def name = dataCriteria.key
-        def criteria = criteriaFactory.getCriteria(dataCriteria.value, measurementPeriod, measureJson)
-        def hasEventList = criteria.hasEventList()
-        def isPatientCriteria =  criteria.isPatientCriteria()
-        def negated = dataCriteria.value.negation
-        def specificOccurrence = dataCriteria.value.specific_occurrence
+        def criteria = criteriaFactory.getCriteria(dataCriteria, measurementPeriod, measureJson)
+
+        def agendaGroup = ""
+        if(priorityStack.contains(name)){
+            agendaGroup = """agenda-group "$name" """
+        }
 
         """
         /* Rule */
         rule "${name}"
             dialect "mvel"
             no-loop
-            salience 0
-            agenda-group "$DATA_CRITERIA_AGENDA_GROUP"
+            $agendaGroup
 
         when
-            \$p : Patient ${isPatientCriteria ? "(" : "()"} ${criteria.toDrools()} ${isPatientCriteria ? ")" : ""}
+            ${criteria.getLHS()}
 
         then
-            insert(new PreconditionResult("${name}", \$p ${hasEventList && !negated ? ",\$event" : ""}))
-            //insert(new SpecificOccurrence("\$event", \$p ${hasEventList && !negated ? ",\$event" : ""}))
+            System.out.println("$name");
+            ${criteria.getRHS()}
         end
         """
     }

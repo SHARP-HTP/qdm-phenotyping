@@ -33,7 +33,7 @@ class TemporalProcessorTest {
 
         println ivl.criteria
 
-        assertTrue ivl.criteria.contains("toDays(birthdate) <= toDays(new Date('01-Jan-1948'))")
+        assertTrue ivl.criteria.contains("birthdate <= new Date('01-Jan-1948')")
 
     }
 
@@ -68,8 +68,8 @@ class TemporalProcessorTest {
 
         println ivl.criteria
 
-        assertTrue ivl.criteria.contains("toDays(birthdate) > toDays(new Date('01-Jan-1948'))")
-        assertTrue ivl.criteria.contains("toDays(birthdate) <= toDays(new Date('01-Jan-1995'))")
+        assertTrue ivl.criteria.contains("birthdate > new Date('01-Jan-1948')")
+        assertTrue ivl.criteria.contains("birthdate <= new Date('01-Jan-1995')")
 
     }
 
@@ -104,8 +104,8 @@ class TemporalProcessorTest {
 
         println ivl.criteria
 
-        assertTrue ivl.criteria.contains("toDays(end) >= toDays(new Date('31-Dec-2011'))")
-        assertTrue ivl.criteria.contains("toDays(end) <= toDays(new Date('31-Dec-2012'))")
+        assertTrue ivl.criteria.contains("end >= new Date('31-Dec-2011')")
+        assertTrue ivl.criteria.contains("end <= new Date('31-Dec-2012')")
     }
 
     @Test
@@ -139,8 +139,8 @@ class TemporalProcessorTest {
 
         println ivl.criteria
 
-        assertTrue ivl.criteria.contains("toDays(end) >= toDays(new Date('31-Dec-2014'))")
-        assertTrue ivl.criteria.contains("toDays(end) <= toDays(new Date('31-Dec-2015'))")
+        assertTrue ivl.criteria.contains("end >= new Date('31-Dec-2014')")
+        assertTrue ivl.criteria.contains("end <= new Date('31-Dec-2015')")
     }
 
     @Test
@@ -167,7 +167,7 @@ class TemporalProcessorTest {
 
         println ivl.criteria
 
-        assertTrue ivl.criteria.contains("toDays(end) >= toDays(new Date('31-Dec-2011'))")
+        assertTrue ivl.criteria.contains("end >= new Date('31-Dec-2011')")
     }
 
     @Test
@@ -201,8 +201,8 @@ class TemporalProcessorTest {
 
         println ivl.criteria
 
-        assertTrue ivl.criteria.contains("toDays(start) >= toDays(new Date('31-Dec-2014'))")
-        assertTrue ivl.criteria.contains("toDays(start) <= toDays(new Date('31-Dec-2015'))")
+        assertTrue ivl.criteria.contains("start >= new Date('31-Dec-2014')")
+        assertTrue ivl.criteria.contains("start <= new Date('31-Dec-2015')")
     }
 
     @Test
@@ -236,7 +236,7 @@ class TemporalProcessorTest {
 
         println ivl.criteria
 
-        assertTrue ivl.criteria.contains("toDays(start) <= toDays(droolsUtil.add(droolsUtil.getCalendar(\$some_other_event.event.endDate), Calendar.MONTH, 24))")
-        assertTrue ivl.criteria.contains("toDays(start) >= toDays(droolsUtil.add(droolsUtil.getCalendar(\$some_other_event.event.endDate), Calendar.MONTH, 12))")
+        assertTrue ivl.criteria.contains("start <= droolsUtil.add(droolsUtil.getCalendar(\$some_other_event.event.endDate), Calendar.MONTH, 24)")
+        assertTrue ivl.criteria.contains("start >= droolsUtil.add(droolsUtil.getCalendar(\$some_other_event.event.endDate), Calendar.MONTH, 12)")
     }
 }

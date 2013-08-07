@@ -10,7 +10,7 @@ class Medication extends AbstractBaseCriteria {
 
     @Override
     def getCriteria() {
-        """medicationStatus == ${toMedicationStatus(this.json.status)}"""
+        """medicationStatus == ${toMedicationStatus(this.json.value.status)}"""
     }
 
     def toMedicationStatus(jsonStatus){
