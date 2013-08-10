@@ -107,6 +107,16 @@ public class DroolsExecutorCypressTestIT {
         doExecute("0069")
     }
 
+    @Test
+    public void TestExecute0060() throws IOException{
+        doExecute("0060")
+    }
+
+    @Test
+    public void TestExecute0088() throws IOException{
+        doExecute("0088")
+    }
+
     /*
      * "FIRST" Group Operator
      */
@@ -126,6 +136,11 @@ public class DroolsExecutorCypressTestIT {
     }
 
     @Test
+    public void TestExecute0419() throws IOException{
+        doExecute("0419")
+    }
+
+    @Test
     public void TestExecute0038() throws IOException{
         doExecute("0038")
     }
@@ -141,14 +156,13 @@ public class DroolsExecutorCypressTestIT {
     }
 
     void doExecute(measureId, strictCheck=true) throws IOException{
-
-        /*
+/*
         qdm2Drools.metaClass.getJsonFromQdmFile = {
             xml ->
                 slurper.parseText(
                         IOUtils.toString(new ClassPathResource("cypress/measures/ep/$measureId/hqmf_model.json").inputStream))
         }
-        */
+*/
 
         def xmlStream = new ClassPathResource("cypress/measures/ep/${measureId}/hqmf1.xml").getInputStream()
 

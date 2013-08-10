@@ -149,25 +149,25 @@ class TemporalProcessor {
                     def unit = getUnit(range.high.unit)
                     sb.append """
                         ${property} != null,
-                        ${property} ${highOp(range.high)} new Date('${time."$minusOrPlusFn$unit"(Integer.parseInt(range.high.value)).toString(DroolsDateFormat.PATTERN)}'),
+                        toDays(${property}) ${highOp(range.high)} toDays(new Date('${time."$minusOrPlusFn$unit"(Integer.parseInt(range.high.value)).toString(DroolsDateFormat.PATTERN)}')),
                         """
                 }
                 if(range.low){
                     def unit = getUnit(range.low.unit)
                     sb.append """
                         ${property} != null,
-                        ${property} ${lowOp(range.low)} new Date('${time."$minusOrPlusFn$unit"(Integer.parseInt(range.low.value)).toString(DroolsDateFormat.PATTERN)}')
+                        toDays(${property}) ${lowOp(range.low)} toDays(new Date('${time."$minusOrPlusFn$unit"(Integer.parseInt(range.low.value)).toString(DroolsDateFormat.PATTERN)}'))
                         """
                 } else {
                     def op = getOperator(beforeOrAfter)
-                    sb.append("""$property $op "${time.toString(DroolsDateFormat.PATTERN)}"\n""")
+                    sb.append("""toDays($property) $op toDays(new Date("${time.toString(DroolsDateFormat.PATTERN)}"))\n""")
                 }
             } else {
                 def op = getOperator(beforeOrAfter)
 
                 sb.append """
                         ${property} != null,
-                        ${property} $op new Date('${time.toString(DroolsDateFormat.PATTERN)}')
+                        toDays(${property}) $op toDays(new Date('${time.toString(DroolsDateFormat.PATTERN)}'))
                         """
             }
 
@@ -207,14 +207,14 @@ class TemporalProcessor {
 
                 if(range.high){
                     def calendarType = toCalendarType(range.high.unit)
-                    sb.append("$property ${highOp(range.high)} droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${range.high.value}),\n")
+                    sb.append("toDays($property) ${highOp(range.high)} toDays(droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${range.high.value})),\n")
                 }
                 if(range.low){
                     def calendarType = toCalendarType(range.low.unit)
-                    sb.append("$property ${lowOp(range.low)} droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${range.low.value})\n")
+                    sb.append("toDays($property) ${lowOp(range.low)} toDays(droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${range.low.value}))\n")
                 } else {
                     def op = getOperator(beforeOrAfter)
-                    sb.append("$property $op \$${temporalReference.reference}.event.$targetProperty\n")
+                    sb.append("toDays($property) $op toDays(\$${temporalReference.reference}.event.$targetProperty)\n")
                 }
             } else {
                 def op = getOperator(beforeOrAfter)

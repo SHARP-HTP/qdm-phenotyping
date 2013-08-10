@@ -26,7 +26,7 @@ abstract class AbstractBaseCriteria implements Criteria {
         def negation = BooleanUtils.toBoolean(json.value.negation)
         """
         ${references.variables}
-        ${negation ? " /*not*/ " : "\$event : "}edu.mayo.qdm.patient.$name(
+        ${negation ? " not " : "\$event : "}edu.mayo.qdm.patient.$name(
                         ${ [references.criteria,this.getCriteria()].findAll().join(",") }
         ) from droolsUtil.findMatches("$valueSetOid", \$p.get${pluralName}())
         """

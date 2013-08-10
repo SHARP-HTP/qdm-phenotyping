@@ -76,6 +76,16 @@ class Qdm2Drools {
         resp
     }
 
+    def getPopulationCriteriaStack(preconditions){
+        def stack = []
+        preconditions?.each {
+            stack << it.id
+            getPopulationCriteriaStack(it.preconditions).each { stack << it }
+        }
+
+        stack
+    }
+
     def getDependencies(json, criteria){
         if(criteria == null) return []
 
@@ -102,27 +112,33 @@ class Qdm2Drools {
 
         sb.append(printRuleHeader(json))
 
+        def ruleOrderStack = []
+        json.population_criteria.sort(populationSorter).each {
+            getPopulationCriteriaStack( it.value.preconditions ).each { ruleOrderStack << it }
+        }
+
         json.population_criteria.sort(populationSorter).each {
             printPopulationCriteria( it, sb )
         }
 
-        def priorityStack = []
+        ruleOrderStack << GENERAL_DATA_CRITERIA_AGENDA_GROUP
+
         json.data_criteria.findAll(isGroup).each {
-            getDependencies(json, it).each { priorityStack << it}
+            getDependencies(json, it).each { ruleOrderStack << it}
         }
 
         json.data_criteria.each {
             switch(it){
                 //case isSpecificOccurrence : sb.append( printSpecificOccurrenceDataCriteria( it, measurementPeriod, json, priorityStack ) ); break;
                 //case isSpecificOccurrenceCriteria : sb.append( printSpecificOccurrenceCritieriaDataCriteria( it, measurementPeriod, json, priorityStack ) ); break;
-                default : sb.append( printDataCriteria( it, measurementPeriod, json, priorityStack ) ); break;
+                default : sb.append( printDataCriteria( it, measurementPeriod, json, ruleOrderStack ) ); break;
             }
         }
 
         sb.append( printRuleFunctions(json) )
 
-        if(priorityStack.size() > 0){
-            sb.append( printInitRule(priorityStack) )
+        if(ruleOrderStack.size() > 0){
+            sb.append( printInitRule(ruleOrderStack) )
         }
 
         def rule = sb.toString()
@@ -246,7 +262,9 @@ class Qdm2Drools {
             \$p : Patient( )
             not ( PreconditionResult(id == "$name", patient == \$p) )
             ${switch(name){
-                case "DENOM": return """PreconditionResult(id == "IPP", patient == \$p)"""
+                case "DENOM": return """
+                                        PreconditionResult(id == "IPP", patient == \$p)
+                                     """
                 case "NUMER": return """
                                         PreconditionResult(id == "DENOM", patient == \$p)
                                         not ( PreconditionResult(id == "DENEX", patient == \$p) )
@@ -312,6 +330,7 @@ class Qdm2Drools {
             dialect "mvel"
             no-loop
             salience 0
+            agenda-group "${prcn.id}"
 
         when
             \$p : Patient( )
@@ -367,9 +386,11 @@ class Qdm2Drools {
         def name = dataCriteria.key
         def criteria = criteriaFactory.getCriteria(dataCriteria, measurementPeriod, measureJson)
 
-        def agendaGroup = ""
+        def agendaGroup
         if(priorityStack.contains(name)){
             agendaGroup = """agenda-group "$name" """
+        } else {
+            agendaGroup = """agenda-group "$GENERAL_DATA_CRITERIA_AGENDA_GROUP" """
         }
 
         """

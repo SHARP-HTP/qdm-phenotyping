@@ -40,8 +40,23 @@ class CypressPatientDataSource {
             def code = procedure.codes.iterator().next()
             def oid = procedure.oid
 
-            if(oid == "2.16.840.1.113883.3.560.1.11"
-                    || oid == "2.16.840.1.113883.3.560.1.21"){
+            if(oid == "2.16.840.1.113883.3.560.1.11"){
+                def study = new DiagnosticStudy(
+                        new Concept(code.value[0], code.key, null),
+                        toDate(procedure.start_time),
+                        toDate(procedure.end_time))
+
+                procedure.values?.each {
+                    if(it._type == "CodedResultValue"){
+                        def resultCode = it.codes.iterator().next()
+                        study.results.add(new Concept(resultCode.value[0], resultCode.key, null))
+                    }
+                    //TODO: There can be Physical Quantities here.
+                }
+
+                patient.addDiagnosticStudy(study)
+
+            } else if(oid == "2.16.840.1.113883.3.560.1.21"){
                 def value = procedure.values?.iterator()?.next()
                 def val = value?.scalar != null ? new Value(value.scalar, value.unit) : null;
 
@@ -82,7 +97,6 @@ class CypressPatientDataSource {
             patient.addDiagnosis(
                 new Diagnosis(new Concept(code.value[0], code.key, null), toDate(condition.start_time), toDate(condition.end_time)))
         }
-
 
         json.vital_signs.each { vital_sign ->
             def code = vital_sign.codes.iterator().next()

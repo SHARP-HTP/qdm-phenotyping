@@ -45,6 +45,7 @@ public class Patient {
         JSON_MAPPER.getSerializationConfig().setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT);
     }
 
+    private Set<DiagnosticStudy> diagnosticStudies = new HashSet<DiagnosticStudy>();
     private Set<Allergy> allergies = new HashSet<Allergy>();
     private Set<Communication> communications = new HashSet<Communication>();
     private Set<Lab> labs = new HashSet<Lab>();
@@ -158,6 +159,17 @@ public class Patient {
             throw new IllegalArgumentException();
         }
         getDiagnoses().add(d);
+    }
+
+    public Set<DiagnosticStudy> getDiagnosticStudies() {
+        return diagnosticStudies;
+    }
+
+    public void addDiagnosticStudy(DiagnosticStudy d) {
+        if (d == null) {
+            throw new IllegalArgumentException();
+        }
+        getDiagnosticStudies().add(d);
     }
 
     public Set<PhysicalExamFinding> getPhysicalExamFindings() {

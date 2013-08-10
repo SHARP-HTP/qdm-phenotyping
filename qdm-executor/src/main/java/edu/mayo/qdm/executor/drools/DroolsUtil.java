@@ -53,7 +53,17 @@ public final class DroolsUtil {
         this.valueSetCodeResolver = valueSetCodeResolver;
     }
 
-    public <T extends CodedEntry> Collection<T>  findMatches(String valueSetOid, Iterable<T> codedEntries){
+    public boolean contains(String valueSetOid, Iterable<Concept> concepts){
+        for(Concept concept : concepts){
+            if(this.valueSetCodeResolver.isCodeInSet(valueSetOid, concept)){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public <T extends CodedEntry> Collection<T>  findMatches(String valueSetOid, Iterable <T> codedEntries){
         List<T> returnList = new ArrayList<T>();
         for(T entry : codedEntries){
             if(this.valueSetCodeResolver.isCodeInSet(valueSetOid, entry.getConcept())){
