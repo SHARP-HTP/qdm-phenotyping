@@ -7,6 +7,7 @@ import edu.mayo.qdm.executor.ExecutorFactory;
 import edu.mayo.qdm.executor.MeasurementPeriod;
 import edu.mayo.qdm.executor.Results;
 import edu.mayo.qdm.patient.Patient;
+import org.joda.time.DateTime;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -29,7 +30,7 @@ public class Launcher {
         List<Patient> patients = (List<Patient>) cypressPatientDataSource.getPatients();
 
         Results results =
-            factory.getExecutor().execute(patients, qdmXml, new MeasurementPeriod(startDate, true, endDate, true));
+            factory.getExecutor().execute(patients, qdmXml, MeasurementPeriod.getCalendarYear(new DateTime(2012,1,1,1,1).toDate()));
 
         Demographics demographics = this.demographicsProcessor.getDemographics(results.asMap());
 
