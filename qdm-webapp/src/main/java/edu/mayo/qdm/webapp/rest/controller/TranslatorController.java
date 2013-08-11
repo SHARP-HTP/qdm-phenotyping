@@ -31,7 +31,6 @@ import edu.mayo.qdm.webapp.rest.xml.XmlProcessor;
 import edu.mayo.qdm.webapp.translator.ExecutionResult;
 import edu.mayo.qdm.webapp.translator.Launcher;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.springframework.http.HttpHeaders;
@@ -79,7 +78,7 @@ public class TranslatorController {
 	
 	@Resource 
 	private XmlProcessor xmlProcessor;
-	
+
 	private ExecutorService executorService = Executors.newSingleThreadExecutor();
 	
 	/**
@@ -178,13 +177,14 @@ public class TranslatorController {
 
         final FileSystemResult result = this.fileSystemResolver.getNewFiles(id);
 
-        String zipFileName = multipartFile.getOriginalFilename();
+        String xmlFileName = multipartFile.getOriginalFilename();
 
         final ExecutionInfo info = new ExecutionInfo();
         info.setId(id);
         info.setStatus(Status.PROCESSING);
         info.setStart(new Date());
-        info.setParameters(new Parameters(startDate,endDate, zipFileName));
+        info.setParameters(new Parameters(startDate,endDate, xmlFileName));
+		info.setInputXml(multipartFile.getBytes());
 
         this.fileSystemResolver.setExecutionInfo(id, info);
 
@@ -196,9 +196,9 @@ public class TranslatorController {
                 try {
 
                     translatorResult = launcher.launchTranslator(
-                            IOUtils.toString(multipartFile.getInputStream()),
-                            dateValidator.parse(startDate),
-                            dateValidator.parse(endDate));
+                            new String(info.getInputXml()),
+                            dateValidator.parse(info.getParameters().getStartDate()),
+                            dateValidator.parse(info.getParameters().getEndDate()));
 
                     info.setStatus(Status.COMPLETE);
                     info.setFinish(new Date());

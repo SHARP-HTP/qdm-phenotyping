@@ -23,6 +23,7 @@
  */
 package edu.mayo.qdm.webapp.rest.store;
 
+import java.io.File;
 import java.util.Date;
 
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
@@ -56,7 +57,17 @@ public class ExecutionInfo {
 	private String error; 
 	
 	private Parameters parameters;
-	
+
+	private byte[] inputXml;
+
+	public byte[] getInputXml() {
+		return inputXml;
+	}
+
+	public void setInputXml(byte[] inputXml) {
+		this.inputXml = inputXml;
+	}
+
 	public String getError() {
 		return error;
 	}
