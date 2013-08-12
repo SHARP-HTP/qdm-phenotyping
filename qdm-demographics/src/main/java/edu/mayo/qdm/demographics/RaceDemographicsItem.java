@@ -24,7 +24,7 @@ public class RaceDemographicsItem extends AbstractDemographicsItem {
             case UNKNOWN:
                 return "Unknown";
             case AMERICANINDIAN:
-                return "Native Hawaiian";
+                return "American Indian or Alaska Native";
             case ASIANINDIAN:
                 return "Asian Indian";
             case ASIAN:

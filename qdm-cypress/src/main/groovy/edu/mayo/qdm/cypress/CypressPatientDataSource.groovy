@@ -30,6 +30,26 @@ class CypressPatientDataSource {
         }
         patient.setSex(gender)
 
+        def ethnicity
+        switch (json.ethnicity.code){
+            case "2186-5": ethnicity = Ethnicity.NONHISPANICORLATINO; break
+            case "2135-2": ethnicity = Ethnicity.HISPANICORLATINO; break
+            default: ethnicity = Ethnicity.UNKNOWN
+        }
+        patient.setEthnicity(ethnicity)
+
+        def race
+        switch (json.race.code){
+            case "1002-5": race = Race.AMERICANINDIAN; break
+            case "2028-9": race = Race.ASIAN; break
+            case "2029-7": race = Race.ASIANINDIAN; break
+            case "2054-5": race = Race.BLACKORAFRICANAMERICAN; break
+            case "2079-2": race = Race.NATIVEHAWAIIAN; break
+            case "2106-3": race = Race.WHITE; break
+            default: race = Race.UNKNOWN
+        }
+        patient.setRace(race)
+
         json.encounters.each { encounter ->
             def code = encounter.codes.iterator().next()
             patient.addEncounter(
