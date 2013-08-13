@@ -17,7 +17,9 @@ rule "insert"
 
     $p : Patient( )
 
-    $lab : Lab ( ) from $p.labs
+    $lab : DiagnosticStudy (
+
+    ) from $p.labs
 
   then
       insert( new SpecificOccurrence($lab, "A", "A", $p))

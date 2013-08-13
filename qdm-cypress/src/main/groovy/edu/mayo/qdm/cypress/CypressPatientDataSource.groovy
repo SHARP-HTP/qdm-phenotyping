@@ -50,15 +50,21 @@ class CypressPatientDataSource {
                     if(it._type == "CodedResultValue"){
                         def resultCode = it.codes.iterator().next()
                         study.results.add(new Concept(resultCode.value[0], resultCode.key, null))
+                    } else if(it._type == "PhysicalQuantityResultValue"){
+                        def value = procedure.values?.iterator()?.next()
+                        if(it.scalar != null){
+                            study.values.add(new Value(it.scalar, it.unit))
+                        }
+                    } else {
+                        throw new UnsupportedOperationException("""Type `${it._type}` not recognized.""")
                     }
-                    //TODO: There can be Physical Quantities here.
                 }
 
                 patient.addDiagnosticStudy(study)
 
             } else if(oid == "2.16.840.1.113883.3.560.1.21"){
                 def value = procedure.values?.iterator()?.next()
-                def val = value?.scalar != null ? new Value(value.scalar, value.unit) : null;
+                def val = value?.scalar != null ? new Value(value.scalar, value.unit) : null
 
                 patient.addLab(
                         new Lab(
@@ -69,9 +75,12 @@ class CypressPatientDataSource {
             } else if(oid == "2.16.840.1.113883.3.560.1.21"){
                 patient.addRiskCategoryAssessment(
                         new RiskCategoryAssessment(new Concept(code.value[0], code.key, null), toDate(procedure.start_time), toDate(procedure.end_time)))
-            } else if(oid == "2.16.840.1.113883.3.560.1.18"){
-                def value = procedure.values?.iterator().next()
-                def val = value.scalar != null ? new Value(value.scalar, value.unit) : null;
+            } else if(
+                    oid == "2.16.840.1.113883.3.560.1.57"
+                    ||
+                    oid == "2.16.840.1.113883.3.560.1.18"){
+                def value = procedure.values?.iterator()?.next()
+                def val = value?.scalar != null ? new Value(value.scalar, value.unit) : null;
 
                 patient.addPhysicalExamFinding(
                     new PhysicalExamFinding(

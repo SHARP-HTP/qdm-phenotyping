@@ -36,20 +36,34 @@ class GroupOperatorFactory {
 
     def RECENT = {
         fullJson, subsetOperator ->
-            firstOrRecent(fullJson, subsetOperator, "max")
+            [
+                firstOrRecent(fullJson, subsetOperator, "max", true),
+                firstOrRecent(fullJson, subsetOperator, "max", false)
+            ]
     }
 
     def FIRST = {
         fullJson, subsetOperator ->
-            firstOrRecent(fullJson, subsetOperator, "min")
+            [
+                firstOrRecent(fullJson, subsetOperator, "min", true),
+                firstOrRecent(fullJson, subsetOperator, "min", false)
+            ]
     }
 
-    def firstOrRecent(fullJson, subsetOperator, minOrMax){
+    def firstOrRecent(fullJson, subsetOperator, minOrMax, initial){
         def json = fullJson.value
 
         def childCriteria = json.children_criteria.collect { "id == \"$it\"" }.join(" || ")
         def droolsString = """
         \$p : Patient ( )
+        ${
+            if(!initial){
+            """\$oldResult : PreconditionResult(id == "${fullJson.key}", patient == \$p)"""
+            } else {
+                ""
+            }
+        }
+
         \$m : Number() from accumulate(
                 PreconditionResult(
                     patient == \$p,
@@ -67,9 +81,15 @@ class GroupOperatorFactory {
         [
             getLHS:{droolsString},
             getRHS:{
+                if(initial){
                 """
                 insert(new PreconditionResult("${fullJson.key}", \$p, \$specificEvent.event))
                 """
+                } else {
+                """
+                modify( \$oldResult ) { setEvent(\$specificEvent.event) }
+                """
+                }
             }
         ] as Criteria
     }

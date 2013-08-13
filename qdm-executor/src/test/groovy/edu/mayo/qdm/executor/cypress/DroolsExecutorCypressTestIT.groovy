@@ -103,6 +103,11 @@ public class DroolsExecutorCypressTestIT {
     }
 
     @Test
+    public void TestExecute0056() throws IOException{
+        doExecute("0056")
+    }
+
+    @Test
     public void TestExecute0069() throws IOException{
         doExecute("0069")
     }
@@ -113,12 +118,19 @@ public class DroolsExecutorCypressTestIT {
     }
 
     @Test
+    public void TestExecute0081() throws IOException{
+        doExecute("0081")
+    }
+
+    @Test
     public void TestExecute0088() throws IOException{
         doExecute("0088")
     }
 
     /*
      * "FIRST" Group Operator
+     *
+     * Specific Occurrences on DENEX I think
      */
     @Test
     public void TestExecute0105() throws IOException{
@@ -153,6 +165,11 @@ public class DroolsExecutorCypressTestIT {
     @Test
     public void TestDementiaCognitive() throws IOException{
         doExecute("DementiaCognitive")
+    }
+
+    @Test
+    public void TestPrimaryCariesPrevention() throws IOException{
+        doExecute("PrimaryCariesPrevention")
     }
 
     void doExecute(measureId, strictCheck=true) throws IOException{

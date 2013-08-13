@@ -269,7 +269,9 @@ class Qdm2Drools {
                                         PreconditionResult(id == "DENOM", patient == \$p)
                                         not ( PreconditionResult(id == "DENEX", patient == \$p) )
                                      """
-                case "DENEX": return """PreconditionResult(id == "DENOM", patient == \$p)"""
+                case "DENEX": return """
+                                        PreconditionResult(id == "DENOM", patient == \$p)
+                                     """
                 case "DENEXCEP": return """
                                         PreconditionResult(id == "DENOM", patient == \$p)
                                         not PreconditionResult(id == "NUMER", patient == \$p)
@@ -329,8 +331,8 @@ class Qdm2Drools {
         rule "${prcn.id}"
             dialect "mvel"
             no-loop
-            salience 0
-            agenda-group "${prcn.id}"
+            //salience 0
+            //agenda-group "${prcn.id}"
 
         when
             \$p : Patient( )
@@ -384,7 +386,7 @@ class Qdm2Drools {
 
     private def printDataCriteria(dataCriteria, measurementPeriod, measureJson, priorityStack){
         def name = dataCriteria.key
-        def criteria = criteriaFactory.getCriteria(dataCriteria, measurementPeriod, measureJson)
+        def criterias = criteriaFactory.getCriteria(dataCriteria, measurementPeriod, measureJson)
 
         def agendaGroup
         if(priorityStack.contains(name)){
@@ -392,22 +394,26 @@ class Qdm2Drools {
         } else {
             agendaGroup = """agenda-group "$GENERAL_DATA_CRITERIA_AGENDA_GROUP" """
         }
+        def idx = 0
 
+        criterias.collect {
+        def fullName = """${name}${"'" * idx++}"""
         """
         /* Rule */
-        rule "${name}"
+        rule "$fullName"
             dialect "mvel"
             no-loop
-            $agendaGroup
+            //$agendaGroup
 
         when
-            ${criteria.getLHS()}
+            ${it.getLHS()}
 
         then
-            System.out.println("$name");
-            ${criteria.getRHS()}
+            System.out.println("$fullName");
+            ${it.getRHS()}
         end
         """
+        }.join("\n")
     }
 
     /**

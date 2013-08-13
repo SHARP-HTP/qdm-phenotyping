@@ -24,17 +24,22 @@ abstract class AbstractBaseCriteria implements Criteria {
         def references = temporalProcessor.processTemporalReferences(json.value.temporal_references, measurementPeriod, measureJson)
 
         def negation = BooleanUtils.toBoolean(json.value.negation)
+
+        def extraCriteria = this.getCriteria()
         """
         ${references.variables}
         ${negation ? " not " : "\$event : "}edu.mayo.qdm.patient.$name(
-                        ${ [references.criteria,this.getCriteria()].findAll().join(",") }
+                        ${ [references.criteria,extraCriteria].findAll().join(",") }
         ) from droolsUtil.findMatches("$valueSetOid", \$p.get${pluralName}())
+        ${this.getEventCriteria()}
         """
     }
 
     abstract def getName()
 
     def getCriteria() { "" }
+
+    def getEventCriteria() { "" }
 
     def getPluralName(){
         getName() + "s"
