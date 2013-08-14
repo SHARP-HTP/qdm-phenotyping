@@ -23,7 +23,7 @@ public class PatientJsonTest {
     public void TestToJsonWithProcedure() {
 
         Patient p = new Patient("123");
-        Procedure pr = new Procedure(new Concept("asdf", "asdf", "asd"));
+        Procedure pr = new Procedure(new Concept("asdf", "asdf", "asd"), null);
         p.addProcedure(pr);
 
         String json = p.toJson();
@@ -55,7 +55,7 @@ public class PatientJsonTest {
     public void TestRoundTrip() {
 
         Patient p = new Patient("123");
-        Procedure pr = new Procedure(new Concept("asdf", "asdf", "asd"));
+        Procedure pr = new Procedure(new Concept("asdf", "asdf", "asd"), null);
         p.addProcedure(pr);
 
         String json = p.toJson();

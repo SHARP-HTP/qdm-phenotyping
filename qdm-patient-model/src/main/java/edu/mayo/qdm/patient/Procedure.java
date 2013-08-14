@@ -9,23 +9,36 @@ import java.util.Date;
  */
 public class Procedure extends Event {
     private static Logger logger = Logger.getLogger(Procedure.class);
-  /*
+
+    private ProcedureStatus procedureStatus;
+
+    /*
      * For JSON only
      */
     private Procedure() {
-        this(null);
+        this(null, null);
     }
 
-    public Procedure(Concept concept) {
-        this(concept, null);
+    public Procedure(Concept concept, ProcedureStatus procedureStatus) {
+        this(concept, procedureStatus, null);
     }
 
-    public Procedure(Concept concept, Date startDate) {
-        this(concept, startDate, null);
+    public Procedure(Concept concept, ProcedureStatus procedureStatus, Date startDate) {
+        this(concept, procedureStatus, startDate, startDate);
+
     }
 
-    public Procedure(Concept concept, Date startDate, Date endDate) {
+    public Procedure(Concept concept, ProcedureStatus procedureStatus, Date startDate, Date endDate) {
         super(concept, startDate, endDate);
+        this.procedureStatus = procedureStatus;
+    }
+
+    public ProcedureStatus getProcedureStatus() {
+        return procedureStatus;
+    }
+
+    public void setProcedureStatus(ProcedureStatus procedureStatus) {
+        this.procedureStatus = procedureStatus;
     }
 
     public String toString() {

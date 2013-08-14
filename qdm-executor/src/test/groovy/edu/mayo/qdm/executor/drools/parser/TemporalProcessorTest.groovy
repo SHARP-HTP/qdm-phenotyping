@@ -3,7 +3,9 @@ package edu.mayo.qdm.executor.drools.parser
 import edu.mayo.qdm.executor.MeasurementPeriod
 import org.junit.Test
 
-import static org.junit.Assert.*
+import java.text.SimpleDateFormat
+
+import static org.junit.Assert.assertTrue
 
 /**
  */
@@ -238,5 +240,20 @@ class TemporalProcessorTest {
 
         assertTrue ivl.criteria.contains("start <= droolsUtil.add(droolsUtil.getCalendar(\$some_other_event.event.endDate), Calendar.MONTH, 24)")
         assertTrue ivl.criteria.contains("start >= droolsUtil.add(droolsUtil.getCalendar(\$some_other_event.event.endDate), Calendar.MONTH, 12)")
+    }
+
+    @Test
+    void test(){
+
+        Date start = new SimpleDateFormat("dd/MM/yyyy").parse("13/09/2010");
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(start);
+        calendar.add(Calendar.YEAR, -30)
+
+        Date bd = new SimpleDateFormat("dd/MM/yyyy").parse("29/08/1980");
+
+        println bd < calendar.time
+
     }
 }

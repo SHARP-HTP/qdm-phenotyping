@@ -25,7 +25,7 @@ class CypressValidator {
             def expected = resultJson[it.key]
             def actual = results.get(it.key).size()
 
-            def message = "Criteria($it.key) - Expected: $expected, Actual: $actual, Found Patients: ${results.get(it.key).collect {it.sourcePid}}"
+            def message = "Criteria($it.key) - Expected: $expected, Actual: $actual, Found Patients: ${results.get(it.key).collect {"'"+it.sourcePid+"'"}}"
 
             callback(it, expected, actual, message)
         }

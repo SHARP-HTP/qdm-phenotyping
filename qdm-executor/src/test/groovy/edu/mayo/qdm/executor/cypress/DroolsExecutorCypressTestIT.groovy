@@ -108,8 +108,18 @@ public class DroolsExecutorCypressTestIT {
     }
 
     @Test
+    public void TestExecute0068() throws IOException{
+        doExecute("0068")
+    }
+
+    @Test
     public void TestExecute0069() throws IOException{
         doExecute("0069")
+    }
+
+    @Test
+    public void TestExecute0059() throws IOException{
+        doExecute("0059")
     }
 
     @Test
@@ -138,8 +148,13 @@ public class DroolsExecutorCypressTestIT {
     }
 
     @Test
-    public void TestExecute0421() throws IOException{
-        doExecute("0421")
+    public void TestExecute0179() throws IOException{
+        doExecute("0179")
+    }
+
+    @Test
+    public void TestExecute0387() throws IOException{
+        doExecute("0387")
     }
 
     @Test
@@ -172,14 +187,24 @@ public class DroolsExecutorCypressTestIT {
         doExecute("PrimaryCariesPrevention")
     }
 
+    @Test
+    public void TestCholesterolScreeningRisk() throws IOException{
+        doExecute("CholesterolScreeningRisk")
+    }
+
+    @Test
+    public void TestClosingReferralLoop() throws IOException{
+        doExecute("ClosingReferralLoop")
+    }
+
     void doExecute(measureId, strictCheck=true) throws IOException{
-/*
+        /*
         qdm2Drools.metaClass.getJsonFromQdmFile = {
             xml ->
                 slurper.parseText(
                         IOUtils.toString(new ClassPathResource("cypress/measures/ep/$measureId/hqmf_model.json").inputStream))
         }
-*/
+        */
 
         def xmlStream = new ClassPathResource("cypress/measures/ep/${measureId}/hqmf1.xml").getInputStream()
 

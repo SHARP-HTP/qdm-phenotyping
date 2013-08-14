@@ -1,4 +1,5 @@
 package edu.mayo.qdm.executor.drools.parser
+
 import edu.mayo.qdm.executor.MeasurementPeriod
 import edu.mayo.qdm.executor.ResultCallback
 import edu.mayo.qdm.executor.drools.DroolsUtil
@@ -7,10 +8,7 @@ import edu.mayo.qdm.executor.drools.SpecificOccurrence
 import edu.mayo.qdm.executor.drools.parser.criteria.CriteriaFactory
 import edu.mayo.qdm.executor.drools.parser.criteria.Interval
 import edu.mayo.qdm.executor.drools.parser.criteria.MeasurementValue
-import edu.mayo.qdm.patient.Concept
-import edu.mayo.qdm.patient.Event
-import edu.mayo.qdm.patient.MedicationStatus
-import edu.mayo.qdm.patient.Patient
+import edu.mayo.qdm.patient.*
 import groovy.util.logging.Log4j
 import groovyx.net.http.HTTPBuilder
 import groovyx.net.http.Method
@@ -19,6 +17,7 @@ import org.apache.http.entity.mime.MultipartEntity
 import org.apache.http.entity.mime.content.InputStreamBody
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
+
 /*
  * The main JSON -> Drools converter.
  */
@@ -47,6 +46,7 @@ class Qdm2Drools {
         this.qdm2jsonServiceUrl = qdm2jsonServiceUrl
     }
 
+    /*
     def populationPriority = ["IPP":4,"DENOM":3,"DENEX":2,"NUMER":1]
     def populationSorter = { a, b ->
         def rank1 = populationPriority.get(a,0)
@@ -54,6 +54,7 @@ class Qdm2Drools {
 
         rank1 <=> rank2
     } as Comparator
+    */
 
     /**
      * Generate a JSON representation of a QDM/HQMF XML file.
@@ -113,11 +114,13 @@ class Qdm2Drools {
         sb.append(printRuleHeader(json))
 
         def ruleOrderStack = []
+        /*
         json.population_criteria.sort(populationSorter).each {
             getPopulationCriteriaStack( it.value.preconditions ).each { ruleOrderStack << it }
         }
+        */
 
-        json.population_criteria.sort(populationSorter).each {
+        json.population_criteria.each {
             printPopulationCriteria( it, sb )
         }
 
@@ -221,7 +224,8 @@ class Qdm2Drools {
         import ${DroolsUtil.name};
         import ${MeasurementPeriod.name};
         import ${SpecificOccurrence.name};
-        import ${MedicationStatus.name}
+        import ${MedicationStatus.name};
+        import ${ProcedureStatus.name};
         /*
             ID: ${qdm.id}
             Title: ${qdm.title}

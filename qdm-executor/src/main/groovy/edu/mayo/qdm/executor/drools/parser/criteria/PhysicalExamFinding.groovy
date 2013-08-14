@@ -8,9 +8,4 @@ class PhysicalExamFinding extends AbstractBaseCriteria {
         "PhysicalExamFinding"
     }
 
-    //new Interval(${valueToString(lowValue)}, ${valueToString(highValue)}))
-    def valueToString(value){
-        value == null ? "null" : """new MeasurementValue(${value.value}, "${value.unit}", ${value['inclusive?']}"""
-    }
-
 }

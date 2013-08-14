@@ -67,7 +67,10 @@ class IndividualCharacteristic implements Criteria {
     }
 
     def clinicalTrialParticipant = { json, measurementPeriod ->
-        "eval(true)"
+        """
+        /* TODO: Cypress data doesn't have this, so I'm not sure how to represent it */
+        eval(false)
+        """
     }
 
     def expired = { json, measurementPeriod ->

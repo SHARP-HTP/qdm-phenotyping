@@ -133,30 +133,32 @@ class TemporalProcessor {
                 def minusOrPlusFn
                 switch (beforeOrAfter){
                     case BeforeOrAfter.BEFORE:
-                        highOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '>=' : '>'}
-                        lowOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '<=' : '<'}
+                        highOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '>' : '>'}
+                        lowOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '<' : '<'}
                         minusOrPlusFn = "minus"
                         break
 
                     case BeforeOrAfter.AFTER:
-                        lowOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '>=' : '>'}
-                        highOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '<=' : '<'}
+                        lowOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '>' : '>'}
+                        highOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '<' : '<'}
                         minusOrPlusFn = "plus"
                         break
                 }
 
                 if(range.high){
                     def unit = getUnit(range.high.unit)
+                    def value = adjustForInclusive(range.high.value, range.high.'inclusive?')
                     sb.append """
                         ${property} != null,
-                        toDays(${property}) ${highOp(range.high)} toDays(new Date('${time."$minusOrPlusFn$unit"(Integer.parseInt(range.high.value)).toString(DroolsDateFormat.PATTERN)}')),
+                        toDays(${property}) ${highOp(range.high)} toDays(new Date('${time."$minusOrPlusFn$unit"(Integer.parseInt(value)).toString(DroolsDateFormat.PATTERN)}')),
                         """
                 }
                 if(range.low){
                     def unit = getUnit(range.low.unit)
+                    def value = range.low.value//adjustForInclusive(range.low.value, range.low.'inclusive?', beforeOrAfter)
                     sb.append """
                         ${property} != null,
-                        toDays(${property}) ${lowOp(range.low)} toDays(new Date('${time."$minusOrPlusFn$unit"(Integer.parseInt(range.low.value)).toString(DroolsDateFormat.PATTERN)}'))
+                        toDays(${property}) ${lowOp(range.low)} toDays(new Date('${time."$minusOrPlusFn$unit"(Integer.parseInt(value)).toString(DroolsDateFormat.PATTERN)}'))
                         """
                 } else {
                     def op = getOperator(beforeOrAfter)
@@ -193,25 +195,27 @@ class TemporalProcessor {
                 def minusOrPlus
                 switch (beforeOrAfter){
                     case BeforeOrAfter.BEFORE:
-                        highOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '>=' : '>'}
-                        lowOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '<=' : '<'}
+                        highOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '>' : '>'}
+                        lowOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '<' : '<'}
                         minusOrPlus = "-"
                         break
 
                     case BeforeOrAfter.AFTER:
-                        lowOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '>=' : '>'}
-                        highOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '<=' : '<'}
+                        lowOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '>' : '>'}
+                        highOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '<' : '<'}
                         minusOrPlus = ""
                         break
                 }
 
                 if(range.high){
                     def calendarType = toCalendarType(range.high.unit)
-                    sb.append("toDays($property) ${highOp(range.high)} toDays(droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${range.high.value})),\n")
+                    def value = adjustForInclusive(range.high.value, range.high.'inclusive?')
+                    sb.append("toDays($property) ${highOp(range.high)} toDays(droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${value})),\n")
                 }
                 if(range.low){
                     def calendarType = toCalendarType(range.low.unit)
-                    sb.append("toDays($property) ${lowOp(range.low)} toDays(droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${range.low.value}))\n")
+                    def value = range.low.value//adjustForInclusive(range.low.value, range.low.'inclusive?')
+                    sb.append("toDays($property) ${lowOp(range.low)} toDays(droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${value}))\n")
                 } else {
                     def op = getOperator(beforeOrAfter)
                     sb.append("toDays($property) $op toDays(\$${temporalReference.reference}.event.$targetProperty)\n")
@@ -253,6 +257,14 @@ class TemporalProcessor {
             case "d" : return "Days"
             case "h" : return "Hours"
             default: throw new UnsupportedOperationException("Unit: $unit is not recognized.")
+        }
+    }
+
+    def adjustForInclusive(value, inclusive){
+        if(inclusive){
+           Integer.toString(Integer.parseInt(value) + 1)
+        } else {
+            value
         }
     }
 

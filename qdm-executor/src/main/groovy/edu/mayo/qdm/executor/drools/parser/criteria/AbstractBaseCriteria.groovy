@@ -7,6 +7,7 @@ import org.springframework.util.Assert
  */
 abstract class AbstractBaseCriteria implements Criteria {
     def temporalProcessor = new TemporalProcessor()
+    def valueProcessor = new ValueProcessor()
 
     def measureJson
     def json
@@ -25,11 +26,13 @@ abstract class AbstractBaseCriteria implements Criteria {
 
         def negation = BooleanUtils.toBoolean(json.value.negation)
 
+        def negationCriteria = negation ? " negated == true " : ""
+
         def extraCriteria = this.getCriteria()
         """
         ${references.variables}
-        ${negation ? " not " : "\$event : "}edu.mayo.qdm.patient.$name(
-                        ${ [references.criteria,extraCriteria].findAll().join(",") }
+        \$event : edu.mayo.qdm.patient.$name(
+                        ${ [negationCriteria,references.criteria,extraCriteria].findAll().join(",") }
         ) from droolsUtil.findMatches("$valueSetOid", \$p.get${pluralName}())
         ${this.getEventCriteria()}
         """

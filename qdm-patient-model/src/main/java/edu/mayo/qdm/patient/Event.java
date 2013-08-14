@@ -8,6 +8,7 @@ public class Event extends CodedEntry {
 
     private Date startDate;
     private Date endDate;
+    private boolean negated = false;
 
     public Event(Concept concept, Date date){
         this(concept, date, date);
@@ -33,5 +34,13 @@ public class Event extends CodedEntry {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public boolean isNegated() {
+        return negated;
+    }
+
+    public void setNegated(boolean negated) {
+        this.negated = negated;
     }
 }

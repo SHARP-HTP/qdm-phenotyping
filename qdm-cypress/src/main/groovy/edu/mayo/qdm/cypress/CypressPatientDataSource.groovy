@@ -72,6 +72,9 @@ class CypressPatientDataSource {
                                 val,
                                 toDate(procedure.start_time),
                                 toDate(procedure.end_time)))
+            } else if(oid == "2.16.840.1.113883.3.560.1.29"){
+                patient.addCommunication(
+                        new Communication(new Concept(code.value[0], code.key, null), toDate(procedure.start_time), toDate(procedure.end_time)))
             } else if(oid == "2.16.840.1.113883.3.560.1.21"){
                 patient.addRiskCategoryAssessment(
                         new RiskCategoryAssessment(new Concept(code.value[0], code.key, null), toDate(procedure.start_time), toDate(procedure.end_time)))
@@ -89,8 +92,14 @@ class CypressPatientDataSource {
                             toDate(procedure.start_time),
                             toDate(procedure.end_time)))
             } else {
+                def status = this.toProcedureStatus(procedure."status_code")
+
                 patient.addProcedure(
-                    new Procedure(new Concept(code.value[0], code.key, null), toDate(procedure.start_time), toDate(procedure.end_time)))
+                    new Procedure(
+                            new Concept(code.value[0], code.key, null),
+                            status,
+                            toDate(procedure.start_time),
+                            toDate(procedure.end_time)))
             }
         }
 
@@ -133,6 +142,18 @@ class CypressPatientDataSource {
             case "dispensed": return MedicationStatus.DISPENSED
             case "ordered": return MedicationStatus.ORDERED
             default : throw new RuntimeException("""Status: $status not recognized.""")
+        }
+    }
+
+    def toProcedureStatus(statusJson){
+        def status = statusJson."HL7 ActStatus"[0]
+
+        switch (status){
+            case "performed": return ProcedureStatus.PERFORMED
+            case "active": return ProcedureStatus.ACTIVE
+            case "ordered": return ProcedureStatus.ORDERED
+            case null: return null
+            default : throw new RuntimeException("""Status: $status not recognized. JSON -> $statusJson""")
         }
     }
 
