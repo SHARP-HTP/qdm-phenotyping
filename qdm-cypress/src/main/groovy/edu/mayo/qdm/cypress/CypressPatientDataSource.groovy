@@ -62,16 +62,6 @@ class CypressPatientDataSource {
 
                 patient.addDiagnosticStudy(study)
 
-            } else if(oid == "2.16.840.1.113883.3.560.1.21"){
-                def value = procedure.values?.iterator()?.next()
-                def val = value?.scalar != null ? new Value(value.scalar, value.unit) : null
-
-                patient.addLab(
-                        new Lab(
-                                new Concept(code.value[0], code.key, null),
-                                val,
-                                toDate(procedure.start_time),
-                                toDate(procedure.end_time)))
             } else if(oid == "2.16.840.1.113883.3.560.1.29"){
                 patient.addCommunication(
                         new Communication(new Concept(code.value[0], code.key, null), toDate(procedure.start_time), toDate(procedure.end_time)))
@@ -111,9 +101,16 @@ class CypressPatientDataSource {
         }
 
         json.conditions.each { condition ->
+            def oid = condition.oid
+
             def code = condition.codes.iterator().next()
-            patient.addDiagnosis(
-                new Diagnosis(new Concept(code.value[0], code.key, null), toDate(condition.start_time), toDate(condition.end_time)))
+            if(oid == "2.16.840.1.113883.3.560.1.1001"){
+                patient.addCharacteristic(
+                        new Characteristic(new Concept(code.value[0], code.key, null), toDate(condition.start_time), toDate(condition.end_time)))
+            } else {
+                patient.addDiagnosis(
+                        new Diagnosis(new Concept(code.value[0], code.key, null), toDate(condition.start_time), toDate(condition.end_time)))
+            }
         }
 
         json.vital_signs.each { vital_sign ->

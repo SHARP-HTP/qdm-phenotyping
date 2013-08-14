@@ -1,9 +1,6 @@
 package edu.mayo.qdm.executor.drools.parser.criteria
-
 import edu.mayo.qdm.patient.Gender
 import org.apache.commons.lang.StringUtils
-
-import java.text.SimpleDateFormat
 /**
  */
 class IndividualCharacteristic implements Criteria {
@@ -12,7 +9,7 @@ class IndividualCharacteristic implements Criteria {
 
     def name
 
-    def dateFormat = new SimpleDateFormat()
+    def valueSetCodeResolver
 
     IndividualCharacteristic(fullJson, measurementPeriod){
         this.name = fullJson.key
@@ -23,11 +20,7 @@ class IndividualCharacteristic implements Criteria {
         def droolsString
 
         if(StringUtils.isEmpty(property)){
-            if(json.definition.equals("patient_characteristic")){
-                droolsString = this.handleGenericPatientCharacteristic(json)
-            } else {
-                throw new RuntimeException("Cannot determine Individual Characteristic for: JSON ->  $json")
-            }
+            throw new RuntimeException("Cannot handle generic Individual Characteristic here. The CriteriaFactory should process those. JSON ->  $json")
         } else {
             if(this.hasProperty(property)){
                 droolsString = this."$property"(json, measurementPeriod)
@@ -37,10 +30,6 @@ class IndividualCharacteristic implements Criteria {
         }
 
         this.resultString = droolsString
-    }
-
-    def handleGenericPatientCharacteristic(json){
-        "/*TODO - Generic Patient Characteristic.*/ eval(true) "
     }
 
     def gender = { json, measurementPeriod ->

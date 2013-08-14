@@ -19,6 +19,10 @@ class CriteriaFactory {
                     json, measurementPeriod, measureJson ->
                         if(json.value.property == "birthtime"){
                             new Birthdate(json, measurementPeriod)
+                        } else if (
+                                json.value.property == null &&
+                                json.value.definition.equals("patient_characteristic")){
+                            new Characteristic(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod)
                         } else {
                             new IndividualCharacteristic(json, measurementPeriod)
                         }

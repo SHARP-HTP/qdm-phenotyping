@@ -153,6 +153,11 @@ public class DroolsExecutorCypressTestIT {
     }
 
     @Test
+    public void TestExecute0384() throws IOException{
+        doExecute("0384")
+    }
+
+    @Test
     public void TestExecute0387() throws IOException{
         doExecute("0387")
     }

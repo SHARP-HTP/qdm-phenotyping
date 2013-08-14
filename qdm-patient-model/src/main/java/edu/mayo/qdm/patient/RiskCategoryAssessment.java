@@ -18,11 +18,21 @@ public class RiskCategoryAssessment extends Event {
     }
 
     public RiskCategoryAssessment(Concept concept, Date date) {
-        super(concept, date);
+        this(concept, date, date);
     }
 
     public RiskCategoryAssessment(Concept concept, Date startDate, Date endDate) {
         super(concept, startDate, endDate);
+    }
+
+    @Override
+    public Date getEndDate() {
+        return super.getEndDate();    //To change body of overridden methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public Date getStartDate() {
+        return super.getStartDate();    //To change body of overridden methods use File | Settings | File Templates.
     }
 
     public String toString() {

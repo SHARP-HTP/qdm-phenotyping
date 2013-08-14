@@ -16,7 +16,7 @@ import javax.xml.xpath.XPathFactory
 
 import static org.junit.Assert.assertEquals
 /**
- * 24 failures
+ * 21 failures
  */
 //@Ignore
 class CypressValidationTestIT extends AbstractAllCypressMeasuresTestIT {

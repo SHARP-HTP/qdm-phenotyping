@@ -222,7 +222,7 @@ class TemporalProcessor {
                 }
             } else {
                 def op = getOperator(beforeOrAfter)
-                sb.append("$property $op \$${temporalReference.reference}.event.$targetProperty")
+                sb.append("toDays($property) $op toDays(\$${temporalReference.reference}.event.$targetProperty)")
             }
 
             return new TemporalResult(
