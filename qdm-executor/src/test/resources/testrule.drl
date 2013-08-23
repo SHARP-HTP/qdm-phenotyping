@@ -2,12 +2,12 @@ import edu.mayo.qdm.executor.drools.PreconditionResult;
 
 import edu.mayo.qdm.patient.*;
 import java.util.List;
-import edu.mayo.qdm.executor.drools.DroolsUtil
+import edu.mayo.qdm.executor.drools.*
 import java.util.Iterator;
-import edu.mayo.qdm.executor.drools.SpecificOccurrence
 import java.util.Calendar;
 
 global DroolsUtil droolsUtil
+global SpecificContextManager specificContextManager
 
 rule "p1"
       dialect "mvel"
@@ -15,37 +15,15 @@ rule "p1"
 
   when
 
-    $p : Patient( sourcePid == "1", sex == Gender.MALE)
+    $p : Patient( )
+
+    $labs : List() from collect($lab : Lab() from $p.labs)
 
   then
-    insert(new test.Message("1", $p))
+    System.out.println($labs);
 
 end
 
-rule "p2"
-      dialect "mvel"
-      no-loop
 
-  when
-    $p : Patient( sourcePid == "1", sex == Gender.FEMALE)
 
-  then
-    insert(new test.Message("2", $p))
 
-end
-
-rule "AND Rule"
-      dialect "mvel"
-      no-loop
-
-  when
-    $p : Patient()
-
-    test.Message(message == "1", patent == $p)
-    and
-    not test.Message(message == "2", patent == $p)
-
-  then
-    System.out.println("Found both");
-
-end

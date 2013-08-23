@@ -1,8 +1,10 @@
 package test;
 
 import edu.mayo.qdm.executor.drools.AbstractDroolsTestBase;
-import edu.mayo.qdm.patient.Gender;
+import edu.mayo.qdm.patient.Concept;
+import edu.mayo.qdm.patient.Lab;
 import edu.mayo.qdm.patient.Patient;
+import org.joda.time.DateTime;
 
 import java.util.Arrays;
 
@@ -11,12 +13,10 @@ public class TestQdmRules extends AbstractDroolsTestBase {
     @Override
     protected Iterable<Patient> getPatients() {
         Patient p1 = new Patient("1");
-        p1.setSex(Gender.MALE);
+        p1.addLab(new Lab(new Concept("a", "a", "a"), null, new DateTime(1980, 1, 1, 0, 0).toDate(), new DateTime(4000, 1, 1, 0, 0).toDate()));
+        p1.addLab(new Lab(new Concept("b", "b", "b"),null,new DateTime(1980,1,1,0,0).toDate(),new DateTime(4000,1,1,0,0).toDate()));
 
-        Patient p2 = new Patient("1");
-        p2.setSex(Gender.FEMALE);
-
-        return Arrays.asList(p1,p2);
+        return Arrays.asList(p1);
     }
 
     @Override

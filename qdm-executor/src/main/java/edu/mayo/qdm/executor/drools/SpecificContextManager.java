@@ -33,14 +33,7 @@ public class SpecificContextManager {
 
         Set<SpecificContextTuple> returnSet = new HashSet<SpecificContextTuple>(tuples1);
 
-        for (SpecificContextTuple tuple : tuples1){
-            for(SpecificContextTuple innerTuple : tuples2){
-                if(tuple.isMatch(innerTuple)){
-                    returnSet.add(tuple);
-                    returnSet.add(innerTuple);
-                }
-            }
-        }
+
 
         return returnSet;
     }

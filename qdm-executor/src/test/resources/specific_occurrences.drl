@@ -24,7 +24,7 @@ rule "Rule 1"
 
   then
       System.out.println("1" + $lab);
-      modify($sc) { add(new SpecificOccurrenceResult("A", $lab)) }
+      modify($sc) { add(new SpecificOccurrence("A", "A", $lab)) }
       insert (new PreconditionResult("1", $p, $lab))
 end
 
@@ -41,7 +41,7 @@ rule "Rule 2"
 
   then
       System.out.println("2" + $lab);
-      modify($sc) { add(new SpecificOccurrenceResult("A", $lab)) }
+      modify($sc) { add(new SpecificOccurrence("A", "A", $lab)) }
       insert (new PreconditionResult("2", $p, $lab))
 
 end
@@ -59,7 +59,7 @@ rule "Rule 3"
 
   then
       System.out.println("3" + $lab);
-      modify($sc) { add(new SpecificOccurrenceResult("A", $lab)) }
+      modify($sc) { add(new SpecificOccurrence("A", "A", $lab)) }
       insert (new PreconditionResult("3", $p, $lab))
 
 end
@@ -130,9 +130,9 @@ rule "Occurrence A"
 
     $c : SpecificContext(patient == $p)
 
-    $labs : List() from collect (Lab() from $p.labs)
+    $lab : Lab() from $p.labs
 
   then
-      $c.addUniverse(new SpecificOccurrence("A", $p, $labs));
+      $c.addToUniverse(new SpecificOccurrence("A", "A", $lab));
 
 end

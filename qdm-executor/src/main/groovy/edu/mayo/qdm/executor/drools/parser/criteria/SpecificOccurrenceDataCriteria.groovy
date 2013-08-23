@@ -50,6 +50,7 @@ class SpecificOccurrenceDataCriteria implements Criteria {
     def getLHS(){
         """
         \$p : Patient ( )
+        \$c : SpecificContext(patient == \$p)
         ${toDrools()}
         """
     }
@@ -61,9 +62,7 @@ class SpecificOccurrenceDataCriteria implements Criteria {
         def id = json.value.specific_occurrence
         def constant = json.value.specific_occurrence_const
         """
-        /* LOOK HERE */
-        //insert( new PreconditionResult("${json.key}", \$p ${!negated ? ", \$event" : ""}))
-        insert( new SpecificOccurrence(\$event, "$id", "$constant", \$p))
+        \$c.addToUniverse(new SpecificOccurrence("$id", "$constant", \$event));
         """
     }
 }

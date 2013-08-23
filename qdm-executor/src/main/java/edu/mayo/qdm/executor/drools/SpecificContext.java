@@ -2,7 +2,6 @@ package edu.mayo.qdm.executor.drools;
 
 import edu.mayo.qdm.patient.Event;
 import edu.mayo.qdm.patient.Patient;
-import org.apache.commons.collections.CollectionUtils;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -16,7 +15,7 @@ public class SpecificContext {
     private String id;
     private Patient patient;
 
-    private Map<String,Set<Event>> universe = new HashMap<String,Set<Event>>();
+    private Map<SpecificOccurrenceId,Set<Event>> universe = new HashMap<SpecificOccurrenceId,Set<Event>>();
 
     private Set<SpecificContextTuple> specificContextTuples = new HashSet<SpecificContextTuple>();
 
@@ -49,7 +48,7 @@ public class SpecificContext {
         this.id = id;
     }
 
-    public void add(SpecificOccurrenceResult occurrence){
+    public void add(SpecificOccurrence occurrence){
         this.specificContextTuples.add(new SpecificContextTuple(occurrence));
     }
 
@@ -61,13 +60,7 @@ public class SpecificContext {
             thisTuples = this.getSpecificContextTuples();
         }
 
-        for (SpecificContextTuple tuple : tuples){
-            for (SpecificContextTuple innerTuple : thisTuples){
-                if(tuple.isMatch(innerTuple)){
-                    return true;
-                }
-            }
-        }
+
 
         return false;
     }
@@ -82,18 +75,7 @@ public class SpecificContext {
     private Set<SpecificContextTuple> negate(Set<SpecificContextTuple> tuples) {
         Set<SpecificContextTuple> returnSet = new HashSet<SpecificContextTuple>();
 
-        for(SpecificContextTuple universeTuple : this.getUniverse()){
-            if(CollectionUtils.isEmpty(tuples)){
-                returnSet.add(universeTuple);
-            } else {
-                for(SpecificContextTuple negated : tuples){
-                    if(! universeTuple.isMatch(negated)){
-                        returnSet.add(universeTuple);
-                        returnSet.add(negated);
-                    }
-                }
-            }
-        }
+
 
         return returnSet;
     }
@@ -101,20 +83,16 @@ public class SpecificContext {
     private Set<SpecificContextTuple> getUniverse(){
         Set<SpecificContextTuple> returnSet = new HashSet<SpecificContextTuple>();
 
-        for(String key : this.universe.keySet()){
-            for(Event event : this.universe.get(key)){
-                SpecificContextTuple t = new SpecificContextTuple();
-                t.getContext().put(key, event);
-
-                returnSet.add(t);
-            }
-
-        }
 
         return returnSet;
     }
 
-    public void addUniverse(SpecificOccurrence a) {
-        universe.put(a.getId(), new HashSet<Event>(a.getEvents()));
+    public void addToUniverse(SpecificOccurrence occurrence) {
+        SpecificOccurrenceId id = occurrence.getId();
+        if(! this.universe.containsKey(id)){
+            this.universe.put(id, new HashSet<Event>());
+        }
+
+        this.universe.get(id).add(occurrence.getEvent());
     }
 }

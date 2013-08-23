@@ -4,6 +4,7 @@ import edu.mayo.qdm.executor.MeasurementPeriod
 import edu.mayo.qdm.executor.ResultCallback
 import edu.mayo.qdm.executor.drools.DroolsUtil
 import edu.mayo.qdm.executor.drools.PreconditionResult
+import edu.mayo.qdm.executor.drools.SpecificContext
 import edu.mayo.qdm.executor.drools.SpecificOccurrence
 import edu.mayo.qdm.executor.drools.parser.criteria.CriteriaFactory
 import edu.mayo.qdm.executor.drools.parser.criteria.Interval
@@ -138,11 +139,9 @@ class Qdm2Drools {
             }
         }
 
-        /* TODO: For specific occurrences
         json.source_data_criteria.findAll(isSpecificOccurrenceDataCriteria).each {
             sb.append( printSpecificOccurrenceDataCriteria( it, measurementPeriod, json, ruleOrderStack ) )
         }
-        */
 
         sb.append( printRuleFunctions(json) )
 
@@ -244,6 +243,7 @@ class Qdm2Drools {
         import ${SpecificOccurrence.name};
         import ${MedicationStatus.name};
         import ${ProcedureStatus.name};
+        import ${SpecificContext.name};
         /*
             ID: ${qdm.id}
             Title: ${qdm.title}

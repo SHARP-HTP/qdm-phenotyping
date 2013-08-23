@@ -9,42 +9,24 @@ import java.util.Map;
  */
 public class SpecificContextTuple {
 
-    private Map<String,Event> context = new HashMap<String,Event>();
+    private Map<SpecificOccurrenceId,Event> context = new HashMap<SpecificOccurrenceId,Event>();
 
     public SpecificContextTuple(){
         super();
     }
 
-    public SpecificContextTuple(SpecificOccurrenceResult result){
+    public SpecificContextTuple(SpecificOccurrence occurrence){
         super();
-        this.context.put(result.getId(), result.getEvent());
+        this.context.put(occurrence.getId(), occurrence.getEvent());
     }
 
-    public Map<String, Event> getContext() {
+    public Map<SpecificOccurrenceId, Event> getContext() {
         return context;
     }
 
-    public void setContext(Map<String, Event> context) {
+    public void setContext(Map<SpecificOccurrenceId, Event> context) {
         this.context = context;
     }
 
-    public boolean isMatch(SpecificContextTuple tuple){
-        if(tuple.getContext().keySet().size() != this.context.keySet().size()){
-            throw new IllegalStateException();
-        }
 
-        for (String key : tuple.getContext().keySet()){
-            if(! this.context.containsKey(key)){
-                throw new IllegalStateException();
-            }
-
-            Event a = tuple.getContext().get(key);
-            Event b = this.context.get(key);
-
-            if(a == null || b == null || a == b){
-                return true;
-            }
-        }
-        return false;
-    }
 }

@@ -1,45 +1,36 @@
 package edu.mayo.qdm.executor.drools;
 
 import edu.mayo.qdm.patient.Event;
-import edu.mayo.qdm.patient.Patient;
-
-import java.util.List;
 
 /**
  */
 public class SpecificOccurrence {
 
-    private List<Event> events;
-    private String id;
-    private Patient patient;
+    private Event event;
+    private SpecificOccurrenceId id;
 
-    public SpecificOccurrence(String id, Patient patient, List<Event> events) {
-        this.events = events;
+    public SpecificOccurrence(String id, String constant, Event event) {
+        this(new SpecificOccurrenceId(id, constant), event);
+    }
+
+    public SpecificOccurrence(SpecificOccurrenceId id, Event event) {
+        this.event = event;
         this.id = id;
-        this.patient = patient;
     }
 
-    public Patient getPatient() {
-        return patient;
+    public Event getEvent() {
+        return event;
     }
 
-    public void setPatient(Patient patient) {
-        this.patient = patient;
+    public void setEvent(Event event) {
+        this.event = event;
     }
 
-    public List<Event> getEvents() {
-        return events;
-    }
-
-    public void setEvents(List<Event> events) {
-        this.events = events;
-    }
-
-    public String getId() {
+    public SpecificOccurrenceId getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(SpecificOccurrenceId id) {
         this.id = id;
     }
 }
