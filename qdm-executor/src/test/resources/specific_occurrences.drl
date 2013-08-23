@@ -25,6 +25,7 @@ rule "Rule 1"
   then
       System.out.println("1" + $lab);
       modify($sc) { add(new SpecificOccurrenceResult("A", $lab)) }
+      insert (new PreconditionResult("1", $p, $lab))
 end
 
 rule "Rule 2"
@@ -41,6 +42,8 @@ rule "Rule 2"
   then
       System.out.println("2" + $lab);
       modify($sc) { add(new SpecificOccurrenceResult("A", $lab)) }
+      insert (new PreconditionResult("2", $p, $lab))
+
 end
 
 rule "Rule 3"
@@ -57,6 +60,8 @@ rule "Rule 3"
   then
       System.out.println("3" + $lab);
       modify($sc) { add(new SpecificOccurrenceResult("A", $lab)) }
+      insert (new PreconditionResult("3", $p, $lab))
+
 end
 
 rule "Group"
@@ -69,6 +74,10 @@ rule "Group"
     $p : Patient( )
     $sc : SpecificContext(id == "Group", patient == $p)
 
+    PreconditionResult( id == "1", patient == $p )
+    PreconditionResult( id == "2", patient == $p )
+    not PreconditionResult( id == "3", patient == $p )
+
     $sc1 : SpecificContext(specificContextTuples.size() > 0, id == "1", patient == $p, $t : specificContextTuples)
     $sc2 : SpecificContext(id == "2", patient == $p, match($t, false))
     $sc3 : SpecificContext(id == "3", patient == $p, match($t, true))
@@ -77,6 +86,9 @@ rule "Group"
       System.out.println("Group");
       retract($sc)
       insert(specificContextManager.intersect($p, "Group", [$sc1,$sc2,$sc3.negate()]))
+      insert (new PreconditionResult("Group", $p))
+
+
 
 end
 
@@ -87,7 +99,7 @@ rule "Main"
  when
 
     $p : Patient( )
-    $sc1 : SpecificContext(specificContextTuples.size() > 0, id == "Group", patient == $p, $t : specificContextTuples)
+    PreconditionResult( id == "Group", patient == $p )
 
   then
       System.out.println("Main");

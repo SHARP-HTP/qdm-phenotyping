@@ -138,9 +138,11 @@ class Qdm2Drools {
             }
         }
 
+        /* TODO: For specific occurrences
         json.source_data_criteria.findAll(isSpecificOccurrenceDataCriteria).each {
             sb.append( printSpecificOccurrenceDataCriteria( it, measurementPeriod, json, ruleOrderStack ) )
         }
+        */
 
         sb.append( printRuleFunctions(json) )
 
