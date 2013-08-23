@@ -77,6 +77,9 @@ public class DroolsExecutorCypressTestIT {
         doExecute("0004")
     }
 
+    /*
+     * Negated specific occurrences on DENEX
+     */
     @Test
     public void TestExecute0024() throws IOException{
         doExecute("0024")
@@ -117,6 +120,9 @@ public class DroolsExecutorCypressTestIT {
         doExecute("0069")
     }
 
+    /**
+     * antinumerator question pending
+     */
     @Test
     public void TestExecute0059() throws IOException{
         doExecute("0059")
@@ -175,6 +181,11 @@ public class DroolsExecutorCypressTestIT {
     @Test
     public void TestExecute0038() throws IOException{
         doExecute("0038")
+    }
+
+    @Test
+    public void TestExecute1365() throws IOException{
+        doExecute("1365")
     }
 
     @Test

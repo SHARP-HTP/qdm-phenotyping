@@ -15,46 +15,58 @@ class CriteriaFactory {
 
     def criteriaFactoryMap =
         [
-                "individual_characteristic": {
-                    json, measurementPeriod, measureJson ->
-                        if(json.value.property == "birthtime"){
-                            new Birthdate(json, measurementPeriod)
-                        } else if (
-                                json.value.property == null &&
-                                json.value.definition.equals("patient_characteristic")){
-                            new Characteristic(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod)
-                        } else {
-                            new IndividualCharacteristic(json, measurementPeriod)
-                        }
-                },
-                "allergy":  { json, measurementPeriod, measureJson -> new Allergy(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "communication": { json, measurementPeriod, measureJson -> new Communication(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "procedure_performed":  { json, measurementPeriod, measureJson -> new Procedure(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "procedure_result":  { json, measurementPeriod, measureJson -> new Procedure(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "procedure_intolerance":   { json, measurementPeriod, measureJson -> new Procedure(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "risk_category_assessment": { json, measurementPeriod, measureJson -> new RiskCategoryAssessment(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "encounter": { json, measurementPeriod, measureJson -> new Encounter(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "diagnosis_active": { json, measurementPeriod, measureJson -> new Diagnosis(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "diagnosis_inactive": { json, measurementPeriod, measureJson -> new Diagnosis(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "diagnosis_resolved": { json, measurementPeriod, measureJson -> new Diagnosis(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "laboratory_test": { json, measurementPeriod, measureJson -> new Lab(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "physical_exam": { json, measurementPeriod, measureJson -> new PhysicalExamFinding(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "diagnostic_study_result": { json, measurementPeriod, measureJson -> new DiagnosticStudy(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "diagnostic_study_performed": { json, measurementPeriod, measureJson -> new DiagnosticStudy(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "medication_dispensed": { json, measurementPeriod, measureJson -> new Medication(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "medication_active": { json, measurementPeriod, measureJson -> new Medication(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "medication_administered": { json, measurementPeriod, measureJson -> new Medication(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "medication_order": { json, measurementPeriod, measureJson -> new Medication(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) },
-                "device_applied": { json, measurementPeriod, measureJson -> new Procedure(measureJson:measureJson, json:json, valueSetCodeResolver:valueSetCodeResolver, measurementPeriod:measurementPeriod) }
+                "allergy":  { processor -> processor.metaClass.mixin Allergy; processor },
+                "communication": { processor -> processor.metaClass.mixin Communication; processor },
+                "procedure_performed":  { processor -> processor.metaClass.mixin Procedure; processor },
+                "procedure_result":  { processor -> processor.metaClass.mixin Procedure; processor },
+                "procedure_intolerance":   { processor -> processor.metaClass.mixin Procedure; processor },
+                "risk_category_assessment": { processor -> processor.metaClass.mixin RiskCategoryAssessment; processor },
+                "encounter": { processor -> processor.metaClass.mixin Encounter; processor },
+                "diagnosis_active": { processor -> processor.metaClass.mixin Diagnosis; processor },
+                "diagnosis_inactive": { processor -> processor.metaClass.mixin Diagnosis; processor },
+                "diagnosis_resolved": { processor -> processor.metaClass.mixin Diagnosis; processor },
+                "laboratory_test": { processor -> processor.metaClass.mixin Lab; processor },
+                "physical_exam": { processor -> processor.metaClass.mixin PhysicalExamFinding; processor },
+                "diagnostic_study_result": { processor -> processor.metaClass.mixin DiagnosticStudy; processor },
+                "diagnostic_study_performed": { processor -> processor.metaClass.mixin DiagnosticStudy; processor },
+                "medication_dispensed": { processor -> processor.metaClass.mixin Medication; processor },
+                "medication_active": { processor -> processor.metaClass.mixin Medication; processor },
+                "medication_administered": { processor -> processor.metaClass.mixin Medication; processor },
+                "medication_order": { processor -> processor.metaClass.mixin Medication; processor },
+                "device_applied": { processor -> processor.metaClass.mixin Procedure; processor }
         ]
 
     def getCriteria(json, measurementPeriod, measureJson) {
         this.doGetCriteria(json, measurementPeriod, measureJson)
     }
 
+    def getSpecificOccurrenceDataCriteria(fullJson, measurementPeriod, measureJson) {
+        def json = fullJson.value
+        def qdsType = json.qds_data_type
+
+        def criteriaFn = this.criteriaFactoryMap.get(qdsType)
+
+        criteriaFn(new SpecificOccurrenceDataCriteria(json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson))
+    }
+
     private def doGetCriteria(fullJson, measurementPeriod, measureJson) {
         def json = fullJson.value
         def qdsType = json.qds_data_type
+
+        if(qdsType == "individual_characteristic") {
+            if(json.property == "birthtime"){
+                return new Birthdate(fullJson, measurementPeriod)
+            } else if (
+                    json.property == null &&
+                            json.definition.equals("patient_characteristic")){
+                def criteria = new DefaultCriteria(json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson)
+                criteria.metaClass.mixin Characteristic
+
+                return criteria
+            } else {
+                return new IndividualCharacteristic(fullJson, measurementPeriod)
+            }
+        }
 
         if(json.type.equals("derived")){
             def collections = []
@@ -98,10 +110,40 @@ class CriteriaFactory {
         } else {
             def criteriaFn = this.criteriaFactoryMap.get(qdsType)
             if (criteriaFn != null) {
-                criteriaFn(fullJson, measurementPeriod, measureJson)
+                /*
+                if(isSpecificOccurrenceDataCriteria(fullJson)){
+                    [
+                    //criteriaFn(new DefaultCriteria(json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson)),
+                    criteriaFn(new SpecificOccurrenceDataCriteria(json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson))
+                    ]
+
+                } else if(isSpecificOccurrence(fullJson)){
+                    [
+                    criteriaFn(new SpecificOccurrenceCriteria(json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson)),
+                    criteriaFn(new SpecificOccurrenceCriteria(retract:true, json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson))
+                    ]
+                } else {*/
+                    criteriaFn(new DefaultCriteria(json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson))
+               // }
             } else {
                 throw new RuntimeException("Critieria type: `$qdsType` not recognized. JSON -> $json")
             }
         }
+    }
+
+    def isSpecificOccurrence = {
+        it.value.specific_occurrence && it.value.specific_occurrence_const
+    }
+
+    def isSpecificOccurrenceDataCriteria = {
+        it.value.specific_occurrence &&
+                it.value.specific_occurrence_const &&
+                !it.value.temporal_references
+    }
+
+    def isSpecificOccurrenceCriteria = {
+        it.value.specific_occurrence &&
+                it.value.specific_occurrence_const &&
+                it.value.temporal_references
     }
 }

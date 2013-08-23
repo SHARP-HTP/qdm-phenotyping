@@ -9,112 +9,43 @@ import java.util.Calendar;
 
 global DroolsUtil droolsUtil
 
-rule "insert"
+rule "p1"
       dialect "mvel"
       no-loop
-      salience 99999
+
   when
 
-    $p : Patient( )
-
-    $lab : DiagnosticStudy (
-
-    ) from $p.labs
+    $p : Patient( sourcePid == "1", sex == Gender.MALE)
 
   then
-      insert( new SpecificOccurrence($lab, "A", "A", $p))
-      System.out.println("Inserting...");
+    insert(new test.Message("1", $p))
 
 end
 
-
-rule "1"
+rule "p2"
       dialect "mvel"
       no-loop
+
   when
-
-    $p : Patient( )
-
-    $so : SpecificOccurrence($event :event, id == "A", patient == $p)
-
-    $lab : Lab ( endDate > "12-Jan-3000", this == $event ) from $p.labs
-
-    not PreconditionResult( event == $lab, id == "1", patient == $p)
+    $p : Patient( sourcePid == "1", sex == Gender.FEMALE)
 
   then
-      insert( new PreconditionResult("1", $p, $lab))
-      //insert( new SpecificOccurrence($lab, "A", "A", $p))
-      System.out.println("Rule 1");
+    insert(new test.Message("2", $p))
 
 end
 
-rule "1'"
+rule "AND Rule"
       dialect "mvel"
       no-loop
+
   when
+    $p : Patient()
 
-    $p : Patient( )
-
-    $so : SpecificOccurrence($event :event, id == "A", patient == $p)
-
-    not Lab ( endDate > "12-Jan-3000", this == $event ) from $p.labs
+    test.Message(message == "1", patent == $p)
+    and
+    not test.Message(message == "2", patent == $p)
 
   then
-      retract($so)
-      System.out.println("retract 1");
-
-end
-
-rule "2"
-      dialect "mvel"
-      no-loop
-  when
-
-    $p : Patient( )
-
-    $so : SpecificOccurrence($event :event, id == "A", patient == $p)
-
-    $lab : Lab ( startDate < "12-Jan-2000", this == $event) from $p.labs
-
-    not PreconditionResult( event == $lab, id == "2", patient == $p)
-
-  then
-      insert( new PreconditionResult("2", $p, $lab))
-      //insert( new SpecificOccurrence($lab, "A", "A", $p))
-
-      System.out.println("Rule 2");
-
-end
-
-rule "2'"
-      dialect "mvel"
-      no-loop
-  when
-
-    $p : Patient( )
-
-    $so : SpecificOccurrence($event :event, id == "A", patient == $p)
-
-    not Lab ( startDate < "12-Jan-2000", this == $event ) from $p.labs
-
-  then
-      retract($so)
-      System.out.println("retract 2");
-
-end
-
-rule "Master"
-      dialect "mvel"
-      no-loop
-      //salience -999
-  when
-
-    $p : Patient( )
-
-    $pr1 : PreconditionResult( id == "1", patient == $p)
-    $pr2 : PreconditionResult( id == "2", patient == $p)
-
-  then
-      System.out.println("Master: " + $pr1.event + " " + $pr2.event);
+    System.out.println("Found both");
 
 end

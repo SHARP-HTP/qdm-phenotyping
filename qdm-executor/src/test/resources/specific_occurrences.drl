@@ -4,155 +4,108 @@ import edu.mayo.qdm.patient.*;
 import java.util.List;
 import edu.mayo.qdm.executor.drools.DroolsUtil
 import java.util.Iterator;
-import edu.mayo.qdm.executor.drools.SpecificOccurrence
-import java.util.Calendar;
+import edu.mayo.qdm.executor.drools.*
+import java.util.Calendar
+import java.util.Arrays;
 
 global DroolsUtil droolsUtil
+global SpecificContextManager specificContextManager
 
-
-rule "1"
+rule "Rule 1"
       dialect "mvel"
       no-loop
   when
 
     $p : Patient( )
 
-    $so : SpecificOccurrence($event :event, id == "A", patient == $p)
+    $sc : SpecificContext(id == "1", patient == $p)
 
-    $lab : Lab ( endDate > "12-Jan-3000", this == $event ) from $p.labs
-
-    not PreconditionResult( event == $lab, id == "1", patient == $p)
+    $lab :  Lab(startDate < "12-Jan-2000")  from $p.labs
 
   then
-      insert( new PreconditionResult("1", $p, $lab))
-      //insert( new SpecificOccurrence($lab, "A", "A", $p))
-      System.out.println("Rule 1");
-
+      System.out.println("1" + $lab);
+      modify($sc) { add(new SpecificOccurrence("A", $lab)) }
 end
 
-rule "1'"
+rule "Rule 2"
       dialect "mvel"
       no-loop
   when
 
     $p : Patient( )
 
-    $so : SpecificOccurrence($event :event, id == "A", patient == $p)
+    $sc : SpecificContext(id == "2", patient == $p)
 
-    not Lab ( endDate > "12-Jan-3000", this == $event ) from $p.labs
+    $lab :  Lab(endDate > "12-Jan-3000")  from $p.labs
 
   then
-      retract($so)
-      System.out.println("retract 1");
-
+      System.out.println("2" + $lab);
+      modify($sc) { add(new SpecificOccurrence("A", $lab)) }
 end
 
-rule "2"
+rule "Rule 3"
       dialect "mvel"
       no-loop
   when
 
     $p : Patient( )
 
-    $so : SpecificOccurrence($event :event, id == "A", patient == $p)
+    $sc : SpecificContext(id == "3", patient == $p)
 
-    $lab : Lab ( startDate < "12-Jan-2000", this == $event) from $p.labs
-
-    not PreconditionResult( event == $lab, id == "2", patient == $p)
+    $lab :  Lab(concept.code == "c")  from $p.labs
 
   then
-      insert( new PreconditionResult("2", $p, $lab))
-      //insert( new SpecificOccurrence($lab, "A", "A", $p))
-
-      System.out.println("Rule 2");
-
+      System.out.println("3" + $lab);
+      modify($sc) { add(new SpecificOccurrence("A", $lab)) }
 end
 
-rule "2'"
+rule "Group"
       dialect "mvel"
       no-loop
-  when
+      //salience -1000
+
+ when
+
+    $p : Patient( )
+    $sc : SpecificContext(id == "Group", patient == $p)
+
+    $sc1 : SpecificContext(specificContextTuples.size() > 0, id == "1", patient == $p, $t : specificContextTuples)
+    $sc2 : SpecificContext(id == "2", patient == $p, match($t, false))
+    $sc3 : SpecificContext(id == "3", patient == $p, match($t, true))
+
+  then
+      System.out.println("Group");
+      insert(specificContextManager.intersect($p, "Group", [$sc1,$sc2,$sc3]))
+      //insert(new PreconditionResult("Group", $p))
+      retract($sc)
+end
+
+rule "Main"
+      dialect "mvel"
+      no-loop
+      salience -9999
+ when
+
+    $p : Patient( )
+    $sc1 : SpecificContext(specificContextTuples.size() > 0, id == "Group", patient == $p, $t : specificContextTuples)
+
+  then
+      System.out.println("Main");
+end
+
+rule "initializeit"
+      dialect "mvel"
+      no-loop
+ when
 
     $p : Patient( )
 
-    $so : SpecificOccurrence($event :event, id == "A", patient == $p)
-
-    not Lab ( startDate < "12-Jan-2000", this == $event ) from $p.labs
-
   then
-      retract($so)
-      System.out.println("retract 2");
+      System.out.println("Init");
+      insert(new SpecificContext("1", $p));
+      insert(new SpecificContext("2", $p));
+      insert(new SpecificContext("3", $p));
+      insert(new SpecificContext("Group", $p));
 
 end
 
-rule "3"
-      dialect "mvel"
-      no-loop
-  when
-
-    $p : Patient( )
-
-    $so : SpecificOccurrence($event :event, id == "A", patient == $p)
-
-    $lab : Lab ( concept.code == "a", this == $event) from $p.labs
-
-    not PreconditionResult( event == $lab, id == "3", patient == $p)
-
-  then
-      insert( new PreconditionResult("3", $p, $lab))
-      //insert( new SpecificOccurrence($lab, "A", "A", $p))
-
-      System.out.println("Rule 3");
-
-end
-
-rule "3'"
-      dialect "mvel"
-      no-loop
-  when
-
-    $p : Patient( )
-
-    $so : SpecificOccurrence($event :event, id == "A", patient == $p)
-
-    not Lab ( concept.code == "a", this == $event ) from $p.labs
-
-  then
-      retract($so)
-      System.out.println("retract 3");
-
-end
-
-
-rule "Master"
-      dialect "mvel"
-      no-loop
-      //salience -999
-  when
-
-    $p : Patient( )
-
-    $pr1 : PreconditionResult( id == "1", patient == $p)
-    $pr2 : PreconditionResult( id == "2", patient == $p)
-    $pr3 : PreconditionResult( id == "3", patient == $p)
-
-  then
-      System.out.println("Master: " + $pr1.event + " " + $pr2.event);
-
-end
-
-rule "insert"
-      dialect "mvel"
-      no-loop
-      //salience 99999
-  when
-
-    $p : Patient( )
-
-    $lab : Lab ( ) from $p.labs
-
-  then
-      insert( new SpecificOccurrence($lab, "A", "A", $p))
-      System.out.println("Inserting...");
-
-end

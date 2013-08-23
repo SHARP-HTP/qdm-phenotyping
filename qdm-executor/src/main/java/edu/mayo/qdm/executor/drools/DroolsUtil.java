@@ -86,9 +86,21 @@ public final class DroolsUtil {
     }
 
     public Date add(Calendar calendar, int unit, int value){
+        Date originalDate = calendar.getTime();
+
         calendar.add(unit, value);
 
-        return calendar.getTime();
+        Date date = calendar.getTime();
+
+        return date;
+    }
+
+
+    static void main(String[] args){
+        Date d1 = new Date(1328094000);
+        Date d2 = new Date(1328095800);
+
+        System.out.print(d1.getTime() < d2.getTime());
     }
 /*
     public Collection<Event> combine(SpecificOccurrence o, Set<Event> e){

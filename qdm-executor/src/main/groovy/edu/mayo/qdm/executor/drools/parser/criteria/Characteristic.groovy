@@ -1,7 +1,7 @@
 package edu.mayo.qdm.executor.drools.parser.criteria
 /**
  */
-class Characteristic extends AbstractBaseCriteria {
+class Characteristic {
 
     @Override
     def getName() {

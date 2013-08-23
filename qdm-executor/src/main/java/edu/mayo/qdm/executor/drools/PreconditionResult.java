@@ -8,6 +8,7 @@ public class PreconditionResult {
 	private String id;
 	private Patient patient;
     private Event event;
+    private boolean negative = false;
 
     public PreconditionResult(String id, Patient patient) {
         super();
@@ -20,6 +21,14 @@ public class PreconditionResult {
         this.id = id;
         this.patient = patient;
         this.event = event;
+    }
+
+    public PreconditionResult(String id, Patient patient, Event event, boolean negative) {
+        super();
+        this.id = id;
+        this.patient = patient;
+        this.event = event;
+        this.negative = negative;
     }
 
     public String getId() {
@@ -44,5 +53,13 @@ public class PreconditionResult {
 
     public void setEvent(Event event) {
         this.event = event;
+    }
+
+    public boolean isNegative() {
+        return negative;
+    }
+
+    public void setNegative(boolean negative) {
+        this.negative = negative;
     }
 }

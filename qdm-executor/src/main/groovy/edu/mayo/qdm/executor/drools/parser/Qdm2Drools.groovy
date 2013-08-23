@@ -138,6 +138,10 @@ class Qdm2Drools {
             }
         }
 
+        json.source_data_criteria.findAll(isSpecificOccurrenceDataCriteria).each {
+            sb.append( printSpecificOccurrenceDataCriteria( it, measurementPeriod, json, ruleOrderStack ) )
+        }
+
         sb.append( printRuleFunctions(json) )
 
         if(ruleOrderStack.size() > 0){
@@ -151,6 +155,18 @@ class Qdm2Drools {
         System.out.print(rule)
 
         rule
+    }
+
+    def isNotSpecificOccurrenceDataCriteria = {
+        ! (it.value.specific_occurrence &&
+                it.value.specific_occurrence_const &&
+                it.key == it.value.source_data_criteria)
+    }
+
+    def isSpecificOccurrenceDataCriteria = {
+        it.value.specific_occurrence &&
+                it.value.specific_occurrence_const &&
+                it.key == it.value.source_data_criteria
     }
 
     def isGroup = {
@@ -326,8 +342,8 @@ class Qdm2Drools {
 
         if(preconditions.size() > 0){
 
-            preconditions.each {
-                prcn ->
+            preconditions.eachWithIndex {
+                prcn, index ->
 
                     sb.append(
         """
@@ -335,7 +351,7 @@ class Qdm2Drools {
         rule "${prcn.id}"
             dialect "mvel"
             no-loop
-            //salience 0
+            //salience ${0 - index}
             //agenda-group "${prcn.id}"
 
         when
@@ -379,13 +395,45 @@ class Qdm2Drools {
             }
         }
 
-        nestedPreconditions.each { printPreconditions(it, sb)}
+        nestedPreconditions.each { nestedPrc -> printPreconditions(nestedPrc, sb)}
     }
 
     private def printPreconditionReference(preconditionReference){
             """
             PreconditionResult( id == "$preconditionReference", patient == \$p )
             """
+    }
+
+    private def printSpecificOccurrenceDataCriteria(dataCriteria, measurementPeriod, measureJson, priorityStack){
+        def name = dataCriteria.key
+        def criterias = criteriaFactory.getSpecificOccurrenceDataCriteria(dataCriteria, measurementPeriod, measureJson)
+
+        def agendaGroup
+        if(priorityStack.contains(name)){
+            agendaGroup = """agenda-group "$name" """
+        } else {
+            agendaGroup = """agenda-group "$GENERAL_DATA_CRITERIA_AGENDA_GROUP" """
+        }
+        def idx = 0
+
+        criterias.collect {
+            def fullName = """${name}${"'" * idx++}"""
+            """
+        /* Rule */
+        rule "Specific Occurrence ${fullName}"
+            dialect "mvel"
+            no-loop
+            //$agendaGroup
+
+        when
+            ${it.getLHS()}
+
+        then
+            System.out.println("$fullName");
+            ${it.getRHS()}
+        end
+        """
+        }.join("\n")
     }
 
     private def printDataCriteria(dataCriteria, measurementPeriod, measureJson, priorityStack){

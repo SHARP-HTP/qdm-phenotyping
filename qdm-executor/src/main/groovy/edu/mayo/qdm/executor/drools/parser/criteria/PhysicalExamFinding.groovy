@@ -1,7 +1,7 @@
 package edu.mayo.qdm.executor.drools.parser.criteria
 /**
  */
-class PhysicalExamFinding extends AbstractBaseCriteria {
+class PhysicalExamFinding {
 
     @Override
     def getName() {

@@ -1,7 +1,6 @@
 package edu.mayo.qdm.executor.drools;
 
 import edu.mayo.qdm.patient.Event;
-import edu.mayo.qdm.patient.Patient;
 
 /**
  */
@@ -9,14 +8,10 @@ public class SpecificOccurrence {
 
     private Event event;
     private String id;
-    private String constant;
-    private Patient patient;
 
-    public SpecificOccurrence(Event event, String id, String constant, Patient patient) {
+    public SpecificOccurrence(String id, Event event) {
         this.event = event;
         this.id = id;
-        this.constant = constant;
-        this.patient = patient;
     }
 
     public Event getEvent() {
@@ -27,11 +22,4 @@ public class SpecificOccurrence {
         return id;
     }
 
-    public String getConstant() {
-        return constant;
-    }
-
-    public Patient getPatient() {
-        return patient;
-    }
 }

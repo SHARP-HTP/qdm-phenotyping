@@ -1,7 +1,7 @@
 package edu.mayo.qdm.executor.drools.parser.criteria
 /**
  */
-class Diagnosis extends AbstractBaseCriteria {
+class Diagnosis {
 
     @Override
     def getName() {

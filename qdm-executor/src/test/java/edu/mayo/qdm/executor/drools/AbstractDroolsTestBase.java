@@ -37,6 +37,9 @@ public abstract class AbstractDroolsTestBase {
 
 		final StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
 
+        ksession.setGlobal("droolsUtil", new DroolsUtil());
+        //ksession.setGlobal("specificContextManager", new SpecificContextManager());
+
 		for(Patient p : this.getPatients()){
             ksession.insert(p);
         }

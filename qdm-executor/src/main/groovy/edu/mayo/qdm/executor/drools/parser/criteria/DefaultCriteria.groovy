@@ -5,13 +5,12 @@ import org.springframework.util.Assert
 /**
  * An abstract base class for a Patient {@link Criteria}.
  */
-abstract class AbstractBaseCriteria implements Criteria {
+class DefaultCriteria implements Criteria {
     def temporalProcessor = new TemporalProcessor()
     def valueProcessor = new ValueProcessor()
 
     def measureJson
     def json
-    def valueSetCodeResolver
     def measurementPeriod
 
     def toDrools() {
@@ -38,7 +37,7 @@ abstract class AbstractBaseCriteria implements Criteria {
         """
     }
 
-    abstract def getName()
+    def getName(){ "" }
 
     def getCriteria() { "" }
 

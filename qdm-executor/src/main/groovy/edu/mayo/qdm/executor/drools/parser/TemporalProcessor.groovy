@@ -195,34 +195,34 @@ class TemporalProcessor {
                 def minusOrPlus
                 switch (beforeOrAfter){
                     case BeforeOrAfter.BEFORE:
-                        highOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '>' : '>'}
-                        lowOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '<' : '<'}
+                        highOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '>=' : '>'}
+                        lowOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '<=' : '<'}
                         minusOrPlus = "-"
                         break
 
                     case BeforeOrAfter.AFTER:
-                        lowOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '>' : '>'}
-                        highOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '<' : '<'}
+                        lowOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '>=' : '>'}
+                        highOp = {r -> BooleanUtils.toBoolean(r.'inclusive?') ? '<=' : '<'}
                         minusOrPlus = ""
                         break
                 }
 
                 if(range.high){
                     def calendarType = toCalendarType(range.high.unit)
-                    def value = adjustForInclusive(range.high.value, range.high.'inclusive?')
-                    sb.append("toDays($property) ${highOp(range.high)} toDays(droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${value})),\n")
+                    def value = range.high.value//adjustForInclusive(range.high.value, range.high.'inclusive?')
+                    sb.append("toDays(${property}) ${highOp(range.high)} toDays(droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${value})),\n")
                 }
                 if(range.low){
                     def calendarType = toCalendarType(range.low.unit)
                     def value = range.low.value//adjustForInclusive(range.low.value, range.low.'inclusive?')
-                    sb.append("toDays($property) ${lowOp(range.low)} toDays(droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${value}))\n")
+                    sb.append("toDays(${property}) ${lowOp(range.low)} toDays(droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${value}))\n")
                 } else {
                     def op = getOperator(beforeOrAfter)
-                    sb.append("toDays($property) $op toDays(\$${temporalReference.reference}.event.$targetProperty)\n")
+                    sb.append("${property} $op \$${temporalReference.reference}.event.${targetProperty}\n")
                 }
             } else {
                 def op = getOperator(beforeOrAfter)
-                sb.append("toDays($property) $op toDays(\$${temporalReference.reference}.event.$targetProperty)")
+                sb.append("${property} $op \$${temporalReference.reference}.event.${targetProperty}")
             }
 
             return new TemporalResult(
