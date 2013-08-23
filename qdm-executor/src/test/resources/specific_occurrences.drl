@@ -75,9 +75,10 @@ rule "Group"
 
   then
       System.out.println("Group");
+      retract($sc)
       insert(specificContextManager.intersect($p, "Group", [$sc1,$sc2,$sc3]))
       //insert(new PreconditionResult("Group", $p))
-      retract($sc)
+
 end
 
 rule "Main"
