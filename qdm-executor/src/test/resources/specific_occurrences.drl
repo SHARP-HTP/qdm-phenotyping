@@ -24,7 +24,7 @@ rule "Rule 1"
 
   then
       System.out.println("1" + $lab);
-      modify($sc) { add(new SpecificOccurrence("A", $lab)) }
+      modify($sc) { add(new SpecificOccurrenceResult("A", $lab)) }
 end
 
 rule "Rule 2"
@@ -40,7 +40,7 @@ rule "Rule 2"
 
   then
       System.out.println("2" + $lab);
-      modify($sc) { add(new SpecificOccurrence("A", $lab)) }
+      modify($sc) { add(new SpecificOccurrenceResult("A", $lab)) }
 end
 
 rule "Rule 3"
@@ -56,7 +56,7 @@ rule "Rule 3"
 
   then
       System.out.println("3" + $lab);
-      modify($sc) { add(new SpecificOccurrence("A", $lab)) }
+      modify($sc) { add(new SpecificOccurrenceResult("A", $lab)) }
 end
 
 rule "Group"
@@ -76,8 +76,7 @@ rule "Group"
   then
       System.out.println("Group");
       retract($sc)
-      insert(specificContextManager.intersect($p, "Group", [$sc1,$sc2,$sc3]))
-      //insert(new PreconditionResult("Group", $p))
+      insert(specificContextManager.intersect($p, "Group", [$sc1,$sc2,$sc3.negate()]))
 
 end
 
@@ -110,3 +109,18 @@ rule "initializeit"
 
 end
 
+rule "Occurrence A"
+      dialect "mvel"
+      no-loop
+ when
+
+    $p : Patient( )
+
+    $c : SpecificContext(patient == $p)
+
+    $labs : List() from collect (Lab() from $p.labs)
+
+  then
+      $c.addUniverse(new SpecificOccurrence("A", $p, $labs));
+
+end

@@ -1,8 +1,12 @@
 package edu.mayo.qdm.executor.drools;
 
+import edu.mayo.qdm.patient.Event;
 import edu.mayo.qdm.patient.Patient;
+import org.apache.commons.collections.CollectionUtils;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -11,6 +15,8 @@ public class SpecificContext {
 
     private String id;
     private Patient patient;
+
+    private Map<String,Set<Event>> universe = new HashMap<String,Set<Event>>();
 
     private Set<SpecificContextTuple> specificContextTuples = new HashSet<SpecificContextTuple>();
 
@@ -43,34 +49,72 @@ public class SpecificContext {
         this.id = id;
     }
 
-    public void add(SpecificOccurrence occurrence){
+    public void add(SpecificOccurrenceResult occurrence){
         this.specificContextTuples.add(new SpecificContextTuple(occurrence));
     }
 
     public boolean match(Set<SpecificContextTuple> tuples, boolean negation){
-        if(! negation){
-            for (SpecificContextTuple tuple : tuples){
-                for (SpecificContextTuple innerTuple : this.getSpecificContextTuples()){
-                    if(tuple.isMatch(innerTuple)){
-                        return true;
-                    }
-                }
-            }
-
-            return false;
+        Set<SpecificContextTuple> thisTuples;
+        if(negation){
+            thisTuples = this.negate(this.getSpecificContextTuples());
         } else {
-            if(this.getSpecificContextTuples().size() == 0|| tuples.size() == 0){
-                return true;
+            thisTuples = this.getSpecificContextTuples();
+        }
+
+        for (SpecificContextTuple tuple : tuples){
+            for (SpecificContextTuple innerTuple : thisTuples){
+                if(tuple.isMatch(innerTuple)){
+                    return true;
+                }
             }
-            for (SpecificContextTuple tuple : tuples){
-                for (SpecificContextTuple innerTuple : this.getSpecificContextTuples()){
-                    if(! tuple.isMatch(innerTuple)){
-                        return true;
+        }
+
+        return false;
+    }
+
+    public SpecificContext negate() {
+        SpecificContext c = new SpecificContext(this.id, this.patient);
+        c.setSpecificContextTuples(this.negate(this.getSpecificContextTuples()));
+
+        return c;
+    }
+
+    private Set<SpecificContextTuple> negate(Set<SpecificContextTuple> tuples) {
+        Set<SpecificContextTuple> returnSet = new HashSet<SpecificContextTuple>();
+
+        for(SpecificContextTuple universeTuple : this.getUniverse()){
+            if(CollectionUtils.isEmpty(tuples)){
+                returnSet.add(universeTuple);
+            } else {
+                for(SpecificContextTuple negated : tuples){
+                    if(! universeTuple.isMatch(negated)){
+                        returnSet.add(universeTuple);
+                        returnSet.add(negated);
                     }
                 }
             }
-
-            return false;
         }
+
+        return returnSet;
+    }
+
+    private Set<SpecificContextTuple> getUniverse(){
+        Set<SpecificContextTuple> returnSet = new HashSet<SpecificContextTuple>();
+
+        for(String key : this.universe.keySet()){
+            for(Event event : this.universe.get(key)){
+                SpecificContextTuple t = new SpecificContextTuple();
+                t.getContext().put(key, event);
+
+                returnSet.add(t);
+            }
+
+        }
+
+        return returnSet;
+    }
+
+    public void addUniverse(SpecificOccurrence a) {
+        universe.put(a.getId(), new HashSet<Event>(a.getEvents()));
     }
 }

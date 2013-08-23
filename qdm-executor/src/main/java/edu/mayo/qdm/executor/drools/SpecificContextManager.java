@@ -13,7 +13,6 @@ public class SpecificContextManager {
 
     private Map<Key,Set<SpecificContextTuple>> specificContexts = new HashMap<Key,Set<SpecificContextTuple>>();
 
-
     public static SpecificContext intersect(Patient p, String id, List<SpecificContext> contexts){
         Set<SpecificContextTuple> intersectResult = null;
 
@@ -35,13 +34,17 @@ public class SpecificContextManager {
         Set<SpecificContextTuple> returnSet = new HashSet<SpecificContextTuple>(tuples1);
 
         for (SpecificContextTuple tuple : tuples1){
-            for(String key : tuple.getContext().keySet()){
-                returnSet.retainAll(findTuplesWithMatch(tuples2, key, tuple.getContext().get(key)));
+            for(SpecificContextTuple innerTuple : tuples2){
+                if(tuple.isMatch(innerTuple)){
+                    returnSet.add(tuple);
+                    returnSet.add(innerTuple);
+                }
             }
         }
 
         return returnSet;
     }
+
 
     private static Set<SpecificContextTuple> findTuplesWithMatch(Set<SpecificContextTuple> tuples, String key, Event event){
         Set<SpecificContextTuple> returnSet = new HashSet<SpecificContextTuple>();

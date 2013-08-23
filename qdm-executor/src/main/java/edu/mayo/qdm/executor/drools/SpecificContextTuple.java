@@ -11,9 +11,13 @@ public class SpecificContextTuple {
 
     private Map<String,Event> context = new HashMap<String,Event>();
 
-    public SpecificContextTuple(SpecificOccurrence occurrence) {
+    public SpecificContextTuple(){
         super();
-        this.context.put(occurrence.getId(), occurrence.getEvent());
+    }
+
+    public SpecificContextTuple(SpecificOccurrenceResult result){
+        super();
+        this.context.put(result.getId(), result.getEvent());
     }
 
     public Map<String, Event> getContext() {
