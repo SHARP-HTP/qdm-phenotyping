@@ -143,6 +143,12 @@ class Qdm2Drools {
             sb.append( printSpecificOccurrenceDataCriteria( it, measurementPeriod, json, ruleOrderStack ) )
         }
 
+
+        def groups = [] as Set
+        json.population_criteria.each { groups += getPopulationCriteriaStack(it.value.preconditions) }
+
+        sb.append( printInitSpecificContexts( groups + json.data_criteria.collect { it.key } ))
+
         sb.append( printRuleFunctions(json) )
 
         if(ruleOrderStack.size() > 0){
@@ -184,6 +190,28 @@ class Qdm2Drools {
         it.value.specific_occurrence &&
         it.value.specific_occurrence_const &&
         it.key != it.value.source_data_criteria
+    }
+
+    private def printInitSpecificContexts(preconditionIds){
+        """
+        /* Initializate Specific Contexts */
+        rule "Initialize Specific Contexts"
+            dialect "mvel"
+            no-loop
+            salience ${Integer.MAX_VALUE}
+        when
+            \$p : Patient( )
+        then
+            ${
+            preconditionIds.collect {
+                """
+                insert(new SpecificContext("$it", \$p));
+                """
+            }.join()
+
+        }
+        end
+        """
     }
 
     private def printInitRule(agendaGroupStack){
