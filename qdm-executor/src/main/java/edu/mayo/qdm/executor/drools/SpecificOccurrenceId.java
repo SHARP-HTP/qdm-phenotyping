@@ -1,5 +1,8 @@
 package edu.mayo.qdm.executor.drools;
 
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+
 /**
  */
 public class SpecificOccurrenceId {
@@ -34,17 +37,17 @@ public class SpecificOccurrenceId {
         if (o == null || getClass() != o.getClass()) return false;
 
         SpecificOccurrenceId that = (SpecificOccurrenceId) o;
-
-        if (!constant.equals(that.constant)) return false;
-        if (!id.equals(that.id)) return false;
-
-        return true;
+        return new EqualsBuilder()
+          .append(id, that.id)
+          .append(constant, that.constant)
+          .isEquals();
     }
 
     @Override
     public int hashCode() {
-        int result = id.hashCode();
-        result = 31 * result + constant.hashCode();
-        return result;
+        return new HashCodeBuilder()
+          .append(id)
+          .append(constant)
+          .toHashCode();
     }
 }

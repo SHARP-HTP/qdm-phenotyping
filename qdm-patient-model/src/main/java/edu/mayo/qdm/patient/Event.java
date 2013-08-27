@@ -1,5 +1,8 @@
 package edu.mayo.qdm.patient;
 
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+
 import java.util.Date;
 
 /**
@@ -42,5 +45,29 @@ public class Event extends CodedEntry {
 
     public void setNegated(boolean negated) {
         this.negated = negated;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Event that = (Event) o;
+        return new EqualsBuilder()
+          .appendSuper(super.equals(that))
+          .append(startDate, that.startDate)
+          .append(endDate, that.endDate)
+          .append(negated, that.negated)
+          .isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder()
+          .appendSuper(super.hashCode())
+          .append(startDate)
+          .append(endDate)
+          .append(negated)
+          .toHashCode();
     }
 }

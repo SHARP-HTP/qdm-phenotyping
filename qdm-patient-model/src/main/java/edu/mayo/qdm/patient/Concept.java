@@ -1,5 +1,8 @@
 package edu.mayo.qdm.patient;
 
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+
 public class Concept {
 
     private String code;
@@ -63,5 +66,27 @@ public class Concept {
 
     public void setCodingSchemeVersion(String codingSchemeVersion) {
         this.codingSchemeVersion = codingSchemeVersion;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Concept that = (Concept) o;
+        return new EqualsBuilder()
+          .append(code, that.code)
+          .append(codingScheme, that.codingScheme)
+          .append(codingSchemeVersion, that.codingSchemeVersion)
+          .isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder()
+          .append(code)
+          .append(codingScheme)
+          .append(codingSchemeVersion)
+          .toHashCode();
     }
 }

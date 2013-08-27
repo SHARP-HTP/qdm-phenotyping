@@ -9,10 +9,6 @@ import java.util.*;
  */
 public class SpecificContextManager {
 
-    private Object mutex = new Object();
-
-    private Map<Key,Set<SpecificContextTuple>> specificContexts = new HashMap<Key,Set<SpecificContextTuple>>();
-
     public static SpecificContext intersect(Patient p, String id, List<SpecificContext> contexts){
         Set<SpecificContextTuple> intersectResult = null;
 
@@ -31,21 +27,16 @@ public class SpecificContextManager {
         if(tuples1 == null) return tuples2;
         if(tuples2 == null) return tuples1;
 
-        Set<SpecificContextTuple> returnSet = new HashSet<SpecificContextTuple>(tuples1);
-
-
-
-        return returnSet;
-    }
-
-
-    private static Set<SpecificContextTuple> findTuplesWithMatch(Set<SpecificContextTuple> tuples, String key, Event event){
-        Set<SpecificContextTuple> returnSet = new HashSet<SpecificContextTuple>();
-
-        for(SpecificContextTuple tuple : tuples){
-            if(! tuple.getContext().containsKey(key) ||
-                    tuple.getContext().get(key) == event){
-                returnSet.add(tuple);
+        Set<SpecificContextTuple> returnSet = new HashSet<>(tuples1);
+        for (SpecificContextTuple tuple : tuples2) {
+            for(Map.Entry<SpecificOccurrenceId, Event> entry : tuple.getContext().entrySet()) {
+                SpecificContextTuple foundTuple = findMatch(tuples1, entry);
+                if (foundTuple != null) {
+                    if (!returnSet.contains(foundTuple))
+                        returnSet.add(foundTuple);
+                } else {
+                    return new HashSet<>();
+                }
             }
         }
 
@@ -53,33 +44,20 @@ public class SpecificContextManager {
     }
 
 
-    private static final class Key {
-        private Patient p;
-        private String id;
-
-        private Key(Patient p, String id) {
-            this.p = p;
-            this.id = id;
+    private static SpecificContextTuple findMatch(Set<SpecificContextTuple> tuples, Map.Entry<SpecificOccurrenceId, Event> entry) {
+        for (SpecificContextTuple tuple : tuples) {
+            for (Map.Entry<SpecificOccurrenceId, Event> entries : tuple.getContext().entrySet()) {
+                if (entries.getKey().equals(entry.getKey())) {
+                    if (entries.getValue().equals(entry.getValue())) {
+                        return new SpecificContextTuple(new SpecificOccurrence(entry.getKey(), entry.getValue()));
+                    }
+                    else {
+                        return null;
+                    }
+                }
+            }
         }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-
-            Key key = (Key) o;
-
-            if (id != null ? !id.equals(key.id) : key.id != null) return false;
-            if (p != null ? !p.equals(key.p) : key.p != null) return false;
-
-            return true;
-        }
-
-        @Override
-        public int hashCode() {
-            int result = p != null ? p.hashCode() : 0;
-            result = 31 * result + (id != null ? id.hashCode() : 0);
-            return result;
-        }
+        return new SpecificContextTuple(new SpecificOccurrence(entry.getKey(), entry.getValue()));
     }
+
 }
