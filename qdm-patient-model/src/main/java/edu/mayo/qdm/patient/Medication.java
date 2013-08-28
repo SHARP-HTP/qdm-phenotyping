@@ -50,10 +50,4 @@ public class Medication extends Event {
         this.medicationStatus = medicationStatus;
     }
 
-    public String toString() {
-        String displayStr = " code System: " + this.getConcept().getCodingScheme() + " med code: "
-                + this.getConcept().getCode() + " units: " + this.getUnits() + " value: " + this.getValue()
-                + " starting date: " + this.getStartDate() + " end date: " + this.getEndDate();
-        return displayStr;
-    }
 }

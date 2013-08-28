@@ -1,7 +1,7 @@
 package edu.mayo.qdm.executor.drools;
 
-import edu.mayo.qdm.patient.Event;
 import edu.mayo.qdm.patient.Patient;
+import org.springframework.util.Assert;
 
 import java.util.*;
 
@@ -13,45 +13,73 @@ public class SpecificContextManager {
 
     private Map<Key,Set<SpecificContextTuple>> specificContexts = new HashMap<Key,Set<SpecificContextTuple>>();
 
-    public static SpecificContext intersect(Patient p, String id, List<SpecificContext> contexts){
-        Set<SpecificContextTuple> intersectResult = null;
+    public SpecificContext union(Patient p, String id, List<SpecificContext> contexts){
+        Set<SpecificContextTuple> returnSet = new HashSet<SpecificContextTuple>();
 
         for (SpecificContext context : contexts){
-            Set<SpecificContextTuple> tuples = context.getSpecificContextTuples();
-            intersectResult = intersect(intersectResult, tuples);
+            returnSet.addAll(context.getSpecificContextTuples());
         }
 
-        SpecificContext c = new SpecificContext(id, p);
-        c.setSpecificContextTuples(intersectResult);
-
+        SpecificContext c = new SpecificContext(id, p, contexts.get(0).getUniverse());
+        c.setSpecificContextTuples(returnSet);
         return c;
     }
 
-    private static Set<SpecificContextTuple> intersect(Set<SpecificContextTuple> tuples1, Set<SpecificContextTuple> tuples2) {
-        if(tuples1 == null) return tuples2;
-        if(tuples2 == null) return tuples1;
+    public SpecificContext intersect(Patient p, String id, List<SpecificContext> contexts){
+       if(contexts.size() == 0){
+           throw new IllegalStateException();
+       }
+        if(contexts.size() == 1){
+            return contexts.get(0);
+        }
 
-        Set<SpecificContextTuple> returnSet = new HashSet<SpecificContextTuple>(tuples1);
+        Set<SpecificContextTuple> currentContext = contexts.get(0).getSpecificContextTuples();
 
+        for(SpecificContext context : contexts.subList(1, contexts.size() - 1)){
+            currentContext = this.intersect(currentContext, context.getSpecificContextTuples());
+        }
 
+        SpecificContext newContext = new SpecificContext(id, p, contexts.get(0).getUniverse());
+        newContext.setSpecificContextTuples(currentContext);
 
-        return returnSet;
+        return newContext;
     }
 
-
-    private static Set<SpecificContextTuple> findTuplesWithMatch(Set<SpecificContextTuple> tuples, String key, Event event){
+    private Set<SpecificContextTuple> intersect(Set<SpecificContextTuple> tuples1, Set<SpecificContextTuple> tuples2) {
         Set<SpecificContextTuple> returnSet = new HashSet<SpecificContextTuple>();
 
-        for(SpecificContextTuple tuple : tuples){
-            if(! tuple.getContext().containsKey(key) ||
-                    tuple.getContext().get(key) == event){
-                returnSet.add(tuple);
+        for (SpecificContextTuple tuple : tuples1){
+            for (SpecificContextTuple inner : tuples2){
+
+                Map<SpecificOccurrenceId, EventOrAny> result = doIntersect(tuple.getContext(), inner.getContext());
+                if(result != null && result.size() > 0){
+                    returnSet.add(new SpecificContextTuple(result));
+                }
             }
         }
 
         return returnSet;
     }
 
+    private Map<SpecificOccurrenceId, EventOrAny> doIntersect(Map<SpecificOccurrenceId, EventOrAny> context1, Map<SpecificOccurrenceId, EventOrAny> context2){
+        Assert.isTrue(context1.size() == context2.size());
+
+        Map<SpecificOccurrenceId, EventOrAny> returnContext = new HashMap<SpecificOccurrenceId, EventOrAny>();
+
+        for (SpecificOccurrenceId key : context1.keySet()){
+            EventOrAny event1 = context1.get(key);
+            EventOrAny event2 = context2.get(key);
+
+            EventOrAny intersectionEventOrAny = event1.intersect(event2);
+            if(intersectionEventOrAny != null){
+                returnContext.put(key, intersectionEventOrAny);
+            } else {
+                return null;
+            }
+        }
+
+        return returnContext;
+    }
 
     private static final class Key {
         private Patient p;

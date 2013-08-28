@@ -2,7 +2,6 @@ import edu.mayo.qdm.executor.drools.PreconditionResult;
 
 import edu.mayo.qdm.patient.*;
 import java.util.List;
-import java.util.Set;
 import edu.mayo.qdm.executor.drools.DroolsUtil
 import java.util.Iterator;
 import edu.mayo.qdm.executor.drools.*
@@ -12,39 +11,32 @@ import java.util.Arrays;
 global DroolsUtil droolsUtil
 global SpecificContextManager specificContextManager
 
-rule "Rule 1"
+rule "SO A"
       dialect "mvel"
       no-loop
   when
 
     $p : Patient( )
-
-    $sc : SpecificContext(id == "1", patient == $p)
 
     $lab :  Lab(startDate < "12-Jan-2000")  from $p.labs
 
   then
       System.out.println("1" + $lab);
-      modify($sc) { add(new SpecificOccurrence("A", "A", $lab)) }
-      insert (new PreconditionResult("1", $p, $lab))
+      insert (new PreconditionResult("SO A", $p, $lab))
 end
 
-rule "Rule 2"
+rule "SO B"
       dialect "mvel"
       no-loop
   when
 
     $p : Patient( )
 
-    $sc : SpecificContext(id == "2", patient == $p)
-
-    $lab :  Lab(endDate > "12-Jan-3000")  from $p.labs
+    $lab :  Lab(startDate < "12-Jan-2000")  from $p.labs
 
   then
-      System.out.println("2" + $lab);
-      modify($sc) { add(new SpecificOccurrence("A", "A", $lab)) }
-      insert (new PreconditionResult("2", $p, $lab))
-
+      System.out.println("1" + $lab);
+      insert (new PreconditionResult("SO B", $p, $lab))
 end
 
 rule "Rule 3"
@@ -77,22 +69,19 @@ rule "Group"
 
     PreconditionResult( id == "1", patient == $p )
     PreconditionResult( id == "2", patient == $p )
-    //not PreconditionResult( id == "3", patient == $p )
+    not PreconditionResult( id == "3", patient == $p )
 
-    $sc1 : SpecificContext(id == "1", patient == $p)
-    $sc2 : SpecificContext(id == "2", patient == $p)
-    $sc3 : SpecificContext(id == "3", patient == $p)
+    $sc1 : SpecificContext(specificContextTuples.size() > 0, id == "1", patient == $p, $t : specificContextTuples)
+    $sc2 : SpecificContext(id == "2", patient == $p, match($t, false))
+    $sc3 : SpecificContext(id == "3", patient == $p, match($t, true))
 
   then
       System.out.println("Group");
-      SpecificContext sc_result = specificContextManager.intersect($p, "Group", [$sc1,$sc2,$sc3.negate()])
-
-      if(sc_result.specificContextTuples != null){
-        System.out.println("Passed Group");
-        insert (new PreconditionResult("Group", $p))
-      }
       retract($sc)
-      insert(sc_result)
+      insert(specificContextManager.intersect($p, "Group", [$sc1,$sc2,$sc3.negate()]))
+      insert (new PreconditionResult("Group", $p))
+
+
 
 end
 
@@ -134,9 +123,9 @@ rule "Occurrence A"
 
     $c : SpecificContext(patient == $p)
 
-    $labs : Set() from collect ( Lab() from $p.labs )
+    $lab : Lab() from $p.labs
 
   then
-      $c.addToUniverse(new SpecificOccurrenceUniverse("A", "A", $labs));
+      $c.addToUniverse(new SpecificOccurrence("A", "A", $lab));
 
 end

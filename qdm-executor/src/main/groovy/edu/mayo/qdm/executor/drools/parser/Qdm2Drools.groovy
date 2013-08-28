@@ -2,10 +2,7 @@ package edu.mayo.qdm.executor.drools.parser
 
 import edu.mayo.qdm.executor.MeasurementPeriod
 import edu.mayo.qdm.executor.ResultCallback
-import edu.mayo.qdm.executor.drools.DroolsUtil
-import edu.mayo.qdm.executor.drools.PreconditionResult
-import edu.mayo.qdm.executor.drools.SpecificContext
-import edu.mayo.qdm.executor.drools.SpecificOccurrence
+import edu.mayo.qdm.executor.drools.*
 import edu.mayo.qdm.executor.drools.parser.criteria.CriteriaFactory
 import edu.mayo.qdm.executor.drools.parser.criteria.Interval
 import edu.mayo.qdm.executor.drools.parser.criteria.MeasurementValue
@@ -269,9 +266,12 @@ class Qdm2Drools {
         import ${DroolsUtil.name};
         import ${MeasurementPeriod.name};
         import ${SpecificOccurrence.name};
+        import ${SpecificOccurrenceUniverse.name};
         import ${MedicationStatus.name};
         import ${ProcedureStatus.name};
         import ${SpecificContext.name};
+        import ${SpecificContextManager.name};
+        import ${SpecificOccurrenceId.name};
         /*
             ID: ${qdm.id}
             Title: ${qdm.title}
@@ -283,6 +283,7 @@ class Qdm2Drools {
         global ResultCallback resultCallback
         global DroolsUtil droolsUtil
         global MeasurementPeriod measurementPeriod
+        global SpecificContextManager specificContextManager
         """
     }
 
@@ -386,7 +387,9 @@ class Qdm2Drools {
 
         when
             \$p : Patient( )
-            not ( PreconditionResult(id == "${prcn.id}", patient == \$p) )
+            //not ( PreconditionResult(id == "${prcn.id}", patient == \$p) )
+            \$sc : SpecificContext(id == "${prcn.id}", patient == \$p)
+
         """
                     )
 
@@ -403,12 +406,22 @@ class Qdm2Drools {
                             nestedPrc, idx ->
 
                                 if(nestedPrc.negation) sb.append("not(")
-                                sb.append(printPreconditionReference(nestedPrc.id))
+                                def nestedName = nestedPrc.reference ? nestedPrc.reference : nestedPrc.id
+                                sb.append(printPreconditionReference(nestedName))
                                 if(nestedPrc.negation) sb.append(") ")
 
                                 if(idx != prcn.preconditions.size() -1) {
                                     sb.append(" ${cnj} ")
                                 }
+                        }
+
+                        prcn.preconditions.each {
+                            nestedPrc ->
+                                def nestedName = nestedPrc.reference ? nestedPrc.reference : nestedPrc.id
+                                    sb.append("""
+                                    \$sc_$nestedName : SpecificContext(id == "$nestedName", patient == \$p)
+                                    """
+                                    )
                         }
                     }
 
@@ -416,7 +429,34 @@ class Qdm2Drools {
         """
         then
             System.out.println("${prcn.id}");
-            insert(new PreconditionResult("${prcn.id}", \$p))
+            ${
+                if(prcn.preconditions){
+                    def setOpResult = prcn.preconditions.collect {
+                        def negated = it.negation
+
+                        "\$sc_" + (it.reference ? it.reference : it.id) + (negated ? ".negate()" : "")
+                    }.join(",")
+
+                    def operator = this.conjunctionToSetOperator(prcn.conjunction_code)
+
+                    """SpecificContext sc_result = specificContextManager.${operator}(\$p, "${prcn.id}", [$setOpResult])
+
+                       if(sc_result.universe.size() == 0 ||
+                        sc_result.specificContextTuples.size() > 0){
+                         System.out.println("Good for ${prcn.id}");
+                         insert (new PreconditionResult("${prcn.id}", \$p))
+                       } else {
+                         System.out.println("Bad for ${prcn.id}");
+                       }
+                       retract(\$sc)
+                       insert(sc_result)
+                    """
+                } else {
+                    """insertLogical(new PreconditionResult("${prcn.id}", \$p))
+                    """
+                }
+            }
+            //insert(new PreconditionResult("${prcn.id}", \$p))
         end
 
         """
@@ -434,6 +474,10 @@ class Qdm2Drools {
             """
     }
 
+    private def getPreconditionName(precondition){
+        precondition.reference ? precondition.reference : precondition.id
+    }
+
     private def printSpecificOccurrenceDataCriteria(dataCriteria, measurementPeriod, measureJson, priorityStack){
         def name = dataCriteria.key
         def criterias = criteriaFactory.getSpecificOccurrenceDataCriteria(dataCriteria, measurementPeriod, measureJson)
@@ -444,22 +488,22 @@ class Qdm2Drools {
         } else {
             agendaGroup = """agenda-group "$GENERAL_DATA_CRITERIA_AGENDA_GROUP" """
         }
-        def idx = 0
 
         criterias.collect {
-            def fullName = """${name}${"'" * idx++}"""
+            def fullName = """Specific Occurrence ${name}"""
             """
         /* Rule */
-        rule "Specific Occurrence ${fullName}"
+        rule "${fullName}"
             dialect "mvel"
             no-loop
+            salience ${Integer.MAX_VALUE}
             //$agendaGroup
 
         when
             ${it.getLHS()}
 
         then
-            System.out.println("$fullName");
+            //System.out.println("Inserting Specific Occurrence ${fullName}");
             ${it.getRHS()}
         end
         """
@@ -490,8 +534,44 @@ class Qdm2Drools {
         when
             ${it.getLHS()}
 
+            ${
+
+            """
+            \$sc: SpecificContext(id == "$name", patient == \$p)
+            """
+
+            }
+
         then
             System.out.println("$fullName");
+            ${
+
+                def occurrences = []
+                if(dataCriteria.value.specific_occurrence){
+                    def specificOccurrenceId = dataCriteria.value.specific_occurrence
+                    def specificOccurrenceConst = dataCriteria.value.specific_occurrence_const
+
+                    occurrences << """new SpecificOccurrence("$specificOccurrenceId", "$specificOccurrenceConst", \$event)"""
+                }
+
+                dataCriteria.value.temporal_references.each {
+                    def referencedCriteria = measureJson.data_criteria."${it.reference}"
+                    if(referencedCriteria?.specific_occurrence){
+                        def specificOccurrenceId = referencedCriteria.specific_occurrence
+                        def specificOccurrenceConst = referencedCriteria.specific_occurrence_const
+                        occurrences << """new SpecificOccurrence("$specificOccurrenceId", "$specificOccurrenceConst", \$${it.reference}.event)"""
+                    }
+                }
+
+                if(occurrences.size() > 0){
+                    """
+                    modify(\$sc) { add([${occurrences.join(',')}]) }
+                    """
+                } else {""}
+
+
+
+            }
             ${it.getRHS()}
         end
         """
@@ -509,6 +589,14 @@ class Qdm2Drools {
         switch (conjunction){
             case "allTrue": return "and"
             case "atLeastOneTrue": return "or"
+        }
+    }
+
+    private def conjunctionToSetOperator(conjunction){
+        if (conjunction == null) return "union"
+        switch (conjunction){
+            case "allTrue": return "intersect"
+            case "atLeastOneTrue": return "union"
         }
     }
 

@@ -1,30 +1,41 @@
 package edu.mayo.qdm.executor.drools;
 
-import edu.mayo.qdm.patient.Event;
-
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
  */
 public class SpecificContextTuple {
 
-    private Map<SpecificOccurrenceId,Event> context = new HashMap<SpecificOccurrenceId,Event>();
+    private Map<SpecificOccurrenceId,EventOrAny> context = new HashMap<SpecificOccurrenceId,EventOrAny>();
 
     public SpecificContextTuple(){
         super();
     }
 
-    public SpecificContextTuple(SpecificOccurrence occurrence){
+    public SpecificContextTuple(Map<SpecificOccurrenceId,EventOrAny> context){
         super();
-        this.context.put(occurrence.getId(), occurrence.getEvent());
+        this.context = context;
     }
 
-    public Map<SpecificOccurrenceId, Event> getContext() {
+    public SpecificContextTuple(SpecificOccurrence occurrence){
+        super();
+        this.context.put(occurrence.getId(), new EventOrAny(occurrence.getEvent()));
+    }
+
+    public SpecificContextTuple(List<SpecificOccurrence> occurrences) {
+        super();
+        for (SpecificOccurrence occurrence : occurrences){
+            context.put(occurrence.getId(), new EventOrAny(occurrence.getEvent()));
+        }
+    }
+
+    public Map<SpecificOccurrenceId, EventOrAny> getContext() {
         return context;
     }
 
-    public void setContext(Map<SpecificOccurrenceId, Event> context) {
+    public void setContext(Map<SpecificOccurrenceId, EventOrAny> context) {
         this.context = context;
     }
 

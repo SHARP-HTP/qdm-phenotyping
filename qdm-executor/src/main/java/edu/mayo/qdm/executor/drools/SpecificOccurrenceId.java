@@ -29,6 +29,14 @@ public class SpecificOccurrenceId {
     }
 
     @Override
+    public String toString() {
+        return "SpecificOccurrenceId{" +
+                "id='" + id + '\'' +
+                ", constant='" + constant + '\'' +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

@@ -42,10 +42,4 @@ public class Encounter extends Event {
         return this.encounterId;
     }
 
-    public String toString() {
-        String displayStr = " code System: " + this.getConcept().getCodingScheme() + " encounter code: " + this.getEncounterId();
-
-        return displayStr;
-    }
-
 }

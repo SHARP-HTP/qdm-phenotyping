@@ -15,7 +15,12 @@ rule "p1"
 
   when
 
-    $p : Patient( )
+    $p : Patient(sourcePid == "1" )
+
+    or
+
+    $p : Patient(sourcePid == "asdf")
+
 
     $labs : List() from collect($lab : Lab() from $p.labs)
 

@@ -60,7 +60,7 @@ class DefaultCriteria implements Criteria {
         def negated = json.value.negation
 
         """
-        insert(new PreconditionResult("${json.key}", \$p ${!negated ? ", \$event" : ""}))
+        insertLogical(new PreconditionResult("${json.key}", \$p ${!negated ? ", \$event" : ""}))
         """
     }
 }

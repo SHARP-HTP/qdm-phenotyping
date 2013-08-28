@@ -27,12 +27,12 @@ class SpecificOccurrenceDataCriteria implements Criteria {
 
         def extraCriteria = this.getCriteria()
         """
-        \$event : edu.mayo.qdm.patient.$name(
+        \$events : Set() from collect( edu.mayo.qdm.patient.$name(
                         ${ [
                             negationCriteria,
                             extraCriteria
                            ].findAll().join(",") }
-        ) from droolsUtil.findMatches("$valueSetOid", \$p.get${pluralName}())
+        ) from droolsUtil.findMatches("$valueSetOid", \$p.get${pluralName}()))
         """
     }
 
@@ -48,9 +48,13 @@ class SpecificOccurrenceDataCriteria implements Criteria {
 
     @Override
     def getLHS(){
+        def id = json.value.specific_occurrence
+        def constant = json.value.specific_occurrence_const
+
         """
         \$p : Patient ( )
-        \$c : SpecificContext(patient == \$p)
+        //not PreconditionResult(id == "Specific Occurrence ${json.key}", patient == \$p)
+        \$c : SpecificContext(patient == \$p, !universe.containsKey(new SpecificOccurrenceId("$id", "$constant")))
         ${toDrools()}
         """
     }
@@ -62,7 +66,8 @@ class SpecificOccurrenceDataCriteria implements Criteria {
         def id = json.value.specific_occurrence
         def constant = json.value.specific_occurrence_const
         """
-        \$c.addToUniverse(new SpecificOccurrence("$id", "$constant", \$event));
+        //insert( new PreconditionResult("Specific Occurrence ${json.key}", \$p));
+        modify(\$c) { addToUniverse(new SpecificOccurrenceUniverse("$id", "$constant", \$events)) }
         """
     }
 }

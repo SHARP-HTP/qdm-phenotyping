@@ -52,7 +52,7 @@ class Birthdate implements Criteria {
     @Override
     def getRHS() {
         """
-        insert(new PreconditionResult("${json.key}", \$p, new Event(null, \$p.birthdate)))
+        insertLogical(new PreconditionResult("${json.key}", \$p, new Event(null, \$p.birthdate)))
         """
     }
 }

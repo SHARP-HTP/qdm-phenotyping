@@ -40,7 +40,8 @@ class CypressPatientDataSource {
             def code = procedure.codes.iterator().next()
             def oid = procedure.oid
 
-            if(oid == "2.16.840.1.113883.3.560.1.11"){
+            if(oid == "2.16.840.1.113883.3.560.1.11" ||
+                oid == "2.16.840.1.113883.3.560.1.40"){
                 def study = new DiagnosticStudy(
                         new Concept(code.value[0], code.key, null),
                         toDate(procedure.start_time),

@@ -87,6 +87,7 @@ public class DroolsExecutor implements Executor {
 
 		ksession.setGlobal("resultCallback", callback);
         ksession.setGlobal("droolsUtil", this.droolsUtil);
+        ksession.setGlobal("specificContextManager", new SpecificContextManager());
 
 		for(Patient patient : patients){
 			ksession.insert(patient);

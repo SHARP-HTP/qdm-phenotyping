@@ -100,7 +100,7 @@ class CriteriaFactory {
                 """
                 def rhs =
                 """
-                insert(new PreconditionResult("${fullJson.key}", \$p, \$event))
+                insertLogical(new PreconditionResult("${fullJson.key}", \$p, \$event))
                 """
                 [
                     getLHS:{lhs},

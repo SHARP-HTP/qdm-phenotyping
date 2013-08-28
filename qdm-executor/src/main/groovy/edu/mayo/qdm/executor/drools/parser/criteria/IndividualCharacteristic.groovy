@@ -78,7 +78,7 @@ class IndividualCharacteristic implements Criteria {
     @Override
     def getRHS() {
         """
-        insert(new PreconditionResult("$name", \$p))
+        insertLogical(new PreconditionResult("$name", \$p))
         """
     }
 }

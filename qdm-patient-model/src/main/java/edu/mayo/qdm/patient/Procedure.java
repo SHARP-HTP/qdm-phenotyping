@@ -41,9 +41,4 @@ public class Procedure extends Event {
         this.procedureStatus = procedureStatus;
     }
 
-    public String toString() {
-        String displayStr = " code System: " + this.getConcept().getCodingScheme() + " lab code: "
-                + this.getConcept().getCode() + " starting date: " + this.getStartDate() + " end date: " + this.getEndDate();
-        return displayStr;
-    }
 }

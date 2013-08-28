@@ -63,10 +63,4 @@ public class Eligibility {
         return endDate;
     }
 
-    public String toString() {
-        String displayStr = " code System: " + this.getCodingSystem()
-                + " eligibility code: " + this.getEligibilityCode()
-                + " startDate: " + this.getStartingDate() + " endDate: " + this.getEndDate();
-        return displayStr;
-    }
 }
