@@ -15,17 +15,27 @@ rule "p1"
 
   when
 
-    $p : Patient(sourcePid == "1" )
-
-    or
-
-    $p : Patient(sourcePid == "asdf")
+    $p : Patient(  )
+    $total : java.util.Set() from collect(
 
 
-    $labs : List() from collect($lab : Lab() from $p.labs)
+
+    $event : Lab(
+
+    forall($value : Value() from values)
+
+    ) from $p.labs
+
+
+    )
+
+
+
+
+
 
   then
-    System.out.println($labs);
+    System.out.println("Start:" + $total.size())
 
 end
 

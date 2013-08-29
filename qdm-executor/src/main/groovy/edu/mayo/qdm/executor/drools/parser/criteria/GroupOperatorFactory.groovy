@@ -13,22 +13,26 @@ class GroupOperatorFactory {
 
             def countCriteria = []
             if(low){
-                countCriteria << """ size >${low."inclusive?" ? "=" : ""} ${low.value}"""
+                countCriteria << """ this >${low."inclusive?" ? "=" : ""} ${low.value}"""
             }
             if(high){
-                countCriteria << """ size <${low."inclusive?" ? "=" : ""} ${high.value}"""
+                countCriteria << """ this <${low."inclusive?" ? "=" : ""} ${high.value}"""
             }
             def droolsString = """
             \$p : Patient ( )
-            \$events : Set( ${countCriteria.join(",")} ) from collect ( PreconditionResult (
-                     (${json.children_criteria.collect{"id == \"$it\""}.join(" || ")}),
-                     patient == \$p))
+            \$result : PreconditionResult( id == "${fullJson.key}", patient == \$p )
+
+            \$events : Set( ) from collect(
+                PreconditionResult( (${json.children_criteria.collect {"""id == "$it" """}.join(" || ")}), patient == \$p ) )
+
+            Number( ${countCriteria.join(",")} ) from droolsUtil.countEvents(\$events)
             """
             [
                 getLHS:{droolsString},
                 getRHS:{
-                    """
-                    insertLogical(new PreconditionResult("${fullJson.key}", \$p))
+                    """modify(\$result) {
+                        status = PreconditionResultStatus.SUCCESS
+                    }
                     """
                 }
             ] as Criteria
@@ -37,59 +41,48 @@ class GroupOperatorFactory {
     def RECENT = {
         fullJson, subsetOperator ->
             [
-                firstOrRecent(fullJson, subsetOperator, "max", true),
-                firstOrRecent(fullJson, subsetOperator, "max", false)
+                firstOrRecent(fullJson, subsetOperator, "max"),
             ]
     }
 
     def FIRST = {
         fullJson, subsetOperator ->
             [
-                firstOrRecent(fullJson, subsetOperator, "min", true),
-                firstOrRecent(fullJson, subsetOperator, "min", false)
+                firstOrRecent(fullJson, subsetOperator, "min"),
             ]
     }
 
-    def firstOrRecent(fullJson, subsetOperator, minOrMax, initial){
+    def firstOrRecent(fullJson, subsetOperator, minOrMax){
         def json = fullJson.value
 
-        def childCriteria = json.children_criteria.collect { "id == \"$it\"" }.join(" || ")
+        def childCriteria = json.children_criteria
         def droolsString = """
-        \$p : Patient ( )
-        ${
-            if(!initial){
-            """\$oldResult : PreconditionResult(id == "${fullJson.key}", patient == \$p)"""
-            } else {
-                ""
-            }
-        }
+        \$p : Patient( )
+
+        \$result : PreconditionResult( id == "${fullJson.key}", patient == \$p )
+
+        \$results : Set() from collect(
+            PreconditionResult( (${childCriteria.collect {"id == \"$it\""}.join(" || ")}), patient == \$p ) )
+
+        \$total : Set() from collect( Event() from droolsUtil.combineEvents(\$results))
 
         \$m : Number() from accumulate(
-                PreconditionResult(
-                    patient == \$p,
-                    ($childCriteria),
-                    event.startDate != null,
-                    \$startDate : event.startDate ),
+                    Event(
+                        startDate != null,
+                        \$startDate : startDate ) from \$total,
                 $minOrMax( \$startDate.time ) )
 
-        \$specificEvent : PreconditionResult(
-            patient == \$p,
-            ($childCriteria),
-            event.startDate == new java.util.Date(\$m) )
+        \$specificEvent : Event( startDate == new java.util.Date(\$m) ) from \$total
 
         """
         [
             getLHS:{droolsString},
             getRHS:{
-                if(initial){
-                """
-                insertLogical(new PreconditionResult("${fullJson.key}", \$p, \$specificEvent.event))
-                """
-                } else {
-                """
-                modify( \$oldResult ) { setEvent(\$specificEvent.event) }
-                """
-                }
+               """modify(\$result){
+                    setEvent(\$specificEvent),
+                    status = PreconditionResultStatus.SUCCESS
+               }
+               """
             }
         ] as Criteria
     }

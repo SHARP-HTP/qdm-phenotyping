@@ -46,13 +46,19 @@ class Birthdate implements Criteria {
                 ""
             }
         }
+        \$result : PreconditionResult(id == "${json.key}", patient == \$p)
+
         """
     }
 
     @Override
     def getRHS() {
         """
-        insertLogical(new PreconditionResult("${json.key}", \$p, new Event(null, \$p.birthdate)))
+        //insertLogical(new PreconditionResult("${json.key}", \$p, new Event(null, \$p.birthdate)))
+        modify(\$result){
+            setEvent(new Event(null, \$p.birthdate)),
+            status = PreconditionResultStatus.SUCCESS
+        }
         """
     }
 }

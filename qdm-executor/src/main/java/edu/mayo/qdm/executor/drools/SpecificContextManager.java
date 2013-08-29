@@ -21,7 +21,11 @@ public class SpecificContextManager {
         }
 
         SpecificContext c = new SpecificContext(id, p, contexts.get(0).getUniverse());
+
         c.setSpecificContextTuples(returnSet);
+
+        c.compact();
+
         return c;
     }
 
@@ -35,13 +39,14 @@ public class SpecificContextManager {
 
         Set<SpecificContextTuple> currentContext = contexts.get(0).getSpecificContextTuples();
 
-        for(SpecificContext context : contexts.subList(1, contexts.size() - 1)){
+        for(SpecificContext context : contexts.subList(1, contexts.size())){
             currentContext = this.intersect(currentContext, context.getSpecificContextTuples());
         }
 
         SpecificContext newContext = new SpecificContext(id, p, contexts.get(0).getUniverse());
         newContext.setSpecificContextTuples(currentContext);
 
+        newContext.compact();
         return newContext;
     }
 

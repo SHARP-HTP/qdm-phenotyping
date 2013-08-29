@@ -3,12 +3,16 @@ package edu.mayo.qdm.executor.drools;
 import edu.mayo.qdm.patient.Event;
 import edu.mayo.qdm.patient.Patient;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 public class PreconditionResult {
 
 	private String id;
 	private Patient patient;
-    private Event event;
-    private boolean negative = false;
+    private Set<Event> events = new HashSet<Event>();
+    private PreconditionResultStatus status = PreconditionResultStatus.NOT_EXECUTED;
 
     public PreconditionResult(String id, Patient patient) {
         super();
@@ -16,19 +20,24 @@ public class PreconditionResult {
         this.patient = patient;
     }
 
+    public PreconditionResult(String id, Patient patient, Set<Event> events) {
+        super();
+        this.id = id;
+        this.patient = patient;
+        this.events = events;
+    }
+
     public PreconditionResult(String id, Patient patient, Event event) {
         super();
         this.id = id;
         this.patient = patient;
-        this.event = event;
+        this.events = new HashSet<Event>(Arrays.asList(event));
     }
 
-    public PreconditionResult(String id, Patient patient, Event event, boolean negative) {
-        super();
-        this.id = id;
-        this.patient = patient;
-        this.event = event;
-        this.negative = negative;
+    public void setExecuted(){
+        if(this.status.equals(PreconditionResultStatus.NOT_EXECUTED)){
+            this.status = PreconditionResultStatus.EXECUTED;
+        }
     }
 
     public String getId() {
@@ -47,19 +56,23 @@ public class PreconditionResult {
         this.patient = patient;
     }
 
-    public Event getEvent() {
-        return event;
+    public Set<Event> getEvents() {
+        return events;
     }
 
     public void setEvent(Event event) {
-        this.event = event;
+        this.events = new HashSet<Event>(Arrays.asList(event));
     }
 
-    public boolean isNegative() {
-        return negative;
+    public void setEvents(Set<Event> events) {
+        this.events = events;
     }
 
-    public void setNegative(boolean negative) {
-        this.negative = negative;
+    public PreconditionResultStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(PreconditionResultStatus status) {
+        this.status = status;
     }
 }

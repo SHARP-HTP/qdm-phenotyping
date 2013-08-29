@@ -145,11 +145,13 @@ class Qdm2Drools {
         json.population_criteria.each { groups += getPopulationCriteriaStack(it.value.preconditions) }
 
         sb.append( printInitSpecificContexts( groups + json.data_criteria.collect { it.key } ))
+        sb.append( printInitPreconditionResults( groups + json.data_criteria.collect { it.key } ))
 
+        //sb.append( printInitPreconditionStatusRules() )
         sb.append( printRuleFunctions(json) )
 
         if(ruleOrderStack.size() > 0){
-            sb.append( printInitRule(ruleOrderStack) )
+            //sb.append( printInitRule(ruleOrderStack) )
         }
 
         def rule = sb.toString()
@@ -207,6 +209,60 @@ class Qdm2Drools {
             }.join()
 
         }
+        end
+        """
+    }
+
+    private def printInitPreconditionResults(preconditionIds){
+        """
+        /* Initializate Precondition Results */
+        rule "Initialize Precondition Results"
+            dialect "mvel"
+            no-loop
+            salience ${Integer.MAX_VALUE}
+        when
+            \$p : Patient( )
+        then
+            ${
+            preconditionIds.collect {
+                """
+                insert(new PreconditionResult("$it", \$p));
+                """
+            }.join()
+
+        }
+        end
+        """
+    }
+
+    private def printInitPreconditionStatusRules(){
+        """
+        /* Precondition Success Status Rule */
+        rule "Precondition Success Status Rule"
+            dialect "mvel"
+            no-loop
+
+        when
+            \$result : PreconditionResult(
+                (status == PreconditionResultStatus.FAILURE || status == PreconditionResultStatus.EXECUTED),
+                events.size() > 0
+            )
+        then
+            modify(\$result){ status = PreconditionResultStatus.SUCCESS }
+        end
+
+        /* Precondition Failure Status Rule */
+        rule "Precondition Failure Status Rule"
+            dialect "mvel"
+            no-loop
+
+        when
+            \$result : PreconditionResult(
+                (status == PreconditionResultStatus.SUCCESS || status == PreconditionResultStatus.EXECUTED),
+                events.size() == 0
+            )
+        then
+            modify(\$result){ status = PreconditionResultStatus.FAILURE }
         end
         """
     }
@@ -272,6 +328,7 @@ class Qdm2Drools {
         import ${SpecificContext.name};
         import ${SpecificContextManager.name};
         import ${SpecificOccurrenceId.name};
+        import ${PreconditionResultStatus.name};
         /*
             ID: ${qdm.id}
             Title: ${qdm.title}
@@ -340,20 +397,20 @@ class Qdm2Drools {
             preconditions.eachWithIndex {
                 prcn, idx ->
                     def cnj = conjunctionToBoolean(prcn.conjunction_code)
-                    if(prcn.negation) sb.append("not(")
+                    //if(prcn.negation) sb.append("not(")
                     if(prcn.reference){
                         def dataCriteriaRef = prcn.reference
 
-                        sb.append(printPreconditionReference(dataCriteriaRef))
+                        sb.append(printPreconditionReference(dataCriteriaRef, prcn.negation))
                     } else {
                         nestedPreconditions.add(prcn)
 
-                        sb.append(printPreconditionReference(prcn.id))
+                        sb.append(printPreconditionReference(prcn.id, prcn.negation))
                     }
                     if(idx != preconditions.size() -1) {
                         sb.append(" ${cnj} ")
                     }
-                    if(prcn.negation) sb.append(")")
+                    //if(prcn.negation) sb.append(")")
             }
         }
         sb.append("""
@@ -382,11 +439,12 @@ class Qdm2Drools {
         rule "${prcn.id}"
             dialect "mvel"
             no-loop
-            //salience ${0 - index}
+            //salience 10
             //agenda-group "${prcn.id}"
 
         when
             \$p : Patient( )
+            \$result : PreconditionResult(id == "${prcn.id}", patient == \$p)
             //not ( PreconditionResult(id == "${prcn.id}", patient == \$p) )
             \$sc : SpecificContext(id == "${prcn.id}", patient == \$p)
 
@@ -405,10 +463,10 @@ class Qdm2Drools {
                         prcn.preconditions.eachWithIndex {
                             nestedPrc, idx ->
 
-                                if(nestedPrc.negation) sb.append("not(")
+                                //if(nestedPrc.negation) sb.append("not(")
                                 def nestedName = nestedPrc.reference ? nestedPrc.reference : nestedPrc.id
-                                sb.append(printPreconditionReference(nestedName))
-                                if(nestedPrc.negation) sb.append(") ")
+                                sb.append(printPreconditionReference(nestedName, nestedPrc.negation))
+                                //if(nestedPrc.negation) sb.append(") ")
 
                                 if(idx != prcn.preconditions.size() -1) {
                                     sb.append(" ${cnj} ")
@@ -444,15 +502,17 @@ class Qdm2Drools {
                        if(sc_result.universe.size() == 0 ||
                         sc_result.specificContextTuples.size() > 0){
                          System.out.println("Good for ${prcn.id}");
-                         insert (new PreconditionResult("${prcn.id}", \$p))
+                         modify(\$result){status = PreconditionResultStatus.SUCCESS}
+                         //insert(new PreconditionResult("${prcn.id}", \$p))
                        } else {
                          System.out.println("Bad for ${prcn.id}");
+                         modify(\$result){status = PreconditionResultStatus.FAILURE}
                        }
                        retract(\$sc)
                        insert(sc_result)
                     """
                 } else {
-                    """insertLogical(new PreconditionResult("${prcn.id}", \$p))
+                    """modify(\$result){status = PreconditionResultStatus.SUCCESS}
                     """
                 }
             }
@@ -468,9 +528,9 @@ class Qdm2Drools {
         nestedPreconditions.each { nestedPrc -> printPreconditions(nestedPrc, sb)}
     }
 
-    private def printPreconditionReference(preconditionReference){
+    private def printPreconditionReference(preconditionReference, negate=false){
             """
-            PreconditionResult( id == "$preconditionReference", patient == \$p )
+            PreconditionResult( id == "$preconditionReference", patient == \$p, status == PreconditionResultStatus.${negate ? "SUCCESS" : "SUCCESS"})
             """
     }
 
@@ -551,7 +611,7 @@ class Qdm2Drools {
                     def specificOccurrenceId = dataCriteria.value.specific_occurrence
                     def specificOccurrenceConst = dataCriteria.value.specific_occurrence_const
 
-                    occurrences << """new SpecificOccurrence("$specificOccurrenceId", "$specificOccurrenceConst", \$event)"""
+                    occurrences << """new SpecificOccurrence("$specificOccurrenceId", "$specificOccurrenceConst", \$events)"""
                 }
 
                 dataCriteria.value.temporal_references.each {
@@ -559,7 +619,7 @@ class Qdm2Drools {
                     if(referencedCriteria?.specific_occurrence){
                         def specificOccurrenceId = referencedCriteria.specific_occurrence
                         def specificOccurrenceConst = referencedCriteria.specific_occurrence_const
-                        occurrences << """new SpecificOccurrence("$specificOccurrenceId", "$specificOccurrenceConst", \$${it.reference}.event)"""
+                        occurrences << """new SpecificOccurrence("$specificOccurrenceId", "$specificOccurrenceConst", \$var)"""
                     }
                 }
 

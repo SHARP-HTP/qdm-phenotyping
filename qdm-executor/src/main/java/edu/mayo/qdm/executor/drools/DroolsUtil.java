@@ -95,6 +95,20 @@ public final class DroolsUtil {
         return date;
     }
 
+    public int countEvents(Collection<PreconditionResult> sets){
+        return this.combineEvents(sets).size();
+    }
+
+    public Collection<Event> combineEvents(Collection<PreconditionResult> sets){
+        Set<Event> returnSet = new HashSet<Event>();
+        for(PreconditionResult set : sets){
+            if(set != null && set.getEvents() != null){
+                returnSet.addAll(set.getEvents());
+            }
+        }
+
+        return returnSet;
+    }
 
     static void main(String[] args){
         Date d1 = new Date(1328094000);

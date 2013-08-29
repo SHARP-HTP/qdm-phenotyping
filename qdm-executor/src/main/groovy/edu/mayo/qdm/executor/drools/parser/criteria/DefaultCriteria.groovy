@@ -29,11 +29,23 @@ class DefaultCriteria implements Criteria {
 
         def extraCriteria = this.getCriteria()
         """
-        ${references.variables}
-        \$event : edu.mayo.qdm.patient.$name(
-                        ${ [negationCriteria,references.criteria,extraCriteria].findAll().join(",") }
+        ${
+            if(references.variables){
+                """
+                ${references.variables}
+                \$var : Event() from \$temporalReference.events
+                """
+            } else {
+                ""
+            }
+        }
+
+        \$events : Set() from collect(\$event : edu.mayo.qdm.patient.$name(
+                        ${ [negationCriteria,references.criteria,extraCriteria,this.getEventCriteria()].findAll().join(",") }
         ) from droolsUtil.findMatches("$valueSetOid", \$p.get${pluralName}())
-        ${this.getEventCriteria()}
+        )
+
+        \$result : PreconditionResult(id == "${json.key}", patient == \$p)
         """
     }
 
@@ -60,7 +72,20 @@ class DefaultCriteria implements Criteria {
         def negated = json.value.negation
 
         """
-        insertLogical(new PreconditionResult("${json.key}", \$p ${!negated ? ", \$event" : ""}))
+        System.out.println("SIZE: " + \$events.size());
+        if(\$events.size() > 0){
+            modify(\$result){
+                events.addAll(\$events),
+                status = PreconditionResultStatus.SUCCESS
+            }
+        } else if(\$events.size() == 0 && \$result.events.size() == 0){
+            modify(\$result){
+                status = PreconditionResultStatus.FAILURE
+            }
+        }
+
+
+        //insertLogical(new PreconditionResult("${json.key}", \$p ${!negated ? ", \$events" : ""}))
         """
     }
 }

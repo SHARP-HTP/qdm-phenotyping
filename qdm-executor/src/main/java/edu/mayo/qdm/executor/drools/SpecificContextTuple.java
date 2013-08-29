@@ -1,7 +1,8 @@
 package edu.mayo.qdm.executor.drools;
 
+import edu.mayo.qdm.patient.Event;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -19,16 +20,9 @@ public class SpecificContextTuple {
         this.context = context;
     }
 
-    public SpecificContextTuple(SpecificOccurrence occurrence){
+    public SpecificContextTuple(SpecificOccurrenceId id, Event event){
         super();
-        this.context.put(occurrence.getId(), new EventOrAny(occurrence.getEvent()));
-    }
-
-    public SpecificContextTuple(List<SpecificOccurrence> occurrences) {
-        super();
-        for (SpecificOccurrence occurrence : occurrences){
-            context.put(occurrence.getId(), new EventOrAny(occurrence.getEvent()));
-        }
+        this.context.put(id, new EventOrAny(event));
     }
 
     public Map<SpecificOccurrenceId, EventOrAny> getContext() {

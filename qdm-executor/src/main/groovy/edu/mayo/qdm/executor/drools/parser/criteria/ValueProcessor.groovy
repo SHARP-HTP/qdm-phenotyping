@@ -39,10 +39,7 @@ class ValueProcessor {
                         """
                     eventCriteria =
                         """
-                    edu.mayo.qdm.patient.Value(
-                        value != null,
-                        ${IVL_PQ(json.value.value, "java.text.NumberFormat.getInstance().parse(value)")}
-                    ) from \$event.values
+                        ${IVL_PQ(json.value.value, "java.text.NumberFormat.getInstance().parse(values[0].value)")}
                     """
                     break
                 default : throw new UnsupportedOperationException(

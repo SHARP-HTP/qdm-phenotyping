@@ -67,39 +67,45 @@ public class SpecificContext {
 
     public void add(List<SpecificOccurrence> occurrences){
         this.getSpecificContextTuples().remove(this.anyTuple);
-        SpecificContextTuple tuple = new SpecificContextTuple(occurrences);
 
-        Set<SpecificOccurrenceId> universeKeys = this.universe.keySet();
+        SpecificContextTuple tuple = new SpecificContextTuple();
 
-        for (SpecificOccurrenceId key : universeKeys){
-            if(! tuple.getContext().containsKey(key)){
-                tuple.getContext().put(key, new EventOrAny());
+        for(SpecificOccurrence occurrence : occurrences){
+            for(Event event : occurrence.getEvents()){
+                tuple.getContext().put(occurrence.getId(), new EventOrAny(event));
+            }
+
+            Set<SpecificOccurrenceId> universeKeys = this.universe.keySet();
+
+            for (SpecificOccurrenceId key : universeKeys){
+                if(! tuple.getContext().containsKey(key)){
+                    tuple.getContext().put(key, new EventOrAny());
+                }
             }
         }
+
         this.specificContextTuples.add(tuple);
+
+        this.compact();
     }
 
     public void add(SpecificOccurrence occurrence){
-        this.getSpecificContextTuples().remove(this.anyTuple);
-        SpecificContextTuple tuple = new SpecificContextTuple(occurrence);
-
-        Set<SpecificOccurrenceId> universeKeys = this.universe.keySet();
-
-        for (SpecificOccurrenceId key : universeKeys){
-            if(! tuple.getContext().containsKey(key)){
-                tuple.getContext().put(key, new EventOrAny());
-            }
-        }
-        this.specificContextTuples.add(tuple);
+        this.add(Arrays.asList(occurrence));
     }
 
     public SpecificContext negate() {
         SpecificContext c = new SpecificContext(this.id, this.patient, this.getUniverse());
-        if(this.getSpecificContextTuples().size() == 0){
-            c.setSpecificContextTuples(this.universeToTuples());
-        } else {
-            c.setSpecificContextTuples(this.negate(this.getSpecificContextTuples()));
+
+        c.getSpecificContextTuples().clear();
+
+        SpecificContextTuple t = new SpecificContextTuple();
+
+        for (Map.Entry<SpecificOccurrenceId, Set<Event>> entry : this.universe.entrySet()){
+            t.getContext().put(entry.getKey(), new EventOrAny());
         }
+        c.getSpecificContextTuples().add(t);
+
+
 
         return c;
     }
@@ -143,4 +149,43 @@ public class SpecificContext {
 
         anyTuple.getContext().put(id, new EventOrAny());
     }
+
+    private static class CompactHolder {
+        private Set<Event> events = new HashSet<Event>();
+        private int count = 0;
+    }
+
+    public void compact(){
+        if(this.getSpecificContextTuples() == null){
+            return;
+        }
+
+        Set<SpecificContextTuple> tuplesToRemove = new HashSet<SpecificContextTuple>();
+        for (SpecificContextTuple tuple : this.getSpecificContextTuples()){
+            Map<String,CompactHolder> holderMap = new HashMap<String,CompactHolder>();
+            for (SpecificOccurrenceId id : tuple.getContext().keySet()){
+                Event event = tuple.getContext().get(id).getEvent();
+                if(event != null){
+                    String constant = id.getConstant();
+                    if(! holderMap.containsKey(constant)){
+                       holderMap.put(constant, new CompactHolder());
+                    }
+                    CompactHolder holder = holderMap.get(constant);
+                    holder.count++;
+                    holder.events.add(event);
+
+                }
+            }
+
+            for(CompactHolder holder : holderMap.values()){
+                if(holder.count > holder.events.size()){
+                    tuplesToRemove.add(tuple);
+                }
+            }
+
+        }
+
+        this.getSpecificContextTuples().removeAll(tuplesToRemove);
+    }
+
 }

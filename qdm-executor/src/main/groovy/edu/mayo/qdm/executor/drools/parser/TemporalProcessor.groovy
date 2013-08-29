@@ -210,26 +210,27 @@ class TemporalProcessor {
                 if(range.high){
                     def calendarType = toCalendarType(range.high.unit)
                     def value = range.high.value//adjustForInclusive(range.high.value, range.high.'inclusive?')
-                    sb.append("toDays(${property}) ${highOp(range.high)} toDays(droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${value})),\n")
+                    sb.append("toDays(${property}) ${highOp(range.high)} toDays(droolsUtil.add(droolsUtil.getCalendar(\$var.$targetProperty), Calendar.$calendarType, $minusOrPlus${value})),\n")
                 }
                 if(range.low){
                     def calendarType = toCalendarType(range.low.unit)
                     def value = range.low.value//adjustForInclusive(range.low.value, range.low.'inclusive?')
-                    sb.append("toDays(${property}) ${lowOp(range.low)} toDays(droolsUtil.add(droolsUtil.getCalendar(\$${temporalReference.reference}.event.$targetProperty), Calendar.$calendarType, $minusOrPlus${value}))\n")
+                    sb.append("toDays(${property}) ${lowOp(range.low)} toDays(droolsUtil.add(droolsUtil.getCalendar(\$var.$targetProperty), Calendar.$calendarType, $minusOrPlus${value}))\n")
                 } else {
                     def op = getOperator(beforeOrAfter)
-                    sb.append("${property} $op \$${temporalReference.reference}.event.${targetProperty}\n")
+                    sb.append("${property} $op \$var.${targetProperty}\n")
                 }
             } else {
                 def op = getOperator(beforeOrAfter)
-                sb.append("${property} $op \$${temporalReference.reference}.event.${targetProperty}")
+                sb.append("${property} $op \$var.${targetProperty}")
             }
 
             return new TemporalResult(
-                    variables: """\$${temporalReference.reference} : PreconditionResult(id == "${temporalReference.reference}", patient == \$p)""",
+                    //variables: """\$${temporalReference.reference} : PreconditionResult(id == "${temporalReference.reference}", patient == \$p)""",
+                    variables: """\$temporalReference : PreconditionResult(id == "${temporalReference.reference}", patient == \$p)""",
                     criteria:
             """
-            \$${temporalReference.reference}.event != null,
+            //\$temporalReference.event != null,
             ${sb.toString()}
             """)
         }
