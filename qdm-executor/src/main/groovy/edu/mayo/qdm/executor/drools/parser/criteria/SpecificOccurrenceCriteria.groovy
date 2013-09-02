@@ -83,7 +83,7 @@ class SpecificOccurrenceCriteria implements Criteria {
             """
         } else {
             """
-            insert(new PreconditionResult("${json.key}", \$p ${!negated ? ", \$event" : ""}))
+            insertLogical(new PreconditionResult("${json.key}", \$p ${!negated ? ", \$event" : ""}))
             """
         }
     }

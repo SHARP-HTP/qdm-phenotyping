@@ -28,7 +28,7 @@ class GroupOperatorFactory {
                 getLHS:{droolsString},
                 getRHS:{
                     """
-                    insert(new PreconditionResult("${fullJson.key}", \$p))
+                    insertLogical(new PreconditionResult("${fullJson.key}", \$p))
                     """
                 }
             ] as Criteria

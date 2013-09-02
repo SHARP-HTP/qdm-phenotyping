@@ -18,14 +18,11 @@ rule "Rule 1"
 
     $p : Patient( )
 
-    $sc : SpecificContext(id == "1", patient == $p)
-
     $lab :  Lab(startDate < "12-Jan-2000")  from $p.labs
 
   then
       System.out.println("1" + $lab);
-      modify($sc) { add(new SpecificOccurrenceResult("A", $lab)) }
-      insert (new PreconditionResult("1", $p, $lab))
+      insertLogical (new PreconditionResult("1", $p, $lab))
 end
 
 rule "Rule 2"
@@ -35,14 +32,11 @@ rule "Rule 2"
 
     $p : Patient( )
 
-    $sc : SpecificContext(id == "2", patient == $p)
-
     $lab :  Lab(endDate > "12-Jan-3000")  from $p.labs
 
   then
       System.out.println("2" + $lab);
-      modify($sc) { add(new SpecificOccurrenceResult("A", $lab)) }
-      insert (new PreconditionResult("2", $p, $lab))
+      insertLogical (new PreconditionResult("2", $p, $lab))
 
 end
 
@@ -53,14 +47,11 @@ rule "Rule 3"
 
     $p : Patient( )
 
-    $sc : SpecificContext(id == "3", patient == $p)
-
     $lab :  Lab(concept.code == "c")  from $p.labs
 
   then
       System.out.println("3" + $lab);
-      modify($sc) { add(new SpecificOccurrenceResult("A", $lab)) }
-      insert (new PreconditionResult("3", $p, $lab))
+      insertLogical (new PreconditionResult("3", $p, $lab))
 
 end
 
@@ -72,21 +63,13 @@ rule "Group"
  when
 
     $p : Patient( )
-    $sc : SpecificContext(id == "Group", patient == $p)
 
-    PreconditionResult( id == "1", patient == $p )
-    PreconditionResult( id == "2", patient == $p )
-    not PreconditionResult( id == "3", patient == $p )
-
-    $sc1 : SpecificContext(specificContextTuples.size() > 0, id == "1", patient == $p, $t : specificContextTuples)
-    $sc2 : SpecificContext(id == "2", patient == $p, match($t, false))
-    $sc3 : SpecificContext(id == "3", patient == $p, match($t, true))
+    PreconditionResult( id == "1", patient == $p)
+    PreconditionResult( id == "2", patient == $p)
+    //not PreconditionResult( id == "3", patient == $p, event == $event )
 
   then
-      System.out.println("Group");
-      retract($sc)
-      insert(specificContextManager.intersect($p, "Group", [$sc1,$sc2,$sc3.negate()]))
-      insert (new PreconditionResult("Group", $p))
+      insertLogical (new PreconditionResult("Group", $p))
 
 
 
@@ -101,38 +84,56 @@ rule "Main"
     $p : Patient( )
     PreconditionResult( id == "Group", patient == $p )
 
+    PreconditionResult(id == "so_final", patient == $p)
+
   then
       System.out.println("Main");
 end
 
-rule "initializeit"
+rule "so1"
       dialect "mvel"
       no-loop
  when
-
     $p : Patient( )
 
+        $result : PreconditionResult(id == "1" || id == "ZZZZ", patient == $p )
+
+        PreconditionResult( id == "1", patient == $p, event == $result.event)
+        or
+        PreconditionResult( id == "ZZZZ", patient == $p, event == $result.event)
   then
-      System.out.println("Init");
-      insert(new SpecificContext("1", $p));
-      insert(new SpecificContext("2", $p));
-      insert(new SpecificContext("3", $p));
-      insert(new SpecificContext("Group", $p));
+   System.out.println("HI");
+   insertLogical( new SpecificOccurrenceResult("1", $result.event))
 
 end
 
-rule "Occurrence A"
+rule "so2"
       dialect "mvel"
       no-loop
  when
-
     $p : Patient( )
 
-    $c : SpecificContext(patient == $p)
+        $result : PreconditionResult(id == "2" || id == "ZZZZ", patient == $p )
 
-    $labs : List() from collect (Lab() from $p.labs)
+        PreconditionResult( id == "2", patient == $p, event == $result.event)
 
+        not PreconditionResult( id == "ZZZZ", patient == $p, event == $result.event)
   then
-      $c.addUniverse(new SpecificOccurrence("A", $p, $labs));
+   System.out.println("HI");
+   insertLogical( new SpecificOccurrenceResult("2", $result.event))
+
+end
+
+rule "so_final"
+      dialect "mvel"
+      no-loop
+ when
+    $p : Patient( )
+
+        SpecificOccurrenceResult( id == "1", $event : event)
+        SpecificOccurrenceResult( id == "2", event == $event)
+  then
+   System.out.println("HI-final");
+   insertLogical( new PreconditionResult("so_final", $p))
 
 end

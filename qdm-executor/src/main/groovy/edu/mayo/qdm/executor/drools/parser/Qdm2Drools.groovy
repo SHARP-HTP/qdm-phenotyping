@@ -5,6 +5,7 @@ import edu.mayo.qdm.executor.ResultCallback
 import edu.mayo.qdm.executor.drools.DroolsUtil
 import edu.mayo.qdm.executor.drools.PreconditionResult
 import edu.mayo.qdm.executor.drools.SpecificOccurrence
+import edu.mayo.qdm.executor.drools.SpecificOccurrenceResult
 import edu.mayo.qdm.executor.drools.parser.criteria.CriteriaFactory
 import edu.mayo.qdm.executor.drools.parser.criteria.Interval
 import edu.mayo.qdm.executor.drools.parser.criteria.MeasurementValue
@@ -36,6 +37,8 @@ class Qdm2Drools {
 
     @Autowired
     CriteriaFactory criteriaFactory;
+
+    def specificOccurrencesProcessor = new SpecificOccurrencesProcessor()
 
     Qdm2Drools(){
         super()
@@ -114,11 +117,23 @@ class Qdm2Drools {
         sb.append(printRuleHeader(json))
 
         def ruleOrderStack = []
+
+
         /*
-        json.population_criteria.sort(populationSorter).each {
-            getPopulationCriteriaStack( it.value.preconditions ).each { ruleOrderStack << it }
-        }
+        def specificOccurrences = json.source_data_criteria.collect {
+            if(it.value.specific_occurrence_const){
+                def constant = it.value.specific_occurrence_const
+                def id = it.value.specific_occurrence
+                    sb.append(printSpecificOccurrenceRule(constant, id,
+                        json.data_criteria.findAll {
+                            it.value.specific_occurrence_const == constant &&
+                            it.value.specific_occurrence == id }
+                            ))
+            }
+        }.findAll()
         */
+
+        sb.append(specificOccurrencesProcessor.getSpecificOccurrencesRules(json))
 
         json.population_criteria.each {
             printPopulationCriteria( it, sb )
@@ -144,7 +159,7 @@ class Qdm2Drools {
         }
         */
 
-        sb.append( printRuleFunctions(json) )
+        //sb.append( printRuleFunctions(json) )
 
         if(ruleOrderStack.size() > 0){
             sb.append( printInitRule(ruleOrderStack) )
@@ -209,6 +224,39 @@ class Qdm2Drools {
         """
     }
 
+    private def printSpecificOccurrenceRule(constant, id, preconditions){
+        """
+        /* Specific Occurrence Rule */
+        rule "Specific Occurrence $constant $id Rule"
+            dialect "mvel"
+            no-loop
+
+        when
+            \$p : Patient()
+            ${
+                preconditions.collect {
+                    """
+                    \$${it.key} : PreconditionResult(id == "${it.key}", patient == \$p)"""
+                }.join( " or ")
+            }
+
+        then
+            if(! droolsUtil.allEquals([${preconditions.collect { """\$${it.key}.event""" }.join(",")}])){
+                System.out.println("Retracting $constant $id!");
+                ${
+                preconditions.collect {
+                    """
+                    retract(\$${it.key})"""
+                }.join()
+            }
+            } else {
+                System.out.println("All Equal $constant $id!");
+                insert(new SpecificOccurrence("$constant", "$id", \$${preconditions.find().key}.event, \$p));
+            }
+        end
+        """
+    }
+
     /**
      * Prints header/metadata info for the Drools rule.
      */
@@ -242,8 +290,10 @@ class Qdm2Drools {
         import ${DroolsUtil.name};
         import ${MeasurementPeriod.name};
         import ${SpecificOccurrence.name};
+        import ${SpecificOccurrenceResult.name};
         import ${MedicationStatus.name};
         import ${ProcedureStatus.name};
+        import function ${DroolsUtil.name}.toDays;
         /*
             ID: ${qdm.id}
             Title: ${qdm.title}
@@ -358,7 +408,7 @@ class Qdm2Drools {
 
         when
             \$p : Patient( )
-            not ( PreconditionResult(id == "${prcn.id}", patient == \$p) )
+            //not ( PreconditionResult(id == "${prcn.id}", patient == \$p) )
         """
                     )
 

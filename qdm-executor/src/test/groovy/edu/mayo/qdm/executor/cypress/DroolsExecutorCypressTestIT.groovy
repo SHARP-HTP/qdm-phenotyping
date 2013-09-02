@@ -120,6 +120,11 @@ public class DroolsExecutorCypressTestIT {
         doExecute("0069")
     }
 
+    @Test
+    public void TestExecute0070() throws IOException{
+        doExecute("0070")
+    }
+
     /**
      * antinumerator question pending
      */
@@ -166,6 +171,11 @@ public class DroolsExecutorCypressTestIT {
     @Test
     public void TestExecute0387() throws IOException{
         doExecute("0387")
+    }
+
+    @Test
+    public void TestExecute0389() throws IOException{
+        doExecute("0389")
     }
 
     @Test

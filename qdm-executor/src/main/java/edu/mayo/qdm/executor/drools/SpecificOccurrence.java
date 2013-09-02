@@ -3,36 +3,28 @@ package edu.mayo.qdm.executor.drools;
 import edu.mayo.qdm.patient.Event;
 import edu.mayo.qdm.patient.Patient;
 
-import java.util.List;
-
 /**
  */
 public class SpecificOccurrence {
 
-    private List<Event> events;
+    private Event event;
     private String id;
+    private String constant;
     private Patient patient;
 
-    public SpecificOccurrence(String id, Patient patient, List<Event> events) {
-        this.events = events;
+    public SpecificOccurrence(String constant, String id, Event event, Patient patient) {
+        this.patient = patient;
+        this.constant = constant;
         this.id = id;
-        this.patient = patient;
+        this.event = event;
     }
 
-    public Patient getPatient() {
-        return patient;
+    public Event getEvent() {
+        return event;
     }
 
-    public void setPatient(Patient patient) {
-        this.patient = patient;
-    }
-
-    public List<Event> getEvents() {
-        return events;
-    }
-
-    public void setEvents(List<Event> events) {
-        this.events = events;
+    public void setEvent(Event event) {
+        this.event = event;
     }
 
     public String getId() {
@@ -41,5 +33,21 @@ public class SpecificOccurrence {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getConstant() {
+        return constant;
+    }
+
+    public void setConstant(String constant) {
+        this.constant = constant;
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 }

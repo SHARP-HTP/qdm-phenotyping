@@ -115,6 +115,6 @@ public class SpecificContext {
     }
 
     public void addUniverse(SpecificOccurrence a) {
-        universe.put(a.getId(), new HashSet<Event>(a.getEvents()));
+        //universe.put(a.getId(), new HashSet<Event>(a.getEvents()));
     }
 }

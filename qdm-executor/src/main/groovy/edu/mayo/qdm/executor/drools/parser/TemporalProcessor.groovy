@@ -225,13 +225,36 @@ class TemporalProcessor {
                 sb.append("${property} $op \$${temporalReference.reference}.event.${targetProperty}")
             }
 
+            def specificOccurrence = getSpecificOccurrence(temporalReference.reference, measureJson)
             return new TemporalResult(
-                    variables: """\$${temporalReference.reference} : PreconditionResult(id == "${temporalReference.reference}", patient == \$p)""",
+                    variables: """
+                                ${if(specificOccurrence){
+                                    """\$so : SpecificOccurrence(id == "${specificOccurrence.id}", constant == "${specificOccurrence.constant}", patient == \$p)"""
+
+                                  } else {
+                                    ""
+                                }}
+                                \$${temporalReference.reference} : PreconditionResult(id == "${temporalReference.reference}", patient == \$p ${specificOccurrence ? ", event == \$so.event" : ""})""",
                     criteria:
             """
             \$${temporalReference.reference}.event != null,
+            \$${temporalReference.reference}.event != this,
             ${sb.toString()}
             """)
+        }
+    }
+
+    private class SpecificOccurrence{
+        def id
+        def constant
+    }
+
+    def getSpecificOccurrence(reference, measureJson){
+        def criteria = measureJson.data_criteria.get(reference)
+        if(criteria.specific_occurrence_const && criteria.specific_occurrence_const){
+            new SpecificOccurrence(
+                    id: criteria.specific_occurrence,
+                    constant: criteria.specific_occurrence_const)
         }
     }
 

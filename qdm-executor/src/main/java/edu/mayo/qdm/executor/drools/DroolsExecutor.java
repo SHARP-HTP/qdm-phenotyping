@@ -34,6 +34,10 @@ import org.drools.builder.KnowledgeBuilder;
 import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
 import org.drools.definition.KnowledgePackage;
+import org.drools.event.rule.DefaultWorkingMemoryEventListener;
+import org.drools.event.rule.ObjectInsertedEvent;
+import org.drools.event.rule.ObjectRetractedEvent;
+import org.drools.event.rule.ObjectUpdatedEvent;
 import org.drools.io.ResourceFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.springframework.stereotype.Component;
@@ -92,6 +96,22 @@ public class DroolsExecutor implements Executor {
 			ksession.insert(patient);
 		}
 
+        ksession.addEventListener(new DefaultWorkingMemoryEventListener(){
+            @Override
+            public void objectInserted(ObjectInsertedEvent event) {
+                //
+            }
+
+            @Override
+            public void objectRetracted(ObjectRetractedEvent event) {
+                super.objectRetracted(event);    //To change body of overridden methods use File | Settings | File Templates.
+            }
+
+            @Override
+            public void objectUpdated(ObjectUpdatedEvent event) {
+                //
+            }
+        });
 		ksession.fireAllRules();
 
 		ksession.dispose();   

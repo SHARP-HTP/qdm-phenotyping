@@ -63,6 +63,14 @@ public final class DroolsUtil {
         return false;
     }
 
+    public static Long toDays(Date date) {
+        if(date == null){
+            return null;
+        } else {
+            return new Long(java.util.concurrent.TimeUnit.MILLISECONDS.toDays(date.getTime()));
+        }
+    }
+
     public <T extends CodedEntry> Collection<T>  findMatches(String valueSetOid, Iterable <T> codedEntries){
         List<T> returnList = new ArrayList<T>();
         for(T entry : codedEntries){
@@ -72,6 +80,23 @@ public final class DroolsUtil {
         }
 
         return returnList;
+    }
+
+    public boolean allEquals(Iterable<?> objects){
+       Object test = null;
+       for(Object object : objects){
+           if(test == null){
+               test = object;
+           } else {
+               if(! object.equals(test)){
+                   return false;
+               } else {
+                   test = object;
+               }
+           }
+       }
+
+        return true;
     }
 
     public Calendar getCalendar(Date date){

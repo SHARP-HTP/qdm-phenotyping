@@ -62,8 +62,8 @@ class SpecificOccurrenceDataCriteria implements Criteria {
         def constant = json.value.specific_occurrence_const
         """
         /* LOOK HERE */
-        //insert( new PreconditionResult("${json.key}", \$p ${!negated ? ", \$event" : ""}))
-        insert( new SpecificOccurrence(\$event, "$id", "$constant", \$p))
+        //insertLogical( new PreconditionResult("${json.key}", \$p ${!negated ? ", \$event" : ""}))
+        insertLogical( new SpecificOccurrence(\$event, "$id", "$constant", \$p))
         """
     }
 }
