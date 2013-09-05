@@ -84,9 +84,13 @@ public final class DroolsUtil {
     public <T extends CodedEntry> Collection<T>  findMatches(String valueSetOid, Iterable <T> codedEntries){
         List<T> returnList = new ArrayList<T>();
         for(T entry : codedEntries){
-            if(this.valueSetCodeResolver.isCodeInSet(valueSetOid, entry.getConcept())){
-                returnList.add(entry);
+            for(Concept c : entry.getConcepts()){
+                if(this.valueSetCodeResolver.isCodeInSet(valueSetOid, c)){
+                    returnList.add(entry);
+                    break;
+                }
             }
+
         }
 
         return returnList;
@@ -198,20 +202,4 @@ public final class DroolsUtil {
         return returnMap;
     }
 
-/*
-    public <T extends Event> T mostRecent(Iterable <T> codedEntries){
-        T mostRecent = null;
-        for(T entry : codedEntries){
-            if(mostRecent == null || mostRecent.getStartDate().after(entry.getStartDate())){
-                mostRecent = entry;
-            }
-        }
-
-        return (T) new Lab(null, null, new Date(), new Date());
-    }
-
-    public void intersect(List<Event> list, SpecificOccurrence occurs) {
-        occurs.getOccurrences().retainAll(list);
-    }
-    */
 }

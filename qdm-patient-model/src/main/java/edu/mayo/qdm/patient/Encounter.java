@@ -3,6 +3,7 @@ package edu.mayo.qdm.patient;
 import org.apache.log4j.Logger;
 
 import java.util.Date;
+import java.util.Set;
 
 
 /**
@@ -22,7 +23,7 @@ public class Encounter extends Event {
      * For JSON only
      */
     private Encounter() {
-        super(null,null,null);
+        super(null,null);
     }
 
     public Encounter(String encounterId, Concept concept, Date date) {
@@ -34,18 +35,17 @@ public class Encounter extends Event {
         this.encounterId = encounterId;
     }
 
+    public Encounter(String encounterId, Set<Concept> concepts, Date startDate, Date endDate) {
+        super(concepts, startDate, endDate);
+        this.encounterId = encounterId;
+    }
+
     public void setEncounterId(String encounterId) {
         this.encounterId = encounterId;
     }
 
     public String getEncounterId() {
         return this.encounterId;
-    }
-
-    public String toString() {
-        String displayStr = " code System: " + this.getConcept().getCodingScheme() + " encounter code: " + this.getEncounterId();
-
-        return displayStr;
     }
 
 }

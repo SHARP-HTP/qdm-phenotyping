@@ -1,6 +1,7 @@
 package edu.mayo.qdm.patient;
 
 import java.util.Date;
+import java.util.Set;
 
 /**
  */
@@ -16,6 +17,12 @@ public class Event extends CodedEntry {
 
     public Event(Concept concept, Date startDate, Date endDate){
         super(concept);
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
+    public Event(Set<Concept> concepts, Date startDate, Date endDate){
+        super(concepts);
         this.startDate = startDate;
         this.endDate = endDate;
     }

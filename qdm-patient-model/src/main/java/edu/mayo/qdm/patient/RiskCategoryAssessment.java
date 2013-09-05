@@ -35,9 +35,5 @@ public class RiskCategoryAssessment extends Event {
         return super.getStartDate();    //To change body of overridden methods use File | Settings | File Templates.
     }
 
-    public String toString() {
-        String displayStr = " code System: " + this.getConcept().getCodingScheme() + " code: "
-                + this.getConcept().getCode() + " date: " + this.getStartDate();
-        return displayStr;
-    }
+
 }

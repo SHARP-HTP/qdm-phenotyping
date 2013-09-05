@@ -1,10 +1,13 @@
 package edu.mayo.qdm.patient;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  */
 public class CodedEntry {
 
-    private Concept concept;
+    private Set<Concept> concepts = new HashSet<Concept>();
 
     /*
      * For JSON Only
@@ -15,18 +18,24 @@ public class CodedEntry {
 
     protected CodedEntry(Concept concept){
         super();
-        this.concept = concept;
+        this.concepts.add(concept);
+    }
+
+    protected CodedEntry(Set<Concept> concepts){
+        super();
+        this.concepts.addAll(concepts);
     }
 
     public boolean matches(Concept concept){
-        return this.getConcept().matches(concept);
+        for(Concept c : this.concepts){
+            if(c.matches(concept)){
+                return true;
+            }
+        }
+        return false;
     }
 
-    public Concept getConcept() {
-        return concept;
-    }
-
-    protected void setConcept(Concept concept) {
-        this.concept = concept;
+    public Set<Concept> getConcepts() {
+        return concepts;
     }
 }

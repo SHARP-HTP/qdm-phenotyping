@@ -31,9 +31,9 @@ class CypressPatientDataSource {
         patient.setSex(gender)
 
         json.encounters.each { encounter ->
-            def code = encounter.codes.iterator().next()
+            def codes = encounter.codes.collect { new Concept(it.value[0], it.key, null) } as Set
             patient.addEncounter(
-                new Encounter("", new Concept(code.value[0], code.key, null), toDate(encounter.start_time), toDate(encounter.end_time)))
+                new Encounter("", codes, toDate(encounter.start_time), toDate(encounter.end_time)))
         }
 
         json.procedures.each { procedure ->
