@@ -1,0 +1,1853 @@
+import java.util.Set;
+import java.util.Date;
+import java.util.Calendar;
+import edu.mayo.qdm.executor.drools.PreconditionResult;
+import edu.mayo.qdm.executor.ResultCallback;
+import edu.mayo.qdm.patient.Patient;
+import edu.mayo.qdm.patient.Concept;
+import edu.mayo.qdm.patient.Event;
+import edu.mayo.qdm.executor.drools.parser.criteria.Interval;
+import edu.mayo.qdm.executor.drools.SpecificOccurrenceId;
+import edu.mayo.qdm.executor.drools.parser.criteria.MeasurementValue;
+import edu.mayo.qdm.executor.drools.DroolsUtil;
+import edu.mayo.qdm.executor.MeasurementPeriod;
+import edu.mayo.qdm.executor.drools.SpecificOccurrence;
+import edu.mayo.qdm.executor.drools.SpecificOccurrenceResult;
+import edu.mayo.qdm.patient.MedicationStatus;
+import edu.mayo.qdm.patient.ProcedureStatus;
+import function edu.mayo.qdm.executor.drools.DroolsUtil.toDays;
+/*
+    ID: 0002
+    Title: Appropriate Testing for Children with Pharyngitis
+    Description: Percentage of children 2-18 years of age who were diagnosed with pharyngitis, ordered an antibiotic and received a group A streptococcus (strep) test for the episode.
+    HQMF Version: 1
+    CMS ID: CMS146v1
+*/
+
+global ResultCallback resultCallback
+global DroolsUtil droolsUtil
+global MeasurementPeriod measurementPeriod
+
+
+/* Rule */
+rule "DENEX"
+    dialect "mvel"
+    no-loop
+    salience -1000
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "DENEX", patient == $p) )
+
+                                PreconditionResult(id == "DENOM", patient == $p)
+
+
+    $p1 : PreconditionResult( id == "12", patient == $p )
+
+then
+    insertLogical(new PreconditionResult("DENEX", $p, $p1.context))
+    resultCallback.hit("DENEX", $p);
+end
+
+/* Rule */
+rule "12"
+    dialect "mvel"
+    no-loop
+    //salience 0
+    //agenda-group "12"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "12", patient == $p) )
+
+    $p1 : PreconditionResult( id == "10", patient == $p )
+
+then
+    System.out.println("12");
+    insertLogical(new PreconditionResult("12", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "10"
+    dialect "mvel"
+    no-loop
+    //salience 0
+    //agenda-group "10"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "10", patient == $p) )
+
+    $p1 : PreconditionResult( id == "MedicationActiveAntibioticMedications_precondition_10", patient == $p )
+
+then
+    System.out.println("10");
+    insertLogical(new PreconditionResult("10", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "NUMER"
+    dialect "mvel"
+    no-loop
+    salience -1000
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "NUMER", patient == $p) )
+
+                                PreconditionResult(id == "DENOM", patient == $p)
+                                not ( PreconditionResult(id == "DENEX", patient == $p) )
+
+
+    $p1 : PreconditionResult( id == "19", patient == $p )
+
+then
+    insertLogical(new PreconditionResult("NUMER", $p, $p1.context))
+    resultCallback.hit("NUMER", $p);
+end
+
+/* Rule */
+rule "19"
+    dialect "mvel"
+    no-loop
+    //salience 0
+    //agenda-group "19"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "19", patient == $p) )
+
+    $p1 : PreconditionResult( id == "17", patient == $p )
+
+then
+    System.out.println("19");
+    insertLogical(new PreconditionResult("19", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "17"
+    dialect "mvel"
+    no-loop
+    //salience 0
+    //agenda-group "17"
+
+when
+    $p : Patient( )
+    $p1 : PreconditionResult(id == "13" || id == "15", patient == $p)
+
+    PreconditionResult( id == "13", patient == $p )
+     or
+    PreconditionResult( id == "15", patient == $p )
+
+then
+    System.out.println("17");
+    insertLogical(new PreconditionResult("17", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "13"
+    dialect "mvel"
+    no-loop
+    //salience 0
+    //agenda-group "13"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "13", patient == $p) )
+
+    $p1 : PreconditionResult( id == "LaboratoryTestResultGroupAStreptococcusTest_precondition_13", patient == $p )
+
+then
+    System.out.println("13");
+    insertLogical(new PreconditionResult("13", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "15"
+    dialect "mvel"
+    no-loop
+    //salience -1
+    //agenda-group "15"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "15", patient == $p) )
+
+    $p1 : PreconditionResult( id == "LaboratoryTestResultGroupAStreptococcusTest_precondition_15", patient == $p )
+
+then
+    System.out.println("15");
+    insertLogical(new PreconditionResult("15", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "DENOM"
+    dialect "mvel"
+    no-loop
+    salience -1000
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "DENOM", patient == $p) )
+
+    $p1 :PreconditionResult(id == "IPP", patient == $p)
+
+
+then
+    insertLogical(new PreconditionResult("DENOM", $p, $p1.context))
+    resultCallback.hit("DENOM", $p);
+end
+
+/* Rule */
+rule "IPP"
+    dialect "mvel"
+    no-loop
+    salience -1000
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "IPP", patient == $p) )
+
+    $p1 : PreconditionResult( id == "79", patient == $p )
+
+then
+    insertLogical(new PreconditionResult("IPP", $p, $p1.context))
+    resultCallback.hit("IPP", $p);
+end
+
+/* Rule */
+rule "79"
+    dialect "mvel"
+    no-loop
+    //salience 0
+    //agenda-group "79"
+
+when
+    $p : Patient( )
+    $p1 : PreconditionResult(id == "48" || id == "50" || id == "76" || id == "78", $context : context, $event : event, patient == $p)
+
+    $pa : PreconditionResult( id == "48", patient == $p, compatible($context) )
+     and
+    $pb : PreconditionResult( id == "50", patient == $p, compatible($context) )
+     and
+    $pc : PreconditionResult( id == "76", patient == $p, compatible($context) )
+     and not(
+    $pd : PreconditionResult( id == "78", patient == $p, compatible($context) )
+    )
+then
+    //System.out.println("79");
+    insertLogical(new PreconditionResult("79", $p, droolsUtil.combine([$pa.context, $pb.context, $pc.context]) ))
+end
+
+
+/* Rule */
+rule "48"
+    dialect "mvel"
+    no-loop
+    //salience 0
+    //agenda-group "48"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "48", patient == $p) )
+
+    $p1 : PreconditionResult( id == "PatientCharacteristicBirthdateBirthDate_precondition_48", patient == $p )
+
+then
+    System.out.println("48");
+    insertLogical(new PreconditionResult("48", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "50"
+    dialect "mvel"
+    no-loop
+    //salience -1
+    //agenda-group "50"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "50", patient == $p) )
+
+    $p1 : PreconditionResult( id == "PatientCharacteristicBirthdateBirthDate_precondition_50", patient == $p )
+
+then
+    System.out.println("50");
+    insertLogical(new PreconditionResult("50", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "76"
+    dialect "mvel"
+    no-loop
+    //salience -2
+    //agenda-group "76"
+
+when
+    $p : Patient( )
+    $p1 : PreconditionResult(id == "52" || id == "58" || id == "74", $event : event, $context : context,  patient == $p)
+
+    $pa : PreconditionResult( id == "52", patient == $p, compatible($context) )
+     and
+    $pb : PreconditionResult( id == "58", patient == $p, compatible($context) )
+     and
+    $pc : PreconditionResult( id == "74", patient == $p, compatible($context) )
+
+then
+    //System.out.println("76");
+    insertLogical(new PreconditionResult("76", $p, null, droolsUtil.combine([$pa.context,$pb.context,$pc.context])))
+end
+
+
+/* Rule */
+rule "78"
+    dialect "mvel"
+    no-loop
+    //salience -3
+    //agenda-group "78"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "78", patient == $p) )
+
+    //PreconditionResult( id == "MAIN", patient == $p )
+
+    $p1 : PreconditionResult( id == "46", patient == $p )
+
+then
+    System.out.println("78");
+    insertLogical(new PreconditionResult("78", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "52"
+    dialect "mvel"
+    no-loop
+    //salience 0
+    //agenda-group "52"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "52", patient == $p) )
+
+    $p1 : PreconditionResult( id == "OccurrenceAAmbulatoryEdVisit3_precondition_52", patient == $p )
+
+then
+    System.out.println("52");
+    insertLogical(new PreconditionResult("52", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "58"
+    dialect "mvel"
+    no-loop
+    //salience -1
+    //agenda-group "58"
+
+when
+    $p : Patient( )
+    $p1 : PreconditionResult(id == "54" || id == "56", $event : event, $context : context, patient == $p)
+
+    PreconditionResult( id == "54", patient == $p )
+     or
+    PreconditionResult( id == "56", patient == $p )
+
+then
+    System.out.println("58");
+    insertLogical(new PreconditionResult("58", $p, $event, $context))
+end
+
+
+/* Rule */
+rule "74"
+    dialect "mvel"
+    no-loop
+    //salience -2
+    //agenda-group "74"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "74", patient == $p) )
+     $p1 : PreconditionResult(id == "65" || id == "71", $event : event, $context : context, patient == $p)
+
+    PreconditionResult( id == "65", patient == $p )
+     or
+    PreconditionResult( id == "71", patient == $p )
+
+then
+    System.out.println("74");
+    insertLogical(new PreconditionResult("74", $p, $context))
+end
+
+
+/* Rule */
+rule "54"
+    dialect "mvel"
+    no-loop
+    //salience 0
+    //agenda-group "54"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "54", patient == $p) )
+
+    $p1 : PreconditionResult( id == "MedicationOrderAntibioticMedications_precondition_54", patient == $p )
+
+then
+    System.out.println("54");
+    insertLogical(new PreconditionResult("54", $p, $p1.event, $p1.context))
+end
+
+
+/* Rule */
+rule "56"
+    dialect "mvel"
+    no-loop
+    //salience -1
+    //agenda-group "56"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "56", patient == $p) )
+
+    $p1 : PreconditionResult( id == "MedicationOrderAntibioticMedications_precondition_56", patient == $p )
+
+then
+    System.out.println("56");
+    insertLogical(new PreconditionResult("56", $p, $p1.event, $p1.context))
+end
+
+
+/* Rule */
+rule "65"
+    dialect "mvel"
+    no-loop
+    //salience 0
+    //agenda-group "65"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "65", patient == $p) )
+
+    $p1 : PreconditionResult( id == "OccurrenceAAmbulatoryEdVisit3_precondition_65", patient == $p )
+
+then
+    System.out.println("65");
+    insertLogical(new PreconditionResult("65", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "71"
+    dialect "mvel"
+    no-loop
+    //salience -1
+    //agenda-group "71"
+
+when
+    $p : Patient( )
+    $p1 : PreconditionResult(id == "67" || id == "69", patient == $p)
+
+    PreconditionResult( id == "67", patient == $p )
+     or
+    PreconditionResult( id == "69", patient == $p )
+
+then
+    System.out.println("71");
+    insertLogical(new PreconditionResult("71", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "67"
+    dialect "mvel"
+    no-loop
+    //salience 0
+    //agenda-group "67"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "67", patient == $p) )
+
+    $p1 : PreconditionResult( id == "OccurrenceAAcutePharyngitis1_precondition_67", patient == $p )
+
+then
+    System.out.println("67");
+    insertLogical(new PreconditionResult("67", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "69"
+    dialect "mvel"
+    no-loop
+    //salience -1
+    //agenda-group "69"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "69", patient == $p) )
+
+    $p1 : PreconditionResult( id == "OccurrenceAAcuteTonsillitis2_precondition_69", patient == $p )
+
+then
+    System.out.println("69");
+    insertLogical(new PreconditionResult("69", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "46"
+    dialect "mvel"
+    no-loop
+    //salience 0
+    //agenda-group "46"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "46", patient == $p) )
+
+    $p1: PreconditionResult( id == "20", patient == $p )
+     and
+    $p2: PreconditionResult( id == "22", patient == $p )
+     and
+    $p3: PreconditionResult( id == "28", patient == $p )
+     and
+    $p4: PreconditionResult( id == "44", patient == $p )
+
+    $m : java.util.Map() from droolsUtil.intersect([$p1.context,$p2.context,$p3.context,$p4.context])
+
+    eval($p1.compatible($m))
+    eval($p2.compatible($m))
+    eval($p3.compatible($m))
+    eval($p4.compatible($m))
+
+then
+    System.out.println("46");
+    insertLogical(new PreconditionResult("46", $p, null, $m))
+end
+
+
+/* Rule */
+rule "20"
+    dialect "mvel"
+    no-loop
+    //salience 0
+    //agenda-group "20"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "20", patient == $p) )
+
+    $p1 : PreconditionResult( id == "OccurrenceBAmbulatoryEdVisit4_precondition_20", patient == $p )
+
+then
+    System.out.println("20");
+    insertLogical(new PreconditionResult("20", $p, $p1.event, $p1.context))
+end
+
+
+/* Rule */
+rule "22"
+    dialect "mvel"
+    no-loop
+    //salience -1
+    //agenda-group "22"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "22", patient == $p) )
+
+    $p1 : PreconditionResult( id == "OccurrenceBAmbulatoryEdVisit4_precondition_22", patient == $p )
+
+then
+    System.out.println("22");
+    insertLogical(new PreconditionResult("22", $p, $p1.event, $p1.context))
+end
+
+
+/* Rule */
+rule "28"
+    dialect "mvel"
+    no-loop
+    //salience -2
+    //agenda-group "28"
+
+when
+    $p : Patient( )
+    $p1 : PreconditionResult(id == "24" || id == "26", patient == $p)
+
+    PreconditionResult( id == "24", patient == $p )
+     or
+    PreconditionResult( id == "26", patient == $p )
+
+then
+    System.out.println("28");
+    insertLogical(new PreconditionResult("28", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "44"
+    dialect "mvel"
+    no-loop
+    //salience -3
+    //agenda-group "44"
+
+when
+    $p : Patient( )
+    $p1 : PreconditionResult(id == "35" || id == "44", patient == $p, $event : event, $context : context)
+
+    PreconditionResult( id == "35", patient == $p )
+     or
+    PreconditionResult( id == "41", patient == $p )
+
+then
+    System.out.println("44");
+    insertLogical(new PreconditionResult("44", $p, $event, $context))
+end
+
+
+/* Rule */
+rule "24"
+    dialect "mvel"
+    no-loop
+    //salience 0
+    //agenda-group "24"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "24", patient == $p) )
+
+    $p1 : PreconditionResult( id == "MedicationOrderAntibioticMedications_precondition_24", patient == $p )
+
+then
+    System.out.println("24");
+    insertLogical(new PreconditionResult("24", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "26"
+    dialect "mvel"
+    no-loop
+    //salience -1
+    //agenda-group "26"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "26", patient == $p) )
+
+    $p1 : PreconditionResult( id == "MedicationOrderAntibioticMedications_precondition_26", patient == $p )
+
+then
+    System.out.println("26");
+    insertLogical(new PreconditionResult("26", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "35"
+    dialect "mvel"
+    no-loop
+    //salience 0
+    //agenda-group "35"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "35", patient == $p) )
+
+    $p1 : PreconditionResult( id == "OccurrenceBAmbulatoryEdVisit4_precondition_35", patient == $p )
+
+then
+    System.out.println("35");
+    insertLogical(new PreconditionResult("35", $p, $p1.event, $p1.context))
+end
+
+
+/* Rule */
+rule "41"
+    dialect "mvel"
+    no-loop
+    //salience -1
+    //agenda-group "41"
+
+when
+    $p : Patient( )
+    $p1 : PreconditionResult(id == "37" || id == "39", patient == $p)
+
+    PreconditionResult( id == "37", patient == $p )
+     or
+    PreconditionResult( id == "39", patient == $p )
+
+then
+    System.out.println("41");
+    insertLogical(new PreconditionResult("41", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "37"
+    dialect "mvel"
+    no-loop
+    //salience 0
+    //agenda-group "37"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "37", patient == $p) )
+
+    $p1 : PreconditionResult( id == "OccurrenceAAcutePharyngitis1_precondition_37", patient == $p )
+
+then
+    System.out.println("37");
+    insertLogical(new PreconditionResult("37", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "39"
+    dialect "mvel"
+    no-loop
+    //salience -1
+    //agenda-group "39"
+
+when
+    $p : Patient( )
+    //not ( PreconditionResult(id == "39", patient == $p) )
+
+    $p1 : PreconditionResult( id == "OccurrenceAAcuteTonsillitis2_precondition_39", patient == $p )
+
+then
+    System.out.println("39");
+    insertLogical(new PreconditionResult("39", $p, $p1.context))
+end
+
+
+/* Rule */
+rule "DiagnosisActiveAcutePharyngitis"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+$event : edu.mayo.qdm.patient.Diagnosis(
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.102.12.1011", $p.getDiagnoses())
+
+
+
+
+then
+    System.out.println("DiagnosisActiveAcutePharyngitis");
+
+insertLogical(new PreconditionResult("DiagnosisActiveAcutePharyngitis", $p , $event))
+
+end
+
+/* Rule */
+rule "DiagnosisActiveAcuteTonsillitis"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+$event : edu.mayo.qdm.patient.Diagnosis(
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.102.12.1012", $p.getDiagnoses())
+
+
+
+
+then
+    System.out.println("DiagnosisActiveAcuteTonsillitis");
+
+insertLogical(new PreconditionResult("DiagnosisActiveAcuteTonsillitis", $p , $event))
+
+end
+
+/* Rule */
+rule "EncounterPerformedAmbulatoryEdVisit"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+$event : edu.mayo.qdm.patient.Encounter(
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1061", $p.getEncounters())
+
+
+
+
+then
+    System.out.println("EncounterPerformedAmbulatoryEdVisit");
+
+insertLogical(new PreconditionResult("EncounterPerformedAmbulatoryEdVisit", $p , $event))
+
+end
+
+/* Rule */
+rule "OccurrenceAAmbulatoryEdVisit3"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+$event : edu.mayo.qdm.patient.Encounter(
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1061", $p.getEncounters())
+
+
+
+
+then
+    System.out.println("OccurrenceAAmbulatoryEdVisit3");
+
+insertLogical(new PreconditionResult("OccurrenceAAmbulatoryEdVisit3", $p , $event, [new SpecificOccurrence("ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT", "A", $event)]))
+
+end
+
+/* Rule */
+rule "OccurrenceBAmbulatoryEdVisit4"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+$event : edu.mayo.qdm.patient.Encounter(
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1061", $p.getEncounters())
+
+
+
+
+then
+    System.out.println("OccurrenceBAmbulatoryEdVisit4");
+
+insertLogical(new PreconditionResult("OccurrenceBAmbulatoryEdVisit4", $p , $event, [new SpecificOccurrence("ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT", "B", $event)]))
+
+end
+
+/* Rule */
+rule "PatientCharacteristicSexOncAdministrativeSex"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient(
+        true
+)
+
+
+then
+    System.out.println("PatientCharacteristicSexOncAdministrativeSex");
+
+insertLogical(new PreconditionResult("PatientCharacteristicSexOncAdministrativeSex", $p))
+
+end
+
+/* Rule */
+rule "PatientCharacteristicRaceRace"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient(
+        eval(true)
+)
+
+
+then
+    System.out.println("PatientCharacteristicRaceRace");
+
+insertLogical(new PreconditionResult("PatientCharacteristicRaceRace", $p))
+
+end
+
+/* Rule */
+rule "PatientCharacteristicEthnicityEthnicity"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient(
+        eval(true)
+)
+
+
+then
+    System.out.println("PatientCharacteristicEthnicityEthnicity");
+
+insertLogical(new PreconditionResult("PatientCharacteristicEthnicityEthnicity", $p))
+
+end
+
+/* Rule */
+rule "PatientCharacteristicPayerPayer"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient(
+        eval(true)
+)
+
+
+then
+    System.out.println("PatientCharacteristicPayerPayer");
+
+insertLogical(new PreconditionResult("PatientCharacteristicPayerPayer", $p))
+
+end
+
+/* Rule */
+rule "OccurrenceAAcutePharyngitis1_precondition_5"
+    dialect "mvel"
+    no-loop
+    //agenda-group "OccurrenceAAcutePharyngitis1_precondition_5"
+
+when
+
+$p : Patient ( )
+
+
+$event : edu.mayo.qdm.patient.Diagnosis(
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.102.12.1011", $p.getDiagnoses())
+
+
+
+
+then
+    System.out.println("OccurrenceAAcutePharyngitis1_precondition_5");
+
+insertLogical(new PreconditionResult("OccurrenceAAcutePharyngitis1_precondition_5", $p , $event, [new SpecificOccurrence("DIAGNOSIS_ACTIVE_ACUTE_PHARYNGITIS", "A", $event)]))
+
+end
+
+/* Rule */
+rule "OccurrenceAAcuteTonsillitis2_precondition_7"
+    dialect "mvel"
+    no-loop
+    //agenda-group "OccurrenceAAcuteTonsillitis2_precondition_7"
+
+when
+
+$p : Patient ( )
+
+
+$event : edu.mayo.qdm.patient.Diagnosis(
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.102.12.1012", $p.getDiagnoses())
+
+
+
+
+then
+    System.out.println("OccurrenceAAcuteTonsillitis2_precondition_7");
+
+insertLogical(new PreconditionResult("OccurrenceAAcuteTonsillitis2_precondition_7", $p , $event, [new SpecificOccurrence("DIAGNOSIS_ACTIVE_ACUTE_TONSILLITIS", "A", $event)]))
+
+end
+
+/* Rule */
+rule "MedicationActiveAntibioticMedications_precondition_10"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+
+                        $GROUP_SBS_CHILDREN_81 : PreconditionResult(id == "GROUP_SBS_CHILDREN_81", patient == $p )
+$event : edu.mayo.qdm.patient.Medication(
+
+    $GROUP_SBS_CHILDREN_81.event != null,
+    $GROUP_SBS_CHILDREN_81.event != this,
+    toDays(startDate) >= toDays(droolsUtil.add(droolsUtil.getCalendar($GROUP_SBS_CHILDREN_81.event.startDate), Calendar.DATE, -30)),
+startDate < $GROUP_SBS_CHILDREN_81.event.startDate
+
+    ,medicationStatus == MedicationStatus.ACTIVE
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.196.12.1001", $p.getMedications())
+
+
+
+
+then
+    System.out.println("MedicationActiveAntibioticMedications_precondition_10");
+
+insertLogical(new PreconditionResult("MedicationActiveAntibioticMedications_precondition_10", $p , $event, $GROUP_SBS_CHILDREN_81.context))
+
+end
+
+/* Rule */
+rule "GROUP_SBS_CHILDREN_81"
+    dialect "mvel"
+    no-loop
+    //agenda-group "GROUP_SBS_CHILDREN_81"
+
+when
+
+            $p : Patient ( )
+
+
+
+            $p1 : PreconditionResult(
+             (id == "OccurrenceAAcutePharyngitis1_precondition_5" || id == "OccurrenceAAcuteTonsillitis2_precondition_7"),
+             $event : event,
+             patient == $p)
+
+             //PreconditionResult(id == "OccurrenceAAcutePharyngitis1_precondition_5", $event == event, patient == $p)
+             //or
+             //PreconditionResult(id == "OccurrenceAAcuteTonsillitis2_precondition_7", $event == event, patient == $p)
+
+
+then
+    System.out.println("GROUP_SBS_CHILDREN_81");
+
+        insertLogical(new PreconditionResult("GROUP_SBS_CHILDREN_81", $p, $event, $p1.context))
+
+end
+
+/* Rule */
+rule "LaboratoryTestResultGroupAStreptococcusTest_precondition_13"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+                        //$so : SpecificOccurrence(id == "A", constant == "ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT", patient == $p)
+                        $OccurrenceAAmbulatoryEdVisit3 : PreconditionResult(id == "OccurrenceAAmbulatoryEdVisit3", patient == $p /*, ($so.event == null || event == $so.event)*/)
+$event : edu.mayo.qdm.patient.Lab(
+
+    $OccurrenceAAmbulatoryEdVisit3.event != null,
+    $OccurrenceAAmbulatoryEdVisit3.event != this,
+    toDays(startDate) >= toDays(droolsUtil.add(droolsUtil.getCalendar($OccurrenceAAmbulatoryEdVisit3.event.endDate), Calendar.DATE, -3)),
+startDate <= $OccurrenceAAmbulatoryEdVisit3.event.endDate
+
+    ,
+            (
+                ( values != null && values.size() > 0 )
+                ||
+                ( results != null && results.size() > 0 )
+            )
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.198.12.1012", $p.getLabs())
+
+
+
+
+then
+    System.out.println("LaboratoryTestResultGroupAStreptococcusTest_precondition_13");
+
+insertLogical(new PreconditionResult("LaboratoryTestResultGroupAStreptococcusTest_precondition_13", $p , $event, $OccurrenceAAmbulatoryEdVisit3.context))
+
+end
+
+/* Rule */
+rule "LaboratoryTestResultGroupAStreptococcusTest_precondition_15"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+                        //$so : SpecificOccurrence(id == "A", constant == "ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT", patient == $p)
+                        $OccurrenceAAmbulatoryEdVisit3 : PreconditionResult(id == "OccurrenceAAmbulatoryEdVisit3", patient == $p /*, ($so.event == null || event == $so.event)*/)
+$event : edu.mayo.qdm.patient.Lab(
+
+    $OccurrenceAAmbulatoryEdVisit3.event != null,
+    $OccurrenceAAmbulatoryEdVisit3.event != this,
+    toDays(startDate) <= toDays(droolsUtil.add(droolsUtil.getCalendar($OccurrenceAAmbulatoryEdVisit3.event.endDate), Calendar.DATE, 3)),
+startDate >= $OccurrenceAAmbulatoryEdVisit3.event.endDate
+
+    ,
+            (
+                ( values != null && values.size() > 0 )
+                ||
+                ( results != null && results.size() > 0 )
+            )
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.198.12.1012", $p.getLabs())
+
+
+
+
+then
+    System.out.println("LaboratoryTestResultGroupAStreptococcusTest_precondition_15");
+
+insertLogical(new PreconditionResult("LaboratoryTestResultGroupAStreptococcusTest_precondition_15", $p , $event, $OccurrenceAAmbulatoryEdVisit3.context))
+
+end
+
+/* Rule */
+rule "PatientCharacteristicBirthdateBirthDate_precondition_48"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient( )
+
+
+        Patient(
+            this == $p,
+
+                birthdate != null,
+                toDays(birthdate) < toDays(new Date('01-Jan-2010'))
+
+        )
+
+
+
+then
+    System.out.println("PatientCharacteristicBirthdateBirthDate_precondition_48");
+
+insertLogical(new PreconditionResult("PatientCharacteristicBirthdateBirthDate_precondition_48", $p, new Event(null, $p.birthdate)))
+
+end
+
+/* Rule */
+rule "PatientCharacteristicBirthdateBirthDate_precondition_50"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient( )
+
+
+        Patient(
+            this == $p,
+
+                birthdate != null,
+                toDays(birthdate) > toDays(new Date('01-Jan-1993')),
+                toDays(birthdate) <= toDays(new Date("01-Jan-2012"))
+
+        )
+
+
+
+then
+    System.out.println("PatientCharacteristicBirthdateBirthDate_precondition_50");
+
+insertLogical(new PreconditionResult("PatientCharacteristicBirthdateBirthDate_precondition_50", $p, new Event(null, $p.birthdate)))
+
+end
+
+/* Rule */
+rule "OccurrenceAAmbulatoryEdVisit3_precondition_52"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+$event : edu.mayo.qdm.patient.Encounter(
+
+
+                startDate != null,
+                toDays(startDate) >= toDays(new Date('01-Jan-2012'))
+                ,
+
+                endDate != null,
+                toDays(endDate) <= toDays(new Date('31-Dec-2012'))
+
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1061", $p.getEncounters())
+
+
+
+
+then
+    System.out.println("OccurrenceAAmbulatoryEdVisit3_precondition_52");
+
+insertLogical(new PreconditionResult("OccurrenceAAmbulatoryEdVisit3_precondition_52", $p , $event, [new SpecificOccurrence("ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT", "A", $event)]))
+
+end
+
+/* Rule */
+rule "MedicationOrderAntibioticMedications_precondition_54"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+                        //$so : SpecificOccurrence(id == "A", constant == "ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT", patient == $p)
+                        $OccurrenceAAmbulatoryEdVisit3 : PreconditionResult(id == "OccurrenceAAmbulatoryEdVisit3", patient == $p /*, ($so.event == null || event == $so.event)*/)
+$event : edu.mayo.qdm.patient.Medication(
+
+
+    $OccurrenceAAmbulatoryEdVisit3.event != null,
+    $OccurrenceAAmbulatoryEdVisit3.event != this,
+    startDate >= $OccurrenceAAmbulatoryEdVisit3.event.startDate
+    ,
+
+    $OccurrenceAAmbulatoryEdVisit3.event != null,
+    $OccurrenceAAmbulatoryEdVisit3.event != this,
+    endDate <= $OccurrenceAAmbulatoryEdVisit3.event.endDate
+
+,medicationStatus == MedicationStatus.ORDERED
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.196.12.1001", $p.getMedications())
+
+
+
+
+then
+    System.out.println("MedicationOrderAntibioticMedications_precondition_54");
+
+insertLogical(new PreconditionResult("MedicationOrderAntibioticMedications_precondition_54", $p , $event, $OccurrenceAAmbulatoryEdVisit3.context))
+
+end
+
+/* Rule */
+rule "MedicationOrderAntibioticMedications_precondition_56"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+                        //$so : SpecificOccurrence(id == "A", constant == "ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT", patient == $p)
+                        $OccurrenceAAmbulatoryEdVisit3 : PreconditionResult(id == "OccurrenceAAmbulatoryEdVisit3", patient == $p /*, ($so.event == null || event == $so.event)*/)
+$event : edu.mayo.qdm.patient.Medication(
+
+    $OccurrenceAAmbulatoryEdVisit3.event != null,
+    $OccurrenceAAmbulatoryEdVisit3.event != this,
+    toDays(startDate) <= toDays(droolsUtil.add(droolsUtil.getCalendar($OccurrenceAAmbulatoryEdVisit3.event.startDate), Calendar.DATE, 3)),
+startDate >= $OccurrenceAAmbulatoryEdVisit3.event.startDate
+
+    ,medicationStatus == MedicationStatus.ORDERED
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.196.12.1001", $p.getMedications())
+
+
+
+
+then
+    System.out.println("MedicationOrderAntibioticMedications_precondition_56");
+
+insertLogical(new PreconditionResult("MedicationOrderAntibioticMedications_precondition_56", $p , $event, $OccurrenceAAmbulatoryEdVisit3.context))
+
+end
+
+/* Rule */
+rule "OccurrenceAAcutePharyngitis1_precondition_60"
+    dialect "mvel"
+    no-loop
+    //agenda-group "OccurrenceAAcutePharyngitis1_precondition_60"
+
+when
+
+$p : Patient ( )
+
+
+$event : edu.mayo.qdm.patient.Diagnosis(
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.102.12.1011", $p.getDiagnoses())
+
+
+
+
+then
+    System.out.println("OccurrenceAAcutePharyngitis1_precondition_60");
+
+insertLogical(new PreconditionResult("OccurrenceAAcutePharyngitis1_precondition_60", $p , $event, [new SpecificOccurrence("DIAGNOSIS_ACTIVE_ACUTE_PHARYNGITIS", "A", $event)]))
+
+end
+
+/* Rule */
+rule "OccurrenceAAcuteTonsillitis2_precondition_62"
+    dialect "mvel"
+    no-loop
+    //agenda-group "OccurrenceAAcuteTonsillitis2_precondition_62"
+
+when
+
+$p : Patient ( )
+
+
+$event : edu.mayo.qdm.patient.Diagnosis(
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.102.12.1012", $p.getDiagnoses())
+
+
+
+
+then
+    System.out.println("OccurrenceAAcuteTonsillitis2_precondition_62");
+
+insertLogical(new PreconditionResult("OccurrenceAAcuteTonsillitis2_precondition_62", $p , $event, [new SpecificOccurrence("DIAGNOSIS_ACTIVE_ACUTE_TONSILLITIS", "A", $event)]))
+
+end
+
+/* Rule */
+rule "OccurrenceAAmbulatoryEdVisit3_precondition_65"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+
+                        $GROUP_DURING_CHILDREN_83 : PreconditionResult(id == "GROUP_DURING_CHILDREN_83", patient == $p )
+$event : edu.mayo.qdm.patient.Encounter(
+
+
+    $GROUP_DURING_CHILDREN_83.event != null,
+    $GROUP_DURING_CHILDREN_83.event != this,
+    startDate >= $GROUP_DURING_CHILDREN_83.event.startDate
+    ,
+
+    $GROUP_DURING_CHILDREN_83.event != null,
+    $GROUP_DURING_CHILDREN_83.event != this,
+    endDate <= $GROUP_DURING_CHILDREN_83.event.endDate
+
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1061", $p.getEncounters())
+
+
+
+
+then
+    System.out.println("OccurrenceAAmbulatoryEdVisit3_precondition_65");
+
+insertLogical(new PreconditionResult("OccurrenceAAmbulatoryEdVisit3_precondition_65", $p , $event, droolsUtil.combine($GROUP_DURING_CHILDREN_83.context, new SpecificOccurrence("ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT", "A", $event))))
+
+end
+
+/* Rule */
+rule "GROUP_DURING_CHILDREN_83"
+    dialect "mvel"
+    no-loop
+    //agenda-group "GROUP_DURING_CHILDREN_83"
+
+when
+
+            $p : Patient ( )
+            $p1 : PreconditionResult(
+             (id == "OccurrenceAAcutePharyngitis1_precondition_60" || id == "OccurrenceAAcuteTonsillitis2_precondition_62"),
+             $event : event,
+             patient == $p)
+
+
+
+then
+    System.out.println("GROUP_DURING_CHILDREN_83");
+
+        insertLogical(new PreconditionResult("GROUP_DURING_CHILDREN_83", $p, $event, $p1.context))
+
+end
+
+/* Rule */
+rule "OccurrenceAAmbulatoryEdVisit3_precondition_72"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+$event : edu.mayo.qdm.patient.Encounter(
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1061", $p.getEncounters())
+
+
+
+
+then
+    System.out.println("OccurrenceAAmbulatoryEdVisit3_precondition_72");
+
+insertLogical(new PreconditionResult("OccurrenceAAmbulatoryEdVisit3_precondition_72", $p , $event, [new SpecificOccurrence("ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT", "A", $event)]))
+
+end
+
+/* Rule */
+rule "OccurrenceAAcutePharyngitis1_precondition_67"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+                        //$so : SpecificOccurrence(id == "A", constant == "ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT", patient == $p)
+                        $OccurrenceAAmbulatoryEdVisit3_precondition_72 : PreconditionResult(id == "OccurrenceAAmbulatoryEdVisit3_precondition_72", patient == $p /*, ($so.event == null || event == $so.event)*/)
+$event : edu.mayo.qdm.patient.Diagnosis(
+
+
+    $OccurrenceAAmbulatoryEdVisit3_precondition_72.event != null,
+    $OccurrenceAAmbulatoryEdVisit3_precondition_72.event != this,
+    startDate >= $OccurrenceAAmbulatoryEdVisit3_precondition_72.event.startDate
+    ,
+
+    $OccurrenceAAmbulatoryEdVisit3_precondition_72.event != null,
+    $OccurrenceAAmbulatoryEdVisit3_precondition_72.event != this,
+    startDate <= $OccurrenceAAmbulatoryEdVisit3_precondition_72.event.endDate
+
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.102.12.1011", $p.getDiagnoses())
+
+
+
+
+then
+    System.out.println("OccurrenceAAcutePharyngitis1_precondition_67");
+
+insertLogical(new PreconditionResult("OccurrenceAAcutePharyngitis1_precondition_67", $p , $event, droolsUtil.combine($OccurrenceAAmbulatoryEdVisit3_precondition_72.context, new SpecificOccurrence("DIAGNOSIS_ACTIVE_ACUTE_PHARYNGITIS", "A", $event))))
+
+end
+
+/* Rule */
+rule "OccurrenceAAcuteTonsillitis2_precondition_69"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+                        //$so : SpecificOccurrence(id == "A", constant == "ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT", patient == $p)
+                        $OccurrenceAAmbulatoryEdVisit3_precondition_72 : PreconditionResult(id == "OccurrenceAAmbulatoryEdVisit3_precondition_72", patient == $p /*, ($so.event == null || event == $so.event)*/)
+$event : edu.mayo.qdm.patient.Diagnosis(
+
+
+    $OccurrenceAAmbulatoryEdVisit3_precondition_72.event != null,
+    $OccurrenceAAmbulatoryEdVisit3_precondition_72.event != this,
+    startDate >= $OccurrenceAAmbulatoryEdVisit3_precondition_72.event.startDate
+    ,
+
+    $OccurrenceAAmbulatoryEdVisit3_precondition_72.event != null,
+    $OccurrenceAAmbulatoryEdVisit3_precondition_72.event != this,
+    startDate <= $OccurrenceAAmbulatoryEdVisit3_precondition_72.event.endDate
+
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.102.12.1012", $p.getDiagnoses())
+
+
+
+
+then
+    System.out.println("OccurrenceAAcuteTonsillitis2_precondition_69");
+
+insertLogical(new PreconditionResult("OccurrenceAAcuteTonsillitis2_precondition_69", $p , $event, droolsUtil.combine($OccurrenceAAmbulatoryEdVisit3_precondition_72.context, new SpecificOccurrence("DIAGNOSIS_ACTIVE_ACUTE_TONSILLITIS", "A", $event))))
+
+end
+
+/* Rule */
+rule "OccurrenceBAmbulatoryEdVisit4_precondition_20"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+$event : edu.mayo.qdm.patient.Encounter(
+
+
+                startDate != null,
+                toDays(startDate) >= toDays(new Date('01-Jan-2012'))
+                ,
+
+                endDate != null,
+                toDays(endDate) <= toDays(new Date('31-Dec-2012'))
+
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1061", $p.getEncounters())
+
+
+
+
+then
+    System.out.println("OccurrenceBAmbulatoryEdVisit4_precondition_20");
+
+insertLogical(new PreconditionResult("OccurrenceBAmbulatoryEdVisit4_precondition_20", $p , $event, [new SpecificOccurrence("ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT","B",$event)]))
+
+end
+
+/* Rule */
+rule "OccurrenceBAmbulatoryEdVisit4_precondition_22"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+                        //$so : SpecificOccurrence(id == "A", constant == "ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT", patient == $p)
+                        $OccurrenceAAmbulatoryEdVisit3 : PreconditionResult(id == "OccurrenceAAmbulatoryEdVisit3", patient == $p /*, ($so.event == null || event == $so.event)*/)
+$event : edu.mayo.qdm.patient.Encounter(
+
+    $OccurrenceAAmbulatoryEdVisit3.event != null,
+    $OccurrenceAAmbulatoryEdVisit3.event != this,
+    startDate <= $OccurrenceAAmbulatoryEdVisit3.event.startDate
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1061", $p.getEncounters())
+
+
+
+
+then
+    System.out.println("OccurrenceBAmbulatoryEdVisit4_precondition_22");
+
+insertLogical(new PreconditionResult("OccurrenceBAmbulatoryEdVisit4_precondition_22", $p , $event, droolsUtil.combine($OccurrenceAAmbulatoryEdVisit3.context, new SpecificOccurrence("ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT","B",$event))))
+
+end
+
+/* Rule */
+rule "MedicationOrderAntibioticMedications_precondition_24"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+                        //$so : SpecificOccurrence(id == "B", constant == "ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT", patient == $p)
+                        $OccurrenceBAmbulatoryEdVisit4 : PreconditionResult(id == "OccurrenceBAmbulatoryEdVisit4", patient == $p /*, ($so.event == null || event == $so.event)*/)
+$event : edu.mayo.qdm.patient.Medication(
+
+
+    $OccurrenceBAmbulatoryEdVisit4.event != null,
+    $OccurrenceBAmbulatoryEdVisit4.event != this,
+    startDate >= $OccurrenceBAmbulatoryEdVisit4.event.startDate
+    ,
+
+    $OccurrenceBAmbulatoryEdVisit4.event != null,
+    $OccurrenceBAmbulatoryEdVisit4.event != this,
+    endDate <= $OccurrenceBAmbulatoryEdVisit4.event.endDate
+
+,medicationStatus == MedicationStatus.ORDERED
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.196.12.1001", $p.getMedications())
+
+
+
+
+then
+    System.out.println("MedicationOrderAntibioticMedications_precondition_24");
+
+insertLogical(new PreconditionResult("MedicationOrderAntibioticMedications_precondition_24", $p , $event, $OccurrenceBAmbulatoryEdVisit4.context))
+
+end
+
+/* Rule */
+rule "MedicationOrderAntibioticMedications_precondition_26"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+                        //$so : SpecificOccurrence(id == "B", constant == "ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT", patient == $p)
+                        $OccurrenceBAmbulatoryEdVisit4 : PreconditionResult(id == "OccurrenceBAmbulatoryEdVisit4", patient == $p /*, ($so.event == null || event == $so.event)*/)
+$event : edu.mayo.qdm.patient.Medication(
+
+    $OccurrenceBAmbulatoryEdVisit4.event != null,
+    $OccurrenceBAmbulatoryEdVisit4.event != this,
+    toDays(startDate) <= toDays(droolsUtil.add(droolsUtil.getCalendar($OccurrenceBAmbulatoryEdVisit4.event.startDate), Calendar.DATE, 3)),
+startDate >= $OccurrenceBAmbulatoryEdVisit4.event.startDate
+
+    ,medicationStatus == MedicationStatus.ORDERED
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.196.12.1001", $p.getMedications())
+
+
+
+
+then
+    System.out.println("MedicationOrderAntibioticMedications_precondition_26");
+
+insertLogical(new PreconditionResult("MedicationOrderAntibioticMedications_precondition_26", $p , $event, $OccurrenceBAmbulatoryEdVisit4.context))
+
+end
+
+/* Rule */
+rule "OccurrenceAAcutePharyngitis1_precondition_30"
+    dialect "mvel"
+    no-loop
+    //agenda-group "OccurrenceAAcutePharyngitis1_precondition_30"
+
+when
+
+$p : Patient ( )
+
+
+$event : edu.mayo.qdm.patient.Diagnosis(
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.102.12.1011", $p.getDiagnoses())
+
+
+
+
+then
+    System.out.println("OccurrenceAAcutePharyngitis1_precondition_30");
+
+insertLogical(new PreconditionResult("OccurrenceAAcutePharyngitis1_precondition_30", $p , $event, [new SpecificOccurrence("DIAGNOSIS_ACTIVE_ACUTE_PHARYNGITIS", "A", $event)]))
+
+end
+
+/* Rule */
+rule "OccurrenceAAcuteTonsillitis2_precondition_32"
+    dialect "mvel"
+    no-loop
+    //agenda-group "OccurrenceAAcuteTonsillitis2_precondition_32"
+
+when
+
+$p : Patient ( )
+
+
+$event : edu.mayo.qdm.patient.Diagnosis(
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.102.12.1012", $p.getDiagnoses())
+
+
+
+
+then
+    System.out.println("OccurrenceAAcuteTonsillitis2_precondition_32");
+
+insertLogical(new PreconditionResult("OccurrenceAAcuteTonsillitis2_precondition_32", $p , $event, [new SpecificOccurrence("DIAGNOSIS_ACTIVE_ACUTE_TONSILLITIS", "A", $event)]))
+
+end
+
+/* Rule */
+rule "OccurrenceBAmbulatoryEdVisit4_precondition_35"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+
+                        $GROUP_DURING_CHILDREN_85 : PreconditionResult(id == "GROUP_DURING_CHILDREN_85", patient == $p )
+$event : edu.mayo.qdm.patient.Encounter(
+
+
+    $GROUP_DURING_CHILDREN_85.event != null,
+    $GROUP_DURING_CHILDREN_85.event != this,
+    startDate >= $GROUP_DURING_CHILDREN_85.event.startDate
+    ,
+
+    $GROUP_DURING_CHILDREN_85.event != null,
+    $GROUP_DURING_CHILDREN_85.event != this,
+    endDate <= $GROUP_DURING_CHILDREN_85.event.endDate
+
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1061", $p.getEncounters())
+
+
+
+
+then
+    System.out.println("OccurrenceBAmbulatoryEdVisit4_precondition_35");
+
+insertLogical(new PreconditionResult("OccurrenceBAmbulatoryEdVisit4_precondition_35", $p , $event, droolsUtil.combine(new SpecificOccurrence("ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT","B",$event),$GROUP_DURING_CHILDREN_85.context)))
+
+end
+
+/* Rule */
+rule "GROUP_DURING_CHILDREN_85"
+    dialect "mvel"
+    no-loop
+    //agenda-group "GROUP_DURING_CHILDREN_85"
+
+when
+
+            $p : Patient ( )
+            $p1: PreconditionResult(
+             (id == "OccurrenceAAcutePharyngitis1_precondition_30" || id == "OccurrenceAAcuteTonsillitis2_precondition_32"),
+             $event : event,
+             patient == $p)
+
+
+
+then
+    System.out.println("GROUP_DURING_CHILDREN_85");
+
+        insertLogical(new PreconditionResult("GROUP_DURING_CHILDREN_85", $p, $event, $p1.context))
+
+end
+
+/* Rule */
+rule "OccurrenceBAmbulatoryEdVisit4_precondition_42"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+$event : edu.mayo.qdm.patient.Encounter(
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.101.12.1061", $p.getEncounters())
+
+
+
+
+then
+    System.out.println("OccurrenceBAmbulatoryEdVisit4_precondition_42");
+
+insertLogical(new PreconditionResult("OccurrenceBAmbulatoryEdVisit4_precondition_42", $p , $event, [new SpecificOccurrence("ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT","B",$event)]))
+
+end
+
+/* Rule */
+rule "OccurrenceAAcutePharyngitis1_precondition_37"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+                        //$so : SpecificOccurrence(id == "B", constant == "ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT", patient == $p)
+                        $OccurrenceBAmbulatoryEdVisit4_precondition_42 : PreconditionResult(id == "OccurrenceBAmbulatoryEdVisit4_precondition_42", patient == $p /*, ($so.event == null || event == $so.event)*/)
+$event : edu.mayo.qdm.patient.Diagnosis(
+
+
+    $OccurrenceBAmbulatoryEdVisit4_precondition_42.event != null,
+    $OccurrenceBAmbulatoryEdVisit4_precondition_42.event != this,
+    startDate >= $OccurrenceBAmbulatoryEdVisit4_precondition_42.event.startDate
+    ,
+
+    $OccurrenceBAmbulatoryEdVisit4_precondition_42.event != null,
+    $OccurrenceBAmbulatoryEdVisit4_precondition_42.event != this,
+    startDate <= $OccurrenceBAmbulatoryEdVisit4_precondition_42.event.endDate
+
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.102.12.1011", $p.getDiagnoses())
+
+
+
+
+then
+    System.out.println("OccurrenceAAcutePharyngitis1_precondition_37");
+
+insertLogical(new PreconditionResult("OccurrenceAAcutePharyngitis1_precondition_37", $p , $event, droolsUtil.combine(new SpecificOccurrence("DIAGNOSIS_ACTIVE_ACUTE_PHARYNGITIS","A",$event), $OccurrenceBAmbulatoryEdVisit4_precondition_42.context)))
+
+end
+
+/* Rule */
+rule "OccurrenceAAcuteTonsillitis2_precondition_39"
+    dialect "mvel"
+    no-loop
+    //agenda-group "generalDataCriteria"
+
+when
+
+$p : Patient ( )
+
+
+                        //$so : SpecificOccurrence(id == "B", constant == "ENCOUNTER_PERFORMED_AMBULATORY_ED_VISIT", patient == $p)
+                        $OccurrenceBAmbulatoryEdVisit4_precondition_42 : PreconditionResult(id == "OccurrenceBAmbulatoryEdVisit4_precondition_42", patient == $p /*, ($so.event == null || event == $so.event)*/)
+$event : edu.mayo.qdm.patient.Diagnosis(
+
+
+    $OccurrenceBAmbulatoryEdVisit4_precondition_42.event != null,
+    $OccurrenceBAmbulatoryEdVisit4_precondition_42.event != this,
+    startDate >= $OccurrenceBAmbulatoryEdVisit4_precondition_42.event.startDate
+    ,
+
+    $OccurrenceBAmbulatoryEdVisit4_precondition_42.event != null,
+    $OccurrenceBAmbulatoryEdVisit4_precondition_42.event != this,
+    startDate <= $OccurrenceBAmbulatoryEdVisit4_precondition_42.event.endDate
+
+
+) from droolsUtil.findMatches("2.16.840.1.113883.3.464.1003.102.12.1012", $p.getDiagnoses())
+
+
+
+
+then
+    System.out.println("OccurrenceAAcuteTonsillitis2_precondition_39");
+
+insertLogical(new PreconditionResult("OccurrenceAAcuteTonsillitis2_precondition_39", $p , $event, droolsUtil.combine(new SpecificOccurrence("DIAGNOSIS_ACTIVE_ACUTE_TONSILLITIS","A",$event), $OccurrenceBAmbulatoryEdVisit4_precondition_42.context)))
+
+end
+

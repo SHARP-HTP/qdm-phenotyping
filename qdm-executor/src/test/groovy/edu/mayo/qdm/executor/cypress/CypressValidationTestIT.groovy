@@ -41,9 +41,6 @@ class CypressValidationTestIT extends AbstractAllCypressMeasuresTestIT {
     void doExecute(xmlStream) throws IOException{
         def xmlString = IOUtils.toString(xmlStream, "UTF-8")
 
-        def patientList = cypressDataSource.getPatients()
-
-        def results = this.executor.execute(patientList, xmlString, MeasurementPeriod.getCalendarYear(new DateTime(2012,1,1,1,1).toDate()))
 
         def xml = new XmlParser().parseText(xmlString)
 
@@ -52,7 +49,13 @@ class CypressValidationTestIT extends AbstractAllCypressMeasuresTestIT {
 
         def id = XPathFactory.newInstance().newXPath().evaluate( '//value[@root="2.16.840.1.113883.3.560.1"]/@extension', records, XPathConstants.STRING )
 
+        //if(id == "0038" || id == "0385" || id == "0387" || id == "0070" || id == "0389" || id == "0710" || id == "ADE_TTR"){ return }
+
         def measureId = xml.id[0].@root
+
+        def patientList = cypressDataSource.getPatients()
+
+        def results = this.executor.execute(patientList, xmlString, MeasurementPeriod.getCalendarYear(new DateTime(2012,1,1,1,1).toDate()))
 
             cypressValidator.checkResults(measureId, results,
                 {population, expected, actual, message ->

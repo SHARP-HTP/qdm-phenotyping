@@ -94,13 +94,14 @@ class CriteriaFactory {
                     \$p : Patient ( )
                     PreconditionResult(
                      (${collections.collect{"id == \"$it\""}.join(" || ")}),
+                     \$context : context,
                      \$event : event,
                      patient == \$p)
 
                 """
                 def rhs =
                 """
-                insert(new PreconditionResult("${fullJson.key}", \$p, \$event))
+                insertLogical(new PreconditionResult("${fullJson.key}", \$p, \$event, \$context))
                 """
                 [
                     getLHS:{lhs},

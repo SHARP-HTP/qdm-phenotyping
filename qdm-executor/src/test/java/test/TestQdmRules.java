@@ -13,7 +13,7 @@ public class TestQdmRules extends AbstractDroolsTestBase {
         Patient p1 = new Patient("1");
         p1.setSex(Gender.MALE);
 
-        Patient p2 = new Patient("1");
+        Patient p2 = new Patient("2");
         p2.setSex(Gender.FEMALE);
 
         return Arrays.asList(p1,p2);

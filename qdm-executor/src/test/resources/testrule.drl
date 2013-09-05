@@ -6,46 +6,26 @@ import edu.mayo.qdm.executor.drools.DroolsUtil
 import java.util.Iterator;
 import edu.mayo.qdm.executor.drools.SpecificOccurrence
 import java.util.Calendar;
+import edu.mayo.qdm.executor.ResultCallback;
+
 
 global DroolsUtil droolsUtil
+global ResultCallback resultCallback
 
-rule "p1"
+
+rule "rule"
       dialect "mvel"
       no-loop
 
   when
 
-    $p : Patient( sourcePid == "1", sex == Gender.MALE)
+    $p1 : Patient( sourcePid == "1")
+    $p2 : Patient( sourcePid == "2")
+
+
+    eval(! ($p1.labs.size() > 1))
 
   then
-    insert(new test.Message("1", $p))
-
-end
-
-rule "p2"
-      dialect "mvel"
-      no-loop
-
-  when
-    $p : Patient( sourcePid == "1", sex == Gender.FEMALE)
-
-  then
-    insert(new test.Message("2", $p))
-
-end
-
-rule "AND Rule"
-      dialect "mvel"
-      no-loop
-
-  when
-    $p : Patient()
-
-    test.Message(message == "1", patent == $p)
-    and
-    not test.Message(message == "2", patent == $p)
-
-  then
-    System.out.println("Found both");
+    System.out.println("Here");
 
 end

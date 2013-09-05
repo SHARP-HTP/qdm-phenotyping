@@ -350,4 +350,11 @@ public class Patient {
     public int hashCode() {
         return sourcePid != null ? sourcePid.hashCode() : 0;
     }
+
+    @Override
+    public String toString() {
+        return "Patient{" +
+                "sourcePid='" + sourcePid + '\'' +
+                '}';
+    }
 }

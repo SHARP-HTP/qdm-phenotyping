@@ -24,10 +24,13 @@ class TreeManager {
         def root = new Node()
         if(json.reference){
             root.id = json.reference
+            root.isLeaf = true
         } else {
             root.id = json.id
             root.conjunction = json.conjunction_code
         }
+
+        root.negated = json.negation
 
         if(json.preconditions == null){
             def so = getSpecificOccurrence(json.reference, measureJson)

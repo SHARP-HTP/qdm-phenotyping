@@ -12,15 +12,17 @@ import org.joda.time.DateTime
 class TemporalProcessor {
 
     class TemporalResult{
-        String variables
+        def variables = []
         String criteria
     }
 
     def processTemporalReferences(temporalReferences, measurementPeriod, measureJson, startProperty="startDate", endProperty="endDate"){
         def result = temporalReferences.collect(processTemporalReference.rcurry(measurementPeriod, measureJson, startProperty, endProperty))
 
+        def variables = result.collect { it.variables }.flatten()
+
         new TemporalResult(
-            variables: result.inject('') { str, element -> str + (element.variables ?: '') },
+            variables: variables,
             criteria: result.inject('') { str, element -> str + (element.criteria ?: '') }
         )
     }
@@ -225,20 +227,12 @@ class TemporalProcessor {
                 sb.append("${property} $op \$${temporalReference.reference}.event.${targetProperty}")
             }
 
-            def specificOccurrence = getSpecificOccurrence(temporalReference.reference, measureJson)
             return new TemporalResult(
-                    variables: """
-                                ${if(specificOccurrence){
-                                    """\$so : SpecificOccurrence(id == "${specificOccurrence.id}", constant == "${specificOccurrence.constant}", patient == \$p)"""
-
-                                  } else {
-                                    ""
-                                }}
-                                \$${temporalReference.reference} : PreconditionResult(id == "${temporalReference.reference}", patient == \$p ${specificOccurrence ? ", event == \$so.event" : ""})""",
+                    variables: [temporalReference.reference],
                     criteria:
             """
             \$${temporalReference.reference}.event != null,
-            \$${temporalReference.reference}.event != this,
+            eval(! (this.equals(\$${temporalReference.reference}.event))),
             ${sb.toString()}
             """)
         }
@@ -262,7 +256,7 @@ class TemporalProcessor {
         def op
         switch (beforeOrAfter){
             case BeforeOrAfter.BEFORE:
-                op = "<="
+                op = "<"
                 break
             case BeforeOrAfter.AFTER:
                 op = ">="

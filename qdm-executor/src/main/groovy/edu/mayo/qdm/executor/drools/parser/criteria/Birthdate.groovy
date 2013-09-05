@@ -1,5 +1,4 @@
 package edu.mayo.qdm.executor.drools.parser.criteria
-
 import edu.mayo.qdm.executor.drools.parser.TemporalProcessor
 import org.apache.commons.lang.StringUtils
 
@@ -29,14 +28,13 @@ class Birthdate implements Criteria {
     @Override
     def getLHS() {
         boolean hasCriteria = StringUtils.isNotBlank(temporal.criteria)
-        boolean hasVariables = StringUtils.isNotBlank(temporal.variables)
 
         """
         \$p : Patient( )
         ${
             if(hasCriteria){
                 """
-                ${hasVariables ? temporal.variables : ""}
+                ${temporal.variables.collect { """\$$it : PreconditionResult(id == "$it", patient == \$p) """ }.join("\n")}
                 Patient(
                     this == \$p,
                     ${temporal.criteria}

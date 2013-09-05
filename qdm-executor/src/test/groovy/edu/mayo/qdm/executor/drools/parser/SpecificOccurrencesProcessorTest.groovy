@@ -14,13 +14,11 @@ class SpecificOccurrencesProcessorTest {
 
     @Test
     void test(){
-        def json = slurper.parseText(IOUtils.toString(new ClassPathResource("/cypress/measures/ep/0004/hqmf_model.json").inputStream))
+        def json = slurper.parseText(IOUtils.toString(new ClassPathResource("/cypress/measures/ep/0002/hqmf_model.json").inputStream))
 
         def processor = new SpecificOccurrencesProcessor()
 
-        processor.getSpecificOccurrencesRules(json)
-
-
+        println processor.getSpecificOccurrencesRules(json)
     }
 
 

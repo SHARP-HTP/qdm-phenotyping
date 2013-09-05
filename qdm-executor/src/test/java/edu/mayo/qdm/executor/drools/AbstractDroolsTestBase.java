@@ -1,5 +1,7 @@
 package edu.mayo.qdm.executor.drools;
 
+import edu.mayo.qdm.executor.ResultCallback;
+import edu.mayo.qdm.executor.Results;
 import edu.mayo.qdm.patient.Patient;
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
@@ -38,13 +40,25 @@ public abstract class AbstractDroolsTestBase {
 		final StatefulKnowledgeSession ksession = kbase.newStatefulKnowledgeSession();
 
         ksession.setGlobal("droolsUtil", new DroolsUtil());
-        ksession.setGlobal("specificContextManager", new SpecificContextManager());
+
+        final Results results = new Results();
+        ksession.setGlobal("resultCallback", new ResultCallback() {
+
+            @Override
+            public void hit(String population, Patient patient) {
+                results.add(population, patient);
+            }
+        });
+
+        //ksession.setGlobal("specificContextManager", new SpecificContextManager());
 
 		for(Patient p : this.getPatients()){
             ksession.insert(p);
         }
 
         ksession.fireAllRules();
+
+        System.out.println(results.asMap());
     }
 
     protected abstract Iterable<Patient> getPatients();

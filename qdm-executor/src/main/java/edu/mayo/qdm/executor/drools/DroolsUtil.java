@@ -24,6 +24,8 @@
 package edu.mayo.qdm.executor.drools;
 
 
+import com.google.common.collect.Sets;
+import edu.mayo.qdm.executor.valueset.JsonValueSetCodeResolver;
 import edu.mayo.qdm.executor.valueset.ValueSetCodeResolver;
 import edu.mayo.qdm.patient.CodedEntry;
 import edu.mayo.qdm.patient.Concept;
@@ -46,6 +48,14 @@ public final class DroolsUtil {
 
     public DroolsUtil(){
         super();
+        JsonValueSetCodeResolver resolver = new JsonValueSetCodeResolver();
+        try {
+            resolver.afterPropertiesSet();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        this.valueSetCodeResolver = resolver;
     }
 
     public DroolsUtil(ValueSetCodeResolver valueSetCodeResolver){
@@ -120,26 +130,75 @@ public final class DroolsUtil {
         return date;
     }
 
+    public Map<SpecificOccurrenceId, Event> combine(SpecificOccurrence specificOccurrence, Map<SpecificOccurrenceId, Event> context){
+        Map<SpecificOccurrenceId, Event> returnMap = new HashMap<SpecificOccurrenceId, Event>();
 
-    static void main(String[] args){
-        Date d1 = new Date(1328094000);
-        Date d2 = new Date(1328095800);
+        returnMap.put(specificOccurrence.getId(), specificOccurrence.getEvent());
+        returnMap.putAll(context);
 
-        System.out.print(d1.getTime() < d2.getTime());
+        return returnMap;
     }
-/*
-    public Collection<Event> combine(SpecificOccurrence o, Set<Event> e){
-        if(o.getOccurrences() == null){
-            return e;
-        } else {
-            Set<Event> events = new HashSet<Event>();
-            events.addAll(e);
-            events.retainAll(o.getOccurrences());
-            return events;
+
+    public Map<SpecificOccurrenceId, Event> combine(Collection<Map<SpecificOccurrenceId, Event>> contexts, SpecificOccurrence specificOccurrence){
+        Map<SpecificOccurrenceId, Event> returnMap = new HashMap<SpecificOccurrenceId, Event>();
+
+        returnMap.put(specificOccurrence.getId(), specificOccurrence.getEvent());
+
+        for(Map<SpecificOccurrenceId, Event> context : contexts){
+            returnMap.putAll(context);
         }
+
+        return returnMap;
     }
 
+    public Map<SpecificOccurrenceId, Event> combine(Map<SpecificOccurrenceId, Event> context, SpecificOccurrence specificOccurrence){
+        return this.combine(specificOccurrence, context);
+    }
 
+    public Map<SpecificOccurrenceId, Event> combine(Collection<Map<SpecificOccurrenceId, Event>> contexts){
+        Map<SpecificOccurrenceId, Event> returnMap = new HashMap<SpecificOccurrenceId, Event>();
+
+        for(Map<SpecificOccurrenceId, Event> context : contexts){
+            returnMap.putAll(context);
+        }
+
+        return returnMap;
+    }
+
+    public Map<SpecificOccurrenceId, Event> intersect(Collection<Map<SpecificOccurrenceId, Event>> contexts){
+        Map<SpecificOccurrenceId, Event> returnMap = new HashMap<SpecificOccurrenceId, Event>();
+
+        Set<SpecificOccurrenceId> intersect = null;
+        for(Map<SpecificOccurrenceId, Event> context : contexts){
+            if(intersect == null){
+                intersect = context.keySet();
+            } else {
+                intersect = Sets.intersection(intersect, context.keySet());
+            }
+        }
+
+        Map<SpecificOccurrenceId, Set<Event>> comboMap = new HashMap<SpecificOccurrenceId, Set<Event>>();
+        for(Map<SpecificOccurrenceId, Event> context : contexts){
+            for(Map.Entry<SpecificOccurrenceId, Event> entry : context.entrySet()){
+                if(! comboMap.containsKey(entry.getKey())){
+                    comboMap.put(entry.getKey(), new HashSet<Event>());
+                }
+                comboMap.get(entry.getKey()).add(entry.getValue());
+            }
+        }
+
+        for(Map.Entry<SpecificOccurrenceId, Set<Event>> entry : comboMap.entrySet()){
+            if(entry.getValue().size() > 1){
+                returnMap.put(entry.getKey(), null);
+            } else {
+                returnMap.put(entry.getKey(), entry.getValue().iterator().next());
+            }
+        }
+
+        return returnMap;
+    }
+
+/*
     public <T extends Event> T mostRecent(Iterable <T> codedEntries){
         T mostRecent = null;
         for(T entry : codedEntries){

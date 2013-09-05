@@ -2,10 +2,7 @@ package edu.mayo.qdm.executor.drools.parser
 
 import edu.mayo.qdm.executor.MeasurementPeriod
 import edu.mayo.qdm.executor.ResultCallback
-import edu.mayo.qdm.executor.drools.DroolsUtil
-import edu.mayo.qdm.executor.drools.PreconditionResult
-import edu.mayo.qdm.executor.drools.SpecificOccurrence
-import edu.mayo.qdm.executor.drools.SpecificOccurrenceResult
+import edu.mayo.qdm.executor.drools.*
 import edu.mayo.qdm.executor.drools.parser.criteria.CriteriaFactory
 import edu.mayo.qdm.executor.drools.parser.criteria.Interval
 import edu.mayo.qdm.executor.drools.parser.criteria.MeasurementValue
@@ -28,6 +25,7 @@ class Qdm2Drools {
 
     //def qdm2jsonServiceUrl = "http://qdm2json.herokuapp.com";
     def qdm2jsonServiceUrl = "http://localhost:4567";
+    //def qdm2jsonServiceUrl = "http://qdm2json.phenotypeportal.org"
 
     final GROUP_DATA_CRITERIA_AGENDA_GROUP = "groupDataCriteria"
     final GROUP_DEPENDENT_DATA_CRITERIA_AGENDA_GROUP = "groupDependentDataCriteria"
@@ -133,7 +131,7 @@ class Qdm2Drools {
         }.findAll()
         */
 
-        sb.append(specificOccurrencesProcessor.getSpecificOccurrencesRules(json))
+        //sb.append(specificOccurrencesProcessor.getSpecificOccurrencesRules(json))
 
         json.population_criteria.each {
             printPopulationCriteria( it, sb )
@@ -161,9 +159,11 @@ class Qdm2Drools {
 
         //sb.append( printRuleFunctions(json) )
 
+        /*
         if(ruleOrderStack.size() > 0){
             sb.append( printInitRule(ruleOrderStack) )
         }
+        */
 
         def rule = sb.toString()
 
@@ -251,7 +251,7 @@ class Qdm2Drools {
             }
             } else {
                 System.out.println("All Equal $constant $id!");
-                insert(new SpecificOccurrence("$constant", "$id", \$${preconditions.find().key}.event, \$p));
+                insertLogical(new SpecificOccurrence("$constant", "$id", \$${preconditions.find().key}.event, \$p));
             }
         end
         """
@@ -293,6 +293,7 @@ class Qdm2Drools {
         import ${SpecificOccurrenceResult.name};
         import ${MedicationStatus.name};
         import ${ProcedureStatus.name};
+        import ${PreconditionCollection.name};
         import function ${DroolsUtil.name}.toDays;
         /*
             ID: ${qdm.id}
@@ -302,7 +303,6 @@ class Qdm2Drools {
             CMS ID: ${qdm.cms_id}
         */
 
-        global ResultCallback resultCallback
         global DroolsUtil droolsUtil
         global MeasurementPeriod measurementPeriod
         """
@@ -317,10 +317,10 @@ class Qdm2Drools {
         def salience
         switch(name){
             case "IPP": salience = "-1000"; break
-            case "DENOM": salience = "-1001"; break
-            case "DENEX": salience = "-1002"; break
-            case "NUMER": salience = "-1003"; break
-            default: salience = "-1004"; break
+            case "DENOM": salience = "-1000"; break
+            case "DENEX": salience = "-1000"; break
+            case "NUMER": salience = "-1000"; break
+            default: salience = "-1000"; break
         }
 
         sb.append("""
@@ -332,7 +332,7 @@ class Qdm2Drools {
 
         when
             \$p : Patient( )
-            not ( PreconditionResult(id == "$name", patient == \$p) )
+            //not ( PreconditionResult(id == "$name", patient == \$p) )
             ${switch(name){
                 case "DENOM": return """
                                         PreconditionResult(id == "IPP", patient == \$p)
@@ -365,11 +365,11 @@ class Qdm2Drools {
                     if(prcn.reference){
                         def dataCriteriaRef = prcn.reference
 
-                        sb.append(printPreconditionReference(dataCriteriaRef))
+                        sb.append(printPreconditionReferenceNoContextVariable(dataCriteriaRef))
                     } else {
                         nestedPreconditions.add(prcn)
 
-                        sb.append(printPreconditionReference(prcn.id))
+                        sb.append(printPreconditionReferenceNoContextVariable(prcn.id))
                     }
                     if(idx != preconditions.size() -1) {
                         sb.append(" ${cnj} ")
@@ -379,8 +379,7 @@ class Qdm2Drools {
         }
         sb.append("""
         then
-            insert(new PreconditionResult("$name", \$p))
-            resultCallback.hit("$name", \$p);
+            insertLogical(new PreconditionResult("$name", \$p, true))
         end
         """)
 
@@ -411,26 +410,55 @@ class Qdm2Drools {
             //not ( PreconditionResult(id == "${prcn.id}", patient == \$p) )
         """
                     )
+                    def cnj = conjunctionToBoolean(prcn.conjunction_code)
 
                     if(prcn.reference){
                         def dataCriteriaRef = prcn.reference
 
-                        sb.append(printPreconditionReference(dataCriteriaRef))
+                        sb.append(printPreconditionReferenceWithContextVariable(dataCriteriaRef))
                     } else {
                         nestedPreconditions.add(prcn.preconditions)
 
-                        def cnj = conjunctionToBoolean(prcn.conjunction_code)
+                        if(prcn.preconditions.size() == 1){
+                            sb.append(printPreconditionReferenceWithContextVariable(prcn.preconditions[0].id))
+                        } else {
 
-                        prcn.preconditions.eachWithIndex {
-                            nestedPrc, idx ->
+                            if(cnj == "and"){
 
-                                if(nestedPrc.negation) sb.append("not(")
-                                sb.append(printPreconditionReference(nestedPrc.id))
-                                if(nestedPrc.negation) sb.append(") ")
+                                prcn.preconditions.findAll {! it.negation }.eachWithIndex {
+                                    nestedPrc, idx ->
 
-                                if(idx != prcn.preconditions.size() -1) {
-                                    sb.append(" ${cnj} ")
+                                        if(nestedPrc.negation) sb.append("not(")
+                                        if(cnj == "and"){
+                                            sb.append(printPreconditionReferenceNoContextVariable(nestedPrc.id, true))
+                                        } else {
+                                            sb.append(printPreconditionReferenceNoContextVariable(nestedPrc.id))
+                                        }
+                                        if(nestedPrc.negation) sb.append(") ")
+
+                                        if(idx != prcn.preconditions.size() -1) {
+                                            //sb.append(" ${cnj} ")
+                                        }
                                 }
+
+                                sb.append("""\$context : java.util.Map() from droolsUtil.intersect([${prcn.preconditions.findAll {! it.negation }.collect {"""\$p${it.id}.context"""}.join(",")}])""")
+
+                                sb.append(prcn.preconditions.findAll { it.negation }.collect {
+                                    """
+                                    not( ${printPreconditionReference(it.id)} )
+                                    """
+                                }.join())
+
+                                sb.append(prcn.preconditions.findAll {! it.negation }.collect {
+                                    """
+                                    eval(\$p${it.id}.compatible(\$context))
+                                    """
+                                }.join())
+
+                            } else {
+                                sb.append("""\$preconditions : PreconditionResult(
+                                    ${prcn.preconditions.collect {"""id == "${it.id}" """}.join(" || ")}, \$context : context, patient == \$p)""")
+                            }
                         }
                     }
 
@@ -438,7 +466,14 @@ class Qdm2Drools {
         """
         then
             System.out.println("${prcn.id}");
-            insert(new PreconditionResult("${prcn.id}", \$p))
+            insertLogical(new PreconditionResult("${prcn.id}", \$p, ${
+                if(true || prcn.reference || cnj == "or" || prcn.preconditions?.size() == 1){
+                    """\$context"""
+                } else {
+                    """droolsUtil.combine([${prcn.preconditions.collect {
+                        (it.negation) ? null : """\$p${it.id}.context"""}.findAll().join(",")}])"""
+                }
+            }))
         end
 
         """
@@ -450,9 +485,21 @@ class Qdm2Drools {
         nestedPreconditions.each { nestedPrc -> printPreconditions(nestedPrc, sb)}
     }
 
-    private def printPreconditionReference(preconditionReference){
+    private def printPreconditionReferenceNoContextVariable(preconditionReference, withAlias=false){
+        """
+        ${withAlias ? """\$p$preconditionReference: """ : "" }PreconditionResult( id == "$preconditionReference", patient == \$p )
+        """
+    }
+
+    private def printPreconditionReferenceWithContextVariable(preconditionReference, withAlias=false){
+        """
+        ${withAlias ? """\$p$preconditionReference: """ : "" }PreconditionResult( id == "$preconditionReference", patient == \$p, \$context : context )
+        """
+    }
+
+    private def printPreconditionReference(preconditionReference, withAlias=false, contextVariable="\$context"){
             """
-            PreconditionResult( id == "$preconditionReference", patient == \$p )
+            ${withAlias ? """\$p$preconditionReference : """ : "" }PreconditionResult( id == "$preconditionReference", patient == \$p, compatible($contextVariable) )
             """
     }
 

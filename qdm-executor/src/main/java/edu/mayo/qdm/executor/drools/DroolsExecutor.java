@@ -28,16 +28,16 @@ import edu.mayo.qdm.executor.drools.parser.Qdm2Drools;
 import edu.mayo.qdm.patient.Patient;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.drools.FactHandle;
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
+import org.drools.ObjectFilter;
 import org.drools.builder.KnowledgeBuilder;
 import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
 import org.drools.definition.KnowledgePackage;
 import org.drools.event.rule.DefaultWorkingMemoryEventListener;
-import org.drools.event.rule.ObjectInsertedEvent;
 import org.drools.event.rule.ObjectRetractedEvent;
-import org.drools.event.rule.ObjectUpdatedEvent;
 import org.drools.io.ResourceFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.springframework.stereotype.Component;
@@ -89,7 +89,9 @@ public class DroolsExecutor implements Executor {
 		final StatefulKnowledgeSession ksession = knowledgeBase
 				.newStatefulKnowledgeSession();
 
-		ksession.setGlobal("resultCallback", callback);
+        //TODO: Think if we want an callback here, or just get the results at the end.
+        //ksession.setGlobal("resultCallback", callback);
+
         ksession.setGlobal("droolsUtil", this.droolsUtil);
 
 		for(Patient patient : patients){
@@ -97,22 +99,30 @@ public class DroolsExecutor implements Executor {
 		}
 
         ksession.addEventListener(new DefaultWorkingMemoryEventListener(){
-            @Override
-            public void objectInserted(ObjectInsertedEvent event) {
-                //
-            }
 
             @Override
             public void objectRetracted(ObjectRetractedEvent event) {
-                super.objectRetracted(event);    //To change body of overridden methods use File | Settings | File Templates.
-            }
-
-            @Override
-            public void objectUpdated(ObjectUpdatedEvent event) {
+                Object handle = event.getFactHandle();
                 //
             }
+
         });
 		ksession.fireAllRules();
+
+        Collection<FactHandle> handles = ksession.getFactHandles(new ObjectFilter() {
+            @Override
+            public boolean accept(Object object) {
+                return
+                        (object instanceof PreconditionResult)
+                        &&
+                        ((PreconditionResult) object).isPopulation();
+            }
+        });
+
+        for(FactHandle handle : handles){
+            PreconditionResult precondition = (PreconditionResult) ksession.getObject(handle);
+            callback.hit(precondition.getId(), precondition.getPatient());
+        }
 
 		ksession.dispose();   
 	}
