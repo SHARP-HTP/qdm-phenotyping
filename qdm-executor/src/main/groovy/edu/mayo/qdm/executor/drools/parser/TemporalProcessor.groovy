@@ -224,7 +224,7 @@ class TemporalProcessor {
                 }
             } else {
                 def op = getOperator(beforeOrAfter)
-                sb.append("${property} $op \$${temporalReference.reference}.event.${targetProperty}")
+                sb.append("${property} $op= \$${temporalReference.reference}.event.${targetProperty}")
             }
 
             return new TemporalResult(
@@ -259,11 +259,9 @@ class TemporalProcessor {
                 op = "<"
                 break
             case BeforeOrAfter.AFTER:
-                op = ">="
+                op = ">"
                 break
         }
-
-        op
     }
 
     def getUnit(unit){

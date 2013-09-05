@@ -3,8 +3,10 @@ package edu.mayo.qdm.executor.drools;
 import edu.mayo.qdm.executor.ResultCallback;
 import edu.mayo.qdm.executor.Results;
 import edu.mayo.qdm.patient.Patient;
+import org.drools.FactHandle;
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
+import org.drools.ObjectFilter;
 import org.drools.builder.KnowledgeBuilder;
 import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
@@ -42,13 +44,7 @@ public abstract class AbstractDroolsTestBase {
         ksession.setGlobal("droolsUtil", new DroolsUtil());
 
         final Results results = new Results();
-        ksession.setGlobal("resultCallback", new ResultCallback() {
 
-            @Override
-            public void hit(String population, Patient patient) {
-                results.add(population, patient);
-            }
-        });
 
         //ksession.setGlobal("specificContextManager", new SpecificContextManager());
 
@@ -57,6 +53,28 @@ public abstract class AbstractDroolsTestBase {
         }
 
         ksession.fireAllRules();
+
+        Collection<FactHandle> handles = ksession.getFactHandles(new ObjectFilter() {
+            @Override
+            public boolean accept(Object object) {
+                return
+                        (object instanceof PreconditionResult)
+                                &&
+                                ((PreconditionResult) object).isPopulation();
+            }
+        });
+
+        ResultCallback callback = new ResultCallback() {
+            @Override
+            public void hit(String population, Patient patient) {
+                results.add(population, patient);
+            }
+        };
+
+        for(FactHandle handle : handles){
+            PreconditionResult precondition = (PreconditionResult) ksession.getObject(handle);
+            callback.hit(precondition.getId(), precondition.getPatient());
+        }
 
         System.out.println(results.asMap());
     }

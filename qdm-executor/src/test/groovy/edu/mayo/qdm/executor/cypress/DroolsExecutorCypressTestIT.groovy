@@ -125,6 +125,11 @@ public class DroolsExecutorCypressTestIT {
         doExecute("0070")
     }
 
+    @Test
+    public void TestExecute0052() throws IOException{
+        doExecute("0052")
+    }
+
     /**
      * antinumerator question pending
      */
