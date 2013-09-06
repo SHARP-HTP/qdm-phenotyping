@@ -19,7 +19,7 @@ public class Lab extends Event {
      * For JSON only
      */
     private Lab() {
-        super(null,null,null);
+        super(null,null);
     }
 
     public Lab(Concept concept, Value value, Date date) {

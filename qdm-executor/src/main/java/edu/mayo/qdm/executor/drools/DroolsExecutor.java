@@ -103,6 +103,8 @@ public class DroolsExecutor implements Executor {
             @Override
             public void objectRetracted(ObjectRetractedEvent event) {
                 Object handle = event.getFactHandle();
+                PreconditionResult precondition = (PreconditionResult) event.getOldObject();
+                System.out.println("Retracting: " + precondition.getId());
                 //
             }
 

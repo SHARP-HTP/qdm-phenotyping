@@ -18,7 +18,7 @@ public class Medication extends Event {
      * For JSON only
      */
     private Medication() {
-        super(null,null,null);
+        super(null,null);
     }
 
     public Medication(Concept concept, MedicationStatus medicationStatus, Date startDate, Date endDate) {

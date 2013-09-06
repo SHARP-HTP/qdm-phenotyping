@@ -54,7 +54,7 @@ class CriteriaFactory {
         def qdsType = json.qds_data_type
 
         if(qdsType == "individual_characteristic") {
-            if(json.property == "birthtime"){
+            if(json.property == "birthtime" || json.code_list_id == "2.16.840.1.113883.3.560.100.4"){
                 return new Birthdate(fullJson, measurementPeriod)
             } else if (
                     json.property == null &&

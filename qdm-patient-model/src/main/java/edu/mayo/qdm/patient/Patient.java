@@ -65,6 +65,7 @@ public class Patient {
     private String sourcePid;
     private Race race;
     private Ethnicity ethnicity;
+    private Boolean deceased;
 
     /*
      * For JSON only
@@ -84,6 +85,14 @@ public class Patient {
 
     public String getSourcePid() {
         return this.sourcePid;
+    }
+
+    public Boolean getDeceased() {
+        return deceased;
+    }
+
+    public void setDeceased(Boolean deceased) {
+        this.deceased = deceased;
     }
 
     public void setBirthdate(Date birthdate) {

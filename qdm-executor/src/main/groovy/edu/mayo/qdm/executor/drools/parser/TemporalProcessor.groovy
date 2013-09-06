@@ -37,9 +37,32 @@ class TemporalProcessor {
         }
     }
 
+    def CONCURRENT = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
+        def reference = temporalReference.reference
+
+        def lowTime
+        def highTime
+        if(reference == "MeasurePeriod"){
+            def lowValue = new DateTime(Long.parseLong(measurementPeriod.lowValue.value))
+            lowTime = """toDays(new Date("${lowValue.toString(DroolsDateFormat.PATTERN)}"))"""
+            def highValue = new DateTime(Long.parseLong(measurementPeriod.highValue.value))
+            highTime = """toDays(new Date("${highValue.toString(DroolsDateFormat.PATTERN)}"))"""
+        } else {
+            lowTime = """$startProperty == \$${reference}.event.startDate"""
+            highTime = """$endProperty == \$${reference}.event.endDate"""
+        }
+        return new TemporalResult(
+                variables: reference,
+                criteria:
+                        """
+        $lowTime,
+        $highTime
+        """)
+    }
+
     def DURING = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
-        def start = SAS(temporalReference, startProperty, endProperty, measurementPeriod, measureJson)
-        def end = EBE(temporalReference, startProperty, endProperty, measurementPeriod, measureJson)
+        def start = SAS(temporalReference, startProperty, endProperty, measurementPeriod, measureJson, true)
+        def end = EBE(temporalReference, startProperty, endProperty, measurementPeriod, measureJson, true)
 
         return new TemporalResult(
                 variables: start.variables,
@@ -51,8 +74,8 @@ class TemporalProcessor {
     }
 
     def EDU = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
-        def endAfterStart = EAS(temporalReference, startProperty, endProperty, measurementPeriod, measureJson)
-        def endBeforeEnd = EBE(temporalReference, startProperty, endProperty, measurementPeriod, measureJson)
+        def endAfterStart = EAS(temporalReference, startProperty, endProperty, measurementPeriod, measureJson, true)
+        def endBeforeEnd = EBE(temporalReference, startProperty, endProperty, measurementPeriod, measureJson, true)
 
         return new TemporalResult(
                 variables: endAfterStart.variables,
@@ -64,8 +87,8 @@ class TemporalProcessor {
     }
 
     def SDU = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
-        def startAfterStart = SAS(temporalReference, startProperty, endProperty, measurementPeriod, measureJson)
-        def startBeforeEnd = SBE(temporalReference, startProperty, endProperty, measurementPeriod, measureJson)
+        def startAfterStart = SAS(temporalReference, startProperty, endProperty, measurementPeriod, measureJson, true)
+        def startBeforeEnd = SBE(temporalReference, startProperty, endProperty, measurementPeriod, measureJson, true)
 
         return new TemporalResult(
                 variables: startAfterStart.variables,
@@ -80,20 +103,20 @@ class TemporalProcessor {
         return this.temporalReference(temporalReference, endProperty, measurementPeriod, measureJson, EndOrStart.END, BeforeOrAfter.AFTER)
     }
 
-    def EBE = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
-        return this.temporalReference(temporalReference, endProperty, measurementPeriod, measureJson, EndOrStart.END, BeforeOrAfter.BEFORE)
+    def EBE = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson, forceInclusive=false ->
+        return this.temporalReference(temporalReference, endProperty, measurementPeriod, measureJson, EndOrStart.END, BeforeOrAfter.BEFORE, forceInclusive)
     }
 
     def EBS = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
         return this.temporalReference(temporalReference, endProperty, measurementPeriod, measureJson, EndOrStart.START, BeforeOrAfter.BEFORE)
     }
 
-    def EAS = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
-        return this.temporalReference(temporalReference, endProperty, measurementPeriod, measureJson, EndOrStart.START, BeforeOrAfter.AFTER)
+    def EAS = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson, forceInclusive=false ->
+        return this.temporalReference(temporalReference, endProperty, measurementPeriod, measureJson, EndOrStart.START, BeforeOrAfter.AFTER, forceInclusive)
     }
 
-    def SAS = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
-        return this.temporalReference(temporalReference, startProperty, measurementPeriod, measureJson, EndOrStart.START, BeforeOrAfter.AFTER)
+    def SAS = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson, forceInclusive=false ->
+        return this.temporalReference(temporalReference, startProperty, measurementPeriod, measureJson, EndOrStart.START, BeforeOrAfter.AFTER, forceInclusive)
     }
 
     def SAE = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
@@ -104,14 +127,14 @@ class TemporalProcessor {
         return this.temporalReference(temporalReference, startProperty, measurementPeriod, measureJson, EndOrStart.START, BeforeOrAfter.BEFORE)
     }
 
-    def SBE = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson ->
-        return this.temporalReference(temporalReference, startProperty, measurementPeriod, measureJson, EndOrStart.END, BeforeOrAfter.BEFORE)
+    def SBE = {temporalReference, startProperty, endProperty, measurementPeriod, measureJson, forceInclusive=false  ->
+        return this.temporalReference(temporalReference, startProperty, measurementPeriod, measureJson, EndOrStart.END, BeforeOrAfter.BEFORE, forceInclusive)
     }
 
     enum EndOrStart {END,START}
     enum BeforeOrAfter {BEFORE,AFTER}
 
-    def temporalReference(temporalReference, property, measurementPeriod, measureJson, EndOrStart endOrStart, BeforeOrAfter beforeOrAfter){
+    def temporalReference(temporalReference, property, measurementPeriod, measureJson, EndOrStart endOrStart, BeforeOrAfter beforeOrAfter, forceInclusive=false){
         def reference = temporalReference.reference
 
         if(reference == "MeasurePeriod"){
@@ -224,7 +247,7 @@ class TemporalProcessor {
                 }
             } else {
                 def op = getOperator(beforeOrAfter)
-                sb.append("${property} $op= \$${temporalReference.reference}.event.${targetProperty}")
+                sb.append("${property} $op${forceInclusive ? "=" : ""} \$${temporalReference.reference}.event.${targetProperty}")
             }
 
             return new TemporalResult(

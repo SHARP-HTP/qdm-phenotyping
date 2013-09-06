@@ -16,7 +16,13 @@ import javax.xml.xpath.XPathFactory
 
 import static org.junit.Assert.assertEquals
 /**
- * 21 failures
+ *
+ *
+ * 0710
+ * BH_Adult_D is supposed to be in the NUMER, but it doesn't seem possible.
+ * Nov 01 2012 is more than 13 months after Sept 24 2011 (Risk Category Assessments)
+ *
+ *
  */
 //@Ignore
 class CypressValidationTestIT extends AbstractAllCypressMeasuresTestIT {
@@ -41,15 +47,12 @@ class CypressValidationTestIT extends AbstractAllCypressMeasuresTestIT {
     void doExecute(xmlStream) throws IOException{
         def xmlString = IOUtils.toString(xmlStream, "UTF-8")
 
-
         def xml = new XmlParser().parseText(xmlString)
 
         def builder     = DocumentBuilderFactory.newInstance().newDocumentBuilder()
         def records     = builder.parse(new ByteArrayInputStream(xmlString.bytes)).documentElement
 
         def id = XPathFactory.newInstance().newXPath().evaluate( '//value[@root="2.16.840.1.113883.3.560.1"]/@extension', records, XPathConstants.STRING )
-
-        //if(id == "0038" || id == "0385" || id == "0387" || id == "0070" || id == "0389" || id == "0710" || id == "ADE_TTR"){ return }
 
         def measureId = xml.id[0].@root
 

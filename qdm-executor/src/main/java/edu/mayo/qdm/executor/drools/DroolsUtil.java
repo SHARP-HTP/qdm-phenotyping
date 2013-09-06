@@ -169,7 +169,7 @@ public final class DroolsUtil {
         return returnMap;
     }
 
-    public Map<SpecificOccurrenceId, Event> intersect(Collection<Map<SpecificOccurrenceId, Event>> contexts){
+    public Map<SpecificOccurrenceId, Event> intersect(String preconditionId, Collection<Map<SpecificOccurrenceId, Event>> contexts){
         Map<SpecificOccurrenceId, Event> returnMap = new HashMap<SpecificOccurrenceId, Event>();
 
         Set<SpecificOccurrenceId> intersect = null;

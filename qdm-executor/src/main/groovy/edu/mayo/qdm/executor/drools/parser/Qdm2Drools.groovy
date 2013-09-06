@@ -441,7 +441,7 @@ class Qdm2Drools {
                                         }
                                 }
 
-                                sb.append("""\$context : java.util.Map() from droolsUtil.intersect([${prcn.preconditions.findAll {! it.negation }.collect {"""\$p${it.id}.context"""}.join(",")}])""")
+                                sb.append("""\$context : java.util.Map() from droolsUtil.intersect("${prcn.id}", [${prcn.preconditions.findAll {! it.negation }.collect {"""\$p${it.id}.context"""}.join(",")}])""")
 
                                 sb.append(prcn.preconditions.findAll { it.negation }.collect {
                                     """

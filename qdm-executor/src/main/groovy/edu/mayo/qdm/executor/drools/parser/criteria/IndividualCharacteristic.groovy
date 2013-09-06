@@ -63,7 +63,7 @@ class IndividualCharacteristic implements Criteria {
     }
 
     def expired = { json, measurementPeriod ->
-        "eval(true)"
+        "deceased == true"
     }
 
     @Override
