@@ -41,11 +41,18 @@ class CypressPatientDataSource {
             def oid = procedure.oid
 
             if(oid == "2.16.840.1.113883.3.560.1.11" ||
+                    oid == "2.16.840.1.113883.3.560.1.3" ||
                     oid == "2.16.840.1.113883.3.560.1.40"){
+                def codes = procedure.codes.collect { new Concept(it.value[0], it.key, null) } as Set
+
                 def study = new DiagnosticStudy(
-                        new Concept(code.value[0], code.key, null),
+                        codes,
                         toDate(procedure.start_time),
                         toDate(procedure.end_time))
+
+                if(procedure.reason){
+                    study.reason = new Concept(procedure.reason.value[0], procedure.reason.key, null)
+                }
 
                 procedure.values?.each {
                     if(it._type == "CodedResultValue"){

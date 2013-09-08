@@ -81,6 +81,13 @@ public final class DroolsUtil {
         }
     }
 
+    public boolean matches(String valueSetOid, Concept concept){
+        if(concept == null){
+            return false;
+        }
+        return this.valueSetCodeResolver.isCodeInSet(valueSetOid, concept);
+    }
+
     public <T extends CodedEntry> Collection<T>  findMatches(String valueSetOid, Iterable <T> codedEntries){
         List<T> returnList = new ArrayList<T>();
         for(T entry : codedEntries){

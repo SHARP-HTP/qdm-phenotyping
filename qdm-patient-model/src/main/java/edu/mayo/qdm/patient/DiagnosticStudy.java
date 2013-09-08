@@ -14,16 +14,29 @@ public class DiagnosticStudy extends Event {
 
     private Set<Concept> results = new HashSet<Concept>();
     private Set<Value> values = new HashSet<Value>();
+    private Concept reason;
 
     /*
      * For JSON only
      */
     private DiagnosticStudy() {
-        super(null, null, null);
+        super(null, null);
     }
 
     public DiagnosticStudy(Concept concept, Date startDate, Date endDate) {
         super(concept, startDate, endDate);
+    }
+
+    public DiagnosticStudy(Set<Concept> concepts, Date startDate, Date endDate) {
+        super(concepts, startDate, endDate);
+    }
+
+    public Concept getReason() {
+        return reason;
+    }
+
+    public void setReason(Concept reason) {
+        this.reason = reason;
     }
 
     public Set<Concept> getResults() {
