@@ -23,6 +23,8 @@
  */
 package edu.mayo.qdm.executor.drools;
 
+import com.google.common.cache.Cache;
+import com.google.common.cache.CacheBuilder;
 import edu.mayo.qdm.executor.*;
 import edu.mayo.qdm.executor.drools.parser.Qdm2Drools;
 import edu.mayo.qdm.patient.Patient;
@@ -42,9 +44,13 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 
 /**
  * The Class DroolsExecutor.
@@ -57,6 +63,10 @@ public class DroolsExecutor implements Executor {
     private final Log log = LogFactory.getLog(this.getClass());
 
     private static final int EXECUTION_BATCH_SIZE = 1000;
+    private static final int KNOWLEDGE_BASE_CACHE_SIZE = 100;
+
+    private Cache<String,KnowledgeBase> knowledgeBaseCache =
+            CacheBuilder.newBuilder().maximumSize(KNOWLEDGE_BASE_CACHE_SIZE).build();
 
     @Resource
 	private Qdm2Drools qdm2Drools;
@@ -105,36 +115,34 @@ public class DroolsExecutor implements Executor {
     }
 
     public void doExecuteBatch(Iterable <Patient> patients, KnowledgeBase knowledgeBase, ResultCallback callback) {
-		final StatefulKnowledgeSession ksession = knowledgeBase
-				.newStatefulKnowledgeSession();
+		final StatefulKnowledgeSession ksession = knowledgeBase.newStatefulKnowledgeSession();
 
-        //TODO: Think if we want an callback here, or just get the results at the end.
-        //ksession.setGlobal("resultCallback", callback);
+        try {
+            ksession.setGlobal("droolsUtil", this.droolsUtil);
 
-        ksession.setGlobal("droolsUtil", this.droolsUtil);
-
-		for(Patient patient : patients){
-			ksession.insert(patient);
-		}
-
-		ksession.fireAllRules();
-
-        Collection<FactHandle> handles = ksession.getFactHandles(new ObjectFilter() {
-            @Override
-            public boolean accept(Object object) {
-                return
-                        (object instanceof PreconditionResult)
-                        &&
-                        ((PreconditionResult) object).isPopulation();
+            for(Patient patient : patients){
+                ksession.insert(patient);
             }
-        });
 
-        for(FactHandle handle : handles){
-            PreconditionResult precondition = (PreconditionResult) ksession.getObject(handle);
-            callback.hit(precondition.getId(), precondition.getPatient());
+            ksession.fireAllRules();
+
+            Collection<FactHandle> handles = ksession.getFactHandles(new ObjectFilter() {
+                @Override
+                public boolean accept(Object object) {
+                    return
+                            (object instanceof PreconditionResult)
+                            &&
+                            ((PreconditionResult) object).isPopulation();
+                }
+            });
+
+            for(FactHandle handle : handles){
+                PreconditionResult precondition = (PreconditionResult) ksession.getObject(handle);
+                callback.hit(precondition.getId(), precondition.getPatient());
+            }
+        } finally {
+		    ksession.dispose();
         }
-
-		ksession.dispose();
 	}
 
     @Override
@@ -165,7 +173,31 @@ public class DroolsExecutor implements Executor {
         };
     }
 
-    protected synchronized KnowledgeBase createKnowledgeBase(String qdmXml, MeasurementPeriod measurementPeriod){
+    protected synchronized KnowledgeBase createKnowledgeBase(final String qdmXml, final MeasurementPeriod measurementPeriod){
+        MessageDigest md;
+        try {
+            md = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) {
+            throw new UnsupportedOperationException(e);
+        }
+        String md5key = new String(md.digest(qdmXml.trim().getBytes()));
+
+        String key = md5key + measurementPeriod;
+
+        try {
+            return this.knowledgeBaseCache.get(key, new Callable<KnowledgeBase>(){
+
+                @Override
+                public KnowledgeBase call() throws Exception {
+                    return doCreateKnowledgeBase(qdmXml, measurementPeriod);
+                }
+            });
+        } catch (ExecutionException e) {
+            throw new IllegalStateException(e);
+        }
+    }
+
+    protected synchronized KnowledgeBase doCreateKnowledgeBase(String qdmXml, MeasurementPeriod measurementPeriod){
         final KnowledgeBuilder kbuilder =
                 KnowledgeBuilderFactory.newKnowledgeBuilder();
 

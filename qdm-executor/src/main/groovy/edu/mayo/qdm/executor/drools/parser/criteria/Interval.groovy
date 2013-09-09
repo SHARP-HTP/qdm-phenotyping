@@ -1,9 +1,11 @@
 package edu.mayo.qdm.executor.drools.parser.criteria
 
 import edu.mayo.qdm.patient.Value
+import groovy.transform.EqualsAndHashCode
 
 /**
  */
+@EqualsAndHashCode
 class Interval {
     MeasurementValue lowValue
     MeasurementValue highValue
