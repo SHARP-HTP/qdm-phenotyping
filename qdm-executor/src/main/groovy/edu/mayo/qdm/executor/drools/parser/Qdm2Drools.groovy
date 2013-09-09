@@ -23,20 +23,11 @@ import org.springframework.stereotype.Component
 @Component
 class Qdm2Drools {
 
-    //def qdm2jsonServiceUrl = "http://qdm2json.herokuapp.com";
     def qdm2jsonServiceUrl = "http://localhost:4567";
     //def qdm2jsonServiceUrl = "http://qdm2json.phenotypeportal.org"
 
-    final GROUP_DATA_CRITERIA_AGENDA_GROUP = "groupDataCriteria"
-    final GROUP_DEPENDENT_DATA_CRITERIA_AGENDA_GROUP = "groupDependentDataCriteria"
-    final SPECIFIC_OCCURRENCE_AGENDA_GROUP = "specificOccurrence"
-    final SPECIFIC_OCCURRENCE_CRITERIA_AGENDA_GROUP = "specificOccurrenceCriteria"
-    final GENERAL_DATA_CRITERIA_AGENDA_GROUP = "generalDataCriteria"
-
     @Autowired
     CriteriaFactory criteriaFactory;
-
-    def specificOccurrencesProcessor = new SpecificOccurrencesProcessor()
 
     Qdm2Drools(){
         super()
@@ -46,16 +37,6 @@ class Qdm2Drools {
         super()
         this.qdm2jsonServiceUrl = qdm2jsonServiceUrl
     }
-
-    /*
-    def populationPriority = ["IPP":4,"DENOM":3,"DENEX":2,"NUMER":1]
-    def populationSorter = { a, b ->
-        def rank1 = populationPriority.get(a,0)
-        def rank2 = populationPriority.get(b,0)
-
-        rank1 <=> rank2
-    } as Comparator
-    */
 
     /**
      * Generate a JSON representation of a QDM/HQMF XML file.
@@ -78,34 +59,6 @@ class Qdm2Drools {
         resp
     }
 
-    def getPopulationCriteriaStack(preconditions){
-        def stack = []
-        preconditions?.each {
-            stack << it.id
-            getPopulationCriteriaStack(it.preconditions).each { stack << it }
-        }
-
-        stack
-    }
-
-    def getDependencies(json, criteria){
-        if(criteria == null) return []
-
-        if(isGroup(criteria)){
-            def dependencies = []
-            dependencies << criteria.key
-            criteria.value.children_criteria.each {
-                dependencies << it
-                def match = json.data_criteria.find {
-                    entry -> entry.key == it
-                }
-                getDependencies(json, match).each { dependencies << it }
-            }
-            return dependencies
-        } else {
-            return criteria.value.temporal_references.findAll { it.reference != "MeasurePeriod" }.collect { it.reference }
-        }
-    }
 
     def String qdm2drools(String qdmXml, MeasurementPeriod measurementPeriod) {
         def json = getJsonFromQdmFile(qdmXml)
@@ -114,56 +67,12 @@ class Qdm2Drools {
 
         sb.append(printRuleHeader(json))
 
-        def ruleOrderStack = []
-
-
-        /*
-        def specificOccurrences = json.source_data_criteria.collect {
-            if(it.value.specific_occurrence_const){
-                def constant = it.value.specific_occurrence_const
-                def id = it.value.specific_occurrence
-                    sb.append(printSpecificOccurrenceRule(constant, id,
-                        json.data_criteria.findAll {
-                            it.value.specific_occurrence_const == constant &&
-                            it.value.specific_occurrence == id }
-                            ))
-            }
-        }.findAll()
-        */
-
-        //sb.append(specificOccurrencesProcessor.getSpecificOccurrencesRules(json))
-
         json.population_criteria.each {
             printPopulationCriteria( it, sb )
         }
-
-        ruleOrderStack << GENERAL_DATA_CRITERIA_AGENDA_GROUP
-
-        json.data_criteria.findAll(isGroup).each {
-            getDependencies(json, it).each { ruleOrderStack << it}
-        }
-
         json.data_criteria.each {
-            switch(it){
-                //case isSpecificOccurrence : sb.append( printSpecificOccurrenceDataCriteria( it, measurementPeriod, json, priorityStack ) ); break;
-                //case isSpecificOccurrenceCriteria : sb.append( printSpecificOccurrenceCritieriaDataCriteria( it, measurementPeriod, json, priorityStack ) ); break;
-                default : sb.append( printDataCriteria( it, measurementPeriod, json, ruleOrderStack ) ); break;
-            }
+           sb.append( printDataCriteria( it, measurementPeriod, json ) )
         }
-
-        /* TODO: For specific occurrences
-        json.source_data_criteria.findAll(isSpecificOccurrenceDataCriteria).each {
-            sb.append( printSpecificOccurrenceDataCriteria( it, measurementPeriod, json, ruleOrderStack ) )
-        }
-        */
-
-        //sb.append( printRuleFunctions(json) )
-
-        /*
-        if(ruleOrderStack.size() > 0){
-            sb.append( printInitRule(ruleOrderStack) )
-        }
-        */
 
         def rule = sb.toString()
 
@@ -172,89 +81,6 @@ class Qdm2Drools {
         System.out.print(rule)
 
         rule
-    }
-
-    def isNotSpecificOccurrenceDataCriteria = {
-        ! (it.value.specific_occurrence &&
-                it.value.specific_occurrence_const &&
-                it.key == it.value.source_data_criteria)
-    }
-
-    def isSpecificOccurrenceDataCriteria = {
-        it.value.specific_occurrence &&
-                it.value.specific_occurrence_const &&
-                it.key == it.value.source_data_criteria
-    }
-
-    def isGroup = {
-        it.value.type == "derived"
-    }
-
-    def isSpecificOccurrence = {
-        it.value.specific_occurrence &&
-        it.value.specific_occurrence_const &&
-        it.key == it.value.source_data_criteria
-    }
-
-    def isSpecificOccurrenceCriteria = {
-        it.value.specific_occurrence &&
-        it.value.specific_occurrence_const &&
-        it.key != it.value.source_data_criteria
-    }
-
-    private def printInitRule(agendaGroupStack){
-        """
-        /* Initialization Rule */
-        rule "Initialize QDM Drools"
-            dialect "mvel"
-            no-loop
-            salience ${Integer.MAX_VALUE}
-
-        when
-
-        then
-            ${
-            agendaGroupStack.collect {
-            """
-            drools.setFocus( "$it" );"""
-            }.join()
-
-            }
-        end
-        """
-    }
-
-    private def printSpecificOccurrenceRule(constant, id, preconditions){
-        """
-        /* Specific Occurrence Rule */
-        rule "Specific Occurrence $constant $id Rule"
-            dialect "mvel"
-            no-loop
-
-        when
-            \$p : Patient()
-            ${
-                preconditions.collect {
-                    """
-                    \$${it.key} : PreconditionResult(id == "${it.key}", patient == \$p)"""
-                }.join( " or ")
-            }
-
-        then
-            if(! droolsUtil.allEquals([${preconditions.collect { """\$${it.key}.event""" }.join(",")}])){
-                System.out.println("Retracting $constant $id!");
-                ${
-                preconditions.collect {
-                    """
-                    retract(\$${it.key})"""
-                }.join()
-            }
-            } else {
-                System.out.println("All Equal $constant $id!");
-                insertLogical(new SpecificOccurrence("$constant", "$id", \$${preconditions.find().key}.event, \$p));
-            }
-        end
-        """
     }
 
     /**
@@ -290,10 +116,8 @@ class Qdm2Drools {
         import ${DroolsUtil.name};
         import ${MeasurementPeriod.name};
         import ${SpecificOccurrence.name};
-        import ${SpecificOccurrenceResult.name};
         import ${MedicationStatus.name};
         import ${ProcedureStatus.name};
-        import ${PreconditionCollection.name};
         import function ${DroolsUtil.name}.toDays;
         /*
             ID: ${qdm.id}
@@ -314,14 +138,7 @@ class Qdm2Drools {
     private def printPopulationCriteria(populationCriteria, sb){
         def name = populationCriteria.key
 
-        def salience
-        switch(name){
-            case "IPP": salience = "-1000"; break
-            case "DENOM": salience = "-1000"; break
-            case "DENEX": salience = "-1000"; break
-            case "NUMER": salience = "-1000"; break
-            default: salience = "-1000"; break
-        }
+        def salience = "-1000"
 
         sb.append("""
         /* Rule */
@@ -332,7 +149,6 @@ class Qdm2Drools {
 
         when
             \$p : Patient( )
-            //not ( PreconditionResult(id == "$name", patient == \$p) )
             ${switch(name){
                 case "DENOM": return """
                                         PreconditionResult(id == "IPP", patient == \$p)
@@ -402,12 +218,9 @@ class Qdm2Drools {
         rule "${prcn.id}"
             dialect "mvel"
             no-loop
-            //salience ${0 - index}
-            //agenda-group "${prcn.id}"
 
         when
             \$p : Patient( )
-            //not ( PreconditionResult(id == "${prcn.id}", patient == \$p) )
         """
                     )
                     def cnj = conjunctionToBoolean(prcn.conjunction_code)
@@ -425,20 +238,12 @@ class Qdm2Drools {
 
                             if(cnj == "and"){
 
-                                prcn.preconditions.findAll {! it.negation }.eachWithIndex {
-                                    nestedPrc, idx ->
+                                prcn.preconditions.findAll {! it.negation }.each {
+                                    nestedPrc ->
 
                                         if(nestedPrc.negation) sb.append("not(")
-                                        if(cnj == "and"){
-                                            sb.append(printPreconditionReferenceNoContextVariable(nestedPrc.id, true))
-                                        } else {
-                                            sb.append(printPreconditionReferenceNoContextVariable(nestedPrc.id))
-                                        }
+                                        sb.append(printPreconditionReferenceNoContextVariable(nestedPrc.id, true))
                                         if(nestedPrc.negation) sb.append(") ")
-
-                                        if(idx != prcn.preconditions.size() -1) {
-                                            //sb.append(" ${cnj} ")
-                                        }
                                 }
 
                                 sb.append("""\$context : java.util.Map() from droolsUtil.intersect("${prcn.id}", [${prcn.preconditions.findAll {! it.negation }.collect {"""\$p${it.id}.context"""}.join(",")}])""")
@@ -465,7 +270,7 @@ class Qdm2Drools {
                     sb.append(
         """
         then
-            System.out.println("${prcn.id}");
+            //System.out.println("${prcn.id}");
             insertLogical(new PreconditionResult("${prcn.id}", \$p, ${
                 if(true || prcn.reference || cnj == "or" || prcn.preconditions?.size() == 1){
                     """\$context"""
@@ -503,48 +308,10 @@ class Qdm2Drools {
             """
     }
 
-    private def printSpecificOccurrenceDataCriteria(dataCriteria, measurementPeriod, measureJson, priorityStack){
-        def name = dataCriteria.key
-        def criterias = criteriaFactory.getSpecificOccurrenceDataCriteria(dataCriteria, measurementPeriod, measureJson)
-
-        def agendaGroup
-        if(priorityStack.contains(name)){
-            agendaGroup = """agenda-group "$name" """
-        } else {
-            agendaGroup = """agenda-group "$GENERAL_DATA_CRITERIA_AGENDA_GROUP" """
-        }
-        def idx = 0
-
-        criterias.collect {
-            def fullName = """${name}${"'" * idx++}"""
-            """
-        /* Rule */
-        rule "Specific Occurrence ${fullName}"
-            dialect "mvel"
-            no-loop
-            //$agendaGroup
-
-        when
-            ${it.getLHS()}
-
-        then
-            System.out.println("$fullName");
-            ${it.getRHS()}
-        end
-        """
-        }.join("\n")
-    }
-
-    private def printDataCriteria(dataCriteria, measurementPeriod, measureJson, priorityStack){
+    private def printDataCriteria(dataCriteria, measurementPeriod, measureJson){
         def name = dataCriteria.key
         def criterias = criteriaFactory.getCriteria(dataCriteria, measurementPeriod, measureJson)
 
-        def agendaGroup
-        if(priorityStack.contains(name)){
-            agendaGroup = """agenda-group "$name" """
-        } else {
-            agendaGroup = """agenda-group "$GENERAL_DATA_CRITERIA_AGENDA_GROUP" """
-        }
         def idx = 0
 
         criterias.collect {
@@ -554,13 +321,12 @@ class Qdm2Drools {
         rule "$fullName"
             dialect "mvel"
             no-loop
-            //$agendaGroup
 
         when
             ${it.getLHS()}
 
         then
-            System.out.println("$fullName");
+            //System.out.println("$fullName");
             ${it.getRHS()}
         end
         """

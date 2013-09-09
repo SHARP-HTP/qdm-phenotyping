@@ -40,15 +40,6 @@ class CriteriaFactory {
         this.doGetCriteria(json, measurementPeriod, measureJson)
     }
 
-    def getSpecificOccurrenceDataCriteria(fullJson, measurementPeriod, measureJson) {
-        def json = fullJson.value
-        def qdsType = json.qds_data_type
-
-        def criteriaFn = this.criteriaFactoryMap.get(qdsType)
-
-        criteriaFn(new SpecificOccurrenceDataCriteria(json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson))
-    }
-
     private def doGetCriteria(fullJson, measurementPeriod, measureJson) {
         def json = fullJson.value
         def qdsType = json.qds_data_type

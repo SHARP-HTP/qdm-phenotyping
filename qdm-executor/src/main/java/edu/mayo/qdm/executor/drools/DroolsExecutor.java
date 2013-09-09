@@ -36,8 +36,6 @@ import org.drools.builder.KnowledgeBuilder;
 import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
 import org.drools.definition.KnowledgePackage;
-import org.drools.event.rule.DefaultWorkingMemoryEventListener;
-import org.drools.event.rule.ObjectRetractedEvent;
 import org.drools.io.ResourceFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.springframework.stereotype.Component;
@@ -45,6 +43,8 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * The Class DroolsExecutor.
@@ -55,6 +55,8 @@ import java.util.Collection;
 public class DroolsExecutor implements Executor {
 
     private final Log log = LogFactory.getLog(this.getClass());
+
+    private static final int EXECUTION_BATCH_SIZE = 1000;
 
     @Resource
 	private Qdm2Drools qdm2Drools;
@@ -86,6 +88,23 @@ public class DroolsExecutor implements Executor {
     }
 
     public void doExecute(Iterable<Patient> patients, KnowledgeBase knowledgeBase, ResultCallback callback) {
+        Set<Patient> cache = new HashSet<Patient>();
+        for(Patient p : patients){
+            if(cache.size() < EXECUTION_BATCH_SIZE){
+                cache.add(p);
+            } else {
+                this.doExecuteBatch(cache, knowledgeBase, callback);
+                cache.clear();
+                cache.add(p);
+            }
+        }
+
+        if(cache.size() > 0){
+            this.doExecuteBatch(cache, knowledgeBase, callback);
+        }
+    }
+
+    public void doExecuteBatch(Iterable <Patient> patients, KnowledgeBase knowledgeBase, ResultCallback callback) {
 		final StatefulKnowledgeSession ksession = knowledgeBase
 				.newStatefulKnowledgeSession();
 
@@ -98,17 +117,6 @@ public class DroolsExecutor implements Executor {
 			ksession.insert(patient);
 		}
 
-        ksession.addEventListener(new DefaultWorkingMemoryEventListener(){
-
-            @Override
-            public void objectRetracted(ObjectRetractedEvent event) {
-                Object handle = event.getFactHandle();
-                PreconditionResult precondition = (PreconditionResult) event.getOldObject();
-                System.out.println("Retracting: " + precondition.getId());
-                //
-            }
-
-        });
 		ksession.fireAllRules();
 
         Collection<FactHandle> handles = ksession.getFactHandles(new ObjectFilter() {
@@ -126,7 +134,7 @@ public class DroolsExecutor implements Executor {
             callback.hit(precondition.getId(), precondition.getPatient());
         }
 
-		ksession.dispose();   
+		ksession.dispose();
 	}
 
     @Override

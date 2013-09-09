@@ -43,7 +43,7 @@ class DefaultCriteria implements Criteria {
             def subsetOperator = subsets[0].type
 
             if(this.hasProperty(subsetOperator)){
-                subsetCriteria = this."$subsetOperator"(this.json, subsets[0])
+                subsetCriteria = this."$subsetOperator"(subsets[0])
             } else {
                 throw new RuntimeException("Subset Operator `$subsetOperator` not recognized.\nJSON ->  $json")
             }
@@ -61,15 +61,15 @@ class DefaultCriteria implements Criteria {
         """
     }
 
-    def RECENT = { json, subset ->
-        recentOrFirst(json, subset, "max")
+    def RECENT = { subset ->
+        recentOrFirst(subset, "max")
     }
 
-    def FIRST = { json, subset ->
-        recentOrFirst(json, subset, "min")
+    def FIRST = { subset ->
+        recentOrFirst(subset, "min")
     }
 
-    def recentOrFirst = { json, subset, minOrMax ->
+    def recentOrFirst = { subset, minOrMax ->
         """
         \$m : Number() from accumulate(
                 ${getName()}(
@@ -82,9 +82,7 @@ class DefaultCriteria implements Criteria {
         """
     }
 
-    def COUNT = {
-        fullJson, subset ->
-            def json = fullJson.value
+    def COUNT = { subset ->
 
             def low = subset.value.low
             def high = subset.value.high

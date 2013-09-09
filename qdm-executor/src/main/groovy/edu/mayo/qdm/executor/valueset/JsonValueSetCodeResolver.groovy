@@ -15,6 +15,8 @@ class JsonValueSetCodeResolver implements ValueSetCodeResolver, InitializingBean
 
     def valueSetMap = [] as HashMap
 
+    def codeMap = [] as HashMap
+
     @Override
     void afterPropertiesSet() throws Exception {
         def resolver = new PathMatchingResourcePatternResolver()
@@ -32,6 +34,10 @@ class JsonValueSetCodeResolver implements ValueSetCodeResolver, InitializingBean
             }
 
             valueSetMap.put(oid,concepts)
+
+            concepts.each {
+                codeMap.get(it.code + oid, new HashSet()).add(it)
+            }
         }
     }
 
@@ -42,6 +48,8 @@ class JsonValueSetCodeResolver implements ValueSetCodeResolver, InitializingBean
 
     @Override
     boolean isCodeInSet(String valueSetOid, Concept concept) {
-        this.valueSetMap.get(valueSetOid)?.find { it.matches(concept)} != null
+        def candidates = this.codeMap.get(concept.code + valueSetOid)
+
+        candidates?.find { it.matches(concept)} != null
     }
 }
