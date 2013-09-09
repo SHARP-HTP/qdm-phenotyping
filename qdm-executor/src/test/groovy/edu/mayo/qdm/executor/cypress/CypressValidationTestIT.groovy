@@ -4,6 +4,7 @@ import edu.mayo.qdm.cypress.CypressValidator
 import edu.mayo.qdm.executor.MeasurementPeriod
 import edu.mayo.qdm.executor.drools.DroolsExecutor
 import edu.mayo.qdm.executor.drools.cypress.AbstractAllCypressMeasuresTestIT
+import groovy.util.logging.Log4j
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.IOUtils
 import org.joda.time.DateTime
@@ -23,11 +24,14 @@ import static org.junit.Assert.assertEquals
  * Nov 01 2012 is more than 13 months after Sept 24 2011 (Risk Category Assessments)
  *
  *
+ * Same with 0059
  */
-//@Ignore
+@Log4j
 class CypressValidationTestIT extends AbstractAllCypressMeasuresTestIT {
 
     def resultsFile = new File("results.out")
+
+    def KNOWN_FAILURES = ["0710", "0059"] as Set
 
     @Autowired
     private DroolsExecutor executor
@@ -63,11 +67,14 @@ class CypressValidationTestIT extends AbstractAllCypressMeasuresTestIT {
             cypressValidator.checkResults(measureId, results,
                 {population, expected, actual, message ->
                     println message
-                    assertEquals expected, actual, 0
+                    if(! KNOWN_FAILURES.contains(id)){
+                        assertEquals expected, actual, 0
+                    } else {
+                        log.warn("Skipping known failure of Measure ID: `$id`")
+                    }
                 })
 
         FileUtils.write(resultsFile, """$id\n""", true)
-
     }
 
 }

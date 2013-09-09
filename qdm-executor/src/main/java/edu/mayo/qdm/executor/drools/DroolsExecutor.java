@@ -28,8 +28,7 @@ import com.google.common.cache.CacheBuilder;
 import edu.mayo.qdm.executor.*;
 import edu.mayo.qdm.executor.drools.parser.Qdm2Drools;
 import edu.mayo.qdm.patient.Patient;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.drools.FactHandle;
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
@@ -38,6 +37,9 @@ import org.drools.builder.KnowledgeBuilder;
 import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
 import org.drools.definition.KnowledgePackage;
+import org.drools.event.rule.DefaultWorkingMemoryEventListener;
+import org.drools.event.rule.ObjectInsertedEvent;
+import org.drools.event.rule.ObjectRetractedEvent;
 import org.drools.io.ResourceFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.springframework.stereotype.Component;
@@ -60,7 +62,7 @@ import java.util.concurrent.ExecutionException;
 @Component
 public class DroolsExecutor implements Executor {
 
-    private final Log log = LogFactory.getLog(this.getClass());
+    private final Logger log = Logger.getLogger(this.getClass());
 
     private static final int EXECUTION_BATCH_SIZE = 1000;
     private static final int KNOWLEDGE_BASE_CACHE_SIZE = 100;
@@ -118,6 +120,35 @@ public class DroolsExecutor implements Executor {
 		final StatefulKnowledgeSession ksession = knowledgeBase.newStatefulKnowledgeSession();
 
         try {
+            if(this.log.isDebugEnabled()){
+                ksession.addEventListener(new DefaultWorkingMemoryEventListener() {
+
+                    @Override
+                    public void objectInserted(ObjectInsertedEvent event) {
+                        Object obj = event.getObject();
+                        if(obj instanceof PreconditionResult){
+                            PreconditionResult precondition = (PreconditionResult) obj;
+                            log.debug("Inserting Fact - Precondition: `" + precondition.getId() + "`, Patient: " + precondition.getPatient());
+                        } else {
+                            log.debug("Inserting Fact: " + obj.toString());
+                        }
+                    }
+
+                    @Override
+                    public void objectRetracted(ObjectRetractedEvent event) {
+                        Object obj = event.getOldObject();
+                        if(obj instanceof PreconditionResult){
+                            PreconditionResult precondition = (PreconditionResult) obj;
+                            log.debug("Retracting Fact - Precondition: `" + precondition.getId() + "`, Patient: " + precondition.getPatient());
+                        } else {
+                            log.debug("Retracting Fact: " + obj.toString());
+                        }
+                    }
+
+                });
+            }
+
+
             ksession.setGlobal("droolsUtil", this.droolsUtil);
 
             for(Patient patient : patients){

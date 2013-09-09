@@ -2,7 +2,9 @@ package edu.mayo.qdm.executor.drools.parser
 
 import edu.mayo.qdm.executor.MeasurementPeriod
 import edu.mayo.qdm.executor.ResultCallback
-import edu.mayo.qdm.executor.drools.*
+import edu.mayo.qdm.executor.drools.DroolsUtil
+import edu.mayo.qdm.executor.drools.PreconditionResult
+import edu.mayo.qdm.executor.drools.SpecificOccurrence
 import edu.mayo.qdm.executor.drools.parser.criteria.CriteriaFactory
 import edu.mayo.qdm.executor.drools.parser.criteria.Interval
 import edu.mayo.qdm.executor.drools.parser.criteria.MeasurementValue
@@ -76,9 +78,7 @@ class Qdm2Drools {
 
         def rule = sb.toString()
 
-        log.isDebugEnabled() ? log.debug(rule):
-
-        System.out.print(rule)
+        log.debug(rule)
 
         rule
     }
