@@ -9,8 +9,13 @@
         </layout>
     </appender>
 
-    <root>
+    <logger name="edu.mayo.qdm">
         <level value="debug"/>
+        <appender-ref ref="stdout"/>
+    </logger>
+
+    <root>
+        <level value="warn"/>
         <appender-ref ref="stdout"/>
     </root>
 

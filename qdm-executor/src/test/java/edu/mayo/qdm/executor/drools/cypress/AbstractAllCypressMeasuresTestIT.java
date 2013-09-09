@@ -2,6 +2,7 @@ package edu.mayo.qdm.executor.drools.cypress;
 
 import edu.mayo.qdm.executor.drools.DroolsExecutor;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import java.util.List;
 
 @RunWith(Parameterized.class)
 @ContextConfiguration("classpath:/qdm-executor-context.xml")
+@Ignore
 public abstract class AbstractAllCypressMeasuresTestIT {
 
 	@Autowired

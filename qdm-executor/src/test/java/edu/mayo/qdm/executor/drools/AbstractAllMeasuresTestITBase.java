@@ -3,6 +3,7 @@ package edu.mayo.qdm.executor.drools;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +21,11 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
 
+import static junit.framework.Assert.assertNotNull;
+
 @RunWith(Parameterized.class)
 @ContextConfiguration("classpath:/qdm-executor-context.xml")
-public class AbstractAllMeasuresTestITBase {
+public abstract class AbstractAllMeasuresTestITBase {
 
 	@Autowired
 	protected DroolsExecutor executor;
@@ -38,6 +41,11 @@ public class AbstractAllMeasuresTestITBase {
 		super();
 		this.xml = xml;
 	}
+
+    @Test
+    public void testSetUp(){
+        assertNotNull(this.executor);
+    }
 
 	@Parameterized.Parameters
 	public static Collection<XmlStream[]> getXmlToTest() throws Exception {

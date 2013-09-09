@@ -22,23 +22,23 @@ public class Qdm2DroolsTestIT {
 
     @Test
     public void testCreateRules127() throws IOException {
-        this.doTestCreateRules("CMS127v1");
+        this.doTestCreateRules("0002");
     }
 
     @Test
     public void testCreateRules124() throws IOException {
-        this.doTestCreateRules("CMS124v1");
+        this.doTestCreateRules("0004");
     }
 
     @Test
     public void testCreateRules117() throws IOException {
-        this.doTestCreateRules("CMS117v1");
+        this.doTestCreateRules("0385");
     }
 
     private void doTestCreateRules(String rule) throws IOException {
         String drools = qdm2Drools.qdm2drools(
                 IOUtils.toString(
-                        new ClassPathResource("qdmxml/" + rule + ".xml").getInputStream()),
+                        new ClassPathResource("cypress/measures/ep/" + rule + "/hqmf1.xml").getInputStream()),
                 MeasurementPeriod.getCalendarYear(new Date())
         );
 
