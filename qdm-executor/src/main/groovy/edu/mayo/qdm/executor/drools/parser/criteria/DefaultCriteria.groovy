@@ -31,13 +31,78 @@ class DefaultCriteria implements Criteria {
         def negationCriteria = negation ? " negated == true " : ""
 
         def extraCriteria = this.getCriteria()
+
+        def subsetCriteria
+
+        def subsets = json.value.subset_operators
+        if(subsets){
+            if(subsets.size() != 1){
+                throw new UnsupportedOperationException("Cannot process more than one Subset Operator per Group.\nJSON ->  $json")
+            }
+
+            def subsetOperator = subsets[0].type
+
+            if(this.hasProperty(subsetOperator)){
+                subsetCriteria = this."$subsetOperator"(this.json, subsets[0])
+            } else {
+                throw new RuntimeException("Subset Operator `$subsetOperator` not recognized.\nJSON ->  $json")
+            }
+        }
+
         """
         ${references.variables.collect { """\$$it : PreconditionResult(id == "$it", patient == \$p) """ }.join("\n")}
-        \$event : edu.mayo.qdm.patient.$name(
+        \$event${subsetCriteria ? "s" : ""} : ${subsetCriteria ? "Set() from collect(" : ""}edu.mayo.qdm.patient.$name(
                         ${ [negationCriteria,references.criteria,extraCriteria].findAll().join(",") }
         ) from droolsUtil.findMatches("$valueSetOid", \$p.get${pluralName}())
+        ${subsetCriteria ? ")" : ""}
+
+        ${subsetCriteria ? subsetCriteria : ""}
         ${this.getEventCriteria()}
         """
+    }
+
+    def RECENT = { json, subset ->
+        recentOrFirst(json, subset, "max")
+    }
+
+    def FIRST = { json, subset ->
+        recentOrFirst(json, subset, "min")
+    }
+
+    def recentOrFirst = { json, subset, minOrMax ->
+        """
+        \$m : Number() from accumulate(
+                ${getName()}(
+                        startDate != null,
+                        \$startDate : startDate ) from \$events,
+                $minOrMax( \$startDate.time ) )
+
+        \$event : ${getName()}(
+                startDate == new java.util.Date(\$m) ) from \$events
+        """
+    }
+
+    def COUNT = {
+        fullJson, subset ->
+            def json = fullJson.value
+
+            def low = subset.value.low
+            def high = subset.value.high
+
+            def countCriteria = []
+            if(low){
+                countCriteria << """\$events.size >${low."inclusive?" ? "=" : ""} ${low.value}"""
+            }
+            if(high){
+                countCriteria << """\$events.size <${low."inclusive?" ? "=" : ""} ${high.value}"""
+            }
+            """
+            ${
+            countCriteria.collect { """
+                                    eval($it)"""}.join()
+            }
+            \$event : Event() from \$events
+            """
     }
 
     def getName(){ "" }

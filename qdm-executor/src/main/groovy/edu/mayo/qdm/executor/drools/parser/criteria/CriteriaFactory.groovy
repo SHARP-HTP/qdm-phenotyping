@@ -111,40 +111,11 @@ class CriteriaFactory {
         } else {
             def criteriaFn = this.criteriaFactoryMap.get(qdsType)
             if (criteriaFn != null) {
-                /*
-                if(isSpecificOccurrenceDataCriteria(fullJson)){
-                    [
-                    //criteriaFn(new DefaultCriteria(json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson)),
-                    criteriaFn(new SpecificOccurrenceDataCriteria(json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson))
-                    ]
-
-                } else if(isSpecificOccurrence(fullJson)){
-                    [
-                    criteriaFn(new SpecificOccurrenceCriteria(json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson)),
-                    criteriaFn(new SpecificOccurrenceCriteria(retract:true, json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson))
-                    ]
-                } else {*/
-                    criteriaFn(new DefaultCriteria(json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson))
-               // }
+                criteriaFn(new DefaultCriteria(json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson))
             } else {
                 throw new RuntimeException("Critieria type: `$qdsType` not recognized. JSON -> $json")
             }
         }
     }
 
-    def isSpecificOccurrence = {
-        it.value.specific_occurrence && it.value.specific_occurrence_const
-    }
-
-    def isSpecificOccurrenceDataCriteria = {
-        it.value.specific_occurrence &&
-                it.value.specific_occurrence_const &&
-                !it.value.temporal_references
-    }
-
-    def isSpecificOccurrenceCriteria = {
-        it.value.specific_occurrence &&
-                it.value.specific_occurrence_const &&
-                it.value.temporal_references
-    }
 }
