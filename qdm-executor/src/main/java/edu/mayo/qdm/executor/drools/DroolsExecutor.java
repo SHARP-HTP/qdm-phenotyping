@@ -148,7 +148,6 @@ public class DroolsExecutor implements Executor {
                 });
             }
 
-
             ksession.setGlobal("droolsUtil", this.droolsUtil);
 
             for(Patient patient : patients){
