@@ -20,7 +20,6 @@ class CypressValidator {
             (it.sub_id == null || it.sub_id == "a"))
         }
 
-        println """NQF ID: $measureId"""
         resultJson.population_ids.each {
             def expected = resultJson[it.key]
             def actual = results.get(it.key).size()

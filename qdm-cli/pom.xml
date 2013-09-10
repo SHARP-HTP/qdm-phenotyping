@@ -37,8 +37,17 @@
                             <mainClass>edu.mayo.qdm.cli.GenerateDroolsRulesLauncher</mainClass>
                             <name>qdm2drools</name>
                         </program>
+                        <program>
+                            <mainClass>edu.mayo.qdm.cli.CypressValidationReportLauncher</mainClass>
+                            <name>qdm-validate</name>
+                        </program>
                     </programs>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.gmaven</groupId>
+                <artifactId>gmaven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
@@ -49,7 +58,13 @@
             <artifactId>qdm-executor</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
-        
+
+        <dependency>
+            <groupId>edu.mayo</groupId>
+            <artifactId>qdm-cypress</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>edu.mayo</groupId>
             <artifactId>qdm-patient-model</artifactId>

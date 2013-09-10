@@ -12,6 +12,8 @@ public abstract class AbstractBaseCliLauncher {
     private boolean help = false;
 
     public void doMain(String[] args) {
+        System.setProperty("log4j.configuration", "qdm-cli-log4j.xml");
+
         CmdLineParser parser = new CmdLineParser(this);
 
         // if you have a wider console, you could increase the value;
