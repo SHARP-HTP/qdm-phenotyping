@@ -6,7 +6,11 @@
     </formats>
     <fileSets>
         <fileSet>
-            <directory>target/dist/${project.build.finalName}</directory>
+            <directory>src/main/app</directory>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>target/app/${project.build.finalName}</directory>
             <outputDirectory>/</outputDirectory>
             <fileMode>755</fileMode>
         </fileSet>
