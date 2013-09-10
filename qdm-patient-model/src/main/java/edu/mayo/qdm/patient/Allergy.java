@@ -14,7 +14,7 @@ public class Allergy extends Event {
      * For JSON only
      */
     private Allergy() {
-        super(null,null,null);
+        super(null,null);
     }
 
     public Allergy(Concept concept) {

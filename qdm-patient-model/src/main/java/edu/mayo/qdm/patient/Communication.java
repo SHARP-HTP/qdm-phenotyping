@@ -13,7 +13,7 @@ public class Communication extends Event {
      * For JSON only
      */
     private Communication() {
-        super(null,null,null);
+        super(null,null);
     }
 
     public Communication(Concept concept, Date date) {

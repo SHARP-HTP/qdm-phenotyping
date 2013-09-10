@@ -17,7 +17,8 @@ class DefaultCriteria implements Criteria {
     def references
 
     def toDrools() {
-        Assert.notNull(measurementPeriod, json.toString())
+        Assert.notNull(measurementPeriod)
+        Assert.notNull(json.toString())
 
         def name = getName()
         def pluralName = getPluralName()
@@ -143,7 +144,7 @@ class DefaultCriteria implements Criteria {
         """
     }
 
-    private class SpecificOccurrence{
+    private static class SpecificOccurrence{
         def id
         def constant
     }

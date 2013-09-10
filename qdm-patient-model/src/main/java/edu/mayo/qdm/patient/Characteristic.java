@@ -13,7 +13,7 @@ public class Characteristic extends Event {
      * For JSON only
      */
     private Characteristic() {
-        super(null,null,null);
+        super(null,null);
     }
 
     public Characteristic(Concept concept, Date date) {

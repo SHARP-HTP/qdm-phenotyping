@@ -14,7 +14,7 @@ public class Diagnosis extends Event {
      * For JSON only
      */
     private Diagnosis() {
-        super(null,null,null);
+        super(null,null);
     }
 
     public Diagnosis(Concept concept) {

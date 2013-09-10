@@ -1,7 +1,7 @@
 package edu.mayo.qdm.executor.drools.parser.criteria
 /**
  */
-class Communication {
+class Communication extends DefaultCriteria {
 
     @Override
     def getName() {

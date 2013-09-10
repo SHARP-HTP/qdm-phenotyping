@@ -1,7 +1,7 @@
 package edu.mayo.qdm.executor.drools.parser.criteria
 /**
  */
-class RiskCategoryAssessment {
+class RiskCategoryAssessment extends DefaultCriteria {
 
     @Override
     def getName() {

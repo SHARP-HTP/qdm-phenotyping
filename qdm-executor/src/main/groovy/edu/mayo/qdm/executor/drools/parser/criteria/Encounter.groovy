@@ -1,7 +1,7 @@
 package edu.mayo.qdm.executor.drools.parser.criteria
 /**
  */
-class Encounter {
+class Encounter extends DefaultCriteria {
 
     @Override
     def getName() {

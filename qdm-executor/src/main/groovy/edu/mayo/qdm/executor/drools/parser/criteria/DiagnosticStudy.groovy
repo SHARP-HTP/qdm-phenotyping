@@ -1,7 +1,7 @@
 package edu.mayo.qdm.executor.drools.parser.criteria
 /**
  */
-class DiagnosticStudy {
+class DiagnosticStudy extends DefaultCriteria {
 
     def eventCriteria = ""
 

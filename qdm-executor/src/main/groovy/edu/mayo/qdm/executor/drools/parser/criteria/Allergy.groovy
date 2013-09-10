@@ -1,7 +1,7 @@
 package edu.mayo.qdm.executor.drools.parser.criteria
 /**
  */
-class Allergy {
+class Allergy extends DefaultCriteria {
 
     @Override
     def getName() {

@@ -15,25 +15,25 @@ class CriteriaFactory {
 
     def criteriaFactoryMap =
         [
-                "allergy":  { processor -> processor.metaClass.mixin Allergy; processor },
-                "communication": { processor -> processor.metaClass.mixin Communication; processor },
-                "procedure_performed":  { processor -> processor.metaClass.mixin Procedure; processor },
-                "procedure_result":  { processor -> processor.metaClass.mixin Procedure; processor },
-                "procedure_intolerance":   { processor -> processor.metaClass.mixin Procedure; processor },
-                "risk_category_assessment": { processor -> processor.metaClass.mixin RiskCategoryAssessment; processor },
-                "encounter": { processor -> processor.metaClass.mixin Encounter; processor },
-                "diagnosis_active": { processor -> processor.metaClass.mixin Diagnosis; processor },
-                "diagnosis_inactive": { processor -> processor.metaClass.mixin Diagnosis; processor },
-                "diagnosis_resolved": { processor -> processor.metaClass.mixin Diagnosis; processor },
-                "laboratory_test": { processor -> processor.metaClass.mixin Lab; processor },
-                "physical_exam": { processor -> processor.metaClass.mixin PhysicalExamFinding; processor },
-                "diagnostic_study_result": { processor -> processor.metaClass.mixin DiagnosticStudy; processor },
-                "diagnostic_study_performed": { processor -> processor.metaClass.mixin DiagnosticStudy; processor },
-                "medication_dispensed": { processor -> processor.metaClass.mixin Medication; processor },
-                "medication_active": { processor -> processor.metaClass.mixin Medication; processor },
-                "medication_administered": { processor -> processor.metaClass.mixin Medication; processor },
-                "medication_order": { processor -> processor.metaClass.mixin Medication; processor },
-                "device_applied": { processor -> processor.metaClass.mixin Procedure; processor }
+                "allergy":  { Allergy },
+                "communication": { Communication },
+                "procedure_performed":  { Procedure },
+                "procedure_result":  { Procedure },
+                "procedure_intolerance":   { Procedure },
+                "risk_category_assessment": { RiskCategoryAssessment },
+                "encounter": { Encounter },
+                "diagnosis_active": { Diagnosis },
+                "diagnosis_inactive": { Diagnosis },
+                "diagnosis_resolved": { Diagnosis },
+                "laboratory_test": { Lab },
+                "physical_exam": { PhysicalExamFinding },
+                "diagnostic_study_result": { DiagnosticStudy },
+                "diagnostic_study_performed": { DiagnosticStudy },
+                "medication_dispensed": { Medication },
+                "medication_active": { Medication },
+                "medication_administered": { Medication },
+                "medication_order": { Medication },
+                "device_applied": { Procedure }
         ]
 
     def getCriteria(json, measurementPeriod, measureJson) {
@@ -50,8 +50,7 @@ class CriteriaFactory {
             } else if (
                     json.property == null &&
                             json.definition.equals("patient_characteristic")){
-                def criteria = new DefaultCriteria(json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson)
-                criteria.metaClass.mixin Characteristic
+                def criteria = new Characteristic(json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson)
 
                 return criteria
             } else {
@@ -102,7 +101,7 @@ class CriteriaFactory {
         } else {
             def criteriaFn = this.criteriaFactoryMap.get(qdsType)
             if (criteriaFn != null) {
-                criteriaFn(new DefaultCriteria(json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson))
+                criteriaFn().newInstance([json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson])
             } else {
                 throw new RuntimeException("Critieria type: `$qdsType` not recognized. JSON -> $json")
             }

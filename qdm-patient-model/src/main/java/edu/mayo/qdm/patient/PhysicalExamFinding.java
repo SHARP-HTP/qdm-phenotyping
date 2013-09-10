@@ -16,7 +16,7 @@ public class PhysicalExamFinding extends Event {
      * For JSON only
      */
     private PhysicalExamFinding() {
-        super(null,null,null);
+        super(null,null);
     }
 
     public PhysicalExamFinding(Concept concept, Value value) {

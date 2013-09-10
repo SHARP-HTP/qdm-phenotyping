@@ -14,7 +14,7 @@ public class RiskCategoryAssessment extends Event {
      * For JSON only
      */
     private RiskCategoryAssessment() {
-        super(null,null,null);
+        super(null,null);
     }
 
     public RiskCategoryAssessment(Concept concept, Date date) {
