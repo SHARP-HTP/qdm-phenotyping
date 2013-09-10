@@ -18,16 +18,26 @@ class CypressValidationReportLauncher extends AbstractBaseCliLauncher {
 
     @Override
     protected void run() throws Exception {
-        def cypressDataSource = new CypressPatientDataSource()
-
-        def cypressValidator = new CypressValidator()
-
-        def executor = ExecutorFactory.instance().getExecutor()
-
         System.out.println("""
 ================================
 | Validating Cypress Test Data |
 ================================""")
+
+        def cypressDataSource = new CypressPatientDataSource()
+
+        def cypressValidator = new CypressValidator()
+
+        def executor
+
+        Thread.start {
+            System.out.print("\nInitializing, please wait")
+            while( executor == null ) {
+                System.out.print(".")
+                sleep(1000)
+            }
+        }
+
+        executor = ExecutorFactory.instance().getExecutor()
 
         def resolver = new PathMatchingResourcePatternResolver()
 
@@ -66,7 +76,7 @@ Failures (${failures.size()}): ${failures.join(",")}
         }.nqf_id
 
         def title = """| NQF ID: $nqfId |"""
-        System.out.println("""\n${'='.multiply(title.size())}""")
+        System.out.println("""\n\n${'='.multiply(title.size())}""")
         System.out.println(title)
         System.out.println("""${'='.multiply(title.size())}""")
 
