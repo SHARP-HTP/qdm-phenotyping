@@ -31,11 +31,11 @@ class Qdm2Drools {
     @Autowired
     CriteriaFactory criteriaFactory;
 
-    Qdm2Drools(){
+    Qdm2Drools() {
         super()
     }
 
-    Qdm2Drools(String qdm2jsonServiceUrl){
+    Qdm2Drools(String qdm2jsonServiceUrl) {
         super()
         this.qdm2jsonServiceUrl = qdm2jsonServiceUrl
     }
@@ -70,10 +70,10 @@ class Qdm2Drools {
         sb.append(printRuleHeader(json))
 
         json.population_criteria.each {
-            printPopulationCriteria( it, sb )
+            printPopulationCriteria(it, sb)
         }
         json.data_criteria.each {
-           sb.append( printDataCriteria( it, measurementPeriod, json ) )
+            sb.append(printDataCriteria(it, measurementPeriod, json))
         }
 
         def rule = sb.toString()
@@ -86,7 +86,7 @@ class Qdm2Drools {
     /**
      * Prints header/metadata info for the Drools rule.
      */
-    private def printRuleFunctions(qdm){
+    private def printRuleFunctions(qdm) {
         """
         function Long toDays(Date date) {
             if(date == null){
@@ -101,7 +101,7 @@ class Qdm2Drools {
     /**
      * Prints header/metadata info for the Drools rule.
      */
-    private def printRuleHeader(qdm){
+    private def printRuleHeader(qdm) {
         """
         import ${Set.name};
         import ${Date.name};
@@ -135,7 +135,7 @@ class Qdm2Drools {
     /**
      * Print the start of a Population Criteria section (IPP, DENOM, etc).
      */
-    private def printPopulationCriteria(populationCriteria, sb){
+    private def printPopulationCriteria(populationCriteria, sb) {
         def name = populationCriteria.key
 
         def salience = "-1000"
@@ -149,7 +149,8 @@ class Qdm2Drools {
 
         when
             \$p : Patient( )
-            ${switch(name){
+            ${
+            switch (name) {
                 case "DENOM": return """
                                         PreconditionResult(id == "IPP", patient == \$p)
                                      """
@@ -165,20 +166,21 @@ class Qdm2Drools {
                                         not PreconditionResult(id == "NUMER", patient == \$p)
                                         """
                 default: ""
-            }}
+            }
+        }
         """)
 
         def nestedPreconditions = []
 
         def preconditions = populationCriteria.value.preconditions
 
-        if(preconditions?.size() > 0){
+        if (preconditions?.size() > 0) {
 
             preconditions.eachWithIndex {
                 prcn, idx ->
                     def cnj = conjunctionToBoolean(prcn.conjunction_code)
-                    if(prcn.negation) sb.append("not(")
-                    if(prcn.reference){
+                    if (prcn.negation) sb.append("not(")
+                    if (prcn.reference) {
                         def dataCriteriaRef = prcn.reference
 
                         sb.append(printPreconditionReferenceNoContextVariable(dataCriteriaRef))
@@ -187,10 +189,10 @@ class Qdm2Drools {
 
                         sb.append(printPreconditionReferenceNoContextVariable(prcn.id))
                     }
-                    if(idx != preconditions.size() -1) {
+                    if (idx != preconditions.size() - 1) {
                         sb.append(" ${cnj} ")
                     }
-                    if(prcn.negation) sb.append(")")
+                    if (prcn.negation) sb.append(")")
             }
         }
         sb.append("""
@@ -199,21 +201,21 @@ class Qdm2Drools {
         end
         """)
 
-        printPreconditions( nestedPreconditions, sb )
+        printPreconditions(nestedPreconditions, sb)
     }
 
-    private def printPreconditions(preconditions, sb ){
+    private def printPreconditions(preconditions, sb) {
         if (preconditions == null) return
 
         def nestedPreconditions = []
 
-        if(preconditions.size() > 0){
+        if (preconditions.size() > 0) {
 
             preconditions.eachWithIndex {
                 prcn, index ->
 
                     sb.append(
-        """
+                            """
         /* Rule */
         rule "${prcn.id}"
             dialect "mvel"
@@ -225,28 +227,28 @@ class Qdm2Drools {
                     )
                     def cnj = conjunctionToBoolean(prcn.conjunction_code)
 
-                    if(prcn.reference){
+                    if (prcn.reference) {
                         def dataCriteriaRef = prcn.reference
 
                         sb.append(printPreconditionReferenceWithContextVariable(dataCriteriaRef))
                     } else {
                         nestedPreconditions.add(prcn.preconditions)
 
-                        if(prcn.preconditions.size() == 1){
+                        if (prcn.preconditions.size() == 1) {
                             sb.append(printPreconditionReferenceWithContextVariable(prcn.preconditions[0].id))
                         } else {
 
-                            if(cnj == "and"){
+                            if (cnj == "and") {
 
-                                prcn.preconditions.findAll {! it.negation }.each {
+                                prcn.preconditions.findAll { !it.negation }.each {
                                     nestedPrc ->
 
-                                        if(nestedPrc.negation) sb.append("not(")
+                                        if (nestedPrc.negation) sb.append("not(")
                                         sb.append(printPreconditionReferenceNoContextVariable(nestedPrc.id, true))
-                                        if(nestedPrc.negation) sb.append(") ")
+                                        if (nestedPrc.negation) sb.append(") ")
                                 }
 
-                                sb.append("""\$context : java.util.Map() from droolsUtil.intersect("${prcn.id}", [${prcn.preconditions.findAll {! it.negation }.collect {"""\$p${it.id}.context"""}.join(",")}])""")
+                                sb.append("""\$context : java.util.Map() from droolsUtil.intersect("${prcn.id}", [${prcn.preconditions.findAll { !it.negation }.collect { """\$p${it.id}.context""" }.join(",")}])""")
 
                                 sb.append(prcn.preconditions.findAll { it.negation }.collect {
                                     """
@@ -254,7 +256,7 @@ class Qdm2Drools {
                                     """
                                 }.join())
 
-                                sb.append(prcn.preconditions.findAll {! it.negation }.collect {
+                                sb.append(prcn.preconditions.findAll { !it.negation }.collect {
                                     """
                                     eval(\$p${it.id}.compatible(\$context))
                                     """
@@ -262,23 +264,26 @@ class Qdm2Drools {
 
                             } else {
                                 sb.append("""\$preconditions : PreconditionResult(
-                                    ${prcn.preconditions.collect {"""id == "${it.id}" """}.join(" || ")}, \$context : context, patient == \$p)""")
+                                    ${prcn.preconditions.collect { """id == "${it.id}" """ }.join(" || ")}, \$context : context, patient == \$p)""")
                             }
                         }
                     }
 
                     sb.append(
-        """
+                            """
         then
             //System.out.println("${prcn.id}");
             insertLogical(new PreconditionResult("${prcn.id}", \$p, ${
-                if(true || prcn.reference || cnj == "or" || prcn.preconditions?.size() == 1){
-                    """\$context"""
-                } else {
-                    """droolsUtil.combine([${prcn.preconditions.collect {
-                        (it.negation) ? null : """\$p${it.id}.context"""}.findAll().join(",")}])"""
-                }
-            }))
+                                if (true || prcn.reference || cnj == "or" || prcn.preconditions?.size() == 1) {
+                                    """\$context"""
+                                } else {
+                                    """droolsUtil.combine([${
+                                        prcn.preconditions.collect {
+                                            (it.negation) ? null : """\$p${it.id}.context"""
+                                        }.findAll().join(",")
+                                    }])"""
+                                }
+                            }))
         end
 
         """
@@ -287,36 +292,36 @@ class Qdm2Drools {
             }
         }
 
-        nestedPreconditions.each { nestedPrc -> printPreconditions(nestedPrc, sb)}
+        nestedPreconditions.each { nestedPrc -> printPreconditions(nestedPrc, sb) }
     }
 
-    private def printPreconditionReferenceNoContextVariable(preconditionReference, withAlias=false){
+    private def printPreconditionReferenceNoContextVariable(preconditionReference, withAlias = false) {
         """
         ${withAlias ? """\$p$preconditionReference: """ : "" }PreconditionResult( id == "$preconditionReference", patient == \$p )
         """
     }
 
-    private def printPreconditionReferenceWithContextVariable(preconditionReference, withAlias=false){
+    private def printPreconditionReferenceWithContextVariable(preconditionReference, withAlias = false) {
         """
         ${withAlias ? """\$p$preconditionReference: """ : "" }PreconditionResult( id == "$preconditionReference", patient == \$p, \$context : context )
         """
     }
 
-    private def printPreconditionReference(preconditionReference, withAlias=false, contextVariable="\$context"){
-            """
+    private def printPreconditionReference(preconditionReference, withAlias = false, contextVariable = "\$context") {
+        """
             ${withAlias ? """\$p$preconditionReference : """ : "" }PreconditionResult( id == "$preconditionReference", patient == \$p, compatible($contextVariable) )
             """
     }
 
-    private def printDataCriteria(dataCriteria, measurementPeriod, measureJson){
+    private def printDataCriteria(dataCriteria, measurementPeriod, measureJson) {
         def name = dataCriteria.key
         def criterias = criteriaFactory.getCriteria(dataCriteria, measurementPeriod, measureJson)
 
         def idx = 0
 
         criterias.collect {
-        def fullName = """${name}${"'" * idx++}"""
-        """
+            def fullName = """${name}${"'" * idx++}"""
+            """
         /* Rule */
         rule "$fullName"
             dialect "mvel"
@@ -339,9 +344,9 @@ class Qdm2Drools {
      * @param 'allTrue' or 'atLeastOneTrue'
      * @return 'and' or 'or'
      */
-    private def conjunctionToBoolean(conjunction){
+    private def conjunctionToBoolean(conjunction) {
         if (conjunction == null) return "and"
-        switch (conjunction){
+        switch (conjunction) {
             case "allTrue": return "and"
             case "atLeastOneTrue": return "or"
         }
