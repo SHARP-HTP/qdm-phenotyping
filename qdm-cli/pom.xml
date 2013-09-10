@@ -32,6 +32,7 @@
                     <includeConfigurationDirectoryInClasspath>true</includeConfigurationDirectoryInClasspath>
                     <repositoryLayout>flat</repositoryLayout>
                     <repositoryName>lib</repositoryName>
+                    <assembleDirectory>${project.build.directory}/dist/${project.build.finalName}</assembleDirectory>
                     <programs>
                         <program>
                             <mainClass>edu.mayo.qdm.cli.GenerateDroolsRulesLauncher</mainClass>
@@ -43,6 +44,24 @@
                         </program>
                     </programs>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptor>src/assembly/dist-zip.xml</descriptor>
+                    <finalName>${project.build.finalName}</finalName>
+                    <outputDirectory>${project.build.directory}/dist</outputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
             <plugin>
