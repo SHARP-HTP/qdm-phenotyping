@@ -4,11 +4,9 @@ import edu.mayo.qdm.patient.Concept
 import groovy.json.JsonSlurper
 import org.springframework.beans.factory.InitializingBean
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver
-import org.springframework.stereotype.Component
 
 /**
  */
-@Component
 class JsonValueSetCodeResolver implements ValueSetCodeResolver, InitializingBean {
 
     def slurper = new JsonSlurper()
