@@ -25,8 +25,8 @@ import org.springframework.stereotype.Component
 @Component
 class Qdm2Drools {
 
-    def qdm2jsonServiceUrl = "http://localhost:4567";
-    //def qdm2jsonServiceUrl = "http://qdm2json.phenotypeportal.org"
+    @org.springframework.beans.factory.annotation.Value('${drools.qdm2jsonService}')
+    String qdm2jsonServiceUrl = "http://qdm2json.phenotypeportal.org"
 
     @Autowired
     CriteriaFactory criteriaFactory;

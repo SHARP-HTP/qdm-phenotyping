@@ -29,6 +29,17 @@
         <module>qdm-webapp</module>
     </modules>
 
+    <distributionManagement>
+        <repository>
+            <id>informatics-releases</id>
+            <url>http://informatics.mayo.edu/maven/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>informatics-snapshots</id>
+            <url>http://informatics.mayo.edu/maven/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <build>
         <pluginManagement>
             <plugins>
@@ -116,7 +127,7 @@
     <repositories>
 
         <repository>
-            <id>edu.informatics.maven.snapshot</id>
+            <id>edu.informatics.maven.snapshots</id>
             <name>Informatics Maven Snapshot Repository</name>
             <url>http://informatics.mayo.edu/maven/content/repositories/snapshots</url>
             <releases>
