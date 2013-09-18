@@ -1,5 +1,4 @@
 package edu.mayo.qdm.executor.drools.parser
-
 import edu.mayo.qdm.executor.MeasurementPeriod
 import edu.mayo.qdm.executor.ResultCallback
 import edu.mayo.qdm.executor.drools.DroolsUtil
@@ -12,12 +11,10 @@ import edu.mayo.qdm.patient.*
 import groovy.util.logging.Log4j
 import groovyx.net.http.HTTPBuilder
 import groovyx.net.http.Method
-import org.apache.commons.io.IOUtils
 import org.apache.http.entity.mime.MultipartEntity
-import org.apache.http.entity.mime.content.InputStreamBody
+import org.apache.http.entity.mime.content.ByteArrayBody
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
-
 /*
  * The main JSON -> Drools converter.
  */
@@ -47,13 +44,14 @@ class Qdm2Drools {
      * @return the JSON representation
      */
     protected def getJsonFromQdmFile(qdmXml) {
-        def qdmXmlFile = new InputStreamBody(IOUtils.toInputStream(qdmXml), "qdm.xml")
 
         def http = new HTTPBuilder(this.qdm2jsonServiceUrl + "/qdm2json")
 
         def resp = http.request(Method.POST) { req ->
+            requestContentType = 'multipart/form-data'
+
             def mpEntity = new MultipartEntity()
-            mpEntity.addPart("file", qdmXmlFile)
+            mpEntity.addPart("file", new ByteArrayBody(qdmXml.getBytes("UTF-8"), "qdm.xml"))
 
             req.entity = mpEntity
         }
