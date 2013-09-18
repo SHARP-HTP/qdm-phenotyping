@@ -48,6 +48,7 @@
                     <version>2.11</version>
                     <configuration>
                         <enableAssertions>false</enableAssertions>
+                        <argLine>-Xmx500m</argLine>
                     </configuration>
                     <executions>
                         <execution>
@@ -57,8 +58,6 @@
                                 <goal>test</goal>
                             </goals>
                             <configuration>
-                                <argLine>-Xmx1028m</argLine>
-                                <argLine>-XX:MaxPermSize=256m</argLine>
                                 <excludes>
                                     <exclude>**/*IT.*</exclude>
                                 </excludes>
@@ -71,8 +70,6 @@
                                 <goal>test</goal>
                             </goals>
                             <configuration>
-                                <argLine>-Xmx1028m</argLine>
-                                <argLine>-XX:MaxPermSize=256m</argLine>
                                 <includes>
                                     <include>**/*IT.*</include>
                                 </includes>

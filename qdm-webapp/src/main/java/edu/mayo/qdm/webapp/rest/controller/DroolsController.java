@@ -89,7 +89,7 @@ public class DroolsController implements InitializingBean {
 
         Map<String,String> params = new HashMap<String,String>();
         params.put("format", "hqmf");
-        params.put("MeasureId", measureId);
+        params.put("measureId", measureId);
 
         String qdmXml = (String) this.restClient.GET(USHIK_REST_URL, "application/xml", ContentType.TEXT, false, params);
 
