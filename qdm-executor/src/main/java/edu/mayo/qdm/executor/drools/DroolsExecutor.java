@@ -226,7 +226,8 @@ public class DroolsExecutor implements Executor {
                     this.getDroolsRules(qdmXml)),
                     ResourceType.DRL);
         } catch (IOException e) {
-            throw new IllegalStateException("Problem creating Drools Rule.", e);
+            log.error(e);
+            throw new IllegalStateException("Problem creating Drools Rule. Message: " +e.getMessage(), e);
         }
 
         // Check the builder for errors
