@@ -60,7 +60,7 @@ class Qdm2Drools {
     }
 
 
-    def String qdm2drools(String qdmXml, MeasurementPeriod measurementPeriod) {
+    def String qdm2drools(String qdmXml) {
         def json = getJsonFromQdmFile(qdmXml)
 
         def sb = new StringBuilder()
@@ -71,7 +71,7 @@ class Qdm2Drools {
             printPopulationCriteria(it, sb)
         }
         json.data_criteria.each {
-            sb.append(printDataCriteria(it, measurementPeriod, json))
+            sb.append(printDataCriteria(it, json))
         }
 
         def rule = sb.toString()
@@ -79,21 +79,6 @@ class Qdm2Drools {
         log.debug(rule)
 
         rule
-    }
-
-    /**
-     * Prints header/metadata info for the Drools rule.
-     */
-    private def printRuleFunctions(qdm) {
-        """
-        function Long toDays(Date date) {
-            if(date == null){
-                return null;
-            } else {
-                return new Long(java.util.concurrent.TimeUnit.MILLISECONDS.toDays(date.getTime()));
-            }
-        }
-        """
     }
 
     /**
@@ -117,6 +102,7 @@ class Qdm2Drools {
         import ${MedicationStatus.name};
         import ${ProcedureStatus.name};
         import function ${DroolsUtil.name}.toDays;
+        import function ${Long.name}.parseLong;
         /*
             ID: ${qdm.id}
             Title: ${qdm.title}
@@ -310,9 +296,9 @@ class Qdm2Drools {
             """
     }
 
-    private def printDataCriteria(dataCriteria, measurementPeriod, measureJson) {
+    private def printDataCriteria(dataCriteria, measureJson) {
         def name = dataCriteria.key
-        def criterias = criteriaFactory.getCriteria(dataCriteria, measurementPeriod, measureJson)
+        def criterias = criteriaFactory.getCriteria(dataCriteria, measureJson)
 
         def idx = 0
 

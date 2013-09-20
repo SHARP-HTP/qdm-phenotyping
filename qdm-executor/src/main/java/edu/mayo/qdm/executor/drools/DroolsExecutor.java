@@ -96,27 +96,27 @@ public class DroolsExecutor implements Executor {
          */
     @Override
 	public void execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod, ResultCallback callback) {
-        this.doExecute(patients, this.createKnowledgeBase(qdmXml, measurementPeriod), callback);
+        this.doExecute(patients, this.createKnowledgeBase(qdmXml), measurementPeriod, callback);
     }
 
-    public void doExecute(Iterable<Patient> patients, KnowledgeBase knowledgeBase, ResultCallback callback) {
+    public void doExecute(Iterable<Patient> patients, KnowledgeBase knowledgeBase, MeasurementPeriod measurementPeriod, ResultCallback callback) {
         Set<Patient> cache = new HashSet<Patient>();
         for(Patient p : patients){
             if(cache.size() < EXECUTION_BATCH_SIZE){
                 cache.add(p);
             } else {
-                this.doExecuteBatch(cache, knowledgeBase, callback);
+                this.doExecuteBatch(cache, knowledgeBase, measurementPeriod, callback);
                 cache.clear();
                 cache.add(p);
             }
         }
 
         if(cache.size() > 0){
-            this.doExecuteBatch(cache, knowledgeBase, callback);
+            this.doExecuteBatch(cache, knowledgeBase, measurementPeriod, callback);
         }
     }
 
-    public void doExecuteBatch(Iterable <Patient> patients, KnowledgeBase knowledgeBase, ResultCallback callback) {
+    public void doExecuteBatch(Iterable <Patient> patients, KnowledgeBase knowledgeBase, MeasurementPeriod measurementPeriod, ResultCallback callback) {
 		final StatefulKnowledgeSession ksession = knowledgeBase.newStatefulKnowledgeSession();
 
         try {
@@ -149,6 +149,7 @@ public class DroolsExecutor implements Executor {
             }
 
             ksession.setGlobal("droolsUtil", this.droolsUtil);
+            ksession.setGlobal("measurementPeriod", measurementPeriod);
 
             for(Patient patient : patients){
                 ksession.insert(patient);
@@ -176,14 +177,14 @@ public class DroolsExecutor implements Executor {
 	}
 
     @Override
-    public QdmProcessor getQdmProcessor(String qdmXml, MeasurementPeriod measurementPeriod) {
-        final KnowledgeBase knowledgeBase = this.createKnowledgeBase(qdmXml, measurementPeriod);
+    public QdmProcessor getQdmProcessor(String qdmXml, final MeasurementPeriod measurementPeriod) {
+        final KnowledgeBase knowledgeBase = this.createKnowledgeBase(qdmXml);
 
         return new QdmProcessor() {
 
             @Override
             public void execute(Iterable<Patient> patients, ResultCallback callback) {
-                doExecute(patients, knowledgeBase, callback);
+                doExecute(patients, knowledgeBase, measurementPeriod, callback);
             }
 
             @Override
@@ -203,7 +204,7 @@ public class DroolsExecutor implements Executor {
         };
     }
 
-    protected synchronized KnowledgeBase createKnowledgeBase(final String qdmXml, final MeasurementPeriod measurementPeriod){
+    protected synchronized KnowledgeBase createKnowledgeBase(final String qdmXml){
         MessageDigest md;
         try {
             md = MessageDigest.getInstance("MD5");
@@ -212,14 +213,12 @@ public class DroolsExecutor implements Executor {
         }
         String md5key = new String(md.digest(qdmXml.trim().getBytes()));
 
-        String key = md5key + measurementPeriod;
-
         try {
-            return this.knowledgeBaseCache.get(key, new Callable<KnowledgeBase>(){
+            return this.knowledgeBaseCache.get(md5key, new Callable<KnowledgeBase>(){
 
                 @Override
                 public KnowledgeBase call() throws Exception {
-                    return doCreateKnowledgeBase(qdmXml, measurementPeriod);
+                    return doCreateKnowledgeBase(qdmXml);
                 }
             });
         } catch (ExecutionException e) {
@@ -227,14 +226,14 @@ public class DroolsExecutor implements Executor {
         }
     }
 
-    protected synchronized KnowledgeBase doCreateKnowledgeBase(String qdmXml, MeasurementPeriod measurementPeriod){
+    protected synchronized KnowledgeBase doCreateKnowledgeBase(String qdmXml){
         final KnowledgeBuilder kbuilder =
                 KnowledgeBuilderFactory.newKnowledgeBuilder();
 
         // this will parse and compile in one step
         try {
             kbuilder.add(ResourceFactory.newByteArrayResource(
-                    this.getDroolsRules(qdmXml, measurementPeriod)),
+                    this.getDroolsRules(qdmXml)),
                     ResourceType.DRL);
         } catch (IOException e) {
             throw new IllegalStateException("Problem creating Drools Rule.", e);
@@ -242,8 +241,7 @@ public class DroolsExecutor implements Executor {
 
         // Check the builder for errors
         if (kbuilder.hasErrors()) {
-            System.out.println(kbuilder.getErrors().toString());
-            throw new RuntimeException("Unable to compile DRL.");
+            throw new RuntimeException("Unable to compile DRL: " + kbuilder.getErrors().toString());
         }
 
         // get the compiled packages (which are serializable)
@@ -264,8 +262,8 @@ public class DroolsExecutor implements Executor {
 	 * @return the drools rules
 	 * @throws IOException Signals that an I/O exception has occurred.
 	 */
-	protected byte[] getDroolsRules(String qdmXml, MeasurementPeriod measurementPeriod) throws IOException {
-        return this.qdm2Drools.qdm2drools(qdmXml, measurementPeriod).getBytes();
+	protected byte[] getDroolsRules(String qdmXml) throws IOException {
+        return this.qdm2Drools.qdm2drools(qdmXml).getBytes();
 	}
 
 

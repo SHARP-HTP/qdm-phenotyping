@@ -12,12 +12,10 @@ class DefaultCriteria implements Criteria {
 
     def measureJson
     def json
-    def measurementPeriod
 
     def references
 
     def toDrools() {
-        Assert.notNull(measurementPeriod)
         Assert.notNull(json.toString())
 
         def name = getName()
@@ -25,7 +23,7 @@ class DefaultCriteria implements Criteria {
 
         def valueSetOid = json.value.code_list_id
 
-        this.references = temporalProcessor.processTemporalReferences(json.value.temporal_references, measurementPeriod, measureJson)
+        this.references = temporalProcessor.processTemporalReferences(json.value.temporal_references, measureJson)
 
         def negation = BooleanUtils.toBoolean(json.value.negation)
 

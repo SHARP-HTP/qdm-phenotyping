@@ -57,7 +57,7 @@
   </div>
 
     <div class="container">
-        <h2>Cypress Validation Report - <span style="color: green">PASS: <span id="pass">0</span></span> <span style="color: red">FAIL: <span id="fail">0</span></span></h2>
+        <h2>Cypress Validation Report - <span style="color: green">PASS: <span id="pass">0</span></span> / <span style="color: red">FAIL: <span id="fail">0</span></span></h2>
 
         <table id="executionsTable" class="table table-striped">
     	<thead>

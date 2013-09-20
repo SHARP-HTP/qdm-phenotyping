@@ -10,7 +10,7 @@ class UserDirectoryConfigManagerTest {
 	void TestGetConfigDirectory() {
 		def manager = new UserDirectoryConfigManager();
 		
-		assertEquals System.getProperty("user.home") + File.separator + '.webapp',
+		assertEquals System.getProperty("user.home") + File.separator + '.qdm-phenotyping',
 			manager.getConfigDirectory();
 	}
 

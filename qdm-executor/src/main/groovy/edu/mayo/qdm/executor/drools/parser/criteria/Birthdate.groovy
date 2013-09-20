@@ -15,11 +15,10 @@ class Birthdate implements Criteria {
 
     def json
 
-    Birthdate(json, measurementPeriod){
+    Birthdate(json){
          this.json = json
          this.temporal = temporalProcessor.processTemporalReferences(
                 json.value.temporal_references,
-                measurementPeriod,
                 "birthdate",
                 "birthdate"
          )

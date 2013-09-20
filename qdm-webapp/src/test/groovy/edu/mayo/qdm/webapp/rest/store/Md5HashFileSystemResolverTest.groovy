@@ -138,7 +138,7 @@ class Md5HashFileSystemResolverTest {
 		assertEquals finish.time.toString(), props.getProperty("finish")
 		assertEquals '11-JAN-1900', props.getProperty("startDateParam")
 		assertEquals '5-APR-2063', props.getProperty("endDateParam")
-		assertEquals 'test.zip', props.getProperty("zipFileNameParam")
+		assertEquals 'test.zip', props.getProperty("xmlFileNameParam")
 	}
 	
 	@Test
@@ -176,7 +176,7 @@ class Md5HashFileSystemResolverTest {
 		  assertEquals info.finish, infoFound.finish
 		  assertEquals info.parameters.startDate, infoFound.parameters.startDate
 		  assertEquals info.parameters.endDate, infoFound.parameters.endDate
-		  assertEquals info.parameters.zipFileName, infoFound.parameters.zipFileName
+		  assertEquals info.parameters.xmlFileName, infoFound.parameters.xmlFileName
 		
 		} finally {
 			FileUtils.deleteQuietly(file)

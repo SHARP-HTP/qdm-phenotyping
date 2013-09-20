@@ -1,6 +1,5 @@
 package edu.mayo.qdm.webapp.rest.controller;
 
-import edu.mayo.qdm.executor.MeasurementPeriod;
 import edu.mayo.qdm.executor.drools.DroolsDateFormat;
 import edu.mayo.qdm.executor.drools.parser.Qdm2Drools;
 import edu.mayo.qdm.webapp.client.NlmEmeasureParser;
@@ -24,7 +23,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -68,24 +66,15 @@ public class DroolsController implements InitializingBean {
     @RequestMapping(value = "/qdm2drools", method = RequestMethod.GET, params = "measureid")
     public ResponseEntity<?> getQdm2DroolsHome(
             HttpServletResponse response,
-            @RequestParam String measureid,
-            @RequestParam(required=false) String effectiveDate) throws Exception {
-        return this.toDrools(response, measureid, effectiveDate);
+            @RequestParam String measureid) throws Exception {
+        return this.toDrools(response, measureid);
     }
 
     @RequestMapping(value = "/qdm2drools/{measureId}", method = RequestMethod.GET)
     public ResponseEntity<?> toDrools(
         HttpServletResponse response,
-        @PathVariable String measureId,
-        @RequestParam(required=false) String effectiveDate) throws Exception {
+        @PathVariable String measureId) throws Exception {
         response.setContentType("text/plain");
-
-        Date date;
-        if(effectiveDate == null){
-            date = new Date();
-        } else {
-            date = this.droolsDateFormat.parse(effectiveDate);
-        }
 
         Map<String,String> params = new HashMap<String,String>();
         params.put("format", "hqmf");
@@ -93,23 +82,15 @@ public class DroolsController implements InitializingBean {
 
         String qdmXml = (String) this.restClient.GET(USHIK_REST_URL, "application/xml", ContentType.TEXT, false, params);
 
-        return this.doGetDrools(qdmXml, date);
+        return this.doGetDrools(qdmXml);
     }
 
     @RequestMapping(value = "/qdm/drools", method= RequestMethod.POST)
     public ResponseEntity<?> toDroolsFromFile(
-            HttpServletRequest request,
-            @RequestParam String effectiveDate) throws Exception {
+            HttpServletRequest request) throws Exception {
 
         if(! (request instanceof MultipartHttpServletRequest)){
             throw new IllegalStateException("ServletRequest expected to be of type MultipartHttpServletRequest");
-        }
-
-        Date date;
-        if(effectiveDate == null){
-            date = new Date();
-        } else {
-            date = this.droolsDateFormat.parse(effectiveDate);
         }
 
         MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
@@ -117,11 +98,11 @@ public class DroolsController implements InitializingBean {
 
         String qdmXml = IOUtils.toString(multipartFile.getInputStream());
 
-        return this.doGetDrools(qdmXml, date);
+        return this.doGetDrools(qdmXml);
     }
 
-    protected ResponseEntity<String> doGetDrools(String qdmXml, Date date){
-        String drools = this.qdm2Drools.qdm2drools(qdmXml, MeasurementPeriod.getCalendarYear(date));
+    protected ResponseEntity<String> doGetDrools(String qdmXml){
+        String drools = this.qdm2Drools.qdm2drools(qdmXml);
 
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.setContentType(MediaType.TEXT_PLAIN);

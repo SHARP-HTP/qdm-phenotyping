@@ -140,7 +140,7 @@ class XmlProcessorTest {
 							<parameters>
 								<startDate>10-Jun-2000</startDate>
 								<endDate>10-Jun-2000</endDate>
-								<zipFileName>test.zip</zipFileName>
+								<xmlFileName>test.zip</xmlFileName>
 							</parameters>
 						  </execution>
 						</executions>''', xml)

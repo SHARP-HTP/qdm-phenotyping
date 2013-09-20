@@ -11,7 +11,7 @@ class IndividualCharacteristic implements Criteria {
 
     def valueSetCodeResolver
 
-    IndividualCharacteristic(fullJson, measurementPeriod){
+    IndividualCharacteristic(fullJson){
         this.name = fullJson.key
 
         def json = fullJson.value
@@ -23,7 +23,7 @@ class IndividualCharacteristic implements Criteria {
             throw new RuntimeException("Cannot handle generic Individual Characteristic here. The CriteriaFactory should process those. JSON ->  $json")
         } else {
             if(this.hasProperty(property)){
-                droolsString = this."$property"(json, measurementPeriod)
+                droolsString = this."$property"(json)
             } else {
                 throw new RuntimeException("Individual Characteristic `$property` not recognized.\n JSON ->  $json")
             }
@@ -32,7 +32,7 @@ class IndividualCharacteristic implements Criteria {
         this.resultString = droolsString
     }
 
-    def gender = { json, measurementPeriod ->
+    def gender = { json ->
         def genderValueSet = json.code_list_id
 
         switch (genderValueSet){
@@ -43,26 +43,26 @@ class IndividualCharacteristic implements Criteria {
         }
     }
 
-    def race = { json, measurementPeriod ->
+    def race = { json ->
         "eval(true)"
     }
 
-    def ethnicity = { json, measurementPeriod ->
+    def ethnicity = { json ->
         "eval(true)"
     }
 
-    def payer = { json, measurementPeriod ->
+    def payer = { json ->
         "eval(true)"
     }
 
-    def clinicalTrialParticipant = { json, measurementPeriod ->
+    def clinicalTrialParticipant = { json ->
         """
         /* TODO: Cypress data doesn't have this, so I'm not sure how to represent it */
         eval(false)
         """
     }
 
-    def expired = { json, measurementPeriod ->
+    def expired = { json ->
         "deceased == true"
     }
 

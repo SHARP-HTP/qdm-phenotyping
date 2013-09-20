@@ -36,25 +36,25 @@ class CriteriaFactory {
                 "device_applied": { Procedure }
         ]
 
-    def getCriteria(json, measurementPeriod, measureJson) {
-        this.doGetCriteria(json, measurementPeriod, measureJson)
+    def getCriteria(json, measureJson) {
+        this.doGetCriteria(json, measureJson)
     }
 
-    private def doGetCriteria(fullJson, measurementPeriod, measureJson) {
+    private def doGetCriteria(fullJson, measureJson) {
         def json = fullJson.value
         def qdsType = json.qds_data_type
 
         if(qdsType == "individual_characteristic") {
             if(json.property == "birthtime" || json.code_list_id == "2.16.840.1.113883.3.560.100.4"){
-                return new Birthdate(fullJson, measurementPeriod)
+                return new Birthdate(fullJson)
             } else if (
                     json.property == null &&
                             json.definition.equals("patient_characteristic")){
-                def criteria = new Characteristic(json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson)
+                def criteria = new Characteristic(json:fullJson, measureJson: measureJson)
 
                 return criteria
             } else {
-                return new IndividualCharacteristic(fullJson, measurementPeriod)
+                return new IndividualCharacteristic(fullJson)
             }
         }
 
@@ -101,7 +101,7 @@ class CriteriaFactory {
         } else {
             def criteriaFn = this.criteriaFactoryMap.get(qdsType)
             if (criteriaFn != null) {
-                criteriaFn().newInstance([json:fullJson, measurementPeriod: measurementPeriod, measureJson: measureJson])
+                criteriaFn().newInstance([json:fullJson, measureJson: measureJson])
             } else {
                 throw new RuntimeException("Critieria type: `$qdsType` not recognized. JSON -> $json")
             }

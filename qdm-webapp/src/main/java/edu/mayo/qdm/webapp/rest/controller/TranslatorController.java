@@ -39,7 +39,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -49,9 +48,12 @@ import org.springframework.web.util.UriTemplate;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
+import java.io.File;
 import java.net.URI;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -240,71 +242,7 @@ public class TranslatorController {
         }
 
 	}
-	
-	/**
-	 * Copy.
-	 *
-	 * @param from the from
-	 * @param to the to
-	 * @throws Exception the exception
-	 */
-	private void copy(File from, File to) {
-		java.io.FileInputStream fis = null;
-		FileOutputStream fos = null;
 
-		try {
-			
-			fis = new java.io.FileInputStream(from);
-			fos = new FileOutputStream(this.createFile(to));
-			
-			byte[] buffer = new byte[1024];
-			int noOfBytes = 0;
-
-			// read bytes from source file and write to destination file
-			while ((noOfBytes = fis.read(buffer)) != -1) {
-				fos.write(buffer, 0, noOfBytes);
-			}
-
-		}
-		catch (FileNotFoundException e) {
-			throw new RuntimeException(e);
-		}
-		catch (IOException ioe) {
-			throw new RuntimeException(ioe);
-		}
-		finally {
-			// close the streams using close method
-			try {
-				if (fis != null) {
-					fis.close();
-				}
-				if (fos != null) {
-					fos.close();
-				}
-			}
-			catch (IOException ioe) {
-				throw new RuntimeException(ioe);
-			}
-		}
-	}
-	
-	/**
-	 * Creates the file.
-	 *
-	 * @param file the file
-	 * @return the file
-	 */
-	private File createFile(File file){
-		file.getParentFile().mkdirs();
-		try {
-			file.createNewFile();
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
-		
-		return file;
-	}
-	
 	/**
 	 * Gets the xml.
 	 *
@@ -313,18 +251,19 @@ public class TranslatorController {
 	 * @throws Exception the exception
 	 */
 	@RequestMapping(value = "executor/execution/{executionId}/xml", method=RequestMethod.GET)
-	public ResponseEntity<byte[]> getXml(@PathVariable String executionId) throws Exception {
+	public ResponseEntity<String> getXml(@PathVariable String executionId) throws Exception {
 		File xml = fileSystemResolver.getFiles(executionId).getXml();
 
-		byte[] bytes = FileUtils.readFileToByteArray(xml);
+		String xmlString = FileUtils.readFileToString(xml, "UTF-8");
 		
 		final HttpHeaders headers = new HttpHeaders();
 	    headers.setContentType(MediaType.APPLICATION_XML);
 
-	    return new ResponseEntity<byte[]>(bytes, headers, HttpStatus.OK);
+	    return new ResponseEntity<String>(xmlString, headers, HttpStatus.OK);
 		
 	}
 
+    /*
 	@RequestMapping(value = "executor/execution/{executionId}/xml", method=RequestMethod.GET)
 	public void downloadXml(
 			HttpServletResponse response, 
@@ -342,6 +281,7 @@ public class TranslatorController {
 
 		FileCopyUtils.copy(new FileInputStream(file), response.getOutputStream());
 	}
+	*/
 	
 	/**
 	 * Checks if is html request.
@@ -435,7 +375,5 @@ public class TranslatorController {
 	public void setXmlProcessor(XmlProcessor xmlProcessor) {
 		this.xmlProcessor = xmlProcessor;
 	}
-
-	
 	
 }

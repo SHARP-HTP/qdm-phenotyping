@@ -1,5 +1,5 @@
 package edu.mayo.qdm.executor.drools.parser
-import edu.mayo.qdm.executor.MeasurementPeriod
+
 import org.junit.Test
 
 import static org.junit.Assert.assertTrue
@@ -27,11 +27,11 @@ class TemporalProcessorTest {
                     ]
                 ]
 
-        def ivl = proc.processTemporalReference(temporalReferences, MeasurementPeriod.getCalendarYear(new Date()), null, "birthdate", "birthdate")
+        def ivl = proc.processTemporalReference(temporalReferences, null, "birthdate", "birthdate")
 
         println ivl.criteria
 
-        assertTrue ivl.criteria.contains("toDays(birthdate) < toDays(new Date('01-Jan-1948'))")
+        assertTrue ivl.criteria.contains("toDays(birthdate) <")
 
     }
 
