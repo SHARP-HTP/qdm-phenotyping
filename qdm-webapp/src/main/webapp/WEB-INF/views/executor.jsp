@@ -5,21 +5,6 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-		<c:if test="${Executions != null}">
-			<c:set var="pending" value="false" scope="page" />
-		
-	   		<c:forEach var="loop" items="${Executions.executions}">
-	   			<c:if test="${ loop.status eq 'PROCESSING' }">
-	   				<c:set var="pending" value="true" scope="page"/>
-	   			</c:if>
-	   		</c:forEach>
-	   		
-	   		<c:if test="${ pending }">
-	   			<%
-	   			out.print("<META HTTP-EQUIV=\"Refresh\" CONTENT=\"6\" ");
-	   			%>
-	   		</c:if>
-	   	</c:if>
 		
 		<title>Algorithms</title>
 
@@ -35,21 +20,8 @@
         <link rel="stylesheet" href="resources/include/datepicker/css/datepicker.css" />
         <link rel="stylesheet" href="resources/include/fontawesome/css/font-awesome.min.css" />
 
-        <style type="text/css">
-            body {
-                padding-top: 65px;
-            }
-            footer {
-                height: 60px;
-            }
+        <link rel="stylesheet" href="resources/style.css" />
 
-            footer {
-                background-color: #f5f5f5;
-            }
-            .credit {
-                margin: 20px 0;
-            }
-		</style>
 		<script>
 		
 		  $(document).ready(function() {
@@ -96,13 +68,7 @@
     <div class="container">
 
         <div class="hero-unit">
-            <h1>Execution/Phenotyping</h1>
-            <div>
-                <a href="qdm2drools">PhenotypePortal</a>
-            </div>
-            <div>
-                <a href="qdm2drools">Cypress Validation Report</a>
-            </div>
+            <h1>Phenotyping</h1>
         </div>
         <div class="row">
             <div class="span6">
@@ -146,17 +112,19 @@
 
         </div>
 
-  <footer class="navbar navbar-fixed-bottom">
-      <div class="container">
-          <p class="muted credit">
-              Powered by the <a href="https://github.com/projectcypress/health-data-standards">hqmf-parser</a>,
-              <a href="https://ushik.ahrq.gov/">USHIK</a>,
-              and the <a href="https://vsac.nlm.nih.gov/">NLM VSAC</a>,
-              For more information see the
-              <a href="http://phenotypeportal.org/">Phenotype Portal</a>.
-          </p>
-      </div>
-  </footer>
+
+      <footer class="navbar navbar-fixed-bottom">
+          <div class="container">
+              <p class="muted credit">
+                  Powered by the <a href="https://github.com/projectcypress/health-data-standards">hqmf-parser</a>,
+                  <a href="https://ushik.ahrq.gov/">USHIK</a>,
+                  and the <a href="https://vsac.nlm.nih.gov/">NLM VSAC</a>,
+                  For more information see the
+                  <a href="http://phenotypeportal.org/">Phenotype Portal</a>.
+              </p>
+          </div>
+      </footer>
 
   </body>
+
 </html>
