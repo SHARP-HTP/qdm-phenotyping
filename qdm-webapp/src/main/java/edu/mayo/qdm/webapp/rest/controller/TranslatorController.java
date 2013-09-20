@@ -140,7 +140,7 @@ public class TranslatorController {
 
 		String xml = xmlProcessor.executionToXml(execution);
 
-	    return this.buildResponse(request, "execution", execution, xml);
+	    return this.buildResponse(request, "executor/execution", execution, xml);
 	}
 	
 	@RequestMapping(value = "executor/execution/{executionId}", method=RequestMethod.DELETE)

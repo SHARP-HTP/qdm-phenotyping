@@ -105,7 +105,7 @@
                         }
                     }
 
-                    populationResult = populationResult.slice(0,-2);
+                    populationResult = populationResult.slice(0,-1);
 
                     var overallResult = ""
                     if(pass){

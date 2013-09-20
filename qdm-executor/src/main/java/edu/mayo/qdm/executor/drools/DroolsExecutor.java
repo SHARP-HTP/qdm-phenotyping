@@ -46,8 +46,6 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.io.IOException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -205,16 +203,8 @@ public class DroolsExecutor implements Executor {
     }
 
     protected synchronized KnowledgeBase createKnowledgeBase(final String qdmXml){
-        MessageDigest md;
         try {
-            md = MessageDigest.getInstance("MD5");
-        } catch (NoSuchAlgorithmException e) {
-            throw new UnsupportedOperationException(e);
-        }
-        String md5key = new String(md.digest(qdmXml.trim().getBytes()));
-
-        try {
-            return this.knowledgeBaseCache.get(md5key, new Callable<KnowledgeBase>(){
+            return this.knowledgeBaseCache.get(qdmXml.trim(), new Callable<KnowledgeBase>(){
 
                 @Override
                 public KnowledgeBase call() throws Exception {

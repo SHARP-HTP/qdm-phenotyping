@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -16,11 +17,51 @@
 	   	</c:if>
 	   	
 		<title>Algorithm</title>
-		<link rel="stylesheet" href="../resources/style.css" type="text/css"/>
-	</head>
+
+        <script type="text/javascript" src="../../resources/include/jquery-ui-1.8.19.custom/js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="../../resources/include/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../resources/include/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+        <script type="text/javascript" src="../../resources/include/datepicker/js/bootstrap-datepicker.js"></script>
+        <script type="text/javascript" src="../../resources/include/jquery.validate/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="../../resources/include/jquery.tablesorter/jquery.tablesorter.js"></script>
+
+        <link rel="stylesheet" href="../../resources/include/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../resources/include/bootstrap-fileupload/bootstrap-fileupload.min.css">
+        <link rel="stylesheet" href="../../resources/include/datepicker/css/datepicker.css" />
+
+        <style type="text/css">
+            body {
+                padding-top: 65px;
+            }
+        </style>
+    </head>
   <body>
-    <h2>Algorithm</h2>
-    <table>
+  <div class="navbar navbar-fixed-top">
+
+      <div class="navbar-inner">
+
+          <div class="container">
+              <a href="https://github.com/SHARP-HTP/qdm2json"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+
+              <a class="brand" href="#">
+                  QDM Phenotyping Executor
+              </a>
+
+              <ul class="nav">
+                  <li class="divider-vertical"></li>
+                  <li><a href="../">Home</a></li>
+                  <li class="divider-vertical"></li>
+                  <li><a href="api">API</a></li>
+                  <li class="divider-vertical"></li>
+              </ul>
+
+          </div>
+      </div>
+  </div>
+
+  <div class="container">
+  <h2>Algorithm</h2>
+    <table class="table table-striped">
         <tr>
             <th>Id</th>
             <th>Status</th>
@@ -43,7 +84,7 @@
              <br/>
              <b>End Date:</b> ${execution.parameters.endDate}
              <br/>
-	         <b>Zip:</b> <a href="../execution/${execution.id}/zip">${execution.parameters.zipFileName}</a>
+	         <b>XML:</b> <a href="../execution/${execution.id}/zip">${execution.parameters.xmlFileName}</a>
             </td>
             <c:if test="${execution.status eq 'COMPLETE'}">
             	<td><a href="${execution.image.href}">Image</a></td>
@@ -61,9 +102,7 @@
         </tr>
              
     </table>
-    
-    <br/>
-    <a href="../executions">Back to all Executions</a>
 
+      </div>
   </body>
 </html>

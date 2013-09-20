@@ -33,6 +33,7 @@
         <link rel="stylesheet" href="resources/include/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="resources/include/bootstrap-fileupload/bootstrap-fileupload.min.css">
         <link rel="stylesheet" href="resources/include/datepicker/css/datepicker.css" />
+        <link rel="stylesheet" href="resources/include/fontawesome/css/font-awesome.min.css" />
 
         <style type="text/css">
             body {
@@ -103,33 +104,45 @@
                 <a href="qdm2drools">Cypress Validation Report</a>
             </div>
         </div>
+        <div class="row">
+            <div class="span6">
+                <h3>Execute Algorithm</h3>
+            <form action="executor/executions" id="executionForm" method="post" class="form-horizontal" enctype="multipart/form-data">
 
-    <form action="executor/executions" id="executionForm" method="post" class="form-horizontal" enctype="multipart/form-data">
-            <legend>Execute Algorithm</legend>
-        <div class="control-group">
-            <label class="control-label" for="file">XML:</label>
-            <div class="controls">
-                <input class="required" type="file" id="file" name="file" />
+                <div class="control-group">
+                    <label class="control-label" for="file">XML:</label>
+                    <div class="controls">
+                        <input class="required" type="file" id="file" name="file" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="startDate">Start Date:</label>
+                    <div class="controls">
+                        <input class="required datePicker" type="text" id="startDate" name="startDate"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="endDate">End Date:</label>
+                    <div class="controls">
+                        <input class="required datePicker" type="text" id="endDate" name="endDate"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn" name="submit">Execute Algorithm</button>
+                    </div>
+                </div>
+            </form>
             </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="startDate">Start Date:</label>
-            <div class="controls">
-                <input class="required datePicker" type="text" id="startDate" name="startDate"/>
+            <div class="span6">
+                <h3>Cypress Validation</h3>
+                    <blockquote>
+                        <p>The objective of Cypress is to enable repeatable and rigorous testing of an EHR's ability to accurately calculate Meaningful Use Stage 2 Eligible Provider (EP) and Eligible Hospital (EH) Clinical Quality Measures. Cypress has been recognized by ONC as the official CQM testing tool for operational use in Meaningful Use Clinical Quality Measure certification.</p>
+                        <small>For more information see <a href="http://projectcypress.org/">Project Cypress</a></small>
+                    </blockquote>
+                    <a class="btn btn-large btn-success" href="executor/cypress/report"><i class="icon-ok icon-large"></i> Run Cypress Validation</a>
             </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="endDate">End Date:</label>
-            <div class="controls">
-                <input class="required datePicker" type="text" id="endDate" name="endDate"/>
             </div>
-        </div>
-        <div class="control-group">
-            <div class="controls">
-                <button type="submit" class="btn" name="submit">Execute Algorithm</button>
-            </div>
-        </div>
-    </form>
 
         </div>
 
