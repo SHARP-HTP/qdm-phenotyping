@@ -23,9 +23,9 @@
  */
 package edu.mayo.qdm.webapp.rest.config;
 
-import java.io.File;
-
 import org.springframework.stereotype.Component;
+
+import java.io.File;
 
 /**
  * The Class UserDirectoryConfigManager.
@@ -35,7 +35,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserDirectoryConfigManager implements ConfigManager {
 	
-	public static final String CONFIG_DIR = ".webapp";
+	public static final String CONFIG_DIR = ".qdm-phenotyping";
 
 	/* (non-Javadoc)
 	 * @see edu.mayo.webapp.rest.config.ConfigManager#getConfigDirectory()

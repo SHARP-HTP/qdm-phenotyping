@@ -9,11 +9,11 @@ class CypressValidator {
 
     def slurper = new JsonSlurper()
 
-    def checkResults(measureId, results, callback){
-        def resultsJson =
-            slurper.parse(new InputStreamReader(
-                    new ClassPathResource("/cypress/results/by_measure.json").getInputStream()))
+    def resultsJson =
+        slurper.parse(new InputStreamReader(
+                new ClassPathResource("/cypress/results/by_measure.json").getInputStream()))
 
+    def checkResults(measureId, results, callback){
         def resultJson = resultsJson.find {
             ((it.measure_id == measureId.toUpperCase())
             &&

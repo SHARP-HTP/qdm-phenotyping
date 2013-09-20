@@ -23,27 +23,20 @@
  */
 package edu.mayo.qdm.webapp.rest.store;
 
+import edu.mayo.qdm.webapp.rest.config.ConfigManager;
+import edu.mayo.qdm.webapp.rest.store.ExecutionInfo.Status;
+import jodd.util.PropertiesUtil;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Properties;
-import java.util.Set;
-
-import javax.annotation.Resource;
-
-import jodd.util.PropertiesUtil;
-
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang.StringUtils;
-import org.springframework.stereotype.Component;
-
-import edu.mayo.qdm.webapp.rest.config.ConfigManager;
-import edu.mayo.qdm.webapp.rest.store.ExecutionInfo.Status;
+import java.util.*;
 
 /**
  * The Class Md5HashFileSystemResolver.
@@ -72,7 +65,7 @@ public class Md5HashFileSystemResolver implements FileSystemResolver {
 	private static final String ERROR_PROP = "error";
 	private static final String START_DATE_PARAM_PROP = "startDateParam";
 	private static final String END_DATE_PARAM_PROP = "endDateParam";
-	private static final String ZIP_FILE_NAME_PARAM_PROP = "zipFileNameParam";
+	private static final String XML_FILE_NAME_PARAM_PROP = "xmlFileNameParam";
 	
 	@Resource
 	private ConfigManager configManager;
@@ -132,7 +125,7 @@ public class Md5HashFileSystemResolver implements FileSystemResolver {
 		if(info.getParameters() != null){
 			props.setProperty(START_DATE_PARAM_PROP, info.getParameters().getStartDate());
 			props.setProperty(END_DATE_PARAM_PROP, info.getParameters().getEndDate());
-			props.setProperty(ZIP_FILE_NAME_PARAM_PROP, info.getParameters().getZipFileName());
+			props.setProperty(XML_FILE_NAME_PARAM_PROP, info.getParameters().getXmlFileName());
 		}
 		
 		return props;
@@ -328,7 +321,7 @@ public class Md5HashFileSystemResolver implements FileSystemResolver {
 		
 		String startParam = (String)props.get(START_DATE_PARAM_PROP);
 		String endParam = (String)props.get(END_DATE_PARAM_PROP);
-		String zipParam = (String)props.get(ZIP_FILE_NAME_PARAM_PROP);
+		String zipParam = (String)props.get(XML_FILE_NAME_PARAM_PROP);
 		
 		Parameters params = new Parameters(startParam, endParam, zipParam);
 		

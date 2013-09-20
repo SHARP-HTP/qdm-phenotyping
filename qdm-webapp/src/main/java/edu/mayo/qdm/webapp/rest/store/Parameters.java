@@ -32,7 +32,7 @@ public class Parameters {
 
 	private String startDate;
 	private String endDate;
-	private String zipFileName;
+	private String xmlFileName;
 	
 	/**
 	 * Instantiates a new parameters.
@@ -40,11 +40,11 @@ public class Parameters {
 	 * @param startDate the start date
 	 * @param endDate the end date
 	 */
-	public Parameters(String startDate, String endDate, String zipFileName){
+	public Parameters(String startDate, String endDate, String xmlFileName){
 		super();
 		this.startDate = startDate;
 		this.endDate = endDate;
-		this.zipFileName = zipFileName;
+		this.xmlFileName = xmlFileName;
 	}
 	
 	/**
@@ -83,12 +83,11 @@ public class Parameters {
 		this.endDate = endDate;
 	}
 
-	public String getZipFileName() {
-		return zipFileName;
-	}
+    public String getXmlFileName() {
+        return xmlFileName;
+    }
 
-	public void setZipFileName(String zipFileName) {
-		this.zipFileName = zipFileName;
-	}
-
+    public void setXmlFileName(String xmlFileName) {
+        this.xmlFileName = xmlFileName;
+    }
 }

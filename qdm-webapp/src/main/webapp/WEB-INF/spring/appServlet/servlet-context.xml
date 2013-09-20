@@ -36,11 +36,11 @@
 	
 	<beans:bean
 		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-<!-- 		<beans:property name="messageConverters"> -->
-<!-- 		    <util:list> -->
-<!-- 		      <beans:bean id="byteArrayMessageConverter" class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/> -->
-<!-- 		    </util:list> -->
-<!-- 	  	</beans:property> -->
+ 		<beans:property name="messageConverters">
+ 		    <util:list>
+ 		      <beans:bean id="jacksonMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>
+ 		    </util:list>
+ 	  	</beans:property>
 	</beans:bean>
 	
 	<context:component-scan base-package="edu.mayo.qdm.webapp" />

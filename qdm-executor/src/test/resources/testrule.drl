@@ -29,3 +29,16 @@ rule "rule"
     System.out.println("Here");
 
 end
+
+        /* Rule */
+        rule "PatientCharacteristicBirthdate"
+            dialect "mvel"
+            no-loop
+
+        when
+            $p : Patient( birthdate != null, toDays(birthdate) < toDays(new Date('01-Jan-1947')))
+
+        then
+            insertLogical(new PreconditionResult("PatientCharacteristicBirthdate", $p))
+
+        end

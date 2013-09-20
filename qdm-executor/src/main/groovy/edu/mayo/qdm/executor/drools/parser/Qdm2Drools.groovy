@@ -270,7 +270,6 @@ class Qdm2Drools {
                     sb.append(
                             """
         then
-            //System.out.println("${prcn.id}");
             insertLogical(new PreconditionResult("${prcn.id}", \$p, ${
                                 if (true || prcn.reference || cnj == "or" || prcn.preconditions?.size() == 1) {
                                     """\$context"""
@@ -329,7 +328,6 @@ class Qdm2Drools {
             ${it.getLHS()}
 
         then
-            //System.out.println("$fullName");
             ${it.getRHS()}
         end
         """

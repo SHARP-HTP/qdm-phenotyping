@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -15,27 +16,21 @@
 	   		
 	   		<c:if test="${ pending }">
 	   			<%
-	   			out.print("<META HTTP-EQUIV=\"Refresh\" CONTENT=\"10\" ");
+	   			out.print("<META HTTP-EQUIV=\"Refresh\" CONTENT=\"10\" >");
 	   			%>
 	   		</c:if>
 	   	</c:if>
-		
-		<title>Algorithms</title>
 
-        <script type="text/javascript" src="resources/include/jquery-ui-1.8.19.custom/js/jquery-1.7.2.min.js"></script>
-        <script type="text/javascript" src="resources/include/jquery-ui-1.8.19.custom/js/jquery-ui-1.8.19.custom.min.js"></script>
-        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="resources/include/jquery.tablesorter/jquery.tablesorter.js"></script>
-        <script type="text/javascript" src="resources/include/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
-        <script type="text/javascript" src="resources/include/syntaxhighlighter_3.0.83/scripts/shBrushJava.js"></script>
+        <script type="text/javascript" src="../resources/include/jquery-ui-1.8.19.custom/js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="../resources/include/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../resources/include/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+        <script type="text/javascript" src="../resources/include/datepicker/js/bootstrap-datepicker.js"></script>
+        <script type="text/javascript" src="../resources/include/jquery.validate/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="../resources/include/jquery.tablesorter/jquery.tablesorter.js"></script>
 
-        <link href="resources/include/syntaxhighlighter_3.0.83/styles/shCore.css" rel="stylesheet" type="text/css" />
-        <link href="resources/include/syntaxhighlighter_3.0.83/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" href="resources/include/jquery.tablesorter/themes/blue/style.css" />
-        <link rel="stylesheet" href="resources/include/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="resources/include/bootstrap-fileupload/bootstrap-fileupload.min.css">
-        <link rel="stylesheet" href="resources/include/select2/select2.css">
-        <link rel="stylesheet" href="resources/include/fontawesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../resources/include/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../resources/include/bootstrap-fileupload/bootstrap-fileupload.min.css">
+        <link rel="stylesheet" href="../resources/include/datepicker/css/datepicker.css" />
 
         <style type="text/css">
             body {
@@ -46,9 +41,10 @@
 		
 		  $(document).ready(function() {
 			    
-			    $( ".datepicker" ).datepicker(
-						{ dateFormat: "dd-MM-yy" }		
-				);
+			    $( ".datePicker" ).datepicker({
+                    autoclose:true,
+                    format:"dd-M-yyyy"
+                });
 			    
 			    $.extend(jQuery.validator.messages, {
 			        required: "<br/>This field is required."
@@ -69,14 +65,14 @@
               <a href="https://github.com/SHARP-HTP/qdm2json"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
 
               <a class="brand" href="#">
-                  QDM XML to JSON Converter
+                  QDM Phenotyping Executor
               </a>
 
               <ul class="nav">
                   <li class="divider-vertical"></li>
-                  <li><a href="/">Home</a></li>
+                  <li><a href="../">Home</a></li>
                   <li class="divider-vertical"></li>
-                  <li><a href="/executions">Executions</a></li>
+                  <li><a href="api">API</a></li>
                   <li class="divider-vertical"></li>
               </ul>
 
@@ -87,7 +83,7 @@
     <div class="container">
         <h2>Algorithms</h2>
 
-        <table id="executionsTable" class="tablesorter">
+        <table id="executionsTable" class="table table-striped">
     	<thead>
 	        <tr>
 	            <th>Id</th>
@@ -116,7 +112,7 @@
 		                        <br/>
 		                        <b>End Date:</b> ${execution.parameters.endDate}
 		                        <br/>
-		                        <b>Zip:</b> <a href="execution/${execution.id}/zip">${execution.parameters.zipFileName}</a>
+		                        <b>Zip:</b> <a href="execution/${execution.id}/xml">${execution.parameters.xmlFileName}</a>
 	                        </td>
 				            <c:if test="${execution.status eq 'COMPLETE'}">
 				            	<td><a href="${execution.image.href}">Image</a></td>
@@ -138,40 +134,33 @@
         </tbody>
     </table>
 
-    <h2>Execute Algorithm</h2>
-    <form action="executions" id="executionForm" method="post" enctype="multipart/form-data">
-        <table>
-            <tr>
-                <td><p>Zip: <input class="required" type="file" name="file" /></p></td>
-                <td><p>Start Date: <input class="required datePicker" type="text" id="startDate" name="startDate"></p></td>
-                <td><p>End Date: <input class="required datePicker" type="text" id="endDate" name="endDate"></p></td>
-                <td><input type="submit" name="submit" value="Execute Algorithm"/></td>
-            </tr>
-        </table>
+    <form action="executions" id="executionForm" method="post" class="form-horizontal" enctype="multipart/form-data">
+            <legend>Execute Algorithm</legend>
+        <div class="control-group">
+            <label class="control-label" for="file">Zip:</label>
+            <div class="controls">
+                <input class="required" type="file" id="file" name="file" />
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="startDate">Start Date:</label>
+            <div class="controls">
+                <input class="required datePicker" type="text" id="startDate" name="startDate"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="endDate">End Date:</label>
+            <div class="controls">
+                <input class="required datePicker" type="text" id="endDate" name="endDate"/>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn" name="submit">Execute Algorithm</button>
+            </div>
+        </div>
     </form>
-    
-<div id="hidden_element_1" class="hidden" style="display: none">
-    <pre class="brush: java">
-	public static void pollStatus() throws Exception {
-		URL executions = new URL("http://localhost:8080/qdm2drools-rest/execution/1");
-		
-        URLConnection connection = executions.openConnection();
-        connection.setRequestProperty("Accept", "application/xml");
-        InputStream in = connection.getInputStream();
-        
-        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-		Document doc = docBuilder.parse(in);
- 
-		Attr status = (Attr)doc.getElementsByTagName("execution").	
-						item(0).getAttributes().getNamedItem("status");
-		
-		System.out.println(status.getValue());
-        
-        in.close();
-	}
-	</pre>
-	</div>
+
         </div>
   </body>
 </html>

@@ -81,7 +81,17 @@ public class TranslatorController {
 	private XmlProcessor xmlProcessor;
 	
 	private ExecutorService executorService = Executors.newSingleThreadExecutor();
-	
+
+    @RequestMapping(value = "/executor", method = RequestMethod.GET)
+    public ModelAndView getExecutorHome(){
+        return new ModelAndView("executor");
+    }
+
+    @RequestMapping(value = "/executor/api", method = RequestMethod.GET)
+    public ModelAndView getExecutorApi(){
+        return new ModelAndView("executor/api");
+    }
+
 	/**
 	 * Gets the exceuctions.
 	 *
@@ -89,7 +99,7 @@ public class TranslatorController {
 	 * @return the exceuctions
 	 * @throws Exception the exception
 	 */
-	@RequestMapping(value = "/executions", method=RequestMethod.GET)
+	@RequestMapping(value = "executor/executions", method=RequestMethod.GET)
 	public Object getExceuctions(HttpServletRequest request) throws Exception {
 		
 		String requestUrl = request.getRequestURL().toString();
@@ -113,7 +123,7 @@ public class TranslatorController {
 	 * @return the exceuction
 	 * @throws Exception the exception
 	 */
-	@RequestMapping(value = "/execution/{executionId}", method=RequestMethod.GET)
+	@RequestMapping(value = "executor/execution/{executionId}", method=RequestMethod.GET)
 	public Object getExceuction(
 			HttpServletRequest request,
 			@PathVariable String executionId) throws Exception {
@@ -131,7 +141,7 @@ public class TranslatorController {
 	    return this.buildResponse(request, "execution", execution, xml);
 	}
 	
-	@RequestMapping(value = "/execution/{executionId}", method=RequestMethod.DELETE)
+	@RequestMapping(value = "executor/execution/{executionId}", method=RequestMethod.DELETE)
 	public ModelAndView deleteExceuction(
 			HttpServletRequest request,
 			HttpServletResponse response,
@@ -139,7 +149,7 @@ public class TranslatorController {
 		this.fileSystemResolver.remove(executionId);
 
 	    if(this.isHtmlRequest(request)){
-			return new ModelAndView("redirect:/executions");
+			return new ModelAndView("redirect:/executor/executions");
 		} else {
 			response.setStatus(HttpStatus.OK.value());
 			
@@ -157,7 +167,7 @@ public class TranslatorController {
 	 * @throws Exception the exception
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	@RequestMapping(value = "/executions", method=RequestMethod.POST)
+	@RequestMapping(value = "/executor/executions", method=RequestMethod.POST)
 	public synchronized Object createExceuction(
 			HttpServletRequest request,
 			final @RequestParam(required=true) String startDate,
@@ -178,13 +188,13 @@ public class TranslatorController {
 
         final FileSystemResult result = this.fileSystemResolver.getNewFiles(id);
 
-        String zipFileName = multipartFile.getOriginalFilename();
+        String xmlFileName = multipartFile.getOriginalFilename();
 
         final ExecutionInfo info = new ExecutionInfo();
         info.setId(id);
         info.setStatus(Status.PROCESSING);
         info.setStart(new Date());
-        info.setParameters(new Parameters(startDate,endDate, zipFileName));
+        info.setParameters(new Parameters(startDate, endDate, xmlFileName));
 
         this.fileSystemResolver.setExecutionInfo(id, info);
 
@@ -219,9 +229,9 @@ public class TranslatorController {
         });
 
         if(this.isHtmlRequest(multipartRequest)){
-            return new ModelAndView("redirect:/executions");
+            return new ModelAndView("redirect:/executor/executions");
         } else {
-            String locationUrl = "execution/" + id;
+            String locationUrl = "executor/execution/" + id;
 
             final HttpHeaders headers = new HttpHeaders();
             headers.setLocation(URI.create(locationUrl));
@@ -296,32 +306,13 @@ public class TranslatorController {
 	}
 	
 	/**
-	 * Gets the image.
-	 *
-	 * @param executionId the execution id
-	 * @return the image
-	 * @throws Exception the exception
-	 */
-	@RequestMapping(value = "/execution/{executionId}/image", method=RequestMethod.GET)
-	public ResponseEntity<byte[]> getImage(@PathVariable String executionId) throws Exception {
-		File image = fileSystemResolver.getFiles(executionId).getImage();
-		
-		byte[] bytes = FileUtils.readFileToByteArray(image);
-		
-		final HttpHeaders headers = new HttpHeaders();
-	    headers.setContentType(MediaType.IMAGE_PNG);
-
-	    return new ResponseEntity<byte[]>(bytes, headers, HttpStatus.OK);
-	}
-	
-	/**
 	 * Gets the xml.
 	 *
 	 * @param executionId the execution id
 	 * @return the xml
 	 * @throws Exception the exception
 	 */
-	@RequestMapping(value = "/execution/{executionId}/xml", method=RequestMethod.GET)
+	@RequestMapping(value = "executor/execution/{executionId}/xml", method=RequestMethod.GET)
 	public ResponseEntity<byte[]> getXml(@PathVariable String executionId) throws Exception {
 		File xml = fileSystemResolver.getFiles(executionId).getXml();
 
@@ -334,20 +325,20 @@ public class TranslatorController {
 		
 	}
 
-	@RequestMapping(value = "/execution/{executionId}/zip", method=RequestMethod.GET)
-	public void downloadZip(
+	@RequestMapping(value = "executor/execution/{executionId}/xml", method=RequestMethod.GET)
+	public void downloadXml(
 			HttpServletResponse response, 
 			@PathVariable String executionId) throws Exception {
 
 		File file = this.fileSystemResolver.getFiles(executionId).getZip();
 		
-		String zipFileName = this.fileSystemResolver.
-				getExecutionInfo(executionId).getParameters().getZipFileName();
+		String xmlFileName = this.fileSystemResolver.
+				getExecutionInfo(executionId).getParameters().getXmlFileName();
 
 		response.setContentType("application/octet-stream");
 		response.setContentLength((int)file.length());
 		response.setHeader("Content-Disposition", "attachment; filename=\""
-				+ zipFileName + "\"");
+				+ xmlFileName + "\"");
 
 		FileCopyUtils.copy(new FileInputStream(file), response.getOutputStream());
 	}

@@ -8,4 +8,15 @@ class Emeasure {
     String nqfId;
     String title;
 
+    String getMeasureId() {
+        return measureId
+    }
+
+    String getNqfId() {
+        return nqfId
+    }
+
+    String getTitle() {
+        return title
+    }
 }

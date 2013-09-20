@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
@@ -49,7 +50,7 @@
         <div class="navbar-inner">
 
             <div class="container">
-                <a href="https://github.com/SHARP-HTP/qdm2json"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+                <a href="https://github.com/SHARP-HTP/qdm-phenotyping"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
 
                 <a class="brand" href="#">
                     QDM XML to Drools Converter
@@ -57,9 +58,9 @@
 
                 <ul class="nav">
                     <li class="divider-vertical"></li>
-                    <li><a href="/">Home</a></li>
+                    <li><a href=".">Home</a></li>
                     <li class="divider-vertical"></li>
-                    <li><a href="/api">API</a></li>
+                    <li><a href="api">API</a></li>
                     <li class="divider-vertical"></li>
                 </ul>
 
@@ -81,7 +82,7 @@
                 });
 
                 function format(emeasure) {
-                    return "<span class='label'>"+$(emeasure.element).data('nqfid')+"</span> "+emeasure.text;
+                    return "<span class='label'>"+$(emeasure.element).attr('data-nqfid')+"</span> "+emeasure.text;
                 }
             </script>
 
@@ -92,17 +93,17 @@
 
             <div id="my-tab-content" class="tab-content">
                 <div class="tab-pane active" id="byMeasureId">
-                    <form action='/qdm2drools' id="emeasureForm" method='get' class="form-inline well">
+                    <form action='qdm2drools' id="emeasureForm" method='get' class="form-inline well">
                         <select id="measureid" name="measureid" class="combobox" style="width:80%">
                             <c:forEach var="emeasure" items="${emeasures}">
-                            <option data-nqfid="${emeasure.nqfId}" value="${emeasure.measureId}"></span>${emeasure.title}</option>
+                            <option data-nqfid='<c:if test="${emeasure.nqfId eq null}">NA</c:if><c:if test="${emeasure.nqfId ne null}">${emeasure.nqfId}</c:if>' value="${emeasure.measureId}"></span>${emeasure.title}</option>
                             </c:forEach>
                         </select>
                         <button class="btn btn-primary dropdown-toggle" type='submit'>Convert!</button>
                     </form>
                 </div>
                 <div class="tab-pane" id="fileUpload">
-                    <form action='/qdm2json' enctype='multipart/form-data' method='post' class="form-inline well">
+                    <form action='qdm2json' enctype='multipart/form-data' method='post' class="form-inline well">
                         <div class="fileupload fileupload-new" data-provides="fileupload">
                             <div class="input-append">
                                 <div class="uneditable-input span3"><i class="icon-file fileupload-exists"></i>

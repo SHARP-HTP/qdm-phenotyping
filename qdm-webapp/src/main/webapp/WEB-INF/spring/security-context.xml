@@ -15,15 +15,15 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 	<context:annotation-config />
-	
+
 	<security:http>
-	    <security:intercept-url pattern="/execution*" access="ROLE_ADMINISTRATOR" />
+	    <security:intercept-url pattern="/executor/execution*" access="ROLE_ADMINISTRATOR" />
 		<security:http-basic />
 	</security:http>
-	
+
 	<security:authentication-manager  alias="authenticationManager">
 	    <security:authentication-provider>
-	        <security:user-service> 
+	        <security:user-service>
 	            <security:user name="admin" password="__change_this__" authorities="ROLE_ADMINISTRATOR" />
 	        </security:user-service>
 	    </security:authentication-provider>
