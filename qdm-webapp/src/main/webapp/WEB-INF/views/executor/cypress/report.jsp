@@ -17,10 +17,9 @@
         <link rel="stylesheet" href="../../resources/include/bootstrap-fileupload/bootstrap-fileupload.min.css">
         <link rel="stylesheet" href="../../resources/include/datepicker/css/datepicker.css" />
 
+        <link rel="stylesheet" href="../../resources/style.css">
+
         <style type="text/css">
-            body {
-                padding-top: 65px;
-            }
             .container {
                 width: 1000px;
             }
@@ -46,7 +45,7 @@
 
               <ul class="nav">
                   <li class="divider-vertical"></li>
-                  <li><a href="../">Home</a></li>
+                  <li><a href="../../">Home</a></li>
                   <li class="divider-vertical"></li>
                   <li><a href="api">API</a></li>
                   <li class="divider-vertical"></li>
@@ -129,5 +128,18 @@
         </script>
 
         </div>
+
+  <footer class="navbar navbar-fixed-bottom">
+      <div class="container">
+          <p class="muted credit">
+              Powered by the <a href="https://github.com/projectcypress/health-data-standards">hqmf-parser</a>,
+              <a href="https://ushik.ahrq.gov/">USHIK</a>,
+              and the <a href="https://vsac.nlm.nih.gov/">NLM VSAC</a>,
+              For more information see the
+              <a href="http://phenotypeportal.org/">Phenotype Portal</a>.
+          </p>
+      </div>
+  </footer>
+  
   </body>
 </html>
