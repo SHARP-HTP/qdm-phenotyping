@@ -52,6 +52,8 @@ class IndividualCharacteristic implements Criteria {
     }
 
     def payer = { json ->
+
+        /* TODO: Cypress data doesn't have this, so I'm not sure how to represent it */
         "eval(true)"
     }
 

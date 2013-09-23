@@ -104,5 +104,17 @@
     </table>
 
       </div>
+
+  <footer class="navbar navbar-fixed-bottom">
+      <div class="container">
+          <p class="muted credit">
+              Powered by the <a href="https://github.com/projectcypress/health-data-standards">hqmf-parser</a>,
+              <a href="https://ushik.ahrq.gov/">USHIK</a>,
+              and the <a href="https://vsac.nlm.nih.gov/">NLM VSAC</a>,
+              For more information see the
+              <a href="http://phenotypeportal.org/">Phenotype Portal</a>.
+          </p>
+      </div>
+  </footer>
   </body>
 </html>

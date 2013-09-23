@@ -3,10 +3,12 @@ package edu.mayo.qdm.executor.valueset
 import edu.mayo.qdm.patient.Concept
 import groovy.json.JsonSlurper
 import org.springframework.beans.factory.InitializingBean
+import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver
+import org.springframework.stereotype.Component
 
-/**
- */
+@Component
+@Qualifier("Cypress")
 class JsonValueSetCodeResolver implements ValueSetCodeResolver, InitializingBean {
 
     def slurper = new JsonSlurper()

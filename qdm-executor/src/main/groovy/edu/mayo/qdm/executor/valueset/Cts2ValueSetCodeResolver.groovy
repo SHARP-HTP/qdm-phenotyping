@@ -5,7 +5,9 @@ import groovy.json.JsonSlurper
 import groovy.util.logging.Log4j
 import groovy.xml.Namespace
 import org.springframework.beans.factory.InitializingBean
+import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.stereotype.Component
 import sun.misc.BASE64Encoder
 
 import javax.net.ssl.SSLContext
@@ -15,6 +17,8 @@ import java.security.SecureRandom
 import java.security.cert.X509Certificate
 
 @Log4j
+@Component
+@Qualifier("CTS2")
 class Cts2ValueSetCodeResolver implements ValueSetCodeResolver, InitializingBean {
 
     def slurper = new JsonSlurper()

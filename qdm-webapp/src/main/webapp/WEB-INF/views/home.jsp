@@ -57,6 +57,8 @@
                 <li class="divider-vertical"></li>
                 <li><a href="executor">Phenotyping</a></li>
                 <li class="divider-vertical"></li>
+                <li><a href="executor/cypress/report">Cypress Validation</a></li>
+                <li class="divider-vertical"></li>
                 <li><a href="http://phenotypeportal.org/">PhenotypePortal</a></li>
                 <li class="divider-vertical"></li>
             </ul>

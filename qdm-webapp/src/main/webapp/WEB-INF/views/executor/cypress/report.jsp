@@ -27,7 +27,6 @@
                 border: 1px outset;
                 padding: 5px;
             }
-
 		</style>
 
 	</head>
@@ -49,7 +48,9 @@
                   <li class="divider-vertical"></li>
                   <li><a href="../../executor">Executor</a></li>
                   <li class="divider-vertical"></li>
-                  <li><a href="../api">API</a></li>
+                  <li><a href="http://projectcypress.org/">Project Cypress</a></li>
+                  <li class="divider-vertical"></li>
+                  <li><a href="#aboutModal" data-toggle="modal">About</a></li>
                   <li class="divider-vertical"></li>
               </ul>
 
@@ -143,5 +144,46 @@
       </div>
   </footer>
 
+  <!-- Modal -->
+  <div id="aboutModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">About Cypress Validation</h3>
+      </div>
+      <div class="modal-body">
+          <p>Cypress Validation confirms that the Drools logic is operating correctly by executing a
+          known patient set and comparing against the expected results.</p>
+
+          <ol>
+              <li>Select a Cypress EP Measure XML</li>
+              <li>Transform Cypress Patient JSON</li>
+              <li>Convert Measure to JBoss Drools Rules</li>
+              <li>Execute Rules on Patient Set</li>
+              <li>Compare the results with Cypress the expected</li>
+              <li>Repeat #1 until all measures are executed</li>
+          </ol>
+
+          <div>
+          <p>A measure is considered validated if all population elements (IPP, DENOM, NUMER, etc) match the
+          expected results from Cypress</p>
+          </div>
+
+          <div>
+              <p>All Cypress Eligible Professionals (EP) Measures are tested, using Cypress v2.2.</p>
+          </div>
+
+          <div>
+              <p>For more information see <a href="http://projectcypress.org">Project Cypress</a>.</p>
+          </div>
+
+      </div>
+      <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+  </div>
+
   </body>
+
+
+
 </html>
