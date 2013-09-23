@@ -19,7 +19,7 @@ class ValueProcessor {
 
                     criteria =
                         """
-                    droolsUtil.contains("$valueSetOid", this.results)
+                    droolsUtil.contains("$valueSetOid", valueSetDefinitions.get("$valueSetOid"), this.results)
                     """
                     break
                 case "ANYNonNull" :

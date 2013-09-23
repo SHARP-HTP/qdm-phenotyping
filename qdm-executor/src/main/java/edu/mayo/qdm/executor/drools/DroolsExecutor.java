@@ -47,7 +47,9 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -75,10 +77,10 @@ public class DroolsExecutor implements Executor {
     private DroolsUtil droolsUtil;
 
     @Override
-    public Results execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod) {
+    public Results execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod, Map<String,String> valueSetDefinitions) {
         final Results results = new Results();
 
-        this.execute(patients, qdmXml, measurementPeriod, new ResultCallback() {
+        this.execute(patients, qdmXml, measurementPeriod, valueSetDefinitions, new ResultCallback() {
 
             @Override
             public void hit(String population, Patient patient) {
@@ -93,28 +95,28 @@ public class DroolsExecutor implements Executor {
          * @see edu.mayo.qdm.Executor#execute(java.lang.Iterable, java.io.InputStream)
          */
     @Override
-	public void execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod, ResultCallback callback) {
-        this.doExecute(patients, this.createKnowledgeBase(qdmXml), measurementPeriod, callback);
+	public void execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod, Map<String,String> valueSetDefinitions, ResultCallback callback) {
+        this.doExecute(patients, this.createKnowledgeBase(qdmXml), measurementPeriod, valueSetDefinitions, callback);
     }
 
-    public void doExecute(Iterable<Patient> patients, KnowledgeBase knowledgeBase, MeasurementPeriod measurementPeriod, ResultCallback callback) {
+    public void doExecute(Iterable<Patient> patients, KnowledgeBase knowledgeBase, MeasurementPeriod measurementPeriod, Map<String,String> valueSetDefinitions, ResultCallback callback) {
         Set<Patient> cache = new HashSet<Patient>();
         for(Patient p : patients){
             if(cache.size() < EXECUTION_BATCH_SIZE){
                 cache.add(p);
             } else {
-                this.doExecuteBatch(cache, knowledgeBase, measurementPeriod, callback);
+                this.doExecuteBatch(cache, knowledgeBase, measurementPeriod, valueSetDefinitions, callback);
                 cache.clear();
                 cache.add(p);
             }
         }
 
         if(cache.size() > 0){
-            this.doExecuteBatch(cache, knowledgeBase, measurementPeriod, callback);
+            this.doExecuteBatch(cache, knowledgeBase, measurementPeriod, valueSetDefinitions, callback);
         }
     }
 
-    public void doExecuteBatch(Iterable <Patient> patients, KnowledgeBase knowledgeBase, MeasurementPeriod measurementPeriod, ResultCallback callback) {
+    public void doExecuteBatch(Iterable <Patient> patients, KnowledgeBase knowledgeBase, MeasurementPeriod measurementPeriod, Map<String,String> valueSetDefinitions, ResultCallback callback) {
 		final StatefulKnowledgeSession ksession = knowledgeBase.newStatefulKnowledgeSession();
 
         try {
@@ -148,6 +150,7 @@ public class DroolsExecutor implements Executor {
 
             ksession.setGlobal("droolsUtil", this.droolsUtil);
             ksession.setGlobal("measurementPeriod", measurementPeriod);
+            ksession.setGlobal("valueSetDefinitions", valueSetDefinitions != null ? valueSetDefinitions : Collections.EMPTY_MAP);
 
             for(Patient patient : patients){
                 ksession.insert(patient);
@@ -175,14 +178,14 @@ public class DroolsExecutor implements Executor {
 	}
 
     @Override
-    public QdmProcessor getQdmProcessor(String qdmXml, final MeasurementPeriod measurementPeriod) {
+    public QdmProcessor getQdmProcessor(String qdmXml, final MeasurementPeriod measurementPeriod, final Map<String,String> valueSetDefinitions) {
         final KnowledgeBase knowledgeBase = this.createKnowledgeBase(qdmXml);
 
         return new QdmProcessor() {
 
             @Override
             public void execute(Iterable<Patient> patients, ResultCallback callback) {
-                doExecute(patients, knowledgeBase, measurementPeriod, callback);
+                doExecute(patients, knowledgeBase, measurementPeriod, valueSetDefinitions, callback);
             }
 
             @Override

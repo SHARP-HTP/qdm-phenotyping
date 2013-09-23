@@ -52,7 +52,7 @@ class DefaultCriteria implements Criteria {
         ${references.variables.collect { """\$$it : PreconditionResult(id == "$it", patient == \$p) """ }.join("\n")}
         \$event${subsetCriteria ? "s" : ""} : ${subsetCriteria ? "Set() from collect(" : ""}edu.mayo.qdm.patient.$name(
                         ${ [negationCriteria,references.criteria,extraCriteria].findAll().join(",") }
-        ) from droolsUtil.findMatches("$valueSetOid", \$p.get${pluralName}())
+        ) from droolsUtil.findMatches("$valueSetOid", valueSetDefinitions.get("$valueSetOid"), \$p.get${pluralName}())
         ${subsetCriteria ? ")" : ""}
 
         ${subsetCriteria ? subsetCriteria : ""}

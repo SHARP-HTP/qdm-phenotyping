@@ -25,6 +25,8 @@ package edu.mayo.qdm.executor;
 
 import edu.mayo.qdm.patient.Patient;
 
+import java.util.Map;
+
 /**
  * The main entry point for the QDM Executor.
  *
@@ -38,9 +40,9 @@ public interface Executor {
 	 * @param patients the patients
 	 * @return the results
 	 */
-	public void execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod, ResultCallback callback);
+	public void execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod, Map<String,String> valueSetDefinitions, ResultCallback callback);
 
-    public Results execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod);
+    public Results execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod, Map<String,String> valueSetDefinitions);
 
     /**
      * Create a QdmProcessor for the given QDM XML.
@@ -48,6 +50,6 @@ public interface Executor {
      * @param qdmXml the QDM XML
      * @return the QdmProcessor
      */
-    public QdmProcessor getQdmProcessor(String qdmXml, MeasurementPeriod measurementPeriod);
+    public QdmProcessor getQdmProcessor(String qdmXml, MeasurementPeriod measurementPeriod, Map<String,String> valueSetDefinitions);
 
 }

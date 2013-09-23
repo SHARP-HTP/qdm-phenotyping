@@ -50,4 +50,9 @@ class JsonValueSetCodeResolver implements ValueSetCodeResolver, InitializingBean
 
         candidates?.find { it.matches(concept) } != null
     }
+
+    @Override
+    public boolean isCodeInSet(String valueSetOid, String definition, Concept concept) {
+        return isCodeInSet(valueSetOid, concept);
+    }
 }

@@ -25,7 +25,7 @@ class DiagnosticStudy extends DefaultCriteria {
             if(reason.type != "CD"){
                 throw new UnsupportedOperationException("Can only process `CD` types for Study Reason.")
             }
-            reasonCriteria = """droolsUtil.matches("2.16.840.1.113883.3.526.3.320", reason)"""
+            reasonCriteria = """droolsUtil.matches("2.16.840.1.113883.3.526.3.320", valueSetDefinitions.get("2.16.840.1.113883.3.526.3.320"), reason)"""
         }
 
         """

@@ -139,4 +139,9 @@ public class CsvValueSetCodeResolver implements ValueSetCodeResolver, Initializi
 		return this.valueSetMap.get(new ValueSetKey(valueSetOid));
 	}
 
+    @Override
+    public boolean isCodeInSet(String valueSetOid, String definition, Concept concept) {
+        return isCodeInSet(valueSetOid, concept);
+    }
+
 }

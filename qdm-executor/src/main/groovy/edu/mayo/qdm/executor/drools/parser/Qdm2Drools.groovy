@@ -89,6 +89,7 @@ class Qdm2Drools {
         import ${Set.name};
         import ${Date.name};
         import ${Calendar.name};
+        import ${Map.name};
         import ${PreconditionResult.name};
         import ${ResultCallback.name};
         import ${Patient.name};
@@ -113,6 +114,7 @@ class Qdm2Drools {
 
         global DroolsUtil droolsUtil
         global MeasurementPeriod measurementPeriod
+        global Map<String, String> valueSetDefinitions
         """
     }
 

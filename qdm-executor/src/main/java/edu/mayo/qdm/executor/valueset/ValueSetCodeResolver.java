@@ -43,5 +43,6 @@ public interface ValueSetCodeResolver {
 	public Set<Concept> resolveConcpets(String valueSetOid);
 
     public boolean isCodeInSet(String valueSetOid, Concept concept);
+    public boolean isCodeInSet(String valueSetOid, String definition, Concept concept);
 
 }

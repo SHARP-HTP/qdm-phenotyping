@@ -25,14 +25,13 @@ package edu.mayo.qdm.executor.drools;
 
 
 import com.google.common.collect.Sets;
-import edu.mayo.qdm.executor.valueset.JsonValueSetCodeResolver;
 import edu.mayo.qdm.executor.valueset.ValueSetCodeResolver;
 import edu.mayo.qdm.patient.CodedEntry;
 import edu.mayo.qdm.patient.Concept;
 import edu.mayo.qdm.patient.Event;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
 import java.util.*;
 
 /**
@@ -43,19 +42,19 @@ import java.util.*;
 @Component
 public final class DroolsUtil {
 
-    @Resource
+    @Autowired
     private ValueSetCodeResolver valueSetCodeResolver;
 
     public DroolsUtil(){
         super();
-        JsonValueSetCodeResolver resolver = new JsonValueSetCodeResolver();
-        try {
-            resolver.afterPropertiesSet();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-
-        this.valueSetCodeResolver = resolver;
+//        JsonValueSetCodeResolver resolver = new JsonValueSetCodeResolver();
+//        try {
+//            resolver.afterPropertiesSet();
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
+//
+//        this.valueSetCodeResolver = resolver;
     }
 
     public DroolsUtil(ValueSetCodeResolver valueSetCodeResolver){
@@ -64,8 +63,13 @@ public final class DroolsUtil {
     }
 
     public boolean contains(String valueSetOid, Iterable<Concept> concepts){
+        return contains(valueSetOid, null, concepts);
+    }
+
+    public boolean contains(String valueSetOid, Object definition, Iterable<Concept> concepts){
+        String def = definition != null ? definition.toString() : null;
         for(Concept concept : concepts){
-            if(this.valueSetCodeResolver.isCodeInSet(valueSetOid, concept)){
+            if(this.valueSetCodeResolver.isCodeInSet(valueSetOid, def, concept)){
                 return true;
             }
         }
@@ -82,17 +86,27 @@ public final class DroolsUtil {
     }
 
     public boolean matches(String valueSetOid, Concept concept){
+        return matches(valueSetOid, null, concept);
+    }
+
+    public boolean matches(String valueSetOid, Object definition, Concept concept){
         if(concept == null){
             return false;
         }
-        return this.valueSetCodeResolver.isCodeInSet(valueSetOid, concept);
+        String def = definition != null ? definition.toString() : null;
+        return this.valueSetCodeResolver.isCodeInSet(valueSetOid, def, concept);
     }
 
     public <T extends CodedEntry> Collection<T>  findMatches(String valueSetOid, Iterable <T> codedEntries){
+        return findMatches(valueSetOid, null, codedEntries);
+    }
+
+    public <T extends CodedEntry> Collection<T>  findMatches(String valueSetOid, Object definition, Iterable <T> codedEntries){
+        String def = definition != null ? definition.toString() : null;
         List<T> returnList = new ArrayList<T>();
         for(T entry : codedEntries){
             for(Concept c : entry.getConcepts()){
-                if(this.valueSetCodeResolver.isCodeInSet(valueSetOid, c)){
+                if(this.valueSetCodeResolver.isCodeInSet(valueSetOid, def, c)){
                     returnList.add(entry);
                     break;
                 }
