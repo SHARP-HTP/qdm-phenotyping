@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="../resources/include/syntaxhighlighter_3.0.83/styles/shCore.css" />
     <link rel="stylesheet" href="../resources/include/syntaxhighlighter_3.0.83/styles/shThemeDefault.css" />
 
+    <link rel="stylesheet" href="../resources/style.css">
+
     <style>
         body {
             padding-top: 65px;
@@ -47,7 +49,7 @@
 
             <ul class="nav">
                 <li class="divider-vertical"></li>
-                <li><a href="../">Home</a></li>
+                <li><a href="../"><i class="icon-home"></i> Home</a></li>
                 <li class="divider-vertical"></li>
                 <li><a href="../executor">Executor</a></li>
                 <li class="divider-vertical"></li>
@@ -60,23 +62,23 @@
 <div class="container">
 <h1>Executor REST Service</h1>
 The Executor REST Service has one resource:
-<pre>/execution/{id} - an Execution by Id</pre>
+<pre>/executor/execution/{id} - an Execution by Id</pre>
 And Several Sub-resources
 
-<pre>/execution/{id}/xml - an Execution result XML</pre>
+<pre>/executor/execution/{id}/xml - an Execution result XML</pre>
 
-<pre>/execution/{id}/image - an Execution result Image</pre>
+<pre>/executor/execution/{id}/image - an Execution result Image</pre>
 
-<pre>/execution/{id}/zip - an Execution input Zip</pre>
+<pre>/executor/execution/{id}/zip - an Execution input Zip</pre>
 
 <h1>API/Example Code</h1>
 <h2>Polling For Status</h2>
-<h3>URL: /execution/{id} (GET)</h3>
+<h3>URL: executor/execution/{id} (GET)</h3>
 <div>
 		<pre class="brush: java">
 	public static void pollStatus() throws Exception {
 		URL executions = new URL(
-				"http://.../execution/{id}");
+				"http://.../executor/execution/{id}");
 
 		URLConnection connection = executions.openConnection();
 		connection.setRequestProperty("Accept", "application/xml");
@@ -99,12 +101,12 @@ And Several Sub-resources
 </div>
 
 <h2>Get Result XML</h2>
-<h3>URL: /execution/{id}/xml (GET)</h3>
+<h3>URL: /executor/execution/{id}/xml (GET)</h3>
 <div>
 		<pre class="brush: java">
 	public static void getXml() throws Exception {
 		URL executions = new URL(
-				"http://.../execution/{id}/xml");
+				"http://.../executor/execution/{id}/xml");
 
 		URLConnection connection = executions.openConnection();
 		connection.setRequestProperty("Accept", "application/xml");
@@ -134,12 +136,12 @@ And Several Sub-resources
 </div>
 
 <h2>Get Result Image</h2>
-<h3>URL: /execution/{id}/image (GET)</h3>
+<h3>URL: /executor/execution/{id}/image (GET)</h3>
 <div>
 		<pre class="brush: java">
 	public static void getImage() throws Exception {
 		URL executions = new URL(
-				"http://.../execution/{id}/image");
+				"http://.../executor/execution/{id}/image");
 
 		URLConnection connection = executions.openConnection();
 		connection.setRequestProperty("Accept", "image/png");
@@ -164,7 +166,7 @@ And Several Sub-resources
 </div>
 
 <h2>Create a new Result</h2>
-<h3>URL: /executions (POST)</h3>
+<h3>URL: /executor/executions (POST)</h3>
 <div>
 		<pre class="brush: java">
 	public static void createExecution(String targetUrl, File zipFile, String startDate,
@@ -240,11 +242,11 @@ And Several Sub-resources
 </div>
 
 <h2>Delete a Result</h2>
-<h3>URL: /execution/{id} (DELETE)</h3>
+<h3>URL: /executor/execution/{id} (DELETE)</h3>
 <div>
 		<pre class="brush: java">
 	public static void deleteExecution() throws Exception {
-		URL url = new URL("http://.../execution/{id}");
+		URL url = new URL("http://.../executor/execution/{id}");
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 		connection.setRequestProperty("Accept", "application/xml");
 		connection.setDoOutput(false);
@@ -261,5 +263,16 @@ And Several Sub-resources
 </div>
 
 </div>
+<footer class="navbar navbar-fixed-bottom">
+    <div class="container">
+        <p class="muted credit">
+            Powered by the <a href="https://github.com/projectcypress/health-data-standards">hqmf-parser</a>,
+            <a href="https://ushik.ahrq.gov/">USHIK</a>,
+            and the <a href="https://vsac.nlm.nih.gov/">NLM VSAC</a>,
+            For more information see the
+            <a href="http://phenotypeportal.org/">Phenotype Portal</a>.
+        </p>
+    </div>
+</footer>
 </body>
 </html>

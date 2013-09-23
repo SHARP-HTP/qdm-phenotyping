@@ -18,7 +18,6 @@
         <link rel="stylesheet" href="resources/include/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="resources/include/bootstrap-fileupload/bootstrap-fileupload.min.css">
         <link rel="stylesheet" href="resources/include/datepicker/css/datepicker.css" />
-        <link rel="stylesheet" href="resources/include/fontawesome/css/font-awesome.min.css" />
 
         <link rel="stylesheet" href="resources/style.css" />
 
@@ -55,7 +54,11 @@
 
               <ul class="nav">
                   <li class="divider-vertical"></li>
-                  <li><a href="./">Home</a></li>
+                  <li><a href="./"><i class="icon-home"></i> Home</a></li>
+                  <li class="divider-vertical"></li>
+                  <li><a href="executor/cypress/report">Validation Report</a></li>
+                  <li class="divider-vertical"></li>
+                  <li><a href="executor/executions">Executions</a></li>
                   <li class="divider-vertical"></li>
                   <li><a href="executor/api">API</a></li>
                   <li class="divider-vertical"></li>
@@ -68,7 +71,8 @@
     <div class="container">
 
         <div class="hero-unit">
-            <h1>Phenotyping</h1>
+            <h1>Phenotyping Executor</h1>
+            <p>Execute phenotyping rules and algorithms on patient sets.</p>
         </div>
         <div class="row">
             <div class="span6">
@@ -99,6 +103,7 @@
                     </div>
                 </div>
             </form>
+            <a href="executor/executions">Show All Executions</a>
             </div>
             <div class="span6">
                 <h3>Cypress Validation</h3>

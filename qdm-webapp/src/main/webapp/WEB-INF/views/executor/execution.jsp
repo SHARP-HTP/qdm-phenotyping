@@ -8,14 +8,14 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 		<c:if test="${execution != null}">
-	   		
+
 	   		<c:if test="${ execution.status eq 'PROCESSING' }">
 	   			<%
 	   			out.print("<META HTTP-EQUIV=\"Refresh\" CONTENT=\"10\" ");
 	   			%>
 	   		</c:if>
 	   	</c:if>
-	   	
+
 		<title>Algorithm</title>
 
         <script type="text/javascript" src="../../resources/include/jquery-ui-1.8.19.custom/js/jquery-1.7.2.min.js"></script>
@@ -49,7 +49,7 @@
 
               <ul class="nav">
                   <li class="divider-vertical"></li>
-                  <li><a href="../">Home</a></li>
+                  <li><a href="../"><i class="icon-home"></i> Home</a></li>
                   <li class="divider-vertical"></li>
                   <li><a href="api">API</a></li>
                   <li class="divider-vertical"></li>

@@ -47,7 +47,7 @@
 
                 <ul class="nav">
                     <li class="divider-vertical"></li>
-                    <li><a href=".">Home</a></li>
+                    <li><a href="."><i class="icon-home"></i> Home</a></li>
                     <li class="divider-vertical"></li>
                     <li><a href="qdm2drools/api">API</a></li>
                     <li class="divider-vertical"></li>

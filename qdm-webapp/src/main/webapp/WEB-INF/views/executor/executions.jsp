@@ -32,6 +32,8 @@
         <link rel="stylesheet" href="../resources/include/bootstrap-fileupload/bootstrap-fileupload.min.css">
         <link rel="stylesheet" href="../resources/include/datepicker/css/datepicker.css" />
 
+        <link rel="stylesheet" href="../resources/style.css">
+
         <style type="text/css">
             body {
                 padding-top: 65px;
@@ -65,12 +67,14 @@
               <a href="https://github.com/SHARP-HTP/qdm2json"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
 
               <a class="brand" href="#">
-                  QDM Phenotyping Executor
+                  QDM Phenotyping Executions
               </a>
 
               <ul class="nav">
                   <li class="divider-vertical"></li>
-                  <li><a href="../">Home</a></li>
+                  <li><a href="../"><i class="icon-home"></i> Home</a></li>
+                  <li class="divider-vertical"></li>
+                  <li><a href="../../executor">Executor</a></li>
                   <li class="divider-vertical"></li>
                   <li><a href="api">API</a></li>
                   <li class="divider-vertical"></li>
@@ -90,7 +94,6 @@
 	            <th>Status</th>
 	            <th>Execution Time</th>
 	            <th>Parameters</th>
-	            <th>Image</th>
 	            <th>XML</th>
 	            <th>Delete</th>
 	        </tr>
@@ -112,14 +115,12 @@
 		                        <br/>
 		                        <b>End Date:</b> ${execution.parameters.endDate}
 		                        <br/>
-		                        <b>Zip:</b> <a href="execution/${execution.id}/xml">${execution.parameters.xmlFileName}</a>
+		                        <b>XML:</b> <a href="execution/${execution.id}/xml">${execution.parameters.xmlFileName}</a>
 	                        </td>
 				            <c:if test="${execution.status eq 'COMPLETE'}">
-				            	<td><a href="${execution.image.href}">Image</a></td>
 				            	<td><a href="${execution.xml.href}">XML</a></td>
 				            </c:if>
 				            <c:if test="${execution.status ne 'COMPLETE'}">
-				            	<td>&nbsp;</td>
 				            	<td>&nbsp;</td>
 				            </c:if>
 	                        <td>
@@ -137,7 +138,7 @@
     <form action="executions" id="executionForm" method="post" class="form-horizontal" enctype="multipart/form-data">
             <legend>Execute Algorithm</legend>
         <div class="control-group">
-            <label class="control-label" for="file">Zip:</label>
+            <label class="control-label" for="file">QDM/HQMF XML:</label>
             <div class="controls">
                 <input class="required" type="file" id="file" name="file" />
             </div>
@@ -162,5 +163,18 @@
     </form>
 
         </div>
+
+  <footer class="navbar navbar-fixed-bottom">
+      <div class="container">
+          <p class="muted credit">
+              Powered by the <a href="https://github.com/projectcypress/health-data-standards">hqmf-parser</a>,
+              <a href="https://ushik.ahrq.gov/">USHIK</a>,
+              and the <a href="https://vsac.nlm.nih.gov/">NLM VSAC</a>,
+              For more information see the
+              <a href="http://phenotypeportal.org/">Phenotype Portal</a>.
+          </p>
+      </div>
+  </footer>
+
   </body>
 </html>

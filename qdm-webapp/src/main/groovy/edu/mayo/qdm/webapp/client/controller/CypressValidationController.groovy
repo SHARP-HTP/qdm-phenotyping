@@ -10,12 +10,11 @@ import org.joda.time.DateTime
 import org.springframework.beans.factory.InitializingBean
 import org.springframework.core.io.ClassPathResource
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver
+import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Controller
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestMethod
-import org.springframework.web.bind.annotation.ResponseBody
+import org.springframework.web.bind.annotation.*
 import org.springframework.web.servlet.ModelAndView
+
 /**
  */
 @Controller
@@ -52,6 +51,14 @@ class CypressValidationController implements InitializingBean {
         }
     }
 
+
+    @ResponseStatus(value = HttpStatus.NOT_FOUND)
+    public class MeasureNotFoundException extends RuntimeException {
+        MeasureNotFoundException(String s) {
+            super("Measure: $s not found.")
+        }
+    }
+
     @RequestMapping(value = "/executor/cypress/report", method = RequestMethod.GET)
     def getReportView(){
         new ModelAndView("executor/cypress/report", [measures:cypressMeasureMap.keySet()])
@@ -61,6 +68,10 @@ class CypressValidationController implements InitializingBean {
     @ResponseBody
     def validateCypressMeasure(@PathVariable String hqmfId){
         def measure = this.cypressMeasureMap.get(hqmfId)
+
+        if(measure == null){
+            throw new MeasureNotFoundException(hqmfId);
+        }
 
         def executor = ExecutorFactory.instance().getExecutor()
 

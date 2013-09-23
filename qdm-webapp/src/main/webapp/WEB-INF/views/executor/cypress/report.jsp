@@ -40,14 +40,16 @@
               <a href="https://github.com/SHARP-HTP/qdm2json"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
 
               <a class="brand" href="#">
-                  QDM Phenotyping Executor
+                  Cypress Validation Report
               </a>
 
               <ul class="nav">
                   <li class="divider-vertical"></li>
-                  <li><a href="../../">Home</a></li>
+                  <li><a href="../../"><i class="icon-home"></i> Home</a></li>
                   <li class="divider-vertical"></li>
-                  <li><a href="api">API</a></li>
+                  <li><a href="../../executor">Executor</a></li>
+                  <li class="divider-vertical"></li>
+                  <li><a href="../api">API</a></li>
                   <li class="divider-vertical"></li>
               </ul>
 
@@ -140,6 +142,6 @@
           </p>
       </div>
   </footer>
-  
+
   </body>
 </html>

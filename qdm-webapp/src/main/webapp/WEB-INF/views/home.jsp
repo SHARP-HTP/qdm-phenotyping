@@ -11,7 +11,6 @@
 <script src="resources/include/bootstrap/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="resources/include/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="resources/include/fontawesome/css/font-awesome.min.css">
 
 <link rel="stylesheet" href="resources/style.css">
 
@@ -74,6 +73,7 @@
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
         </ol>
         <!-- Carousel items -->
         <div class="carousel-inner">
@@ -89,6 +89,13 @@
                     <a href="qdm2drools"><h1>JSON to Drools</h1></a>
                     <p>Convert the health-data-standards JSON to JBoss Drools Rules.</p>
                     <img src="resources/include/img/drools.png"/>
+                </div>
+            </div>
+            <div class="item">
+                <div class="hero-unit">
+                    <a href="executor/cypress/report"><h1>Cypress Validation</h1></a>
+                    <p>Convert the health-data-standards JSON to JBoss Drools Rules.</p>
+                    <img src="resources/include/img/validation.png"/>
                 </div>
             </div>
             <div class="item active">

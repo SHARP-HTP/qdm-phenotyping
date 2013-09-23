@@ -1,11 +1,13 @@
 package edu.mayo.qdm.executor.drools.parser.criteria
 import edu.mayo.qdm.executor.valueset.ValueSetCodeResolver
+import groovy.util.logging.Log4j
 import org.springframework.stereotype.Component
 
 import javax.annotation.Resource
 /**
  */
 @Component
+@Log4j
 class CriteriaFactory {
 
     def GroupOperatorFactory groupOperatorFactory = new GroupOperatorFactory()
@@ -103,7 +105,11 @@ class CriteriaFactory {
             if (criteriaFn != null) {
                 criteriaFn().newInstance([json:fullJson, measureJson: measureJson])
             } else {
-                throw new RuntimeException("Critieria type: `$qdsType` not recognized. JSON -> $json")
+                log.warn("Critieria type: `$qdsType` not recognized. JSON -> $json")
+                {
+                    getLHS : { "eval(true)" }
+                    getRHS : { "" }
+                } as Criteria
             }
         }
     }
