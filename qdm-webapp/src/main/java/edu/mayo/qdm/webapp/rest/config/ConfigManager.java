@@ -36,4 +36,5 @@ public interface ConfigManager {
 	 * @return the config directory
 	 */
 	public String getConfigDirectory();
+
 }

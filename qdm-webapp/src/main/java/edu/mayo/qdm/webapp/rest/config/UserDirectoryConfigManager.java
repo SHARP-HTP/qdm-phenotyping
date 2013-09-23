@@ -34,6 +34,8 @@ import java.io.File;
  */
 @Component
 public class UserDirectoryConfigManager implements ConfigManager {
+
+    public static final String CONFIG_FILE_NAME = ".qdm-phenotyping";
 	
 	public static final String CONFIG_DIR = ".qdm-phenotyping";
 
@@ -41,8 +43,7 @@ public class UserDirectoryConfigManager implements ConfigManager {
 	 * @see edu.mayo.webapp.rest.config.ConfigManager#getConfigDirectory()
 	 */
 	public String getConfigDirectory(){
-		
 		return System.getProperty("user.home") + File.separator + CONFIG_DIR;
-		
 	}
+
 }

@@ -105,7 +105,7 @@ class CriteriaFactory {
             if (criteriaFn != null) {
                 criteriaFn().newInstance([json:fullJson, measureJson: measureJson])
             } else {
-                log.warn("Critieria type: `$qdsType` not recognized. JSON -> $json")
+                log.info("""Critieria type: `$qdsType` not recognized. JSON -> $json""")
                 {
                     getLHS : { "eval(true)" }
                     getRHS : { "" }

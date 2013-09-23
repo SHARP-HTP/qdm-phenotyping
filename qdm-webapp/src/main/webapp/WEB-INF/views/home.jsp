@@ -30,8 +30,7 @@
             $('.carousel').carousel();
 
             var value = location.hostname;
-            //$('.qdm2jsonUrl').attr("href", "http://"+value+":8888");
-            $('.qdm2jsonUrl').attr("href", "http://qdm2json.herokuapp.com/");
+            $('.qdm2jsonUrl').attr("href", "${qdm2jsonUrl}");
         });
     </script>
 

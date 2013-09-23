@@ -272,26 +272,6 @@ public class TranslatorController {
 		
 	}
 
-    /*
-	@RequestMapping(value = "executor/execution/{executionId}/xml", method=RequestMethod.GET)
-	public void downloadXml(
-			HttpServletResponse response, 
-			@PathVariable String executionId) throws Exception {
-
-		File file = this.fileSystemResolver.getFiles(executionId).getZip();
-		
-		String xmlFileName = this.fileSystemResolver.
-				getExecutionInfo(executionId).getParameters().getXmlFileName();
-
-		response.setContentType("application/octet-stream");
-		response.setContentLength((int)file.length());
-		response.setHeader("Content-Disposition", "attachment; filename=\""
-				+ xmlFileName + "\"");
-
-		FileCopyUtils.copy(new FileInputStream(file), response.getOutputStream());
-	}
-	*/
-	
 	/**
 	 * Checks if is html request.
 	 *
