@@ -14,8 +14,8 @@ public class ValueSetCodeResolverFactory implements FactoryBean<ValueSetCodeReso
 
     private enum ValueSetResolverStrategy {CTS2, CYPRESS}
 
-    @Value("${valuesets.valueSetResolver}")
-    private String valueSetResolverStrategy = ValueSetResolverStrategy.CTS2.toString();
+    @Value("${valuesets.valueSetResolver:CYPRESS}")
+    private String valueSetResolverStrategy;
 
     @Resource
     @Qualifier("CTS2")

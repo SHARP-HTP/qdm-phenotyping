@@ -17,14 +17,15 @@
 	<context:annotation-config />
 
 	<security:http>
-	    <security:intercept-url pattern="/executor/execution*" access="ROLE_ADMINISTRATOR" />
+	    <security:intercept-url pattern="/**" access="ROLE_ADMINISTRATOR" method="POST" />
+        <security:intercept-url pattern="/**" access="ROLE_ADMINISTRATOR" method="DELETE" />
 		<security:http-basic />
 	</security:http>
 
 	<security:authentication-manager  alias="authenticationManager">
 	    <security:authentication-provider>
 	        <security:user-service>
-	            <security:user name="admin" password="__change_this__" authorities="ROLE_ADMINISTRATOR" />
+	            <security:user name="${security.username:admin}" password="${security.password:admin}" authorities="ROLE_ADMINISTRATOR" />
 	        </security:user-service>
 	    </security:authentication-provider>
 	</security:authentication-manager>

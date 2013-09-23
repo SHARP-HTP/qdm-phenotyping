@@ -88,13 +88,13 @@
                 <div class="control-group">
                     <label class="control-label" for="startDate">Start Date:</label>
                     <div class="controls">
-                        <input class="required datePicker" type="text" id="startDate" name="startDate"/>
+                        <input class="required datePicker" type="text" id="startDate" name="startDate" value="01-Jan-2012"/>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="endDate">End Date:</label>
                     <div class="controls">
-                        <input class="required datePicker" type="text" id="endDate" name="endDate"/>
+                        <input class="required datePicker" type="text" id="endDate" name="endDate" value="31-Dec-2012"/>
                     </div>
                 </div>
                 <div class="control-group">

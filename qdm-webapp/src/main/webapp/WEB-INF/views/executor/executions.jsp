@@ -16,7 +16,7 @@
 	   		
 	   		<c:if test="${ pending }">
 	   			<%
-	   			out.print("<META HTTP-EQUIV=\"Refresh\" CONTENT=\"10\" >");
+	   			out.print("<META HTTP-EQUIV=\"Refresh\" CONTENT=\"3\" >");
 	   			%>
 	   		</c:if>
 	   	</c:if>
@@ -94,7 +94,7 @@
 	            <th>Status</th>
 	            <th>Execution Time</th>
 	            <th>Parameters</th>
-	            <th>XML</th>
+	            <th>Results</th>
 	            <th>Delete</th>
 	        </tr>
         </thead>
@@ -146,13 +146,13 @@
         <div class="control-group">
             <label class="control-label" for="startDate">Start Date:</label>
             <div class="controls">
-                <input class="required datePicker" type="text" id="startDate" name="startDate"/>
+                <input class="required datePicker" type="text" id="startDate" name="startDate" value="01-Jan-2012"/>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="endDate">End Date:</label>
             <div class="controls">
-                <input class="required datePicker" type="text" id="endDate" name="endDate"/>
+                <input class="required datePicker" type="text" id="endDate" name="endDate" value="31-Dec-2012"/>
             </div>
         </div>
         <div class="control-group">

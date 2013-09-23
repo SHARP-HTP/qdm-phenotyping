@@ -68,7 +68,7 @@
             <th>Execution Time</th>
             <th>Parameters</th>
             <th>Image</th>
-            <th>XML</th>
+            <th>Results</th>
             <th>Delete</th>
         </tr>
         <tr>
