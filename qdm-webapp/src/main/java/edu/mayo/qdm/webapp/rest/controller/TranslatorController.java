@@ -34,6 +34,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.exception.ExceptionUtils;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -51,8 +52,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.net.URI;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -173,7 +177,8 @@ public class TranslatorController {
 	public synchronized Object createExceuction(
 			HttpServletRequest request,
 			final @RequestParam(required=true) String startDate,
-			final @RequestParam(required=true) String endDate) throws Exception {
+			final @RequestParam(required=true) String endDate,
+            final @RequestParam(required=false) String valueSetDefinitions) throws Exception {
 		//For now, don't validate the date. This requirement may
 		//come back at some point.
 		//this.dateValidator.validateDate(startDate, DateType.START);
@@ -182,8 +187,11 @@ public class TranslatorController {
 		if(! (request instanceof MultipartHttpServletRequest)){
 			throw new IllegalStateException("ServletRequest expected to be of type MultipartHttpServletRequest");
 		}
-		
-	    final MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+
+        final Map<String,String> valueSetDefinitionsMap = valueSetDefinitions != null
+          ? new ObjectMapper().readValue(valueSetDefinitions, HashMap.class) : Collections.EMPTY_MAP;
+
+        final MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		final MultipartFile multipartFile = multipartRequest.getFile("file");
 
         final String id = this.idGenerator.getId();
@@ -210,7 +218,8 @@ public class TranslatorController {
                     translatorResult = launcher.launchTranslator(
                             IOUtils.toString(multipartFile.getInputStream()),
                             dateValidator.parse(startDate),
-                            dateValidator.parse(endDate));
+                            dateValidator.parse(endDate),
+                            valueSetDefinitionsMap);
 
                     info.setStatus(Status.COMPLETE);
                     info.setFinish(new Date());

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @Component
 public class Launcher implements InitializingBean {
@@ -34,9 +35,10 @@ public class Launcher implements InitializingBean {
     public ExecutionResult launchTranslator(
 			String qdmXml,
 			Date startDate,
-			Date endDate) throws Exception {
+			Date endDate,
+            Map<String,String> valueSetDefinitions) throws Exception {
         Results results =
-            factory.getExecutor().execute(patients, qdmXml, new MeasurementPeriod(startDate, true, endDate, true));
+            factory.getExecutor().execute(patients, qdmXml, new MeasurementPeriod(startDate, true, endDate, true), valueSetDefinitions);
 
         Demographics demographics = this.demographicsProcessor.getDemographics(results.asMap());
 

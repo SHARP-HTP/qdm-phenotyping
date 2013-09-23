@@ -42,25 +42,22 @@ class Cts2ValueSetCodeResolver implements ValueSetCodeResolver, InitializingBean
     }
 
     @Override
-    Set<Concept> resolveConcpets(String valueSetOid) {
-        if (valueSetMap.containsKey(valueSetOid)) {
-            return valueSetMap.get(valueSetOid)
+    public Set<Concept> resolveConcpets(String valueSetOid) {
+        resolveConcpets(valueSetOid, null)
+    }
+
+    public Set<Concept> resolveConcpets(String valueSetOid, String vsDefinition) {
+        String key = valueSetOid + (vsDefinition != null ? vsDefinition : "");
+        if (valueSetMap.containsKey(key)) {
+            return valueSetMap.get(key) as Set<Concept>
         } else {
-            def url = new URL(cts2Url + "/" + valueSetOid)
-            def connection = url.openConnection()
+            def href = getDefinitionUrl(valueSetOid, vsDefinition)
+            def currentDefUrl = new URL(href + "/resolution?maxtoreturn=50000")
+            def connection = currentDefUrl.openConnection()
             connection.setRequestProperty("Accept", "application/xml")
             connection.setRequestProperty("Authorization", getAuthorizationHeader())
             connection.connect()
             def inStream = connection.getInputStream()
-            def valueSet = parser.parse(inStream)
-
-            def href = valueSet.valueSetCatalogEntry.currentDefinition[core.valueSetDefinition].@href[0]
-            def currentDefUrl = new URL(href + "/resolution?maxtoreturn=50000")
-            connection = currentDefUrl.openConnection()
-            connection.setRequestProperty("Accept", "application/xml")
-            connection.setRequestProperty("Authorization", getAuthorizationHeader())
-            connection.connect()
-            inStream = connection.getInputStream()
             def definition = parser.parse(inStream)
             def codeSystemVersions = [] as HashMap
             definition.resolutionInfo.resolvedUsingCodeSystem.each {
@@ -74,14 +71,38 @@ class Cts2ValueSetCodeResolver implements ValueSetCodeResolver, InitializingBean
                 new Concept(it[core.name].text(), it[core.namespace].text(), codeSystemVersions.get(it[core.namespace].text()))
             })
             //        while (definition.iteratableResolvedValueSet.next != null)
-            valueSetMap.put(valueSetOid, concepts)
+            valueSetMap.put(key, concepts)
             return concepts
         }
     }
 
+    private String getDefinitionUrl(String valueSetOid, String definition) {
+        String href
+        if (definition == null || definition.trim().isEmpty()) {
+            def url = new URL(cts2Url + "/valueset/" + valueSetOid)
+            def connection = url.openConnection()
+            connection.setRequestProperty("Accept", "application/xml")
+            connection.setRequestProperty("Authorization", getAuthorizationHeader())
+            connection.connect()
+            def inStream = connection.getInputStream()
+            def valueSet = parser.parse(inStream)
+
+            href = valueSet.valueSetCatalogEntry.currentDefinition[core.valueSetDefinition].@href[0]
+        } else {
+            href = cts2Url + "/valueset/" + valueSetOid + "/definition/" + definition
+        }
+        log.debug("Using ValueSetDefinition: " + href)
+        return href
+    }
+
     @Override
     boolean isCodeInSet(String valueSetOid, Concept concept) {
-        return this.resolveConcpets(valueSetOid)?.find { it.matches(normalizedConcept(concept))} != null
+        return isCodeInSet(valueSetOid, null, concept)
+    }
+
+    @Override
+    boolean isCodeInSet(String valueSetOid, String definition, Concept concept) {
+        return this.resolveConcpets(valueSetOid, definition)?.find { it.matches(normalizedConcept(concept))} != null
     }
 
     private String getAuthorizationHeader() {
