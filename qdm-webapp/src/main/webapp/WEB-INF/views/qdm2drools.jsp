@@ -21,30 +21,19 @@
 <link rel="stylesheet" href="resources/include/syntaxhighlighter_3.0.83/styles/shCore.css" />
 <link rel="stylesheet" href="resources/include/syntaxhighlighter_3.0.83/styles/shThemeDefault.css" />
 
+<link rel="stylesheet" href="resources/style.css" />
+
     <style type="text/css">
-        footer {
-            height: 60px;
-        }
-        body {
-            margin-bottom: 60px;
-        }
-        footer {
-            background-color: #f5f5f5;
-        }
         .hero-unit {
             background-color: #ffffff;
-        }
-        .credit {
-            margin: 20px 0;
         }
         .container {
             width: 800px;
         }
     </style>
 </head>
-<body style="padding-top: 50px;">
+<body>
 
-<div id="wrap">
     <div class="navbar navbar-fixed-top">
 
         <div class="navbar-inner">
@@ -60,7 +49,7 @@
                     <li class="divider-vertical"></li>
                     <li><a href=".">Home</a></li>
                     <li class="divider-vertical"></li>
-                    <li><a href="api">API</a></li>
+                    <li><a href="qdm2drools/api">API</a></li>
                     <li class="divider-vertical"></li>
                 </ul>
 
@@ -144,8 +133,6 @@
             </a>
         </p>
     </div>
-
-</div>
 
 </div>
 

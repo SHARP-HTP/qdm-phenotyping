@@ -13,28 +13,16 @@
 <link rel="stylesheet" href="resources/include/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="resources/include/fontawesome/css/font-awesome.min.css">
 
+<link rel="stylesheet" href="resources/style.css">
+
 <style>
-    body {
-        padding-top: 65px;
-    }
     .item {
         height: 400px;
     }
-
     .hero-unit {
         height: 100%;
         padding-top: 20px;
         padding-left: 60px;
-    }
-    footer {
-        height: 60px;
-    }
-
-    footer {
-        background-color: #f5f5f5;
-    }
-    .credit {
-        margin: 20px 0;
     }
 </style>
 
