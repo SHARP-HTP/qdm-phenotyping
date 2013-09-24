@@ -69,7 +69,7 @@ And Several Sub-resources
 
 <pre>/executor/execution/{id}/image - an Execution result Image</pre>
 
-<pre>/executor/execution/{id}/zip - an Execution input Zip</pre>
+<pre>/executor/execution/{id}/input - an Execution input XML</pre>
 
 <h1>API/Example Code</h1>
 <h2>Polling For Status</h2>
@@ -131,36 +131,6 @@ And Several Sub-resources
 		System.out.println("XML: " + sw.toString());
 
 		in.close();
-	}
-	</pre>
-</div>
-
-<h2>Get Result Image</h2>
-<h3>URL: /executor/execution/{id}/image (GET)</h3>
-<div>
-		<pre class="brush: java">
-	public static void getImage() throws Exception {
-		URL executions = new URL(
-				"http://.../executor/execution/{id}/image");
-
-		URLConnection connection = executions.openConnection();
-		connection.setRequestProperty("Accept", "image/png");
-		InputStream in = connection.getInputStream();
-
-		File tempFile = File.createTempFile(UUID.randomUUID().toString(),
-				".png");
-
-		OutputStream out = new BufferedOutputStream(new FileOutputStream(
-				tempFile));
-		for (int b; (b = in.read()) != -1;) {
-			out.write(b);
-		}
-
-		out.flush();
-		out.close();
-		in.close();
-
-		System.out.println("Image Saved to: " + tempFile.getAbsolutePath());
 	}
 	</pre>
 </div>

@@ -58,8 +58,8 @@ class Md5HashFileSystemResolverTest {
 	
 		def path = filePath + File.separator + "dataFiles" + File.separator + ["c4","ca","42","38","a0","b9","23","82","0d/cc","50","9a","6f","75","84","9b"].join(File.separator)
 		
-		assertEquals path + File.separator + "image.img", result.image.getPath()
-		assertEquals path + File.separator + "xmlresult.xml", result.xml.getPath()
+		assertEquals path + File.separator + "input.xml", result.inputQdmXml.getPath()
+		assertEquals path + File.separator + "xmlresult.xml", result.ouptutResultXml.getPath()
 		
 		new File(filePath).delete()
 	}
