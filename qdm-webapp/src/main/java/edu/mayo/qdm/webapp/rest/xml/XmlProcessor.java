@@ -23,15 +23,12 @@
  */
 package edu.mayo.qdm.webapp.rest.xml;
 
-import org.springframework.stereotype.Component;
-
 import com.thoughtworks.xstream.XStream;
-
 import edu.mayo.qdm.webapp.rest.model.Execution;
 import edu.mayo.qdm.webapp.rest.model.Executions;
-import edu.mayo.qdm.webapp.rest.model.Image;
 import edu.mayo.qdm.webapp.rest.model.Xml;
 import edu.mayo.qdm.webapp.rest.store.ExecutionInfo;
+import org.springframework.stereotype.Component;
 
 /**
  * The Class XmlProcessor.
@@ -71,7 +68,6 @@ public class XmlProcessor {
 		xstream.processAnnotations(Executions.class);
 		xstream.processAnnotations(Execution.class);
 		xstream.processAnnotations(Xml.class);
-		xstream.processAnnotations(Image.class);
 		
 		return xstream;
 	}
