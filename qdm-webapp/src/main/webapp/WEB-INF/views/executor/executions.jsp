@@ -54,7 +54,10 @@
 			    
 			    $("#executionForm").validate();
 			 
-			    $("#executionsTable").tablesorter( {sortList: [ [0,0] ] } ); 
+			    $("#executionsTable").tablesorter( {sortList: [ [0,0] ] } );
+
+                $('span[rel=popover]').popover({trigger:"hover"});
+
 		  });
 		</script>
 	</head>
@@ -104,7 +107,12 @@
 	                <c:forEach var="execution" items="${Executions.executions}" varStatus="counter">
 	                    <tr>
 	                        <td><a href="execution/${execution.id}">${execution.id}</a></td>
-	                        <td>${execution.status}</td>
+                            <c:if test="${execution.status eq 'FAILED'}">
+                                <td><span rel="popover" data-content="${execution.error}" class='badge badge-important'>${execution.status}</span></td>
+                            </c:if>
+                            <c:if test="${execution.status ne 'FAILED'}">
+                                <td><span class='badge badge-success'>${execution.status}</span></td>
+                            </c:if>
 	                        <td>
 		                        <b>Start:</b> ${execution.start}
 		                        <br/>
@@ -115,7 +123,7 @@
 		                        <br/>
 		                        <b>End Date:</b> ${execution.parameters.endDate}
 		                        <br/>
-		                        <b>XML:</b> <a href="execution/${execution.id}/xml">${execution.parameters.xmlFileName}</a>
+		                        <b>Input XML:</b> <a href="execution/${execution.id}/input">${execution.parameters.xmlFileName}</a>
 	                        </td>
 				            <c:if test="${execution.status eq 'COMPLETE'}">
 				            	<td><a href="${execution.xml.href}">XML</a></td>

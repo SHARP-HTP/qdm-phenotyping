@@ -34,6 +34,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.exception.ExceptionUtils;
+import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -51,13 +52,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.net.URI;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -70,6 +65,8 @@ import java.util.concurrent.Executors;
 public class TranslatorController {
 	
 	private static final MediaType DEFAULT_ACCEPT_HEADER = MediaType.APPLICATION_XML;
+
+    private Logger log = Logger.getLogger(this.getClass());
 	
 	@Resource
 	private DateValidator dateValidator;
@@ -197,6 +194,7 @@ public class TranslatorController {
         final String id = this.idGenerator.getId();
 
         final FileSystemResult result = this.fileSystemResolver.getNewFiles(id);
+        FileUtils.copyInputStreamToFile(multipartFile.getInputStream(), result.getInputQdmXml());
 
         String xmlFileName = multipartFile.getOriginalFilename();
 
@@ -225,7 +223,7 @@ public class TranslatorController {
                     info.setFinish(new Date());
                     fileSystemResolver.setExecutionInfo(id, info);
 
-                    FileUtils.writeStringToFile(result.getXml(), translatorResult.getXml());
+                    FileUtils.writeStringToFile(result.getOuptutResultXml(), translatorResult.getXml());
                 } catch (Exception e) {
                     info.setStatus(Status.FAILED);
                     info.setFinish(new Date());
@@ -233,6 +231,7 @@ public class TranslatorController {
                     info.setError(ExceptionUtils.getFullStackTrace(e));
                     fileSystemResolver.setExecutionInfo(id, info);
 
+                    log.warn(e);
                     throw new RuntimeException(e);
                 }
             }
@@ -260,8 +259,8 @@ public class TranslatorController {
 	 * @throws Exception the exception
 	 */
 	@RequestMapping(value = "executor/execution/{executionId}/xml", method=RequestMethod.GET)
-	public ResponseEntity<String> getXml(@PathVariable String executionId) throws Exception {
-		File xml = fileSystemResolver.getFiles(executionId).getXml();
+	public ResponseEntity<String> getOutputXml(@PathVariable String executionId) throws Exception {
+		File xml = fileSystemResolver.getFiles(executionId).getOuptutResultXml();
 
 		String xmlString = FileUtils.readFileToString(xml, "UTF-8");
 		
@@ -269,8 +268,19 @@ public class TranslatorController {
 	    headers.setContentType(MediaType.APPLICATION_XML);
 
 	    return new ResponseEntity<String>(xmlString, headers, HttpStatus.OK);
-		
 	}
+
+    @RequestMapping(value = "executor/execution/{executionId}/input", method=RequestMethod.GET)
+    public ResponseEntity<String> getInputputXml(@PathVariable String executionId) throws Exception {
+        File xml = fileSystemResolver.getFiles(executionId).getInputQdmXml();
+
+        String xmlString = FileUtils.readFileToString(xml, "UTF-8");
+
+        final HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_XML);
+
+        return new ResponseEntity<String>(xmlString, headers, HttpStatus.OK);
+    }
 
 	/**
 	 * Checks if is html request.

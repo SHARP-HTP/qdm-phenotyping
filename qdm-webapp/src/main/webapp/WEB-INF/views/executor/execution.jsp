@@ -34,6 +34,12 @@
                 padding-top: 65px;
             }
         </style>
+
+        <script>
+            $(document).ready(function() {
+                $('span[rel=popover]').popover({trigger:"hover"});
+            });
+        </script>
     </head>
   <body>
   <div class="navbar navbar-fixed-top">
@@ -49,9 +55,11 @@
 
               <ul class="nav">
                   <li class="divider-vertical"></li>
-                  <li><a href="../"><i class="icon-home"></i> Home</a></li>
+                  <li><a href="../../"><i class="icon-home"></i> Home</a></li>
                   <li class="divider-vertical"></li>
-                  <li><a href="api">API</a></li>
+                  <li><a href="../executions">Executions</a></li>
+                  <li class="divider-vertical"></li>
+                  <li><a href="../api">API</a></li>
                   <li class="divider-vertical"></li>
               </ul>
 
@@ -67,13 +75,17 @@
             <th>Status</th>
             <th>Execution Time</th>
             <th>Parameters</th>
-            <th>Image</th>
             <th>Results</th>
             <th>Delete</th>
         </tr>
         <tr>
             <td>${execution.id}</td>
-            <td>${execution.status}</td>
+            <c:if test="${execution.status eq 'FAILED'}">
+                <td><span rel="popover" data-content="${execution.error}s" class='badge badge-important'>${execution.status}</span></td>
+            </c:if>
+            <c:if test="${execution.status ne 'FAILED'}">
+                <td><span class='badge badge-success'>${execution.status}</span></td>
+            </c:if>
             <td>
              <b>Start:</b> ${execution.start}
              <br/>
@@ -84,14 +96,12 @@
              <br/>
              <b>End Date:</b> ${execution.parameters.endDate}
              <br/>
-	         <b>XML:</b> <a href="../execution/${execution.id}/zip">${execution.parameters.xmlFileName}</a>
+	         <b>Input XML:</b> <a href="../execution/${execution.id}/input">${execution.parameters.xmlFileName}</a>
             </td>
             <c:if test="${execution.status eq 'COMPLETE'}">
-            	<td><a href="${execution.image.href}">Image</a></td>
             	<td><a href="${execution.xml.href}">XML</a></td>
             </c:if>
             <c:if test="${execution.status ne 'COMPLETE'}">
-            	<td>&nbsp;</td>
             	<td>&nbsp;</td>
             </c:if>
             <td>

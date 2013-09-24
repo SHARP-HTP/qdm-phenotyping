@@ -37,8 +37,7 @@ import edu.mayo.qdm.webapp.rest.store.ExecutionInfo;
  */
 @XStreamAlias("execution")
 public class Execution extends ExecutionInfo {
-	
-	private Image image;
+
 	private Xml xml;
 
 	/**
@@ -64,29 +63,10 @@ public class Execution extends ExecutionInfo {
 		this.setParameters(info.getParameters());
 		
 		if(info.getStatus() != null && info.getStatus().equals(Status.COMPLETE)){
-			this.image = new Image(info.getId(), template);
 			this.xml = new Xml(info.getId(), template);
 		}
 	}
-	
-	/**
-	 * Gets the image.
-	 *
-	 * @return the image
-	 */
-	public Image getImage() {
-		return image;
-	}
-	
-	/**
-	 * Sets the image.
-	 *
-	 * @param image the new image
-	 */
-	public void setImage(Image image) {
-		this.image = image;
-	}
-	
+
 	/**
 	 * Gets the xml.
 	 *

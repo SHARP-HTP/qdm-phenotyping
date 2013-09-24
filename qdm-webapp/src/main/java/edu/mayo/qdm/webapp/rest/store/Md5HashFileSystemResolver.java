@@ -49,14 +49,12 @@ public class Md5HashFileSystemResolver implements FileSystemResolver {
 	private static final int SUB_DIRECTORY_SPLIT = 2;
 	
 	private static final String DATA_DIR = "dataFiles";
-	
-	private static final String IMAGE_FILE = "image.img";
-	
-	private static final String XML_FILE = "xmlresult.xml";
+
+	private static final String RESULT_XML_FILE = "xmlresult.xml";
 	
 	private static final String DATA_FILE = "data.properties";
 	
-	private static final String ZIP_FILE = "input.zip";
+	private static final String INPUT_XML_FILE = "input.xml";
 	
 	private static final String ID_PROP = "id";
 	private static final String STATUS_PROP = "status";
@@ -166,13 +164,12 @@ public class Md5HashFileSystemResolver implements FileSystemResolver {
 
 	protected FileSystemResult doGetFiles(String id, boolean create) {
 		File storageDir = this.getStorageDir(id, create);
-		
-		File image = new File(storageDir, IMAGE_FILE);
-		File xml = new File(storageDir, XML_FILE);
+
+		File inputXml = new File(storageDir, INPUT_XML_FILE);
 		File data = new File(storageDir, DATA_FILE);
-		File zip = new File(storageDir, ZIP_FILE);
+		File resultXml = new File(storageDir, RESULT_XML_FILE);
 		
-		for(File file : Arrays.asList(image,xml,data,zip)){
+		for(File file : Arrays.asList(inputXml,data,resultXml)){
 			if(!file.exists()){
 				try {
 					file.getParentFile().mkdirs();
@@ -182,7 +179,7 @@ public class Md5HashFileSystemResolver implements FileSystemResolver {
 				}
 			}
 		}
-		return new FileSystemResult(image, xml, data, zip);
+		return new FileSystemResult(inputXml, resultXml, data);
 	}
 	
 	/**

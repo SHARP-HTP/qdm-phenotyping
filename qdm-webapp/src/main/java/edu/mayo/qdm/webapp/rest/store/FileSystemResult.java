@@ -31,87 +31,39 @@ import java.io.File;
  * @author <a href="mailto:kevin.peterson@mayo.edu">Kevin Peterson</a>
  */
 public class FileSystemResult {
-	
-	private File image;
-	private File xml;
-	private File data;
-	private File zip;
 
-	/**
-	 * Instantiates a new file system result.
-	 *
-	 * @param image the image
-	 * @param xml the xml
-	 * @param data the data
-	 */
-	public FileSystemResult(File image, File xml, File data, File zip) {
-		super();
-		this.image = image;
-		this.xml = xml;
-		this.data = data;
-		this.zip = zip;
-	}
-	
-	/**
-	 * Gets the image.
-	 *
-	 * @return the image
-	 */
-	public File getImage() {
-		return image;
-	}
-	
-	/**
-	 * Sets the image.
-	 *
-	 * @param image the new image
-	 */
-	public void setImage(File image) {
-		this.image = image;
-	}
-	
-	/**
-	 * Gets the xml.
-	 *
-	 * @return the xml
-	 */
-	public File getXml() {
-		return xml;
-	}
-	
-	/**
-	 * Sets the xml.
-	 *
-	 * @param xml the new xml
-	 */
-	public void setXml(File xml) {
-		this.xml = xml;
-	}
-	
-	/**
-	 * Gets the data.
-	 *
-	 * @return the data
-	 */
-	public File getData() {
-		return data;
-	}
-	
-	/**
-	 * Sets the data.
-	 *
-	 * @param data the new data
-	 */
-	public void setData(File data) {
-		this.data = data;
-	}
+	private File inputQdmXml;
+    private File ouptutResultXml;
+    private File data;
 
-	public File getZip() {
-		return zip;
-	}
 
-	public void setZip(File zip) {
-		this.zip = zip;
-	}
+    public FileSystemResult(File inputQdmXml, File ouptutResultXml, File data) {
+        this.inputQdmXml = inputQdmXml;
+        this.ouptutResultXml = ouptutResultXml;
+        this.data = data;
+    }
 
+    public File getInputQdmXml() {
+        return inputQdmXml;
+    }
+
+    public void setInputQdmXml(File inputQdmXml) {
+        this.inputQdmXml = inputQdmXml;
+    }
+
+    public File getOuptutResultXml() {
+        return ouptutResultXml;
+    }
+
+    public void setOuptutResultXml(File ouptutResultXml) {
+        this.ouptutResultXml = ouptutResultXml;
+    }
+
+    public File getData() {
+        return data;
+    }
+
+    public void setData(File data) {
+        this.data = data;
+    }
 }
