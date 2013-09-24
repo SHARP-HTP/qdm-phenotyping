@@ -9,8 +9,10 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 
-    @Value("${webapp.qdm2jsonUrl}")
-    private String qdm2jsonUrl = "http://qdm2json.phenotypeportal.org/";
+    private static final String DEFAULT_QDM2JSON_URL = "http://qdm2json.phenotypeportal.org/";
+
+    @Value("${webapp.qdm2jsonUrl:"+DEFAULT_QDM2JSON_URL+"}")
+    private String qdm2jsonUrl;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView getHomePage(){
