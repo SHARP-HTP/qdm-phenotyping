@@ -23,7 +23,7 @@ import java.util.Set;
 public class DemographicsProcessor {
 
     public Demographics getDemographics(Map<String,Set<Patient>> results){
-        Map<AbstractDemographicsItem,Integer> counter = new HashMap<>();
+        Map<AbstractDemographicsItem,Integer> counter = new HashMap<AbstractDemographicsItem,Integer>();
 
         for(Map.Entry<String, Set<Patient>> entrySet : results.entrySet()){
             for(Patient patient : entrySet.getValue()){
@@ -42,7 +42,7 @@ public class DemographicsProcessor {
         }
 
         Demographics demographics = new Demographics();
-        List<DemographicType> types = new ArrayList<>();
+        List<DemographicType> types = new ArrayList<DemographicType>();
 
         for(Map.Entry<AbstractDemographicsItem, Integer> entrySet : counter.entrySet()){
             AbstractDemographicsItem item = entrySet.getKey();

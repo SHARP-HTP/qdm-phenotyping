@@ -75,7 +75,7 @@ class CypressValidationController implements InitializingBean {
 
         def executor = ExecutorFactory.instance().getExecutor()
 
-        def results = executor.execute(patientList, measure.xml, MeasurementPeriod.getCalendarYear(new DateTime(2012,1,1,1,1).toDate()))
+        def results = executor.execute(patientList, measure.xml, MeasurementPeriod.getCalendarYear(new DateTime(2012,1,1,1,1).toDate()), null)
 
         def resultMap = [:]
 
