@@ -14,11 +14,9 @@
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<context:annotation-config />
+    <beans:import resource="classpath:qdm-properties.xml"/>
 
-    <context:property-placeholder location="file:${user.home}/.qdm-phenotyping/qdm-phenotyping.properties,classpath:qdm-phenotyping.properties"
-        ignore-unresolvable="true"
-        ignore-resource-not-found="true"/>
+	<context:annotation-config />
 
 	<security:http>
 	    <security:intercept-url pattern="/**" access="ROLE_ADMINISTRATOR" method="POST" />

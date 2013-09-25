@@ -6,8 +6,8 @@
      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<import resource="classpath:qdm-properties.xml"/>
-
-    <context:component-scan base-package="edu.mayo.qdm.executor" />
+	<context:property-placeholder location="classpath:qdm-phenotyping.properties,file:${user.home}/.qdm-phenotyping/qdm-phenotyping.properties"
+        ignore-unresolvable="true"
+        ignore-resource-not-found="true"/>
 
 </beans>
