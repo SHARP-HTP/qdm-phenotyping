@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="../resources/include/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../resources/include/bootstrap-fileupload/bootstrap-fileupload.min.css">
     <link rel="stylesheet" href="../resources/include/select2/select2.css">
-    <link rel="stylesheet" href="../resources/include/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../resources/include/syntaxhighlighter_3.0.83/styles/shCore.css" />
     <link rel="stylesheet" href="../resources/include/syntaxhighlighter_3.0.83/styles/shThemeDefault.css" />
 
