@@ -1,0 +1,140 @@
+import java.util.*
+
+import java.text.SimpleDateFormat;
+
+import edu.mayo.qdm.executor.drools.PreconditionResult;
+
+import edu.mayo.qdm.patient.Event;
+import edu.mayo.qdm.patient.Patient;
+import edu.mayo.qdm.patient.Encounter;
+import edu.mayo.qdm.patient.Procedure;
+import edu.mayo.qdm.patient.RiskCategoryAssessment;
+import edu.mayo.qdm.patient.Medication;
+
+import edu.mayo.qdm.executor.drools.parser.criteria.Interval;
+import edu.mayo.qdm.executor.drools.parser.criteria.MeasurementValue;
+import edu.mayo.qdm.executor.drools.DroolsUtil;
+import edu.mayo.qdm.executor.MeasurementPeriod;
+import edu.mayo.qdm.executor.ResultCallback;
+import edu.mayo.qdm.executor.drools.SpecificOccurrence;
+import edu.mayo.qdm.patient.MedicationStatus
+/*
+    ID: 0043
+    Title: Pneumonia Vaccination Status for Older Adults
+    Description: Percentage of patients 65 years of age and older who have ever received a pneumococcal vaccine.
+    HQMF Version: 1
+    CMS ID: CMS127v1
+*/
+
+global ResultCallback resultCallback
+global DroolsUtil droolsUtil
+global MeasurementPeriod measurementPeriod
+
+global Long STARTTIME;
+global Long ENDTIME;
+
+declare Event @role( event ) @timestamp( startDate ) @duration( duration ) end
+declare Medication @role( event ) @timestamp( startDate ) @duration( duration ) end
+declare Procedure @role( event ) @timestamp( startDate ) @duration( duration ) end
+declare Encounter @role( event ) @timestamp( startDate ) @duration( duration ) end
+declare RiskCategoryAssessment @role( event ) @timestamp( startDate ) @duration( duration ) end
+
+declare MeasurementPeriod @role( event ) @timestamp( start ) @duration( duration ) end
+
+
+declare PatientBirth
+    @role( event )
+    @timestamp( date )
+    pid     : String
+    date    : Date
+end
+
+declare Marker
+    pid     : String
+    kind    : String
+end
+
+declare Measure
+    val     : Double
+end
+
+query measure( Double $val )
+    Measure( $val := val )
+end
+
+
+/* Insert data */
+rule "DeepInsert"
+salience 100
+when
+    $p : Patient( $pid : sourcePid, $bday : birthdate )
+then
+    // Only do those data elements which are needed by the rules
+    for ( Encounter e : $p.getEncounters() ) { insert( e ); }
+    for ( Medication m : $p.getMedications() ) { insert( m ); }
+    for ( Procedure p : $p.getProcedures() ) { insert( p ); }
+    for ( RiskCategoryAssessment r : $p.getRiskCategoryAssessments() ) { insert( r ); }
+    insert( new PatientBirth( $pid, $bday ) );
+end
+
+
+rule "Measure"
+salience -100
+when
+    accumulate( Marker( kind == "NUM" ), $num : count( 1 ) )
+    accumulate( Marker( kind == "DEN" ), $den : count( 1 ); $den > 0 )
+then
+    Double msr = $num.doubleValue() / $den.doubleValue();
+    insert( new Measure( msr ) );
+end
+
+
+
+rule "IPP"
+when
+    $m : MeasurementPeriod( $start : start )
+    $p : Patient( $pid : sourcePid, $encounters : encounters )
+    PatientBirth( pid == $pid, this before[ 23725d ] $m )
+    exists (
+        $c_12 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1001", this during $m, this memberOf $encounters )
+        or
+        $c_14 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1048", this during $m, this memberOf $encounters )
+        or
+        $c_16 : Encounter( concept valueFrom "2.16.840.1.113883.3.526.3.1240", this during $m, this memberOf $encounters )
+        or
+        $c_18 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1016", this during $m, this memberOf $encounters )
+        or
+        $c_20 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1025", this during $m, this memberOf $encounters )
+        or
+        $c_22 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1023", this during $m, this memberOf $encounters )
+    )
+then
+    insert( new Marker( $pid, "IPP" ) );
+end
+
+
+rule "Denominator"
+when
+    $p : Patient( $pid : sourcePid )
+    $m : Marker( pid == $pid, kind == "IPP" )
+then
+    insert( new Marker( $pid, "DEN" ) );
+end
+
+
+rule "Numerator"
+when
+    $m : MeasurementPeriod( $start : start )
+    $p : Patient( $pid : sourcePid, $meds : medications, $procs : procedures, $risks : riskCategoryAssessments )
+    $k : Marker( pid == $pid, kind == "DEN" )
+    exists (
+         $c_1 : Medication( concept valueFrom "2.16.840.1.113883.3.464.1003.110.12.1027", this not after $m, this memberOf $meds )
+         or
+         $c_3 : Procedure( concept valueFrom "2.16.840.1.113883.3.464.1003.110.12.1028", this not after $m, this memberOf $procs )
+         or
+         $c_5 : RiskCategoryAssessment( this not after $m, this memberOf $risks )
+    )
+then
+    insert( new Marker( $pid, "NUM" ) );
+end
+

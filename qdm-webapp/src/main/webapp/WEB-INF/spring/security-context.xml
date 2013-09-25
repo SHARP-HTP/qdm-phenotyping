@@ -16,6 +16,10 @@
 
 	<context:annotation-config />
 
+    <context:property-placeholder location="file:${user.home}/.qdm-phenotyping/qdm-phenotyping.properties,classpath:qdm-phenotyping.properties"
+        ignore-unresolvable="true"
+        ignore-resource-not-found="true"/>
+
 	<security:http>
 	    <security:intercept-url pattern="/**" access="ROLE_ADMINISTRATOR" method="POST" />
         <security:intercept-url pattern="/**" access="ROLE_ADMINISTRATOR" method="DELETE" />

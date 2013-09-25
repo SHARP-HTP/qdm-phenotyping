@@ -1,0 +1,568 @@
+import java.util.*
+
+import java.text.SimpleDateFormat;
+
+import edu.mayo.qdm.executor.drools.PreconditionResult;
+
+import edu.mayo.qdm.patient.Event;
+import edu.mayo.qdm.patient.Allergy;
+import edu.mayo.qdm.patient.Patient;
+import edu.mayo.qdm.patient.PhysicalExamFinding;
+import edu.mayo.qdm.patient.Encounter;
+import edu.mayo.qdm.patient.Procedure;
+import edu.mayo.qdm.patient.RiskCategoryAssessment;
+import edu.mayo.qdm.patient.Medication;
+
+import edu.mayo.qdm.executor.drools.parser.criteria.Interval;
+import edu.mayo.qdm.executor.drools.parser.criteria.MeasurementValue;
+import edu.mayo.qdm.executor.drools.DroolsUtil;
+import edu.mayo.qdm.executor.MeasurementPeriod;
+import edu.mayo.qdm.executor.ResultCallback;
+import edu.mayo.qdm.executor.drools.SpecificOccurrence;
+import edu.mayo.qdm.patient.MedicationStatus
+import edu.mayo.qdm.patient.Diagnosis
+import edu.mayo.qdm.patient.PhysicalExamFinding
+/*
+    ID: 0043
+    Title: Pneumonia Vaccination Status for Older Adults
+    Description: Percentage of patients 65 years of age and older who have ever received a pneumococcal vaccine.
+    HQMF Version: 1
+    CMS ID: CMS127v1
+*/
+
+global ResultCallback resultCallback
+global DroolsUtil droolsUtil
+global MeasurementPeriod measurementPeriod
+
+global Long STARTTIME;
+global Long ENDTIME;
+
+declare Allergy @role( event ) @timestamp( startDate ) @duration( duration ) end
+declare Diagnosis @role( event ) @timestamp( startDate ) @duration( duration ) end
+declare Event @role( event ) @timestamp( startDate ) @duration( duration ) end
+declare Medication @role( event ) @timestamp( startDate ) @duration( duration ) end
+declare Procedure @role( event ) @timestamp( startDate ) @duration( duration ) end
+declare PhysicalExamFinding @role( event ) @timestamp( startDate ) @duration( duration ) end
+declare Encounter @role( event ) @timestamp( startDate ) @duration( duration ) end
+declare RiskCategoryAssessment @role( event ) @timestamp( startDate ) @duration( duration ) end
+
+declare MeasurementPeriod @role( event ) @timestamp( start ) @duration( duration ) end
+
+
+declare PatientBirth
+    @role( event )
+    @timestamp( date )
+    pid     : String
+    date    : Date
+end
+
+declare DataSource
+    name    : String   @key
+    data    : Set
+end
+
+declare Token
+    pid     : String
+    gid     : String
+end
+
+declare Marker
+    pid     : String
+    kind    : String
+end
+
+declare Measure
+    val     : Double
+end
+
+query measure( Double $val )
+    Measure( $val := val )
+end
+
+
+
+
+rule "Mark"
+when
+    $p : Patient()
+    $m : Marker( pid == $p.getSourcePid() )
+then
+    System.out.println( $m +  " .. " + $p.getBirthdate() );
+end
+
+
+
+
+/* Insert data */
+rule "DeepInsert"
+salience 100
+when
+    $p : Patient( $pid : sourcePid, $bday : birthdate )
+then
+    // Only do those data elements which are needed by the rules
+    for ( Allergy a : $p.getAllergies() ) { insert( a ); }
+    for ( Encounter e : $p.getEncounters() ) { insert( e ); }
+    for ( Medication m : $p.getMedications() ) { insert( m ); }
+    for ( Diagnosis d : $p.getDiagnoses() ) { insert( d ); }
+    for ( Procedure p : $p.getProcedures() ) { insert( p ); }
+    for ( PhysicalExamFinding f : $p.getPhysicalExamFindings() ) { insert( f ); }
+    for ( RiskCategoryAssessment r : $p.getRiskCategoryAssessments() ) { insert( r ); }
+    insert( new PatientBirth( $pid, $bday ) );
+end
+
+
+rule "Measure"
+salience -100
+when
+    accumulate( Marker( kind == "NUM" ), $num : count( 1 ) )
+    accumulate( Marker( kind == "DEN" ), $den : count( 1 ); $den > 0 )
+then
+    Double msr = $num.doubleValue() / $den.doubleValue();
+    insert( new Measure( msr ) );
+end
+
+
+
+
+
+rule "IPP"
+salience 100
+when
+    $m : MeasurementPeriod( $start : start )
+    $p : Patient( $pid : sourcePid, $diags : diagnoses, $encs : encounters )
+
+    // 206 : "Patient Characteristic Birthdate: birth date" >= 18 year(s) starts before start of "Measurement Period"
+    $c_206 : PatientBirth( pid == $pid, this before[ 6570d ] $m )
+
+    // 223 :  "Diagnosis, Active: Heart Failure" starts before or during ... "
+    $c_223 : Diagnosis( concept valueFrom "2.16.840.1.113883.3.526.3.376", this memberOf $diags )
+    and exists (
+        // 208 : "Occurrence A of Encounter, Performed: Care Services in Long-Term Residential Facility"
+        $c_208 : Encounter( concept valueFrom "2.16.840.1.113883.3.526.3.376", this during $m, this after $c_223 )
+        or
+        // 210 : "Occurrence A of Encounter, Performed: Discharge Services - Hospital Inpatient"
+        $c_210 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1007", this during $m, this after $c_223, this memberOf $encs )
+        or
+        // 212 : "Occurrence A of Encounter, Performed: Home Healthcare Services"
+        $c_210 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1016", this during $m, this after $c_223, this memberOf $encs )
+        or
+        // 214 : "Occurrence A of Encounter, Performed: Nursing Facility Visit"
+        $c_214 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1012", this during $m, this after $c_223, this memberOf $encs )
+        or
+        // 216 : "Occurrence A of Encounter, Performed: Office Visit"
+        $c_216 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1001", this during $m, this after $c_223, this memberOf $encs )
+        or
+        // 218 : "Occurrence A of Encounter, Performed: Outpatient Consultation"
+        $c_218 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1008", this during $m, this after $c_223, this memberOf $encs )
+        or
+        // 220 : "Occurrence A of Encounter, Performed: Face-to-Face Interaction"
+        $c_220 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1048", this during $m, this after $c_223, this memberOf $encs )
+    )
+
+    exists (
+        accumulate(
+                // can't embed the OR here due to a Drools limitation
+                Token( pid == $pid, gid == "254" ),
+            $num : count( 1 );
+            $num >= 2
+        )
+        or
+        // 240 : "Encounter, Performed: Discharge Services - Hospital Inpatient"
+        $c_240 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1007", this during $m )
+    )
+then
+    insert( new Marker( $pid, "IPP" ) );
+end
+
+
+rule "GROUP 254"
+when
+    $m : MeasurementPeriod( $start : start )
+    $p : Patient( $pid : sourcePid, $diags : diagnoses, $encs : encounters )
+    (
+        // "Encounter, Performed: Care Services in Long-Term Residential Facility"
+        $c_225 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1014", this during $m, this memberOf $encs )
+        or
+        // "Encounter, Performed: Home Healthcare Services"
+        $c_227 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1016", this during $m, this memberOf $encs )
+        or
+        // "Encounter, Performed: Nursing Facility Visit"
+        $c_229 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1012", this during $m, this memberOf $encs )
+        or
+        // "Encounter, Performed: Office Visit"
+        $c_231 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1001", this during $m, this memberOf $encs )
+        or
+        // "Encounter, Performed: Outpatient Consultation"
+        $c_233 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1008", this during $m, this memberOf $encs )
+        or
+        // "Encounter, Performed: Patient Provider Interaction"
+        $c_235 : Encounter( concept valueFrom "2.16.840.1.113883.3.526.3.1012", this during $m, this memberOf $encs )
+    )
+then
+    insert( new Token( $pid, "254" ) );
+end
+
+
+
+rule "Denominator"
+salience 80
+when
+    $m : MeasurementPeriod( $start : start )
+    $p : Patient( $pid : sourcePid, $diags : diagnoses, $encs : encounters  /*,  $studies : diagnosticStudies */ )
+    $k : Marker( pid == $pid, kind == "IPP" )
+
+    exists (
+        (
+            /* 182 : "Diagnostic Study, Result: Ejection Fraction (result < 40 %)"
+            $c_250 : DiagnosticStudy( concept valueFrom "2.16.840.1.113883.3.526.3.1134", value < 40, this memberOf $studies ) SBE 250
+            or */
+            // 184 "Diagnosis, Active: Moderate or Severe LVSD"
+            $c_250 : Diagnosis( concept valueFrom "2.16.840.1.113883.3.526.3.1090", this memberOf $diags )
+            or
+            // 186 "Diagnosis, Active: Left ventricular systolic dysfunction"
+            $c_250 : Diagnosis( concept valueFrom "2.16.840.1.113883.3.526.3.1091", /* ,severity == SEVERE */ this memberOf $diags )
+        ) and exists (
+                      // 189 : "Occurrence A of Encounter, Performed: Care Services in Long-Term Residential Facility"
+                      $c_189 : Encounter( concept valueFrom "2.16.840.1.113883.3.526.3.376", this during $m, this after $c_250 )
+                      or
+                      // 191 : "Occurrence A of Encounter, Performed: Discharge Services - Hospital Inpatient"
+                      $c_191 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1007", this during $m, this after $c_250, this memberOf $encs )
+                      or
+                      // 193 : "Occurrence A of Encounter, Performed: Home Healthcare Services"
+                      $c_193 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1016", this during $m, this after $c_250, this memberOf $encs )
+                      or
+                      // 195 : "Occurrence A of Encounter, Performed: Nursing Facility Visit"
+                      $c_195 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1012", this during $m, this after $c_250, this memberOf $encs )
+                      or
+                      // 197 : "Occurrence A of Encounter, Performed: Office Visit"
+                      $c_197 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1001", this during $m, this after $c_250, this memberOf $encs )
+                      or
+                      // 199 : "Occurrence A of Encounter, Performed: Outpatient Consultation"
+                      $c_199 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1008", this during $m, this after $c_250, this memberOf $encs )
+                      or
+                      // 201 : "Occurrence A of Encounter, Performed: Face-to-Face Interaction"
+                      $c_201 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1048", this during $m, this after $c_250, this memberOf $encs )
+        )
+    )
+then
+    insert( new Marker( $pid, "DEN" ) );
+end
+
+
+
+
+rule "Numerator"
+salience 40
+when
+    $m : MeasurementPeriod( $start : start )
+    $p : Patient( $pid : sourcePid, $meds : medications, $encs : encounters )
+    $k : Marker( pid == $pid, kind == "DEN" )
+    not  Marker( pid == $pid, kind == "DEX" )
+
+    exists (
+        // 128 : "Medication, Order: Beta Blocker Therapy for LVSD"
+        ( $c_128 : Medication( concept valueFrom "2.16.840.1.113883.3.526.3.1184", this memberOf $meds )
+          and exists (
+                // 113 : "Encounter, Performed: Care Services in Long-Term Residential Facility"
+                $c_113 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1014", this includes $c_128, this memberOf $encs )
+                or
+                // 115 : "Encounter, Performed: Discharge Services - Hospital Inpatient"
+                $c_115 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1007", this includes $c_128, this memberOf $encs )
+                or
+                // 117 : "Encounter, Performed: Home Healthcare Services"
+                $c_117 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1016", this includes $c_128, this memberOf $encs )
+                or
+                // 119 : "Encounter, Performed: Nursing Facility Visit"
+                $c_119 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1012", this includes $c_128, this memberOf $encs )
+                or
+                // 121 : "Encounter, Performed: Office Visit"
+                $c_121 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1001", this includes $c_128, this memberOf $encs )
+                or
+                // 123 : "Encounter, Performed: Outpatient Consultation"
+                $c_123 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1008", this includes $c_128, this memberOf $encs )
+                or
+                // 125 : "Encounter, Performed: Face-to-Face Interaction"
+                $c_125 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1048", this includes $c_128, this memberOf $encs )
+          )
+        )
+        or
+        (
+            // Occurrence A of "Encounter, Performed: Care Services in Long-Term Residential Facility"
+            $enc_A : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1014", this memberOf $encs )
+            and
+            // 132 : "Medication, Active: Beta Blocker Therapy for LVSD that starts before or during Encounter A "
+            $med_A : Medication( concept valueFrom "2.16.840.1.113883.3.526.3.1184", this not after $enc_A, this memberOf $meds )
+            and
+            // 130 : "NO Medication, Active: Beta Blocker Therapy for LVSD that ends before Encounter A "
+            not      Medication( concept valueFrom "2.16.840.1.113883.3.526.3.1184", this == $med_A, this before $enc_A, this memberOf $meds )
+        )
+        or
+        (
+            // Occurrence A of "Encounter, Performed: Discharge Services - Hospital Inpatient"
+            $enc_A : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1007", this memberOf $encs )
+            and
+            // 139 : "Medication, Active: Beta Blocker Therapy for LVSD that starts before or during Encounter A "
+            $med_A : Medication( concept valueFrom "2.16.840.1.113883.3.526.3.1184", this not after $enc_A, this memberOf $meds )
+            and
+            // 137 : "NO Medication, Active: Beta Blocker Therapy for LVSD that ends before Encounter A "
+            not      Medication( concept valueFrom "2.16.840.1.113883.3.526.3.1184", this == $med_A, this before $enc_A, this memberOf $meds )
+        )
+        or
+        (
+            // Occurrence A of "Encounter, Performed: Home Healthcare Services"
+            $enc_A : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1016", this memberOf $encs )
+            and
+            // 146 : "Medication, Active: Beta Blocker Therapy for LVSD that starts before or during Encounter A "
+            $med_A : Medication( concept valueFrom "2.16.840.1.113883.3.526.3.1184", this not after $enc_A, this memberOf $meds )
+            and
+            // 144 : "NO Medication, Active: Beta Blocker Therapy for LVSD that ends before Encounter A "
+            not      Medication( concept valueFrom "2.16.840.1.113883.3.526.3.1184", this == $med_A, this before $enc_A, this memberOf $meds )
+
+        )
+        or
+        (
+            // Occurence A of "Encounter, Performed: Nursing Facility Visit"
+            $enc_A : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1012", this memberOf $encs )
+            and
+            // 153 : "Medication, Active: Beta Blocker Therapy for LVSD that starts before or during Encounter A "
+            $med_A : Medication( concept valueFrom "2.16.840.1.113883.3.526.3.1184", this not after $enc_A, this memberOf $meds )
+            and
+            // 151 : "NO Medication, Active: Beta Blocker Therapy for LVSD that ends before Encounter of type... "
+            not (    $c_151 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1012", this memberOf $encs )
+                     and
+                     Medication( concept valueFrom "2.16.840.1.113883.3.526.3.1184", this == $med_A, this before $c_151, this memberOf $meds )
+            )
+        )
+        or
+        (
+            // Occurrence A of "Encounter, Performed: Outpatient Consultation"
+            $enc_A : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1008", this memberOf $encs )
+            and
+            // 160 : "Medication, Active: Beta Blocker Therapy for LVSD that starts before or during Encounter A "
+            $med_A : Medication( concept valueFrom "2.16.840.1.113883.3.526.3.1184", this not after $enc_A, this memberOf $meds )
+            and
+            // 158 : "NO Medication, Active: Beta Blocker Therapy for LVSD that ends before Encounter A "
+            not      Medication( concept valueFrom "2.16.840.1.113883.3.526.3.1184", this == $med_A, this before $enc_A, this memberOf $meds )
+        )
+        or
+        (
+            // Occurrence A of "Encounter, Performed: Office Visit"
+            $enc_A : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1001", this memberOf $encs )
+            and
+            // 160 : "Medication, Active: Beta Blocker Therapy for LVSD that starts before or during Encounter A "
+            $med_A : Medication( concept valueFrom "2.16.840.1.113883.3.526.3.1184", this not after $enc_A, this memberOf $meds )
+            and
+            // 158 : "NO Medication, Active: Beta Blocker Therapy for LVSD that ends before Encounter A "
+            not      Medication( concept valueFrom "2.16.840.1.113883.3.526.3.1184", this == $med_A, this before $enc_A, this memberOf $meds )
+        )
+        or
+        (
+            // Occurrence A of "Encounter, Performed: Face-to-Face Interaction"
+            $enc_A : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1048", this memberOf $encs )
+            and
+            // 160 : "Medication, Active: Beta Blocker Therapy for LVSD that starts before or during Encounter A "
+            $med_A : Medication( concept valueFrom "2.16.840.1.113883.3.526.3.1184", this not after $enc_A, this memberOf $meds )
+            and
+            // 158 : "NO Medication, Active: Beta Blocker Therapy for LVSD that ends before Encounter A "
+            not      Medication( concept valueFrom "2.16.840.1.113883.3.526.3.1184", this == $med_A, this before $enc_A, this memberOf $meds )
+        )
+    )
+then
+    insert( new Marker( $pid, "NUM" ) );
+end
+
+
+
+
+
+
+
+rule "DenException"
+salience 20
+when
+    $m : MeasurementPeriod( $start : start )
+    $p : Patient( $pid : sourcePid, $meds : medications, $encs : encounters, $diags : diagnoses, $alls : allergies, $exams : physicalExamFindings )
+    $k : Marker( pid == $pid, kind == "DEN" )
+    not  Marker( pid == $pid, kind == "NUM" )
+
+    exists(
+        exists (
+            // Occurrence A of "Physical Exam: Heart Rate"
+            $A : PhysicalExamFinding( concept valueFrom "2.16.840.1.113883.3.526.3.1176", this memberOf $exams )
+            and
+            // Occurrence B of "Physical Exam: Heart Rate" before $A
+            $B : PhysicalExamFinding( concept valueFrom "2.16.840.1.113883.3.526.3.1176", this before $A, this memberOf $exams )
+            and
+            // MOST RECENT --> no findings of the same type after B
+            not  PhysicalExamFinding( concept valueFrom "2.16.840.1.113883.3.526.3.1176", this != $B, this before $A, this after $B, this memberOf $exams )
+            and exists (
+                (
+                    // 5 : "Occurrence A of "Encounter, Performed: Care Services in Long-Term Residential Facility"
+                    $c_05 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1014", this memberOf $encs )
+                    and
+                    // Occurrence A of "Physical Exam: Heart Rate"
+                    // TODO Numeric coercion of "50"
+                    $c_14 : PhysicalExamFinding( concept valueFrom "2.16.840.1.113883.3.526.3.1176", value.value < "50", value.unit == "{H.B}/min", this == $A, this during $c_05, this memberOf $exams )
+                    and
+                    // Occurrence B of "Physical Exam: Heart Rate" before $A
+                    $c_16 : PhysicalExamFinding( concept valueFrom "2.16.840.1.113883.3.526.3.1176", value.value < "50", value.unit == "{H.B}/min", this == $B, this during $c_05, this memberOf $exams )
+                )
+                or
+                (
+                    // 1 : "Occurrence A of "Encounter, Performed: Discharge Services - Hospital Inpatient"
+                    $c_01 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1007", this memberOf $encs )
+                    and
+                    // Occurrence A of "Physical Exam: Heart Rate"
+                    // TODO Numeric coercion of "50"
+                    $c_20 : PhysicalExamFinding( concept valueFrom "2.16.840.1.113883.3.526.3.1176", value.value < "50", value.unit == "{H.B}/min", this == $A, this during $c_01, this memberOf $exams )
+                    and
+                    // Occurrence B of "Physical Exam: Heart Rate" before $A
+                    $c_22 : PhysicalExamFinding( concept valueFrom "2.16.840.1.113883.3.526.3.1176", value.value < "50", value.unit == "{H.B}/min", this == $B, this during $c_01, this memberOf $exams )
+                )
+                or
+                (
+                    // 9 : "Occurrence A of "Encounter, Performed: Face-to-Face Interaction"
+                    $c_01 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1048", this memberOf $encs )
+                    and
+                    // Occurrence A of "Physical Exam: Heart Rate"
+                    // TODO Numeric coercion of "50"
+                    $c_26 : PhysicalExamFinding( concept valueFrom "2.16.840.1.113883.3.526.3.1176", value.value < "50", value.unit == "{H.B}/min", this == $A, this during $c_01, this memberOf $exams )
+                    and
+                    // Occurrence B of "Physical Exam: Heart Rate" before $A
+                    $c_28 : PhysicalExamFinding( concept valueFrom "2.16.840.1.113883.3.526.3.1176", value.value < "50", value.unit == "{H.B}/min", this == $B, this during $c_01, this memberOf $exams )
+                )
+                or
+                (
+                    // 6 : "Occurrence A of "Encounter, Performed: Home Healthcare Services"
+                    $c_06 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1016", this memberOf $encs )
+                    and
+                    // Occurrence A of "Physical Exam: Heart Rate"
+                    // TODO Numeric coercion of "50"
+                    $c_32 : PhysicalExamFinding( concept valueFrom "2.16.840.1.113883.3.526.3.1176", value.value < "50", value.unit == "{H.B}/min", this == $A, this during $c_06, this memberOf $exams )
+                    and
+                    // Occurrence B of "Physical Exam: Heart Rate" before $A
+                    $c_34 : PhysicalExamFinding( concept valueFrom "2.16.840.1.113883.3.526.3.1176", value.value < "50", value.unit == "{H.B}/min", this == $B, this during $c_06, this memberOf $exams )
+                )
+                or
+                (
+                    // 2 : "Occurrence A of "Encounter, Performed: Nursing Facility Visit"
+                    $c_02 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1012", this memberOf $encs )
+                    and
+                    // Occurrence A of "Physical Exam: Heart Rate"
+                    // TODO Numeric coercion of "50"
+                    $c_38 : PhysicalExamFinding( concept valueFrom "2.16.840.1.113883.3.526.3.1176", value.value < "50", value.unit == "{H.B}/min", this == $A, this during $c_02, this memberOf $exams )
+                    and
+                    // Occurrence B of "Physical Exam: Heart Rate" before $A
+                    $c_40 : PhysicalExamFinding( concept valueFrom "2.16.840.1.113883.3.526.3.1176", value.value < "50", value.unit == "{H.B}/min", this == $B, this during $c_02, this memberOf $exams )
+                )
+                or
+                (
+                    // 4 : "Occurrence A of "Encounter, Performed: Outpatient Consultation"
+                    $c_04 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1008", this memberOf $encs )
+                    and
+                    // Occurrence A of "Physical Exam: Heart Rate"
+                    // TODO Numeric coercion of "50"
+                    $c_44 : PhysicalExamFinding( concept valueFrom "2.16.840.1.113883.3.526.3.1176", value.value < "50", value.unit == "{H.B}/min", this == $A, this during $c_04, this memberOf $exams )
+                    and
+                    // Occurrence B of "Physical Exam: Heart Rate" before $A
+                    $c_46 : PhysicalExamFinding( concept valueFrom "2.16.840.1.113883.3.526.3.1176", value.value < "50", value.unit == "{H.B}/min", this == $B, this during $c_04, this memberOf $exams )
+                )
+                or
+                (
+                    // 3 : "Occurrence A of "Encounter, Performed: Office Visit"
+                    $c_03 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1001", this memberOf $encs )
+                    and
+                    // Occurrence A of "Physical Exam: Heart Rate"
+                    // TODO Numeric coercion of "50"
+                    $c_50 : PhysicalExamFinding( concept valueFrom "2.16.840.1.113883.3.526.3.1176", value.value < "50", value.unit == "{H.B}/min", this == $A, this during $c_03, this memberOf $exams )
+                    and
+                    // Occurrence B of "Physical Exam: Heart Rate" before $A
+                    $c_52 : PhysicalExamFinding( concept valueFrom "2.16.840.1.113883.3.526.3.1176", value.value < "50", value.unit == "{H.B}/min", this == $B, this during $c_03, this memberOf $exams )
+                )
+            )
+        )
+        or
+        exists (
+            // 60 :  "Medication, Order not done: Medical Reason" for "Beta Blocker Therapy for LVSD Grouping Value Set"
+            Medication( concept valueFrom "2.16.840.1.113883.3.526.3.1184",
+                        // droolsUtil.isInCodeSet( negation, "2.16.840.1.113883.3.526.3.1007",
+                        this during $m, this memberOf $meds )
+            or
+            // 62 : Medication, Order not done: Patient Reason" for "Beta Blocker Therapy for LVSD Grouping Value Set"
+            Medication( concept valueFrom "2.16.840.1.113883.3.526.3.1184",
+                        // droolsUtil.isInCodeSet( negation, "2.16.840.1.113883.3.526.3.1008",
+                        this during $m, this memberOf $meds )
+            or
+            // 64 : "Medication, Order not done: System Reason" for "Beta Blocker Therapy for LVSD Grouping Value Set"
+            Medication( concept valueFrom "2.16.840.1.113883.3.526.3.1184",
+                        // droolsUtil.isInCodeSet( negation, "2.16.840.1.113883.3.526.3.1009",
+                        this during $m, this memberOf $meds )
+        )
+        or
+        exists (
+            (
+                // 246 : "Encounter, Performed: Care Services in Long-Term Residential Facility"
+                $x_246 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1014", this memberOf $encs )
+                or
+                // 246 : "Encounter, Performed: Discharge Services - Hospital Inpatient"
+                $x_246 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1007", this memberOf $encs )
+                or
+                // 246 : "Encounter, Performed: Home Healthcare Services"
+                $x_246 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1016", this memberOf $encs )
+                or
+                // 246 : "Encounter, Performed: Nursing Facility Visit"
+                $x_246 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1012", this memberOf $encs )
+                or
+                // 246 : "Encounter, Performed: Office Visit"
+                $x_246 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1001", this memberOf $encs )
+                or
+                // 246 : "Encounter, Performed: Outpatient Consultation"
+                $x_246 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1008", this memberOf $encs )
+                or
+                // 246 : "Encounter, Performed: Face-to-Face Interaction"
+                $x_246 : Encounter( concept valueFrom "2.16.840.1.113883.3.464.1003.101.12.1048", this memberOf $encs )
+
+            )
+            and
+            (
+                // 68 : "Diagnosis, Active: Arrhythmia"
+                $c_68 : Diagnosis( concept valueFrom "2.16.840.1.113883.3.526.3.376", this not after $x_246, this memberOf $diags )
+                or
+                // 70 : "Diagnosis, Active: Hypotension"
+                $c_70 : Diagnosis( concept valueFrom "2.16.840.1.113883.3.526.3.370", this not after $x_246, this memberOf $diags )
+                or
+                // 72 : "Diagnosis, Active: Asthma"
+                $c_72 : Diagnosis( concept valueFrom "2.16.840.1.113883.3.526.3.362", this not after $x_246, this memberOf $diags )
+                or
+                // 74 : "Medication, Allergy: Beta Blocker Therapy"
+                $c_74 : Allergy( concept valueFrom "2.16.840.1.113883.3.526.3.1174", this not after $x_246, this memberOf $alls )
+                or
+                // 76 : "Diagnosis, Active: Allergy to Beta Blocker Therapy"
+                $c_76 : Diagnosis( concept valueFrom "2.16.840.1.113883.3.526.3.1177", this not after $x_246, this memberOf $diags )
+                or
+                // 78 : "Medication, Intolerance: Beta Blocker Therapy"
+                $c_78 : Allergy( concept valueFrom "2.16.840.1.113883.3.526.3.1174", this not after $x_246, this memberOf $alls )
+                or
+                // 80 : "Diagnosis, Active: Intolerance to Beta Blocker Therapy"
+                $c_80 : Diagnosis( concept valueFrom "2.16.840.1.113883.3.526.3.1178", this not after $x_246, this memberOf $diags )
+                or
+                // 82 : Diagnosis, Active: Bradycardia"
+                $c_82 : Diagnosis( concept valueFrom "2.16.840.1.113883.3.526.3.412", this not after $x_246, this memberOf $diags )
+                or (
+                    // 88 : "Diagnosis, Active: Atrioventricular Block"
+                    $c_88 : Diagnosis( concept valueFrom "2.16.840.1.113883.3.526.3.367", this not after $x_246, this memberOf $diags )
+                    and
+                        // 84 : NOT "Diagnosis, Active: Atrioventricular Block"
+                    not $c_84 : Diagnosis( concept valueFrom "2.16.840.1.113883.3.526.3.368", this not after $x_246, this memberOf $diags )
+                    and
+                        // 86 : NOT "Device, Applied: Cardiac Pacer"
+                    not $c_84 : Diagnosis( concept valueFrom "2.16.840.1.113883.3.526.3.1193", this not after $x_246, this memberOf $diags )
+
+                )
+            )
+        )
+    )
+then
+    insert( new Marker( $pid, "DXC" ) );
+end
+
