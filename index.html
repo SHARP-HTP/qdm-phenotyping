@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<title>QDM Phenotyping Documentation</title>
+
+<head>
+
+
+</head>
+
+<body>
+
+
+<div id="toc"></div>
+
+<xmp class="asdf" style="display:none;">
+# About
+QDM Phenotyping is a tool suite to automate the transformation of QDM/HQMF XML into Drools Rules, and execute them against a Hadoop data source.
+
+![Architecture](assets/img/htp-drools-arch.png)
+
+# Installation
+
+## Build/Compile
+1. Install [Git](http://git-scm.com/book/en/Getting-Started-Installing-Git)
+2. Install [Maven](http://maven.apache.org/download.cgi)
+3. Clone the repository using a Git Clone ```https://github.com/SHARP-HTP/qdm-phenotyping.git```
+4. From the ```qdm-phenotyping``` directory, run ```mvn clean install```
+
+Artifacts will be available in the ```target``` directory of the modules.
+
+## Maven
+Add the following repository to our ```pom.xml``` file:
+
+```xml
+<repository>
+  <id>informatics-releases</id>
+  <url>http://informatics.mayo.edu/maven/content/repositories/releases</url>
+</repository>
+```
+Then add in the dependency:
+
+```xml
+<dependency>
+    <groupId>edu.mayo</groupId>
+    <artifactId>qdm-{module}</artifactId>
+    <version>1.0.0.RELEASE</version>
+</dependency>
+```
+___NOTE:___ Replace the ```{module}``` placeholder with the name of one of the [modules](#toc4) listed below.
+
+# Modules
+
+#### qdm-cypress
+A module for interacting with data from the [Cypress Project](http://projectcypress.org/). Functionality includes transforming Cypress patient data into the qdm-phenotyping model, and validating population results against expected values.
+
+#### qdm-executor
+QDM Executor is responsible for compiling QDM XML into executable Drools Rules and
+executing these rules against a patient set.
+
+#### qdm-demographics
+A processing module for aggregating Demographics data from a set of processed Patients.
+
+#### qdm-patient-model
+QDM Patient Model is a Java Bean representation of secondary use patient data. This model is optimized to be used
+with the ```qdm-executor``` module, and is not intended to be a standard patient data format for transport or otherwise.
+
+#### qdm-webapp
+A web application exposing the QDM Phenotyping API via REST Services.
+
+#### qdm-cli
+QDM CLI is the command-line interface into the QDM Phenotyping project.
+
+# API
+A web application exposing the QDM Phenotyping API via REST Services.
+
+```java
+/**
+* Execute a given set of patients in a single session.
+*
+* @param patients the patients
+* @return the results
+*/
+public void execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod, Map<String,String> valueSetDefinitions, ResultCallback callback);
+
+```
+
+# License
+
+All artifacts are licensed under the [Apache License](http://www.apache.org/licenses/LICENSE-2.0.txt).
+
+For all Cypress content license restrictions, see [Project Cypress](http://projectcypress.org/).
+
+# Acknowledgements
+We would like to achnowlege [Project Cypress](http://projectcypress.org/), [USHIK](https://ushik.ahrq.gov/), and
+the [NLM VSAC](https://vsac.nlm.nih.gov/) for tooling and services.
+
+
+</xmp>
+
+
+<a href="https://github.com/SHARP-HTP/qdm-phenotyping"><img style="position: fixed; top: 0; right: 0; border: 0; z-index: 1000; margin: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+
+
+<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+<script src="assets/jquery/jquery-1.10.2.min.js"></script>
+<script src="assets/toc/js/jquery.toc.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+<style>
+    body {
+        margin:0;
+        padding:0 10px 0 10px;
+        height:100%;
+        overflow-y:auto;
+    }
+
+    #content {
+        margin-left: 200px;
+        padding: 10px;
+    }
+
+    #content span[id*='toc'] {
+        padding-top: 40px;
+        margin-top: -40px;
+        display: inline-block; /* required for webkit browsers */
+    }
+
+    .container {
+        width: 720px;
+    }
+
+    #toc {
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        position: fixed;
+        width: 200px;
+        padding-top: 45px;
+    }
+
+    #toc ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc li {
+        padding: 5px 10px;
+    }
+
+    #toc .toc-h2 {
+        padding-left: 25px;
+    }
+
+    #toc .toc-h3 {
+        padding-left: 50px;
+    }
+
+    #toc .toc-active {
+        background: #336699;
+    }
+</style>
+
+<script>
+    $('#toc').toc();
+</script>
+
+</body>
+</html>
