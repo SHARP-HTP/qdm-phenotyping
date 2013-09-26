@@ -35,13 +35,19 @@ import java.util.Map;
 public interface Executor {
 
 	/**
-	 * Execute a given set of patients in a single session.
+	 * Execute a given set of patients in a single session using a callback.
 	 *
 	 * @param patients the patients
 	 * @return the results
 	 */
 	public void execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod, Map<String,String> valueSetDefinitions, ResultCallback callback);
 
+    /**
+     * Execute a given set of patients in a single session.
+     *
+     * @param patients the patients
+     * @return the results
+     */
     public Results execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod, Map<String,String> valueSetDefinitions);
 
     /**

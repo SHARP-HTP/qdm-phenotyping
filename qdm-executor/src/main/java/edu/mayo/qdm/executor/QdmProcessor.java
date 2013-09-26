@@ -40,6 +40,12 @@ public interface QdmProcessor {
 	 */
 	public void execute(Iterable<Patient> patients, ResultCallback callback);
 
+    /**
+     * Execute.
+     *
+     * @param patients the patients
+     * @return the results
+     */
     public Results execute(Iterable<Patient> patients);
 
 }
