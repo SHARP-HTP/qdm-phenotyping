@@ -2,29 +2,51 @@
 <html>
 <title>QDM Phenotyping Documentation</title>
 
-<head>
-
-
-</head>
-
 <body>
-
 
 <div id="toc"></div>
 
-<xmp class="asdf" style="display:none;">
+<xmp style="display:none;">
 # About
-QDM Phenotyping is a tool suite to automate the transformation of QDM/HQMF XML into Drools Rules, and execute them against a Hadoop data source.
+QDM Phenotyping is a tool suite to automate the transformation of QDM/HQMF XML into Drools Rules, and execute them against a Patient data source.
+
+___QDM Phenotyping___ actually represents a suite of inter-connected tools and REST Services. General interaction is shown in the diagram below.
 
 ![Architecture](assets/img/htp-drools-arch.png)
+
+#### Major Components
+
+* __QDM XML__
+
+> __QDM__ is the National Quality Forum's (NQF) Quality Data Model.  It is an information model representing the essential data needed to generate quality measures.  Because it is an information model, it doesn't necessarily go into the level of detail needed in an implementation, but it certainly describes the high level structures that an implementation needs to compute quality measures.
+<br />
+> __eMeasures__ is a term describing the electronic representation of quality measures.  In common use, it often refers to the electronic measures that NQF developed to represent the quality measures required under the ONC & CMS Meaningful Use regulations.  It is also used to refer to the HL7 HQMF.
+<br />
+> __HQMF__ stands for Health Quality Measure Format.  This is an HL7 Draft Standard for Trial Use (DSTU).  The DSTU is presently being reballoted by HL7 for a second release.  This is an electronic format for the representation of quality measures.  Release 1 is currently used by NQF to deliver eMeasures for Meaningful Use.  Release 2 was developed in large part based on pilot work being developed by Query Health. 
+<br />
+-- <cite>[Copyright (c) 2013 by Keith W. Boone.](http://motorcycleguy.blogspot.com/2012/11/hashtag-soup-relating-qdm-hqmf.html)
+
+#### XML -> JSON
+
+The XML -> JSON transformation accepts QDM XML and transforms it into easily parsable JSON. This functionality is provided by a REST service wrappering the [Project Cypress health-data-standards](https://github.com/projectcypress/health-data-standards) project.
+
+#### QDM JSON
+
+#### JSON -> JBoss Drools Rules
+
+#### Drools Engine
+
+#### Value Set Processor
 
 # Installation
 
 ## Build/Compile
-1. Install [Git](http://git-scm.com/book/en/Getting-Started-Installing-Git)
-2. Install [Maven](http://maven.apache.org/download.cgi)
-3. Clone the repository using a Git Clone ```https://github.com/SHARP-HTP/qdm-phenotyping.git```
-4. From the ```qdm-phenotyping``` directory, run ```mvn clean install```
+
+- Install [Git](http://git-scm.com/book/en/Getting-Started-Installing-Git)
+- Install [Maven](http://maven.apache.org/download.cgi)
+- Ensure ```MAVEN_OPTS``` are set, and are allocated sufficient memory space. <br/> -> ___example___: ```MAVEN_OPTS="-Xmx1000m -XX:MaxPermSize=100m"```
+- Clone the repository using a Git Clone ```https://github.com/SHARP-HTP/qdm-phenotyping.git```
+- From the ```qdm-phenotyping``` directory, run ```mvn clean install```
 
 Artifacts will be available in the ```target``` directory of the modules.
 
@@ -70,19 +92,97 @@ A web application exposing the QDM Phenotyping API via REST Services.
 #### qdm-cli
 QDM CLI is the command-line interface into the QDM Phenotyping project.
 
-# API
-A web application exposing the QDM Phenotyping API via REST Services.
+# API Guide
+All Phenotyping functionality is exposed through a small set of Interfaces described below.
+
+The API provides __execution__ functionality -- meaning, executing a specified QDM XML measure against a Patient population. After ___execution___, some default ___analytics___ can be done on the result. Note, however, that the provided analytics functionality is minimal, and it is expected that end users will have greater analytic needs than provided.
+
+## Executing
+
+Class: ````edu.mayo.qdm.executor.Executor````
+
+The main interface for Patient rules execution.
+
+#### Getting the ```Executor```
+```java
+Executor executor = ExecutorFactory.instance().getExecutor();
+```
+
+#### Sample Execution
+```java
+ExecutorFactory factory = ExecutorFactory.instance();
+
+Results results =
+    factory.getExecutor().execute(
+        patients, 
+        qdmXml, 
+        new MeasurementPeriod(startDate, true, endDate, true), 
+        valueSetDefinitions);
+```
+
+```Results``` is the raw results of the execution. It is with this object that analytics will be performed.
+
+__NOTE:__ The ```Results``` object will contain a reference to every Patient that matched the query logic. For very large Patient sets, this may be undesireable. If this is the case, a __callback__ execution may be more appropriate:
+
 
 ```java
-/**
-* Execute a given set of patients in a single session.
-*
-* @param patients the patients
-* @return the results
-*/
-public void execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod, Map<String,String> valueSetDefinitions, ResultCallback callback);
+ExecutorFactory factory = ExecutorFactory.instance();
+factory.getExecutor().execute(
+    patients, 
+    qdmXml, 
+    measurementPeried, 
+    valueSetDefinitions, 
 
+    new ResultCallback() {
+        @Override
+        public void hit(String population, Patient patient) {
+            /* Process and discard the Patient here */
+        }
+    }
+);
 ```
+This has the advantage of allowing for a large Patient set with constant memory useage (assuming that the Patient is process and then discarded).
+
+## Processing Results
+The ```Results``` response includes a list of population identifiers (such as ```IPP``` or ```DENOM```), and a Set of Patients that belong to that population.
+
+Clients should perform need analytics on the ```Results``` object after execution. Some default functionality is provided in the form of the ```DemographicsProcessor``` class.
+
+Class: ```edu.mayo.qdm.demographics.DemographicsProcessor```
+
+A simple population analytics processor that counts age/gender/race/etc. statistics.
+
+##### Getting the ```DemographicsProcessor```
+```java
+DemographicsProcessor demographicsProcessor = new DemographicsProcessor()
+```
+
+#### Sample Analytics
+```java
+/* 'results' is the result of an Execution. */
+Demographics demographics = this.demographicsProcessor.getDemographics(results.asMap());
+```
+
+# Cypress Validation
+Validation of the execution logic is handled by [Project Cypress](http://projectcypress.org/), which supplies a test set of Patient data along with expected results. The QDM Phenotyping project is currently validated against all EP Cypress measurses with the exception of two (```0710``` and ```0059```). These last two are pending further clarification from the Cypress team.
+
+There are two ways to run a validation report yourself:
+
+* Via the command-line (```qdm-cli```)
+* Via the REST WebApp (```qdm-webapp```)
+
+#### Validation through the Command Line
+Complete the ```Build/Compile``` instructions as instructed above.
+
+
+#### Validation through the WebApp
+
+- Complete the ```Build/Compile``` instructions as instructed above.
+- Naviate to the ```qdm-webapp``` module (in the ```qdm-phenotyping/qdm-webapp``` directory).
+- Ensure  ```MAVEN_OPTS``` are set. ___Example___: ```MAVEN_OPTS="-Xmx1000m -XX:MaxPermSize=100m"```
+- Execute ```mvn jetty:run```. This will start the web application in an embedded web server. This may take a few minutes to start.
+- Navigate to the [Cypress Validation Report Page](http://localhost:8081/qdm-webapp/executor/cypress/report)
+- This report will be generated on deman, each time this page is accessed. Note that the first pass will take some time -- this is expected, as the Drools engine is building the rules Knowledge bases for each measure. Subsequent executions will be much faster, as Knowlege bases are stored in memory.
 
 # License
 
@@ -94,6 +194,20 @@ For all Cypress content license restrictions, see [Project Cypress](http://proje
 We would like to achnowlege [Project Cypress](http://projectcypress.org/), [USHIK](https://ushik.ahrq.gov/), and
 the [NLM VSAC](https://vsac.nlm.nih.gov/) for tooling and services.
 
+# More Information
+For more information, and to see an application of this tool suite, visit the [Phenotype Portal](http://phenotypeportal.org/).
+
+All code for this project (and more) can be found on our [GitHub page](https://github.com/SHARP-HTP)
+
+Please direct all software issue reports to our [Issue Tracker](https://github.com/SHARP-HTP/qdm-phenotyping/issues)
+
+Fixes/Collaborations are welcome! Please follow the following procedures:
+
+- Create an issue in the [Issue Tracker](https://github.com/SHARP-HTP/qdm-phenotyping/issues)
+- Create a Fork
+- Send a Pull Request
+
+
 
 </xmp>
 
@@ -101,7 +215,7 @@ the [NLM VSAC](https://vsac.nlm.nih.gov/) for tooling and services.
 <a href="https://github.com/SHARP-HTP/qdm-phenotyping"><img style="position: fixed; top: 0; right: 0; border: 0; z-index: 1000; margin: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
 
 
-<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
+<script src="assets/strapdown/v/0.2/strapdown.js"></script>
 <script src="assets/jquery/jquery-1.10.2.min.js"></script>
 <script src="assets/toc/js/jquery.toc.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
