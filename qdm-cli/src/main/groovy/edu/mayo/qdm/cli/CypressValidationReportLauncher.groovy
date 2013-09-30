@@ -67,7 +67,7 @@ Failures (${failures.size()}): ${failures.join(",")}
 
         def patientList = cypressDataSource.getPatients()
 
-        def results = executor.execute(patientList, xmlString, MeasurementPeriod.getCalendarYear(new DateTime(2012,1,1,1,1).toDate()))
+        def results = executor.execute(patientList, xmlString, MeasurementPeriod.getCalendarYear(new DateTime(2012,1,1,1,1).toDate()), null)
 
         def measureIdUuid = new XmlParser().parseText(xmlString).id[0].@root
 
