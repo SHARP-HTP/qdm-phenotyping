@@ -79,7 +79,7 @@ An Interface through which implementations can test participation of a code in a
 Artifacts will be available in the ```target``` directory of the modules.
 
 ## Configuration
-The main configuration file will be located at ```${USER.HOME}/.qdm-phenotyping/qdm-phenotyping.properties```. All properties are optional, and defaults are listed below.
+The main configuration file will be located at ```${USER.HOME}/.qdm-phenotyping/qdm-phenotyping.properties``` All properties are optional, and defaults are listed below.
 
 Configuration: ```qdm-phenotyping.properties``` (example)
 
@@ -92,55 +92,61 @@ drools.qdm2jsonService=http://qdm2json.phenotypeportal.org
 
 __Property:__ ```valuesets.valueSetResolver```
 
-The ```ValueSetCodeResolver``` implementation to use.
+- The ```ValueSetCodeResolver``` implementation to use.
 
-```Allowed values:```
-
-- ```CYPRESS``` - The Cypress JSON Value Set data implementation
-- ```CTS2``` - A CTS2 Value Set Service implementation
-
-```Default:``` ```CYPRESS```
+- Allowed values
+    - ```CYPRESS``` - The Cypress JSON Value Set data implementation
+    - ```CTS2``` - A [CTS2](http://informatics.mayo.edu/cts2) Value Set Service implementation
+- Default: ```CYPRESS```
 
 __Property:__ ```drools.qdm2jsonService```
 
-The _QDM2JSON_ REST Service to use.
+- The _QDM2JSON_ REST Service to use.
 
-```Default:``` ```http://qdm2json.phenotypeportal.org```
+- Default: ```http://qdm2json.phenotypeportal.org```
 
 __Property:__ ```security.username```
 
-The user name to use to authorize execution via the REST API.
+- The user name to use to authorize execution via the REST API.
 
 __Property:__ ```security.password```
 
-The password to use to authorize execution via the REST API.
+- The password to use to authorize execution via the REST API.
 
 ## Run
 QDM Phenotyping has two main user facing interfaces, an HTTP REST-based web application, and an Command Line Interface.
 
 ### Webapp
+There are two ways to run the REST-based web application, via an embedded Jetty server, or by placing the WAR file in an application container (such as JBoss or Tomcat).
 
+#### Embedded Jetty Server
 To start the webapp, navigate to the __qdm-webapp__ module and run:
 
 ```mvn jetty:run [-Dsecure=true] [-Dport=8888] [-Dcontext.path=/appname]```
 
 __Parameter:__ ```secure```
 
-```true``` runs the container in secure HTTPS mode, ```false``` in HTTP.
-
-```Default:``` ```false```
+- ```true``` runs the container in secure HTTPS mode, ```false``` in HTTP.
+- Default: ```false```
 
 __Parameter:__ ```port```
 
-The port in which to run the container.
+- The port in which to run the container.
 
-```Default:``` ```8081```
+- Default: ```8081```
 
 __Parameter:__ ```context.path```
 
-The webapp context in which to run, or ```http://localhost:8081/{context.path}```
+- The webapp context in which to run, or ```http://localhost:8081/{context.path}```
 
-```Default:``` ```qdm-webapp```
+- Default: ```qdm-webapp```
+
+#### WAR
+- Complete the ```Build/Compile``` instructions as instructed above (or [download the pre-built WAR](http://static.phenotypeportal.org/downloads/webapp/)).
+
+- Deploy the WAR to an application container. __NOTE:__ If building from source, the WAR file will be in the ```qdm-webapp/target/``` directory.
+
+
 
 ### Command Line
 
@@ -151,15 +157,15 @@ The webapp context in which to run, or ```http://localhost:8081/{context.path}``
 - Navigate to the ```bin``` directory. The two available commands are ```qdm-validate``` and ```qdm2drools```
 
 #### qdm-validate
-##### Description
-Runs the Cypress Validation and produces a report.
-##### Usage: ```qdm-validate``` 
+
+- __Description:__ Runs the Cypress Validation and produces a report.
+- __Usage:__ ```qdm-validate``` 
 
 #### qdm2drools
-##### Description
-Converts QDM/HQMF XML files into JBoss Drools.
-##### Usage: ```qdm-validate -f qdmXmlFile``` 
-##### example: ```qdm-validate -f path/to/qdm.xml``` 
+
+- __Description:__ Converts QDM/HQMF XML files into JBoss Drools.
+- __Usage:__ ```qdm-validate -f qdmXmlFile``` 
+- __Example:__ ```qdm-validate -f path/to/qdm.xml``` 
 
 ## Maven
 Add the following repository to our ```pom.xml``` file:
@@ -305,7 +311,7 @@ There are two ways to run a validation report yourself:
 - Naviate to the ```qdm-webapp``` module (in the ```qdm-phenotyping/qdm-webapp``` directory).
 - Ensure  ```MAVEN_OPTS``` are set. ___Example___: ```MAVEN_OPTS="-Xmx1000m -XX:MaxPermSize=100m"```
 - Execute ```mvn jetty:run```. This will start the web application in an embedded web server. This may take a few minutes to start.
-- Navigate to the [Cypress Validation Report Page](http://localhost:8081/qdm-webapp/executor/cypress/report)
+- Navigate to the [Cypress Validation Report Page (local)](http://localhost:8081/qdm-webapp/executor/cypress/report)
 - This report will be generated on deman, each time this page is accessed. Note that the first pass will take some time -- this is expected, as the Drools engine is building the rules Knowledge bases for each measure. Subsequent executions will be much faster, as Knowlege bases are stored in memory.
 
 # License
