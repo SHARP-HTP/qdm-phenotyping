@@ -19,4 +19,6 @@ From the ```qdm-phenotyping``` directory, run ```mvn clean test```
 2. Send a pull request
 
 ## License
-[Apache](http://www.apache.org/licenses/LICENSE-2.0.txt)
+All artifacts are licensed under the [Apache License](http://www.apache.org/licenses/LICENSE-2.0.txt).
+
+For all Cypress content license restrictions, see [Project Cypress](http://projectcypress.org/).
