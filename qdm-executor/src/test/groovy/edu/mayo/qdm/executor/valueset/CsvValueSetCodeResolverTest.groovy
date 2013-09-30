@@ -12,7 +12,7 @@ class CsvValueSetCodeResolverTest {
         def resolver = new CsvValueSetCodeResolver()
         resolver.afterPropertiesSet()
 
-        def codes = resolver.resolveConcpets("2.16.840.1.113883.3.117.1.7.1.212")
+        def codes = resolver.resolveConcepts("2.16.840.1.113883.3.117.1.7.1.212")
 
         assertTrue codes.size() > 0
     }

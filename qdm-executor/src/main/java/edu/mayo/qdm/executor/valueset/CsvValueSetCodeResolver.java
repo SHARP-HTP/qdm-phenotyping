@@ -135,7 +135,7 @@ public class CsvValueSetCodeResolver implements ValueSetCodeResolver, Initializi
     /* (non-Javadoc)
          * @see ValueSetCodeResolver#resolveCodes(java.lang.String)
          */
-	public Set<Concept> resolveConcpets(String valueSetOid) {
+	public Set<Concept> resolveConcepts(String valueSetOid) {
 		return this.valueSetMap.get(new ValueSetKey(valueSetOid));
 	}
 

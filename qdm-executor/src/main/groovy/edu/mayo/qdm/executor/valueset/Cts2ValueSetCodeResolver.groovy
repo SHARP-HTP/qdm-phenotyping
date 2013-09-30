@@ -46,11 +46,11 @@ class Cts2ValueSetCodeResolver implements ValueSetCodeResolver, InitializingBean
     }
 
     @Override
-    public Set<Concept> resolveConcpets(String valueSetOid) {
+    public Set<Concept> resolveConcepts(String valueSetOid) {
         resolveConcpets(valueSetOid, null)
     }
 
-    public Set<Concept> resolveConcpets(String valueSetOid, String vsDefinition) {
+    protected Set<Concept> resolveConcepts(String valueSetOid, String vsDefinition) {
         String key = valueSetOid + (vsDefinition != null ? vsDefinition : "");
         if (valueSetMap.containsKey(key)) {
             return valueSetMap.get(key) as Set<Concept>

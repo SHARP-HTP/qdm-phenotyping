@@ -41,7 +41,7 @@ public interface ValueSetCodeResolver {
 	 * @param valueSetOid the value set oid
 	 * @return the sets the
 	 */
-	public Set<Concept> resolveConcpets(String valueSetOid);
+	public Set<Concept> resolveConcepts(String valueSetOid);
 
     /**
      * Determines whether or not the given {@link Concept} is contained in the

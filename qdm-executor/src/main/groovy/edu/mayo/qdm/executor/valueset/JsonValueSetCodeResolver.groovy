@@ -42,7 +42,7 @@ class JsonValueSetCodeResolver implements ValueSetCodeResolver, InitializingBean
     }
 
     @Override
-    Set<Concept> resolveConcpets(String valueSetOid) {
+    Set<Concept> resolveConcepts(String valueSetOid) {
         this.valueSetMap.get(valueSetOid)
     }
 
