@@ -10,13 +10,13 @@
 # About
 QDM Phenotyping is a tool suite to automate the transformation of QDM/HQMF XML into Drools Rules, and execute them against a Patient data source.
 
-___QDM Phenotyping___ actually represents a suite of inter-connected tools and REST Services. General interaction is shown in the diagram below.
+QDM Phenotyping actually represents a suite of inter-connected tools and REST Services. General interaction is shown in the diagram below.
 
 ![Architecture](assets/img/htp-drools-arch.png)
 
 #### Major Components
 
-* __QDM XML__
+#### QDM XML
 
 > __QDM__ is the National Quality Forum's (NQF) Quality Data Model.  It is an information model representing the essential data needed to generate quality measures.  Because it is an information model, it doesn't necessarily go into the level of detail needed in an implementation, but it certainly describes the high level structures that an implementation needs to compute quality measures.
 <br />
@@ -27,17 +27,44 @@ ___QDM Phenotyping___ actually represents a suite of inter-connected tools and R
 -- <cite>[Copyright (c) 2013 by Keith W. Boone.](http://motorcycleguy.blogspot.com/2012/11/hashtag-soup-relating-qdm-hqmf.html)
 
 #### XML -> JSON
-
 The XML -> JSON transformation accepts QDM XML and transforms it into easily parsable JSON. This functionality is provided by a REST service wrappering the [Project Cypress health-data-standards](https://github.com/projectcypress/health-data-standards) project.
 
 #### QDM JSON
+The JSON representation of the QDM/HQMF XML provided by [Project Cypress health-data-standards](https://github.com/projectcypress/health-data-standards).
 
 #### JSON -> JBoss Drools Rules
+The _QDM JSON_ is programatically transformed into executable JBoss Drools rules by a compiler. The result of this transformation is a single Drools Rules file that can be executed by the _Drools Engine_, or other JBoss Drools environment.
 
 #### Drools Engine
 Using the [JBoss Drools](http://www.jboss.org/drools/) engine, the generated Drools Rules can be executed given the target Patient set. The result of this execution will be the Patent set result mapped to the given populations (such as NUMER, DENOM, etc).
 
 #### Value Set Processor
+Many phenotyping rules are dependent on some event being part of a larger set of event types, or a ___ValueSet___.
+
+For example:
+
+```json
+    "DiagnosisActiveAcutePharyngitis": {
+      "title": "Acute Pharyngitis",
+      "description": "Diagnosis, Active: Acute Pharyngitis",
+      "standard_category": "diagnosis_condition_problem",
+      "qds_data_type": "diagnosis_active",
+      "code_list_id": "2.16.840.1.113883.3.464.1003.102.12.1011",
+      "type": "conditions",
+      "definition": "diagnosis",
+      "status": "active",
+      "hard_status": false,
+      "negation": false,
+      "source_data_criteria": "DiagnosisActiveAcutePharyngitis"
+    },
+```
+
+In this example, for this rule to be satisfied, a Patient must have a _Diagnosis_ that matches the ```code_list_id``` of ```2.16.840.1.113883.3.464.1003.102.12.1011```.
+
+It is important, then, to have a mechanism to be able to determine which codes are actually in ```2.16.840.1.113883.3.464.1003.102.12.1011```. This is done through the _Value Set Processor_ - or specifically, the ```ValueSetCodeResolver``` Interface.
+
+Interface: ````edu.mayo.qdm.executor.valueset.ValueSetCodeResolver````
+An Interface through which implementations can test participation of a code in a ValueSet.
 
 # Installation
 
@@ -50,6 +77,89 @@ Using the [JBoss Drools](http://www.jboss.org/drools/) engine, the generated Dro
 - From the ```qdm-phenotyping``` directory, run ```mvn clean install```
 
 Artifacts will be available in the ```target``` directory of the modules.
+
+## Configuration
+The main configuration file will be located at ```${USER.HOME}/.qdm-phenotyping/qdm-phenotyping.properties```. All properties are optional, and defaults are listed below.
+
+Configuration: ```qdm-phenotyping.properties``` (example)
+
+```
+valuesets.valueSetResolver=CYPRESS
+security.username=admin
+security.password=admin
+drools.qdm2jsonService=http://qdm2json.phenotypeportal.org
+```
+
+__Property:__ ```valuesets.valueSetResolver```
+
+The ```ValueSetCodeResolver``` implementation to use.
+
+```Allowed values:```
+
+- ```CYPRESS``` - The Cypress JSON Value Set data implementation
+- ```CTS2``` - A CTS2 Value Set Service implementation
+
+```Default:``` ```CYPRESS```
+
+__Property:__ ```drools.qdm2jsonService```
+
+The _QDM2JSON_ REST Service to use.
+
+```Default:``` ```http://qdm2json.phenotypeportal.org```
+
+__Property:__ ```security.username```
+
+The user name to use to authorize execution via the REST API.
+
+__Property:__ ```security.password```
+
+The password to use to authorize execution via the REST API.
+
+## Run
+QDM Phenotyping has two main user facing interfaces, an HTTP REST-based web application, and an Command Line Interface.
+
+### Webapp
+
+To start the webapp, navigate to the __qdm-webapp__ module and run:
+
+```mvn jetty:run [-Dsecure=true] [-Dport=8888] [-Dcontext.path=/appname]```
+
+__Parameter:__ ```secure```
+
+```true``` runs the container in secure HTTPS mode, ```false``` in HTTP.
+
+```Default:``` ```false```
+
+__Parameter:__ ```port```
+
+The port in which to run the container.
+
+```Default:``` ```8081```
+
+__Parameter:__ ```context.path```
+
+The webapp context in which to run, or ```http://localhost:8081/{context.path}```
+
+```Default:``` ```qdm-webapp```
+
+### Command Line
+
+- Complete the ```Build/Compile``` instructions as instructed above (or [download the binaries](http://static.phenotypeportal.org/downloads/cli/)).
+
+- Unzip the binary package. This will be either in ```target/dist/``` of the ```qdm-cli``` module if building from source, or downloaded from the link above.
+
+- Navigate to the ```bin``` directory. The two available commands are ```qdm-validate``` and ```qdm2drools```
+
+#### qdm-validate
+##### Description
+Runs the Cypress Validation and produces a report.
+##### Usage: ```qdm-validate``` 
+
+#### qdm2drools
+##### Description
+Converts QDM/HQMF XML files into JBoss Drools.
+##### Usage: ```qdm-validate -f qdmXmlFile``` 
+##### example: ```qdm-validate -f path/to/qdm.xml``` 
 
 ## Maven
 Add the following repository to our ```pom.xml``` file:
@@ -69,7 +179,16 @@ Then add in the dependency:
     <version>1.0.0.RELEASE</version>
 </dependency>
 ```
-___NOTE:___ Replace the ```{module}``` placeholder with the name of one of the [modules](#toc4) listed below.
+___NOTE:___ Replace the ```{module}``` placeholder with the name of one of the modules listed below.
+
+## Downloads
+
+__Webapp WAR:__ [qdm-webapp](http://static.phenotypeportal.org/downloads/webapp/qdm-webapp-1.0.0.RELEASE.war)
+
+__Commmand Line Binaries:__ [qdm-cli (zip)](http://static.phenotypeportal.org/downloads/cli/qdm-cli-1.0.0.RELEASE-bin.zip)
+
+__Commmand Line Binaries:__ [qdm-cli (tar.gz)](http://static.phenotypeportal.org/downloads/cli/qdm-cli-1.0.0.RELEASE-bin.tar.gz)
+
 
 # Modules
 
@@ -100,7 +219,7 @@ The API provides __execution__ functionality -- meaning, executing a specified Q
 
 ## Executing
 
-Class: ````edu.mayo.qdm.executor.Executor````
+Interface: ````edu.mayo.qdm.executor.Executor````
 
 The main interface for Patient rules execution.
 
@@ -173,8 +292,12 @@ There are two ways to run a validation report yourself:
 * Via the REST WebApp (```qdm-webapp```)
 
 #### Validation through the Command Line
-Complete the ```Build/Compile``` instructions as instructed above.
 
+- Complete the ```Build/Compile``` instructions as instructed above (or [download the binaries](http://static.phenotypeportal.org/downloads/cli/)).
+
+- Unzip the binary package. This will be either in ```target/dist/``` of the ```qdm-cli``` module if building from source, or downloaded from the link above.
+
+- Navigate to the ```bin``` directory and run: ```./qdm-validate```. This will execute all of the Cypress measures and display a PASS/FAIL report.
 
 #### Validation through the WebApp
 
