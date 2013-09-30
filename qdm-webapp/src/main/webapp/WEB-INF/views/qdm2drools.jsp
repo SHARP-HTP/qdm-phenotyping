@@ -122,11 +122,6 @@
             });
         </script>
 
-        <p>
-            <a class="btn btn-primary btn-large" href="/api">
-                Learn more
-            </a>
-        </p>
     </div>
 
 </div>

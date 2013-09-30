@@ -77,7 +77,7 @@
                   <li class="divider-vertical"></li>
                   <li><a href="../"><i class="icon-home"></i> Home</a></li>
                   <li class="divider-vertical"></li>
-                  <li><a href="../executor">Executor</a></li>
+                  <li><a href="../executor">Phenotyping</a></li>
                   <li class="divider-vertical"></li>
                   <li><a href="api">API</a></li>
                   <li class="divider-vertical"></li>

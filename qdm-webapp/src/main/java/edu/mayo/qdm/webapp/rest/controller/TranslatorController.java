@@ -36,6 +36,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.exception.ExceptionUtils;
 import org.apache.log4j.Logger;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -275,6 +276,18 @@ public class TranslatorController {
         File xml = fileSystemResolver.getFiles(executionId).getInputQdmXml();
 
         String xmlString = FileUtils.readFileToString(xml, "UTF-8");
+
+        final HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_XML);
+
+        return new ResponseEntity<String>(xmlString, headers, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "executor/execution/{executionId}/xslt/eMeasure.xsl", method=RequestMethod.GET)
+    public ResponseEntity<String> getMeasureXslt(@PathVariable String executionId) throws Exception {
+        File xml = fileSystemResolver.getFiles(executionId).getInputQdmXml();
+
+        String xmlString = IOUtils.toString(new ClassPathResource("/eMeasure.xsl").getInputStream(), "UTF-8");
 
         final HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_XML);

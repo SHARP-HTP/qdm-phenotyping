@@ -11,6 +11,7 @@
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
+    <resources mapping="/executor/execution/*/xslt/eMeasure.xsl" location="/resources/"/>
 
     <beans:import resource="classpath:qdm-properties.xml"/>
 
