@@ -34,6 +34,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * A representation of secondary-use patient clinical data.
+ *
+ * Each Patient is uniquely defined by its {@link #sourcePid}.
+ *
  * @author Herman and Darin IHC adapted by Dingcheng Li
  */
 @JsonIgnoreProperties(ignoreUnknown=true)

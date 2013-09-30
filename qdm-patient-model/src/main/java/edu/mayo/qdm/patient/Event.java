@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.Set;
 
 /**
+ * A {@link CodedEntry} with a specific temporal range.
  */
 public class Event extends CodedEntry {
 
