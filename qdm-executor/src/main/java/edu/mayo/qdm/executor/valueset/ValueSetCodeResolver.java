@@ -28,7 +28,8 @@ import edu.mayo.qdm.patient.Concept;
 import java.util.Set;
 
 /**
- * The Interface ValueSetCodeResolver.
+ * Allows for the resolving and existence checking of a {@link Concept}.
+ * in a ValueSet.
  *
  * @author <a href="mailto:kevin.peterson@mayo.edu">Kevin Peterson</a>
  */
@@ -42,7 +43,24 @@ public interface ValueSetCodeResolver {
 	 */
 	public Set<Concept> resolveConcpets(String valueSetOid);
 
+    /**
+     * Determines whether or not the given {@link Concept} is contained in the
+     * provided ValueSet.
+     *
+     * @param valueSetOid
+     * @param concept
+     * @return true, if the {@link Concept} is contained
+     */
     public boolean isCodeInSet(String valueSetOid, Concept concept);
+
+    /**
+     * Determines whether or not the given {@link Concept} is contained in the
+     * provided ValueSet.
+     *
+     * @param valueSetOid
+     * @param concept
+     * @return true, if the {@link Concept} is contained
+     */
     public boolean isCodeInSet(String valueSetOid, String definition, Concept concept);
 
 }
