@@ -189,11 +189,30 @@ ___NOTE:___ Replace the ```{module}``` placeholder with the name of one of the m
 
 ## Downloads
 
-__Webapp WAR:__ [qdm-webapp](http://static.phenotypeportal.org/downloads/webapp/qdm-webapp-1.0.0.RELEASE.war)
+__Webapp WAR:__ [qdm-webapp](http://static.phenotypeportal.org/downloads/webapp/)
 
-__Commmand Line Binaries:__ [qdm-cli (zip)](http://static.phenotypeportal.org/downloads/cli/qdm-cli-1.0.0.RELEASE-bin.zip)
+__Commmand Line Binaries:__ [qdm-cli (zip/tar.gz)](http://static.phenotypeportal.org/downloads/cli/)
 
-__Commmand Line Binaries:__ [qdm-cli (tar.gz)](http://static.phenotypeportal.org/downloads/cli/qdm-cli-1.0.0.RELEASE-bin.tar.gz)
+__Virtual Machine Images:__ [sharp-htp.ora (~ 4.5 GB)](http://static.phenotypeportal.org/downloads/vm/)
+
+
+## Virtual Image
+All QDM Phenotyping functionality, as well as a local image of the [Phenotype Portal](phenotypeportal.org), is available for download as a Virtual Machine Image. This image can be imported into [VirtualBox](https://www.virtualbox.org/) or [VMWare Fusion](http://www.vmware.com/products/fusion/).
+
+__Download:__ [Virtual Machine Image](http://static.phenotypeportal.org/downloads/vm/) (~ 4.5 GB)
+
+### VM Image Details
+
+__IP Address:__ ```192.168.56.10```
+
+__Login Username/Password:__ sharp-htp/sharp-htp
+
+### VM Image Usage
+The VM contains a demonstration of the API capabilities, along with a local image of the [Phenotype Portal](phenotypeportal.org).
+
+__API Functionality:__ [http://192.168.56.10](http://192.168.56.10)
+
+__Local Phenotype Portal:__ [http://192.168.56.10/htp](http://192.168.56.10/htp)
 
 
 # Modules
@@ -313,6 +332,9 @@ There are two ways to run a validation report yourself:
 - Execute ```mvn jetty:run```. This will start the web application in an embedded web server. This may take a few minutes to start.
 - Navigate to the [Cypress Validation Report Page (local)](http://localhost:8081/qdm-webapp/executor/cypress/report)
 - This report will be generated on deman, each time this page is accessed. Note that the first pass will take some time -- this is expected, as the Drools engine is building the rules Knowledge bases for each measure. Subsequent executions will be much faster, as Knowlege bases are stored in memory.
+
+#### Validation through phenotypeportal.org
+Current Cypress Validation Reports are available on demand from [phenotypeportal.org](http://api.phenotypeportal.org/executor/cypress/report).
 
 # License
 
