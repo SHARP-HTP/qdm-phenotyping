@@ -47,7 +47,7 @@ class Cts2ValueSetCodeResolver implements ValueSetCodeResolver, InitializingBean
 
     @Override
     public Set<Concept> resolveConcepts(String valueSetOid) {
-        resolveConcpets(valueSetOid, null)
+        resolveConcepts(valueSetOid, null)
     }
 
     protected Set<Concept> resolveConcepts(String valueSetOid, String vsDefinition) {
@@ -106,7 +106,7 @@ class Cts2ValueSetCodeResolver implements ValueSetCodeResolver, InitializingBean
 
     @Override
     boolean isCodeInSet(String valueSetOid, String definition, Concept concept) {
-        return this.resolveConcpets(valueSetOid, definition)?.find { it.matches(normalizedConcept(concept))} != null
+        return this.resolveConcepts(valueSetOid, definition)?.find { it.matches(normalizedConcept(concept))} != null
     }
 
     private String getAuthorizationHeader() {
