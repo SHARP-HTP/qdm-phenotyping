@@ -13,10 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
@@ -102,12 +99,32 @@ public class DroolsController implements InitializingBean {
     }
 
     protected ResponseEntity<String> doGetDrools(String qdmXml){
-        String drools = this.qdm2Drools.qdm2drools(qdmXml);
+        String drools;
+        try {
+            drools = this.qdm2Drools.qdm2drools(qdmXml);
+        } catch (Exception e){
+            throw new DroolsException(e);
+        }
 
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.setContentType(MediaType.TEXT_PLAIN);
 
         return new ResponseEntity<String>(drools, responseHeaders, HttpStatus.OK);
+    }
+
+    @ExceptionHandler(DroolsException.class)
+    public ModelAndView handleDroolsException(Exception ex) {
+
+        ModelAndView model = new ModelAndView("error");
+        model.addObject("error", "Error translating to Drools: " + ex.getMessage());
+
+        return model;
+    }
+
+    private static class DroolsException extends RuntimeException {
+        private DroolsException(Exception cause) {
+            super(cause);
+        }
     }
 
 }
