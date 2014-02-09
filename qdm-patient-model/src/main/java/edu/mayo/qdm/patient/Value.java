@@ -1,11 +1,17 @@
 package edu.mayo.qdm.patient;
 
+import java.io.Serializable;
+
 /**
  */
-public class Value {
+public class Value implements Serializable {
 
     private String value;
     private String unit;
+
+    public Value(){
+        super();
+    }
 
     public Value(String value, String unit) {
         this.value = value;

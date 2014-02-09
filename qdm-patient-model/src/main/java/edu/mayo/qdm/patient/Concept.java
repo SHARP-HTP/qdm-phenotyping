@@ -1,6 +1,8 @@
 package edu.mayo.qdm.patient;
 
-public class Concept {
+import java.io.Serializable;
+
+public class Concept implements Serializable {
 
     private String code;
     private String codingScheme;

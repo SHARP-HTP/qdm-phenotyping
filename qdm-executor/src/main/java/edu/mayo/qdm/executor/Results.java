@@ -25,6 +25,7 @@ package edu.mayo.qdm.executor;
 
 import edu.mayo.qdm.patient.Patient;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -35,7 +36,7 @@ import java.util.Set;
  *
  * @author <a href="mailto:kevin.peterson@mayo.edu">Kevin Peterson</a>
  */
-public class Results {
+public class Results implements Serializable {
 	
 	private Map<String,Set<Patient>> resultMap = new HashMap<String,Set<Patient>>();
 

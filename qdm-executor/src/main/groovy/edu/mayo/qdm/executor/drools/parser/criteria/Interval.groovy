@@ -6,9 +6,13 @@ import groovy.transform.EqualsAndHashCode
 /**
  */
 @EqualsAndHashCode
-class Interval {
+class Interval implements Serializable {
     MeasurementValue lowValue
     MeasurementValue highValue
+
+    public Interval(){
+        super();
+    }
 
     public Interval(MeasurementValue lowValue, MeasurementValue highValue) {
         this.lowValue = lowValue

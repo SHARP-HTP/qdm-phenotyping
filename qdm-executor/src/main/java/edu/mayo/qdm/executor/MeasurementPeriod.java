@@ -4,11 +4,16 @@ import edu.mayo.qdm.executor.drools.parser.criteria.Interval;
 import edu.mayo.qdm.executor.drools.parser.criteria.MeasurementValue;
 import org.joda.time.DateTime;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  */
-public class MeasurementPeriod extends Interval {
+public class MeasurementPeriod extends Interval implements Serializable {
+
+    public MeasurementPeriod(){
+        super(null,null);
+    }
 
     public MeasurementPeriod(Date start, boolean startInclusive, Date end, boolean endInclusive) {
         this(new MeasurementValue(Long.toString(start.getTime()), "TS", startInclusive),

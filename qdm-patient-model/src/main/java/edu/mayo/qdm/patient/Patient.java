@@ -28,6 +28,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashSet;
@@ -41,7 +42,7 @@ import java.util.Set;
  * @author Herman and Darin IHC adapted by Dingcheng Li
  */
 @JsonIgnoreProperties(ignoreUnknown=true)
-public class Patient {
+public class Patient implements Serializable {
 
     private static final ObjectMapper JSON_MAPPER = new ObjectMapper();
 

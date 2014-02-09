@@ -4,9 +4,13 @@ import groovy.transform.EqualsAndHashCode
 /**
  */
 @EqualsAndHashCode
-class MeasurementValue extends Value {
+class MeasurementValue extends Value implements Serializable {
 
     boolean inclusive
+
+    public MeasurementValue(){
+        super()
+    }
 
     public MeasurementValue(String value, String unit, boolean inclusive) {
         super(value, unit)
