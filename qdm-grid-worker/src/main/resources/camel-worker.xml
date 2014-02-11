@@ -23,7 +23,7 @@
 
     <camelContext id="test2" xmlns="http://camel.apache.org/schema/spring">
         <route>
-            <from uri="netty:tcp://localhost:5150?sync=true"/>
+            <from uri="netty:tcp://localhost:5151?sync=true"/>
             <to uri="bean:gridWorker"/>
         </route>
     </camelContext>

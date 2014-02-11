@@ -28,19 +28,22 @@ public class GridWorker implements InitializingBean {
     public static void main(String[] args){
         AbstractApplicationContext context = new ClassPathXmlApplicationContext("qdm-grid-worker-context.xml");
         context.registerShutdownHook();
+
+        context.getBean(GridWorker.class).register();
+    }
+
+    public void register(){
+        String hostName = "localhost";
+
+        String uri = "netty:tcp://"+hostName+":5151?sync=true";
+
+        this.producerTemplate.requestBody("netty:tcp://localhost:1984?sync=true", new WorkerRegistrationRequest(uri));
+
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
         this.executor = ExecutorFactory.instance().getExecutor();
-
-        String hostName = "localhost";
-
-        this.camelContext.start();
-
-        String uri = "netty:tcp://"+hostName+":5150?sync=true";
-
-        this.producerTemplate.requestBody("netty:tcp://localhost:1984?sync=true", new WorkerRegistrationRequest(uri));
     }
 
     @Handler

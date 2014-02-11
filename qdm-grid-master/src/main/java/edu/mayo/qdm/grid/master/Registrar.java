@@ -6,6 +6,7 @@ import org.apache.camel.ProducerTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -27,6 +28,6 @@ public class Registrar {
     }
 
     public Collection<WorkerReference> getRegistrations(){
-        return this.workerReferences;
+        return new ArrayList<WorkerReference>(this.workerReferences);
     }
 }
