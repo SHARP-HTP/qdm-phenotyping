@@ -26,22 +26,19 @@ public class GridWorker implements InitializingBean {
 
     private Executor executor;
 
-    private String workerHostName = "localhost";
-    private int workerPort = 5150;
-
-    private String masterHostName = "localhost";
-    private int masterPort = 1984;
-
     public static void main(String[] args){
+        if(args == null || args.length != 4){
+            throw new IllegalArgumentException();
+        }
         AbstractApplicationContext context = new ClassPathXmlApplicationContext("qdm-grid-worker-context.xml");
         context.registerShutdownHook();
 
-        context.getBean(GridWorker.class).register();
+        context.getBean(GridWorker.class).register(args[0], Integer.parseInt(args[1]), args[2], Integer.parseInt(args[3]));
     }
 
-    public void register(){
-        final String workerPortString = Integer.toString(this.workerPort);
-        final String masterPortString = Integer.toString(this.masterPort);
+    public void register(String workerHostName, int workerPort, String masterHostName, int masterPort){
+        final String workerPortString = Integer.toString(workerPort);
+        final String masterPortString = Integer.toString(masterPort);
 
         try {
             this.camelContext.addRoutes(new RouteBuilder() {
@@ -54,9 +51,9 @@ public class GridWorker implements InitializingBean {
             throw new RuntimeException(e);
         }
 
-        String uri = "netty:tcp://"+this.workerHostName+":"+workerPortString+"?sync=true";
+        String uri = "netty:tcp://"+workerHostName+":"+workerPortString+"?sync=true";
 
-        this.producerTemplate.requestBody("netty:tcp://"+this.masterHostName+":"+masterPortString+"?sync=true", new WorkerRegistrationRequest(uri));
+        this.producerTemplate.requestBody("netty:tcp://"+masterHostName+":"+masterPortString+"?sync=true", new WorkerRegistrationRequest(uri));
 
     }
 

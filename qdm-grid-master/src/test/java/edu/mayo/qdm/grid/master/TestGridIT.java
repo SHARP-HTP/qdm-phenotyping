@@ -25,7 +25,7 @@ public class TestGridIT {
 
     @Test
     public void test() throws Exception {
-        GridWorker.main(null);
+        GridWorker.main(new String[]{"localhost", "5150", "localhost", "1984"});
 
         CypressPatientDataSource cypressDataSource = new CypressPatientDataSource();
 
