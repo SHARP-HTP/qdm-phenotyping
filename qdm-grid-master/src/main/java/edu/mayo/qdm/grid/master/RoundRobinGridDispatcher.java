@@ -55,9 +55,14 @@ public class RoundRobinGridDispatcher implements GridDispatcher {
 
                     @Override
                     public void run() {
-                        Results workerResults = registration.getResults(new WorkerExecutionRequest(new ArrayList(partition), qdmXml, measurementPeriod, valueSetDefinitions));
-                        for(Map.Entry<String, Set<Patient>> result : workerResults.asMap().entrySet()){
-                            results.addAll(result.getKey(), result.getValue());
+                        try {
+                            Results workerResults = registration.getResults(new WorkerExecutionRequest(new ArrayList(partition), qdmXml, measurementPeriod, valueSetDefinitions));
+                            for(Map.Entry<String, Set<Patient>> result : workerResults.asMap().entrySet()){
+                                results.addAll(result.getKey(), result.getValue());
+                            }
+                        } catch(Exception e){
+                            e.printStackTrace();
+                            throw new RuntimeException(e);
                         }
                     }
                 };

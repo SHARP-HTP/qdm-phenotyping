@@ -14,7 +14,8 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:/qdm-grid-master-context.xml")
@@ -27,24 +28,15 @@ public class TestGridIT {
     public void test() throws Exception {
         GridWorker.main(new String[]{"localhost", "5150", "localhost", "1984"});
 
-        CypressPatientDataSource cypressDataSource = new CypressPatientDataSource();
-
-        final List<Iterator<Patient>> iterators = new ArrayList<Iterator<Patient>>();
-
-        for(int i=0;i<10;i++){
-            iterators.add(((List<Patient>) cypressDataSource.getPatients()).iterator());
-        }
-
         Iterable<Patient> patients = new Iterable<Patient>(){
 
             @Override
             public Iterator<Patient> iterator() {
-                return multiply(10);
+                return multiply(100);
             }
         };
 
         String qdmXml = IOUtils.toString(new ClassPathResource("cypress/measures/ep/0043/hqmf1.xml").getInputStream());
-
 
         System.out.println(
                 this.gridMaster.execute(patients, qdmXml, MeasurementPeriod.getCalendarYear(new DateTime(2012,6,1,1,1).toDate()), null).asMap());
