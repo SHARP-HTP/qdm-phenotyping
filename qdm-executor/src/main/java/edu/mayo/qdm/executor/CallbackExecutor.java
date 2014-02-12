@@ -32,22 +32,14 @@ import java.util.Map;
  *
  * @author <a href="mailto:kevin.peterson@mayo.edu">Kevin Peterson</a>
  */
-public interface Executor extends CallbackExecutor {
+public interface CallbackExecutor {
 
-    /**
-     * Execute a given set of patients in a single session.
-     *
-     * @param patients the patients
-     * @return the results
-     */
-    public Results execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod, Map<String,String> valueSetDefinitions);
-
-    /**
-     * Create a QdmProcessor for the given QDM XML.
-     *
-     * @param qdmXml the QDM XML
-     * @return the QdmProcessor
-     */
-    public QdmProcessor getQdmProcessor(String qdmXml, MeasurementPeriod measurementPeriod, Map<String,String> valueSetDefinitions);
+	/**
+	 * Execute a given set of patients in a single session using a callback.
+	 *
+	 * @param patients the patients
+	 * @return the results
+	 */
+	public void execute(Iterable<Patient> patients, String qdmXml, MeasurementPeriod measurementPeriod, Map<String, String> valueSetDefinitions, ResultCallback callback);
 
 }

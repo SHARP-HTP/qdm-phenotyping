@@ -19,4 +19,8 @@ public class WorkerReference {
     public Results getResults(WorkerExecutionRequest workerExecutionRequest) {
         return (Results) this.producerTemplate.requestBody(this.uri, workerExecutionRequest);
     }
+
+    public String getUri() {
+        return uri;
+    }
 }

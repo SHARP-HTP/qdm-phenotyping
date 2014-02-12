@@ -42,7 +42,7 @@ import java.util.Set;
  * @author Herman and Darin IHC adapted by Dingcheng Li
  */
 @JsonIgnoreProperties(ignoreUnknown=true)
-public class Patient implements Serializable {
+public class Patient implements Serializable, Cloneable {
 
     private static final ObjectMapper JSON_MAPPER = new ObjectMapper();
 
@@ -370,5 +370,10 @@ public class Patient implements Serializable {
         return "Patient{" +
                 "sourcePid='" + sourcePid + '\'' +
                 '}';
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

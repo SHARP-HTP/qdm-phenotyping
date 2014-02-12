@@ -36,7 +36,7 @@ public class GridWorker implements InitializingBean {
         context.getBean(GridWorker.class).register(args[0], Integer.parseInt(args[1]), args[2], Integer.parseInt(args[3]));
     }
 
-    public void register(final String workerHostName, int workerPort, String masterHostName, int masterPort){
+    public void register(final String workerHostName, final int workerPort, String masterHostName, int masterPort){
         final String workerPortString = Integer.toString(workerPort);
         final String masterPortString = Integer.toString(masterPort);
 
@@ -44,14 +44,16 @@ public class GridWorker implements InitializingBean {
             this.camelContext.addRoutes(new RouteBuilder() {
                 @Override
                 public void configure() throws Exception {
-                    from("netty:tcp://"+workerHostName+":"+workerPortString+"?sync=true").to("bean:gridWorker");
+                    from("vm:master" + Integer.toString(workerPort)).to("bean:gridWorker");
+                    //from("netty:tcp://"+workerHostName+":"+workerPortString+"?sync=true").to("bean:gridWorker");
                 }
             });
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
-        String uri = "netty:tcp://"+workerHostName+":"+workerPortString+"?sync=true";
+        String uri = "vm:master" + Integer.toString(workerPort);
+        //String uri = "netty:tcp://"+workerHostName+":"+workerPortString+"?sync=true";
 
         this.producerTemplate.requestBody("netty:tcp://"+masterHostName+":"+masterPortString+"?sync=true", new WorkerRegistrationRequest(uri));
 
