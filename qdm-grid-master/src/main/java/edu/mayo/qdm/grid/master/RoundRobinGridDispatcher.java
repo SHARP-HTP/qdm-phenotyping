@@ -7,15 +7,17 @@ import edu.mayo.qdm.executor.Results;
 import edu.mayo.qdm.grid.common.WorkerExecutionRequest;
 import edu.mayo.qdm.patient.Patient;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 @Component
-public class RoundRobinGridDispatcher implements GridDispatcher {
+public class RoundRobinGridDispatcher implements GridDispatcher, DisposableBean {
 
     private static int PARTITION_SIZE = 1000;
 
@@ -24,7 +26,7 @@ public class RoundRobinGridDispatcher implements GridDispatcher {
 
     private Logger log = Logger.getLogger(this.getClass());
 
-    private ThreadPoolExecutor executorService = (ThreadPoolExecutor) Executors.newFixedThreadPool(10);
+    private ThreadPoolExecutor executorService;
 
     @Override
     public void dispatch(
@@ -42,7 +44,7 @@ public class RoundRobinGridDispatcher implements GridDispatcher {
             }
         }
 
-        final Results results = new Results();
+        this.executorService = (ThreadPoolExecutor) Executors.newFixedThreadPool(10);
 
         final Integer[] total = {0};
 
@@ -58,7 +60,7 @@ public class RoundRobinGridDispatcher implements GridDispatcher {
                     @Override
                     public void run() {
                         try {
-                            log.info("Processing " +  (total[0] += partition.size()) + " results with Worker Node " + registration.getUri());
+                            log.debug("Processing " +  (total[0] += partition.size()) + " results with Worker Node " + registration.getUri());
                             Results workerResults = registration.getResults(new WorkerExecutionRequest(new ArrayList(partition), qdmXml, measurementPeriod, valueSetDefinitions));
                             for(Map.Entry<String, Set<Patient>> result : workerResults.asMap().entrySet()){
                                 for(Patient hit : result.getValue()){
@@ -75,15 +77,9 @@ public class RoundRobinGridDispatcher implements GridDispatcher {
                 this.executorService.submit(job);
             }
 
-
         try {
-
             this.executorService.shutdown();
-
-            while(this.executorService.isTerminating()){
-                Thread.sleep(100);
-            }
-
+            this.executorService.awaitTermination(1, TimeUnit.MINUTES);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -91,5 +87,11 @@ public class RoundRobinGridDispatcher implements GridDispatcher {
 
     protected Iterable<List<Patient>> partition(Iterable <Patient> patients, int partitions){
         return Iterables.partition(patients, partitions);
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        this.executorService.shutdown();
+        this.executorService.awaitTermination(1, TimeUnit.MINUTES);
     }
 }

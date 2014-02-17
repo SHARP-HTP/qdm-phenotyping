@@ -21,9 +21,9 @@
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
 
-    <camelContext id="test" xmlns="http://camel.apache.org/schema/spring">
+    <camelContext id="masterCamelContext" xmlns="http://camel.apache.org/schema/spring">
         <route>
-            <from uri="netty:tcp://0.0.0.0:1984?sync=true"/>
+            <from uri="netty:udp://localhost:1984"/>
             <to uri="bean:registrar"/>
         </route>
     </camelContext>

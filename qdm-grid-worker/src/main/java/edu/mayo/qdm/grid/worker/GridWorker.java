@@ -19,6 +19,9 @@ import org.springframework.stereotype.Component;
 public class GridWorker implements InitializingBean {
 
     @Autowired
+    private AbstractApplicationContext context;
+
+    @Autowired
     private ProducerTemplate producerTemplate;
 
     @Autowired
@@ -27,35 +30,54 @@ public class GridWorker implements InitializingBean {
     private Executor executor;
 
     public static void main(String[] args){
-        if(args == null || args.length != 4){
+        if(args == null || args.length != 5){
             throw new IllegalArgumentException();
         }
-        AbstractApplicationContext context = new ClassPathXmlApplicationContext("qdm-grid-worker-context.xml");
-        context.registerShutdownHook();
 
-        context.getBean(GridWorker.class).register(args[0], Integer.parseInt(args[1]), args[2], Integer.parseInt(args[3]));
+        launch(args[0], Integer.parseInt(args[1]), args[2], Integer.parseInt(args[3]), Boolean.parseBoolean(args[4]));
+        try {
+            Thread.sleep(1000000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public void register(final String workerHostName, final int workerPort, String masterHostName, int masterPort){
+    public static GridWorker launch(final String workerHostName, final int workerPort, String masterHostName, int masterPort, boolean local){
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("qdm-grid-worker-context.xml");
+        context.registerShutdownHook();
+
+        GridWorker worker = context.getBean(GridWorker.class);
+        worker.register(workerHostName, workerPort, masterHostName, masterPort, local);
+
+        return worker;
+    }
+
+    public void register(final String workerHostName, final int workerPort, String masterHostName, int masterPort, final boolean local){
         final String workerPortString = Integer.toString(workerPort);
         final String masterPortString = Integer.toString(masterPort);
 
+        final String uri;
+        if(local){
+            uri = "vm:worker" + workerPortString;
+        } else {
+            uri = "netty:tcp://"+workerHostName+":"+workerPortString+"?sync=true";
+        }
         try {
             this.camelContext.addRoutes(new RouteBuilder() {
                 @Override
                 public void configure() throws Exception {
-                    from("vm:master" + Integer.toString(workerPort)).to("bean:gridWorker");
-                    //from("netty:tcp://"+workerHostName+":"+workerPortString+"?sync=true").to("bean:gridWorker");
+                    if(local){
+                    from("vm:worker" + workerPortString).to("bean:gridWorker");
+                    } else {
+                        from(uri).to("bean:gridWorker");
+                    }
                 }
             });
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
-        String uri = "vm:master" + Integer.toString(workerPort);
-        //String uri = "netty:tcp://"+workerHostName+":"+workerPortString+"?sync=true";
-
-        this.producerTemplate.requestBody("netty:tcp://"+masterHostName+":"+masterPortString+"?sync=true", new WorkerRegistrationRequest(uri));
+        this.producerTemplate.sendBody("netty:udp://" + masterHostName + ":" + masterPortString, new WorkerRegistrationRequest(uri));
 
     }
 
@@ -71,6 +93,10 @@ public class GridWorker implements InitializingBean {
                 workerExecutionRequest.getQdmXml(),
                 workerExecutionRequest.getMeasurementPeriod(),
                 workerExecutionRequest.getValueSetDefinitions());
+    }
+
+    public void shutdown(){
+        context.close();
     }
 
 }
