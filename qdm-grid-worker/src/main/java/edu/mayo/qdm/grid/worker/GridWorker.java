@@ -58,7 +58,7 @@ public class GridWorker implements InitializingBean {
 
         final String uri;
         if(local){
-            uri = "vm:worker" + workerPortString;
+            uri = "vm:worker" + workerPortString + "?timeout=0";
         } else {
             uri = "netty:tcp://"+workerHostName+":"+workerPortString+"?sync=true";
         }
@@ -66,11 +66,7 @@ public class GridWorker implements InitializingBean {
             this.camelContext.addRoutes(new RouteBuilder() {
                 @Override
                 public void configure() throws Exception {
-                    if(local){
-                    from("vm:worker" + workerPortString).to("bean:gridWorker");
-                    } else {
-                        from(uri).to("bean:gridWorker");
-                    }
+                    from(uri).to("bean:gridWorker");
                 }
             });
         } catch (Exception e) {
