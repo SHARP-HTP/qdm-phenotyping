@@ -92,7 +92,13 @@ public class GridWorker implements InitializingBean {
     }
 
     public void shutdown(){
-        context.close();
+        try {
+            this.camelContext.stop();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            context.close();
+        }
     }
 
 }
