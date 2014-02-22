@@ -7,7 +7,6 @@ import edu.mayo.qdm.executor.Results;
 import edu.mayo.qdm.grid.common.WorkerExecutionRequest;
 import edu.mayo.qdm.patient.Patient;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,7 +16,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 @Component
-public class RoundRobinGridDispatcher implements GridDispatcher, DisposableBean {
+public class RoundRobinGridDispatcher implements GridDispatcher {
 
     private static int PARTITION_SIZE = 1000;
 
@@ -25,8 +24,6 @@ public class RoundRobinGridDispatcher implements GridDispatcher, DisposableBean 
     private Registrar registrar;
 
     private Logger log = Logger.getLogger(this.getClass());
-
-    private ThreadPoolExecutor executorService;
 
     @Override
     public void dispatch(
@@ -44,7 +41,7 @@ public class RoundRobinGridDispatcher implements GridDispatcher, DisposableBean 
             }
         }
 
-        this.executorService = (ThreadPoolExecutor) Executors.newFixedThreadPool(10);
+        ThreadPoolExecutor executorService = (ThreadPoolExecutor) Executors.newFixedThreadPool(10);
 
         final Integer[] total = {0};
 
@@ -74,12 +71,12 @@ public class RoundRobinGridDispatcher implements GridDispatcher, DisposableBean 
                     }
                 };
 
-                this.executorService.submit(job);
+                executorService.submit(job);
             }
 
         try {
-            this.executorService.shutdown();
-            this.executorService.awaitTermination(1, TimeUnit.MINUTES);
+            executorService.shutdown();
+            executorService.awaitTermination(10, TimeUnit.MINUTES);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -89,9 +86,4 @@ public class RoundRobinGridDispatcher implements GridDispatcher, DisposableBean 
         return Iterables.partition(patients, partitions);
     }
 
-    @Override
-    public void destroy() throws Exception {
-        this.executorService.shutdown();
-        this.executorService.awaitTermination(1, TimeUnit.MINUTES);
-    }
 }

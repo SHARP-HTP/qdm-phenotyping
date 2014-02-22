@@ -8,6 +8,7 @@ import edu.mayo.qdm.grid.common.WorkerRegistrationRequest;
 import org.apache.camel.CamelContext;
 import org.apache.camel.Handler;
 import org.apache.camel.ProducerTemplate;
+import org.apache.camel.Route;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,7 +67,7 @@ public class GridWorker implements InitializingBean {
             this.camelContext.addRoutes(new RouteBuilder() {
                 @Override
                 public void configure() throws Exception {
-                    from(uri).to("bean:gridWorker");
+                    from(uri).to("bean:gridWorker").id(uri);
                 }
             });
         } catch (Exception e) {
@@ -74,7 +75,6 @@ public class GridWorker implements InitializingBean {
         }
 
         this.producerTemplate.sendBody("netty:udp://" + masterHostName + ":" + masterPortString, new WorkerRegistrationRequest(uri));
-
     }
 
     @Override
@@ -93,12 +93,21 @@ public class GridWorker implements InitializingBean {
 
     public void shutdown(){
         try {
+            for(Route route : this.camelContext.getRoutes()){
+                this.camelContext.stopRoute(route.getId());
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void close(){
+        try {
             this.camelContext.stop();
         } catch (Exception e) {
             throw new RuntimeException(e);
-        } finally {
-            context.close();
         }
+        context.close();
     }
 
 }
