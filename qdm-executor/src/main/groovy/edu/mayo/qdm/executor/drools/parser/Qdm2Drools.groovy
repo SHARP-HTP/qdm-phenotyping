@@ -4,6 +4,7 @@ import edu.mayo.qdm.executor.ResultCallback
 import edu.mayo.qdm.executor.drools.DroolsUtil
 import edu.mayo.qdm.executor.drools.PreconditionResult
 import edu.mayo.qdm.executor.drools.SpecificOccurrence
+import edu.mayo.qdm.executor.drools.TypedStringMapAccessor
 import edu.mayo.qdm.executor.drools.parser.criteria.CriteriaFactory
 import edu.mayo.qdm.executor.drools.parser.criteria.Interval
 import edu.mayo.qdm.executor.drools.parser.criteria.MeasurementValue
@@ -102,6 +103,7 @@ class Qdm2Drools {
         import ${SpecificOccurrence.name};
         import ${MedicationStatus.name};
         import ${ProcedureStatus.name};
+        import ${TypedStringMapAccessor.name};
         import function ${DroolsUtil.name}.toDays;
         import function ${Long.name}.parseLong;
         /*
@@ -114,7 +116,7 @@ class Qdm2Drools {
 
         global DroolsUtil droolsUtil
         global MeasurementPeriod measurementPeriod
-        global Map<String, String> valueSetDefinitions
+        global TypedStringMapAccessor valueSetDefinitions
         """
     }
 

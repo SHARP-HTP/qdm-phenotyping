@@ -29,15 +29,15 @@ public class TestGridIT {
 
     @Test
     public void test() throws Exception {
-        for(int i=0;i<20;i++){
-            GridWorker.main(new String[]{"localhost", "515" + Integer.toString(i), "localhost", "1984"});
+        for(int i=0;i<1;i++){
+            GridWorker.launch("localhost", Integer.parseInt("515" + Integer.toString(i)), "localhost", 1984, true);
         }
 
         Iterable <Patient> patients = new Iterable<Patient>(){
 
             @Override
             public Iterator<Patient> iterator() {
-                return multiply(100);
+                return multiply(1);
             }
         };
 

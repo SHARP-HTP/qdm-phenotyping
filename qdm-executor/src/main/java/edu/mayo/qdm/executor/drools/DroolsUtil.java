@@ -101,7 +101,7 @@ public final class DroolsUtil {
         return findMatches(valueSetOid, null, codedEntries);
     }
 
-    public <T extends CodedEntry> Collection<T>  findMatches(String valueSetOid, Object definition, Iterable <T> codedEntries){
+    public <T extends CodedEntry> Collection<T>  findMatches(String valueSetOid, String definition, Iterable <T> codedEntries){
         String def = definition != null ? definition.toString() : null;
         List<T> returnList = new ArrayList<T>();
         for(T entry : codedEntries){

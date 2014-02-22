@@ -150,7 +150,9 @@ public class DroolsExecutor implements Executor {
 
             ksession.setGlobal("droolsUtil", this.droolsUtil);
             ksession.setGlobal("measurementPeriod", measurementPeriod);
-            ksession.setGlobal("valueSetDefinitions", valueSetDefinitions != null ? valueSetDefinitions : Collections.EMPTY_MAP);
+            ksession.setGlobal("valueSetDefinitions", valueSetDefinitions != null ?
+                    new TypedStringMapAccessor(valueSetDefinitions) :
+                    new TypedStringMapAccessor(Collections.EMPTY_MAP));
 
             for(Patient patient : patients){
                 ksession.insert(patient);
