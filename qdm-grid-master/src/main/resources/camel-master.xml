@@ -23,7 +23,7 @@
 
     <camelContext id="masterCamelContext" xmlns="http://camel.apache.org/schema/spring">
         <route>
-            <from uri="netty:udp://localhost:1984"/>
+            <from uri="netty:tcp://0.0.0.0:1984"/>
             <to uri="bean:registrar"/>
         </route>
     </camelContext>

@@ -77,7 +77,7 @@ public class GridWorker implements InitializingBean {
             throw new RuntimeException(e);
         }
 
-        this.producerTemplate.sendBody("netty:udp://" + masterHostName + ":" + masterPortString, new WorkerRegistrationRequest(uri));
+        this.producerTemplate.sendBody("netty:tcp://" + masterHostName + ":" + masterPortString, new WorkerRegistrationRequest(uri));
     }
 
     @Override
