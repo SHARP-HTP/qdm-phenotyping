@@ -36,10 +36,13 @@ public class GridWorker implements InitializingBean {
         }
 
         launch(args[0], Integer.parseInt(args[1]), args[2], Integer.parseInt(args[3]), Boolean.parseBoolean(args[4]));
-        try {
-            Thread.sleep(1000000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+
+        while(true) {
+            try {
+                Thread.sleep(Long.MAX_VALUE);
+            } catch (InterruptedException e) {
+                //
+            }
         }
     }
 
