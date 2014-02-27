@@ -29,10 +29,8 @@ import edu.mayo.qdm.executor.*;
 import edu.mayo.qdm.executor.drools.parser.Qdm2Drools;
 import edu.mayo.qdm.patient.Patient;
 import org.apache.log4j.Logger;
-import org.drools.FactHandle;
 import org.drools.KnowledgeBase;
 import org.drools.KnowledgeBaseFactory;
-import org.drools.ObjectFilter;
 import org.drools.builder.KnowledgeBuilder;
 import org.drools.builder.KnowledgeBuilderFactory;
 import org.drools.builder.ResourceType;
@@ -41,16 +39,13 @@ import org.drools.event.rule.DefaultWorkingMemoryEventListener;
 import org.drools.event.rule.ObjectInsertedEvent;
 import org.drools.event.rule.ObjectRetractedEvent;
 import org.drools.io.ResourceFactory;
+import org.drools.runtime.Channel;
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.io.IOException;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 
@@ -116,7 +111,7 @@ public class DroolsExecutor implements Executor {
         }
     }
 
-    public void doExecuteBatch(Iterable <Patient> patients, KnowledgeBase knowledgeBase, MeasurementPeriod measurementPeriod, Map<String,String> valueSetDefinitions, ResultCallback callback) {
+    public void doExecuteBatch(final Iterable <Patient> patients, KnowledgeBase knowledgeBase, MeasurementPeriod measurementPeriod, Map<String,String> valueSetDefinitions, final ResultCallback callback) {
 		final StatefulKnowledgeSession ksession = knowledgeBase.newStatefulKnowledgeSession();
 
         try {
@@ -154,26 +149,34 @@ public class DroolsExecutor implements Executor {
                     new TypedStringMapAccessor(valueSetDefinitions) :
                     new TypedStringMapAccessor(Collections.EMPTY_MAP));
 
+            Thread thread = new Thread(new Runnable() {
+                public void run() {
+                    ksession.fireUntilHalt();
+                    ksession.fireAllRules();
+                }
+            });
+
+            thread.start();
+
+            ksession.registerChannel("populations", new Channel() {
+                @Override
+                public void send(Object object) {
+                    PreconditionResult result = (PreconditionResult) object;
+                    callback.hit(result.getId(), result.getPatient());
+                }
+            });
+
             for(Patient patient : patients){
                 ksession.insert(patient);
             }
 
-            ksession.fireAllRules();
-
-            Collection<FactHandle> handles = ksession.getFactHandles(new ObjectFilter() {
-                @Override
-                public boolean accept(Object object) {
-                    return
-                            (object instanceof PreconditionResult)
-                            &&
-                            ((PreconditionResult) object).isPopulation();
-                }
-            });
-
-            for(FactHandle handle : handles){
-                PreconditionResult precondition = (PreconditionResult) ksession.getObject(handle);
-                callback.hit(precondition.getId(), precondition.getPatient());
+            ksession.halt();
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
+
         } finally {
 		    ksession.dispose();
         }

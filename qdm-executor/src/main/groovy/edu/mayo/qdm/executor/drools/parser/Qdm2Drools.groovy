@@ -75,6 +75,8 @@ class Qdm2Drools {
             sb.append(printDataCriteria(it, json))
         }
 
+        printCleanup(sb)
+
         def rule = sb.toString()
 
         log.debug(rule)
@@ -118,6 +120,25 @@ class Qdm2Drools {
         global MeasurementPeriod measurementPeriod
         global TypedStringMapAccessor valueSetDefinitions
         """
+    }
+
+    private def printCleanup(sb) {
+        sb.append("""
+        /* Rule */
+        rule "Cleanup Rule"
+            dialect "mvel"
+            no-loop
+            salience -9999999
+
+        when
+            \$preconditions: java.util.List()
+                from collect ( PreconditionResult(population == true) )
+        then
+            for(int i=0; i < \$preconditions.size(); i++){
+                channels["populations"].send(\$preconditions.get(i));
+            }
+        end
+        """)
     }
 
     /**
@@ -185,7 +206,8 @@ class Qdm2Drools {
         }
         sb.append("""
         then
-            insertLogical(new PreconditionResult("$name", \$p, true))
+            \$result = new PreconditionResult("$name", \$p, true)
+            insertLogical(\$result)
         end
         """)
 
