@@ -59,7 +59,7 @@ public class DroolsExecutor implements Executor {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
-    private static final int EXECUTION_BATCH_SIZE = 1000;
+    private static final int EXECUTION_BATCH_SIZE = 100;
     private static final int KNOWLEDGE_BASE_CACHE_SIZE = 100;
 
     private Cache<String,KnowledgeBase> knowledgeBaseCache =
