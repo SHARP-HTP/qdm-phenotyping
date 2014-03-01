@@ -1,5 +1,6 @@
 package edu.mayo.qdm.executor.drools;
 
+import edu.mayo.qdm.executor.MeasurementPeriod;
 import edu.mayo.qdm.executor.ResultCallback;
 import edu.mayo.qdm.executor.Results;
 import edu.mayo.qdm.patient.Patient;
@@ -13,8 +14,10 @@ import org.drools.builder.ResourceType;
 import org.drools.definition.KnowledgePackage;
 import org.drools.io.ResourceFactory;
 import org.drools.runtime.StatefulKnowledgeSession;
+import org.joda.time.DateTime;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public abstract class AbstractDroolsTestBase {
@@ -46,10 +49,17 @@ public abstract class AbstractDroolsTestBase {
         final Results results = new Results();
 
 
-        //ksession.setGlobal("specificContextManager", new SpecificContextManager());
+        ksession.setGlobal("measurementPeriod", MeasurementPeriod.getCalendarYear(new DateTime(2014, 1, 1, 1, 1).toDate()));
 
 		for(Patient p : this.getPatients()){
             ksession.insert(p);
+        }
+
+        Iterable<?> otherFacts = getOtherFacts();
+        if(otherFacts != null){
+            for(Object fact : otherFacts){
+                ksession.insert(fact);
+            }
         }
 
         ksession.fireAllRules();
@@ -80,6 +90,10 @@ public abstract class AbstractDroolsTestBase {
     }
 
     protected abstract Iterable<Patient> getPatients();
+
+    protected Iterable<?> getOtherFacts(){
+        return new ArrayList<Object>();
+    }
 
     protected abstract String getDroolsFile();
 

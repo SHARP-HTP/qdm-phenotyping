@@ -59,13 +59,19 @@ class TemporalProcessor {
         def start = SAS(temporalReference, startProperty, endProperty, measureJson, true)
         def end = EBE(temporalReference, startProperty, endProperty, measureJson, true)
 
-        return new TemporalResult(
-                variables: start.variables,
-                criteria:
-        """
-        $start.criteria,
-        $end.criteria
-        """)
+        if(temporalReference.reference == "MeasurePeriod"){
+            return new TemporalResult(
+                    variables: start.variables,
+                    criteria: " this during \$measurementPeriod ")
+        } else {
+            return new TemporalResult(
+                    variables: start.variables,
+                    criteria:
+            """
+            $start.criteria,
+            $end.criteria
+            """)
+        }
     }
 
     def EDU = {temporalReference, startProperty, endProperty, measureJson ->

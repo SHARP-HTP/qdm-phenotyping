@@ -35,4 +35,12 @@ public class MeasurementPeriod extends Interval implements Serializable {
         return new MeasurementPeriod(start.toDate(), true, end.toDate(), true);
     }
 
+    public long getStart(){
+       return Long.parseLong(this.getLowValue().getValue());
+    }
+
+    public long getDuration(){
+        return Long.parseLong(this.getHighValue().getValue()) - this.getStart();
+    }
+
 }

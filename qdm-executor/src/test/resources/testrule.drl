@@ -7,11 +7,29 @@ import java.util.Iterator;
 import edu.mayo.qdm.executor.drools.SpecificOccurrence
 import java.util.Calendar;
 import edu.mayo.qdm.executor.ResultCallback;
+import edu.mayo.qdm.executor.MeasurementPeriod
 
 
 global DroolsUtil droolsUtil
 global ResultCallback resultCallback
+global MeasurementPeriod measurementPeriod
 
+declare MeasurementPeriod
+    @role( event )
+    @timestamp( getStart() )
+    @duration( getDuration() )
+end
+
+declare Encounter
+    @role( event )
+    @timestamp( getStartDate() )
+    @duration( getDuration() )
+end
+
+declare Patient
+    @role( event )
+    @timestamp( birthdate )
+end
 
 rule "rule"
       dialect "mvel"
@@ -19,11 +37,10 @@ rule "rule"
 
   when
 
-    $p1 : Patient( sourcePid == "1")
-    $p2 : Patient( sourcePid == "2")
+    $p1 : Patient( )
 
+    Encounter( this during measurementPeriod ) from $p1.encounters
 
-    eval(! ($p1.labs.size() > 1))
 
   then
     System.out.println("Here");

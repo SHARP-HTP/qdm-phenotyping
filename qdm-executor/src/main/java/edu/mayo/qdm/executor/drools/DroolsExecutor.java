@@ -166,6 +166,8 @@ public class DroolsExecutor implements Executor {
                 }
             });
 
+            ksession.insert(measurementPeriod);
+
             for(Patient patient : patients){
                 ksession.insert(patient);
             }

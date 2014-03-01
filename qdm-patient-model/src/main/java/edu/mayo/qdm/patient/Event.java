@@ -51,4 +51,12 @@ public class Event extends CodedEntry {
     public void setNegated(boolean negated) {
         this.negated = negated;
     }
+
+    public Long getDuration(){
+        if(this.endDate != null && this.startDate != null){
+            return this.endDate.getTime() - this.startDate.getTime();
+        }
+
+        return 0l;
+    }
 }

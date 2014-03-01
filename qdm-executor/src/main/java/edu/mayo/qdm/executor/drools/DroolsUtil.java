@@ -24,6 +24,7 @@
 package edu.mayo.qdm.executor.drools;
 
 
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
 import edu.mayo.qdm.executor.valueset.ValueSetCodeResolver;
 import edu.mayo.qdm.patient.CodedEntry;
@@ -104,6 +105,11 @@ public final class DroolsUtil {
     public <T extends CodedEntry> Collection<T>  findMatches(String valueSetOid, String definition, Iterable <T> codedEntries){
         String def = definition != null ? definition.toString() : null;
         List<T> returnList = new ArrayList<T>();
+
+        if(Iterables.isEmpty(codedEntries)){
+            return returnList;
+        }
+
         for(T entry : codedEntries){
             for(Concept c : entry.getConcepts()){
                 if(this.valueSetCodeResolver.isCodeInSet(valueSetOid, def, c)){

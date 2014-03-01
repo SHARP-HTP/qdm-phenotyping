@@ -68,6 +68,8 @@ class Qdm2Drools {
 
         sb.append(printRuleHeader(json))
 
+        sb.append(declareEvents())
+
         json.population_criteria.each {
             printPopulationCriteria(it, sb)
         }
@@ -82,6 +84,35 @@ class Qdm2Drools {
         log.debug(rule)
 
         rule
+    }
+
+    def declareEvents(){
+        """
+
+        declare ${MeasurementPeriod.name}
+            @role( event )
+            @timestamp( getStart() )
+            @duration( getDuration() )
+        end
+
+        ${
+            [Allergy, Characteristic, Communication, Encounter, RiskCategoryAssessment, Medication,
+                    Procedure, Diagnosis, DiagnosticStudy, Lab, PhysicalExamFinding].collect{
+        """
+        declare ${it.name}
+            @role( event )
+            @timestamp( getStartDate() )
+            @duration( getDuration() )
+        end
+        """
+            }.join('\n')
+        }
+
+        declare ${Patient.name}
+            @role( event )
+            @timestamp( birthdate )
+        end
+        """
     }
 
     /**
@@ -337,6 +368,7 @@ class Qdm2Drools {
             no-loop
 
         when
+            \$measurementPeriod : MeasurementPeriod()
             ${it.getLHS()}
 
         then
