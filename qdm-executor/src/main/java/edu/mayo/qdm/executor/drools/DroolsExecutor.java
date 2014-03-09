@@ -149,15 +149,6 @@ public class DroolsExecutor implements Executor {
                     new TypedStringMapAccessor(valueSetDefinitions) :
                     new TypedStringMapAccessor(Collections.EMPTY_MAP));
 
-            Thread thread = new Thread(new Runnable() {
-                public void run() {
-                    ksession.fireUntilHalt();
-                    ksession.fireAllRules();
-                }
-            });
-
-            thread.start();
-
             ksession.registerChannel("populations", new Channel() {
                 @Override
                 public void send(Object object) {
@@ -172,10 +163,9 @@ public class DroolsExecutor implements Executor {
                 ksession.insert(patient);
             }
 
-            ksession.halt();
             try {
-                thread.join();
-            } catch (InterruptedException e) {
+                ksession.fireAllRules();
+            } catch (Exception e) {
                 throw new RuntimeException(e);
             }
 
